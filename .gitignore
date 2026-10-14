@@ -1,0 +1,17 @@
+*.test
+*.out
+swedbank-session.json
+.env
+.DS_Store
+live-session*.json
+*.session.json
+research/
+
+# credentials & keys — never commit
+credentials*.txt
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
