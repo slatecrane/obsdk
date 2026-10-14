@@ -1,0 +1,108 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/consents",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:86eeb3",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "http://localhost/cb"
+    },
+    "body": {
+      "access": {
+        "accounts": [
+          {
+            "iban": "SE00PSEUDO6EF5C3C997"
+          },
+          {
+            "iban": "SE00PSEUDO00594ABE85"
+          },
+          {
+            "iban": "SE00PSEUDO1F90CE71A4"
+          },
+          {
+            "iban": "SE00PSEUDOD0C453C35A"
+          },
+          {
+            "iban": "SE00PSEUDO2409E38E98"
+          }
+        ],
+        "balances": [
+          {
+            "iban": "SE00PSEUDO6EF5C3C997"
+          },
+          {
+            "iban": "SE00PSEUDO00594ABE85"
+          },
+          {
+            "iban": "SE00PSEUDO1F90CE71A4"
+          },
+          {
+            "iban": "SE00PSEUDOD0C453C35A"
+          },
+          {
+            "iban": "SE00PSEUDO2409E38E98"
+          }
+        ],
+        "transactions": [
+          {
+            "iban": "SE00PSEUDO6EF5C3C997"
+          },
+          {
+            "iban": "SE00PSEUDO00594ABE85"
+          },
+          {
+            "iban": "SE00PSEUDO1F90CE71A4"
+          },
+          {
+            "iban": "SE00PSEUDOD0C453C35A"
+          },
+          {
+            "iban": "SE00PSEUDO2409E38E98"
+          }
+        ]
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 4,
+      "recurringIndicator": true,
+      "validUntil": "2027-01-12"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "REDIRECT",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4995",
+      "X-Rate-Limit-Reset": "1116",
+      "X-Request-Id": "c6db3ac3-2ba4-4fcc-8621-c6a79d652481"
+    },
+    "body": {
+      "_links": {
+        "scaRedirect": {
+          "href": "https://psd2.api.swedbank.com/sandbox/ui/consent/authentication/c429818fc308daf543ea975552d0438825922cf1cd212973968763fd6bb3bff7"
+        },
+        "scaStatus": {
+          "href": "/sandbox/v5/consents/a43d8e92-3517-4697-ac28-b04930045cf5/authorisations/7ec9427b-c785-4689-be85-9e4f01c995f8"
+        },
+        "status": {
+          "href": "/sandbox/v5/consents/a43d8e92-3517-4697-ac28-b04930045cf5/status"
+        }
+      },
+      "consentId": "a43d8e92-3517-4697-ac28-b04930045cf5",
+      "consentStatus": "received"
+    }
+  }
+}

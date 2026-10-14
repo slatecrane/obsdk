@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/token",
+    "query": {
+      "client_id": [
+        "REDACTED:client_id"
+      ],
+      "client_secret": [
+        "REDACTED:client_secret"
+      ],
+      "grant_type": [
+        "refresh_token"
+      ],
+      "refresh_token": [
+        "REDACTED:refresh_token:a97d26"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "Login-Method": "MOBILE_ID"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:9ce30e",
+      "expires_in": 3600,
+      "refresh_token": "REDACTED:refresh_token:a97b93",
+      "scope": "PSD2sandbox",
+      "token_type": "Bearer"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/accounts/AsdF01234EfgH4567/transactions",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-05-01"
+      ],
+      "dateTo": [
+        "2026-10-14"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:86eeb3",
+      "Consent-Id": "65f63fa5-c66e-4ed0-a98e-cb8112e0a507",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "http://localhost/cb"
+    }
+  },
+  "response": {
+    "status": 210,
+    "headers": {
+      "Aspsp-Sca-Approach": "REDIRECT",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4993",
+      "X-Rate-Limit-Reset": "1042",
+      "X-Request-Id": "aa759573-a019-4d40-9526-85bf80ca694c"
+    },
+    "body": {
+      "_links": {
+        "download": {
+          "href": "/sandbox/v5/accounts/AsdF01234EfgH4567/transactions/714ebed6-a7c4-4408-bd75-16bd7ee2018b/download"
+        },
+        "status": {
+          "href": "/sandbox/v5/accounts/AsdF01234EfgH4567/transactions/714ebed6-a7c4-4408-bd75-16bd7ee2018b/status"
+        }
+      },
+      "statementId": "714ebed6-a7c4-4408-bd75-16bd7ee2018b",
+      "statementStatus": "signed"
+    }
+  }
+}

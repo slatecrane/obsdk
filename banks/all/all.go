@@ -1,0 +1,9 @@
+// Package all registers every bank integration. Import it for its side effects:
+//
+//	import _ "github.com/slatecrane/obsdk/banks/all"
+package all
+
+import (
+	_ "github.com/slatecrane/obsdk/banks/revolut"
+	_ "github.com/slatecrane/obsdk/banks/swedbank"
+)

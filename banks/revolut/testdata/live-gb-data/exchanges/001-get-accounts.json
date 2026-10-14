@@ -1,0 +1,81 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:88bb66",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address",
+      "X-Fapi-Financial-Id": "001580000103UAvAAM",
+      "X-Fapi-Interaction-Id": "8a996ce1-0566-404a-9209-61c36f355ace"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-a90248",
+                "Name": "name-e4605d",
+                "SchemeName": "UK.OBIE.IBAN"
+              },
+              {
+                "Identification": "identification-bc3b3f",
+                "Name": "name-e4605d",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+              }
+            ],
+            "AccountId": "9916b2c0-07f1-4b46-bf51-c1255426ef7f",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "GBP"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-a90248",
+                "Name": "name-e4605d",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "c616bff1-58ba-4cb6-80ec-5a0f2fa581b6",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "USD"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-a90248",
+                "Name": "name-e4605d",
+                "SchemeName": "UK.OBIE.IBAN"
+              },
+              {
+                "Identification": "identification-a90248",
+                "Name": "name-e4605d",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "0ea4395f-e332-4f0e-94d9-95c05a6519ce",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "EUR"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://sandbox-oba-auth.revolut.com/accounts"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

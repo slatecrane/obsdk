@@ -1,0 +1,42 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/accounts/9916b2c0-07f1-4b46-bf51-c1255426ef7f/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:88bb66",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address",
+      "X-Fapi-Financial-Id": "001580000103UAvAAM",
+      "X-Fapi-Interaction-Id": "28fcecfa-d86f-49d2-94ec-a151bb74aaa3"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "9916b2c0-07f1-4b46-bf51-c1255426ef7f",
+            "Amount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-14T12:05:47.508620Z",
+            "Type": "InterimAvailable"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://sandbox-oba-auth.revolut.com/accounts/9916b2c0-07f1-4b46-bf51-c1255426ef7f/balances"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

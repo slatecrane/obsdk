@@ -1,0 +1,35 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/authorize",
+    "query": {
+      "bic": [
+        "SANDSESS"
+      ],
+      "client_id": [
+        "REDACTED:client_id"
+      ],
+      "redirect_uri": [
+        "https://app.example/cb"
+      ],
+      "response_type": [
+        "code"
+      ],
+      "scope": [
+        "PSD2sandbox"
+      ],
+      "state": [
+        "state-1"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 302,
+    "headers": {
+      "Location": "https://bank.example/login?session=REDACTED%3Asession%3A0ca71c"
+    }
+  }
+}

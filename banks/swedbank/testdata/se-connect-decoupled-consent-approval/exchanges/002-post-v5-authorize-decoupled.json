@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/v5/authorize-decoupled",
+    "query": {
+      "apiKey": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "client_id": [
+        "REDACTED:client_id"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    },
+    "body": {
+      "authenticationMethodId": "MOBILE_ID",
+      "clientID": "REDACTED:client_id",
+      "redirectUri": "https://app.example/cb",
+      "scope": "PSD2sandbox"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/psd2/v5/authorize-decoupled/authorize/A1"
+        }
+      },
+      "authorizeId": "A1",
+      "challengeData": {
+        "autoStartToken": "tok-1"
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "psuMessage": "Login via TPP"
+    }
+  }
+}

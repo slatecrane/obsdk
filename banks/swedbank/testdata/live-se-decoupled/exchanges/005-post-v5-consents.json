@@ -1,0 +1,68 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/consents",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a2732e",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Redirect-Preferred": "false",
+      "Tpp-Redirect-Uri": "http://localhost/cb"
+    },
+    "body": {
+      "access": {
+        "availableAccounts": "allAccounts"
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 1,
+      "recurringIndicator": false,
+      "validUntil": "2026-10-14"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "DECOUPLED",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4992",
+      "X-Rate-Limit-Reset": "736",
+      "X-Request-Id": "8e02d107-006b-4ac5-844d-e89964120d63"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/consents/1f9afe5c-de8c-43bb-af20-7d5678bc83b2/authorisations/713fad64-1daa-4986-8986-6f379ebcf196"
+        },
+        "startAuthorisationWithAuthenticationMethodSelection": {
+          "href": "/sandbox/v5/consents/1f9afe5c-de8c-43bb-af20-7d5678bc83b2/authorisations/713fad64-1daa-4986-8986-6f379ebcf196"
+        },
+        "status": {
+          "href": "/sandbox/v5/consents/1f9afe5c-de8c-43bb-af20-7d5678bc83b2/status"
+        }
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "consentId": "1f9afe5c-de8c-43bb-af20-7d5678bc83b2",
+      "consentStatus": "received",
+      "scaMethods": [
+        {
+          "authenticationMethodId": "MOBILE_ID",
+          "authenticationType": "Mobile BankID"
+        }
+      ]
+    }
+  }
+}

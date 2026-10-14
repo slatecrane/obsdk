@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:090193",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address",
+      "X-Fapi-Financial-Id": "001580000103UAvAAM",
+      "X-Fapi-Interaction-Id": "c71ed42c-16e7-4c8b-acee-8b966706dc37"
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Code": "401 Unauthorized",
+      "Errors": [
+        {
+          "ErrorCode": "UK.OBIE.Resource.Unauthorized",
+          "Message": "Access token is invalid or expired"
+        }
+      ],
+      "Id": "5EHJ0G6WQZH6",
+      "Message": "Access token is invalid or expired"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/account-access-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b50c4d",
+      "Content-Type": "application/json",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address",
+      "X-Fapi-Financial-Id": "001580000103UAvAAM",
+      "X-Fapi-Interaction-Id": "3382edca-8eb4-495e-add2-bc924fb5cbf5"
+    },
+    "body": {
+      "Data": {
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ]
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "6acf73ed-d102-ad8a-ade4-8e23b9e63223",
+        "CreationDateTime": "2026-10-14T12:22:05.163035Z",
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ],
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-14T12:22:05.163035Z"
+      },
+      "Links": {
+        "Self": "https://sandbox-oba-auth.revolut.com/account-access-consents"
+      },
+      "Meta": {
+        "TotalPages": 1
+      },
+      "Risk": {}
+    }
+  }
+}

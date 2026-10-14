@@ -1,0 +1,51 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/sandbox/v5/consents/1f9afe5c-de8c-43bb-af20-7d5678bc83b2/authorisations/713fad64-1daa-4986-8986-6f379ebcf196",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a2732e",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    },
+    "body": {
+      "authenticationMethodId": "MOBILE_ID"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "DECOUPLED",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4991",
+      "X-Rate-Limit-Reset": "736",
+      "X-Request-Id": "7762071c-3cd5-4c9c-ab77-fc0396b89f7b"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/consents/1f9afe5c-de8c-43bb-af20-7d5678bc83b2/authorisations/713fad64-1daa-4986-8986-6f379ebcf196"
+        }
+      },
+      "challengeData": {
+        "autoStartToken": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "psuMessage": "Approval of access for account(-s) data is required",
+      "scaStatus": "started"
+    }
+  }
+}

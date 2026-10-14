@@ -1,0 +1,44 @@
+[
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "revolut",
+      "country": "GB",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "revolut-ob-v3",
+      "generation": 4,
+      "updated_at": "2026-10-14T12:24:30Z",
+      "access_token": "REDACTED:access_token",
+      "refresh_token": "REDACTED:refresh_token",
+      "token_type": "Bearer",
+      "access_expires_at": "2026-10-14T13:24:19.427573Z",
+      "refresh_expires_at": "2076-10-01T12:22:46Z"
+    },
+    "disconnect": {
+      "closed": [
+        "accounts"
+      ]
+    }
+  },
+  {
+    "op": "accounts",
+    "error": {
+      "is": [
+        "access_expired"
+      ],
+      "message": "obsdk: accounts: HTTP 401 UK.OBIE.Resource.Unauthorized: Access token is invalid or expired"
+    }
+  },
+  {
+    "op": "refresh",
+    "error": {
+      "is": [
+        "reauth_required",
+        "refresh_failed"
+      ],
+      "message": "obsdk: token refresh failed (temporary=false): obsdk: user must re-authorize: refresh_token_invalid: obsdk: refresh: HTTP 401 UK.OBIE.Resource.Unauthorized: Unable to validate refresh token. Ensure correct client_id is provided in request."
+    }
+  }
+]

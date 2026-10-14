@@ -1,0 +1,154 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "9916b2c0-07f1-4b46-bf51-c1255426ef7f",
+        "stable_id": "d4ec5c6aeae93ebd0a1ade8b5ea4fc7b",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "identification-a90248"
+          },
+          {
+            "scheme": "SortCodeAccountNumber",
+            "value": "identification-bc3b3f"
+          }
+        ],
+        "owner_name": "name-e4605d",
+        "currency": "GBP",
+        "product": "CurrentAccount",
+        "type": "CACC",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-a90248",
+              "Name": "name-e4605d",
+              "SchemeName": "UK.OBIE.IBAN"
+            },
+            {
+              "Identification": "identification-bc3b3f",
+              "Name": "name-e4605d",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            }
+          ],
+          "AccountId": "9916b2c0-07f1-4b46-bf51-c1255426ef7f",
+          "AccountSubType": "CurrentAccount",
+          "AccountType": "Personal",
+          "Currency": "GBP"
+        }
+      },
+      {
+        "id": "c616bff1-58ba-4cb6-80ec-5a0f2fa581b6",
+        "stable_id": "0b89a889554f4df203ce9084150190f3",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "identification-a90248"
+          }
+        ],
+        "owner_name": "name-e4605d",
+        "currency": "USD",
+        "product": "CurrentAccount",
+        "type": "CACC",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-a90248",
+              "Name": "name-e4605d",
+              "SchemeName": "UK.OBIE.IBAN"
+            }
+          ],
+          "AccountId": "c616bff1-58ba-4cb6-80ec-5a0f2fa581b6",
+          "AccountSubType": "CurrentAccount",
+          "AccountType": "Personal",
+          "Currency": "USD"
+        }
+      },
+      {
+        "id": "0ea4395f-e332-4f0e-94d9-95c05a6519ce",
+        "stable_id": "ed52a3aff2fa7cd9c61afb0acb1fc546",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "identification-a90248"
+          },
+          {
+            "scheme": "IBAN",
+            "value": "identification-a90248"
+          }
+        ],
+        "owner_name": "name-e4605d",
+        "currency": "EUR",
+        "product": "CurrentAccount",
+        "type": "CACC",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-a90248",
+              "Name": "name-e4605d",
+              "SchemeName": "UK.OBIE.IBAN"
+            },
+            {
+              "Identification": "identification-a90248",
+              "Name": "name-e4605d",
+              "SchemeName": "UK.OBIE.IBAN"
+            }
+          ],
+          "AccountId": "0ea4395f-e332-4f0e-94d9-95c05a6519ce",
+          "AccountSubType": "CurrentAccount",
+          "AccountType": "Personal",
+          "Currency": "EUR"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "0.00",
+          "currency": "GBP"
+        },
+        "reference_date": "2026-10-14"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": []
+    }
+  },
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "revolut",
+      "country": "GB",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "revolut-ob-v3",
+      "generation": 2,
+      "updated_at": "2026-10-14T12:23:37Z",
+      "access_token": "REDACTED:access_token:c023dc",
+      "refresh_token": "REDACTED:refresh_token",
+      "token_type": "Bearer",
+      "access_expires_at": "2026-10-14T13:23:36Z",
+      "refresh_expires_at": "2076-10-01T12:22:46Z",
+      "consents": {
+        "accounts": {
+          "id": "6acf73ed-d102-ad8a-ade4-8e23b9e63223",
+          "kind": "accounts",
+          "status": "Authorised"
+        }
+      }
+    }
+  }
+]

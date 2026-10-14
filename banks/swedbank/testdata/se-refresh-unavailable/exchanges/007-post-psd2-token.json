@@ -1,0 +1,39 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/token",
+    "query": {
+      "client_id": [
+        "REDACTED:client_id"
+      ],
+      "client_secret": [
+        "REDACTED:client_secret"
+      ],
+      "grant_type": [
+        "refresh_token"
+      ],
+      "refresh_token": [
+        "REDACTED:refresh_token:a97d26"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  "response": {
+    "status": 503,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "TOKEN_ERROR",
+          "text": "bad"
+        }
+      ]
+    }
+  }
+}

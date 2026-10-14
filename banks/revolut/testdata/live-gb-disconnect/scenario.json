@@ -1,0 +1,28 @@
+{
+  "config": {
+    "bank": "revolut",
+    "country": "GB",
+    "env": "sandbox",
+    "now": "2026-10-14T12:24:30Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "9fc98880-1e3b-466e-a4d9-14b1dac4e786",
+        "c71ed42c-16e7-4c8b-acee-8b966706dc37"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "disconnect"
+    },
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "refresh"
+    }
+  ]
+}

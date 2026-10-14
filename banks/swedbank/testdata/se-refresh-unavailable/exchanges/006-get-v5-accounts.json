@@ -1,0 +1,43 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "withBalance": [
+        "false"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Consent-Id": "C-D",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "test-agent"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "cashAccountType": "CACC",
+          "currency": "SEK",
+          "iban": "SE00PSEUDO981D1AAD50",
+          "name": "name-49e763",
+          "ownerName": "ownername-e72759",
+          "product": "CURRENT",
+          "resourceId": "acc1"
+        }
+      ]
+    }
+  }
+}

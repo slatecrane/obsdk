@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts/AsdF01234EfgH4567/transactions/714ebed6-a7c4-4408-bd75-16bd7ee2018b/download",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:86eeb3",
+      "Consent-Id": "65f63fa5-c66e-4ed0-a98e-cb8112e0a507",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 428,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "RESOURCE_PENDING",
+          "text": "Statement is not yet available. Try again later"
+        }
+      ]
+    }
+  }
+}

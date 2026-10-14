@@ -1,0 +1,29 @@
+{
+  "config": {
+    "bank": "revolut",
+    "country": "GB",
+    "env": "sandbox",
+    "now": "2026-10-14T12:22:04Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "3382edca-8eb4-495e-add2-bc924fb5cbf5",
+        "246d445c-5c6e-4910-935d-fd793c84d453"
+      ],
+      "state": [
+        "8c98448b-03f0-4ba1-8ddc-4fd2ffb33faf"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/?code=REDACTED%3Acode%3A5e130e\u0026id_token=REDACTED%3Aid_token%3Ab82690\u0026state=8c98448b-03f0-4ba1-8ddc-4fd2ffb33faf"
+    }
+  ]
+}

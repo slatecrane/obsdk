@@ -1,0 +1,49 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/consents",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "test-agent",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://app.example/cb"
+    },
+    "body": {
+      "access": {
+        "transactionsOver90Days": [
+          {
+            "iban": "SE00PSEUDO981D1AAD50"
+          }
+        ]
+      },
+      "combinedServiceIndicator": false,
+      "recurringIndicator": false
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "status": {
+          "href": "/sandbox/v5/consents/C-ALL/status"
+        }
+      },
+      "consentId": "C-90",
+      "consentStatus": "valid"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/available-bankids",
+    "query": {
+      "apiKey": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "availableBanks": [
+        {
+          "bankID": "08999",
+          "name": "name-7733da"
+        },
+        {
+          "bankID": "08114",
+          "name": "name-4dfd6e"
+        }
+      ]
+    }
+  }
+}

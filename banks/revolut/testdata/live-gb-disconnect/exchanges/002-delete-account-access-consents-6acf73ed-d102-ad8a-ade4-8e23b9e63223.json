@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/account-access-consents/6acf73ed-d102-ad8a-ade4-8e23b9e63223",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:2a8265",
+      "X-Fapi-Financial-Id": "001580000103UAvAAM",
+      "X-Fapi-Interaction-Id": "9fc98880-1e3b-466e-a4d9-14b1dac4e786"
+    }
+  },
+  "response": {
+    "status": 204,
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

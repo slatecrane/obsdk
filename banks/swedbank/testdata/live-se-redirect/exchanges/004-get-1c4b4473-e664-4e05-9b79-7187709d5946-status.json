@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/consents/1c4b4473-e664-4e05-9b79-7187709d5946/status",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:86eeb3",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4997",
+      "X-Rate-Limit-Reset": "1117",
+      "X-Request-Id": "486d3f50-d51a-4e26-8698-3b3030afb52b"
+    },
+    "body": {
+      "consentStatus": "valid"
+    }
+  }
+}

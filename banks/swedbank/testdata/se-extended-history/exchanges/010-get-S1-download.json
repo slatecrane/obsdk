@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts/acc1/transactions/S1/download",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Consent-Id": "C-90",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "test-agent"
+    }
+  },
+  "response": {
+    "status": 428,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "RESOURCE_PENDING",
+          "text": "later"
+        }
+      ]
+    }
+  }
+}

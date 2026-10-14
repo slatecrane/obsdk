@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026code=REDACTED%3Acode%3A5e130e\u0026grant_type=authorization_code"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:75ccf9",
+      "access_token_id": "6acf7439-1fa2-a713-9e21-280e2f852f28",
+      "expires_in": 3599,
+      "id_token": "REDACTED:id_token:1961e5",
+      "refresh_token": "REDACTED:refresh_token:575f88",
+      "refresh_token_expires_at": 3368780566,
+      "token_type": "Bearer"
+    }
+  }
+}

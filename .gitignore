@@ -15,3 +15,17 @@ credentials*.txt
 *.pfx
 id_rsa*
 id_ed25519*
+
+# contain competitor research — keep local
+docs/gotchas.md
+docs/design-notes.md
+
+# per-bank sandbox setup: commit sandbox.env.example, never sandbox.env or the
+# bank-issued certificates and CSRs (public roots we embed use .crt)
+banks/*/sandbox.env
+*.der
+*.csr
+
+# private notes and editor settings
+docs/todo.md
+.vscode/

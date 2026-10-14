@@ -1,0 +1,52 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts/AsdF01234EfgH4567",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:86eeb3",
+      "Consent-Id": "a43d8e92-3517-4697-ac28-b04930045cf5",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4996",
+      "X-Rate-Limit-Reset": "1069",
+      "X-Request-Id": "60b031c7-b6a7-4163-83b2-0aac08941375"
+    },
+    "body": {
+      "account": {
+        "_links": {
+          "balances": {
+            "href": "/sandbox/v5/accounts/AsdF01234EfgH4567/balances"
+          },
+          "transactions": {
+            "href": "/sandbox/v5/accounts/AsdF01234EfgH4567/transactions"
+          }
+        },
+        "bankId": "08999",
+        "bban": "00PSEUDOBE983B6D",
+        "cashAccountType": "CACC",
+        "currency": "SEK",
+        "iban": "SE00PSEUDO6EF5C3C997",
+        "name": "name-2651b8",
+        "ownerName": "ownername-f0742e",
+        "product": "CURRENT",
+        "resourceId": "AsdF01234EfgH4567"
+      }
+    }
+  }
+}

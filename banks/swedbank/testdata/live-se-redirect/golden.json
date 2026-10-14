@@ -1,0 +1,319 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to log in, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://psd2.api.swedbank.com/sandbox/ui/login?action=REDACTED%3Aaction%3A69f715&bic=SANDSESS&sessionData=REDACTED%3Asessiondata%3Abbd02b&sessionID=REDACTED%3Asessionid%3A1b7f5f"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve access to account data, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://psd2.api.swedbank.com/sandbox/ui/consent/authentication/f41eb55943e39d6585038ea3a01bc0a6bace8e0dee54f18a692bcc49d610f35c"
+      },
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T11:39:46Z",
+        "access_token": "REDACTED:access_token:19e414",
+        "refresh_token": "REDACTED:refresh_token:7f38c2",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T12:39:46Z",
+        "meta": {
+          "approach": "redirect",
+          "login_method": "MOBILE_ID"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve access to account data, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://psd2.api.swedbank.com/sandbox/ui/consent/authentication/c429818fc308daf543ea975552d0438825922cf1cd212973968763fd6bb3bff7"
+      },
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 2,
+        "updated_at": "2026-10-14T11:39:46Z",
+        "access_token": "REDACTED:access_token:19e414",
+        "refresh_token": "REDACTED:refresh_token:7f38c2",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T12:39:46Z",
+        "consents": {
+          "allAccounts": {
+            "id": "1c4b4473-e664-4e05-9b79-7187709d5946",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          }
+        },
+        "meta": {
+          "approach": "redirect",
+          "login_method": "MOBILE_ID"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T11:39:46Z",
+        "access_token": "REDACTED:access_token:19e414",
+        "refresh_token": "REDACTED:refresh_token:7f38c2",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T12:39:46Z",
+        "consents": {
+          "allAccounts": {
+            "id": "1c4b4473-e664-4e05-9b79-7187709d5946",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "a43d8e92-3517-4697-ac28-b04930045cf5",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "accounts": [
+        {
+          "id": "AsdF01234EfgH4567",
+          "stable_id": "0918965f917d53f0e9f9d2ea1823e04c",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE00PSEUDO6EF5C3C997"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "00PSEUDOBE983B6D"
+            }
+          ],
+          "name": "name-2651b8",
+          "currency": "SEK",
+          "product": "CURRENT",
+          "type": "CACC",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/v5/accounts/AsdF01234EfgH4567/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/v5/accounts/AsdF01234EfgH4567/transactions"
+              }
+            },
+            "bankId": "08999",
+            "bban": "00PSEUDOBE983B6D",
+            "cashAccountType": "CACC",
+            "currency": "SEK",
+            "iban": "SE00PSEUDO6EF5C3C997",
+            "name": "name-2651b8",
+            "product": "CURRENT",
+            "resourceId": "AsdF01234EfgH4567"
+          }
+        },
+        {
+          "id": "AbcD1234eFgH568",
+          "stable_id": "4c4a2ae1317f56ef41bf82003fb76f3b",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE00PSEUDO00594ABE85"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "00PSEUDO0A4E3459"
+            }
+          ],
+          "name": "name-254d15",
+          "currency": "SEK",
+          "product": "UNGDOMS KONTO",
+          "type": "CACC",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/v5/accounts/AbcD1234eFgH568/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/v5/accounts/AbcD1234eFgH568/transactions"
+              }
+            },
+            "bankId": "08999",
+            "bban": "00PSEUDO0A4E3459",
+            "cashAccountType": "CACC",
+            "currency": "SEK",
+            "disposalRights": {
+              "role": "DISPOSAL_HOLDER"
+            },
+            "iban": "SE00PSEUDO00594ABE85",
+            "mainAccountHolder": {
+              "customerId": "202601320000"
+            },
+            "name": "name-254d15",
+            "product": "UNGDOMS KONTO",
+            "resourceId": "AbcD1234eFgH568"
+          }
+        },
+        {
+          "id": "Baas786DD5886RT",
+          "stable_id": "ffbb37d099b06f0c74116cde11a89bb6",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE00PSEUDO1F90CE71A4"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "00PSEUDO9861EF65"
+            }
+          ],
+          "name": "name-a8b4f7",
+          "currency": "SEK",
+          "product": "CURRENT",
+          "type": "CACC",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/v5/accounts/Baas786DD5886RT/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/v5/accounts/Baas786DD5886RT/transactions"
+              }
+            },
+            "bankId": "08999",
+            "bban": "00PSEUDO9861EF65",
+            "cashAccountType": "CACC",
+            "currency": "SEK",
+            "iban": "SE00PSEUDO1F90CE71A4",
+            "name": "name-a8b4f7",
+            "product": "CURRENT",
+            "resourceId": "Baas786DD5886RT"
+          }
+        },
+        {
+          "id": "458A889B8889T784W",
+          "stable_id": "51430f078eebedf9e08caa79b30456c5",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE00PSEUDOD0C453C35A"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "00PSEUDOAD584467"
+            }
+          ],
+          "name": "name-a8b4f7",
+          "currency": "SEK",
+          "product": "CURRENT",
+          "type": "CACC",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/v5/accounts/458A889B8889T784W/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/v5/accounts/458A889B8889T784W/transactions"
+              }
+            },
+            "bankId": "08999",
+            "bban": "00PSEUDOAD584467",
+            "cashAccountType": "CACC",
+            "currency": "SEK",
+            "iban": "SE00PSEUDOD0C453C35A",
+            "name": "name-a8b4f7",
+            "product": "CURRENT",
+            "resourceId": "458A889B8889T784W"
+          }
+        },
+        {
+          "id": "Vaal832ER5791IA",
+          "stable_id": "eb93e05fb98c863d71266f13f066777c",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE00PSEUDO2409E38E98"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "00PSEUDOB8198B4F"
+            }
+          ],
+          "name": "name-b62371",
+          "currency": "SEK",
+          "product": "CURRENT",
+          "type": "CACC",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/v5/accounts/Vaal832ER5791IA/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/v5/accounts/Vaal832ER5791IA/transactions"
+              }
+            },
+            "bankId": "08999",
+            "bban": "00PSEUDOB8198B4F",
+            "cashAccountType": "CACC",
+            "currency": "SEK",
+            "iban": "SE00PSEUDO2409E38E98",
+            "name": "name-b62371",
+            "product": "CURRENT",
+            "resourceId": "Vaal832ER5791IA"
+          }
+        }
+      ]
+    }
+  }
+]

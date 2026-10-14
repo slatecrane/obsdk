@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts/acc1/transactions",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-09-11"
+      ],
+      "dateTo": [
+        "2026-10-11"
+      ],
+      "pageId": [
+        "P2"
+      ],
+      "pageSize": [
+        "500"
+      ],
+      "withBalance": [
+        "false"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Consent-Id": "C-D"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactions": {
+        "booked": [
+          {
+            "transactionAmount": {
+              "amount": "0.10",
+              "currency": "SEK"
+            },
+            "transactionId": "t3"
+          }
+        ]
+      }
+    }
+  }
+}

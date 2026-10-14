@@ -1,0 +1,68 @@
+{
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-13T19:47:41Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "1cfae263-40e3-4656-b5f9-4fbbaef7fc1e",
+        "004f6b45-206b-4cec-abcc-e73aae89aaab",
+        "70136d6d-e090-4837-97f0-cf3a9828d318",
+        "d9a66a03-417f-4afd-b635-db5df75bf808",
+        "8e02d107-006b-4ac5-844d-e89964120d63",
+        "7762071c-3cd5-4c9c-ab77-fc0396b89f7b",
+        "a9a9c3e6-52c6-4a18-b6a5-adb88062241f",
+        "696f70ae-98a5-4d99-bd17-dc8b3020f002",
+        "c0f2a311-3d9e-45e8-86e3-878dc11a9005",
+        "0e9826eb-5486-4deb-ba53-552f7be34adc",
+        "2ccbdcc6-e9d7-4d27-9a6e-5ec377e6102c",
+        "29d1accf-51d7-45e5-82d3-6a3437a668c0",
+        "f69886f2-0ae4-4dc0-92f3-e9d5efe687a2",
+        "5d890269-5cdb-43c2-a8a8-4ac5e4853d37",
+        "4e07592d-d0cc-4082-9be5-fce09573a824",
+        "35f9c770-5059-45cf-b2ea-54591249d7c4",
+        "cc1d5bd2-f302-468d-82ba-eca7f949745b",
+        "990ba42a-d071-4493-9214-2abfb4ebcd10",
+        "37de99c6-6f2f-45a6-bace-50062119fca9",
+        "467f2a41-99b3-49cd-a5dc-e50837f4a21d"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "decoupled",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    }
+  ]
+}

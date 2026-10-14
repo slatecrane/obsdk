@@ -1,0 +1,37 @@
+{
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-13T19:48:10Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "66fafbec-53b4-4f14-8790-16278d927b2b",
+        "2b2889dc-8e14-426f-9f73-a6d7498063c3",
+        "611e7851-fc54-451d-a3fd-de7e44dc8f3b"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "AsdF01234EfgH4567",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "AsdF01234EfgH4567",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-13T19:48:34Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

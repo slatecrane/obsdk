@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/accounts/acc1/transactions",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-03-25"
+      ],
+      "dateTo": [
+        "2026-10-11"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Consent-Id": "C-90",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "test-agent",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://app.example/cb"
+    }
+  },
+  "response": {
+    "status": 210,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "download": {
+          "href": "/sandbox/v5/accounts/acc1/transactions/S1/download"
+        },
+        "status": {
+          "href": "/sandbox/v5/accounts/acc1/transactions/S1/status"
+        }
+      },
+      "statementId": "S1",
+      "statementStatus": "signed"
+    }
+  }
+}

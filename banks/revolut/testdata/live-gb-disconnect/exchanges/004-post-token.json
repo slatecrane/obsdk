@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026grant_type=refresh_token\u0026refresh_token=REDACTED%3Arefresh_token%3A575f88"
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Code": "401 Unauthorized",
+      "Errors": [
+        {
+          "ErrorCode": "UK.OBIE.Resource.Unauthorized",
+          "Message": "Unable to validate refresh token. Ensure correct client_id is provided in request."
+        }
+      ],
+      "Id": "181CQHRUMMHDS",
+      "Message": "Unable to validate refresh token. Ensure correct client_id is provided in request."
+    }
+  }
+}

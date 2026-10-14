@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/authorize",
+    "query": {
+      "bic": [
+        "SANDSESS"
+      ],
+      "client_id": [
+        "REDACTED:client_id"
+      ],
+      "redirect_uri": [
+        "http://localhost/cb"
+      ],
+      "response_type": [
+        "code"
+      ],
+      "scope": [
+        "PSD2sandbox"
+      ],
+      "state": [
+        "630dd9d1-a096-4f55-bc9c-88ccb6f93c0e"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 302,
+    "headers": {
+      "Content-Type": "text/plain;charset=UTF-8",
+      "Location": "https://psd2.api.swedbank.com/sandbox/ui/login?action=REDACTED%3Aaction%3A69f715\u0026bic=SANDSESS\u0026sessionData=REDACTED%3Asessiondata%3Abbd02b\u0026sessionID=REDACTED%3Asessionid%3A1b7f5f"
+    }
+  }
+}

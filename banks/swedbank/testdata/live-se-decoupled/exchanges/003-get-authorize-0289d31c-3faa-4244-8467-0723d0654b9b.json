@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v5/authorize-decoupled/authorize/0289d31c-3faa-4244-8467-0723d0654b9b",
+    "query": {
+      "apiKey": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "client_id": [
+        "REDACTED:client_id"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4994",
+      "X-Rate-Limit-Reset": "736",
+      "X-Request-Id": "70136d6d-e090-4837-97f0-cf3a9828d318"
+    },
+    "body": {
+      "authorizationCode": "REDACTED:authorizationcode:4e6a22",
+      "scaStatus": "finalised"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/consents",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:86eeb3",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "http://localhost/cb"
+    },
+    "body": {
+      "access": {
+        "availableAccounts": "allAccounts"
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 1,
+      "recurringIndicator": false,
+      "validUntil": "2026-10-15"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "REDIRECT",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4998",
+      "X-Rate-Limit-Reset": "1139",
+      "X-Request-Id": "ab452d68-3cfa-4f20-b7b7-b80f7b852d27"
+    },
+    "body": {
+      "_links": {
+        "scaRedirect": {
+          "href": "https://psd2.api.swedbank.com/sandbox/ui/consent/authentication/f41eb55943e39d6585038ea3a01bc0a6bace8e0dee54f18a692bcc49d610f35c"
+        },
+        "scaStatus": {
+          "href": "/sandbox/v5/consents/1c4b4473-e664-4e05-9b79-7187709d5946/authorisations/cd9d092d-9162-4ec4-9e15-a39c1d82d686"
+        },
+        "status": {
+          "href": "/sandbox/v5/consents/1c4b4473-e664-4e05-9b79-7187709d5946/status"
+        }
+      },
+      "consentId": "1c4b4473-e664-4e05-9b79-7187709d5946",
+      "consentStatus": "received"
+    }
+  }
+}

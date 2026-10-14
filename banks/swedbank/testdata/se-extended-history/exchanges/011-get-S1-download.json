@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts/acc1/transactions/S1/download",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Consent-Id": "C-90",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "test-agent"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/octet-stream"
+    },
+    "body_base64": "UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAALAAAAYWNjMS0wLmpzb26q5lJQUCopSswrTkwuyczPK1ayUgCJKSgoJeXnZ6emKFkpRIP5ClBxuFxmXrpLYkmqkpWCkpGBkamugaGugaGSDkIRkrGOufmleSVws6EKEmGiSrqGegYGSHoVFJSSS4uKUvOSK0HSwa7eSnC5WuxWeIKcqpRoCFNYC6ZjuUCsWkAAAAD//1BLBwjPv9s/hgAAAOcAAABQSwMEFAAIAAgAAAAAAAAAAAAAAAAAAAAAAAsAAABhY2MxLTEuanNvbqrmUlBQKilKzCtOTC7JzM8rVrJSAIkpKCgl5ednp6YoWSlEg/kKUHG4XGZeuktiSaqSlYKSkYGRqa6Boa6BkZIOQhGSsY65+aV5JXCzoQoSYaJKuoZ6BgZIehUUlJJLi4pS85IrQdLBrt5KcLla7FZ4gpyqlGgEU1gLpmO5QKxaQAAAAP//UEsHCB1quW2GAAAA5wAAAFBLAQIUABQACAAIAAAAAADPv9s/hgAAAOcAAAALAAAAAAAAAAAAAAAAAAAAAABhY2MxLTAuanNvblBLAQIUABQACAAIAAAAAAAdarlthgAAAOcAAAALAAAAAAAAAAAAAAAAAL8AAABhY2MxLTEuanNvblBLBQYAAAAAAgACAHIAAAB+AQAAAAA="
+  }
+}

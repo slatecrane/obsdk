@@ -1,0 +1,55 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/v5/authorize-decoupled",
+    "query": {
+      "apiKey": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "client_id": [
+        "REDACTED:client_id"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e"
+    },
+    "body": {
+      "authenticationMethodId": "MOBILE_ID",
+      "clientID": "REDACTED:client_id",
+      "redirectUri": "http://localhost/cb",
+      "scope": "PSD2sandbox"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "DECOUPLED",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4995",
+      "X-Rate-Limit-Reset": "739",
+      "X-Request-Id": "004f6b45-206b-4cec-abcc-e73aae89aaab"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/authorize-decoupled/authorize/0289d31c-3faa-4244-8467-0723d0654b9b"
+        }
+      },
+      "authorizeId": "0289d31c-3faa-4244-8467-0723d0654b9b",
+      "challengeData": {
+        "autoStartToken": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "psuMessage": "Login via botsmann_org"
+    }
+  }
+}

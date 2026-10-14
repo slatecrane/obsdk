@@ -1,0 +1,134 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "withBalance": [
+        "false"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:86eeb3",
+      "Consent-Id": "a43d8e92-3517-4697-ac28-b04930045cf5",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4993",
+      "X-Rate-Limit-Reset": "1090",
+      "X-Request-Id": "881f0976-57ce-4373-9c4a-49300c46f58c"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "/sandbox/v5/accounts/AsdF01234EfgH4567/balances"
+            },
+            "transactions": {
+              "href": "/sandbox/v5/accounts/AsdF01234EfgH4567/transactions"
+            }
+          },
+          "bankId": "08999",
+          "bban": "00PSEUDOBE983B6D",
+          "cashAccountType": "CACC",
+          "currency": "SEK",
+          "iban": "SE00PSEUDO6EF5C3C997",
+          "name": "name-2651b8",
+          "product": "CURRENT",
+          "resourceId": "AsdF01234EfgH4567"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "/sandbox/v5/accounts/AbcD1234eFgH568/balances"
+            },
+            "transactions": {
+              "href": "/sandbox/v5/accounts/AbcD1234eFgH568/transactions"
+            }
+          },
+          "bankId": "08999",
+          "bban": "00PSEUDO0A4E3459",
+          "cashAccountType": "CACC",
+          "currency": "SEK",
+          "disposalRights": {
+            "role": "DISPOSAL_HOLDER"
+          },
+          "iban": "SE00PSEUDO00594ABE85",
+          "mainAccountHolder": {
+            "customerId": "202601320000"
+          },
+          "name": "name-254d15",
+          "product": "UNGDOMS KONTO",
+          "resourceId": "AbcD1234eFgH568"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "/sandbox/v5/accounts/Baas786DD5886RT/balances"
+            },
+            "transactions": {
+              "href": "/sandbox/v5/accounts/Baas786DD5886RT/transactions"
+            }
+          },
+          "bankId": "08999",
+          "bban": "00PSEUDO9861EF65",
+          "cashAccountType": "CACC",
+          "currency": "SEK",
+          "iban": "SE00PSEUDO1F90CE71A4",
+          "name": "name-a8b4f7",
+          "product": "CURRENT",
+          "resourceId": "Baas786DD5886RT"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "/sandbox/v5/accounts/458A889B8889T784W/balances"
+            },
+            "transactions": {
+              "href": "/sandbox/v5/accounts/458A889B8889T784W/transactions"
+            }
+          },
+          "bankId": "08999",
+          "bban": "00PSEUDOAD584467",
+          "cashAccountType": "CACC",
+          "currency": "SEK",
+          "iban": "SE00PSEUDOD0C453C35A",
+          "name": "name-a8b4f7",
+          "product": "CURRENT",
+          "resourceId": "458A889B8889T784W"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "/sandbox/v5/accounts/Vaal832ER5791IA/balances"
+            },
+            "transactions": {
+              "href": "/sandbox/v5/accounts/Vaal832ER5791IA/transactions"
+            }
+          },
+          "bankId": "08999",
+          "bban": "00PSEUDOB8198B4F",
+          "cashAccountType": "CACC",
+          "currency": "SEK",
+          "iban": "SE00PSEUDO2409E38E98",
+          "name": "name-b62371",
+          "product": "CURRENT",
+          "resourceId": "Vaal832ER5791IA"
+        }
+      ]
+    }
+  }
+}

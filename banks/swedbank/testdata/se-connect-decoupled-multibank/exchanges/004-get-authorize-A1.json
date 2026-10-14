@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v5/authorize-decoupled/authorize/A1",
+    "query": {
+      "apiKey": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "client_id": [
+        "REDACTED:client_id"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "scaStatus": "started",
+      "tppMessages": {
+        "category": "ERROR",
+        "code": "MISSING_BANK_ID",
+        "text": "User must select bank"
+      }
+    }
+  }
+}

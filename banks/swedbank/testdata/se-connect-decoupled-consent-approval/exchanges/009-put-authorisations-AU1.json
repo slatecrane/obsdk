@@ -1,0 +1,46 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/sandbox/v5/consents/C-D/authorisations/AU1",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "test-agent"
+    },
+    "body": {
+      "authenticationMethodId": "MOBILE_ID"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/consents/C-D/authorisations/AU1"
+        }
+      },
+      "challengeData": {
+        "autoStartToken": "tok-2"
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "x"
+      },
+      "psuMessage": "Approve",
+      "scaStatus": "started"
+    }
+  }
+}

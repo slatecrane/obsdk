@@ -1,0 +1,64 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/consents",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "test-agent",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://app.example/cb"
+    },
+    "body": {
+      "access": {
+        "accounts": [
+          {
+            "iban": "SE00PSEUDO981D1AAD50"
+          }
+        ],
+        "balances": [
+          {
+            "iban": "SE00PSEUDO981D1AAD50"
+          }
+        ],
+        "transactions": [
+          {
+            "iban": "SE00PSEUDO981D1AAD50"
+          }
+        ]
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 4,
+      "recurringIndicator": true,
+      "validUntil": "2027-01-09"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "scaRedirect": {
+          "href": "https://bank.example/sca/1"
+        },
+        "status": {
+          "href": "/sandbox/v5/consents/C-D/status"
+        }
+      },
+      "consentId": "C-D",
+      "consentStatus": "received"
+    }
+  }
+}

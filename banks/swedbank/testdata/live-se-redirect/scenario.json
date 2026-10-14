@@ -1,0 +1,44 @@
+{
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-14T11:39:46Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "3834f49a-2fb0-454e-9828-a90e7bc4e046",
+        "4803a561-cf2a-41e7-afeb-60490e85cd2e",
+        "ab452d68-3cfa-4f20-b7b7-b80f7b852d27",
+        "486d3f50-d51a-4e26-8698-3b3030afb52b",
+        "feb495f6-bb77-4106-84d3-73d6a7e08ff0",
+        "c6db3ac3-2ba4-4fcc-8621-c6a79d652481",
+        "15390c2c-0cb5-4adf-95b7-76a44f89be65",
+        "881f0976-57ce-4373-9c4a-49300c46f58c"
+      ],
+      "state": [
+        "630dd9d1-a096-4f55-bc9c-88ccb6f93c0e"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "redirect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://localhost/cb?code=REDACTED%3Acode%3A6a4457\u0026state=630dd9d1-a096-4f55-bc9c-88ccb6f93c0e"
+    },
+    {
+      "op": "resume",
+      "callback": "https://localhost/cb"
+    },
+    {
+      "op": "resume",
+      "callback": "https://localhost/cb"
+    }
+  ]
+}

@@ -1,0 +1,753 @@
+[
+  {
+    "op": "transactions",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve access to older transactions, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://psd2.api.swedbank.com/sandbox/ui/consent/authentication/a9b14fd78ef730c8141280b2a64882c923ea1af8a9b3480e7d322bf880df4bac"
+      },
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T11:41:50.423433Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T12:41:01.540189Z",
+        "consents": {
+          "allAccounts": {
+            "id": "1c4b4473-e664-4e05-9b79-7187709d5946",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "a43d8e92-3517-4697-ac28-b04930045cf5",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect",
+          "login_method": "MOBILE_ID"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": false,
+      "message": "The bank is still preparing the statement.",
+      "wait_for": 60000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 5,
+        "updated_at": "2026-10-14T11:42:11Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T12:41:01.540189Z",
+        "consents": {
+          "allAccounts": {
+            "id": "1c4b4473-e664-4e05-9b79-7187709d5946",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "a43d8e92-3517-4697-ac28-b04930045cf5",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          },
+          "transactionsOver90Days": {
+            "id": "65f63fa5-c66e-4ed0-a98e-cb8112e0a507",
+            "kind": "transactionsOver90Days",
+            "status": "valid",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect",
+          "login_method": "MOBILE_ID"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 5,
+        "updated_at": "2026-10-14T11:42:11Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T12:41:01.540189Z",
+        "consents": {
+          "allAccounts": {
+            "id": "1c4b4473-e664-4e05-9b79-7187709d5946",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "a43d8e92-3517-4697-ac28-b04930045cf5",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          },
+          "transactionsOver90Days": {
+            "id": "65f63fa5-c66e-4ed0-a98e-cb8112e0a507",
+            "kind": "transactionsOver90Days",
+            "status": "valid",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "transactions": {
+        "transactions": [
+          {
+            "id": "1088cef92729f8fa8194262de8a4f9ed",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-425.65",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-10-14",
+            "value_date": "2026-10-14",
+            "transaction_date": "2026-10-14",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-7dafcb"
+            ],
+            "raw": {
+              "bookingDate": "2026-10-14",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-7dafcb",
+              "transactionAmount": {
+                "amount": "-425.65",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-10-14",
+              "transactionId": "1088cef92729f8fa8194262de8a4f9ed",
+              "valueDate": "2026-10-14"
+            }
+          },
+          {
+            "id": "3da0342b3ef33419f2e6575e6006404e",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-21.72",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-10-03",
+            "value_date": "2026-10-03",
+            "transaction_date": "2026-10-03",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-962ad8"
+            ],
+            "raw": {
+              "bookingDate": "2026-10-03",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-962ad8",
+              "transactionAmount": {
+                "amount": "-21.72",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-10-03",
+              "transactionId": "3da0342b3ef33419f2e6575e6006404e",
+              "valueDate": "2026-10-03"
+            }
+          },
+          {
+            "id": "29e63d71c66f08681b686553793b0319",
+            "status": "booked",
+            "direction": "credit",
+            "amount": {
+              "amount": "491.6",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-09-22",
+            "value_date": "2026-09-22",
+            "transaction_date": "2026-09-22",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-5f766a"
+            ],
+            "raw": {
+              "bookingDate": "2026-09-22",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-5f766a",
+              "transactionAmount": {
+                "amount": "491.6",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-09-22",
+              "transactionId": "29e63d71c66f08681b686553793b0319",
+              "valueDate": "2026-09-22"
+            }
+          },
+          {
+            "id": "5edd031b11db97a7ab6c028b386026f8",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-483.99",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-09-11",
+            "value_date": "2026-09-11",
+            "transaction_date": "2026-09-11",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-38bc77"
+            ],
+            "raw": {
+              "bookingDate": "2026-09-11",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-38bc77",
+              "transactionAmount": {
+                "amount": "-483.99",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-09-11",
+              "transactionId": "5edd031b11db97a7ab6c028b386026f8",
+              "valueDate": "2026-09-11"
+            }
+          },
+          {
+            "id": "5031dac047575a477e0666223175b3d6",
+            "status": "booked",
+            "direction": "credit",
+            "amount": {
+              "amount": "135.77",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-08-31",
+            "value_date": "2026-08-31",
+            "transaction_date": "2026-08-31",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-7f6007"
+            ],
+            "raw": {
+              "bookingDate": "2026-08-31",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-7f6007",
+              "transactionAmount": {
+                "amount": "135.77",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-08-31",
+              "transactionId": "5031dac047575a477e0666223175b3d6",
+              "valueDate": "2026-08-31"
+            }
+          },
+          {
+            "id": "62abd627dce928c927fd8de72a3a8c2e",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-324.26",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-08-20",
+            "value_date": "2026-08-20",
+            "transaction_date": "2026-08-20",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-a8c4d8"
+            ],
+            "raw": {
+              "bookingDate": "2026-08-20",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-a8c4d8",
+              "transactionAmount": {
+                "amount": "-324.26",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-08-20",
+              "transactionId": "62abd627dce928c927fd8de72a3a8c2e",
+              "valueDate": "2026-08-20"
+            }
+          },
+          {
+            "id": "f525d8d979b35b32cdc833db36c83382",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-373.46",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-08-09",
+            "value_date": "2026-08-09",
+            "transaction_date": "2026-08-09",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-7dafcb"
+            ],
+            "raw": {
+              "bookingDate": "2026-08-09",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-7dafcb",
+              "transactionAmount": {
+                "amount": "-373.46",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-08-09",
+              "transactionId": "f525d8d979b35b32cdc833db36c83382",
+              "valueDate": "2026-08-09"
+            }
+          },
+          {
+            "id": "5c24d083d8c986403da742a92658f513",
+            "status": "booked",
+            "direction": "credit",
+            "amount": {
+              "amount": "0.84",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-07-29",
+            "value_date": "2026-07-29",
+            "transaction_date": "2026-07-29",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-78b73f"
+            ],
+            "raw": {
+              "bookingDate": "2026-07-29",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-78b73f",
+              "transactionAmount": {
+                "amount": "0.84",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-07-29",
+              "transactionId": "5c24d083d8c986403da742a92658f513",
+              "valueDate": "2026-07-29"
+            }
+          },
+          {
+            "id": "d2aa631e05e8518bbdc04397639f3aea",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-367.16",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-07-18",
+            "value_date": "2026-07-18",
+            "transaction_date": "2026-07-18",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-774066"
+            ],
+            "raw": {
+              "bookingDate": "2026-07-18",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-774066",
+              "transactionAmount": {
+                "amount": "-367.16",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-07-18",
+              "transactionId": "d2aa631e05e8518bbdc04397639f3aea",
+              "valueDate": "2026-07-18"
+            }
+          },
+          {
+            "id": "6b5fa777c07b88e851cfffc901323978",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-26.53",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-07-07",
+            "value_date": "2026-07-07",
+            "transaction_date": "2026-07-07",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-a8c4d8"
+            ],
+            "raw": {
+              "bookingDate": "2026-07-07",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-a8c4d8",
+              "transactionAmount": {
+                "amount": "-26.53",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-07-07",
+              "transactionId": "6b5fa777c07b88e851cfffc901323978",
+              "valueDate": "2026-07-07"
+            }
+          },
+          {
+            "id": "ff49ca70b0f09256581e35d3f884853c",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-286.35",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-06-26",
+            "value_date": "2026-06-26",
+            "transaction_date": "2026-06-26",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-bfc59d"
+            ],
+            "raw": {
+              "bookingDate": "2026-06-26",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-bfc59d",
+              "transactionAmount": {
+                "amount": "-286.35",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-06-26",
+              "transactionId": "ff49ca70b0f09256581e35d3f884853c",
+              "valueDate": "2026-06-26"
+            }
+          },
+          {
+            "id": "0e95039f3cce5a8f9e6952c0b84eb624",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-379.94",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-06-15",
+            "value_date": "2026-06-15",
+            "transaction_date": "2026-06-15",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-840611"
+            ],
+            "raw": {
+              "bookingDate": "2026-06-15",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-840611",
+              "transactionAmount": {
+                "amount": "-379.94",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-06-15",
+              "transactionId": "0e95039f3cce5a8f9e6952c0b84eb624",
+              "valueDate": "2026-06-15"
+            }
+          },
+          {
+            "id": "f560f503bae30a8462ef19c21747c536",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-442.24",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-06-04",
+            "value_date": "2026-06-04",
+            "transaction_date": "2026-06-04",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-962ad8"
+            ],
+            "raw": {
+              "bookingDate": "2026-06-04",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-962ad8",
+              "transactionAmount": {
+                "amount": "-442.24",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-06-04",
+              "transactionId": "f560f503bae30a8462ef19c21747c536",
+              "valueDate": "2026-06-04"
+            }
+          },
+          {
+            "id": "bf7788617c6e2d9e4a736df366134b5c",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-42.96",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-05-24",
+            "value_date": "2026-05-24",
+            "transaction_date": "2026-05-24",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-bfc59d"
+            ],
+            "raw": {
+              "bookingDate": "2026-05-24",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-bfc59d",
+              "transactionAmount": {
+                "amount": "-42.96",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-05-24",
+              "transactionId": "bf7788617c6e2d9e4a736df366134b5c",
+              "valueDate": "2026-05-24"
+            }
+          },
+          {
+            "id": "2a170cff30d0d3c964f80d89a4c286e9",
+            "status": "booked",
+            "direction": "debit",
+            "amount": {
+              "amount": "-229.15",
+              "currency": "SEK"
+            },
+            "booking_date": "2026-05-13",
+            "value_date": "2026-05-13",
+            "transaction_date": "2026-05-13",
+            "counterparty": {},
+            "remittance": [
+              "remittanceinformationunstructured-962ad8"
+            ],
+            "raw": {
+              "bookingDate": "2026-05-13",
+              "remittanceInformationUnstructured": "remittanceinformationunstructured-962ad8",
+              "transactionAmount": {
+                "amount": "-229.15",
+                "currency": "SEK"
+              },
+              "transactionDate": "2026-05-13",
+              "transactionId": "2a170cff30d0d3c964f80d89a4c286e9",
+              "valueDate": "2026-05-13"
+            }
+          }
+        ],
+        "raw": [
+          {
+            "account": {
+              "iban": "SE00PSEUDO6EF5C3C997",
+              "ownerName": "ownername-f0742e"
+            },
+            "transactions": {
+              "booked": [
+                {
+                  "bookingDate": "2026-10-14",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-7dafcb",
+                  "transactionAmount": {
+                    "amount": "-425.65",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-10-14",
+                  "transactionId": "1088cef92729f8fa8194262de8a4f9ed",
+                  "valueDate": "2026-10-14"
+                },
+                {
+                  "bookingDate": "2026-10-03",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-962ad8",
+                  "transactionAmount": {
+                    "amount": "-21.72",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-10-03",
+                  "transactionId": "3da0342b3ef33419f2e6575e6006404e",
+                  "valueDate": "2026-10-03"
+                },
+                {
+                  "bookingDate": "2026-09-22",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-5f766a",
+                  "transactionAmount": {
+                    "amount": "491.6",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-09-22",
+                  "transactionId": "29e63d71c66f08681b686553793b0319",
+                  "valueDate": "2026-09-22"
+                },
+                {
+                  "bookingDate": "2026-09-11",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-38bc77",
+                  "transactionAmount": {
+                    "amount": "-483.99",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-09-11",
+                  "transactionId": "5edd031b11db97a7ab6c028b386026f8",
+                  "valueDate": "2026-09-11"
+                },
+                {
+                  "bookingDate": "2026-08-31",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-7f6007",
+                  "transactionAmount": {
+                    "amount": "135.77",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-08-31",
+                  "transactionId": "5031dac047575a477e0666223175b3d6",
+                  "valueDate": "2026-08-31"
+                },
+                {
+                  "bookingDate": "2026-08-20",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-a8c4d8",
+                  "transactionAmount": {
+                    "amount": "-324.26",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-08-20",
+                  "transactionId": "62abd627dce928c927fd8de72a3a8c2e",
+                  "valueDate": "2026-08-20"
+                },
+                {
+                  "bookingDate": "2026-08-09",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-7dafcb",
+                  "transactionAmount": {
+                    "amount": "-373.46",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-08-09",
+                  "transactionId": "f525d8d979b35b32cdc833db36c83382",
+                  "valueDate": "2026-08-09"
+                },
+                {
+                  "bookingDate": "2026-07-29",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-78b73f",
+                  "transactionAmount": {
+                    "amount": "0.84",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-07-29",
+                  "transactionId": "5c24d083d8c986403da742a92658f513",
+                  "valueDate": "2026-07-29"
+                },
+                {
+                  "bookingDate": "2026-07-18",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-774066",
+                  "transactionAmount": {
+                    "amount": "-367.16",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-07-18",
+                  "transactionId": "d2aa631e05e8518bbdc04397639f3aea",
+                  "valueDate": "2026-07-18"
+                },
+                {
+                  "bookingDate": "2026-07-07",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-a8c4d8",
+                  "transactionAmount": {
+                    "amount": "-26.53",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-07-07",
+                  "transactionId": "6b5fa777c07b88e851cfffc901323978",
+                  "valueDate": "2026-07-07"
+                },
+                {
+                  "bookingDate": "2026-06-26",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-bfc59d",
+                  "transactionAmount": {
+                    "amount": "-286.35",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-06-26",
+                  "transactionId": "ff49ca70b0f09256581e35d3f884853c",
+                  "valueDate": "2026-06-26"
+                },
+                {
+                  "bookingDate": "2026-06-15",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-840611",
+                  "transactionAmount": {
+                    "amount": "-379.94",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-06-15",
+                  "transactionId": "0e95039f3cce5a8f9e6952c0b84eb624",
+                  "valueDate": "2026-06-15"
+                },
+                {
+                  "bookingDate": "2026-06-04",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-962ad8",
+                  "transactionAmount": {
+                    "amount": "-442.24",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-06-04",
+                  "transactionId": "f560f503bae30a8462ef19c21747c536",
+                  "valueDate": "2026-06-04"
+                },
+                {
+                  "bookingDate": "2026-05-24",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-bfc59d",
+                  "transactionAmount": {
+                    "amount": "-42.96",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-05-24",
+                  "transactionId": "bf7788617c6e2d9e4a736df366134b5c",
+                  "valueDate": "2026-05-24"
+                },
+                {
+                  "bookingDate": "2026-05-13",
+                  "remittanceInformationUnstructured": "remittanceinformationunstructured-962ad8",
+                  "transactionAmount": {
+                    "amount": "-229.15",
+                    "currency": "SEK"
+                  },
+                  "transactionDate": "2026-05-13",
+                  "transactionId": "2a170cff30d0d3c964f80d89a4c286e9",
+                  "valueDate": "2026-05-13"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts/AsdF01234EfgH4567/balances",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a2732e",
+      "Consent-Id": "6bca44b7-45ab-4f9f-b956-c4bf5c30f397",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4984",
+      "X-Rate-Limit-Reset": "710",
+      "X-Request-Id": "2b2889dc-8e14-426f-9f73-a6d7498063c3"
+    },
+    "body": {
+      "account": {
+        "iban": "SE00PSEUDO6EF5C3C997"
+      },
+      "balances": [
+        {
+          "balanceAmount": {
+            "amount": "100.00",
+            "currency": "SEK"
+          },
+          "balanceType": "interimBooked",
+          "referenceDate": "2020-07-07"
+        },
+        {
+          "balanceAmount": {
+            "amount": "1000.00",
+            "currency": "SEK"
+          },
+          "balanceType": "interimAvailable",
+          "referenceDate": "2020-07-07"
+        }
+      ]
+    }
+  }
+}

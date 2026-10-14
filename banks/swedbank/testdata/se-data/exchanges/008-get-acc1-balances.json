@@ -1,0 +1,44 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts/acc1/balances",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Consent-Id": "C-D"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "balances": [
+        {
+          "balanceAmount": {
+            "amount": "500.00",
+            "currency": "SEK"
+          },
+          "balanceType": "interimBooked",
+          "referenceDate": "2026-10-11"
+        },
+        {
+          "balanceAmount": {
+            "amount": "650.00",
+            "currency": "SEK"
+          },
+          "balanceType": "interimAvailable"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/accounts/acc1/transactions",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "bookingStatus": [
+        "both"
+      ],
+      "dateFrom": [
+        "2026-09-11"
+      ],
+      "dateTo": [
+        "2026-10-11"
+      ],
+      "pageSize": [
+        "500"
+      ],
+      "withBalance": [
+        "false"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f3fec",
+      "Consent-Id": "C-D"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "nextPage": {
+          "href": "/acc1/transactions?pageId=P2"
+        }
+      },
+      "transactions": {
+        "booked": [
+          {
+            "bookingDate": "2026-10-01",
+            "creditorAccount": {
+              "iban": "SE00PSEUDO41058F2437"
+            },
+            "creditorName": "creditorname-716a5f",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-b39dc3",
+            "transactionAmount": {
+              "amount": "-425.65",
+              "currency": "SEK"
+            },
+            "transactionId": "t1"
+          },
+          {
+            "bookingDate": "2026-10-02",
+            "debtorName": "debtorname-e9403c",
+            "transactionAmount": {
+              "amount": "1000.00",
+              "currency": "SEK"
+            },
+            "transactionId": "t2"
+          }
+        ],
+        "pending": [
+          {
+            "transactionAmount": {
+              "amount": "-5.00",
+              "currency": "SEK"
+            },
+            "transactionDate": "2026-10-03"
+          }
+        ]
+      }
+    }
+  }
+}

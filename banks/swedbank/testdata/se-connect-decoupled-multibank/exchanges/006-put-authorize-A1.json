@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/psd2/v5/authorize-decoupled/authorize/A1",
+    "query": {
+      "apiKey": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ],
+      "client_id": [
+        "REDACTED:client_id"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "psuData": {
+        "bankID": "08999"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authorizationCode": "REDACTED:authorizationcode:d1370d",
+      "scaStatus": "started"
+    }
+  }
+}

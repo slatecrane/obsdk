@@ -1,0 +1,44 @@
+{
+  "config": {
+    "bank": "revolut",
+    "country": "GB",
+    "env": "sandbox",
+    "now": "2026-10-14T12:23:37Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "8a996ce1-0566-404a-9209-61c36f355ace",
+        "28fcecfa-d86f-49d2-94ec-a151bb74aaa3",
+        "79652738-ede1-4e13-926c-400095624ea5"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "9916b2c0-07f1-4b46-bf51-c1255426ef7f",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "9916b2c0-07f1-4b46-bf51-c1255426ef7f",
+      "from": "2020-01-01T00:00:00Z",
+      "to": "2026-10-14T12:23:37Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "refresh"
+    }
+  ]
+}

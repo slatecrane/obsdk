@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v5/available-authentication-methods",
+    "query": {
+      "apiKey": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Tpp-Redirect-Preferred": "false"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authenticationMethods": [
+        {
+          "authenticationMethodId": "MOBILE_ID",
+          "authenticationType": "Mobile BankID"
+        }
+      ]
+    }
+  }
+}

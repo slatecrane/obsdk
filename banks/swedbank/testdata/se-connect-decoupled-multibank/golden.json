@@ -1,0 +1,125 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Login via TPP",
+      "challenge": {
+        "auto_start_token": "tok-1"
+      },
+      "wait_for": 2000000000
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Login via TPP",
+      "challenge": {
+        "auto_start_token": "tok-1"
+      },
+      "wait_for": 2000000000
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "You have accounts in several banks. Which one do you want to connect?",
+      "fields": [
+        {
+          "key": "bank_id",
+          "label": "Bank",
+          "kind": "select",
+          "required": true,
+          "options": [
+            {
+              "value": "08999",
+              "label": "name-7733da"
+            },
+            {
+              "value": "08114",
+              "label": "name-4dfd6e"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-11T12:00:00Z",
+        "access_token": "REDACTED:access_token:9ce17b",
+        "refresh_token": "REDACTED:refresh_token:a97d26",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-11T13:00:00Z",
+        "consents": {
+          "allAccounts": {
+            "id": "C-ALL",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-12T23:59:59Z"
+          },
+          "detailed": {
+            "id": "C-D",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-09T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO981D1AAD50"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "accounts": [
+        {
+          "id": "acc1",
+          "stable_id": "ef666f0949de709c297c2b92248dea60",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE00PSEUDO981D1AAD50"
+            }
+          ],
+          "name": "name-49e763",
+          "owner_name": "ownername-e72759",
+          "currency": "SEK",
+          "product": "CURRENT",
+          "type": "CACC",
+          "raw": {
+            "cashAccountType": "CACC",
+            "currency": "SEK",
+            "iban": "SE00PSEUDO981D1AAD50",
+            "name": "name-49e763",
+            "ownerName": "ownername-e72759",
+            "product": "CURRENT",
+            "resourceId": "acc1"
+          }
+        }
+      ]
+    }
+  }
+]

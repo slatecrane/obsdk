@@ -1,0 +1,49 @@
+{
+  "description": "Transactions older than 90 days: statement export, a 428 wait, ZIP download.",
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-11T12:00:00Z",
+    "redirect_url": "https://app.example/cb",
+    "ids": {
+      "request": [
+        "request-1",
+        "request-2",
+        "request-3",
+        "request-4",
+        "request-5",
+        "request-6",
+        "request-7",
+        "request-8",
+        "request-9",
+        "request-10",
+        "request-11"
+      ],
+      "state": [
+        "state-1"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "test-agent"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/cb?access_code=REDACTED%3Aaccess_code%3A37a91f\u0026state=state-1"
+    },
+    {
+      "op": "transactions",
+      "account": "acc1",
+      "from": "2026-03-25T12:00:00Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "test-agent"
+    },
+    {
+      "op": "resume"
+    }
+  ]
+}

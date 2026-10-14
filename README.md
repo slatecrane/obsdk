@@ -4,17 +4,16 @@ A stateless Go client library for European open banking APIs (AISP first, PISP l
 One small interface over Berlin Group, STET, UK, Polish API and bank-specific variants,
 so applications don't write per-bank code.
 
-> **Status: early.** The core and a Swedbank integration exist. Swedbank was written from its
-> published specs; its Swedish sandbox flow (decoupled login, consents, accounts, balances,
-> transactions) has been run against the real sandbox. Redirect login, the Baltics, extended history
-> and production are still unverified. See [docs/swedbank.md](docs/swedbank.md).
+> **Status: early.** Integrations are written from the banks' published specs and checked against
+> their sandboxes; production is unverified everywhere. See [docs/banks.md](docs/banks.md) for the
+> banks covered and how far each is verified.
 
 ## Usage
 
 ```go
 import (
-    obsdk "github.com/ob-sdk/ob-sdk"
-    _ "github.com/ob-sdk/ob-sdk/banks/all" // or import only the banks you need
+    obsdk "github.com/slatecrane/obsdk"
+    _ "github.com/slatecrane/obsdk/banks/all" // or import only the banks you need
 )
 
 c, err := obsdk.New(obsdk.Target{Bank: "swedbank", Country: "SE"}, obsdk.Config{
@@ -70,18 +69,43 @@ A runnable version is in [examples/swedbank](examples/swedbank/main.go).
 | `examples/` | runnable references |
 | `docs/` | bank notes and design decisions |
 
-## Adding a bank
+## New integrations
+
+Missing a bank? There are two ways to get it added.
+
+### Build it yourself (preferred)
+
+Pull requests with new integrations are the fastest route and very welcome.
 
 1. Create `banks/<bank>` and register an `obsdk.Integration` in `init` with an honest `Info`
    (variants with maturity, capabilities, requirements, limits, quirk notes).
 2. Implement `obsdk.Client`. Prefer small per-bank code on top of shared helpers over copying another bank.
 3. Add unit tests for pure functions and recorded scenarios for every flow (see [docs/testing.md](docs/testing.md)).
 4. Write a `docs/<bank>.md` listing what you verified and what you assumed.
+5. Open a pull request.
 
 Registration is strict: two integrations may not serve the same bank, country, segment and environment.
 
 The full walkthrough (portal setup, the `obdev` loop against a sandbox, recording, common sandbox
-errors) is in [docs/new-integration.md](docs/new-integration.md).
+errors) is in [docs/new-integration.md](docs/new-integration.md). If you get stuck, open a draft PR or
+an issue and ask.
+
+### Request one
+
+[Open an issue](https://github.com/slatecrane/obsdk/issues/new) with:
+
+- the bank name and the countries you need;
+- a link to the bank's open banking developer portal or API documentation;
+- anything else that helps: the standard it follows (Berlin Group, STET, UK, Polish API, …), whether
+  it has a public sandbox, the services you need (accounts, balances, transactions, payments), and
+  any quirks you already know about.
+
+### Help us test in production
+
+Integrations are developed against sandboxes, so production behavior is often unverified (each
+bank's `docs/<bank>.md` says what has been checked). If you have production access to a bank we
+support (a QWAC/QSealC and a registration with the bank), we'd love your help confirming it works,
+and we're happy to support you in setting things up: open an issue and we'll work through it together.
 
 ## Testing
 

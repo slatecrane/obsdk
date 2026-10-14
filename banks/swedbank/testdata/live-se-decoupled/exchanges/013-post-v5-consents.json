@@ -1,0 +1,118 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/consents",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a2732e",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Redirect-Preferred": "false",
+      "Tpp-Redirect-Uri": "http://localhost/cb"
+    },
+    "body": {
+      "access": {
+        "accounts": [
+          {
+            "iban": "SE00PSEUDO6EF5C3C997"
+          },
+          {
+            "iban": "SE00PSEUDO00594ABE85"
+          },
+          {
+            "iban": "SE00PSEUDO1F90CE71A4"
+          },
+          {
+            "iban": "SE00PSEUDOD0C453C35A"
+          },
+          {
+            "iban": "SE00PSEUDO2409E38E98"
+          }
+        ],
+        "balances": [
+          {
+            "iban": "SE00PSEUDO6EF5C3C997"
+          },
+          {
+            "iban": "SE00PSEUDO00594ABE85"
+          },
+          {
+            "iban": "SE00PSEUDO1F90CE71A4"
+          },
+          {
+            "iban": "SE00PSEUDOD0C453C35A"
+          },
+          {
+            "iban": "SE00PSEUDO2409E38E98"
+          }
+        ],
+        "transactions": [
+          {
+            "iban": "SE00PSEUDO6EF5C3C997"
+          },
+          {
+            "iban": "SE00PSEUDO00594ABE85"
+          },
+          {
+            "iban": "SE00PSEUDO1F90CE71A4"
+          },
+          {
+            "iban": "SE00PSEUDOD0C453C35A"
+          },
+          {
+            "iban": "SE00PSEUDO2409E38E98"
+          }
+        ]
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 4,
+      "recurringIndicator": true,
+      "validUntil": "2027-01-11"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "DECOUPLED",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4984",
+      "X-Rate-Limit-Reset": "727",
+      "X-Request-Id": "f69886f2-0ae4-4dc0-92f3-e9d5efe687a2"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/consents/6bca44b7-45ab-4f9f-b956-c4bf5c30f397/authorisations/2550d681-9a56-4e28-b3a6-6d94d1fc4a65"
+        },
+        "startAuthorisationWithAuthenticationMethodSelection": {
+          "href": "/sandbox/v5/consents/6bca44b7-45ab-4f9f-b956-c4bf5c30f397/authorisations/2550d681-9a56-4e28-b3a6-6d94d1fc4a65"
+        },
+        "status": {
+          "href": "/sandbox/v5/consents/6bca44b7-45ab-4f9f-b956-c4bf5c30f397/status"
+        }
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "consentId": "6bca44b7-45ab-4f9f-b956-c4bf5c30f397",
+      "consentStatus": "received",
+      "scaMethods": [
+        {
+          "authenticationMethodId": "MOBILE_ID",
+          "authenticationType": "Mobile BankID"
+        }
+      ]
+    }
+  }
+}

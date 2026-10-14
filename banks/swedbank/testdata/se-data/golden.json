@@ -1,0 +1,240 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to log in, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://bank.example/login?session=REDACTED%3Asession%3A0ca71c"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-11T12:00:00Z",
+        "access_token": "REDACTED:access_token:9ce17b",
+        "refresh_token": "REDACTED:refresh_token:a97d26",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-11T13:00:00Z",
+        "consents": {
+          "allAccounts": {
+            "id": "C-ALL",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-12T23:59:59Z"
+          },
+          "detailed": {
+            "id": "C-D",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-09T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO981D1AAD50"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "accounts": [
+        {
+          "id": "acc1",
+          "stable_id": "ef666f0949de709c297c2b92248dea60",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE00PSEUDO981D1AAD50"
+            }
+          ],
+          "name": "name-49e763",
+          "owner_name": "ownername-e72759",
+          "currency": "SEK",
+          "product": "CURRENT",
+          "type": "CACC",
+          "raw": {
+            "cashAccountType": "CACC",
+            "currency": "SEK",
+            "iban": "SE00PSEUDO981D1AAD50",
+            "name": "name-49e763",
+            "ownerName": "ownername-e72759",
+            "product": "CURRENT",
+            "resourceId": "acc1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "acc1",
+        "stable_id": "ef666f0949de709c297c2b92248dea60",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "SE00PSEUDO981D1AAD50"
+          }
+        ],
+        "name": "name-49e763",
+        "owner_name": "ownername-e72759",
+        "currency": "SEK",
+        "product": "CURRENT",
+        "type": "CACC",
+        "raw": {
+          "cashAccountType": "CACC",
+          "currency": "SEK",
+          "iban": "SE00PSEUDO981D1AAD50",
+          "name": "name-49e763",
+          "ownerName": "ownername-e72759",
+          "product": "CURRENT",
+          "resourceId": "acc1"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "interimBooked",
+        "amount": {
+          "amount": "500.00",
+          "currency": "SEK"
+        },
+        "reference_date": "2026-10-11"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "interimAvailable",
+        "amount": {
+          "amount": "650.00",
+          "currency": "SEK"
+        }
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "t1",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-425.65",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-01",
+          "counterparty": {
+            "name": "creditorname-716a5f",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "SE00PSEUDO41058F2437"
+              }
+            ]
+          },
+          "remittance": [
+            "remittanceinformationunstructured-b39dc3"
+          ],
+          "raw": {
+            "bookingDate": "2026-10-01",
+            "creditorAccount": {
+              "iban": "SE00PSEUDO41058F2437"
+            },
+            "creditorName": "creditorname-716a5f",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-b39dc3",
+            "transactionAmount": {
+              "amount": "-425.65",
+              "currency": "SEK"
+            },
+            "transactionId": "t1"
+          }
+        },
+        {
+          "id": "t2",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1000.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-02",
+          "counterparty": {
+            "name": "debtorname-e9403c"
+          },
+          "raw": {
+            "bookingDate": "2026-10-02",
+            "debtorName": "debtorname-e9403c",
+            "transactionAmount": {
+              "amount": "1000.00",
+              "currency": "SEK"
+            },
+            "transactionId": "t2"
+          }
+        },
+        {
+          "status": "pending",
+          "direction": "debit",
+          "amount": {
+            "amount": "-5.00",
+            "currency": "SEK"
+          },
+          "transaction_date": "2026-10-03",
+          "counterparty": {},
+          "raw": {
+            "transactionAmount": {
+              "amount": "-5.00",
+              "currency": "SEK"
+            },
+            "transactionDate": "2026-10-03"
+          }
+        }
+      ],
+      "next_cursor": "P2"
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "t3",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "0.10",
+            "currency": "SEK"
+          },
+          "counterparty": {},
+          "raw": {
+            "transactionAmount": {
+              "amount": "0.10",
+              "currency": "SEK"
+            },
+            "transactionId": "t3"
+          }
+        }
+      ]
+    }
+  }
+]
