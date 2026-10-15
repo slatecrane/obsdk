@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers/P3/cancellation-authorisations/CA1",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "scaStatus": "finalised"
+    }
+  }
+}

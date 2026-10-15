@@ -3,14 +3,12 @@ package swedbank
 import (
 	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"net/http"
 	"net/url"
 	"time"
 
 	obsdk "github.com/slatecrane/obsdk"
-	"github.com/slatecrane/obsdk/internal/callback"
 )
 
 // callAuthed performs a request authenticated with the flow's access token,
@@ -88,7 +86,7 @@ func (c *client) startConsent(ctx context.Context, f *flow, kind string, account
 		"TPP-Redirect-Preferred": fmt.Sprint(f.Method == methodRedirect),
 		"TPP-Redirect-URI":       f.RedirectURL,
 	}
-	r, err := c.callAuthed(ctx, f.Session, req{op: opConsent, method: http.MethodPost, path: c.aisBase() + "/consents", body: body, header: hdr}, &f.PSU)
+	r, err := c.callAuthed(ctx, f.Session, req{op: opConsent, method: http.MethodPost, path: c.apiBase() + "/consents", body: body, header: hdr}, &f.PSU)
 	if err != nil {
 		return nil, false, err
 	}
@@ -101,22 +99,22 @@ func (c *client) startConsent(ctx context.Context, f *flow, kind string, account
 	}
 	cf := &consentFlow{
 		Kind: kind, ID: cc.ID, Approach: r.header.Get("ASPSP-SCA-Approach"), Accounts: accounts,
-		RedirectURL: cc.Links["scaRedirect"].Href, ScaPath: cc.Links["scaStatus"].Href, StatusPath: cc.Links["status"].Href,
-		SelectPath: cc.Links["startAuthorisationWithAuthenticationMethodSelection"].Href,
+		StatusPath: cc.Links["status"].Href,
 	}
 	if kind != kindOver90 {
 		cf.ValidUntil = day(validUntil)
-	}
-	if cc.Chosen != nil {
-		cf.ChosenMethod = cc.Chosen.ID
 	}
 	f.Consent = cf
 	switch cc.Status {
 	case "valid":
 		return c.consentValid(f)
 	case "received":
-		f.Phase = phConsentSCA
-		return nil, true, nil
+		sca := &scaFlow{Purpose: consentPurpose(kind), Subject: "consent " + kind, Op: opConsent, After: phConsentCheck}
+		sca.scaLinks(cc.Links)
+		if cc.Chosen != nil {
+			sca.ChosenMethod = cc.Chosen.ID
+		}
+		return startSCA(f, sca)
 	}
 	return nil, false, authFailed("consent %s was not accepted (status %s)", kind, cc.Status)
 }
@@ -168,85 +166,6 @@ func (c *client) detailedStart(ctx context.Context, f *flow) (*obsdk.Step, bool,
 	return c.startConsent(ctx, f, kindDetailed, ids)
 }
 
-func (c *client) consentSCA(ctx context.Context, f *flow) (*obsdk.Step, bool, error) {
-	cf := f.Consent
-	switch {
-	case cf.RedirectURL != "":
-		f.AuthURL, f.Phase = cf.RedirectURL, phConsentRedir
-		return redirectStep(f, consentPurpose(f.Consent.Kind)), false, nil
-	case cf.SelectPath != "":
-		method := f.Values["auth_method"]
-		if method == "" {
-			method = cf.ChosenMethod
-		}
-		var missing []obsdk.Field
-		for _, fl := range c.methodFields(method) {
-			if fl.Required && f.Values[fl.Key] == "" {
-				missing = append(missing, fl)
-			}
-		}
-		if len(missing) > 0 {
-			return &obsdk.Step{Kind: obsdk.StepInputRequired, NeedsUser: true, Message: "The bank needs these details to ask for your approval.", Fields: missing}, false, nil
-		}
-		body := map[string]any{"authenticationMethodId": method}
-		if d := psuData(f.Values); len(d) > 0 {
-			body["psuData"] = d
-		}
-		hdr := map[string]string{}
-		if f.Values["qr_code"] == "true" {
-			hdr["Qr-Code-Required"] = "true"
-		}
-		r, err := c.callAuthed(ctx, f.Session, req{op: opConsent, method: http.MethodPut, path: cf.SelectPath, body: body, header: hdr}, &f.PSU)
-		if err != nil {
-			return nil, false, err
-		}
-		if r.status != http.StatusOK && r.status != http.StatusCreated {
-			return nil, false, c.apiErr(opConsent, r)
-		}
-		var b struct {
-			Links      map[string]link `json:"_links"`
-			Challenge  *challengeData  `json:"challengeData"`
-			PSUMessage string          `json:"psuMessage"`
-		}
-		_ = json.Unmarshal(r.body, &b)
-		if l := b.Links["scaStatus"].Href; l != "" {
-			cf.ScaPath = l
-		}
-		f.Challenge, f.Message = c.challenge(b.Challenge, ""), b.PSUMessage
-		f.Phase = phConsentPoll
-		return waitStep(f, true, pollInterval), false, nil
-	case cf.ScaPath != "":
-		f.Phase = phConsentPoll
-		return nil, true, nil
-	}
-	return nil, false, fmt.Errorf("swedbank: consent %s needs approval but the bank gave no way to give it", cf.Kind)
-}
-
-func (c *client) consentPoll(ctx context.Context, f *flow) (*obsdk.Step, bool, error) {
-	if f.Consent.ScaPath == "" {
-		return nil, false, fmt.Errorf("swedbank: the bank gave no status link for the approval of consent %s", f.Consent.Kind)
-	}
-	r, err := c.callAuthed(ctx, f.Session, req{op: opConsent, method: http.MethodGet, path: f.Consent.ScaPath}, &f.PSU)
-	if err != nil {
-		return nil, false, err
-	}
-	if r.status != http.StatusOK {
-		return nil, false, c.apiErr(opConsent, r)
-	}
-	var b struct {
-		Status string `json:"scaStatus"`
-	}
-	_ = json.Unmarshal(r.body, &b)
-	switch b.Status {
-	case "finalised":
-		f.Phase = phConsentCheck
-		return nil, true, nil
-	case "failed":
-		return nil, false, authFailed("approval of consent %s failed: %s", f.Consent.Kind, tppSummary(parseTPP(r.body)))
-	}
-	return waitStep(f, true, pollInterval), false, nil
-}
-
 // consentPurpose says what the user approves, for redirect step messages.
 func consentPurpose(kind string) string {
 	if kind == kindOver90 {
@@ -255,31 +174,11 @@ func consentPurpose(kind string) string {
 	return "approve access to account data"
 }
 
-func (c *client) consentRedirect(f *flow, in obsdk.StepInput) (*obsdk.Step, bool, error) {
-	if in.Callback == "" && !f.CallbackSeen {
-		return redirectStep(f, consentPurpose(f.Consent.Kind)), false, nil
-	}
-	if in.Callback != "" {
-		// Swedbank returns the user from an approval without any parameters
-		// (seen in the SE sandbox); the status check below decides.
-		p, err := callback.Parse(in.Callback)
-		if err != nil && !errors.Is(err, callback.ErrNoParams) {
-			return nil, false, fmt.Errorf("%w: %v", obsdk.ErrInvalidRequest, err)
-		}
-		if code, desc, failed := p.Error(); failed {
-			return nil, false, authFailed("consent approval was not completed (%s: %s)", code, desc)
-		}
-		f.CallbackSeen = true
-	}
-	f.Phase = phConsentCheck
-	return nil, true, nil
-}
-
 func (c *client) consentCheck(ctx context.Context, f *flow) (*obsdk.Step, bool, error) {
 	cf := f.Consent
 	path := cf.StatusPath
 	if path == "" {
-		path = c.aisBase() + "/consents/" + url.PathEscape(cf.ID) + "/status"
+		path = c.apiBase() + "/consents/" + url.PathEscape(cf.ID) + "/status"
 	}
 	r, err := c.callAuthed(ctx, f.Session, req{op: opConsent, method: http.MethodGet, path: path}, &f.PSU)
 	if err != nil {
@@ -327,7 +226,7 @@ func (c *client) Disconnect(ctx context.Context, s *obsdk.Session) (*obsdk.Disco
 	ns := s.Clone()
 	res := &obsdk.DisconnectResult{Session: ns, Failed: map[string]string{}}
 	for kind, con := range s.Consents {
-		r, err := c.callAuthed(ctx, ns, req{op: opConsent, method: http.MethodDelete, path: c.aisBase() + "/consents/" + url.PathEscape(con.ID)}, nil)
+		r, err := c.callAuthed(ctx, ns, req{op: opConsent, method: http.MethodDelete, path: c.apiBase() + "/consents/" + url.PathEscape(con.ID)}, nil)
 		switch {
 		case err != nil:
 			res.Failed[kind] = err.Error()

@@ -1,0 +1,139 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T11:00:00Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T13:00:00Z",
+        "consents": {
+          "detailed": {
+            "id": "C-D",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-11T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect"
+        }
+      },
+      "payment": {
+        "id": "P3",
+        "type": "domestic",
+        "status": "in_progress",
+        "bank_status": "PDNG",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljIiwiaWQiOiJQMyIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AzL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AzIn0"
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the cancellation, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://bank.example/sca/c1"
+      },
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T11:00:00Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T13:00:00Z",
+        "consents": {
+          "detailed": {
+            "id": "C-D",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-11T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect"
+        }
+      },
+      "payment": {
+        "id": "P3",
+        "type": "domestic",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljIiwiaWQiOiJQMyIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AzL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AzIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T11:00:00Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T13:00:00Z",
+        "consents": {
+          "detailed": {
+            "id": "C-D",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-11T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect"
+        }
+      },
+      "payment": {
+        "id": "P3",
+        "type": "domestic",
+        "status": "cancelled",
+        "bank_status": "CANC",
+        "final": true,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljIiwiaWQiOiJQMyIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AzL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AzIn0"
+      }
+    }
+  }
+]

@@ -11,8 +11,8 @@ type Client interface {
 	// the bank requires. It returns the first Step; drive the rest with Resume.
 	Connect(ctx context.Context, req ConnectRequest) (*Step, error)
 
-	// Resume continues any resumable operation (Connect, or a transaction
-	// export that needed approval) from Step.State.
+	// Resume continues any resumable operation (Connect, a payment, or a
+	// transaction export that needed approval) from Step.State.
 	//
 	// Connect and Resume save the session on every Step that has one; when they
 	// fail after the bank issued a session, the error is a *FlowError carrying it.
@@ -35,6 +35,21 @@ type Client interface {
 	// Disconnect ends the bank-side consents where the bank allows it. The
 	// returned session is updated; failures to close are reported, not fatal.
 	Disconnect(ctx context.Context, s *Session) (*DisconnectResult, error)
+
+	// InitiatePayment validates the request against the bank's PaymentSpec,
+	// creates the payment and returns the first Step (login and/or the user's
+	// approval). StepDone carries Step.Payment; drive the rest with Resume.
+	// Once the bank has created the payment, every Step carries it, so its id
+	// can be recorded even if the user abandons the approval.
+	InitiatePayment(ctx context.Context, req PaymentRequest) (*Step, error)
+
+	// PaymentStatus reads a payment's current status from Payment.Ref.
+	PaymentStatus(ctx context.Context, ref string, opts PaymentCallOptions) (*Result[Payment], error)
+
+	// CancelPayment cancels a payment that has not been executed yet (usually
+	// a future-dated one). The bank may want the user's approval, so it
+	// returns a Step; StepDone carries the updated Payment.
+	CancelPayment(ctx context.Context, ref string, opts PaymentCallOptions) (*Step, error)
 }
 
 // ConnectRequest starts authorization.

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers/8f97a4fe-d91f-452e-8958-3ed753fc7f21/status",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:fd0036",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4983",
+      "X-Rate-Limit-Reset": "3282",
+      "X-Request-Id": "ceb7a1cf-bbb6-4124-86a2-6d5eeba66e4f"
+    },
+    "body": {
+      "transactionStatus": "ACSC"
+    }
+  }
+}

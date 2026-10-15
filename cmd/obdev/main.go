@@ -62,6 +62,11 @@ commands:
   refresh
   disconnect
   auth-methods
+  payment-spec [TYPE]              show the payment types offered here, or one type's field rules
+  pay -type T -amount A -currency C -to ACCOUNT -name NAME [flags]
+                                   initiate a payment and drive its approval (see obdev pay -h)
+  payment-status REF               read a payment's status (REF from pay's output)
+  cancel-payment REF
   replay DIR                       run a recorded scenario offline and print the outcomes
   list                             show registered integrations
   jwks                             print a JWKS for the signing key (OBSDK_SEAL_CERT or OBSDK_TLS_CERT, OBSDK_SEAL_KID)
@@ -269,6 +274,59 @@ func dispatch(ctx context.Context, l *obsdktest.Live, c obsdk.Client, s *obsdk.S
 		}
 		keep(r.Session)
 		return printJSON(map[string]any{"closed": r.Closed, "failed": r.Failed})
+	case "payment-spec":
+		info := c.Info()
+		if len(args) < 2 {
+			return printJSON(info.PaymentTypes(l.Target.Country, l.Target.Segment))
+		}
+		spec, ok := info.PaymentSpec(l.Target.Country, l.Target.Segment, obsdk.PaymentType(args[1]))
+		if !ok {
+			return fmt.Errorf("%w: no %s payments here", obsdk.ErrUnsupported, args[1])
+		}
+		return printJSON(spec)
+	case "pay":
+		r, useSession, err := paymentFlags(args[1:])
+		if err != nil {
+			return err
+		}
+		r.PSU = l.PSU
+		if useSession {
+			if err := needSession(); err != nil {
+				return err
+			}
+			r.Session = s
+		}
+		step, err := c.InitiatePayment(ctx, r)
+		if err != nil {
+			return err
+		}
+		done, err := drive(ctx, c, step, keep)
+		if err != nil {
+			return err
+		}
+		return printJSON(done.Payment)
+	case "payment-status", "cancel-payment":
+		if len(args) < 2 {
+			return fmt.Errorf("usage: obdev %s REF", args[0])
+		}
+		po := obsdk.PaymentCallOptions{Session: s, PSU: opts.PSU}
+		if args[0] == "payment-status" {
+			res, err := c.PaymentStatus(ctx, args[1], po)
+			if err != nil {
+				return err
+			}
+			keep(res.Session)
+			return printJSON(res.Data)
+		}
+		step, err := c.CancelPayment(ctx, args[1], po)
+		if err != nil {
+			return err
+		}
+		done, err := drive(ctx, c, step, keep)
+		if err != nil {
+			return err
+		}
+		return printJSON(done.Payment)
 	case "auth-methods":
 		lister, ok := c.(obsdk.AuthMethodLister)
 		if !ok {
@@ -281,6 +339,70 @@ func dispatch(ctx context.Context, l *obsdktest.Live, c obsdk.Client, s *obsdk.S
 		return printJSON(ms)
 	}
 	return fmt.Errorf("unknown command %q\n%s", args[0], usage)
+}
+
+// paymentFlags builds a single-transfer PaymentRequest from command-line flags.
+func paymentFlags(args []string) (obsdk.PaymentRequest, bool, error) {
+	fs := flag.NewFlagSet("pay", flag.ExitOnError)
+	typ := fs.String("type", "", "payment type: sepa, sepa_instant, domestic, domestic_giro, crossborder, internal")
+	amount := fs.String("amount", "", "amount, e.g. 1.00")
+	currency := fs.String("currency", "", "ISO 4217 currency")
+	to := fs.String("to", "", "payee account")
+	scheme := fs.String("scheme", "", "payee account scheme (IBAN, BBAN, SORT_CODE_ACCOUNT, BANKGIRO, PLUSGIRO); default: IBAN if it starts with two letters, else BBAN")
+	name := fs.String("name", "", "payee name")
+	msg := fs.String("message", "", "remittance line / payment reference")
+	ref := fs.String("ref", "", "structured reference, as SCHEME:VALUE (e.g. OCR:1234567890 or RF:RF18539007547034)")
+	from := fs.String("from", "", "debtor account (IBAN if it starts with two letters, else BBAN)")
+	date := fs.String("date", "", "execution date YYYY-MM-DD")
+	e2e := fs.String("e2e", "", "end-to-end id")
+	bic := fs.String("bic", "", "payee bank BIC")
+	street := fs.String("street", "", "payee street")
+	town := fs.String("town", "", "payee town")
+	postcode := fs.String("postcode", "", "payee post code")
+	country := fs.String("country", "", "payee country")
+	charge := fs.String("charge", "", "charge bearer: DEBT, CRED, SHAR, SLEV")
+	pctx := fs.String("context", "", "payment context, e.g. party_to_party")
+	method := fs.String("method", "", "approval method: redirect or decoupled")
+	withSession := fs.Bool("session", false, "reuse the saved session's login")
+	_ = fs.Parse(args)
+	if *typ == "" || *amount == "" || *currency == "" || *to == "" {
+		fs.Usage()
+		return obsdk.PaymentRequest{}, false, fmt.Errorf("-type, -amount, -currency and -to are required")
+	}
+	ident := func(v, sc string) obsdk.Identifier {
+		if sc == "" {
+			sc = obsdk.SchemeBBAN
+			if len(v) > 2 && v[0] >= 'A' && v[0] <= 'Z' && v[1] >= 'A' && v[1] <= 'Z' {
+				sc = obsdk.SchemeIBAN
+			}
+		}
+		return obsdk.Identifier{Scheme: sc, Value: v}
+	}
+	t := obsdk.Transfer{Amount: obsdk.Money{Amount: obsdk.Decimal(*amount), Currency: *currency},
+		Creditor: obsdk.Creditor{Name: *name, Account: ident(*to, *scheme)}, EndToEndID: *e2e}
+	if *msg != "" {
+		t.Remittance = []string{*msg}
+	}
+	if *ref != "" {
+		sc, v, ok := strings.Cut(*ref, ":")
+		if !ok {
+			return obsdk.PaymentRequest{}, false, fmt.Errorf("-ref wants SCHEME:VALUE")
+		}
+		t.Reference = &obsdk.Reference{Scheme: sc, Value: v}
+	}
+	if *bic != "" {
+		t.Creditor.Agent = &obsdk.Agent{BIC: *bic}
+	}
+	if *street+*town+*postcode+*country != "" {
+		t.Creditor.Address = &obsdk.PostalAddress{Street: *street, Town: *town, PostCode: *postcode, Country: *country}
+	}
+	r := obsdk.PaymentRequest{Type: obsdk.PaymentType(*typ), Method: *method, Transfers: []obsdk.Transfer{t},
+		ExecutionDate: *date, ChargeBearer: *charge, Context: *pctx}
+	if *from != "" {
+		id := ident(*from, "")
+		r.Debtor = &obsdk.PaymentDebtor{Account: &id}
+	}
+	return r, *withSession, nil
 }
 
 func orUsage(err error, u string) error {
@@ -314,8 +436,13 @@ func drive(ctx context.Context, c obsdk.Client, step *obsdk.Step, keep func(*obs
 		line, err := in.ReadString('\n')
 		return strings.TrimSpace(line), err
 	}
+	seenPayment := false
 	for i := 0; i < 100; i++ {
 		keep(step.Session)
+		if p := step.Payment; p != nil && !seenPayment && step.Kind != obsdk.StepDone {
+			seenPayment = true
+			fmt.Fprintf(os.Stderr, "payment created at the bank: id %s, status %s\nref: %s\n", p.ID, p.Status, p.Ref)
+		}
 		if step.Message != "" {
 			fmt.Fprintln(os.Stderr, step.Message)
 		}
@@ -373,6 +500,9 @@ func drive(ctx context.Context, c obsdk.Client, step *obsdk.Step, keep func(*obs
 			if errors.As(err, &fe) {
 				keep(fe.Session)
 				fmt.Fprintln(os.Stderr, "the flow failed after login; the session was saved")
+				if fe.Payment != nil {
+					fmt.Fprintf(os.Stderr, "payment %s exists at the bank (status %s), ref: %s\n", fe.Payment.ID, fe.Payment.Status, fe.Payment.Ref)
+				}
 			}
 			return nil, err
 		}

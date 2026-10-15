@@ -85,9 +85,56 @@ Added 2026-10-14:
   (`account`, `transactions.booked`). Asked from 2026-05-01, it returned 15 transactions, 2026-05-13 to
   2026-10-14, with no pagination.
 
+## Payments
+
+Berlin Group style, under the same base path as AIS: `POST {base}/payments/{product}` with the user's
+token. The SDK logs the user in first, the same redirect or decoupled login as Connect, unless
+`PaymentRequest.Session` carries a usable token. An expired token is refreshed. The
+`payment-initiation` swagger for v5 has **not** been read. Products and fields come from Swedbank's
+v3/v4 API as used by public clients, corrected by sandbox runs.
+
+| SDK type | Countries | Product |
+|---|---|---|
+| `domestic`, `domestic_giro` | SE | `se-domestic-credit-transfers` (Bankgiro / Plusgiro as `bban: "BG 5051-6905"` / `"PG ..."`, OCR as `remittanceInformationStructured{reference, referenceType: OCR}`) |
+| `crossborder` | SE | `se-international-credit-transfers` (`chargeBearer` OUR/SHA, `priority` NORMAL, debtor account required) |
+| `sepa`, `sepa_instant`, `crossborder` | EE, LV, LT | `sepa-credit-transfers`, `instant-sepa-credit-transfers`, `cross-border-credit-transfers` |
+
+Flow:
+
+1. Login (skipped with a reusable session).
+2. If the user approves in the app and gave no debtor account, the SDK asks for one with an input
+   step. With a data consent the step is a list of the user's accounts.
+3. `POST` payment, then the approval the `_links` offer:
+   - `scaRedirect`; or
+   - `startAuthorisation`, then select the method; or
+   - `startAuthorisationWithAuthenticationMethodSelection`, then `PUT` the method, then poll `scaStatus`.
+4. After a redirect, `scaStatus` is checked before the payment status, as Swedbank advises.
+5. `GET .../status` decides. `RCVD` waits; `RJCT` is `ErrPaymentRejected`.
+
+Cancellation is `DELETE` on the payment. When the bank asks for approval, it goes through
+`startCancellationAuthorisation` and the same approval code. `403 DAILY_LIMIT` becomes
+`PaymentRejectedError{Reason: "daily_limit"}`.
+
+Verified in the SE sandbox (2026-10-14, scenarios `live-se-pay-*`):
+
+- Decoupled (Mobile BankID) payments are approved after a few polls, without any user. The payment
+  response carries `chosenScaMethod` and a `startAuthorisationWithAuthenticationMethodSelection`
+  link. The `PUT` answers with an `autoStartToken` and a `psuMessage` that names the payee's IBAN.
+- `domestic` (IBAN to IBAN) goes `ACTC` → `ACSC`. Bankgiro with OCR goes to `ACSC`.
+- `se-international-credit-transfers` takes **`creditorAddress` as one free-text string**. Objects (Berlin
+  Group `streetName`/`townName`, `street`/`city`, address lines) all get `400 bad address format`.
+- A future-dated payment (`executionDate`) comes back `ACCP`. `DELETE` answers `204` with no approval,
+  and the status then reads `CANC`.
+
+Still assumed for payments: redirect approval and its callback (probably bare, as for consents), the
+Baltic products and fields, field lengths (Berlin Group defaults), `sepa_instant` behaviour, and the
+recipient-list rule (the FAQ says SE payees must be on the user's list; the sandbox did not enforce it).
+
 ## Assumptions to verify against the real sandbox
 
-1. **Production AIS base path** is `/psd2/v5` (inferred from a link pattern); sandbox is `/sandbox/v5`.
+1. **Production API base path** is `/v5` (sandbox `/sandbox/v5`). Probed without credentials on
+   2026-10-14: `/v5/accounts`, `/v5/consents` and `/v5/payments/...` answer "No MTLS session
+   established" (the route exists), `/psd2/v5/...` answers 404. Login stays under `/psd2/...`.
 2. **Steering links** (`_links`) don't carry `bic`/`app-id`, so the SDK appends them.
 3. **Baltic login fields**: `PSU-ID` header is required; `personalID` for Smart-ID/Simple-ID/eParaksts,
    `phoneNumber` for Mobile-ID. Sweden needs none.

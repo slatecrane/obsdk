@@ -1,0 +1,58 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T11:00:00Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T13:00:00Z",
+        "consents": {
+          "detailed": {
+            "id": "C-D",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-11T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "P4",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljIiwiaWQiOiJQNCIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1A0L3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1A0In0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "payment_rejected"
+      ],
+      "message": "obsdk: payment rejected: daily_limit: obsdk: payment: HTTP 403 DAILY_LIMIT: The payment limit per day is exceeded"
+    }
+  }
+]

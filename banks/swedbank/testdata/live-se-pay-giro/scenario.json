@@ -1,0 +1,69 @@
+{
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-14T15:05:09Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "f88d6be7-c7bd-4024-8912-061a8c9f22e9",
+        "ed494989-69d8-46c5-9b91-5b36f842fb1e",
+        "3008007b-d736-4236-9832-56cba7a02fb8",
+        "5fc35a2d-c2f1-401d-9c85-0de2dd7f4dc4",
+        "3df0f503-a6ab-4feb-bd50-d3c0fa75c61b",
+        "65e95adc-53c9-4d20-96bf-9b081ab99a2a",
+        "ceb7a1cf-bbb6-4124-86a2-6d5eeba66e4f"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "decoupled",
+      "payment": {
+        "type": "domestic_giro",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "SE00PSEUDO6EF5C3C997"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "3.00",
+              "currency": "SEK"
+            },
+            "creditor": {
+              "name": "name-0ca398",
+              "account": {
+                "scheme": "BANKGIRO",
+                "value": "5051-6905"
+              }
+            },
+            "reference": {
+              "scheme": "OCR",
+              "value": "1234567897"
+            }
+          }
+        ],
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    }
+  ]
+}

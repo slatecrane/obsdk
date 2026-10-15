@@ -22,7 +22,7 @@ const (
 	// StepWait: nothing for the user to type. Show Challenge/Message if
 	// present, wait at least WaitFor, then call Resume with an empty input.
 	StepWait StepKind = "wait"
-	// StepDone: the operation finished; read Session / Transactions.
+	// StepDone: the operation finished; read Session / Accounts / Transactions / Payment.
 	StepDone StepKind = "done"
 )
 
@@ -53,6 +53,7 @@ type Step struct {
 	// Set on StepDone.
 	Accounts     []Account       `json:"accounts,omitempty"`     // accounts discovered during Connect; some banks expose them only once
 	Transactions *TxPage         `json:"transactions,omitempty"` // for transaction exports that needed user approval
+	Payment      *Payment        `json:"payment,omitempty"`      // payments: set once the bank created the payment, on every step after that
 	Raw          json.RawMessage `json:"raw,omitempty"`
 }
 

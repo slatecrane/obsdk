@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers/P3",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    }
+  },
+  "response": {
+    "status": 202,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactionStatus": "ACTC",
+      "_links": {
+        "startCancellationAuthorisation": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P3/cancellation-authorisations"
+        }
+      }
+    }
+  }
+}

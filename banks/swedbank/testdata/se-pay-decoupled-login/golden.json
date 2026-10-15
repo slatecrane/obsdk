@@ -1,0 +1,182 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Login via TPP",
+      "challenge": {
+        "auto_start_token": "tok-1"
+      },
+      "wait_for": 2000000000
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Login via TPP",
+      "challenge": {
+        "auto_start_token": "tok-1"
+      },
+      "wait_for": 2000000000
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Which account should the payment be made from?",
+      "fields": [
+        {
+          "key": "debtor_account",
+          "label": "Account to pay from (IBAN or clearing + account number)",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T12:00:00Z",
+        "access_token": "REDACTED:access_token:9ce17b",
+        "refresh_token": "REDACTED:refresh_token:a97d26",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T13:00:00Z",
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Sign the payment in BankID",
+      "challenge": {
+        "auto_start_token": "tok-2"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T12:00:00Z",
+        "access_token": "REDACTED:access_token:9ce17b",
+        "refresh_token": "REDACTED:refresh_token:a97d26",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T13:00:00Z",
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "P2",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljIiwiaWQiOiJQMiIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AyL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AyIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Sign the payment in BankID",
+      "challenge": {
+        "auto_start_token": "tok-2"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T12:00:00Z",
+        "access_token": "REDACTED:access_token:9ce17b",
+        "refresh_token": "REDACTED:refresh_token:a97d26",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T13:00:00Z",
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "P2",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljIiwiaWQiOiJQMiIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AyL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AyIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-14T12:00:00Z",
+        "access_token": "REDACTED:access_token:9ce17b",
+        "refresh_token": "REDACTED:refresh_token:a97d26",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T13:00:00Z",
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "P2",
+        "type": "domestic",
+        "status": "completed",
+        "bank_status": "ACSC",
+        "final": true,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljIiwiaWQiOiJQMiIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AyL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzL1AyIn0"
+      }
+    }
+  }
+]

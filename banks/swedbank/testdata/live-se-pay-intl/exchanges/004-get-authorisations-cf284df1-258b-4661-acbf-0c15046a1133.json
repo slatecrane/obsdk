@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/payments/se-international-credit-transfers/db048196-0fa9-4443-a6fe-38af7a237dca/authorisations/cf284df1-258b-4661-acbf-0c15046a1133",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:fd0036",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4993",
+      "X-Rate-Limit-Reset": "3303",
+      "X-Request-Id": "660db6cd-f79c-4ae6-960e-29e1cd1c28a4"
+    },
+    "body": {
+      "scaStatus": "started"
+    }
+  }
+}

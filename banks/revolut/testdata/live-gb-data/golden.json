@@ -11,7 +11,7 @@
             "value": "identification-a90248"
           },
           {
-            "scheme": "SortCodeAccountNumber",
+            "scheme": "SORT_CODE_ACCOUNT",
             "value": "identification-bc3b3f"
           }
         ],

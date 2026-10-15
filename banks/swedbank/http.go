@@ -209,6 +209,9 @@ func (c *client) apiErr(op string, r *resp) error {
 		return e.Classify(obsdk.ErrAccessExpired)
 	case r.status == http.StatusUnauthorized && hasCode(msgs, "RESOURCE_NOT_POSTED") && op == opTransactions:
 		return &notPostedError{e}
+	case hasCode(msgs, "DAILY_LIMIT"):
+		// SE: the user's daily payment limit, on the approval status or the decoupled PUT.
+		return &obsdk.PaymentRejectedError{Reason: "daily_limit", Err: e}
 	case r.status == http.StatusNotFound && op == opConsent:
 		return &obsdk.ReauthError{Reason: "consent_not_found", Err: e}
 	}

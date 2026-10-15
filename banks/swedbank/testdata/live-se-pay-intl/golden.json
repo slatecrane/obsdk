@@ -1,0 +1,306 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Approve payment of 4.00 EUR to DE89370400440532013000 by using your MOBILE_ID device",
+      "challenge": {
+        "auto_start_token": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "db048196-0fa9-4443-a6fe-38af7a237dca",
+        "type": "crossborder",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMiLCJ0IjoiY3Jvc3Nib3JkZXIiLCJpZCI6ImRiMDQ4MTk2LTBmYTktNDQ0My1hNmZlLTM4YWY3YTIzN2RjYSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Approve payment of 4.00 EUR to DE89370400440532013000 by using your MOBILE_ID device",
+      "challenge": {
+        "auto_start_token": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "db048196-0fa9-4443-a6fe-38af7a237dca",
+        "type": "crossborder",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMiLCJ0IjoiY3Jvc3Nib3JkZXIiLCJpZCI6ImRiMDQ4MTk2LTBmYTktNDQ0My1hNmZlLTM4YWY3YTIzN2RjYSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Approve payment of 4.00 EUR to DE89370400440532013000 by using your MOBILE_ID device",
+      "challenge": {
+        "auto_start_token": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "db048196-0fa9-4443-a6fe-38af7a237dca",
+        "type": "crossborder",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMiLCJ0IjoiY3Jvc3Nib3JkZXIiLCJpZCI6ImRiMDQ4MTk2LTBmYTktNDQ0My1hNmZlLTM4YWY3YTIzN2RjYSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Approve payment of 4.00 EUR to DE89370400440532013000 by using your MOBILE_ID device",
+      "challenge": {
+        "auto_start_token": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "db048196-0fa9-4443-a6fe-38af7a237dca",
+        "type": "crossborder",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMiLCJ0IjoiY3Jvc3Nib3JkZXIiLCJpZCI6ImRiMDQ4MTk2LTBmYTktNDQ0My1hNmZlLTM4YWY3YTIzN2RjYSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "db048196-0fa9-4443-a6fe-38af7a237dca",
+        "type": "crossborder",
+        "status": "completed",
+        "bank_status": "ACSC",
+        "final": true,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMiLCJ0IjoiY3Jvc3Nib3JkZXIiLCJpZCI6ImRiMDQ4MTk2LTBmYTktNDQ0My1hNmZlLTM4YWY3YTIzN2RjYSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhL3N0YXR1cyIsInNlbGYiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1pbnRlcm5hdGlvbmFsLWNyZWRpdC10cmFuc2ZlcnMvZGIwNDgxOTYtMGZhOS00NDQzLWE2ZmUtMzhhZjdhMjM3ZGNhIn0"
+      }
+    }
+  }
+]

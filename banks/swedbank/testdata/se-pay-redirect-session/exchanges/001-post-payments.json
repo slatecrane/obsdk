@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "P1",
+      "transactionStatus": "RCVD",
+      "_links": {
+        "self": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P1"
+        },
+        "status": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P1/status"
+        },
+        "scaRedirect": {
+          "href": "https://bank.example/sca/p1"
+        },
+        "scaStatus": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P1/authorisations/AU1"
+        }
+      }
+    }
+  }
+}

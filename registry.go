@@ -64,6 +64,7 @@ type Info struct {
 	Auth         AuthInfo      `json:"auth"`
 	Requirements []Requirement `json:"requirements"`
 	Limits       Limits        `json:"limits"`
+	Payments     []PaymentSpec `json:"payments,omitempty"` // payment types and their field rules (see PaymentSpec)
 	Docs         []string      `json:"docs,omitempty"`
 	Notes        []string      `json:"notes,omitempty"` // quirks worth knowing
 }
@@ -214,6 +215,7 @@ func mergeByBank(in []Info) []Info {
 					m.Capabilities = append(m.Capabilities, c)
 				}
 			}
+			m.Payments = append(m.Payments, i.Payments...)
 			continue
 		}
 		out = append(out, i)

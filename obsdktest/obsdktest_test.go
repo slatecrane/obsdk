@@ -252,3 +252,15 @@ func TestIDSourceFollowsScenarioThenCounts(t *testing.T) {
 		t.Error("id sequence")
 	}
 }
+
+func TestRedactorScrubsEchoedAccountNumbers(t *testing.T) {
+	r := DefaultRedactor(nil)
+	body := string(r.JSON([]byte(`{"creditorAccount":{"iban":"SE4880000123451234567890"}}`)))
+	msg := string(r.JSON([]byte(`{"psuMessage":"Approve payment of 1.00 SEK to SE4880000123451234567890"}`)))
+	if strings.Contains(body+msg, "SE4880000123451234567890") {
+		t.Fatalf("IBAN leaked:\n%s\n%s", body, msg)
+	}
+	if want := pseudonym("iban", "SE4880000123451234567890"); !strings.Contains(msg, want) {
+		t.Errorf("message should carry the same pseudonym %s: %s", want, msg)
+	}
+}

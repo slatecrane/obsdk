@@ -59,7 +59,12 @@ banks/swedbank/testdata/se-data/
 ```
 
 Ops: `connect`, `resume` (uses the previous step's state), `accounts`, `balances`, `transactions`,
-`refresh`, `disconnect`, `auth_methods`.
+`refresh`, `disconnect`, `auth_methods`, `initiate_payment` (request under `payment`;
+`"with_session": true` passes the run's session), `payment_status` and `cancel_payment` (these act on
+the last payment the run saw, unless `ref` is set). The recorder pseudonymizes payment account numbers, and
+replaces an account number it has already pseudonymized wherever it shows up again in free text (Swedbank
+echoes the payee's IBAN in `psuMessage`). Numbers it never saw under an account key are not caught, so
+still skim exchanges before committing.
 
 An exchange file:
 

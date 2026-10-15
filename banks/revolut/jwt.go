@@ -37,44 +37,76 @@ type requestObject struct {
 	Claims       idTokenClaims `json:"claims"`
 }
 
-// signRequestObject builds the JWT that carries the consent id to the
-// authorisation page, signed PS256 with the seal key.
-func (c *client) signRequestObject(consentID, redirectURI, state string) (string, error) {
+// seal returns the signing key, checked for what Revolut accepts.
+func (c *client) seal() (*obsdk.Seal, error) {
 	seal := c.cfg.Seal
 	if seal == nil || seal.Key == nil {
-		return "", &obsdk.ConfigError{Bank: bankKey, Env: c.cfg.Env, Missing: []string{"seal (request object signing key)"}}
+		return nil, &obsdk.ConfigError{Bank: bankKey, Env: c.cfg.Env, Missing: []string{"seal (request object signing key)"}}
 	}
 	if _, ok := seal.Key.Public().(*rsa.PublicKey); !ok {
-		return "", &obsdk.ConfigError{Bank: bankKey, Env: c.cfg.Env, Invalid: []string{"seal: Revolut needs an RSA key (PS256)"}}
+		return nil, &obsdk.ConfigError{Bank: bankKey, Env: c.cfg.Env, Invalid: []string{"seal: Revolut needs an RSA key (PS256)"}}
 	}
 	if seal.KeyID == "" {
-		return "", &obsdk.ConfigError{Bank: bankKey, Env: c.cfg.Env, Missing: []string{"seal.KeyID (the kid in the JWKS registered in the portal)"}}
+		return nil, &obsdk.ConfigError{Bank: bankKey, Env: c.cfg.Env, Missing: []string{"seal.KeyID (the kid in the JWKS registered in the portal)"}}
+	}
+	return seal, nil
+}
+
+// signRequestObject builds the JWT that carries the consent id to the
+// authorisation page, signed PS256 with the seal key. scope is "accounts" or "payments".
+func (c *client) signRequestObject(consentID, redirectURI, state, scope string) (string, error) {
+	seal, err := c.seal()
+	if err != nil {
+		return "", err
 	}
 	now := c.now()
 	ro := requestObject{
 		ResponseType: "code id_token", ClientID: c.cfg.Credentials.ClientID, RedirectURI: redirectURI,
-		Aud: c.host, Scope: "accounts", State: state,
+		Aud: c.host, Scope: scope, State: state,
 		Nbf: now.Unix(), Exp: now.Add(requestObjectTTL).Unix(),
 	}
 	ro.Claims.IDToken.Intent.Value = consentID
-	return signJWT(seal, map[string]string{"alg": "PS256", "kid": seal.KeyID, "typ": "JWT"}, ro)
+	p, err := json.Marshal(ro)
+	if err != nil {
+		return "", err
+	}
+	return signJWS(seal, map[string]any{"alg": "PS256", "kid": seal.KeyID, "typ": "JWT"}, p, false)
 }
 
-func signJWT(seal *obsdk.Seal, header map[string]string, claims any) (string, error) {
+// tanClaim is the OBIE trust-anchor header Revolut requires in body signatures.
+const tanClaim = "http://openbanking.org.uk/tan"
+
+// signBody returns the detached JWS of a request body for x-jws-signature.
+// body must be the exact bytes sent.
+func (c *client) signBody(body []byte) (string, error) {
+	seal, err := c.seal()
+	if err != nil {
+		return "", err
+	}
+	tan := c.cfg.Param(paramJWSTan)
+	if tan == "" {
+		return "", &obsdk.ConfigError{Bank: bankKey, Env: c.cfg.Env, Missing: []string{paramJWSTan + " (host of the JWKS URL, needed for payments)"}}
+	}
+	h := map[string]any{"typ": "JOSE", "alg": "PS256", "kid": seal.KeyID, "crit": []string{tanClaim}, tanClaim: tan}
+	return signJWS(seal, h, body, true)
+}
+
+// signJWS signs PS256. detached leaves the payload out ("header..signature").
+func signJWS(seal *obsdk.Seal, header map[string]any, payload []byte, detached bool) (string, error) {
 	h, err := json.Marshal(header)
 	if err != nil {
 		return "", err
 	}
-	p, err := json.Marshal(claims)
-	if err != nil {
-		return "", err
-	}
 	enc := base64.RawURLEncoding
-	input := enc.EncodeToString(h) + "." + enc.EncodeToString(p)
-	sum := sha256.Sum256([]byte(input))
+	hp := enc.EncodeToString(h)
+	pp := enc.EncodeToString(payload)
+	sum := sha256.Sum256([]byte(hp + "." + pp))
 	sig, err := seal.Key.Sign(rand.Reader, sum[:], &rsa.PSSOptions{SaltLength: rsa.PSSSaltLengthEqualsHash, Hash: crypto.SHA256})
 	if err != nil {
-		return "", fmt.Errorf("revolut: signing request object: %w", err)
+		return "", fmt.Errorf("revolut: signing: %w", err)
 	}
-	return input + "." + enc.EncodeToString(sig), nil
+	if detached {
+		pp = ""
+	}
+	return hp + "." + pp + "." + enc.EncodeToString(sig), nil
 }

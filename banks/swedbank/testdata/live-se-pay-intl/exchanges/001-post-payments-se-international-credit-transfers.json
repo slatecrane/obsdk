@@ -1,0 +1,81 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/payments/se-international-credit-transfers",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:fd0036",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Nok-Redirect-Uri": "http://localhost/cb",
+      "Tpp-Redirect-Preferred": "false",
+      "Tpp-Redirect-Uri": "http://localhost/cb"
+    },
+    "body": {
+      "bic": "COBADEFFXXX",
+      "chargeBearer": "SHA",
+      "creditorAccount": {
+        "iban": "DE00PSEUDO1360B051B8"
+      },
+      "creditorAddress": "Hauptstrasse, 10115 Berlin, DE",
+      "creditorName": "creditorname-6efe0c",
+      "debtorAccount": {
+        "iban": "SE00PSEUDO6EF5C3C997"
+      },
+      "instructedAmount": {
+        "amount": "4.00",
+        "currency": "EUR"
+      },
+      "priority": "NORMAL",
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-60a6f1"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "DECOUPLED",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4996",
+      "X-Rate-Limit-Reset": "3307",
+      "X-Request-Id": "ca4342f9-04fc-4a81-8b2e-ac7b15f4dbae"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/payments/se-international-credit-transfers/db048196-0fa9-4443-a6fe-38af7a237dca/authorisations/cf284df1-258b-4661-acbf-0c15046a1133"
+        },
+        "self": {
+          "href": "/sandbox/v5/payments/se-international-credit-transfers/db048196-0fa9-4443-a6fe-38af7a237dca"
+        },
+        "startAuthorisationWithAuthenticationMethodSelection": {
+          "href": "/sandbox/v5/payments/se-international-credit-transfers/db048196-0fa9-4443-a6fe-38af7a237dca/authorisations/cf284df1-258b-4661-acbf-0c15046a1133"
+        },
+        "status": {
+          "href": "/sandbox/v5/payments/se-international-credit-transfers/db048196-0fa9-4443-a6fe-38af7a237dca/status"
+        }
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "paymentId": "db048196-0fa9-4443-a6fe-38af7a237dca",
+      "scaMethods": [
+        {
+          "authenticationMethodId": "MOBILE_ID",
+          "authenticationType": "Mobile BankID"
+        }
+      ],
+      "transactionStatus": "ACTC"
+    }
+  }
+}

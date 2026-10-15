@@ -1,0 +1,70 @@
+{
+  "description": "Future-dated payment, then cancelled; the cancellation needs an explicit authorisation and a redirect.",
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-14T12:00:00Z",
+    "redirect_url": "https://app.example/cb",
+    "ids": {
+      "request": [
+        "request-1",
+        "request-2",
+        "request-3",
+        "request-4",
+        "request-5",
+        "request-6",
+        "request-7",
+        "request-8",
+        "request-9",
+        "request-10",
+        "request-11",
+        "request-12",
+        "request-13",
+        "request-14"
+      ],
+      "state": [
+        "state-1"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "test-agent",
+      "payment": {
+        "type": "domestic",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "10.00",
+              "currency": "SEK"
+            },
+            "creditor": {
+              "name": "Anna Andersson",
+              "account": {
+                "scheme": "BBAN",
+                "value": "8327-9,123456789"
+              }
+            },
+            "remittance": [
+              "obsdk test"
+            ]
+          }
+        ],
+        "execution_date": "2026-10-20",
+        "with_session": true
+      }
+    },
+    {
+      "op": "cancel_payment",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "test-agent"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/cb"
+    }
+  ]
+}

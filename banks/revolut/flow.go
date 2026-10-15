@@ -27,6 +27,7 @@ type flow struct {
 	OAuthState  string           `json:"oauth_state"`
 	AuthURL     string           `json:"auth_url"`
 	Consent     obsdk.Consent    `json:"consent"`
+	Pay         *payFlow         `json:"pay,omitempty"` // payments only
 }
 
 func authFailed(format string, args ...any) error {
@@ -91,7 +92,12 @@ func (c *client) token(ctx context.Context, op string, form url.Values) (*tokenR
 
 // clientToken gets a client-credentials token, used for consent management.
 func (c *client) clientToken(ctx context.Context) (string, error) {
-	tr, r, err := c.token(ctx, opToken, url.Values{"grant_type": {"client_credentials"}, "scope": {"accounts"}})
+	return c.clientTokenFor(ctx, "accounts")
+}
+
+// clientTokenFor gets a client-credentials token for a scope ("accounts", "payments").
+func (c *client) clientTokenFor(ctx context.Context, scope string) (string, error) {
+	tr, r, err := c.token(ctx, opToken, url.Values{"grant_type": {"client_credentials"}, "scope": {scope}})
 	if err != nil {
 		return "", err
 	}
@@ -172,7 +178,7 @@ func (c *client) Connect(ctx context.Context, r obsdk.ConnectRequest) (*obsdk.St
 
 	f := &flow{Phase: phRedirectWait, PSU: r.PSU, RedirectURL: redirectURL, OAuthState: c.cfg.ID(obsdk.IDState),
 		Consent: obsdk.Consent{ID: cr.Data.ConsentID, Kind: consentKind, Status: cr.Data.Status, ValidUntil: parseTime(cr.Data.ExpirationDateTime)}}
-	jwt, err := c.signRequestObject(f.Consent.ID, redirectURL, f.OAuthState)
+	jwt, err := c.signRequestObject(f.Consent.ID, redirectURL, f.OAuthState, "accounts")
 	if err != nil {
 		return nil, err
 	}
@@ -200,11 +206,14 @@ func (c *client) pause(f *flow, st *obsdk.Step) (*obsdk.Step, error) {
 	return st, nil
 }
 
-// Resume completes a Connect with the redirect callback.
+// Resume completes a Connect or a payment with the redirect callback.
 func (c *client) Resume(ctx context.Context, state string, in obsdk.StepInput) (*obsdk.Step, error) {
 	var f flow
 	if err := flowstate.Decode(state, &f); err != nil {
 		return nil, fmt.Errorf("%w: %v", obsdk.ErrInvalidRequest, err)
+	}
+	if f.Phase == phPayRedirect && f.Pay != nil {
+		return c.resumePayment(ctx, &f, in)
 	}
 	if f.Phase != phRedirectWait {
 		return nil, fmt.Errorf("%w: unknown flow phase %q", obsdk.ErrInvalidRequest, f.Phase)

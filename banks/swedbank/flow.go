@@ -3,6 +3,7 @@ package swedbank
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -17,6 +18,8 @@ import (
 const (
 	goalConnect   = "connect"
 	goalStatement = "statement"
+	goalPayment   = "payment"
+	goalCancel    = "cancel_payment"
 
 	methodRedirect  = "redirect"
 	methodDecoupled = "decoupled"
@@ -44,16 +47,10 @@ const (
 	phAllStart      = "consent_all_start"
 	phDetailedStart = "consent_detailed_start"
 	phOver90Start   = "consent_over90_start"
-	phConsentSCA    = "consent_sca"
-	phConsentPoll   = "consent_poll"
-	phConsentRedir  = "consent_redirect_wait"
 	phConsentCheck  = "consent_check"
 	phFinish        = "finish"
 
 	phStmtPost     = "stmt_post"
-	phStmtAuth     = "stmt_authorise"
-	phStmtPoll     = "stmt_poll"
-	phStmtRedir    = "stmt_redirect_wait"
 	phStmtStatus   = "stmt_status"
 	phStmtDownload = "stmt_download"
 )
@@ -82,19 +79,17 @@ type flow struct {
 	Retried      bool             `json:"retried,omitempty"`
 
 	Stmt *stmtFlow `json:"stmt,omitempty"`
+	SCA  *scaFlow  `json:"sca,omitempty"` // the approval in progress
+	Pay  *payFlow  `json:"pay,omitempty"`
 }
 
 type consentFlow struct {
-	Kind         string   `json:"kind"`
-	ID           string   `json:"id"`
-	Approach     string   `json:"approach,omitempty"`
-	ChosenMethod string   `json:"chosen_method,omitempty"`
-	RedirectURL  string   `json:"redirect_url,omitempty"`
-	SelectPath   string   `json:"select_path,omitempty"`
-	ScaPath      string   `json:"sca_path,omitempty"`
-	StatusPath   string   `json:"status_path,omitempty"`
-	Accounts     []string `json:"accounts,omitempty"`
-	ValidUntil   string   `json:"valid_until,omitempty"`
+	Kind       string   `json:"kind"`
+	ID         string   `json:"id"`
+	Approach   string   `json:"approach,omitempty"`
+	StatusPath string   `json:"status_path,omitempty"`
+	Accounts   []string `json:"accounts,omitempty"`
+	ValidUntil string   `json:"valid_until,omitempty"`
 }
 
 type stmtFlow struct {
@@ -104,12 +99,16 @@ type stmtFlow struct {
 	To           string `json:"to"`
 	Status       string `json:"status"`
 	ID           string `json:"id,omitempty"`
-	RedirectURL  string `json:"redirect_url,omitempty"`
-	StartAuth    string `json:"start_auth,omitempty"`
-	SelectPath   string `json:"select_path,omitempty"`
-	ScaPath      string `json:"sca_path,omitempty"`
 	StatusPath   string `json:"status_path,omitempty"`
 	DownloadPath string `json:"download_path,omitempty"`
+}
+
+// afterLogin is the phase that follows a fresh login.
+func (f *flow) afterLogin() string {
+	if f.Goal == goalPayment {
+		return phPayPost
+	}
+	return phAllStart
 }
 
 func authFailed(format string, args ...any) error {
@@ -185,14 +184,28 @@ func (c *client) run(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk.S
 		step, advance, err := c.phase(ctx, f, in)
 		in.Callback = "" // a callback is consumed by exactly one phase
 		if err != nil {
-			if f.Session != nil && f.Session.AccessToken != "" {
-				return nil, &obsdk.FlowError{Session: f.Session.Clone(), Err: err}
+			pay := f.Pay.payment()
+			if pay != nil {
+				var pr *obsdk.PaymentRejectedError
+				if errors.As(err, &pr) && pr.Payment == nil {
+					pr.Payment = pay
+				}
+			}
+			if (f.Session != nil && f.Session.AccessToken != "") || pay != nil {
+				fe := &obsdk.FlowError{Payment: pay, Err: err}
+				if f.Session != nil && f.Session.AccessToken != "" {
+					fe.Session = f.Session.Clone()
+				}
+				return nil, fe
 			}
 			return nil, err
 		}
 		if step != nil {
 			if step.Session == nil && f.Session != nil && f.Session.AccessToken != "" {
 				step.Session = f.Session.Clone()
+			}
+			if step.Payment == nil {
+				step.Payment = f.Pay.payment()
 			}
 			if step.Kind != obsdk.StepDone {
 				st, err := flowstate.Encode(f)
@@ -245,12 +258,6 @@ func (c *client) phase(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk
 		return c.detailedStart(ctx, f)
 	case phOver90Start:
 		return c.startConsent(ctx, f, kindOver90, []string{f.Stmt.AccountRef})
-	case phConsentSCA:
-		return c.consentSCA(ctx, f)
-	case phConsentPoll:
-		return c.consentPoll(ctx, f)
-	case phConsentRedir:
-		return c.consentRedirect(f, in)
 	case phConsentCheck:
 		return c.consentCheck(ctx, f)
 	case phFinish:
@@ -259,12 +266,24 @@ func (c *client) phase(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk
 	// ---- extended history ----
 	case phStmtPost:
 		return c.stmtPost(ctx, f)
-	case phStmtAuth:
-		return c.stmtAuthorise(ctx, f)
-	case phStmtPoll:
-		return c.stmtPoll(ctx, f)
-	case phStmtRedir:
-		return c.stmtRedirect(f, in)
+
+	// ---- approval of a consent, statement, payment or cancellation ----
+	case phSCA:
+		return c.scaStart(ctx, f)
+	case phPayPost:
+		return c.payPost(ctx, f)
+	case phPayDebtor:
+		return c.payDebtor(ctx, f)
+	case phPayCheck:
+		return c.payCheck(ctx, f)
+	case phCancelDelete:
+		return c.cancelDelete(ctx, f)
+	case phCancelCheck:
+		return c.cancelCheck(ctx, f)
+	case phSCAPoll:
+		return c.scaPoll(ctx, f)
+	case phSCARedir:
+		return c.scaRedirect(f, in)
 	case phStmtStatus:
 		return c.stmtStatus(ctx, f)
 	case phStmtDownload:
@@ -331,7 +350,7 @@ func (c *client) loginRedirectWait(ctx context.Context, f *flow, in obsdk.StepIn
 		return nil, false, err
 	}
 	s.Meta["approach"] = methodRedirect
-	f.Session, f.Phase = s, phAllStart
+	f.Session, f.Phase = s, f.afterLogin()
 	return nil, true, nil
 }
 
@@ -505,7 +524,7 @@ func (c *client) afterAuthorizePoll(ctx context.Context, f *flow, r *resp) (*obs
 			return nil, false, err
 		}
 		s.Meta["auth_method"], s.Meta["approach"] = f.Values["auth_method"], methodDecoupled
-		f.Session, f.Phase = s, phAllStart
+		f.Session, f.Phase = s, f.afterLogin()
 		return nil, true, nil
 	}
 	msgs := parseTPP(r.body)

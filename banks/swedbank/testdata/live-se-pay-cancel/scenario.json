@@ -1,0 +1,76 @@
+{
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-14T15:03:18Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "dee95e1b-988a-4f9e-a891-4ec70a7cb464",
+        "34ba5941-d0dc-4c20-84a1-be2c4ab3df1d",
+        "3a1b72ab-68cf-439b-9a6a-0e43a649f413",
+        "c3ca7777-d26e-4a8f-835a-6135685d766b",
+        "34fe585b-6667-44de-908f-ebf80b5245e5",
+        "9b04e695-9b06-4306-97e3-6d99d74facb9",
+        "fe232aec-c0b7-411e-a8a1-974d3777381e",
+        "9248112d-4d92-4e59-8bfa-5eadd6bab087",
+        "80c5f363-9f16-495f-81e4-f2c289ced72a"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "decoupled",
+      "payment": {
+        "type": "domestic",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "SE00PSEUDO6EF5C3C997"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "2.00",
+              "currency": "SEK"
+            },
+            "creditor": {
+              "name": "name-69c2c8",
+              "account": {
+                "scheme": "IBAN",
+                "value": "SE00PSEUDO00594ABE85"
+              }
+            },
+            "remittance": [
+              "obsdk future"
+            ]
+          }
+        ],
+        "execution_date": "2026-10-30",
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "cancel_payment",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

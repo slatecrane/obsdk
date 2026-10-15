@@ -24,6 +24,9 @@ const (
 	opAccounts     = "accounts"
 	opBalances     = "balances"
 	opTransactions = "transactions"
+	opPayConsent   = "payment_consent"
+	opPayment      = "payment"
+	opPayStatus    = "payment_status"
 )
 
 type req struct {
@@ -33,6 +36,8 @@ type req struct {
 	query  url.Values
 	form   url.Values // sent as application/x-www-form-urlencoded
 	body   any        // sent as JSON
+	raw    []byte     // sent as JSON exactly as given (signed bodies)
+	header map[string]string
 	bearer string
 	psu    *obsdk.PSUContext
 }
@@ -65,6 +70,8 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	switch {
 	case r.form != nil:
 		body, ctype = strings.NewReader(r.form.Encode()), "application/x-www-form-urlencoded"
+	case r.raw != nil:
+		body, ctype = bytes.NewReader(r.raw), "application/json"
 	case r.body != nil:
 		b, err := json.Marshal(r.body)
 		if err != nil {
@@ -84,6 +91,9 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 		// Resource APIs (everything except /token).
 		hr.Header.Set("x-fapi-financial-id", financialID)
 		hr.Header.Set("x-fapi-interaction-id", c.cfg.ID(obsdk.IDRequest))
+	}
+	for k, v := range r.header {
+		hr.Header.Set(k, v)
 	}
 	if r.bearer != "" {
 		hr.Header.Set("Authorization", "Bearer "+r.bearer)

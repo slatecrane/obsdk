@@ -1,0 +1,68 @@
+{
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-14T14:52:43Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "5b78d52b-e79f-4c5c-9d94-231915115be8",
+        "90cb20c1-4505-4f76-88be-6238741d1d9e",
+        "ffcebecd-6d0d-4cc7-bee9-0ec9aaa726b3",
+        "02b49484-dd86-491e-a9a1-9032c6d1d8cc",
+        "f8ecbb88-e991-4587-af2e-1ccd935ff8f7",
+        "1b1c9373-95b6-4de9-b8ea-c2b09fbac02c",
+        "7a37b5ad-39a4-484d-9e9f-be9fe7f7b498"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "decoupled",
+      "payment": {
+        "type": "domestic",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "SE00PSEUDO6EF5C3C997"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "SEK"
+            },
+            "creditor": {
+              "name": "name-69c2c8",
+              "account": {
+                "scheme": "IBAN",
+                "value": "SE00PSEUDO00594ABE85"
+              }
+            },
+            "remittance": [
+              "obsdk test"
+            ]
+          }
+        ],
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    }
+  ]
+}

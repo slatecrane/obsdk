@@ -38,6 +38,7 @@ const (
 	// Extra parameters.
 	paramBaseURL = "base_url" // override the API host (tests, proxies)
 	paramAuthURL = "auth_url" // override the consent page URL
+	paramJWSTan  = "jws_tan"  // root domain of the JWKS URL, signed into payment request signatures
 )
 
 // openBankingPreprodRoot is the OpenBanking Pre-Production Root CA. Revolut's
@@ -97,14 +98,16 @@ func init() {
 			Spec:     "uk",
 			Variants: variants,
 			Capabilities: []obsdk.Capability{
-				obsdk.CapAccounts, obsdk.CapBalances, obsdk.CapTransactions,
+				obsdk.CapAccounts, obsdk.CapBalances, obsdk.CapTransactions, obsdk.CapPayments,
 			},
-			Auth: obsdk.AuthInfo{Approaches: []string{"redirect"}},
+			Payments: paymentSpecs(),
+			Auth:     obsdk.AuthInfo{Approaches: []string{"redirect"}},
 			Requirements: []obsdk.Requirement{
 				{Name: "client_id", Required: true, Note: "from the Revolut developer portal (one per environment)"},
 				{Name: "redirect_url", Required: true, Note: "must be registered in the developer portal, without variable parameters"},
 				{Name: "tls_client_cert", Required: true, Note: "transport certificate for mTLS; build the client with revolut.HTTPClient"},
 				{Name: "seal", Secret: true, Required: true, Note: "RSA key that signs the request object (PS256); KeyID must match the kid in the JWKS registered in the portal"},
+				{Name: paramJWSTan, Note: "payments only: host of the JWKS URL registered in the portal (e.g. raw.githubusercontent.com), signed into x-jws-signature (the JWKS key needs x5c)"},
 			},
 			Limits: obsdk.Limits{},
 			Docs: []string{

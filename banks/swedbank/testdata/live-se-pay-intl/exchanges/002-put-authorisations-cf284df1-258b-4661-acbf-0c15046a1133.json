@@ -1,0 +1,51 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/sandbox/v5/payments/se-international-credit-transfers/db048196-0fa9-4443-a6fe-38af7a237dca/authorisations/cf284df1-258b-4661-acbf-0c15046a1133",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:fd0036",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    },
+    "body": {
+      "authenticationMethodId": "MOBILE_ID"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "DECOUPLED",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4995",
+      "X-Rate-Limit-Reset": "3307",
+      "X-Request-Id": "c83a1541-263c-4421-9b05-76dfbe2c8f43"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/payments/se-international-credit-transfers/db048196-0fa9-4443-a6fe-38af7a237dca/authorisations/cf284df1-258b-4661-acbf-0c15046a1133"
+        }
+      },
+      "challengeData": {
+        "autoStartToken": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "psuMessage": "Approve payment of 4.00 EUR to DE89370400440532013000 by using your MOBILE_ID device",
+      "scaStatus": "started"
+    }
+  }
+}

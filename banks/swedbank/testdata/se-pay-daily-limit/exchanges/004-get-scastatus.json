@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers/P4/authorisations/AU4",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "DAILY_LIMIT",
+          "text": "The payment limit per day is exceeded"
+        }
+      ]
+    }
+  }
+}

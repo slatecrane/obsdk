@@ -1,0 +1,51 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers/8f97a4fe-d91f-452e-8958-3ed753fc7f21/authorisations/10b6810f-16b9-4edb-a6a1-c369b585b766",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:fd0036",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1"
+    },
+    "body": {
+      "authenticationMethodId": "MOBILE_ID"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "DECOUPLED",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4988",
+      "X-Rate-Limit-Reset": "3291",
+      "X-Request-Id": "ed494989-69d8-46c5-9b91-5b36f842fb1e"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/8f97a4fe-d91f-452e-8958-3ed753fc7f21/authorisations/10b6810f-16b9-4edb-a6a1-c369b585b766"
+        }
+      },
+      "challengeData": {
+        "autoStartToken": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "psuMessage": "Approve payment of 3.00 SEK to BG 5051-6905 by using your MOBILE_ID device",
+      "scaStatus": "started"
+    }
+  }
+}

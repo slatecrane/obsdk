@@ -5,7 +5,6 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -14,7 +13,6 @@ import (
 	"time"
 
 	obsdk "github.com/slatecrane/obsdk"
-	"github.com/slatecrane/obsdk/internal/callback"
 )
 
 const maxStatementFiles = 200
@@ -36,7 +34,7 @@ func (c *client) startStatement(ctx context.Context, s *obsdk.Session, q obsdk.T
 		return nil, fmt.Errorf("%w: redirect URL required for extended history", obsdk.ErrInvalidConfig)
 	}
 	// The consent needs the account's IBAN/BBAN; the session only knows the resource id.
-	res, err := c.aisCall(ctx, s, kindDetailed, req{op: opAccounts, path: c.aisBase() + "/accounts/" + url.PathEscape(q.AccountID)}, q.Options.PSU)
+	res, err := c.aisCall(ctx, s, kindDetailed, req{op: opAccounts, path: c.apiBase() + "/accounts/" + url.PathEscape(q.AccountID)}, q.Options.PSU)
 	if err != nil {
 		return nil, err
 	}
@@ -119,7 +117,7 @@ type statementResponse struct {
 func (c *client) stmtPost(ctx context.Context, f *flow) (*obsdk.Step, bool, error) {
 	st := f.Stmt
 	r, err := c.aisCall(ctx, f.Session, kindOver90, req{
-		op: opStatement, method: http.MethodPost, path: c.aisBase() + "/accounts/" + url.PathEscape(st.AccountID) + "/transactions",
+		op: opStatement, method: http.MethodPost, path: c.apiBase() + "/accounts/" + url.PathEscape(st.AccountID) + "/transactions",
 		query: url.Values{"dateFrom": {st.From}, "dateTo": {st.To}, "bookingStatus": {st.Status}},
 		header: map[string]string{
 			"TPP-Redirect-Preferred": fmt.Sprint(f.Method == methodRedirect), "TPP-Redirect-URI": f.RedirectURL,
@@ -138,120 +136,17 @@ func (c *client) stmtPost(ctx context.Context, f *flow) (*obsdk.Step, bool, erro
 		f.Phase = phStmtDownload
 		return nil, true, nil
 	}
-	st.RedirectURL, st.StartAuth, st.ScaPath = b.Links["scaRedirect"].Href, b.Links["startAuthorisation"].Href, b.Links["scaStatus"].Href
-	st.DownloadPath = c.aisBase() + "/accounts/" + url.PathEscape(st.AccountID) + "/transactions/" + url.PathEscape(st.ID) + "/download"
-	f.Phase = phStmtAuth
-	return nil, true, nil
-}
-
-func (c *client) stmtAuthorise(ctx context.Context, f *flow) (*obsdk.Step, bool, error) {
-	st := f.Stmt
-	if st.RedirectURL != "" {
-		f.AuthURL, f.Phase = st.RedirectURL, phStmtRedir
-		return redirectStep(f, "approve access to older transactions"), false, nil
-	}
-	if st.StartAuth != "" { // explicit authorisation: create the sub-resource first
-		r, err := c.aisCall(ctx, f.Session, kindOver90, req{
-			op: opStatement, method: http.MethodPost, path: st.StartAuth,
-			header: map[string]string{"TPP-Redirect-Preferred": fmt.Sprint(f.Method == methodRedirect), "TPP-Redirect-URI": f.RedirectURL},
-		}, &f.PSU)
-		if err != nil {
-			return nil, false, err
-		}
-		var b struct {
-			Links map[string]link `json:"_links"`
-		}
-		_ = json.Unmarshal(r.body, &b)
-		st.StartAuth = ""
-		st.RedirectURL, st.SelectPath, st.ScaPath = b.Links["scaRedirect"].Href, b.Links["selectAuthenticationMethod"].Href, b.Links["scaStatus"].Href
-		return nil, true, nil
-	}
-	if st.SelectPath != "" { // decoupled: pick the method and start the app challenge
-		method := f.Values["auth_method"]
-		var missing []obsdk.Field
-		for _, fl := range c.methodFields(method) {
-			if fl.Required && f.Values[fl.Key] == "" {
-				missing = append(missing, fl)
-			}
-		}
-		if len(missing) > 0 {
-			return &obsdk.Step{Kind: obsdk.StepInputRequired, NeedsUser: true, Message: "The bank needs these details to ask for your approval.", Fields: missing}, false, nil
-		}
-		body := map[string]any{"authenticationMethodId": method}
-		if d := psuData(f.Values); len(d) > 0 {
-			body["psuData"] = d
-		}
-		r, err := c.aisCall(ctx, f.Session, kindOver90, req{op: opStatement, method: http.MethodPut, path: st.SelectPath, body: body}, &f.PSU)
-		if err != nil {
-			return nil, false, err
-		}
-		var b struct {
-			Links      map[string]link `json:"_links"`
-			Challenge  *challengeData  `json:"challengeData"`
-			PSUMessage string          `json:"psuMessage"`
-		}
-		_ = json.Unmarshal(r.body, &b)
-		if l := b.Links["scaStatus"].Href; l != "" {
-			st.ScaPath = l
-		}
-		st.SelectPath = ""
-		f.Challenge, f.Message = c.challenge(b.Challenge, ""), b.PSUMessage
-		f.Phase = phStmtPoll
-		return waitStep(f, true, pollInterval), false, nil
-	}
-	if st.ScaPath != "" {
-		f.Phase = phStmtPoll
-		return nil, true, nil
-	}
-	return nil, false, fmt.Errorf("swedbank: statement needs approval but the bank gave no way to give it")
-}
-
-func (c *client) stmtPoll(ctx context.Context, f *flow) (*obsdk.Step, bool, error) {
-	if f.Stmt.ScaPath == "" {
-		return nil, false, fmt.Errorf("swedbank: the bank gave no status link for the history export approval")
-	}
-	r, err := c.aisCall(ctx, f.Session, kindOver90, req{op: opStatement, path: f.Stmt.ScaPath}, &f.PSU)
-	if err != nil {
-		return nil, false, err
-	}
-	var b struct {
-		Status string `json:"scaStatus"`
-	}
-	_ = json.Unmarshal(r.body, &b)
-	switch b.Status {
-	case "finalised":
-		f.Phase = phStmtStatus
-		return nil, true, nil
-	case "failed":
-		return nil, false, authFailed("approval of the history export failed: %s", tppSummary(parseTPP(r.body)))
-	}
-	return waitStep(f, true, pollInterval), false, nil
-}
-
-func (c *client) stmtRedirect(f *flow, in obsdk.StepInput) (*obsdk.Step, bool, error) {
-	if in.Callback == "" && !f.CallbackSeen {
-		return redirectStep(f, "approve access to older transactions"), false, nil
-	}
-	if in.Callback != "" {
-		// Swedbank returns the user from an approval without any parameters
-		// (seen in the SE sandbox); the status check below decides.
-		p, err := callback.Parse(in.Callback)
-		if err != nil && !errors.Is(err, callback.ErrNoParams) {
-			return nil, false, fmt.Errorf("%w: %v", obsdk.ErrInvalidRequest, err)
-		}
-		if code, desc, failed := p.Error(); failed {
-			return nil, false, authFailed("approval of the history export was not completed (%s: %s)", code, desc)
-		}
-		f.CallbackSeen = true
-	}
-	f.Phase = phStmtStatus
-	return nil, true, nil
+	st.DownloadPath = c.apiBase() + "/accounts/" + url.PathEscape(st.AccountID) + "/transactions/" + url.PathEscape(st.ID) + "/download"
+	sca := &scaFlow{Purpose: "approve access to older transactions", Subject: "the history export", Op: opStatement,
+		After: phStmtStatus, ConsentKind: kindOver90}
+	sca.scaLinks(b.Links)
+	return startSCA(f, sca)
 }
 
 func (c *client) stmtStatus(ctx context.Context, f *flow) (*obsdk.Step, bool, error) {
 	path := f.Stmt.StatusPath
 	if path == "" {
-		path = c.aisBase() + "/accounts/" + url.PathEscape(f.Stmt.AccountID) + "/transactions/" + url.PathEscape(f.Stmt.ID) + "/status"
+		path = c.apiBase() + "/accounts/" + url.PathEscape(f.Stmt.AccountID) + "/transactions/" + url.PathEscape(f.Stmt.ID) + "/status"
 	}
 	r, err := c.aisCall(ctx, f.Session, f.stmtConsentKind(), req{op: opStatement, path: path}, &f.PSU)
 	if err != nil {

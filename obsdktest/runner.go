@@ -23,6 +23,7 @@ type Outcome struct {
 	Balances     []obsdk.Balance    `json:"balances,omitempty"`
 	Transactions *obsdk.TxPage      `json:"transactions,omitempty"`
 	Session      *obsdk.Session     `json:"session,omitempty"`
+	Payment      *obsdk.Payment     `json:"payment,omitempty"`
 	Disconnect   *DisconnectOutcome `json:"disconnect,omitempty"`
 	AuthMethods  []obsdk.AuthMethod `json:"auth_methods,omitempty"`
 }
@@ -54,6 +55,7 @@ var sentinels = []struct {
 	{"unknown_bank", obsdk.ErrUnknownBank},
 	{"unsupported_target", obsdk.ErrUnsupportedTarget},
 	{"ambiguous_target", obsdk.ErrAmbiguousTarget},
+	{"payment_rejected", obsdk.ErrPaymentRejected},
 }
 
 func errorOutcome(err error) *ErrorOutcome {
@@ -71,6 +73,7 @@ func errorOutcome(err error) *ErrorOutcome {
 type Runner struct {
 	Client  obsdk.Client
 	Session *obsdk.Session
+	Payment *obsdk.Payment // the last payment seen
 	state   string
 }
 
@@ -168,6 +171,49 @@ func (r *Runner) Do(ctx context.Context, c Call) Outcome {
 		}
 		out.Disconnect = &DisconnectOutcome{Closed: res.Closed, Failed: res.Failed}
 		out.Session = res.Session
+	case "initiate_payment":
+		if c.Payment == nil {
+			return fail(fmt.Errorf("obsdktest: initiate_payment without payment"))
+		}
+		p := c.Payment
+		req := obsdk.PaymentRequest{Type: p.Type, Method: c.Method, Language: c.Language, RedirectURL: c.RedirectURL,
+			Values: c.Values, Debtor: p.Debtor, Transfers: p.Transfers, ExecutionDate: p.ExecutionDate,
+			ChargeBearer: p.ChargeBearer, Context: p.Context, IdempotencyKey: p.IdempotencyKey}
+		if opts.PSU != nil {
+			req.PSU = psu
+		}
+		if p.WithSession {
+			req.Session = r.Session
+		}
+		step, err := r.Client.InitiatePayment(ctx, req)
+		if err != nil {
+			return fail(err)
+		}
+		r.takeStep(step)
+		out.Step = maskStep(step)
+	case "payment_status", "cancel_payment":
+		ref := c.Ref
+		if ref == "" && r.Payment != nil {
+			ref = r.Payment.Ref
+		}
+		po := obsdk.PaymentCallOptions{Session: r.Session, PSU: opts.PSU, RedirectURL: c.RedirectURL, Method: c.Method}
+		if c.Op == "payment_status" {
+			res, err := r.Client.PaymentStatus(ctx, ref, po)
+			if err != nil {
+				return fail(err)
+			}
+			r.adopt(res.Session)
+			p := res.Data
+			r.Payment = &p
+			out.Payment, out.Session = maskPayment(&p), res.Session
+			break
+		}
+		step, err := r.Client.CancelPayment(ctx, ref, po)
+		if err != nil {
+			return fail(err)
+		}
+		r.takeStep(step)
+		out.Step = maskStep(step)
 	case "auth_methods":
 		l, ok := r.Client.(obsdk.AuthMethodLister)
 		if !ok {
@@ -192,8 +238,11 @@ func (r *Runner) adopt(s *obsdk.Session) {
 
 func (r *Runner) takeStep(st *obsdk.Step) {
 	r.state = st.State
-	if st.Kind == obsdk.StepDone && st.Session != nil {
+	if st.Session != nil && (st.Kind == obsdk.StepDone || st.Payment != nil) {
 		r.Session = st.Session
+	}
+	if st.Payment != nil {
+		r.Payment = st.Payment
 	}
 }
 
@@ -202,6 +251,17 @@ func maskStep(st *obsdk.Step) *obsdk.Step {
 	if c.State != "" {
 		c.State = "<state>"
 	}
+	c.Raw = nil
+	c.Payment = maskPayment(c.Payment)
+	return &c
+}
+
+// maskPayment drops the raw body, like page-level Raw elsewhere.
+func maskPayment(p *obsdk.Payment) *obsdk.Payment {
+	if p == nil {
+		return nil
+	}
+	c := *p
 	c.Raw = nil
 	return &c
 }

@@ -1,0 +1,79 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/domestic-payment-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:59da60",
+      "Content-Type": "application/json",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Financial-Id": "001580000103UAvAAM",
+      "X-Fapi-Interaction-Id": "cd514f1b-a4b6-4ab4-98db-0de73f6d604b",
+      "X-Idempotency-Key": "5d8149e0-e519-4acc-bc03-7913fd7ba82b",
+      "X-Jws-Signature": "eyJhbGciOiJQUzI1NiIsImNyaXQiOlsiaHR0cDovL29wZW5iYW5raW5nLm9yZy51ay90YW4iXSwiaHR0cDovL29wZW5iYW5raW5nLm9yZy51ay90YW4iOiJyYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2lkIjoib2JzZGstc2FuZGJveCIsInR5cCI6IkpPU0UifQ..EdPlDTrBxXcGtoieGDwYbuAKsJcGD7axCm-5fRcXGm_68zG-2tKOQASJ6vQm4-KlMXdpb5Oh-Fj93jIyh2_fVOXiOp74LJGqXZdjSVp1aCfcF97sD8VgC7staBkTgDQhINOcwGT62N7zPUockWttXXjHN18fhuf5z3F2N7Mja6h_yZFPAqWSGOxBkujChYTahanQQtlk0yXkNLnEFZ91ugD2LrFN4MFex7_33m--O43Esc7xeNCSkBYCQhqGpBdbbpPwQpTBy6UNKPRpl8u_SrWSGxF0I01vdMPakLqTSvuO9XD__bbgwhYyOd0Wekr3wdxrD5a_YIPT1TrKpHlPzw"
+    },
+    "body": {
+      "Data": {
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-e9666e",
+            "Name": "name-04a6de",
+            "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+          },
+          "EndToEndIdentification": "df24034f984e4a6c8a59a4588d1bdd5",
+          "InstructedAmount": {
+            "Amount": "1.10",
+            "Currency": "GBP"
+          },
+          "InstructionIdentification": "3e639356944f4f62ab370177b429d3b5",
+          "RemittanceInformation": {
+            "Reference": "reference-d2b614"
+          }
+        }
+      },
+      "Risk": {
+        "PaymentContextCode": "PartyToParty"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "6acf9ac3-f0ea-aa40-9ea4-96473347b0d9",
+        "CreationDateTime": "2026-10-14T15:07:47.825549Z",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-e9666e",
+            "Name": "name-04a6de",
+            "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+          },
+          "EndToEndIdentification": "df24034f984e4a6c8a59a4588d1bdd5",
+          "InstructedAmount": {
+            "Amount": "1.10",
+            "Currency": "GBP"
+          },
+          "InstructionIdentification": "3e639356944f4f62ab370177b429d3b5",
+          "RemittanceInformation": {
+            "Reference": "reference-d2b614"
+          }
+        },
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-14T15:07:47.825549Z"
+      },
+      "Links": {
+        "Self": "https://sandbox-oba-auth.revolut.com/domestic-payment-consents/6acf9ac3-f0ea-aa40-9ea4-96473347b0d9"
+      },
+      "Meta": {
+        "TotalPages": 1
+      },
+      "Risk": {
+        "PaymentContextCode": "PartyToParty"
+      }
+    }
+  }
+}

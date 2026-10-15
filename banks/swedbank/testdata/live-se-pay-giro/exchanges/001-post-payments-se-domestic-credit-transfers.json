@@ -1,0 +1,80 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:fd0036",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Nok-Redirect-Uri": "http://localhost/cb",
+      "Tpp-Redirect-Preferred": "false",
+      "Tpp-Redirect-Uri": "http://localhost/cb"
+    },
+    "body": {
+      "creditorAccount": {
+        "bban": "00PSEUDOBABD208E"
+      },
+      "creditorFriendlyName": "Giro payee",
+      "debtorAccount": {
+        "iban": "SE00PSEUDO6EF5C3C997"
+      },
+      "instructedAmount": {
+        "amount": "3.00",
+        "currency": "SEK"
+      },
+      "remittanceInformationStructured": {
+        "reference": "reference-635101",
+        "referenceType": "OCR"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "DECOUPLED",
+      "Content-Type": "application/json",
+      "X-Rate-Limit-Limit": "5000",
+      "X-Rate-Limit-Remaining": "4989",
+      "X-Rate-Limit-Reset": "3291",
+      "X-Request-Id": "f88d6be7-c7bd-4024-8912-061a8c9f22e9"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/8f97a4fe-d91f-452e-8958-3ed753fc7f21/authorisations/10b6810f-16b9-4edb-a6a1-c369b585b766"
+        },
+        "self": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/8f97a4fe-d91f-452e-8958-3ed753fc7f21"
+        },
+        "startAuthorisationWithAuthenticationMethodSelection": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/8f97a4fe-d91f-452e-8958-3ed753fc7f21/authorisations/10b6810f-16b9-4edb-a6a1-c369b585b766"
+        },
+        "status": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/8f97a4fe-d91f-452e-8958-3ed753fc7f21/status"
+        }
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID",
+        "authenticationType": "Mobile BankID"
+      },
+      "paymentId": "8f97a4fe-d91f-452e-8958-3ed753fc7f21",
+      "scaMethods": [
+        {
+          "authenticationMethodId": "MOBILE_ID",
+          "authenticationType": "Mobile BankID"
+        }
+      ],
+      "transactionStatus": "ACTC"
+    }
+  }
+}

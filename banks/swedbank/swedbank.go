@@ -57,9 +57,10 @@ func init() {
 			Spec:     "custom",
 			Variants: variants,
 			Capabilities: []obsdk.Capability{
-				obsdk.CapAccounts, obsdk.CapBalances, obsdk.CapTransactions, obsdk.CapTransactionsHistory,
+				obsdk.CapAccounts, obsdk.CapBalances, obsdk.CapTransactions, obsdk.CapTransactionsHistory, obsdk.CapPayments,
 			},
-			Auth: obsdk.AuthInfo{Approaches: []string{"redirect", "decoupled"}, Dynamic: true},
+			Payments: paymentSpecs(),
+			Auth:     obsdk.AuthInfo{Approaches: []string{"redirect", "decoupled"}, Dynamic: true},
 			Requirements: []obsdk.Requirement{
 				{Name: "client_id", Required: true, Note: "API key from the Swedbank developer portal (also sent as app-id/apiKey)"},
 				{Name: "client_secret", Secret: true, Required: true},
@@ -143,12 +144,15 @@ func (c *client) Info() obsdk.Info {
 
 func (c *client) now() time.Time { return c.cfg.Clock() }
 
-// aisBase is the path prefix of consent and account APIs.
-func (c *client) aisBase() string {
+// apiBase is the path prefix of the consent, account and payment APIs. Login
+// endpoints live under /psd2 in both environments.
+func (c *client) apiBase() string {
 	if c.cfg.Env == obsdk.Sandbox {
 		return "/sandbox/v5"
 	}
-	return "/psd2/v5" // unverified: taken from the "^/psd2/v5/" link pattern in the authorize-decoupled spec
+	// Unverified with credentials: without mTLS, /v5/accounts answers "No MTLS
+	// session established" while /psd2/v5/accounts answers 404 (probed 2026-10-14).
+	return "/v5"
 }
 
 func (c *client) scope() string {

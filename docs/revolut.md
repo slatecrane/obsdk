@@ -96,6 +96,49 @@ sandbox variants stay `experimental`; production variants stay `unverified`.
 - After disconnect, data calls get `401 UK.OBIE.Resource.Unauthorized` "Access token is invalid or
   expired" and refresh gets `401 UK.OBIE.Resource.Unauthorized` "Unable to validate refresh token".
 
+## Payments
+
+OBIE v3.1 payment initiation, from Revolut's "Initiate your first payment" and "Work with JSON Web
+Signatures" guides.
+
+| SDK type | Countries | Endpoints |
+|---|---|---|
+| `domestic` | GB | `domestic-payment-consents` / `domestic-payments` (GBP, `UK.OBIE.SortCodeAccountNumber`) |
+| `sepa` | EEA | the same domestic endpoints in EUR (`UK.OBIE.IBAN`) |
+| `crossborder` | all | `international-payment-consents` / `international-payments` |
+| any, with `execution_date` | | the `-scheduled-` variants (`Permission: Create`, `RequestedExecutionDateTime` at 12:00 UTC); beta at Revolut |
+
+Flow:
+
+1. Client token with `scope=payments`.
+2. `POST ...-payment-consents` with `x-idempotency-key` and `x-jws-signature`.
+3. Request object with `scope=payments`, then redirect.
+4. The callback's code is exchanged for a payment token (valid 24 hours).
+5. `POST ...-payments` with the consent's `Initiation` and `Risk` byte for byte, signed again.
+6. Status: `GET ...-payments/{id}` with a client token.
+
+Cancellation is not offered.
+
+- **Body signature**: a detached JWS (`header..signature`) over the exact body bytes.
+  - The header is `typ: JOSE`, `alg: PS256`, `kid`, `crit: ["http://openbanking.org.uk/tan"]`, plus
+    that claim set to the root domain of the JWKS URL.
+  - The SDK takes the domain from `Config.Extra["jws_tan"]`. Revolut wants the JWKS URL's full host:
+    the sandbox rejected `githubusercontent.com` (`400 Invalid 'http://openbanking.org.uk/tan'
+    signature header value`) and accepted `raw.githubusercontent.com`.
+  - The JWKS key must carry `x5c` with the signing certificate (`obdev jwks` adds it).
+- **Remittance**: one line, sent as `RemittanceInformation.Reference`, the reference the payee sees. It is
+  at most 18 characters for GBP (Faster Payments) and 35 otherwise. End-to-end ids are at most 31
+  characters for Faster Payments. Generated ids are shortened UUIDs.
+- **Consent**: consumed by the first payment attempt, whatever its outcome.
+- **Statuses**:
+  - `Pending` → accepted; `AcceptedSettlementInProcess` → in progress;
+    `AcceptedSettlementCompleted` → completed (final); `Rejected` → rejected (final).
+  - Scheduled payments only report `InitiationPending/Completed/Failed`, that is, whether the
+    schedule was set up.
+
+Sandbox (2026-10-14): once the portal app had the payments scope, a GBP domestic consent was
+accepted with the signature above. The approval and payment submission are not recorded yet.
+
 ## Still assumed
 
 - **Transactions**: the sandbox test user has three empty accounts (GBP, USD, EUR), so transaction

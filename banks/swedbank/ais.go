@@ -125,7 +125,7 @@ func toAccount(raw json.RawMessage) (obsdk.Account, error) {
 }
 
 func (c *client) listAccounts(ctx context.Context, s *obsdk.Session, kind string, psu *obsdk.PSUContext) ([]obsdk.Account, json.RawMessage, *resp, error) {
-	res, err := c.aisCall(ctx, s, kind, req{op: opAccounts, path: c.aisBase() + "/accounts", query: url.Values{"withBalance": {"false"}}}, psu)
+	res, err := c.aisCall(ctx, s, kind, req{op: opAccounts, path: c.apiBase() + "/accounts", query: url.Values{"withBalance": {"false"}}}, psu)
 	if err != nil {
 		return nil, nil, nil, err
 	}
@@ -166,7 +166,7 @@ func (c *client) Balances(ctx context.Context, s *obsdk.Session, accountID strin
 	if accountID == "" {
 		return nil, fmt.Errorf("%w: account id required", obsdk.ErrInvalidRequest)
 	}
-	res, err := c.aisCall(ctx, s, kindDetailed, req{op: opBalances, path: c.aisBase() + "/accounts/" + url.PathEscape(accountID) + "/balances"}, opts.PSU)
+	res, err := c.aisCall(ctx, s, kindDetailed, req{op: opBalances, path: c.apiBase() + "/accounts/" + url.PathEscape(accountID) + "/balances"}, opts.PSU)
 	if err != nil {
 		return nil, err
 	}
@@ -322,7 +322,7 @@ func (c *client) Transactions(ctx context.Context, s *obsdk.Session, q obsdk.TxQ
 		query.Set("pageId", q.Cursor)
 	}
 	res, err := c.aisCall(ctx, s, kindDetailed, req{
-		op: opTransactions, path: c.aisBase() + "/accounts/" + url.PathEscape(q.AccountID) + "/transactions", query: query,
+		op: opTransactions, path: c.apiBase() + "/accounts/" + url.PathEscape(q.AccountID) + "/transactions", query: query,
 	}, q.Options.PSU)
 	if err != nil {
 		var np *notPostedError

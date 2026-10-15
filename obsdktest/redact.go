@@ -9,6 +9,7 @@ import (
 	"io"
 	"net/url"
 	"strings"
+	"sync"
 )
 
 // Redactor removes secrets and personal data from recorded exchanges so that
@@ -32,6 +33,12 @@ type Redactor struct {
 	PIIKeys map[string]bool
 	// KeepQueryInURLs are query parameters preserved when redacting URLs in Location headers and callbacks.
 	KeepQueryInURLs map[string]bool
+
+	// seen maps account numbers already pseudonymized under a key to their
+	// pseudonym, so the same number is also replaced inside free text (banks
+	// echo the payee's IBAN in messages such as Swedbank's psuMessage).
+	mu   sync.Mutex
+	seen map[string]string
 }
 
 // DefaultRedactor covers common secret and personal-data fields. literals maps
@@ -85,12 +92,31 @@ func (r *Redactor) mask(label, value string) string {
 	return fmt.Sprintf("%s:%06x", placeholder(label), h.Sum32()&0xffffff)
 }
 
-// Text replaces literal secrets inside any string.
+// Text replaces literal secrets, and account numbers seen earlier, inside any string.
 func (r *Redactor) Text(s string) string {
 	for v, label := range r.Literals {
 		s = strings.ReplaceAll(s, v, placeholder(label))
 	}
+	r.mu.Lock()
+	for raw, p := range r.seen {
+		s = strings.ReplaceAll(s, raw, p)
+	}
+	r.mu.Unlock()
 	return s
+}
+
+// account pseudonymizes an account number and remembers it for Text.
+func (r *Redactor) account(kind, raw string) string {
+	p := pseudonym(kind, raw)
+	if len(raw) >= 8 && p != raw {
+		r.mu.Lock()
+		if r.seen == nil {
+			r.seen = map[string]string{}
+		}
+		r.seen[raw] = p
+		r.mu.Unlock()
+	}
+	return p
 }
 
 // Header redacts a header value.
@@ -212,6 +238,8 @@ func (r *Redactor) walk(key string, v any, pii bool) any {
 		switch {
 		case r.SecretKeys[lk] && !jsonPlain[lk]:
 			return r.mask(lk, t)
+		case pii && (lk == "iban" || lk == "bban"):
+			return r.account(lk, t)
 		case pii && r.PIIKeys[lk]:
 			return pseudonym(lk, t)
 		}

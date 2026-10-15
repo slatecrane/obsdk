@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers/P2/authorisations/AU2",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "challengeData": {
+        "autoStartToken": "tok-2"
+      },
+      "psuMessage": "Sign the payment in BankID",
+      "_links": {
+        "scaStatus": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P2/authorisations/AU2"
+        }
+      }
+    }
+  }
+}

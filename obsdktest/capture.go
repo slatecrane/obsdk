@@ -2,6 +2,7 @@ package obsdktest
 
 import (
 	"context"
+	"encoding/json"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -243,6 +244,62 @@ func (c *recordingClient) Refresh(ctx context.Context, s *obsdk.Session) (*obsdk
 func (c *recordingClient) Disconnect(ctx context.Context, s *obsdk.Session) (*obsdk.DisconnectResult, error) {
 	c.r.add(Call{Op: "disconnect"})
 	return c.Client.Disconnect(ctx, s)
+}
+
+func (c *recordingClient) InitiatePayment(ctx context.Context, req obsdk.PaymentRequest) (*obsdk.Step, error) {
+	pc := &PaymentCall{Type: req.Type, Debtor: req.Debtor, Transfers: req.Transfers, ExecutionDate: req.ExecutionDate,
+		ChargeBearer: req.ChargeBearer, Context: req.Context, IdempotencyKey: req.IdempotencyKey, WithSession: req.Session != nil}
+	// Names go through the body redactor; account numbers get the same
+	// pseudonyms as in the recorded bodies.
+	if b, err := json.Marshal(pc); err == nil {
+		var red PaymentCall
+		if json.Unmarshal(c.r.Red.JSON(b), &red) == nil {
+			pc = &red
+		}
+	}
+	if pc.Debtor != nil && pc.Debtor.Account != nil {
+		id := c.r.pseudoIdentifier(*pc.Debtor.Account)
+		pc.Debtor.Account = &id
+	}
+	for i := range pc.Transfers {
+		pc.Transfers[i].Creditor.Account = c.r.pseudoIdentifier(pc.Transfers[i].Creditor.Account)
+	}
+	call := Call{Op: "initiate_payment", Method: req.Method, Language: req.Language, RedirectURL: req.RedirectURL,
+		Values: c.r.values(req.Values), Payment: pc}
+	c.r.psu(&call, req.PSU)
+	c.r.add(call)
+	return c.Client.InitiatePayment(ctx, req)
+}
+
+// pseudoIdentifier hides a personal account number. Bankgiro and Plusgiro
+// numbers belong to businesses and are published, so they stay.
+func (r *ScenarioRecorder) pseudoIdentifier(id obsdk.Identifier) obsdk.Identifier {
+	switch id.Scheme {
+	case obsdk.SchemeBankgiro, obsdk.SchemePlusgiro:
+	case obsdk.SchemeIBAN:
+		id.Value = r.Red.account("iban", id.Value)
+	default:
+		id.Value = r.Red.account("bban", id.Value)
+	}
+	return id
+}
+
+func (c *recordingClient) PaymentStatus(ctx context.Context, ref string, o obsdk.PaymentCallOptions) (*obsdk.Result[obsdk.Payment], error) {
+	call := Call{Op: "payment_status"}
+	if o.PSU != nil {
+		c.r.psu(&call, *o.PSU)
+	}
+	c.r.add(call)
+	return c.Client.PaymentStatus(ctx, ref, o)
+}
+
+func (c *recordingClient) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentCallOptions) (*obsdk.Step, error) {
+	call := Call{Op: "cancel_payment", Method: o.Method, RedirectURL: o.RedirectURL}
+	if o.PSU != nil {
+		c.r.psu(&call, *o.PSU)
+	}
+	c.r.add(call)
+	return c.Client.CancelPayment(ctx, ref, o)
 }
 
 // AuthMethods keeps the optional AuthMethodLister capability visible through the wrapper.

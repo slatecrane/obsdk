@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers/P3/cancellation-authorisations",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authorisationId": "CA1",
+      "_links": {
+        "scaRedirect": {
+          "href": "https://bank.example/sca/c1"
+        },
+        "scaStatus": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P3/cancellation-authorisations/CA1"
+        }
+      }
+    }
+  }
+}

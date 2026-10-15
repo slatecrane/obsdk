@@ -1,6 +1,6 @@
 # ob-sdk
 
-A stateless Go client library for European open banking APIs (AISP first, PISP later).
+A stateless Go client library for European open banking APIs (account information and payments).
 One small interface over Berlin Group, STET, UK, Polish API and bank-specific variants,
 so applications don't write per-bank code.
 
@@ -37,7 +37,118 @@ accounts, err := c.Accounts(ctx, session, obsdk.CallOptions{})
 txs, err := c.Transactions(ctx, session, obsdk.TxQuery{AccountID: accounts.Data[0].ID, From: from})
 ```
 
+Payments use the same steps. Each bank describes the fields it needs per payment type, so forms can
+be built from data:
+
+```go
+spec, _ := c.Info().PaymentSpec("SE", obsdk.Personal, obsdk.PaymentDomestic) // fields, limits, schemes
+step, err = c.InitiatePayment(ctx, obsdk.PaymentRequest{Type: obsdk.PaymentDomestic, PSU: psu, Transfers: transfers})
+// ... drive steps as above; step.Payment.Ref reads the status later
+```
+
+See [docs/payments.md](docs/payments.md).
+
 A runnable version is in [examples/swedbank](examples/swedbank/main.go).
+
+### Example: reading accounts end to end
+
+Connecting a user's account in production, from client setup to transactions. Values such as
+`clientID`, the user's IP or the callback URL are placeholders; error handling is left out.
+
+```go
+import (
+    "context"
+    "crypto"
+    "crypto/tls"
+    "crypto/x509"
+    "errors"
+    "fmt"
+    "net/http"
+    "time"
+
+    obsdk "github.com/slatecrane/obsdk"
+    _ "github.com/slatecrane/obsdk/banks/all"
+)
+
+// 1. Initialize. The QWAC goes into the HTTP client (mTLS), the QSealC into Config.Seal.
+//    Neither ever ends up in a session. The key only has to be a crypto.Signer, so an
+//    HSM/KMS-backed key works too.
+qwac, err := tls.LoadX509KeyPair("qwac.crt", "qwac.key")
+httpClient := &http.Client{
+    Timeout:   30 * time.Second,
+    Transport: &http.Transport{TLSClientConfig: &tls.Config{
+        Certificates: []tls.Certificate{qwac},
+        MinVersion:   tls.VersionTLS12,
+    }},
+}
+var sealCert *x509.Certificate // parsed QSealC certificate
+var sealKey crypto.Signer      // its private key: *rsa.PrivateKey, *ecdsa.PrivateKey or a KMS signer
+
+cfg := obsdk.Config{
+    Env: obsdk.Production,
+    Credentials: obsdk.Credentials{
+        ClientID:     clientID,
+        ClientSecret: obsdk.Secret(clientSecret),
+        RedirectURL:  "https://app.example.com/bank/callback",
+    },
+    HTTPClient: httpClient,
+    Seal:       &obsdk.Seal{Key: sealKey, Certificate: sealCert, KeyID: kid},
+}
+// New checks the config against the bank's requirements (obsdk.Lookup lists them)
+// and returns an *obsdk.ConfigError naming anything missing.
+c, err := obsdk.New(obsdk.Target{Bank: "revolut", Country: "GB"}, cfg)
+
+// 2. Authorize. Connect creates the consent and returns the first step.
+ctx := context.Background()
+psu := obsdk.PSUContext{IP: "10.10.10.10", UserAgent: "User-Agent"} // the end user's device
+step, err := c.Connect(ctx, obsdk.ConnectRequest{PSU: psu})
+
+// 3. Redirect. Send the user to the bank to log in and approve the consent.
+//    step.State is opaque and contains secrets: keep it server-side until the callback.
+//    (Some banks start with StepInputRequired or StepWait instead; see Usage above.)
+redirectURL := step.Redirect.URL // e.g. respond with 302 Location: redirectURL
+
+// 4. Get the token. The bank sends the user back to RedirectURL; Resume with that
+//    callback exchanges the code for tokens and returns the session.
+callback := "https://app.example.com/bank/callback?code=abc123&state=xyz"
+step, err = c.Resume(ctx, step.State, obsdk.StepInput{Callback: callback})
+// Some banks need more steps after the callback (a second consent, app approval):
+// keep calling Resume until step.Kind == obsdk.StepDone.
+sess := step.Session // store it encrypted: it holds the tokens and consents
+
+// 5. Fetch accounts. Later, possibly in another process, rebuild the client with
+//    obsdk.Restore(sess, cfg).
+opts := obsdk.CallOptions{PSU: &psu} // omit PSU for unattended background syncs
+accounts, err := c.Accounts(ctx, sess, opts)
+if errors.Is(err, obsdk.ErrAccessExpired) {
+    sess, err = c.Refresh(ctx, sess) // ErrReauthRequired here means: run Connect again
+    accounts, err = c.Accounts(ctx, sess, opts)
+}
+
+// 6. Balances and transactions per account. Account.ID is valid only inside this
+//    session; use Account.StableID to match accounts across reconnects.
+for _, a := range accounts.Data {
+    balances, err := c.Balances(ctx, sess, a.ID, opts)
+    for _, b := range balances.Data {
+        fmt.Println(a.Name, b.Kind, b.Amount.Amount, b.Amount.Currency)
+    }
+
+    q := obsdk.TxQuery{AccountID: a.ID, From: time.Now().AddDate(0, 0, -90), Options: opts}
+    for {
+        res, err := c.Transactions(ctx, sess, q)
+        if err != nil { break }
+        if res.Step != nil { break } // the bank wants the user to approve older history: drive it like Connect
+        for _, t := range res.Transactions {
+            fmt.Println(t.BookingDate, t.Direction, t.Amount.Amount, t.Counterparty.Name)
+        }
+        if res.NextCursor == "" { break }
+        q.Cursor = res.NextCursor // opaque; page sizes differ per bank
+    }
+}
+```
+
+Persist every non-nil `Session` the SDK hands back (`Step.Session`, `Result.Session`,
+`TxResult.Session`, `FlowError.Session`): banks rotate tokens and consent state along the way.
 
 ## Principles
 
@@ -122,5 +233,5 @@ redacted on the way to disk. Details in [docs/testing.md](docs/testing.md).
 
 ## Not yet
 
-PISP (payments), more banks, request signing helpers (the `Seal` config exists; Swedbank's sandbox
+Bulk payments and standing orders (the payment model has room for both), more banks, request signing helpers (the `Seal` config exists; Swedbank's sandbox
 doesn't need it), optional automatic refresh, dynamic client registration.

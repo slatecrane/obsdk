@@ -1,0 +1,78 @@
+{
+  "config": {
+    "bank": "swedbank",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-14T15:04:53Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "ca4342f9-04fc-4a81-8b2e-ac7b15f4dbae",
+        "c83a1541-263c-4421-9b05-76dfbe2c8f43",
+        "a4dba2df-3327-4127-8172-d726dedafc59",
+        "660db6cd-f79c-4ae6-960e-29e1cd1c28a4",
+        "a3bdba81-741c-40c0-8887-3cd8ecf0e8ab",
+        "1ddedab4-4053-4dff-95e7-25a878191189",
+        "908b13be-4831-4992-a7a3-34bd6f785ee5"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "decoupled",
+      "payment": {
+        "type": "crossborder",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "SE00PSEUDO6EF5C3C997"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "4.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-6efe0c",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE00PSEUDO1360B051B8"
+              },
+              "agent": {
+                "bic": "COBADEFFXXX"
+              },
+              "address": {
+                "street": "Hauptstrasse",
+                "post_code": "10115",
+                "town": "Berlin",
+                "country": "DE"
+              }
+            },
+            "remittance": [
+              "obsdk intl"
+            ]
+          }
+        ],
+        "charge_bearer": "SHAR",
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    }
+  ]
+}

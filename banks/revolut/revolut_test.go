@@ -144,7 +144,7 @@ func TestRequestObject(t *testing.T) {
 	srv := httptest.NewServer(http.NotFoundHandler())
 	defer srv.Close()
 	c := newTestClient(t, srv, key)
-	jwt, err := c.signRequestObject("consent-9", "https://app.example/cb", "st")
+	jwt, err := c.signRequestObject("consent-9", "https://app.example/cb", "st", "accounts")
 	if err != nil {
 		t.Fatal(err)
 	}

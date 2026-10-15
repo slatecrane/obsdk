@@ -1,0 +1,306 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Approve payment of 3.00 SEK to BG 5051-6905 by using your MOBILE_ID device",
+      "challenge": {
+        "auto_start_token": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "8f97a4fe-d91f-452e-8958-3ed753fc7f21",
+        "type": "domestic_giro",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljX2dpcm8iLCJpZCI6IjhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzLzhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMS9zdGF0dXMiLCJzZWxmIjoiL3NhbmRib3gvdjUvcGF5bWVudHMvc2UtZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVycy84Zjk3YTRmZS1kOTFmLTQ1MmUtODk1OC0zZWQ3NTNmYzdmMjEifQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Approve payment of 3.00 SEK to BG 5051-6905 by using your MOBILE_ID device",
+      "challenge": {
+        "auto_start_token": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "8f97a4fe-d91f-452e-8958-3ed753fc7f21",
+        "type": "domestic_giro",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljX2dpcm8iLCJpZCI6IjhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzLzhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMS9zdGF0dXMiLCJzZWxmIjoiL3NhbmRib3gvdjUvcGF5bWVudHMvc2UtZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVycy84Zjk3YTRmZS1kOTFmLTQ1MmUtODk1OC0zZWQ3NTNmYzdmMjEifQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Approve payment of 3.00 SEK to BG 5051-6905 by using your MOBILE_ID device",
+      "challenge": {
+        "auto_start_token": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "8f97a4fe-d91f-452e-8958-3ed753fc7f21",
+        "type": "domestic_giro",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljX2dpcm8iLCJpZCI6IjhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzLzhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMS9zdGF0dXMiLCJzZWxmIjoiL3NhbmRib3gvdjUvcGF5bWVudHMvc2UtZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVycy84Zjk3YTRmZS1kOTFmLTQ1MmUtODk1OC0zZWQ3NTNmYzdmMjEifQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Approve payment of 3.00 SEK to BG 5051-6905 by using your MOBILE_ID device",
+      "challenge": {
+        "auto_start_token": "a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f"
+      },
+      "wait_for": 2000000000,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "8f97a4fe-d91f-452e-8958-3ed753fc7f21",
+        "type": "domestic_giro",
+        "status": "accepted",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljX2dpcm8iLCJpZCI6IjhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzLzhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMS9zdGF0dXMiLCJzZWxmIjoiL3NhbmRib3gvdjUvcGF5bWVudHMvc2UtZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVycy84Zjk3YTRmZS1kOTFmLTQ1MmUtODk1OC0zZWQ3NTNmYzdmMjEifQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "swedbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "swedbank-psd2-v5",
+        "generation": 4,
+        "updated_at": "2026-10-14T14:52:25.045978Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PSD2sandbox",
+        "access_expires_at": "2026-10-14T15:52:04.192267Z",
+        "consents": {
+          "allAccounts": {
+            "id": "38abb3ba-d8db-4438-9e1a-1cdcab3d235f",
+            "kind": "allAccounts",
+            "status": "valid",
+            "valid_until": "2026-10-15T23:59:59Z"
+          },
+          "detailed": {
+            "id": "dc1233c9-56cf-4e65-9297-c5a8df001c70",
+            "kind": "detailed",
+            "status": "valid",
+            "valid_until": "2027-01-12T23:59:59Z",
+            "accounts": [
+              "SE00PSEUDO6EF5C3C997",
+              "SE00PSEUDO00594ABE85",
+              "SE00PSEUDO1F90CE71A4",
+              "SE00PSEUDOD0C453C35A",
+              "SE00PSEUDO2409E38E98"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled",
+          "auth_method": "MOBILE_ID",
+          "login_method": "MOBILE_ID"
+        }
+      },
+      "payment": {
+        "id": "8f97a4fe-d91f-452e-8958-3ed753fc7f21",
+        "type": "domestic_giro",
+        "status": "completed",
+        "bank_status": "ACSC",
+        "final": true,
+        "ref": "obs1.eyJpIjoic3dlZGJhbmstcHNkMi12NSIsInAiOiJzZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzIiwidCI6ImRvbWVzdGljX2dpcm8iLCJpZCI6IjhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMSIsInMiOiIvc2FuZGJveC92NS9wYXltZW50cy9zZS1kb21lc3RpYy1jcmVkaXQtdHJhbnNmZXJzLzhmOTdhNGZlLWQ5MWYtNDUyZS04OTU4LTNlZDc1M2ZjN2YyMS9zdGF0dXMiLCJzZWxmIjoiL3NhbmRib3gvdjUvcGF5bWVudHMvc2UtZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVycy84Zjk3YTRmZS1kOTFmLTQ1MmUtODk1OC0zZWQ3NTNmYzdmMjEifQ"
+      }
+    }
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/v5/payments/se-domestic-credit-transfers",
+    "query": {
+      "app-id": [
+        "REDACTED:client_id"
+      ],
+      "bic": [
+        "SANDSESS"
+      ]
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "P2",
+      "transactionStatus": "RCVD",
+      "chosenScaMethod": {
+        "authenticationMethodId": "MOBILE_ID"
+      },
+      "_links": {
+        "self": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P2"
+        },
+        "status": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P2/status"
+        },
+        "startAuthorisationWithAuthenticationMethodSelection": {
+          "href": "/sandbox/v5/payments/se-domestic-credit-transfers/P2/authorisations/AU2"
+        }
+      }
+    }
+  }
+}

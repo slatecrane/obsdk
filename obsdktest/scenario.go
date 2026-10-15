@@ -6,6 +6,8 @@ import (
 	"os"
 	"path/filepath"
 	"time"
+
+	obsdk "github.com/slatecrane/obsdk"
 )
 
 // Scenario is a scripted conversation with one integration: which bank, which
@@ -77,10 +79,30 @@ type Call struct {
 	PageSize int      `json:"page_size,omitempty"`
 	Cursor   string   `json:"cursor,omitempty"`
 
+	// initiate_payment
+	Payment *PaymentCall `json:"payment,omitempty"`
+
+	// payment_status, cancel_payment: Payment.Ref; empty means the last
+	// payment the run saw.
+	Ref string `json:"ref,omitempty"`
+
 	// PSU context, for any call that takes one.
 	PSUIP        string `json:"psu_ip,omitempty"`
 	PSUUserAgent string `json:"psu_user_agent,omitempty"`
 	PSUID        string `json:"psu_id,omitempty"`
+}
+
+// PaymentCall is the bank-facing part of an obsdk.PaymentRequest (method,
+// language, redirect URL, values and PSU come from the Call).
+type PaymentCall struct {
+	Type           obsdk.PaymentType    `json:"type"`
+	Debtor         *obsdk.PaymentDebtor `json:"debtor,omitempty"`
+	Transfers      []obsdk.Transfer     `json:"transfers"`
+	ExecutionDate  string               `json:"execution_date,omitempty"`
+	ChargeBearer   string               `json:"charge_bearer,omitempty"`
+	Context        string               `json:"context,omitempty"`
+	IdempotencyKey string               `json:"idempotency_key,omitempty"`
+	WithSession    bool                 `json:"with_session,omitempty"` // pass the run's session as PaymentRequest.Session
 }
 
 // LoadScenario reads <dir>/scenario.json.

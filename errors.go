@@ -118,6 +118,7 @@ func (e *RefreshError) Is(t error) bool { return t == ErrRefreshFailed }
 // new login has already invalidated the previous session.
 type FlowError struct {
 	Session *Session
+	Payment *Payment // set when a payment flow fails after the bank created the payment
 	Err     error
 }
 

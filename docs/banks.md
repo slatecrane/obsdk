@@ -7,10 +7,13 @@ registered bank is missing from this page.
 Maturity levels are explained in [new-integration.md](new-integration.md#2-create-the-package).
 Production is `unverified` for every bank: it needs real QWAC/QSealC certificates.
 
-| Bank | Countries | Spec | Sandbox | Notes |
-|---|---|---|---|---|
-| `revolut` | GB, EEA (30) | UK OBIE | GB personal `sandbox_verified` (2026-10-14); others `experimental` | [revolut.md](revolut.md) |
-| `swedbank` | SE, EE, LV, LT | custom | SE `sandbox_verified` (2026-10-14); Baltics `experimental` | [swedbank.md](swedbank.md) |
+| Bank | Countries | Spec | Sandbox | Payments | Notes |
+|---|---|---|---|---|---|
+| `revolut` | GB, EEA (30) | UK OBIE | GB personal `sandbox_verified` (2026-10-14); others `experimental` | domestic, SEPA, cross-border; not run in the sandbox yet | [revolut.md](revolut.md) |
+| `swedbank` | SE, EE, LV, LT | custom | SE `sandbox_verified` (2026-10-14); Baltics `experimental` | SE domestic, Bankgiro, international and cancel run in the sandbox; Baltic SEPA unverified | [swedbank.md](swedbank.md) |
+
+Maturity is recorded per variant, not per capability. The Payments column says how far payments
+have been checked; [payments.md](payments.md) has the details.
 
 What each row leaves unverified is listed at the end of the bank's notes.
 
