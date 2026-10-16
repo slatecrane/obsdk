@@ -97,23 +97,18 @@ func paymentSpecs() []obsdk.PaymentSpec {
 	domestic.Type, domestic.Countries, domestic.Currencies, domestic.Cancellable = obsdk.PaymentDomestic, se, []string{"SEK"}, true
 	domestic.Fields = []obsdk.PaymentField{
 		debtor(obsdk.SchemeBBAN, obsdk.SchemeIBAN),
-		{Path: obsdk.FieldCreditorAccount, Use: obsdk.FieldRequired, Schemes: []string{obsdk.SchemeBBAN, obsdk.SchemeIBAN}, Label: "Payee account",
-			Note: "BBAN is clearing number + account number."},
+		{Path: obsdk.FieldCreditorAccount, Use: obsdk.FieldRequired, Schemes: []string{obsdk.SchemeBBAN, obsdk.SchemeIBAN, obsdk.SchemeBankgiro, obsdk.SchemePlusgiro},
+			Label: "Payee account", SchemeRules: []obsdk.SchemeRule{
+				{Scheme: obsdk.SchemeBBAN, Label: "Clearing and account number", Note: "Clearing number + account number."},
+				{Scheme: obsdk.SchemeBankgiro, Label: "Bankgiro number", Note: "7 or 8 digits, e.g. 5051-6905."},
+				{Scheme: obsdk.SchemePlusgiro, Label: "Plusgiro number", Note: "2 to 8 digits, e.g. 1234-4."},
+			}},
 		{Path: obsdk.FieldCreditorName, Use: obsdk.FieldOptional, MaxLength: 70, Label: "Payee name"},
+		{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, Schemes: []string{obsdk.ReferenceOCR}, Label: "OCR number",
+			OnlyWith: &obsdk.FieldCondition{Path: obsdk.FieldCreditorAccount, Schemes: []string{obsdk.SchemeBankgiro, obsdk.SchemePlusgiro}}},
 		remit, date,
 	}
-
-	giro := base
-	giro.Type, giro.Countries, giro.Currencies, giro.Cancellable = obsdk.PaymentDomesticGiro, se, []string{"SEK"}, true
-	giro.Fields = []obsdk.PaymentField{
-		debtor(obsdk.SchemeBBAN, obsdk.SchemeIBAN),
-		{Path: obsdk.FieldCreditorAccount, Use: obsdk.FieldRequired, Schemes: []string{obsdk.SchemeBankgiro, obsdk.SchemePlusgiro},
-			Pattern: `^[0-9]{2,8}(-[0-9]{1,4})?$`, Label: "Bankgiro / Plusgiro number"},
-		{Path: obsdk.FieldCreditorName, Use: obsdk.FieldOptional, MaxLength: 70, Label: "Payee name"},
-		{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, Schemes: []string{obsdk.ReferenceOCR}, Pattern: `^[0-9]{2,25}$`, Label: "OCR number"},
-		remit, date,
-	}
-	giro.Notes = append(giro.Notes, "Send either an OCR reference or a message, as the payee's Bankgiro/Plusgiro agreement requires.")
+	domestic.Notes = append(append([]string(nil), base.Notes...), "For Bankgiro / Plusgiro payees send either an OCR reference or a message, as the payee's agreement requires.")
 
 	seIntl := base
 	seIntl.Type, seIntl.Countries = obsdk.PaymentCrossBorder, se
@@ -156,15 +151,14 @@ func paymentSpecs() []obsdk.PaymentSpec {
 		{Path: obsdk.FieldCreditorBIC, Use: obsdk.FieldOptional, Pattern: `^[A-Z0-9]{8}([A-Z0-9]{3})?$`, Label: "Payee bank BIC"},
 		remit, date,
 	}
-	return []obsdk.PaymentSpec{domestic, giro, seIntl, sepa, inst, cross}
+	return []obsdk.PaymentSpec{domestic, seIntl, sepa, inst, cross}
 }
 
 var products = map[obsdk.PaymentType]map[bool]string{ // type -> baltic? -> product
-	obsdk.PaymentDomestic:     {false: productSEDomestic},
-	obsdk.PaymentDomesticGiro: {false: productSEDomestic},
-	obsdk.PaymentCrossBorder:  {false: productSEIntl, true: productCrossB},
-	obsdk.PaymentSEPA:         {true: productSEPA},
-	obsdk.PaymentSEPAInstant:  {true: productSEPAInst},
+	obsdk.PaymentDomestic:    {false: productSEDomestic},
+	obsdk.PaymentCrossBorder: {false: productSEIntl, true: productCrossB},
+	obsdk.PaymentSEPA:        {true: productSEPA},
+	obsdk.PaymentSEPAInstant: {true: productSEPAInst},
 }
 
 func (c *client) paymentSpec(t obsdk.PaymentType) (obsdk.PaymentSpec, string, error) {

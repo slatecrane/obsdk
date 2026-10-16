@@ -344,7 +344,7 @@ func dispatch(ctx context.Context, l *obsdktest.Live, c obsdk.Client, s *obsdk.S
 // paymentFlags builds a single-transfer PaymentRequest from command-line flags.
 func paymentFlags(args []string) (obsdk.PaymentRequest, bool, error) {
 	fs := flag.NewFlagSet("pay", flag.ExitOnError)
-	typ := fs.String("type", "", "payment type: sepa, sepa_instant, domestic, domestic_giro, crossborder, internal")
+	typ := fs.String("type", "", "payment type: sepa, sepa_instant, domestic, crossborder, internal")
 	amount := fs.String("amount", "", "amount, e.g. 1.00")
 	currency := fs.String("currency", "", "ISO 4217 currency")
 	to := fs.String("to", "", "payee account")

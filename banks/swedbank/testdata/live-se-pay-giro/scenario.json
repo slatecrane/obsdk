@@ -22,11 +22,11 @@
       "op": "initiate_payment",
       "method": "decoupled",
       "payment": {
-        "type": "domestic_giro",
+        "type": "domestic",
         "debtor": {
           "account": {
             "scheme": "IBAN",
-            "value": "SE00PSEUDO6EF5C3C997"
+            "value": "SE83PSEUDO6EF5C3C997"
           }
         },
         "transfers": [

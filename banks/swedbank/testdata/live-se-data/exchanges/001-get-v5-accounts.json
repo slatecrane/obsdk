@@ -45,7 +45,7 @@
           "bban": "00PSEUDOBE983B6D",
           "cashAccountType": "CACC",
           "currency": "SEK",
-          "iban": "SE00PSEUDO6EF5C3C997",
+          "iban": "SE83PSEUDO6EF5C3C997",
           "name": "name-2651b8",
           "product": "CURRENT",
           "resourceId": "AsdF01234EfgH4567"
@@ -66,7 +66,7 @@
           "disposalRights": {
             "role": "DISPOSAL_HOLDER"
           },
-          "iban": "SE00PSEUDO00594ABE85",
+          "iban": "SE56PSEUDO00594ABE85",
           "mainAccountHolder": {
             "customerId": "202601320000"
           },
@@ -87,7 +87,7 @@
           "bban": "00PSEUDO9861EF65",
           "cashAccountType": "CACC",
           "currency": "SEK",
-          "iban": "SE00PSEUDO1F90CE71A4",
+          "iban": "SE90PSEUDO1F90CE71A4",
           "name": "name-a8b4f7",
           "product": "CURRENT",
           "resourceId": "Baas786DD5886RT"
@@ -105,7 +105,7 @@
           "bban": "00PSEUDOAD584467",
           "cashAccountType": "CACC",
           "currency": "SEK",
-          "iban": "SE00PSEUDOD0C453C35A",
+          "iban": "SE07PSEUDOD0C453C35A",
           "name": "name-a8b4f7",
           "product": "CURRENT",
           "resourceId": "458A889B8889T784W"
@@ -123,7 +123,7 @@
           "bban": "00PSEUDOB8198B4F",
           "cashAccountType": "CACC",
           "currency": "SEK",
-          "iban": "SE00PSEUDO2409E38E98",
+          "iban": "SE06PSEUDO2409E38E98",
           "name": "name-b62371",
           "product": "CURRENT",
           "resourceId": "Vaal832ER5791IA"
