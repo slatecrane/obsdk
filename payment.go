@@ -15,12 +15,11 @@ import (
 type PaymentType string
 
 const (
-	PaymentSEPA         PaymentType = "sepa"          // SEPA credit transfer (EUR)
-	PaymentSEPAInstant  PaymentType = "sepa_instant"  // SEPA instant credit transfer, without fallback to SEPA
-	PaymentDomestic     PaymentType = "domestic"      // the country's own scheme in its currency (SE: SEK, GB: Faster Payments)
-	PaymentDomesticGiro PaymentType = "domestic_giro" // Swedish Bankgiro / Plusgiro
-	PaymentCrossBorder  PaymentType = "crossborder"   // international (SWIFT) transfer
-	PaymentInternal     PaymentType = "internal"      // between accounts of the same bank
+	PaymentSEPA        PaymentType = "sepa"         // SEPA credit transfer (EUR)
+	PaymentSEPAInstant PaymentType = "sepa_instant" // SEPA instant credit transfer, without fallback to SEPA
+	PaymentDomestic    PaymentType = "domestic"     // the country's own scheme in its currency (SE: SEK incl. Bankgiro / Plusgiro, GB: Faster Payments)
+	PaymentCrossBorder PaymentType = "crossborder"  // international (SWIFT) transfer
+	PaymentInternal    PaymentType = "internal"     // between accounts of the same bank
 )
 
 // Identifier schemes used in payments (Identifier.Scheme).
@@ -231,6 +230,30 @@ type PaymentField struct {
 	Options   []Option `json:"options,omitempty"`    // closed set of values
 	Label     string   `json:"label,omitempty"`
 	Note      string   `json:"note,omitempty"`
+
+	// SchemeRules add limits for values of one scheme, on top of the
+	// field's own and the scheme's format (ValidateIdentifier).
+	SchemeRules []SchemeRule `json:"scheme_rules,omitempty"`
+
+	// OnlyWith limits the field to requests where another field uses one of
+	// the given schemes, e.g. an OCR reference only for Bankgiro payees.
+	OnlyWith *FieldCondition `json:"only_with,omitempty"`
+}
+
+// SchemeRule constrains the values of one identifier or reference scheme.
+type SchemeRule struct {
+	Scheme    string `json:"scheme"`
+	MaxLength int    `json:"max_length,omitempty"`
+	Pattern   string `json:"pattern,omitempty"`
+	Label     string `json:"label,omitempty"`
+	Note      string `json:"note,omitempty"`
+}
+
+// FieldCondition names the schemes another field must use. Path is
+// FieldDebtorAccount, FieldCreditorAccount or FieldReference.
+type FieldCondition struct {
+	Path    string   `json:"path"`
+	Schemes []string `json:"schemes"`
 }
 
 // PaymentSpec is what a bank supports and needs for one payment type.
@@ -318,6 +341,7 @@ const (
 	IssueAmount      = "amount"
 	IssueDate        = "date"
 	IssueType        = "type"
+	IssueInvalid     = "invalid" // fails the scheme's format or check digits
 )
 
 // FieldIssue is one problem with a PaymentRequest.
@@ -354,7 +378,7 @@ var amountRE = regexp.MustCompile(`^\d+(\.\d+)?$`)
 
 // Validate checks a request against the spec; now bounds the execution date.
 func (s PaymentSpec) Validate(r PaymentRequest, now time.Time) error {
-	v := validator{spec: s}
+	v := validator{spec: s, req: r}
 	if r.Type != s.Type {
 		v.add(FieldIssue{Path: "type", Index: -1, Code: IssueType, Message: fmt.Sprintf("spec is for %q, request is %q", s.Type, r.Type)})
 	}
@@ -413,6 +437,10 @@ func (s PaymentSpec) Validate(r PaymentRequest, now time.Time) error {
 			if f, ok := v.present(FieldReference, i); ok {
 				v.scheme(f, i, t.Reference.Scheme)
 				v.value(f, i, t.Reference.Value)
+				v.schemeValue(f, i, t.Reference.Scheme, t.Reference.Value)
+				if err := ValidateReference(*t.Reference); err != nil {
+					v.add(FieldIssue{Path: f.Path, Index: i, Code: IssueInvalid, Message: err.Error()})
+				}
 			}
 		} else {
 			v.missing(FieldReference, i)
@@ -428,6 +456,7 @@ func (s PaymentSpec) Validate(r PaymentRequest, now time.Time) error {
 
 type validator struct {
 	spec   PaymentSpec
+	req    PaymentRequest
 	issues []FieldIssue
 }
 
@@ -445,8 +474,46 @@ func (v *validator) present(path string, idx int) (PaymentField, bool) {
 	f, ok := v.spec.Field(path)
 	if !ok {
 		v.add(FieldIssue{Path: path, Index: idx, Code: IssueUnsupported, Message: "is not supported for this payment type"})
+		return f, false
 	}
-	return f, ok
+	if c := f.OnlyWith; c != nil && !contains(c.Schemes, v.schemeAt(c.Path, idx)) {
+		v.add(FieldIssue{Path: path, Index: idx, Code: IssueUnsupported,
+			Message: fmt.Sprintf("is only supported when %s is %s", c.Path, strings.Join(c.Schemes, " or "))})
+		return f, false
+	}
+	return f, true
+}
+
+// schemeAt returns the scheme used by an identifier or reference field.
+func (v *validator) schemeAt(path string, idx int) string {
+	if path == FieldDebtorAccount {
+		if d := v.req.Debtor; d != nil && d.Account != nil {
+			return d.Account.Scheme
+		}
+		return ""
+	}
+	if idx < 0 || idx >= len(v.req.Transfers) {
+		return ""
+	}
+	t := v.req.Transfers[idx]
+	switch path {
+	case FieldCreditorAccount:
+		return t.Creditor.Account.Scheme
+	case FieldReference:
+		if t.Reference != nil {
+			return t.Reference.Scheme
+		}
+	}
+	return ""
+}
+
+func contains(list []string, s string) bool {
+	for _, x := range list {
+		if x == s {
+			return true
+		}
+	}
+	return false
 }
 
 func (v *validator) str(path string, idx int, val string) {
@@ -480,29 +547,36 @@ func (v *validator) value(f PaymentField, idx int, val string) {
 	}
 }
 
-func (v *validator) scheme(f PaymentField, idx int, scheme string) {
-	if len(f.Schemes) == 0 {
-		return
-	}
-	for _, s := range f.Schemes {
-		if s == scheme {
-			return
+// schemeValue applies the field's rule for the value's scheme.
+func (v *validator) schemeValue(f PaymentField, idx int, scheme, val string) {
+	for _, r := range f.SchemeRules {
+		if r.Scheme == scheme {
+			v.value(PaymentField{Path: f.Path, MaxLength: r.MaxLength, Pattern: r.Pattern}, idx, val)
 		}
+	}
+}
+
+func (v *validator) scheme(f PaymentField, idx int, scheme string) {
+	if len(f.Schemes) == 0 || contains(f.Schemes, scheme) {
+		return
 	}
 	v.add(FieldIssue{Path: f.Path, Index: idx, Code: IssueScheme, Message: fmt.Sprintf("scheme %q is not accepted (want one of %s)", scheme, strings.Join(f.Schemes, ", "))})
 }
 
 func (v *validator) ident(path string, idx int, id Identifier) {
 	f, ok := v.spec.Field(path)
-	if !ok {
-		if path == FieldCreditorAccount {
-			return // always accepted; the spec may leave it implicit
-		}
+	if !ok && path != FieldCreditorAccount { // the creditor account is always accepted; the spec may leave it implicit
 		v.present(path, idx)
 		return
 	}
-	v.scheme(f, idx, id.Scheme)
-	v.value(f, idx, id.Value)
+	if ok {
+		v.scheme(f, idx, id.Scheme)
+		v.value(f, idx, id.Value)
+		v.schemeValue(f, idx, id.Scheme, id.Value)
+	}
+	if err := ValidateIdentifier(id); err != nil {
+		v.add(FieldIssue{Path: path, Index: idx, Code: IssueInvalid, Message: err.Error()})
+	}
 }
 
 func (v *validator) lines(idx int, ls []string) {

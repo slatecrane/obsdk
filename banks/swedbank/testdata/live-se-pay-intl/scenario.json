@@ -26,7 +26,7 @@
         "debtor": {
           "account": {
             "scheme": "IBAN",
-            "value": "SE00PSEUDO6EF5C3C997"
+            "value": "SE83PSEUDO6EF5C3C997"
           }
         },
         "transfers": [
@@ -39,7 +39,7 @@
               "name": "name-6efe0c",
               "account": {
                 "scheme": "IBAN",
-                "value": "DE00PSEUDO1360B051B8"
+                "value": "DE59PSEUDO1360B051B8"
               },
               "agent": {
                 "bic": "COBADEFFXXX"

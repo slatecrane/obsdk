@@ -28,7 +28,7 @@ func TestPaymentBodies(t *testing.T) {
 
 	giro := tr(obsdk.Identifier{Scheme: obsdk.SchemeBankgiro, Value: "5051-6905"})
 	giro.Reference = &obsdk.Reference{Scheme: obsdk.ReferenceOCR, Value: "1234567890"}
-	got := bodyJSON(t, se.paymentBody(obsdk.PaymentRequest{Type: obsdk.PaymentDomesticGiro, ExecutionDate: "2026-10-20", Transfers: []obsdk.Transfer{giro}}, productSEDomestic))
+	got := bodyJSON(t, se.paymentBody(obsdk.PaymentRequest{Type: obsdk.PaymentDomestic, ExecutionDate: "2026-10-20", Transfers: []obsdk.Transfer{giro}}, productSEDomestic))
 	want := `{"creditorAccount":{"bban":"BG 5051-6905"},"creditorFriendlyName":"Anna","executionDate":"2026-10-20","instructedAmount":{"amount":"10.00","currency":"SEK"},"remittanceInformationStructured":{"reference":"1234567890","referenceType":"OCR"}}`
 	if got != want {
 		t.Errorf("giro:\n got %s\nwant %s", got, want)
@@ -56,7 +56,7 @@ func TestPaymentBodies(t *testing.T) {
 
 func TestPaymentSpecsPerCountry(t *testing.T) {
 	info, _ := obsdk.Lookup("swedbank")
-	if got := info.PaymentTypes("SE", obsdk.Personal); len(got) != 3 {
+	if got := info.PaymentTypes("SE", obsdk.Personal); len(got) != 2 {
 		t.Errorf("SE: %v", got)
 	}
 	if got := info.PaymentTypes("LT", obsdk.Personal); len(got) != 3 || got[0] != obsdk.PaymentSEPA {
@@ -79,5 +79,32 @@ func TestPaymentSpecsPerCountry(t *testing.T) {
 	var ve *obsdk.PaymentValidationError
 	if err := spec.Validate(r, time.Now()); !errors.As(err, &ve) || len(ve.Issues) != 1 || ve.Issues[0].Path != obsdk.FieldDebtorAccount {
 		t.Errorf("want debtor.account required, got %v", err)
+	}
+}
+
+func TestDomesticPayeeSchemes(t *testing.T) {
+	se := &client{target: obsdk.Target{Country: "SE"}}
+	spec, _, err := se.paymentSpec(obsdk.PaymentDomestic)
+	if err != nil {
+		t.Fatal(err)
+	}
+	pay := func(acc obsdk.Identifier, ocr string) obsdk.PaymentRequest {
+		tr := obsdk.Transfer{Amount: obsdk.Money{Amount: "10.00", Currency: "SEK"}, Creditor: obsdk.Creditor{Account: acc}}
+		if ocr != "" {
+			tr.Reference = &obsdk.Reference{Scheme: obsdk.ReferenceOCR, Value: ocr}
+		}
+		return obsdk.PaymentRequest{Type: obsdk.PaymentDomestic, Transfers: []obsdk.Transfer{tr}}
+	}
+	bg := obsdk.Identifier{Scheme: obsdk.SchemeBankgiro, Value: "5051-6905"}
+	acc := obsdk.Identifier{Scheme: obsdk.SchemeBBAN, Value: "8327-9,123456789"}
+	for _, r := range []obsdk.PaymentRequest{pay(bg, "1234567897"), pay(acc, "")} {
+		if err := spec.Validate(r, time.Now()); err != nil {
+			t.Errorf("%v: %v", r.Transfers[0].Creditor.Account, err)
+		}
+	}
+	for _, r := range []obsdk.PaymentRequest{pay(acc, "1234567897"), pay(obsdk.Identifier{Scheme: obsdk.SchemeBankgiro, Value: "5051-6904"}, "")} {
+		if err := spec.Validate(r, time.Now()); !errors.Is(err, obsdk.ErrInvalidRequest) {
+			t.Errorf("%v: want invalid, got %v", r.Transfers[0], err)
+		}
 	}
 }

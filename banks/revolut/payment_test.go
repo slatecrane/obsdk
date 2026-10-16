@@ -188,7 +188,7 @@ func TestPaymentValidationAndConfig(t *testing.T) {
 	c.cfg.Extra[paramJWSTan] = "example.org"
 	r := gbPayment()
 	r.Transfers[0].Remittance = []string{strings.Repeat("x", 19)} // Faster Payments: 18
-	r.Transfers[0].Creditor.Account.Scheme = obsdk.SchemeIBAN
+	r.Transfers[0].Creditor.Account = obsdk.Identifier{Scheme: obsdk.SchemeIBAN, Value: "GB33BUKB20201555555555"}
 	var ve *obsdk.PaymentValidationError
 	if _, err := c.InitiatePayment(ctx, r); !errors.As(err, &ve) || len(ve.Issues) != 2 {
 		t.Errorf("want 2 issues, got %v", err)

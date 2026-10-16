@@ -24,12 +24,12 @@
       "bic": "COBADEFFXXX",
       "chargeBearer": "SHA",
       "creditorAccount": {
-        "iban": "DE00PSEUDO1360B051B8"
+        "iban": "DE59PSEUDO1360B051B8"
       },
       "creditorAddress": "Hauptstrasse, 10115 Berlin, DE",
       "creditorName": "creditorname-6efe0c",
       "debtorAccount": {
-        "iban": "SE00PSEUDO6EF5C3C997"
+        "iban": "SE83PSEUDO6EF5C3C997"
       },
       "instructedAmount": {
         "amount": "4.00",

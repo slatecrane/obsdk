@@ -21,7 +21,7 @@ pay := step.Payment // pay.Ref identifies it later: c.PaymentStatus(ctx, pay.Ref
 ```
 
 - **Type** names the scheme:
-  - `sepa`, `sepa_instant`, `domestic` and `domestic_giro` (Swedish Bankgiro/Plusgiro).
+  - `sepa`, `sepa_instant` and `domestic` (in Sweden also to Bankgiro/Plusgiro numbers).
   - `crossborder` (SWIFT) and `internal` (between accounts of the same bank).
   - The type says nothing about how many transfers a payment has.
 - **Transfers** is always a list. A bulk payment is just more than one transfer. `PaymentSpec.MaxTransfers`
@@ -41,6 +41,8 @@ pay := step.Payment // pay.Ref identifies it later: c.PaymentStatus(ctx, pay.Ref
 |---|---|
 | `Fields[]` | Every request field the bank takes, by path (`transfers.creditor.name`, `debtor.account`, `execution_date`, ...), with `Use` (required / optional), `Schemes`, `MaxLength`, `MaxItems`, `Pattern`, `Options`, `Label` and `Note`. A field that is not listed is not supported. |
 | `Ask` | The field may be left empty because it is collected later, either by an input step or on the bank's page. |
+| `SchemeRules` | Extra limits for one scheme of the field, e.g. a pattern for `BBAN` only, plus a scheme-specific `Label` and `Note` for forms. |
+| `OnlyWith` | The field is accepted only when another field uses one of the given schemes, e.g. an OCR reference only for `BANKGIRO`/`PLUSGIRO` payees. |
 | `Currencies`, `MaxTransfers`, `ExecutionDateMaxDays` | Request limits. |
 | `AuthApproaches` | `redirect`, `decoupled`. |
 | `FinalStatuses` | The statuses the bank treats as final success. |
@@ -51,6 +53,12 @@ pay := step.Payment // pay.Ref identifies it later: c.PaymentStatus(ctx, pay.Ref
 `*PaymentValidationError` that lists every problem by path and transfer index, so a form can mark every
 field at once. `InitiatePayment` runs the same check first. Setting a field the bank does not support
 is an error, so nothing is dropped silently.
+
+Account numbers and references are also checked against their scheme, the same way at every bank:
+IBAN and RF check digits (mod 97), Bankgiro, Plusgiro and OCR check digits (mod 10), and 14 digits for
+`SORT_CODE_ACCOUNT`. `obsdk.ValidateIdentifier` and `obsdk.ValidateReference` run these checks on their own.
+The payment type stays generic: a Swedish payment to a Bankgiro number is a `domestic` payment whose
+payee account has the scheme `BANKGIRO`.
 
 Try it: `go run ./cmd/obdev payment-spec` lists the types for the configured bank, and
 `obdev payment-spec sepa` prints one spec.
@@ -84,7 +92,7 @@ Errors:
 
 | | Swedbank | Revolut |
 |---|---|---|
-| Types | SE: `domestic`, `domestic_giro`, `crossborder`. EE/LV/LT: `sepa`, `sepa_instant`, `crossborder` | GB: `domestic` (GBP, sort code). EEA: `sepa` (EUR). All: `crossborder` |
+| Types | SE: `domestic` (incl. Bankgiro/Plusgiro), `crossborder`. EE/LV/LT: `sepa`, `sepa_instant`, `crossborder` | GB: `domestic` (GBP, sort code). EEA: `sepa` (EUR). All: `crossborder` |
 | Login | Needs a user login first: a new one, or the one in `PaymentRequest.Session` | None: the approval itself is the login |
 | Approval | Redirect, or app (BankID / Smart-ID / Mobile-ID) with polling | Redirect |
 | Future-dated | `execution_date` | `execution_date`, through Revolut's scheduled-payment API (beta) |

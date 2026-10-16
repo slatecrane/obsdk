@@ -26,7 +26,7 @@
       },
       "creditorFriendlyName": "Giro payee",
       "debtorAccount": {
-        "iban": "SE00PSEUDO6EF5C3C997"
+        "iban": "SE83PSEUDO6EF5C3C997"
       },
       "instructedAmount": {
         "amount": "3.00",

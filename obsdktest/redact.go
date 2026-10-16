@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"hash/fnv"
 	"io"
+	"math/big"
 	"net/url"
 	"strings"
 	"sync"
@@ -265,7 +266,8 @@ func pseudonym(kind, s string) string {
 	switch kind {
 	case "iban":
 		if len(s) >= 2 {
-			return s[:2] + "00PSEUDO" + strings.ToUpper(sum[:10])
+			// Valid check digits, so the payment validation accepts it.
+			return pseudoIBAN(s[:2], "PSEUDO"+strings.ToUpper(sum[:10]))
 		}
 	case "bban":
 		return "00PSEUDO" + strings.ToUpper(sum[:8])
@@ -307,4 +309,18 @@ func (r *Redactor) Zip(data []byte) ([]byte, error) {
 		return nil, err
 	}
 	return buf.Bytes(), nil
+}
+
+// pseudoIBAN builds an IBAN with ISO 7064 check digits.
+func pseudoIBAN(country, bban string) string {
+	var b strings.Builder
+	for _, c := range bban + country + "00" {
+		if c >= 'A' && c <= 'Z' {
+			fmt.Fprintf(&b, "%d", c-'A'+10)
+		} else {
+			b.WriteRune(c)
+		}
+	}
+	n, _ := new(big.Int).SetString(b.String(), 10)
+	return fmt.Sprintf("%s%02d%s", country, 98-new(big.Int).Mod(n, big.NewInt(97)).Int64(), bban)
 }

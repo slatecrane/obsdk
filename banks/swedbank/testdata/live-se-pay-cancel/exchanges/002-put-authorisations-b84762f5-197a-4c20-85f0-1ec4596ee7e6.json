@@ -44,7 +44,7 @@
         "authenticationMethodId": "MOBILE_ID",
         "authenticationType": "Mobile BankID"
       },
-      "psuMessage": "Approve payment of 2.00 SEK to SE00PSEUDO00594ABE85 by using your MOBILE_ID device",
+      "psuMessage": "Approve payment of 2.00 SEK to SE56PSEUDO00594ABE85 by using your MOBILE_ID device",
       "scaStatus": "started"
     }
   }

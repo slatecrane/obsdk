@@ -119,7 +119,7 @@ func TestRedactor(t *testing.T) {
 			t.Errorf("leaked %s in %s", leak, out)
 		}
 	}
-	for _, keep := range []string{"MISSING_BANK_ID", "12.00", "SE00PSEUDO"} {
+	for _, keep := range []string{"MISSING_BANK_ID", "12.00", "PSEUDO"} {
 		if !strings.Contains(out, keep) {
 			t.Errorf("lost %s in %s", keep, out)
 		}
@@ -231,7 +231,7 @@ func TestRecordThenReplay(t *testing.T) {
 	if !strings.Contains(string(b), "REDACTED:access_token:") {
 		t.Errorf("replayed token: %s", b)
 	}
-	if _, body := get(t, pc, "http://anything/accounts"); !strings.Contains(body, "SE00PSEUDO") {
+	if _, body := get(t, pc, "http://anything/accounts"); !strings.Contains(body, "PSEUDO") {
 		t.Errorf("replayed accounts: %s", body)
 	}
 	rp.AssertAllUsed(t)

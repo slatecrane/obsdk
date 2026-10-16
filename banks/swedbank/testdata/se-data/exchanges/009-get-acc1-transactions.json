@@ -47,7 +47,7 @@
           {
             "bookingDate": "2026-10-01",
             "creditorAccount": {
-              "iban": "SE00PSEUDO41058F2437"
+              "iban": "SE21PSEUDO41058F2437"
             },
             "creditorName": "creditorname-716a5f",
             "remittanceInformationUnstructured": "remittanceinformationunstructured-b39dc3",

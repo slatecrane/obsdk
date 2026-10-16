@@ -95,7 +95,7 @@ v3/v4 API as used by public clients, corrected by sandbox runs.
 
 | SDK type | Countries | Product |
 |---|---|---|
-| `domestic`, `domestic_giro` | SE | `se-domestic-credit-transfers` (Bankgiro / Plusgiro as `bban: "BG 5051-6905"` / `"PG ..."`, OCR as `remittanceInformationStructured{reference, referenceType: OCR}`) |
+| `domestic` | SE | `se-domestic-credit-transfers` (Bankgiro / Plusgiro as `bban: "BG 5051-6905"` / `"PG ..."`, OCR as `remittanceInformationStructured{reference, referenceType: OCR}`) |
 | `crossborder` | SE | `se-international-credit-transfers` (`chargeBearer` OUR/SHA, `priority` NORMAL, debtor account required) |
 | `sepa`, `sepa_instant`, `crossborder` | EE, LV, LT | `sepa-credit-transfers`, `instant-sepa-credit-transfers`, `cross-border-credit-transfers` |
 

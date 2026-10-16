@@ -67,9 +67,12 @@ func TestValidatePaymentIssues(t *testing.T) {
 		{"creditor account missing", func(r *PaymentRequest) { r.Transfers[0].Creditor.Account = Identifier{} }, []string{FieldCreditorAccount + "=required"}},
 		{"too long", func(r *PaymentRequest) { r.Transfers[0].Creditor.Name = strings.Repeat("ä", 71) }, []string{FieldCreditorName + "=too_long"}},
 		{"too many lines", func(r *PaymentRequest) { r.Transfers[0].Remittance = []string{"a", "b"} }, []string{FieldRemittance + "=too_many"}},
-		{"pattern", func(r *PaymentRequest) { r.Transfers[0].Creditor.Account.Value = "ee38 2200" }, []string{FieldCreditorAccount + "=pattern"}},
+		{"pattern", func(r *PaymentRequest) { r.Transfers[0].Creditor.Account.Value = "ee38 2200" }, []string{FieldCreditorAccount + "=invalid", FieldCreditorAccount + "=pattern"}},
+		{"check digits", func(r *PaymentRequest) { r.Transfers[0].Creditor.Account.Value = "EE382200221020145686" }, []string{FieldCreditorAccount + "=invalid"}},
 		{"scheme", func(r *PaymentRequest) { r.Transfers[0].Creditor.Account.Scheme = SchemeBBAN }, []string{FieldCreditorAccount + "=scheme"}},
-		{"reference scheme", func(r *PaymentRequest) { r.Transfers[0].Reference = &Reference{Scheme: ReferenceOCR, Value: "123"} }, []string{FieldReference + "=scheme"}},
+		{"reference scheme", func(r *PaymentRequest) {
+			r.Transfers[0].Reference = &Reference{Scheme: ReferenceOCR, Value: "1234567897"}
+		}, []string{FieldReference + "=scheme"}},
 		{"option", func(r *PaymentRequest) { r.ChargeBearer = ChargeBearerDebtor }, []string{FieldChargeBearer + "=option"}},
 		{"unsupported", func(r *PaymentRequest) {
 			r.Context = PaymentContextOther

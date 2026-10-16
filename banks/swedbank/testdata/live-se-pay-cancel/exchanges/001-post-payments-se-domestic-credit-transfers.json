@@ -22,11 +22,11 @@
     },
     "body": {
       "creditorAccount": {
-        "iban": "SE00PSEUDO00594ABE85"
+        "iban": "SE56PSEUDO00594ABE85"
       },
       "creditorFriendlyName": "Own account",
       "debtorAccount": {
-        "iban": "SE00PSEUDO6EF5C3C997"
+        "iban": "SE83PSEUDO6EF5C3C997"
       },
       "executionDate": "2026-10-30",
       "instructedAmount": {
