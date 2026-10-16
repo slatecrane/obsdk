@@ -5,6 +5,7 @@ import (
 	"context"
 	"crypto"
 	"crypto/rsa"
+	"crypto/x509"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -39,7 +40,7 @@ func (s *Scenario) ClientConfig(doer obsdk.HTTPDoer) obsdk.Config {
 		},
 		Extra:      s.Config.Extra,
 		HTTPClient: doer,
-		Seal:       &obsdk.Seal{Key: testSigner{}, KeyID: "test-kid"},
+		Seal:       &obsdk.Seal{Key: testSigner{}, Certificate: testSignerCert, KeyID: "test-kid"},
 		Now:        func() time.Time { return now },
 		NewID:      s.idSource(),
 	}
@@ -51,6 +52,10 @@ func (s *Scenario) ClientConfig(doer obsdk.HTTPDoer) obsdk.Config {
 type testSigner struct{}
 
 var testSignerKey = &rsa.PublicKey{N: new(big.Int).Lsh(big.NewInt(1), 2047), E: 65537}
+
+// testSignerCert stands in for the seal certificate; banks that send its
+// fingerprint (ING's x5t#S256) get a fixed value.
+var testSignerCert = &x509.Certificate{Raw: []byte("obsdktest seal certificate"), PublicKey: testSignerKey}
 
 func (testSigner) Public() crypto.PublicKey { return testSignerKey }
 func (testSigner) Sign(_ io.Reader, digest []byte, _ crypto.SignerOpts) ([]byte, error) {

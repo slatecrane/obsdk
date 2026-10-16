@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/oauth2/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026grant_type=client_credentials"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:84885f",
+      "client_id": "REDACTED:client_id",
+      "expires_in": 905,
+      "keys": [
+        {
+          "alg": "RS256",
+          "e": "AQAB",
+          "kty": "RSA",
+          "n": "3l3rdz4hyJkMx5ChddZmQft6_YsRfBkyA2ftXy1cOcqSm6Wtywt1ztVYATFHBOaX_tr7C5LXtMcghjoRbUfUHoy-egpC2B4wZ45YxWbBvLtG6QyCQH8kqLqjeGzDgpnJfDuhZP8i0lXPZwkWpF8J9XuB0DgVDrDXiS0wPB_I4mCW9s4ZMOdMA7aJMN2qhGo4DJqTn2aPjnzyx1OaeiRZC6YiyLU9QJJpWanFk69bZRu9Lpox8j4y5O2TW8bDmkKb0P_WXZVcSYgkX0Ed9Da0jCBl9cbqXdp7Ww4B8f8y9oBgK58VHlPvaufORw8IyaJ4Q6WezsHSq_Dmp2WFbV4z_qNS-ZpEGGdpkPtaYODTXU1p_3gTmNGBuAN0jLE9DaQZJswKj9-oBJifpHbOMnv2f__jBdjNvtDxe_LJPMj1B6XUetqoq8k9fU_XiHxz3mSBvzRqf-d-fD_evr4i_nxqEvsT_5D1nGvts8XQaSPehtlpFTym35KR83qoo04VPkdV",
+          "use": "sig",
+          "x5t": "26e5d9329369bf1e5d3198cb4f4da45c9de040cf"
+        }
+      ],
+      "scope": "payment-accounts:orders:create granting",
+      "token_type": "Bearer"
+    }
+  }
+}

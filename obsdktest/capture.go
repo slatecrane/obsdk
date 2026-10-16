@@ -285,7 +285,7 @@ func (r *ScenarioRecorder) pseudoIdentifier(id obsdk.Identifier) obsdk.Identifie
 }
 
 func (c *recordingClient) PaymentStatus(ctx context.Context, ref string, o obsdk.PaymentCallOptions) (*obsdk.Result[obsdk.Payment], error) {
-	call := Call{Op: "payment_status"}
+	call := Call{Op: "payment_status", Ref: ref} // refs hold no tokens, so they can be stored
 	if o.PSU != nil {
 		c.r.psu(&call, *o.PSU)
 	}
@@ -294,7 +294,7 @@ func (c *recordingClient) PaymentStatus(ctx context.Context, ref string, o obsdk
 }
 
 func (c *recordingClient) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentCallOptions) (*obsdk.Step, error) {
-	call := Call{Op: "cancel_payment", Method: o.Method, RedirectURL: o.RedirectURL}
+	call := Call{Op: "cancel_payment", Ref: ref, Method: o.Method, RedirectURL: o.RedirectURL}
 	if o.PSU != nil {
 		c.r.psu(&call, *o.PSU)
 	}

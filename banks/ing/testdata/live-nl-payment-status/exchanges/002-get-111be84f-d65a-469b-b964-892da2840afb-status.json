@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v2/payments/sepa-credit-transfers/111be84f-d65a-469b-b964-892da2840afb/status",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:74e688",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:61fc3d"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactionStatus": "ACSC"
+    }
+  }
+}

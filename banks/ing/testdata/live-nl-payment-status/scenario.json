@@ -1,0 +1,29 @@
+{
+  "config": {
+    "bank": "ing",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-16T12:10:06Z",
+    "redirect_url": "https://www.example.com/",
+    "ids": {
+      "request": [
+        "2557e34d-d07d-4384-81bc-6fb36c5e950d",
+        "c2fea1e2-ff0e-426d-98a5-1fe21887e04f"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "payment_status",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1",
+      "ref": "obs1.eyJpIjoiaW5nLXBzZDItdjQiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIxMTFiZTg0Zi1kNjVhLTQ2OWItYjk2NC04OTJkYTI4NDBhZmIiLCJ0Ijoic2VwYSJ9"
+    },
+    {
+      "op": "payment_status",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1",
+      "ref": "obs1.eyJpIjoiaW5nLXBzZDItdjQiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIyMzkwMWQxMy1kNjVhLTQ2OWItYjk2NC04OTJkYTI4NDBhZmIiLCJ0Ijoic2VwYSJ9"
+    }
+  ]
+}

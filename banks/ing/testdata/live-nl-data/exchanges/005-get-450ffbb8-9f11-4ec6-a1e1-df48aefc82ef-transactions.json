@@ -1,0 +1,59 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/transactions",
+    "query": {
+      "fromDateTime": [
+        "2026-09-20T00:00:00.000Z"
+      ],
+      "limit": [
+        "1"
+      ],
+      "toDateTime": [
+        "2026-10-16T12:02:30.000Z"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:e2c25e",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "X-Jws-Signature": "eyJiNjQiOmZhbHNlLCJ4NXQjUzI1NiI6IjZzQkxJVWRFay1POVVMU3dyVGtERUNmQTZDTzBtcnplTGMwdFhYeWp4Z00iLCJjcml0IjpbInNpZ1QiLCJzaWdEIiwiYjY0Il0sInNpZ1QiOiIyMDI2LTEwLTE2VDEyOjAyOjMwWiIsInNpZ0QiOnsicGFycyI6WyIocmVxdWVzdC10YXJnZXQpIiwiZGlnZXN0IiwiY29udGVudC10eXBlIl0sIm1JZCI6Imh0dHA6Ly91cmkuZXRzaS5vcmcvMTkxODIvSHR0cEhlYWRlcnMifSwiYWxnIjoiUFMyNTYifQ..sJiWZU3286NxkPgcq9gHt0BvRx_LpuP7-dKWGlGn2YZ2ixs7KNB3697lpaaW5XgXdIA-bz39d1KxoxjNq8VBLQXg-PuW91zGez2msbOlnZzhTB5t8f4fY-Y3ozelNtlapLGFyyejUI_Fze2w2WDlsj1KM3TBwnObnDUuF65tED_RHsWD8hImd2nY-bGubzTK24JchGE-dTp4xRHMxHwaF-RQft28e0zemZj0z6bvIqeyvg0hqPISx7O8DfJ5hOlS0uu7eJbiABze4nffCqVujz425Rxmxy_kV9r3xpvT_1y4WcaE9d5wmBxlh_dJ2R254zlWws65s342kTfxgQxEOQ"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "currency": "EUR",
+        "iban": "NL15PSEUDO49AB10E51B"
+      },
+      "transactions": {
+        "_links": {
+          "next": {
+            "href": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/transactions?next=kSMFlZD3OwJGRjsKVMzAccr1cxjOSiXbOly7Bv7TeSilMHWluSGqC7aKNLwxBhBTp7VZ-c6Lu8pQLBio5FiDghyfNpTaHA=="
+          }
+        },
+        "booked": [],
+        "info": [],
+        "pending": [
+          {
+            "endToEndId": "6434799",
+            "executionDateTime": "2026-10-16T00:00:00Z",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-f42452",
+            "transactionAmount": {
+              "amount": -100.00,
+              "currency": "EUR"
+            },
+            "transactionId": "022614321069976205000000001",
+            "transactionType": "Incasso"
+          }
+        ],
+        "standingOrderAgreementInformation": []
+      }
+    }
+  }
+}

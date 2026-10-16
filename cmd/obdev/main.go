@@ -58,7 +58,7 @@ commands:
   connect                          log in (redirect/decoupled) and save the session
   accounts
   balances ACCOUNT_ID
-  transactions ACCOUNT_ID [-from D] [-to D] [-status booked,pending]
+  transactions ACCOUNT_ID [-from D] [-to D] [-status booked,pending] [-size N] [-cursor C]
   refresh
   disconnect
   auth-methods
@@ -213,14 +213,16 @@ func dispatch(ctx context.Context, l *obsdktest.Live, c obsdk.Client, s *obsdk.S
 		return printJSON(r.Data)
 	case "transactions":
 		if err := needSession(); err != nil || len(args) < 2 {
-			return orUsage(err, "obdev transactions ACCOUNT_ID [-from D] [-to D]")
+			return orUsage(err, "obdev transactions ACCOUNT_ID [-from D] [-to D] [-size N] [-cursor C]")
 		}
 		fs := flag.NewFlagSet("transactions", flag.ExitOnError)
 		from := fs.String("from", "", "start date (YYYY-MM-DD or RFC 3339); default 30 days ago")
 		to := fs.String("to", "", "end date; default now")
 		status := fs.String("status", "", "comma separated: booked,pending")
+		size := fs.Int("size", 0, "page size; 0 lets the integration choose")
+		cursor := fs.String("cursor", "", "next_cursor from the previous page")
 		_ = fs.Parse(args[2:])
-		q := obsdk.TxQuery{AccountID: args[1], Options: opts, From: time.Now().AddDate(0, 0, -30), To: time.Now()}
+		q := obsdk.TxQuery{AccountID: args[1], Options: opts, From: time.Now().AddDate(0, 0, -30), To: time.Now(), PageSize: *size, Cursor: *cursor}
 		var err error
 		if *from != "" {
 			if q.From, err = parseDate(*from); err != nil {

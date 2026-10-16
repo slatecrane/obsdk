@@ -1,0 +1,39 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v4/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:1ecef7",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "X-Jws-Signature": "eyJiNjQiOmZhbHNlLCJ4NXQjUzI1NiI6IjZzQkxJVWRFay1POVVMU3dyVGtERUNmQTZDTzBtcnplTGMwdFhYeWp4Z00iLCJjcml0IjpbInNpZ1QiLCJzaWdEIiwiYjY0Il0sInNpZ1QiOiIyMDI2LTEwLTE2VDEyOjAxOjAyWiIsInNpZ0QiOnsicGFycyI6WyIocmVxdWVzdC10YXJnZXQpIiwiZGlnZXN0IiwiY29udGVudC10eXBlIl0sIm1JZCI6Imh0dHA6Ly91cmkuZXRzaS5vcmcvMTkxODIvSHR0cEhlYWRlcnMifSwiYWxnIjoiUFMyNTYifQ..bikwKOx7jgU1y4MUVDVUICzkihZMnyOjKZeZXOj3zoet1RxiFMawIYf97333EqhsqLTMnl3NymssMnkRcMoBNr5hlUdAHjviYn9MRYhYef1zm02K9QpKeYrNm2V7R93ZNdk9CCfSqkBgI2MKrkxO2BKKHDG4jwmPmN3yqYiqubTkt3YHzvRE22EFqCUoNEqPc8FWUnJOZL5aKb9s4_Xt07d0EKV8q-OwLpTsN9FFO1sRBCZBfFcc-MQW8CE_AuwELd2yNqD31wII39H34bceIr7lVZpUOHs_LHQc94QxU4zRd5ZUtK4IgciHu8RkRJJ8kynoWYyO5l81FOZxKhjnYg"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f902/balances?currency=EUR"
+            },
+            "transactions": {
+              "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f902/transactions?currency=EUR"
+            }
+          },
+          "currency": "EUR",
+          "iban": "AT35PSEUDO4B568A0EAE",
+          "maskedPan": "",
+          "name": "name-19cb43",
+          "product": "",
+          "resourceId": "181fdfd4-5838-4768-b803-91ae2192f902"
+        }
+      ]
+    }
+  }
+}

@@ -4,6 +4,7 @@
 package all
 
 import (
+	_ "github.com/slatecrane/obsdk/banks/ing"
 	_ "github.com/slatecrane/obsdk/banks/revolut"
 	_ "github.com/slatecrane/obsdk/banks/swedbank"
 )

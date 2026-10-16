@@ -24,6 +24,7 @@ docs/design-notes.md
 # bank-issued certificates and CSRs (public roots we embed use .crt)
 banks/*/sandbox.env
 *.der
+*.cer
 *.csr
 
 # private notes and editor settings

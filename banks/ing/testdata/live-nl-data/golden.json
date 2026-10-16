@@ -1,0 +1,225 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "450ffbb8-9f11-4ec6-a1e1-df48aefc82ef",
+        "stable_id": "1bc73ba1dd1f27783cbe96b0f54038c1",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL15PSEUDO49AB10E51B"
+          }
+        ],
+        "name": "Betaalrekening",
+        "owner_name": "name-bd3ca9",
+        "currency": "EUR",
+        "product": "Betaalrekening",
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/balances?currency=EUR"
+            },
+            "transactions": {
+              "href": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/transactions?currency=EUR"
+            }
+          },
+          "currency": "EUR",
+          "iban": "NL15PSEUDO49AB10E51B",
+          "maskedPan": "",
+          "name": "name-bd3ca9",
+          "product": "Betaalrekening",
+          "resourceId": "450ffbb8-9f11-4ec6-a1e1-df48aefc82ef"
+        }
+      },
+      {
+        "id": "181fdfd4-5838-4768-b803-91ae2192f901",
+        "stable_id": "8ba0098595268053312d94eb5f5bd95b",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL02PSEUDO975DA5EE88"
+          }
+        ],
+        "name": "Betaalrekening",
+        "owner_name": "name-0b8cdf",
+        "currency": "EUR",
+        "product": "Betaalrekening",
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f901/balances?currency=EUR"
+            },
+            "transactions": {
+              "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f901/transactions?currency=EUR"
+            }
+          },
+          "currency": "EUR",
+          "iban": "NL02PSEUDO975DA5EE88",
+          "maskedPan": "",
+          "name": "name-0b8cdf",
+          "product": "Betaalrekening",
+          "resourceId": "181fdfd4-5838-4768-b803-91ae2192f901"
+        }
+      },
+      {
+        "id": "card~34dea1a9-0543-4711-b105-3492d1bbc8f6",
+        "stable_id": "dcf9a2fe13be65d6eb76b7977fc6f811",
+        "identifiers": [
+          {
+            "scheme": "MASKED_PAN",
+            "value": "maskedpan-644ac1"
+          }
+        ],
+        "name": "CREDITCARD",
+        "owner_name": "name-78b639",
+        "currency": "EUR",
+        "product": "CREDITCARD",
+        "type": "CARD",
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "/v4/accounts/34dea1a9-0543-4711-b105-3492d1bbc8f6/balances?currency=EUR"
+            },
+            "transactions": {
+              "href": "/v2/card-accounts/34dea1a9-0543-4711-b105-3492d1bbc8f6/transactions?currency=EUR"
+            }
+          },
+          "currency": "EUR",
+          "iban": "",
+          "maskedPan": "maskedpan-644ac1",
+          "name": "name-78b639",
+          "product": "CREDITCARD",
+          "resourceId": "34dea1a9-0543-4711-b105-3492d1bbc8f6"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "other",
+        "bank_type": "expected",
+        "amount": {
+          "amount": "100.12",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-16"
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "other",
+        "bank_type": "expected",
+        "amount": {
+          "amount": "-1000.57",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-16"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "021614321078455845000000001",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-16",
+          "value_date": "2026-10-16",
+          "transaction_date": "2026-10-16",
+          "counterparty": {},
+          "remittance": [
+            "remittanceinformationunstructured-7495d5"
+          ],
+          "bank_code_text": "Diversen",
+          "raw": {
+            "bookingDate": "2026-10-16",
+            "endToEndId": "NOTPROVIDED",
+            "executionDateTime": "2026-10-16T00:00:00Z",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-7495d5",
+            "transactionAmount": {
+              "amount": 100.00,
+              "currency": "EUR"
+            },
+            "transactionId": "021614321078455845000000001",
+            "transactionType": "Diversen",
+            "valueDate": "2026-10-16"
+          }
+        },
+        {
+          "id": "022614321069976205000000001",
+          "status": "pending",
+          "direction": "debit",
+          "amount": {
+            "amount": "-100.00",
+            "currency": "EUR"
+          },
+          "transaction_date": "2026-09-20",
+          "counterparty": {},
+          "remittance": [
+            "remittanceinformationunstructured-f42452"
+          ],
+          "end_to_end_id": "6434799",
+          "bank_code_text": "Incasso",
+          "raw": {
+            "endToEndId": "6434799",
+            "executionDateTime": "2026-09-20T00:00:00Z",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-f42452",
+            "transactionAmount": {
+              "amount": -100.00,
+              "currency": "EUR"
+            },
+            "transactionId": "022614321069976205000000001",
+            "transactionType": "Incasso"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "022614321069976205000000001",
+          "status": "pending",
+          "direction": "debit",
+          "amount": {
+            "amount": "-100.00",
+            "currency": "EUR"
+          },
+          "transaction_date": "2026-10-16",
+          "counterparty": {},
+          "remittance": [
+            "remittanceinformationunstructured-f42452"
+          ],
+          "end_to_end_id": "6434799",
+          "bank_code_text": "Incasso",
+          "raw": {
+            "endToEndId": "6434799",
+            "executionDateTime": "2026-10-16T00:00:00Z",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-f42452",
+            "transactionAmount": {
+              "amount": -100.00,
+              "currency": "EUR"
+            },
+            "transactionId": "022614321069976205000000001",
+            "transactionType": "Incasso"
+          }
+        }
+      ],
+      "next_cursor": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/transactions?next=kSMFlZD3OwJGRjsKVMzAccr1cxjOSiXbOly7Bv7TeSilMHWluSGqC7aKNLwxBhBTp7VZ-c6Lu8pQLBio5FiDghyfNpTaHA=="
+    }
+  }
+]

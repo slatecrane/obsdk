@@ -1,0 +1,17 @@
+{
+  "config": {
+    "bank": "ing",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-16T12:00:19Z",
+    "redirect_url": "https://www.example.com/"
+  },
+  "calls": [
+    {
+      "op": "refresh"
+    },
+    {
+      "op": "disconnect"
+    }
+  ]
+}

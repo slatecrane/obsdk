@@ -1,0 +1,49 @@
+[
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "ing",
+      "country": "NL",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "ing-psd2-v4",
+      "generation": 3,
+      "updated_at": "2026-10-16T12:00:19Z",
+      "access_token": "REDACTED:access_token:28ad2c",
+      "refresh_token": "REDACTED:refresh_token",
+      "token_type": "Bearer",
+      "scope": "payment-accounts:transactions:view payment-accounts:balances:view",
+      "access_expires_at": "2026-10-16T12:15:19Z",
+      "refresh_expires_at": "2026-11-15T11:57:03.210146Z",
+      "consents": {
+        "accounts": {
+          "id": "",
+          "kind": "accounts",
+          "status": "granted",
+          "valid_until": "2026-11-15T11:57:03.210146Z"
+        }
+      }
+    }
+  },
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "ing",
+      "country": "NL",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "ing-psd2-v4",
+      "generation": 4,
+      "updated_at": "2026-10-16T12:00:19Z",
+      "token_type": "Bearer",
+      "scope": "payment-accounts:transactions:view payment-accounts:balances:view"
+    },
+    "disconnect": {
+      "closed": [
+        "accounts"
+      ]
+    }
+  }
+]

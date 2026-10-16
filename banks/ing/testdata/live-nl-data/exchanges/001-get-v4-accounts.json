@@ -1,0 +1,71 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v4/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:e2c25e",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "X-Jws-Signature": "eyJiNjQiOmZhbHNlLCJ4NXQjUzI1NiI6IjZzQkxJVWRFay1POVVMU3dyVGtERUNmQTZDTzBtcnplTGMwdFhYeWp4Z00iLCJjcml0IjpbInNpZ1QiLCJzaWdEIiwiYjY0Il0sInNpZ1QiOiIyMDI2LTEwLTE2VDEyOjAyOjI3WiIsInNpZ0QiOnsicGFycyI6WyIocmVxdWVzdC10YXJnZXQpIiwiZGlnZXN0IiwiY29udGVudC10eXBlIl0sIm1JZCI6Imh0dHA6Ly91cmkuZXRzaS5vcmcvMTkxODIvSHR0cEhlYWRlcnMifSwiYWxnIjoiUFMyNTYifQ..DndA7ed_o8u_hCWMurVVlCCfFbVIYzvYQAXnJW7R_4GnpfB1dKanIXsD620N2BaCsO43krJO0g_Svb2HAazkbsIaktD19TYEKkah-BYNI9CihU2_Tm733d-NjPenkA-HIQ0-dmRYlOYGYGt22WoBnw2inYJ_3VKzHIAQQLPMJBAaHb_LZZ4TlDax__xNVFj_iKJgeTz90tf1TBDMiD_JMJ4MV94BTIa9G8tEw5UP75j2VzpoZD71a0E3tzBKL2_MGfHXqczZJn64ZTv4ZDKVcqGL04bOU7nBOJvvHbiMhTwr7kOONvnH4-Wng23vWIluGiz9onVt9MpxA9YyaYbKgw"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/balances?currency=EUR"
+            },
+            "transactions": {
+              "href": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/transactions?currency=EUR"
+            }
+          },
+          "currency": "EUR",
+          "iban": "NL15PSEUDO49AB10E51B",
+          "maskedPan": "",
+          "name": "name-bd3ca9",
+          "product": "Betaalrekening",
+          "resourceId": "450ffbb8-9f11-4ec6-a1e1-df48aefc82ef"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f901/balances?currency=EUR"
+            },
+            "transactions": {
+              "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f901/transactions?currency=EUR"
+            }
+          },
+          "currency": "EUR",
+          "iban": "NL02PSEUDO975DA5EE88",
+          "maskedPan": "",
+          "name": "name-0b8cdf",
+          "product": "Betaalrekening",
+          "resourceId": "181fdfd4-5838-4768-b803-91ae2192f901"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "/v4/accounts/34dea1a9-0543-4711-b105-3492d1bbc8f6/balances?currency=EUR"
+            },
+            "transactions": {
+              "href": "/v2/card-accounts/34dea1a9-0543-4711-b105-3492d1bbc8f6/transactions?currency=EUR"
+            }
+          },
+          "currency": "EUR",
+          "iban": "",
+          "maskedPan": "maskedpan-644ac1",
+          "name": "name-78b639",
+          "product": "CREDITCARD",
+          "resourceId": "34dea1a9-0543-4711-b105-3492d1bbc8f6"
+        }
+      ]
+    }
+  }
+}

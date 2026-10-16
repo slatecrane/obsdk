@@ -233,5 +233,5 @@ redacted on the way to disk. Details in [docs/testing.md](docs/testing.md).
 
 ## Not yet
 
-Bulk payments and standing orders (the payment model has room for both), more banks, request signing helpers (the `Seal` config exists; Swedbank's sandbox
-doesn't need it), optional automatic refresh, dynamic client registration.
+Bulk payments and standing orders (the payment model has room for both), more banks, shared request-signing helpers (Revolut and
+ING each sign in their own package), optional automatic refresh, dynamic client registration.
