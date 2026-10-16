@@ -1,0 +1,44 @@
+{
+  "config": {
+    "bank": "nordea",
+    "country": "FI",
+    "segment": "business",
+    "env": "sandbox",
+    "now": "2026-10-16T18:56:08Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "state": [
+        "aec4d1f0-4d7d-46d1-beff-4554e95e3a47"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com?code=REDACTED%3Acode%3Afe431b\u0026state=aec4d1f0-4d7d-46d1-beff-4554e95e3a47"
+    },
+    {
+      "op": "balances",
+      "account": "FI3815903000105518-EUR",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "FI3815903000105518-EUR",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-16T18:56:16Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

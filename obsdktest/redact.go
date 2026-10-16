@@ -48,7 +48,7 @@ func DefaultRedactor(literals map[string]string) *Redactor {
 	r := &Redactor{Literals: map[string]string{}, SecretKeys: set(
 		"authorization", "cookie", "set-cookie", "x-api-key", "psu-id", "psu-corporate-id", "psu-ip-address", "x-fapi-customer-ip-address",
 		"client_secret", "client_id", "app-id", "apikey", "refresh_token", "access_token", "id_token", "token",
-		"code", "access_code", "authorizationcode", "authorization_code", "otp", "password",
+		"code", "access_code", "authorizationcode", "authorization_code", "auth_code", "otp", "password",
 		"personalid", "personal_id", "phonenumber", "phone_number", "psu_id", "psuid", "clientid",
 	), PIIKeys: set(
 		"ownername", "name", "creditorname", "debtorname", "ultimatecreditor", "ultimatedebtor", "creditorid", "debtorid",
@@ -58,7 +58,7 @@ func DefaultRedactor(literals map[string]string) *Redactor {
 		"identification", "secondaryidentification", "transactioninformation", "nickname",
 		// ING card accounts
 		"maskedpan", "transactiondetails",
-	), KeepQueryInURLs: set("state", "response_type", "scope", "bic", "redirect_uri", "language")}
+	), KeepQueryInURLs: set("state", "response_type", "scope", "bic", "redirect_uri", "language", "success")}
 	for v, label := range literals {
 		if v != "" {
 			r.Literals[v] = label
@@ -77,6 +77,11 @@ func set(keys ...string) map[string]bool {
 
 func placeholder(label string) string { return "REDACTED:" + label }
 
+// labelAliases gives one label to keys that carry the same secret under
+// different names, so a value recorded in one place matches it in another
+// (Nordea returns ?auth_code=... and takes it back as code=...).
+var labelAliases = map[string]string{"auth_code": "code", "authorization_code": "code", "authorizationcode": "code", "access_code": "code"}
+
 // mask hides a secret value. Literals map to their plain label so that the
 // credentials a test configures ("REDACTED:client_id") match what was
 // recorded. Other secrets get a short stable digest, so two different tokens
@@ -86,6 +91,9 @@ func placeholder(label string) string { return "REDACTED:" + label }
 func (r *Redactor) mask(label, value string) string {
 	if value == "" || strings.HasPrefix(value, "REDACTED:") {
 		return value
+	}
+	if l, ok := labelAliases[label]; ok {
+		label = l
 	}
 	if l, ok := r.Literals[value]; ok {
 		return placeholder(l)

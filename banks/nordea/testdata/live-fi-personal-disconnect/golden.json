@@ -1,0 +1,46 @@
+[
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "nordea",
+      "country": "FI",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "nordea-psd2-v5",
+      "generation": 2,
+      "updated_at": "2026-10-16T18:55:58Z",
+      "access_token": "REDACTED:access_token:b34137",
+      "refresh_token": "REDACTED:refresh_token:6dd02e",
+      "token_type": "Bearer",
+      "access_expires_at": "2026-10-16T19:55:57Z",
+      "consents": {
+        "accounts": {
+          "id": "",
+          "kind": "accounts",
+          "status": "granted",
+          "valid_until": "2027-01-14T19:55:39.754695Z"
+        }
+      }
+    }
+  },
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "nordea",
+      "country": "FI",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "nordea-psd2-v5",
+      "generation": 3,
+      "updated_at": "2026-10-16T18:55:58Z",
+      "token_type": "Bearer"
+    },
+    "disconnect": {
+      "closed": [
+        "accounts"
+      ]
+    }
+  }
+]

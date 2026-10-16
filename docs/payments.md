@@ -90,17 +90,17 @@ Errors:
 
 ## Per bank
 
-| | Swedbank | Revolut | ING |
-|---|---|---|---|
-| Types | SE: `domestic` (incl. Bankgiro/Plusgiro), `crossborder`. EE/LV/LT: `sepa`, `sepa_instant`, `crossborder` | GB: `domestic` (GBP, sort code). EEA: `sepa` (EUR). All: `crossborder` | `sepa` (all 7 countries), `sepa_instant` (not RO), `domestic` (RO, RON), `crossborder` (not IT) |
-| Login | Needs a user login first: a new one, or the one in `PaymentRequest.Session` | None: the approval itself is the login | None: the approval itself is the login |
-| Approval | Redirect, or app (BankID / Smart-ID / Mobile-ID) with polling | Redirect | Redirect |
-| Future-dated | `execution_date` | `execution_date`, through Revolut's scheduled-payment API (beta) | `execution_date` |
-| Cancel | Yes, while not executed | No (no endpoint) | Yes, while not executed; no user approval |
-| Status | With the user's session | With an app token; no session needed | With an app token; no session needed |
-| Verified | SE sandbox, 2026-10-14: domestic, Bankgiro + OCR and international with app approval, and a future-dated payment cancelled. Redirect approval and the Baltics are not run yet. | Fake bank only. The sandbox app still needs the `payments` scope. | NL sandbox, 2026-10-16: status reads (completed, rejected). Creation, approval and cancel against a fake server only: the sandbox stub accepts only bodies the SDK cannot produce. |
+| | Swedbank | Revolut | ING | Nordea |
+|---|---|---|---|---|
+| Types | SE: `domestic` (incl. Bankgiro/Plusgiro), `crossborder`. EE/LV/LT: `sepa`, `sepa_instant`, `crossborder` | GB: `domestic` (GBP, sort code). EEA: `sepa` (EUR). All: `crossborder` | `sepa` (all 7 countries), `sepa_instant` (not RO), `domestic` (RO, RON), `crossborder` (not IT) | Personal only. FI: `sepa`, `sepa_instant`. SE: `domestic` (incl. Bankgiro/Plusgiro + OCR). DK, NO: `domestic` (NO with KID) |
+| Login | Needs a user login first: a new one, or the one in `PaymentRequest.Session` | None: the approval itself is the login | None: the approval itself is the login | None: the signature itself is the login |
+| Approval | Redirect, or app (BankID / Smart-ID / Mobile-ID) with polling | Redirect | Redirect | Redirect |
+| Future-dated | `execution_date` | `execution_date`, through Revolut's scheduled-payment API (beta) | `execution_date` | `execution_date` |
+| Cancel | Yes, while not executed | No (no endpoint) | Yes, while not executed; no user approval | Yes, while not executed, with the session the approval returned |
+| Status | With the user's session | With an app token; no session needed | With an app token; no session needed | No session needed |
+| Verified | SE sandbox, 2026-10-14: domestic, Bankgiro + OCR and international with app approval, and a future-dated payment cancelled. Redirect approval and the Baltics are not run yet. | Fake bank only. The sandbox app still needs the `payments` scope. | NL sandbox, 2026-10-16: status reads (completed, rejected). Creation, approval and cancel against a fake server only: the sandbox stub accepts only bodies the SDK cannot produce. | FI and SE sandbox, 2026-10-16: SEPA, Bankgiro + OCR and a future-dated payment cancelled; FI instant, DK and NO also `Paid` (not recorded). |
 
-Details: [swedbank.md](swedbank.md#payments), [revolut.md](revolut.md#payments), [ing.md](ing.md#payments).
+Details: [swedbank.md](swedbank.md#payments), [revolut.md](revolut.md#payments), [ing.md](ing.md#payments), [nordea.md](nordea.md#payments).
 
 ## Not yet
 
@@ -110,4 +110,4 @@ Bulk payments, standing orders and periodic payments all fit the model but are n
 - **Standing orders:** a schedule on the request.
 
 Swedbank has `bulk-payments`, `periodic-payments` and `signing-baskets`. Revolut has file payments and
-standing orders. ING has periodic and bulk payments. Multi-signer business payments surface as `partially_accepted`.
+standing orders. ING has periodic and bulk payments. Nordea has recurring payments, a 2SCA API and separate business payment APIs. Multi-signer business payments surface as `partially_accepted`.

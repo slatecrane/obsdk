@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "nordea",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-16T18:55:35Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "state": [
+        "9ce3c726-6a9e-4252-b73d-4c561a843524"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com?code=REDACTED%3Acode%3Ae0fe50\u0026state=9ce3c726-6a9e-4252-b73d-4c561a843524"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "config": {
+    "bank": "nordea",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-16T18:55:58Z",
+    "redirect_url": "https://example.com"
+  },
+  "calls": [
+    {
+      "op": "refresh"
+    },
+    {
+      "op": "disconnect"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Nordea to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://api.nordeaopenbanking.com/personal/nasa-mock/ssca/sign?client_id=dummy_client_id_fi&code_challenge_method=S256&response_type=code&redirect_uri=https%3A%2F%2Fapi.nordeaopenbanking.com&code_challenge=mdXc7wUUHV-8csfZqlz8G1NrwiXs8aHTA1SmYC29jRU&scope=openid+ndf+agreement&state=92f62714-27a8-4107-8420-d3340c575363&nonce=I-tDiNOcSbKt9yJVFNnXhQsqbcV2x3lOvKGKPhIQ&signing_token=DummySignedToken&userId=user&password=sandbox"
+      },
+      "payment": {
+        "id": "5d0cdb8b-2472-4ad0-8e99-0c5e95a64a78",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "PendingUserApproval",
+        "final": false,
+        "ref": "obs1.eyJpIjoibm9yZGVhLXBzZDItdjUiLCJpZCI6IjVkMGNkYjhiLTI0NzItNGFkMC04ZTk5LTBjNWU5NWE2NGE3OCIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "nordea",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "nordea-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-16T19:05:03Z",
+        "access_token": "REDACTED:access_token:5b5648",
+        "refresh_token": "REDACTED:refresh_token:2f9f04",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-16T20:05:02Z",
+        "meta": {
+          "payment_id": "5d0cdb8b-2472-4ad0-8e99-0c5e95a64a78",
+          "purpose": "payment"
+        }
+      },
+      "payment": {
+        "id": "5d0cdb8b-2472-4ad0-8e99-0c5e95a64a78",
+        "type": "sepa",
+        "status": "accepted",
+        "bank_status": "Confirmed",
+        "final": false,
+        "ref": "obs1.eyJpIjoibm9yZGVhLXBzZDItdjUiLCJpZCI6IjVkMGNkYjhiLTI0NzItNGFkMC04ZTk5LTBjNWU5NWE2NGE3OCIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "5d0cdb8b-2472-4ad0-8e99-0c5e95a64a78",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "Deleted",
+        "final": true,
+        "ref": "obs1.eyJpIjoibm9yZGVhLXBzZDItdjUiLCJpZCI6IjVkMGNkYjhiLTI0NzItNGFkMC04ZTk5LTBjNWU5NWE2NGE3OCIsInQiOiJzZXBhIn0"
+      }
+    }
+  }
+]

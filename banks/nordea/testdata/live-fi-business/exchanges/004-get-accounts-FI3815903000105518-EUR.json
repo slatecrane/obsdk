@@ -1,0 +1,66 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/business/v4/accounts/FI3815903000105518-EUR",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:046c22",
+      "Signature": "keyId=\"REDACTED:client_id\",algorithm=\"rsa-sha256\",headers=\"(request-target) x-nordea-originating-host x-nordea-originating-date\",signature=\"mhQQfWRq3up/p7l2VI675Dq6ts2wFvsCq2Y4k3j5s363Dye0YM19IObp2lYX/hF8B3gZgZGFDaUIHE4zOAl6/WuWrBL8IgisVKafb/+h74Z6Wdh9fpH/X8LPPQPHqS+Yr9AC5OBB724aVd8FYzdja7I88U9NdCPPNtMYpTeIxB183IusJGUEFNuc+s46X2EhT2UOn6ZGbSZGTrtu8v2VlAFyTXWGHmxx27uo8RuHTbeIFLgCa51iRnzjbYnVjYnJAO1LOs+W1TwuII8kxqss8GYUpKtaDpRjlgLUmsUSEKqv+3xonXakB4IbDspmTXBV2pm5mh2DbD6nAMTYa/RiFyszY844LYsnjqRTfpGDcbKiQeAdxxcpSaWjgfB17EtXfwqeXeo5Or26ZPEr9u5kNlXKZRb/RRi0Wd7V4EdJaL7a5PRReyFcvu7jq1zNWszy3thuD3D2yE2KqgH+MxsNqjIF56PgPn8z69K1vNsF8ptdkTl1dGFwg7XKndQU2MGk\"",
+      "X-Ibm-Client-Id": "REDACTED:client_id",
+      "X-Ibm-Client-Secret": "REDACTED:client_secret",
+      "X-Nordea-Originating-Date": "Fri, 16 Oct 2026 18:56:16 GMT",
+      "X-Nordea-Originating-Host": "api.nordeaopenbanking.com",
+      "X-Nordea-Originating-User-Agent": "obdev/0.1",
+      "X-Nordea-Originating-User-Ip": "127.0.0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "group_header": {
+        "creation_date_time": "2026-10-16T18:56:16.542610764Z",
+        "http_code": 200,
+        "message_identification": "jpdsbbax6yj5um5f"
+      },
+      "response": {
+        "_id": "FI3815903000105518-EUR",
+        "_links": [
+          {
+            "href": "/v4/accounts/FI3815903000105518-EUR",
+            "rel": "self"
+          },
+          {
+            "href": "/v4/accounts/FI3815903000105518-EUR/transactions",
+            "rel": "transactions"
+          }
+        ],
+        "account_holder": "VIZMARUSHA TOREN Holder",
+        "account_name": "VIZMARUSHA TOREN",
+        "account_numbers": [
+          {
+            "_type": "IBAN",
+            "value": "FI3815903000105518"
+          }
+        ],
+        "account_type": "Current",
+        "available_balance": "13216.34",
+        "bank": {
+          "bic": "NDEAFIHH",
+          "country": "FI",
+          "name": "name-dd6826"
+        },
+        "booked_balance": "13216.34",
+        "country": "FI",
+        "credit_limit": "10000.00",
+        "currency": "EUR",
+        "latest_transaction_booking_date": "2026-10-16",
+        "product": "SHEKKITILI",
+        "status": "OPEN",
+        "value_dated_balance": "13216.34"
+      }
+    }
+  }
+}

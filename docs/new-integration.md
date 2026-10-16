@@ -182,7 +182,7 @@ Recording pitfalls:
 
 ## 6. Common sandbox errors
 
-From Swedbank and ING. Other banks word them differently, but the causes repeat.
+From Swedbank, ING and Nordea. Other banks word them differently, but the causes repeat.
 
 | Error | Cause | Fix |
 |---|---|---|
@@ -195,6 +195,8 @@ From Swedbank and ING. Other banks word them differently, but the causes repeat.
 | ING consent page: "The value of 'redirect_uri' is not in the allowed redirect URIs list" | the sandbox app allows one fixed URL | use `https://www.example.com/` |
 | ING: `400 SignatureError "Missing required 'x-jws-signature' header"` although it is sent | the payment gateway matches header names case-sensitively | send the name in lower case (Go canonicalizes it; set `req.Header["x-jws-signature"]` directly) |
 | ING: `404` with an empty body | a stub sandbox with no scenario for this exact request | compare with the bank's test-scenario document, field by field |
+| Nordea: `401 error.digest.invalid` on `/authorize/token` | the digest of a form body is expected over the sorted, *unencoded* `name=value` pairs | hash what the bank's own Postman script hashes, not the bytes sent |
+| A login call returns `302` and the next call fails | the HTTP client followed the bank's redirect to its login page (or to your redirect URI) | don't follow redirects on that call; hand `Location` to the user (Nordea's `/authorize`) |
 
 ## 7. Finish
 
