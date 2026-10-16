@@ -1,0 +1,75 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/personal/v4/payments/authorization/sepa-credit-transfer",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=erKDn5byxj4bQiUc93JT3Q7AlCKp8x3UzlyIP+uHalo=",
+      "Signature": "keyId=\"REDACTED:client_id\",algorithm=\"rsa-sha256\",headers=\"(request-target) x-nordea-originating-host x-nordea-originating-date content-type digest\",signature=\"H7N+xI0oDgV/TuFCE68Ju489mekkdGYHvuLbDjeKQNuQwyzGw0GJfT6EpHdXsDzS1j45x584cU/bdnazhtYD9obJWwI1bUHC94zw0a0rPGz1AAZIA3fG4DLKt0ONVTWu+jQen+uK5tvWuKURMmODznD/o96C6r+EgLtq32V/LPF7GRpMVptiArDx5cp78+IYd+DoVwjhutzV+rzpxTzh39xWzV1Y17+U1aBoFRlgGroVGb0QSUcS12cwqCr2GretCXVgmrB7Oc28dMC5WPXHxHuAG43bIGWneT3AJ46XbTjmqVzAEj0DpU0ae0G0i9IFm635HRc3iA+psCRoJ/tuFAM/hVb4/+YAMUUWkWxkMNav61+S8UkehXzQUBdyWmeOI5Ilb3QYCr1/+gDzW1laEljiBAa8B3GDMW1h/GrRt0nye4/4OucNeSX/nQ3hXDT5Xxxd+3v4xANCib+0preowpxNUPVcXdCG88HDgkzu6SLaC9zmVqloATsp96DuPOWz\"",
+      "X-Ibm-Client-Id": "REDACTED:client_id",
+      "X-Ibm-Client-Secret": "REDACTED:client_secret",
+      "X-Nordea-Originating-Date": "Fri, 16 Oct 2026 19:05:03 GMT",
+      "X-Nordea-Originating-Host": "api.nordeaopenbanking.com",
+      "X-Nordea-Originating-User-Agent": "obdev/0.1",
+      "X-Nordea-Originating-User-Ip": "127.0.0.1"
+    },
+    "body": {
+      "authentication": {
+        "redirect_uri": "https://example.com",
+        "state": "2531fb06-c5fb-4783-ba73-5d27962a2813"
+      },
+      "payment": {
+        "amount": "6.00",
+        "creditor": {
+          "account": {
+            "currency": "EUR",
+            "type": "IBAN",
+            "value": "FI58PSEUDO9D60DE3688"
+          },
+          "message": "Future",
+          "name": "name-cf2f4e"
+        },
+        "currency": "EUR",
+        "debtor": {
+          "account": {
+            "currency": "EUR",
+            "type": "IBAN",
+            "value": "FI56PSEUDO10139470E2"
+          }
+        },
+        "external_id": "33512143-1112-49fc-b2cc-6307f25030ec",
+        "requested_execution_date": "2026-10-21"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "group_header": {
+        "creation_date_time": "2026-10-16T19:05:03.80575055Z",
+        "http_code": 201,
+        "message_identification": "5yy1ubehzpvudvli"
+      },
+      "response": {
+        "_links": [
+          {
+            "href": "https://api.nordeaopenbanking.com/personal/nasa-mock/ssca/sign?client_id=dummy_client_id_fi\u0026code_challenge_method=S256\u0026response_type=code\u0026redirect_uri=https%3A%2F%2Fapi.nordeaopenbanking.com\u0026code_challenge=mdXc7wUUHV-8csfZqlz8G1NrwiXs8aHTA1SmYC29jRU\u0026scope=openid+ndf+agreement\u0026state=92f62714-27a8-4107-8420-d3340c575363\u0026nonce=I-tDiNOcSbKt9yJVFNnXhQsqbcV2x3lOvKGKPhIQ\u0026signing_token=DummySignedToken\u0026userId=user\u0026password=sandbox",
+            "rel": "redirect"
+          },
+          {
+            "href": "/v4/single-sca-payments/5d0cdb8b-2472-4ad0-8e99-0c5e95a64a78/status",
+            "rel": "status"
+          },
+          {
+            "href": "/v4/single-sca-payments/5d0cdb8b-2472-4ad0-8e99-0c5e95a64a78",
+            "rel": "details"
+          }
+        ]
+      }
+    }
+  }
+}

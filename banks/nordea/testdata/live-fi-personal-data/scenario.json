@@ -1,0 +1,47 @@
+{
+  "config": {
+    "bank": "nordea",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-16T18:55:51Z",
+    "redirect_url": "https://example.com"
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-16T18:55:52Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-16T18:55:52Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "cursor": "sandboxContinuationKey-2",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

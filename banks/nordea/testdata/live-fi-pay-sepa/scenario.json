@@ -1,0 +1,55 @@
+{
+  "config": {
+    "bank": "nordea",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-16T19:05:00Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "45a0c168-7c88-4934-9f18-221cf5b66e2b"
+      ],
+      "state": [
+        "876971c9-5f2f-4af9-aa06-5e6d150f6429"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI56PSEUDO10139470E2"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "5.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-cf2f4e",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI58PSEUDO9D60DE3688"
+              }
+            },
+            "remittance": [
+              "Invoice 42"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/?auth_code=REDACTED%3Acode%3A55a7a7\u0026response_code=REDACTED%3Aresponse_code%3A7c6d1c\u0026state=876971c9-5f2f-4af9-aa06-5e6d150f6429\u0026success=true"
+    }
+  ]
+}

@@ -1,0 +1,2138 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Nordea to authorise access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3Afe431b&state=aec4d1f0-4d7d-46d1-beff-4554e95e3a47"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "nordea",
+        "country": "FI",
+        "segment": "business",
+        "env": "sandbox",
+        "integration": "nordea-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-16T18:56:08Z",
+        "access_token": "REDACTED:access_token:081101",
+        "refresh_token": "REDACTED:refresh_token:1a7467",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-16T19:56:07Z",
+        "consents": {
+          "accounts": {
+            "id": "",
+            "kind": "accounts",
+            "status": "granted",
+            "valid_until": "2027-01-14T18:56:08Z"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "FI3815903000105518-EUR",
+          "stable_id": "da6e84f05265a966bd7630094cec0775",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI3815903000105518"
+            }
+          ],
+          "name": "VIZMARUSHA TOREN",
+          "owner_name": "VIZMARUSHA TOREN Holder",
+          "currency": "EUR",
+          "product": "SHEKKITILI",
+          "type": "CACC",
+          "usage": "ORGA",
+          "bic": "NDEAFIHH",
+          "credit_limit": {
+            "amount": "10000.00",
+            "currency": "EUR"
+          },
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "available_balance",
+              "amount": {
+                "amount": "13216.34",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "booked_balance",
+              "amount": {
+                "amount": "13216.34",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "value_dated_balance",
+              "amount": {
+                "amount": "13216.34",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_id": "FI3815903000105518-EUR",
+            "_links": [
+              {
+                "href": "/v4/accounts/FI3815903000105518-EUR",
+                "rel": "details"
+              },
+              {
+                "href": "/v4/accounts/FI3815903000105518-EUR/transactions",
+                "rel": "transactions"
+              }
+            ],
+            "account_holder": "VIZMARUSHA TOREN Holder",
+            "account_name": "VIZMARUSHA TOREN",
+            "account_numbers": [
+              {
+                "_type": "IBAN",
+                "value": "FI3815903000105518"
+              }
+            ],
+            "account_type": "Current",
+            "available_balance": "13216.34",
+            "bank": {
+              "bic": "NDEAFIHH",
+              "country": "FI",
+              "name": "name-dd6826"
+            },
+            "booked_balance": "13216.34",
+            "country": "FI",
+            "credit_limit": "10000.00",
+            "currency": "EUR",
+            "latest_transaction_booking_date": "2026-10-16",
+            "product": "SHEKKITILI",
+            "status": "OPEN",
+            "value_dated_balance": "13216.34"
+          }
+        },
+        {
+          "id": "FI5815793000105406-EUR",
+          "stable_id": "38901b559fe3b734008f77da63576d8f",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI5815793000105406"
+            }
+          ],
+          "name": "VIZMARUSHA TOREN",
+          "owner_name": "VIZMARUSHA TOREN Holder",
+          "currency": "EUR",
+          "product": "SHEKKITILI",
+          "type": "CACC",
+          "usage": "ORGA",
+          "bic": "NDEAFIHH",
+          "credit_limit": {
+            "amount": "10000.00",
+            "currency": "EUR"
+          },
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "available_balance",
+              "amount": {
+                "amount": "14596.73",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "booked_balance",
+              "amount": {
+                "amount": "14596.73",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "value_dated_balance",
+              "amount": {
+                "amount": "14596.73",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_id": "FI5815793000105406-EUR",
+            "_links": [
+              {
+                "href": "/v4/accounts/FI5815793000105406-EUR",
+                "rel": "details"
+              },
+              {
+                "href": "/v4/accounts/FI5815793000105406-EUR/transactions",
+                "rel": "transactions"
+              }
+            ],
+            "account_holder": "VIZMARUSHA TOREN Holder",
+            "account_name": "VIZMARUSHA TOREN",
+            "account_numbers": [
+              {
+                "_type": "IBAN",
+                "value": "FI5815793000105406"
+              }
+            ],
+            "account_type": "Current",
+            "available_balance": "14596.73",
+            "bank": {
+              "bic": "NDEAFIHH",
+              "country": "FI",
+              "name": "name-dd6826"
+            },
+            "booked_balance": "14596.73",
+            "country": "FI",
+            "credit_limit": "10000.00",
+            "currency": "EUR",
+            "latest_transaction_booking_date": "2026-10-16",
+            "product": "SHEKKITILI",
+            "status": "OPEN",
+            "value_dated_balance": "14596.73"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "available_balance",
+        "amount": {
+          "amount": "13216.34",
+          "currency": "EUR"
+        }
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "booked_balance",
+        "amount": {
+          "amount": "13216.34",
+          "currency": "EUR"
+        }
+      },
+      {
+        "kind": "other",
+        "bank_type": "value_dated_balance",
+        "amount": {
+          "amount": "13216.34",
+          "currency": "EUR"
+        }
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "afe7a4c2-8a46-42dc-a9fc-708decc24ffd",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-4.50",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Gebr Heinemann Retail",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "181120258878060000"
+              }
+            ]
+          },
+          "remittance": [
+            "DKK 49,00 Kastrup"
+          ],
+          "reference_number": "reference-90e025",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-4.50",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5467",
+            "card_transaction_type": "",
+            "counterparty_account": "181120258878060000",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Gebr Heinemann Retail",
+            "currency": "EUR",
+            "currency_rate": "7.2917",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "DKK 49,00 Kastrup",
+            "narrative": "DKK 49,00 Kastrup",
+            "original_currency": "DKK",
+            "original_currency_amount": "49.00",
+            "own_message": "DKK 49,00 Kastrup",
+            "payment_date": "2026-10-14",
+            "reference": "reference-90e025",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "afe7a4c2-8a46-42dc-a9fc-708decc24ffd",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "b2a67e76-ceb1-4de6-b985-74731a50580d",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-5.58",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-12",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Gebr Heinemann Retail",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "181120258878060000"
+              }
+            ]
+          },
+          "remittance": [
+            "DKK 49,00 Kastrup"
+          ],
+          "reference_number": "reference-90e025",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-5.58",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5467",
+            "card_transaction_type": "",
+            "counterparty_account": "181120258878060000",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Gebr Heinemann Retail",
+            "currency": "EUR",
+            "currency_rate": "7.2917",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "DKK 49,00 Kastrup",
+            "narrative": "DKK 49,00 Kastrup",
+            "original_currency": "DKK",
+            "original_currency_amount": "49.00",
+            "own_message": "DKK 49,00 Kastrup",
+            "payment_date": "2026-10-14",
+            "reference": "reference-90e025",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "b2a67e76-ceb1-4de6-b985-74731a50580d",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-12"
+          }
+        },
+        {
+          "id": "f53e380c-4c78-4de7-b1f6-d645944787cd",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1.95",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Gebr Heinemann Retail",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "181120258878060000"
+              }
+            ]
+          },
+          "remittance": [
+            "DKK 49,00 Kastrup"
+          ],
+          "reference_number": "reference-90e025",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-1.95",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5467",
+            "card_transaction_type": "",
+            "counterparty_account": "181120258878060000",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Gebr Heinemann Retail",
+            "currency": "EUR",
+            "currency_rate": "7.2917",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "DKK 49,00 Kastrup",
+            "narrative": "DKK 49,00 Kastrup",
+            "original_currency": "DKK",
+            "original_currency_amount": "49.00",
+            "own_message": "DKK 49,00 Kastrup",
+            "payment_date": "2026-10-14",
+            "reference": "reference-90e025",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "f53e380c-4c78-4de7-b1f6-d645944787cd",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "1bdf128f-1cd1-4d7d-a9a9-e00b858be91a",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-7.20",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Helsinkimissio ry"
+          },
+          "remittance": [
+            "18110005577211"
+          ],
+          "reference_number": "reference-48e1ca",
+          "bank_code_text": "Itsepalvelu",
+          "raw": {
+            "amount": "-7.20",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Helsinkimissio ry",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "18110005577211",
+            "narrative": "18110005577211",
+            "own_message": "18110005577211",
+            "payment_date": "2026-10-14",
+            "reference": "reference-48e1ca",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "1bdf128f-1cd1-4d7d-a9a9-e00b858be91a",
+            "type_description": "Itsepalvelu",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "9eff1f9c-0c80-42f3-8de8-a2a3e0320878",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "336.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Structured Creditor Oy"
+          },
+          "remittance": [
+            "Invoice 445566"
+          ],
+          "reference_number": "reference-8424ac",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "336.00",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "structured creditor address 1, structured creditor address 2",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Structured Creditor Oy",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Invoice 445566",
+            "narrative": "Incoming payment with structured creditor address",
+            "own_message": "Invoice 445566",
+            "payment_date": "2026-10-14",
+            "reference": "reference-8424ac",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "9eff1f9c-0c80-42f3-8de8-a2a3e0320878",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "e593fbfc-6c60-4327-949e-2e54df9103de",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-26.37",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Avis",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "301127019500"
+              }
+            ]
+          },
+          "remittance": [
+            "GBP 31.20 Heathrow"
+          ],
+          "reference_number": "reference-c8c525",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-26.37",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx2736",
+            "card_transaction_type": "",
+            "counterparty_account": "301127019500",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Avis",
+            "currency": "EUR",
+            "currency_rate": "0.8756",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "GBP 31.20 Heathrow",
+            "narrative": "GBP 31.20 Heathrow",
+            "original_currency": "GBP",
+            "original_currency_amount": "31.20",
+            "own_message": "GBP 31.20 Heathrow",
+            "payment_date": "2026-10-14",
+            "reference": "reference-c8c525",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "e593fbfc-6c60-4327-949e-2e54df9103de",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "3d147943-9eef-4670-9831-99a8e65d404d",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-28.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "ATM Nosto 1212"
+          },
+          "remittance": [
+            "EUR 35.00 Helsinki"
+          ],
+          "reference_number": "reference-d693f2",
+          "bank_code_text": "Debet automaattiotto",
+          "raw": {
+            "amount": "-28.00",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5480",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "ATM Nosto 1212",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "EUR 35.00 Helsinki",
+            "narrative": "EUR 35.00 Helsinki",
+            "own_message": "EUR 35.00 Helsinki",
+            "payment_date": "2026-10-14",
+            "reference": "reference-d693f2",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "3d147943-9eef-4670-9831-99a8e65d404d",
+            "type_description": "Debet automaattiotto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "e2daf712-e446-4a62-ac52-8fc23f5e75ae",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-6.40",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "ATM 2312"
+          },
+          "remittance": [
+            "EUR 20.00 Vasa"
+          ],
+          "reference_number": "reference-379a78",
+          "bank_code_text": "Debet automaattiotto",
+          "raw": {
+            "amount": "-6.40",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5433",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "ATM 2312",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "EUR 20.00 Vasa",
+            "narrative": "EUR 20.00 Vasa",
+            "own_message": "EUR 20.00 Vasa",
+            "payment_date": "2026-10-14",
+            "reference": "reference-379a78",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "e2daf712-e446-4a62-ac52-8fc23f5e75ae",
+            "type_description": "Debet automaattiotto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "1f676a0f-05fe-4c1b-973e-e71958b4ae0b",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-14.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "ATM Nosto 1212"
+          },
+          "remittance": [
+            "EUR 35.00 Helsinki"
+          ],
+          "reference_number": "reference-d693f2",
+          "bank_code_text": "Debet automaattiotto",
+          "raw": {
+            "amount": "-14.00",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5480",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "ATM Nosto 1212",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "EUR 35.00 Helsinki",
+            "narrative": "EUR 35.00 Helsinki",
+            "own_message": "EUR 35.00 Helsinki",
+            "payment_date": "2026-10-14",
+            "reference": "reference-d693f2",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "1f676a0f-05fe-4c1b-973e-e71958b4ae0b",
+            "type_description": "Debet automaattiotto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "838718db-1ef1-4c48-81ba-e115e51fc3f2",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "19.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "KELA/FPA"
+          },
+          "remittance": [
+            "Lapsilis"
+          ],
+          "reference_number": "reference-509933",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "19.00",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "KELA/FPA",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Lapsilis",
+            "narrative": "Lapsilis",
+            "own_message": "Lapsilis",
+            "payment_date": "2026-10-14",
+            "reference": "reference-509933",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "838718db-1ef1-4c48-81ba-e115e51fc3f2",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "5a24e2c1-3ca0-4411-87c1-64d6c02be83a",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "151.99",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "KELA/FPA"
+          },
+          "remittance": [
+            "Lapsilis"
+          ],
+          "reference_number": "reference-509933",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "151.99",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "KELA/FPA",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Lapsilis",
+            "narrative": "Lapsilis",
+            "own_message": "Lapsilis",
+            "payment_date": "2026-10-14",
+            "reference": "reference-509933",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "5a24e2c1-3ca0-4411-87c1-64d6c02be83a",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "4fa91845-0526-404a-816b-4f7413e11d7b",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "499.20",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Structured Creditor Oy"
+          },
+          "remittance": [
+            "Invoice 445566"
+          ],
+          "reference_number": "reference-8424ac",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "499.20",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "structured creditor address 1, structured creditor address 2",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Structured Creditor Oy",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Invoice 445566",
+            "narrative": "Incoming payment with structured creditor address",
+            "own_message": "Invoice 445566",
+            "payment_date": "2026-10-14",
+            "reference": "reference-8424ac",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "4fa91845-0526-404a-816b-4f7413e11d7b",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "1edb03a0-a658-4318-b64a-0a8bb43b5d6c",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-3.02",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Gebr Heinemann Retail",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "181120258878060000"
+              }
+            ]
+          },
+          "remittance": [
+            "DKK 49,00 Kastrup"
+          ],
+          "reference_number": "reference-90e025",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-3.02",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5467",
+            "card_transaction_type": "",
+            "counterparty_account": "181120258878060000",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Gebr Heinemann Retail",
+            "currency": "EUR",
+            "currency_rate": "7.2917",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "DKK 49,00 Kastrup",
+            "narrative": "DKK 49,00 Kastrup",
+            "original_currency": "DKK",
+            "original_currency_amount": "49.00",
+            "own_message": "DKK 49,00 Kastrup",
+            "payment_date": "2026-10-14",
+            "reference": "reference-90e025",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "1edb03a0-a658-4318-b64a-0a8bb43b5d6c",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "5c817b37-292d-4163-974f-5eabf0ffe05f",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-7.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "ATM 2312"
+          },
+          "remittance": [
+            "EUR 20.00 Vasa"
+          ],
+          "reference_number": "reference-379a78",
+          "bank_code_text": "Debet automaattiotto",
+          "raw": {
+            "amount": "-7.00",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5433",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "ATM 2312",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "EUR 20.00 Vasa",
+            "narrative": "EUR 20.00 Vasa",
+            "own_message": "EUR 20.00 Vasa",
+            "payment_date": "2026-10-14",
+            "reference": "reference-379a78",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "5c817b37-292d-4163-974f-5eabf0ffe05f",
+            "type_description": "Debet automaattiotto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "609e38a3-17fc-404a-a37e-76ae2610d509",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "134.40",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Structured Creditor Oy"
+          },
+          "remittance": [
+            "Invoice 445566"
+          ],
+          "reference_number": "reference-8424ac",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "134.40",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "structured creditor address 1, structured creditor address 2",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Structured Creditor Oy",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Invoice 445566",
+            "narrative": "Incoming payment with structured creditor address",
+            "own_message": "Invoice 445566",
+            "payment_date": "2026-10-14",
+            "reference": "reference-8424ac",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "609e38a3-17fc-404a-a37e-76ae2610d509",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "cacabf13-9707-4110-8529-7063a14af806",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "110.54",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "KELA/FPA"
+          },
+          "remittance": [
+            "Lapsilis"
+          ],
+          "reference_number": "reference-509933",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "110.54",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "KELA/FPA",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Lapsilis",
+            "narrative": "Lapsilis",
+            "own_message": "Lapsilis",
+            "payment_date": "2026-10-14",
+            "reference": "reference-509933",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "cacabf13-9707-4110-8529-7063a14af806",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "dc6ae856-92fa-4749-bc54-5c7960f7d6fb",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-12.83",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Avis",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "301127019500"
+              }
+            ]
+          },
+          "remittance": [
+            "GBP 31.20 Heathrow"
+          ],
+          "reference_number": "reference-c8c525",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-12.83",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx2736",
+            "card_transaction_type": "",
+            "counterparty_account": "301127019500",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Avis",
+            "currency": "EUR",
+            "currency_rate": "0.8756",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "GBP 31.20 Heathrow",
+            "narrative": "GBP 31.20 Heathrow",
+            "original_currency": "GBP",
+            "original_currency_amount": "31.20",
+            "own_message": "GBP 31.20 Heathrow",
+            "payment_date": "2026-10-14",
+            "reference": "reference-c8c525",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "dc6ae856-92fa-4749-bc54-5c7960f7d6fb",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "975555a5-4393-4fb1-9e53-10e9dac55d01",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-5.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Gebr Heinemann Retail",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "181120258878060000"
+              }
+            ]
+          },
+          "remittance": [
+            "DKK 49,00 Kastrup"
+          ],
+          "reference_number": "reference-90e025",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-5.85",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5467",
+            "card_transaction_type": "",
+            "counterparty_account": "181120258878060000",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Gebr Heinemann Retail",
+            "currency": "EUR",
+            "currency_rate": "7.2917",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "DKK 49,00 Kastrup",
+            "narrative": "DKK 49,00 Kastrup",
+            "original_currency": "DKK",
+            "original_currency_amount": "49.00",
+            "own_message": "DKK 49,00 Kastrup",
+            "payment_date": "2026-10-14",
+            "reference": "reference-90e025",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "975555a5-4393-4fb1-9e53-10e9dac55d01",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "cc3fb8d4-fae2-4bd1-a87c-f2a153031709",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "0.34",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Salo Ari"
+          },
+          "remittance": [
+            "Lotto"
+          ],
+          "reference_number": "reference-4fba2f",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "0.34",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Salo Ari",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Lotto",
+            "narrative": "Lotto",
+            "own_message": "Lotto",
+            "payment_date": "2026-10-14",
+            "reference": "reference-4fba2f",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "cc3fb8d4-fae2-4bd1-a87c-f2a153031709",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "1c79aaa5-15ee-4e58-89c3-cfa8ebf261d1",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-22.50",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Structured Creditor Oy"
+          },
+          "remittance": [
+            "Invoice 112233"
+          ],
+          "reference_number": "reference-1619a4",
+          "bank_code_text": "Itsepalvelu",
+          "raw": {
+            "amount": "-22.50",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "structured creditor address 1, structured creditor address 2",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Structured Creditor Oy",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Invoice 112233",
+            "narrative": "Payment with structured creditor address",
+            "own_message": "Invoice 112233",
+            "payment_date": "2026-10-14",
+            "reference": "reference-1619a4",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "1c79aaa5-15ee-4e58-89c3-cfa8ebf261d1",
+            "type_description": "Itsepalvelu",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "e72623ca-3e0a-4241-a68f-255617034510",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "0.05",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Salo Ari"
+          },
+          "remittance": [
+            "Lotto"
+          ],
+          "reference_number": "reference-4fba2f",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "0.05",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Salo Ari",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Lotto",
+            "narrative": "Lotto",
+            "own_message": "Lotto",
+            "payment_date": "2026-10-14",
+            "reference": "reference-4fba2f",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "e72623ca-3e0a-4241-a68f-255617034510",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "9937a7af-4cc7-489b-8f8b-d81a36b35666",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-6.60",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "ATM 2312"
+          },
+          "remittance": [
+            "EUR 20.00 Vasa"
+          ],
+          "reference_number": "reference-379a78",
+          "bank_code_text": "Debet automaattiotto",
+          "raw": {
+            "amount": "-6.60",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5433",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "ATM 2312",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "EUR 20.00 Vasa",
+            "narrative": "EUR 20.00 Vasa",
+            "own_message": "EUR 20.00 Vasa",
+            "payment_date": "2026-10-14",
+            "reference": "reference-379a78",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "9937a7af-4cc7-489b-8f8b-d81a36b35666",
+            "type_description": "Debet automaattiotto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "d7671340-d84d-4827-9648-e38a821b82f0",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-2.10",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Helsinkimissio ry"
+          },
+          "remittance": [
+            "18110005577211"
+          ],
+          "reference_number": "reference-48e1ca",
+          "bank_code_text": "Itsepalvelu",
+          "raw": {
+            "amount": "-2.10",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Helsinkimissio ry",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "18110005577211",
+            "narrative": "18110005577211",
+            "own_message": "18110005577211",
+            "payment_date": "2026-10-14",
+            "reference": "reference-48e1ca",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "d7671340-d84d-4827-9648-e38a821b82f0",
+            "type_description": "Itsepalvelu",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "387b042c-622b-4d3d-8b9c-c8c47381d0d3",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "211.20",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Structured Creditor Oy"
+          },
+          "remittance": [
+            "Invoice 445566"
+          ],
+          "reference_number": "reference-8424ac",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "211.20",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "structured creditor address 1, structured creditor address 2",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Structured Creditor Oy",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Invoice 445566",
+            "narrative": "Incoming payment with structured creditor address",
+            "own_message": "Invoice 445566",
+            "payment_date": "2026-10-14",
+            "reference": "reference-8424ac",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "387b042c-622b-4d3d-8b9c-c8c47381d0d3",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "0e2b8eed-74e9-4348-b69a-a2e2c0b0374c",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "460.80",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Structured Creditor Oy"
+          },
+          "remittance": [
+            "Invoice 445566"
+          ],
+          "reference_number": "reference-8424ac",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "460.80",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "structured creditor address 1, structured creditor address 2",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Structured Creditor Oy",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Invoice 445566",
+            "narrative": "Incoming payment with structured creditor address",
+            "own_message": "Invoice 445566",
+            "payment_date": "2026-10-14",
+            "reference": "reference-8424ac",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "0e2b8eed-74e9-4348-b69a-a2e2c0b0374c",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "7cdda2f1-26a8-431f-8fb7-6ce4fede18f5",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "321.60",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Structured Creditor Oy"
+          },
+          "remittance": [
+            "Invoice 445566"
+          ],
+          "reference_number": "reference-8424ac",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "321.60",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "structured creditor address 1, structured creditor address 2",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Structured Creditor Oy",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Invoice 445566",
+            "narrative": "Incoming payment with structured creditor address",
+            "own_message": "Invoice 445566",
+            "payment_date": "2026-10-14",
+            "reference": "reference-8424ac",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "7cdda2f1-26a8-431f-8fb7-6ce4fede18f5",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "a32c1dd3-d8f0-47f7-9de1-8364f6ab0b41",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "127.81",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "KELA/FPA"
+          },
+          "remittance": [
+            "Lapsilis"
+          ],
+          "reference_number": "reference-509933",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "127.81",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "KELA/FPA",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Lapsilis",
+            "narrative": "Lapsilis",
+            "own_message": "Lapsilis",
+            "payment_date": "2026-10-14",
+            "reference": "reference-509933",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "a32c1dd3-d8f0-47f7-9de1-8364f6ab0b41",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "65af3071-7df0-4a59-9bd5-c8932d898c89",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "26.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Simon Baker"
+          },
+          "remittance": [
+            "Kiitos"
+          ],
+          "reference_number": "reference-86fc85",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "26.00",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Simon Baker",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Kiitos",
+            "narrative": "Kiitos",
+            "own_message": "Kiitos",
+            "payment_date": "2026-10-14",
+            "reference": "reference-86fc85",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "65af3071-7df0-4a59-9bd5-c8932d898c89",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "b7dba134-7e64-4949-bc30-a8c35976c62f",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-10.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "ATM Nosto 1212"
+          },
+          "remittance": [
+            "EUR 35.00 Helsinki"
+          ],
+          "reference_number": "reference-d693f2",
+          "bank_code_text": "Debet automaattiotto",
+          "raw": {
+            "amount": "-10.85",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5480",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "ATM Nosto 1212",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "EUR 35.00 Helsinki",
+            "narrative": "EUR 35.00 Helsinki",
+            "own_message": "EUR 35.00 Helsinki",
+            "payment_date": "2026-10-14",
+            "reference": "reference-d693f2",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "b7dba134-7e64-4949-bc30-a8c35976c62f",
+            "type_description": "Debet automaattiotto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "89aa679b-f115-477e-a499-283d3e605238",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-14.60",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "ATM 2312"
+          },
+          "remittance": [
+            "EUR 20.00 Vasa"
+          ],
+          "reference_number": "reference-379a78",
+          "bank_code_text": "Debet automaattiotto",
+          "raw": {
+            "amount": "-14.60",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5433",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "ATM 2312",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "EUR 20.00 Vasa",
+            "narrative": "EUR 20.00 Vasa",
+            "own_message": "EUR 20.00 Vasa",
+            "payment_date": "2026-10-14",
+            "reference": "reference-379a78",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "89aa679b-f115-477e-a499-283d3e605238",
+            "type_description": "Debet automaattiotto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "49bdb505-e356-4181-972b-048224498e2c",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "120.01",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Simon Baker"
+          },
+          "remittance": [
+            "Kiitos"
+          ],
+          "reference_number": "reference-86fc85",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "120.01",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Simon Baker",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Kiitos",
+            "narrative": "Kiitos",
+            "own_message": "Kiitos",
+            "payment_date": "2026-10-14",
+            "reference": "reference-86fc85",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "49bdb505-e356-4181-972b-048224498e2c",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "7c0f4341-dd99-4182-b696-606b7ebf723d",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-6.52",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Gebr Heinemann Retail",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "181120258878060000"
+              }
+            ]
+          },
+          "remittance": [
+            "DKK 49,00 Kastrup"
+          ],
+          "reference_number": "reference-90e025",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-6.52",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5467",
+            "card_transaction_type": "",
+            "counterparty_account": "181120258878060000",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Gebr Heinemann Retail",
+            "currency": "EUR",
+            "currency_rate": "7.2917",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "DKK 49,00 Kastrup",
+            "narrative": "DKK 49,00 Kastrup",
+            "original_currency": "DKK",
+            "original_currency_amount": "49.00",
+            "own_message": "DKK 49,00 Kastrup",
+            "payment_date": "2026-10-14",
+            "reference": "reference-90e025",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "7c0f4341-dd99-4182-b696-606b7ebf723d",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "1a7ab82b-1158-40a3-90c7-5126b3fc7b3b",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "0.39",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Salo Ari"
+          },
+          "remittance": [
+            "Lotto"
+          ],
+          "reference_number": "reference-4fba2f",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "0.39",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Salo Ari",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Lotto",
+            "narrative": "Lotto",
+            "own_message": "Lotto",
+            "payment_date": "2026-10-14",
+            "reference": "reference-4fba2f",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "1a7ab82b-1158-40a3-90c7-5126b3fc7b3b",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "94bf9f51-38f5-49f3-b930-07122144cd7e",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-6.30",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Helsinkimissio ry"
+          },
+          "remittance": [
+            "18110005577211"
+          ],
+          "reference_number": "reference-48e1ca",
+          "bank_code_text": "Itsepalvelu",
+          "raw": {
+            "amount": "-6.30",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Helsinkimissio ry",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "18110005577211",
+            "narrative": "18110005577211",
+            "own_message": "18110005577211",
+            "payment_date": "2026-10-14",
+            "reference": "reference-48e1ca",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "94bf9f51-38f5-49f3-b930-07122144cd7e",
+            "type_description": "Itsepalvelu",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "a8f36312-3a54-47e1-a3ee-d5b69a56a06b",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-12.60",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Helsinkimissio ry"
+          },
+          "remittance": [
+            "18110005577211"
+          ],
+          "reference_number": "reference-48e1ca",
+          "bank_code_text": "Itsepalvelu",
+          "raw": {
+            "amount": "-12.60",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Helsinkimissio ry",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "18110005577211",
+            "narrative": "18110005577211",
+            "own_message": "18110005577211",
+            "payment_date": "2026-10-14",
+            "reference": "reference-48e1ca",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "a8f36312-3a54-47e1-a3ee-d5b69a56a06b",
+            "type_description": "Itsepalvelu",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "1bd7b82e-c743-453f-a0be-977fb69a594b",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "36.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Simon Baker"
+          },
+          "remittance": [
+            "Kiitos"
+          ],
+          "reference_number": "reference-86fc85",
+          "bank_code_text": "Pano",
+          "raw": {
+            "amount": "36.00",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Simon Baker",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Kiitos",
+            "narrative": "Kiitos",
+            "own_message": "Kiitos",
+            "payment_date": "2026-10-14",
+            "reference": "reference-86fc85",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "1bd7b82e-c743-453f-a0be-977fb69a594b",
+            "type_description": "Pano",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "b568b6ca-5416-486b-82f4-b11bba48795b",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-29.93",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Avis",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "301127019500"
+              }
+            ]
+          },
+          "remittance": [
+            "GBP 31.20 Heathrow"
+          ],
+          "reference_number": "reference-c8c525",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-29.93",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx2736",
+            "card_transaction_type": "",
+            "counterparty_account": "301127019500",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Avis",
+            "currency": "EUR",
+            "currency_rate": "0.8756",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "GBP 31.20 Heathrow",
+            "narrative": "GBP 31.20 Heathrow",
+            "original_currency": "GBP",
+            "original_currency_amount": "31.20",
+            "own_message": "GBP 31.20 Heathrow",
+            "payment_date": "2026-10-14",
+            "reference": "reference-c8c525",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "b568b6ca-5416-486b-82f4-b11bba48795b",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "0f6b0ae8-7b8b-4c8c-b462-ee6df0b2741f",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-2.40",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "ATM 2312"
+          },
+          "remittance": [
+            "EUR 20.00 Vasa"
+          ],
+          "reference_number": "reference-379a78",
+          "bank_code_text": "Debet automaattiotto",
+          "raw": {
+            "amount": "-2.40",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx5433",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "ATM 2312",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "EUR 20.00 Vasa",
+            "narrative": "EUR 20.00 Vasa",
+            "own_message": "EUR 20.00 Vasa",
+            "payment_date": "2026-10-14",
+            "reference": "reference-379a78",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "0f6b0ae8-7b8b-4c8c-b462-ee6df0b2741f",
+            "type_description": "Debet automaattiotto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "4a6e5d60-e0f1-4937-bc74-e75e8d2e94ed",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-13.18",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Avis",
+            "identifiers": [
+              {
+                "scheme": "BBAN",
+                "value": "301127019500"
+              }
+            ]
+          },
+          "remittance": [
+            "GBP 31.20 Heathrow"
+          ],
+          "reference_number": "reference-c8c525",
+          "bank_code_text": "Korttiosto",
+          "raw": {
+            "amount": "-13.18",
+            "booking_date": "2026-10-14",
+            "card_number": "xxxxxxxxxx2736",
+            "card_transaction_type": "",
+            "counterparty_account": "301127019500",
+            "counterparty_address": "ADDRESS",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Avis",
+            "currency": "EUR",
+            "currency_rate": "0.8756",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "GBP 31.20 Heathrow",
+            "narrative": "GBP 31.20 Heathrow",
+            "original_currency": "GBP",
+            "original_currency_amount": "31.20",
+            "own_message": "GBP 31.20 Heathrow",
+            "payment_date": "2026-10-14",
+            "reference": "reference-c8c525",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "4a6e5d60-e0f1-4937-bc74-e75e8d2e94ed",
+            "type_description": "Korttiosto",
+            "value_date": "2026-10-14"
+          }
+        },
+        {
+          "id": "3a32cde4-b24b-444f-b50f-1b889715aca3",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-47.50",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "transaction_date": "2026-10-14",
+          "counterparty": {
+            "name": "Structured Creditor Oy"
+          },
+          "remittance": [
+            "Invoice 112233"
+          ],
+          "reference_number": "reference-1619a4",
+          "bank_code_text": "Itsepalvelu",
+          "raw": {
+            "amount": "-47.50",
+            "booking_date": "2026-10-14",
+            "card_number": "",
+            "card_transaction_type": "",
+            "counterparty_account": "",
+            "counterparty_address": "structured creditor address 1, structured creditor address 2",
+            "counterparty_bank_bic": "BHBLDEHHXXX",
+            "counterparty_name": "Structured Creditor Oy",
+            "currency": "EUR",
+            "end_to_end_identification": "",
+            "from_account_name": "",
+            "merchant_city": "",
+            "merchant_country": "",
+            "message": "Invoice 112233",
+            "narrative": "Payment with structured creditor address",
+            "own_message": "Invoice 112233",
+            "payment_date": "2026-10-14",
+            "reference": "reference-1619a4",
+            "status": "billed",
+            "transaction_date": "2026-10-14",
+            "transaction_id": "3a32cde4-b24b-444f-b50f-1b889715aca3",
+            "type_description": "Itsepalvelu",
+            "value_date": "2026-10-14"
+          }
+        }
+      ],
+      "next_cursor": "sandboxContinuationKey-2"
+    }
+  }
+]

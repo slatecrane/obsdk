@@ -1,0 +1,55 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Nordea to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://api.nordeaopenbanking.com/personal/nasa-mock/ssca/sign?client_id=dummy_client_id_se&code_challenge_method=S256&response_type=code&redirect_uri=https%3A%2F%2Fapi.nordeaopenbanking.com&code_challenge=llsLNRjXL5FdDN-50KlBR1yQhg5Q1Lx_ejwAC32h8IY&scope=openid+ndf+agreement&state=49265c17-4fd6-493a-82fe-d64af0d647db&nonce=xD-X91lfMrGSd8RGx4q0w-qLyRtmMSnyUSHcpuI6&signing_token=DummySignedToken&userId=user&password=sandbox"
+      },
+      "payment": {
+        "id": "0c38243f-d1cd-4e15-9e62-07c4052e9694",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "PendingUserApproval",
+        "final": false,
+        "ref": "obs1.eyJpIjoibm9yZGVhLXBzZDItdjUiLCJpZCI6IjBjMzgyNDNmLWQxY2QtNGUxNS05ZTYyLTA3YzQwNTJlOTY5NCIsInQiOiJkb21lc3RpYyJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "nordea",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "nordea-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-16T19:05:02Z",
+        "access_token": "REDACTED:access_token:aed8f2",
+        "refresh_token": "REDACTED:refresh_token:efd55f",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-16T20:05:01Z",
+        "meta": {
+          "payment_id": "0c38243f-d1cd-4e15-9e62-07c4052e9694",
+          "purpose": "payment"
+        }
+      },
+      "payment": {
+        "id": "0c38243f-d1cd-4e15-9e62-07c4052e9694",
+        "type": "domestic",
+        "status": "completed",
+        "bank_status": "Paid",
+        "final": true,
+        "ref": "obs1.eyJpIjoibm9yZGVhLXBzZDItdjUiLCJpZCI6IjBjMzgyNDNmLWQxY2QtNGUxNS05ZTYyLTA3YzQwNTJlOTY5NCIsInQiOiJkb21lc3RpYyJ9"
+      }
+    }
+  }
+]

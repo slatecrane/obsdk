@@ -1,0 +1,55 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Nordea to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://api.nordeaopenbanking.com/personal/nasa-mock/ssca/sign?client_id=dummy_client_id_fi&code_challenge_method=S256&response_type=code&redirect_uri=https%3A%2F%2Fapi.nordeaopenbanking.com&code_challenge=NZtTsEo_0-_stCSxeT8LfWyXHpfiRP8_gLJ2FXZYyC4&scope=openid+ndf+agreement&state=293f110a-f5e0-4a93-bdab-73aeee5a96d9&nonce=PhgAeFX25kWQMRN1nGofd3TuN4pFSThmvSKPXCpz&signing_token=DummySignedToken&userId=user&password=sandbox"
+      },
+      "payment": {
+        "id": "e8a3a488-975c-4e33-aea4-08f65b48bd89",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "PendingUserApproval",
+        "final": false,
+        "ref": "obs1.eyJpIjoibm9yZGVhLXBzZDItdjUiLCJpZCI6ImU4YTNhNDg4LTk3NWMtNGUzMy1hZWE0LTA4ZjY1YjQ4YmQ4OSIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "nordea",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "nordea-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-16T19:05:00Z",
+        "access_token": "REDACTED:access_token:64461b",
+        "refresh_token": "REDACTED:refresh_token:066cbd",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-16T20:04:59Z",
+        "meta": {
+          "payment_id": "e8a3a488-975c-4e33-aea4-08f65b48bd89",
+          "purpose": "payment"
+        }
+      },
+      "payment": {
+        "id": "e8a3a488-975c-4e33-aea4-08f65b48bd89",
+        "type": "sepa",
+        "status": "completed",
+        "bank_status": "Paid",
+        "final": true,
+        "ref": "obs1.eyJpIjoibm9yZGVhLXBzZDItdjUiLCJpZCI6ImU4YTNhNDg4LTk3NWMtNGUzMy1hZWE0LTA4ZjY1YjQ4YmQ4OSIsInQiOiJzZXBhIn0"
+      }
+    }
+  }
+]

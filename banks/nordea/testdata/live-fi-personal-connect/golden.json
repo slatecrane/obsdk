@@ -1,0 +1,309 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Nordea to authorise access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3Ae0fe50&state=9ce3c726-6a9e-4252-b73d-4c561a843524"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "nordea",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "nordea-psd2-v5",
+        "generation": 1,
+        "updated_at": "2026-10-16T18:55:35Z",
+        "access_token": "REDACTED:access_token:26b252",
+        "refresh_token": "REDACTED:refresh_token:54286f",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-16T19:55:34Z",
+        "consents": {
+          "accounts": {
+            "id": "",
+            "kind": "accounts",
+            "status": "granted",
+            "valid_until": "2027-01-14T18:55:35Z"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+          "stable_id": "0c4fe4f0c40c841e2667dbed0fc2ebcc",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI7473834510057469"
+            }
+          ],
+          "name": "Aino Salo",
+          "owner_name": "name-f4b5ca",
+          "currency": "EUR",
+          "product": "KÄYTTÖTILI",
+          "type": "CACC",
+          "usage": "PRIV",
+          "bic": "NDEAFIHH",
+          "credit_limit": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "available_balance",
+              "amount": {
+                "amount": "302.54",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "booked_balance",
+              "amount": {
+                "amount": "290.44",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "value_dated_balance",
+              "amount": {
+                "amount": "290.44",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_id": "FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+            "_links": [
+              {
+                "href": "/v5/accounts/FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+                "rel": "details"
+              },
+              {
+                "href": "/v5/accounts/FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8/transactions",
+                "rel": "transactions"
+              }
+            ],
+            "account_name": "Aino Salo",
+            "account_numbers": [
+              {
+                "_type": "IBAN",
+                "value": "FI7473834510057469"
+              }
+            ],
+            "account_roles": [
+              {
+                "name": "name-f4b5ca",
+                "type": "OWNER"
+              },
+              {
+                "name": "name-fd6868",
+                "type": "CO_OWNER"
+              }
+            ],
+            "account_type": "Current",
+            "available_balance": "302.54",
+            "bank": {
+              "bic": "NDEAFIHH",
+              "country": "FI",
+              "name": "name-dd6826"
+            },
+            "booked_balance": "290.44",
+            "country": "FI",
+            "credit_limit": "100.00",
+            "currency": "EUR",
+            "latest_transaction_booking_date": "2026-10-16",
+            "product": "KÄYTTÖTILI",
+            "registration_number": "1800.0",
+            "status": "OPEN",
+            "value_dated_balance": "290.44"
+          }
+        },
+        {
+          "id": "FIjLSNh1zFXrMpBX0-LDfXEIsKvZ-NkqRt5HhwEl5Q3r8",
+          "stable_id": "cd6aa339cd857cc516bfa85392d10128",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI6593857450293470"
+            }
+          ],
+          "name": "Aino Salo",
+          "owner_name": "name-f4b5ca",
+          "currency": "EUR",
+          "product": "KÄYTTÖTILI",
+          "type": "CACC",
+          "usage": "PRIV",
+          "bic": "NDEAFIHH",
+          "credit_limit": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "available_balance",
+              "amount": {
+                "amount": "-276.66",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "booked_balance",
+              "amount": {
+                "amount": "-288.76",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "value_dated_balance",
+              "amount": {
+                "amount": "-288.76",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_id": "FIjLSNh1zFXrMpBX0-LDfXEIsKvZ-NkqRt5HhwEl5Q3r8",
+            "_links": [
+              {
+                "href": "/v5/accounts/FIjLSNh1zFXrMpBX0-LDfXEIsKvZ-NkqRt5HhwEl5Q3r8",
+                "rel": "details"
+              },
+              {
+                "href": "/v5/accounts/FIjLSNh1zFXrMpBX0-LDfXEIsKvZ-NkqRt5HhwEl5Q3r8/transactions",
+                "rel": "transactions"
+              }
+            ],
+            "account_name": "Aino Salo",
+            "account_numbers": [
+              {
+                "_type": "IBAN",
+                "value": "FI6593857450293470"
+              }
+            ],
+            "account_roles": [
+              {
+                "name": "name-f4b5ca",
+                "type": "OWNER"
+              }
+            ],
+            "account_type": "Current",
+            "available_balance": "-276.66",
+            "bank": {
+              "bic": "NDEAFIHH",
+              "country": "FI",
+              "name": "name-dd6826"
+            },
+            "booked_balance": "-288.76",
+            "country": "FI",
+            "credit_limit": "100.00",
+            "currency": "EUR",
+            "latest_transaction_booking_date": "2026-10-16",
+            "product": "KÄYTTÖTILI",
+            "registration_number": "1900.0",
+            "status": "OPEN",
+            "value_dated_balance": "-288.76"
+          }
+        },
+        {
+          "id": "FIcCf5sczCy52e7cfsKZcxlIsKvZ-NkqRt5HhwEl5Q3r8",
+          "stable_id": "5fe69dc80d34894154d01b490cf9fb9c",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI6593857450293555"
+            }
+          ],
+          "name": "Aino Salo",
+          "currency": "EUR",
+          "product": "KÄYTTÖTILI",
+          "type": "CACC",
+          "usage": "PRIV",
+          "bic": "NDEAFIHH",
+          "credit_limit": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "available_balance",
+              "amount": {
+                "amount": "123.60",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "booked_balance",
+              "amount": {
+                "amount": "111.50",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "value_dated_balance",
+              "amount": {
+                "amount": "111.50",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_id": "FIcCf5sczCy52e7cfsKZcxlIsKvZ-NkqRt5HhwEl5Q3r8",
+            "_links": [
+              {
+                "href": "/v5/accounts/FIcCf5sczCy52e7cfsKZcxlIsKvZ-NkqRt5HhwEl5Q3r8",
+                "rel": "details"
+              },
+              {
+                "href": "/v5/accounts/FIcCf5sczCy52e7cfsKZcxlIsKvZ-NkqRt5HhwEl5Q3r8/transactions",
+                "rel": "transactions"
+              }
+            ],
+            "account_name": "Aino Salo",
+            "account_numbers": [
+              {
+                "_type": "IBAN",
+                "value": "FI6593857450293555"
+              }
+            ],
+            "account_type": "Current",
+            "available_balance": "123.60",
+            "bank": {
+              "bic": "NDEAFIHH",
+              "country": "FI",
+              "name": "name-dd6826"
+            },
+            "booked_balance": "111.50",
+            "country": "FI",
+            "credit_limit": "100.00",
+            "currency": "EUR",
+            "latest_transaction_booking_date": "2026-10-14",
+            "product": "KÄYTTÖTILI",
+            "registration_number": "2200.0",
+            "status": "OPEN",
+            "value_dated_balance": "111.50"
+          }
+        }
+      ]
+    }
+  }
+]

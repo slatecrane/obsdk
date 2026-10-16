@@ -1,0 +1,76 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/personal/v5/accounts/FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:bc22c1",
+      "Signature": "keyId=\"REDACTED:client_id\",algorithm=\"rsa-sha256\",headers=\"(request-target) x-nordea-originating-host x-nordea-originating-date\",signature=\"hq6sb4B4336kFIq4jZxxPeJukRC+Si1Y1UqOcHKgr16XqOfGbZEiGniTVm+WV6NZl6GHdNNCCVFdjC0j1eLuEoHQ/8+RpTYdLhBX9O+05fBzbhUKBybpqcliJwQiml7vhuKFVXzSSUSrkpe2pv3QzrBteH/nJnldsT8exZFE7Jx6LEnwsTARx8U7bYdg/xgdNTM9WCXvDtDUsXkCwJ1MjdkRdVCKqJ8xhk/g66wEVVenfxHZphMjG6Hf5zg9ca10augsBf1YFgrMLCWi0I0+UtwTWHOgryk6G6pmRSvyfkNx/X6o7GSVUpDDLENOv0daA0MI/FJKahoJfWDziEg/Bf607yGNurBdMVU5XANDE+swyY3zNNEYGT+IA1Mv7PM6mMFuuUuhZXP13hezvo9JLB5v8ejG9LAKUCNWsOvg6p2y9Vnh9VH/MkXzgqhSR+9kIblJwPEWn4shhXRbNgExrEpu9EG8qFx+MjaAaheQNT0E5XUs0ol17bDc3qEmaTHL\"",
+      "X-Ibm-Client-Id": "REDACTED:client_id",
+      "X-Ibm-Client-Secret": "REDACTED:client_secret",
+      "X-Nordea-Originating-Date": "Fri, 16 Oct 2026 18:55:52 GMT",
+      "X-Nordea-Originating-Host": "api.nordeaopenbanking.com",
+      "X-Nordea-Originating-User-Agent": "obdev/0.1",
+      "X-Nordea-Originating-User-Ip": "127.0.0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "group_header": {
+        "creation_date_time": "2026-10-16T18:55:52.323836555Z",
+        "http_code": 200,
+        "message_identification": "3e5c27z9n7hmp0g1"
+      },
+      "response": {
+        "_id": "FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+        "_links": [
+          {
+            "href": "/v5/accounts/FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8",
+            "rel": "self"
+          },
+          {
+            "href": "/v5/accounts/FInirxPDah0AddakP3txilm4sKvZ-NkqRt5HhwEl5Q3r8/transactions",
+            "rel": "transactions"
+          }
+        ],
+        "account_name": "Aino Salo",
+        "account_numbers": [
+          {
+            "_type": "IBAN",
+            "value": "FI7473834510057469"
+          }
+        ],
+        "account_roles": [
+          {
+            "name": "name-f4b5ca",
+            "type": "OWNER"
+          },
+          {
+            "name": "name-fd6868",
+            "type": "CO_OWNER"
+          }
+        ],
+        "account_type": "Current",
+        "available_balance": "302.54",
+        "bank": {
+          "bic": "NDEAFIHH",
+          "country": "FI",
+          "name": "name-dd6826"
+        },
+        "booked_balance": "290.44",
+        "country": "FI",
+        "credit_limit": "100.00",
+        "currency": "EUR",
+        "latest_transaction_booking_date": "2026-10-16",
+        "product": "KÄYTTÖTILI",
+        "registration_number": "1800.0",
+        "status": "OPEN",
+        "value_dated_balance": "290.44"
+      }
+    }
+  }
+}

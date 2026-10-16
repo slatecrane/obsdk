@@ -1,0 +1,55 @@
+{
+  "config": {
+    "bank": "nordea",
+    "country": "SE",
+    "env": "sandbox",
+    "now": "2026-10-16T19:05:02Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "c83930ba-8340-4550-a41b-9b817cc1a957"
+      ],
+      "state": [
+        "c4223a3f-dec5-45af-95c8-7135ccebde4f"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "domestic",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "SE27PSEUDO3CE101E9D6"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.24",
+              "currency": "SEK"
+            },
+            "creditor": {
+              "account": {
+                "scheme": "BANKGIRO",
+                "value": "3300308"
+              }
+            },
+            "reference": {
+              "scheme": "OCR",
+              "value": "1831653108"
+            }
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/?auth_code=REDACTED%3Acode%3A29b404\u0026response_code=REDACTED%3Aresponse_code%3A7c6d1c\u0026state=c4223a3f-dec5-45af-95c8-7135ccebde4f\u0026success=true"
+    }
+  ]
+}

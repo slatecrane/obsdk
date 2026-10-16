@@ -1,0 +1,62 @@
+{
+  "config": {
+    "bank": "nordea",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-16T19:05:03Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "33512143-1112-49fc-b2cc-6307f25030ec"
+      ],
+      "state": [
+        "2531fb06-c5fb-4783-ba73-5d27962a2813"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI56PSEUDO10139470E2"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "6.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-cf2f4e",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI58PSEUDO9D60DE3688"
+              }
+            },
+            "remittance": [
+              "Future"
+            ]
+          }
+        ],
+        "execution_date": "2026-10-21"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/?auth_code=REDACTED%3Acode%3Af14250\u0026response_code=REDACTED%3Aresponse_code%3A7c6d1c\u0026state=2531fb06-c5fb-4783-ba73-5d27962a2813\u0026success=true"
+    },
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoibm9yZGVhLXBzZDItdjUiLCJpZCI6IjVkMGNkYjhiLTI0NzItNGFkMC04ZTk5LTBjNWU5NWE2NGE3OCIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

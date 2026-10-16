@@ -1,0 +1,112 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/business/v4/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:046c22",
+      "Signature": "keyId=\"REDACTED:client_id\",algorithm=\"rsa-sha256\",headers=\"(request-target) x-nordea-originating-host x-nordea-originating-date\",signature=\"skOnO4fG6nd/3qIPKKAonPmbaQracKVtIQPvLPkp10MoiEjy8j4ZJ/j4hy4VFxAtkf37pe7TU/VhMOoIq0ieVhCsANNNwuGzU++N4je21mfkct5R9kKibbKnH+xLMx9Nxn/USLAdx/YQvy/87WsFQ8dHX2FDlX11Mh7fFBtXLIMAbNQNFbQ7qtboppPn51fF+bgJKLNCeEkPXUkzj2AaFHmpp/bFviO98RTq4lJxp5YlT8JGliGZTqyFM//fWXRzkXVJ2H9WA1zWACtqTa+f5Z99VYX0AzMW8x5XIxSGjEuIF9v7Kg1coa/vBH0tODvh3aio2IGmAEncRsFJGSBq8zBQqgxXmBIpD/3TtvksgAPt97c8O/mGIAk7Qx/L6e2Tw7zISUwXnQNxMeObrZzvwu7OHNZlXLHoe642xKxMvRFGBhqQOTCh8WpDd2DXmlh43QRHhCBre4gkZgZ2Wbg5KTIbYtU403XTPx1hW95C/sG8zTvsXugaTdgYXItI0f7V\"",
+      "X-Ibm-Client-Id": "REDACTED:client_id",
+      "X-Ibm-Client-Secret": "REDACTED:client_secret",
+      "X-Nordea-Originating-Date": "Fri, 16 Oct 2026 18:56:12 GMT",
+      "X-Nordea-Originating-Host": "api.nordeaopenbanking.com",
+      "X-Nordea-Originating-User-Agent": "obdev/0.1",
+      "X-Nordea-Originating-User-Ip": "127.0.0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "group_header": {
+        "creation_date_time": "2026-10-16T18:56:12.510039422Z",
+        "http_code": 200,
+        "message_identification": "jht809nhxxmot2sh"
+      },
+      "response": {
+        "_links": [
+          {
+            "href": "/v4/accounts",
+            "rel": "self"
+          }
+        ],
+        "accounts": [
+          {
+            "_id": "FI3815903000105518-EUR",
+            "_links": [
+              {
+                "href": "/v4/accounts/FI3815903000105518-EUR",
+                "rel": "details"
+              },
+              {
+                "href": "/v4/accounts/FI3815903000105518-EUR/transactions",
+                "rel": "transactions"
+              }
+            ],
+            "account_holder": "VIZMARUSHA TOREN Holder",
+            "account_name": "VIZMARUSHA TOREN",
+            "account_numbers": [
+              {
+                "_type": "IBAN",
+                "value": "FI3815903000105518"
+              }
+            ],
+            "account_type": "Current",
+            "available_balance": "13216.34",
+            "bank": {
+              "bic": "NDEAFIHH",
+              "country": "FI",
+              "name": "name-dd6826"
+            },
+            "booked_balance": "13216.34",
+            "country": "FI",
+            "credit_limit": "10000.00",
+            "currency": "EUR",
+            "latest_transaction_booking_date": "2026-10-16",
+            "product": "SHEKKITILI",
+            "status": "OPEN",
+            "value_dated_balance": "13216.34"
+          },
+          {
+            "_id": "FI5815793000105406-EUR",
+            "_links": [
+              {
+                "href": "/v4/accounts/FI5815793000105406-EUR",
+                "rel": "details"
+              },
+              {
+                "href": "/v4/accounts/FI5815793000105406-EUR/transactions",
+                "rel": "transactions"
+              }
+            ],
+            "account_holder": "VIZMARUSHA TOREN Holder",
+            "account_name": "VIZMARUSHA TOREN",
+            "account_numbers": [
+              {
+                "_type": "IBAN",
+                "value": "FI5815793000105406"
+              }
+            ],
+            "account_type": "Current",
+            "available_balance": "14596.73",
+            "bank": {
+              "bic": "NDEAFIHH",
+              "country": "FI",
+              "name": "name-dd6826"
+            },
+            "booked_balance": "14596.73",
+            "country": "FI",
+            "credit_limit": "10000.00",
+            "currency": "EUR",
+            "latest_transaction_booking_date": "2026-10-16",
+            "product": "SHEKKITILI",
+            "status": "OPEN",
+            "value_dated_balance": "14596.73"
+          }
+        ]
+      }
+    }
+  }
+}

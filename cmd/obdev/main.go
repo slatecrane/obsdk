@@ -134,13 +134,17 @@ func run() error {
 		return err
 	}
 	if rec != nil {
-		if args[0] != "connect" {
-			if session == nil {
-				return fmt.Errorf("no session: run `obdev connect` first")
-			}
+		// Commands that work without a login (connect, pay, payment-status at
+		// banks that read payments with an app token) record without one.
+		noLogin := map[string]bool{"connect": true, "pay": true, "payment-status": true, "payment-spec": true, "auth-methods": true}
+		switch {
+		case args[0] == "connect":
+		case session != nil:
 			if err := rec.SetStartSession(session); err != nil {
 				return err
 			}
+		case !noLogin[args[0]]:
+			return fmt.Errorf("no session: run `obdev connect` first")
 		}
 		client = rec.Wrap(client)
 	}

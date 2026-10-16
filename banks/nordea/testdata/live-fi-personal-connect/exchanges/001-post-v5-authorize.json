@@ -1,0 +1,40 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/personal/v5/authorize",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=D4hkjERnLfTQF7pwg8jeT6nGYvkm0iJKmbVj2Ypr9bo=",
+      "Signature": "keyId=\"REDACTED:client_id\",algorithm=\"rsa-sha256\",headers=\"(request-target) x-nordea-originating-host x-nordea-originating-date content-type digest\",signature=\"g4uW1dCy9q8FjvOmLw8uR4WJcBW8hITeSltx/CTxQu/IJzdXt2e17MoZ9tHoC27CWHMDrGSkbN1ATTjUPVoq4Ii9WruB57b8z8OHmsxcUH9djYXgvLB6Y2UuyDRLkKD9g6RcaMd5DR7Bc+MeLvBNBciFRlJz6huEJpeZmPBHfQwQTFC1TrU5F+f8KVQFlhqruNAsRf5wBqAMaqDmVT5E8oswMaR2OnEYeuSnsk4/OOorzlYO23PoA2xJ+75xy/5wDq06dUTOvJ//+gxXa2MeYu/+NuYcaPCa9enfBzdnWd+G6cN45GRXiI/W3NCOStWDR8LAywkV1ujMvJcF4sQPTUtmPnyq0TKmHWX/0GUCDIXNpW1VL7MAfLcA6CrjwgL8DtIl2pkzdwhPZnaDS1wDX2May7ZYvJzxCoDNJ5MnX4k381eciJ95ytRLoH5CoecgRNZ1asigBHuvGdC6VDg9C5S6gJ9kDot8uCPKdr8WZKlm5ltJgwYKIzBqr7jWztjI\"",
+      "X-Ibm-Client-Id": "REDACTED:client_id",
+      "X-Ibm-Client-Secret": "REDACTED:client_secret",
+      "X-Nordea-Originating-Date": "Fri, 16 Oct 2026 18:55:35 GMT",
+      "X-Nordea-Originating-Host": "api.nordeaopenbanking.com",
+      "X-Nordea-Originating-User-Agent": "obdev/0.1",
+      "X-Nordea-Originating-User-Ip": "127.0.0.1"
+    },
+    "body": {
+      "account_list": [
+        "ALL"
+      ],
+      "country": "FI",
+      "duration": 129600,
+      "redirect_uri": "https://example.com",
+      "scope": [
+        "ACCOUNTS_BASIC",
+        "ACCOUNTS_DETAILS",
+        "ACCOUNTS_BALANCES",
+        "ACCOUNTS_TRANSACTIONS"
+      ],
+      "skip_account_selection": false,
+      "state": "9ce3c726-6a9e-4252-b73d-4c561a843524"
+    }
+  },
+  "response": {
+    "status": 302,
+    "headers": {
+      "Location": "https://example.com?code=REDACTED%3Acode%3Ae0fe50\u0026state=9ce3c726-6a9e-4252-b73d-4c561a843524"
+    }
+  }
+}

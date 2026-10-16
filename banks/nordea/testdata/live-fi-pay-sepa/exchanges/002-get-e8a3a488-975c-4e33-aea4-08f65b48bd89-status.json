@@ -1,0 +1,35 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/personal/v4/single-sca-payments/e8a3a488-975c-4e33-aea4-08f65b48bd89/status",
+    "headers": {
+      "Accept": "application/json",
+      "Signature": "keyId=\"REDACTED:client_id\",algorithm=\"rsa-sha256\",headers=\"(request-target) x-nordea-originating-host x-nordea-originating-date\",signature=\"cChbQYJc5Pgex7Ry5I60McmI0ts1cTnACNOYg3nTpbq2BREGASbFj2cX7V6Dr9dg/16C2WpK9qx4dM37guQsFSXfINrh/w+eJthE3wsy4fW+wE0HfJ2tmoXKSt1usMeUrc2NIDs/SbqfA7vnMt86uDeur2UCBykT2OUZY5UUKZ9FygEXjilfkxEo7LSG+TvXd5hQ05NFpNXKruo3S318BU+hDk9sF5WWN3LkBUIeomAyx6O7F2NZt5D4nJXPXKVZ7vI3/Jwxqo13LoqXO8VBHAf3AikYX8Z3kL8yvlCohzh4rNMJ4+166oEE0CWR0vMZxuahvPhT8tXBxl1+QSbFB9TIPiRnqk44qDJTvFaa4aDTMvxoWTFXe4m9OzbCsgnQXH7/B6iLcAqMU24TVX2tM4dprlNK3/J2qxKGAMZeuvL0iK7Ls4s/Hi1WB8eot1Ntg974dGrhHATDSkSKqYitzwTFgchVxR/4jpt4fXNlQIhlxBBW+wxOc/hMuYbhpJfv\"",
+      "X-Ibm-Client-Id": "REDACTED:client_id",
+      "X-Ibm-Client-Secret": "REDACTED:client_secret",
+      "X-Nordea-Originating-Date": "Fri, 16 Oct 2026 19:05:01 GMT",
+      "X-Nordea-Originating-Host": "api.nordeaopenbanking.com",
+      "X-Nordea-Originating-User-Agent": "obdev/0.1",
+      "X-Nordea-Originating-User-Ip": "127.0.0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "group_header": {
+        "creation_date_time": "2026-10-16T19:05:01.888661953Z",
+        "http_code": 200,
+        "message_identification": "fwdc9h7agu4e0uzn"
+      },
+      "response": {
+        "external_id": "45a0c168-7c88-4934-9f18-221cf5b66e2b",
+        "payment_id": "e8a3a488-975c-4e33-aea4-08f65b48bd89",
+        "payment_type": "SEPA",
+        "status": "Paid"
+      }
+    }
+  }
+}

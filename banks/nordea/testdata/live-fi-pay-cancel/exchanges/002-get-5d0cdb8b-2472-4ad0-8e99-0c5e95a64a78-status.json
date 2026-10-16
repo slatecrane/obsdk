@@ -1,0 +1,41 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/personal/v4/single-sca-payments/5d0cdb8b-2472-4ad0-8e99-0c5e95a64a78/status",
+    "headers": {
+      "Accept": "application/json",
+      "Signature": "keyId=\"REDACTED:client_id\",algorithm=\"rsa-sha256\",headers=\"(request-target) x-nordea-originating-host x-nordea-originating-date\",signature=\"FXI57IXvy2QErfiabOKJbh+l6Qx0KrZTlzdVTcz3GJq1sm8JKda/y14TNAoOixpiMXVUkZ6eroYBW08f8OKff0dLP/eRoOYZW/9ji0OcMstNsl/8s83H+1qyGD3x8fDs7OriMyP63M7cJPPe2pBmWyY7VEEdCdGn4vRSihvMhKQzcsq/QsGfh4qjf7nSEs14Y4Lt/uI1yhBUT+LgTwsLgi+AnCOlBcVGfjRjfdF+cCL8ATGCUlu5Fmm1HXrx0pn7vua3RD/pbdkgFaRAE9i+Xx8ypJF2hCZqBsNuiW1n+40lvWJ4D7r06OVkLoaH2c9/LlseKn+xPEtMU+c7/KqO4fuTURxixeKqAnQlcITwwf8cZGZSDEpd10EV2YENgSofApcGBkV8+vx5gF2CedkWIvBEPmLb8O3DpyOakm7AXUd/Ki3ZNAeNMaAfz5sa29D2TiyqcG9yke8HQFvcDkK2nyqYoQOpzLJtMKoNbyOBOrigUsCTlRnk8j13/Ap6COF3\"",
+      "X-Ibm-Client-Id": "REDACTED:client_id",
+      "X-Ibm-Client-Secret": "REDACTED:client_secret",
+      "X-Nordea-Originating-Date": "Fri, 16 Oct 2026 19:05:04 GMT",
+      "X-Nordea-Originating-Host": "api.nordeaopenbanking.com",
+      "X-Nordea-Originating-User-Agent": "obdev/0.1",
+      "X-Nordea-Originating-User-Ip": "127.0.0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "group_header": {
+        "creation_date_time": "2026-10-16T19:05:05.024683181Z",
+        "http_code": 200,
+        "message_identification": "f3brrb886xko7bhq"
+      },
+      "response": {
+        "external_id": "33512143-1112-49fc-b2cc-6307f25030ec",
+        "payment_id": "5d0cdb8b-2472-4ad0-8e99-0c5e95a64a78",
+        "payment_type": "SEPA",
+        "status": "Confirmed",
+        "tpp_messages": [
+          {
+            "category": "WARNING",
+            "text": " We are experiencing technical difficulties accessing the latest payment details. The supplied details could be slightly outdated or missing some fields."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -26,6 +26,8 @@ banks/*/sandbox.env
 *.der
 *.cer
 *.csr
+*.zip
+banks/*/cert/
 
 # private notes and editor settings
 docs/todo.md
