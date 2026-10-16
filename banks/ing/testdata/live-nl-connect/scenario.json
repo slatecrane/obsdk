@@ -1,0 +1,28 @@
+{
+  "config": {
+    "bank": "ing",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-16T11:55:35Z",
+    "redirect_url": "https://www.example.com/",
+    "ids": {
+      "request": [
+        "e4291dc6-ea23-4d40-b50f-fc866c1ff1cd"
+      ],
+      "state": [
+        "c2cbeff4-95f0-46d8-98b5-88339e46dcdd"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/?code=REDACTED%3Acode%3Afe1ad5\u0026state=c2cbeff4-95f0-46d8-98b5-88339e46dcdd"
+    }
+  ]
+}

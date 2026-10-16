@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/oauth2/token",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:48b53f",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "code=REDACTED%3Acode%3Ade2a7c\u0026grant_type=authorization_code\u0026redirect_uri=https%3A%2F%2Fwww.example.com%2F"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:85c362",
+      "expires_in": 900,
+      "refresh_token": "REDACTED:refresh_token:025eed",
+      "refresh_token_expires_in": 2592000,
+      "scope": "payment-accounts:transactions:view payment-accounts:balances:view",
+      "token_type": "Bearer"
+    }
+  }
+}

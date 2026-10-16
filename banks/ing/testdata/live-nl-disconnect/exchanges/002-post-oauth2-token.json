@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/oauth2/token",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:09b160",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "grant_type=refresh_token\u0026refresh_token=REDACTED%3Arefresh_token%3A3b7b58"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:28ad2c",
+      "expires_in": 900,
+      "scope": "payment-accounts:transactions:view payment-accounts:balances:view",
+      "token_type": "Bearer"
+    }
+  }
+}

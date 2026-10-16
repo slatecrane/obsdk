@@ -1,0 +1,138 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to ING to authorise access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://myaccount.sandbox.ing.com/authorize/v2/NL?client_id=REDACTED%3Aclient_id&redirect_uri=https%3A%2F%2Fwww.example.com%2F&response_type=code&scope=payment-accounts%3Abalances%3Aview+payment-accounts%3Atransactions%3Aview&state=c2cbeff4-95f0-46d8-98b5-88339e46dcdd"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "ing",
+        "country": "NL",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "ing-psd2-v4",
+        "generation": 1,
+        "updated_at": "2026-10-16T11:55:35Z",
+        "access_token": "REDACTED:access_token:3605e7",
+        "refresh_token": "REDACTED:refresh_token:3b7b58",
+        "token_type": "Bearer",
+        "scope": "payment-accounts:transactions:view payment-accounts:balances:view",
+        "access_expires_at": "2026-10-16T12:10:35Z",
+        "refresh_expires_at": "2026-11-15T11:55:35Z",
+        "consents": {
+          "accounts": {
+            "id": "",
+            "kind": "accounts",
+            "status": "granted",
+            "valid_until": "2026-11-15T11:55:35Z"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "450ffbb8-9f11-4ec6-a1e1-df48aefc82ef",
+          "stable_id": "1bc73ba1dd1f27783cbe96b0f54038c1",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "NL15PSEUDO49AB10E51B"
+            }
+          ],
+          "name": "Betaalrekening",
+          "owner_name": "name-bd3ca9",
+          "currency": "EUR",
+          "product": "Betaalrekening",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/balances?currency=EUR"
+              },
+              "transactions": {
+                "href": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/transactions?currency=EUR"
+              }
+            },
+            "currency": "EUR",
+            "iban": "NL15PSEUDO49AB10E51B",
+            "maskedPan": "",
+            "name": "name-bd3ca9",
+            "product": "Betaalrekening",
+            "resourceId": "450ffbb8-9f11-4ec6-a1e1-df48aefc82ef"
+          }
+        },
+        {
+          "id": "181fdfd4-5838-4768-b803-91ae2192f901",
+          "stable_id": "8ba0098595268053312d94eb5f5bd95b",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "NL02PSEUDO975DA5EE88"
+            }
+          ],
+          "name": "Betaalrekening",
+          "owner_name": "name-0b8cdf",
+          "currency": "EUR",
+          "product": "Betaalrekening",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f901/balances?currency=EUR"
+              },
+              "transactions": {
+                "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f901/transactions?currency=EUR"
+              }
+            },
+            "currency": "EUR",
+            "iban": "NL02PSEUDO975DA5EE88",
+            "maskedPan": "",
+            "name": "name-0b8cdf",
+            "product": "Betaalrekening",
+            "resourceId": "181fdfd4-5838-4768-b803-91ae2192f901"
+          }
+        },
+        {
+          "id": "card~34dea1a9-0543-4711-b105-3492d1bbc8f6",
+          "stable_id": "bec55c9a55f074b3f86536930ad3d714",
+          "identifiers": [
+            {
+              "scheme": "MASKED_PAN",
+              "value": "5248 **** **** 1234"
+            }
+          ],
+          "name": "CREDITCARD",
+          "owner_name": "name-78b639",
+          "currency": "EUR",
+          "product": "CREDITCARD",
+          "type": "CARD",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v4/accounts/34dea1a9-0543-4711-b105-3492d1bbc8f6/balances?currency=EUR"
+              },
+              "transactions": {
+                "href": "/v2/card-accounts/34dea1a9-0543-4711-b105-3492d1bbc8f6/transactions?currency=EUR"
+              }
+            },
+            "currency": "EUR",
+            "iban": "",
+            "maskedPan": "5248 **** **** 1234",
+            "name": "name-78b639",
+            "product": "CREDITCARD",
+            "resourceId": "34dea1a9-0543-4711-b105-3492d1bbc8f6"
+          }
+        }
+      ]
+    }
+  }
+]

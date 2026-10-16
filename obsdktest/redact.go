@@ -47,7 +47,7 @@ type Redactor struct {
 func DefaultRedactor(literals map[string]string) *Redactor {
 	r := &Redactor{Literals: map[string]string{}, SecretKeys: set(
 		"authorization", "cookie", "set-cookie", "x-api-key", "psu-id", "psu-corporate-id", "psu-ip-address", "x-fapi-customer-ip-address",
-		"client_secret", "client_id", "app-id", "apikey", "refresh_token", "access_token", "id_token",
+		"client_secret", "client_id", "app-id", "apikey", "refresh_token", "access_token", "id_token", "token",
 		"code", "access_code", "authorizationcode", "authorization_code", "otp", "password",
 		"personalid", "personal_id", "phonenumber", "phone_number", "psu_id", "psuid", "clientid",
 	), PIIKeys: set(
@@ -56,6 +56,8 @@ func DefaultRedactor(literals map[string]string) *Redactor {
 		"messagetoreceiver", "notetoself", "receiver", "reference", "numbergiro", "accountfrom", "accountto", "unstructured",
 		// UK OBIE style (Revolut)
 		"identification", "secondaryidentification", "transactioninformation", "nickname",
+		// ING card accounts
+		"maskedpan", "transactiondetails",
 	), KeepQueryInURLs: set("state", "response_type", "scope", "bic", "redirect_uri", "language")}
 	for v, label := range literals {
 		if v != "" {

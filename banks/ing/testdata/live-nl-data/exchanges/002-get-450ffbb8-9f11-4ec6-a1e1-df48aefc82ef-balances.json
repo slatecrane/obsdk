@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:e2c25e",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "X-Jws-Signature": "eyJiNjQiOmZhbHNlLCJ4NXQjUzI1NiI6IjZzQkxJVWRFay1POVVMU3dyVGtERUNmQTZDTzBtcnplTGMwdFhYeWp4Z00iLCJjcml0IjpbInNpZ1QiLCJzaWdEIiwiYjY0Il0sInNpZ1QiOiIyMDI2LTEwLTE2VDEyOjAyOjI3WiIsInNpZ0QiOnsicGFycyI6WyIocmVxdWVzdC10YXJnZXQpIiwiZGlnZXN0IiwiY29udGVudC10eXBlIl0sIm1JZCI6Imh0dHA6Ly91cmkuZXRzaS5vcmcvMTkxODIvSHR0cEhlYWRlcnMifSwiYWxnIjoiUFMyNTYifQ..Cg--9kFz1tKZ9G0wm6aCo8qotqx3D3-EN5G-_Mdjcjt3HcSUsTcClqm3z4oEaLXb-7lhrvLxfrWmle-nBp692PG9JPv7A_IME818SAWElQmkQ-vXUmTduMhTJIoRvw8C8Nd55e9zU4eWoSW4hGeVVpFZqZYVCrfeA-DTNbqJ2y8vvZJWRwYLML5i5iH0l-shmbAVs54d_MQ0P4J-j_2FJlr4Wmw3B_WKOLXY5W8dTIJ0secAhwbZhnGdY_Xs2-FW5247u5BuVuh8pTSPTaj1e5pNbjEECVTu4a5UONbnVT_iWuAIN1a3MPx7AKa9uB9HdnmP5SohR-5lXerK334j9A"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "currency": "EUR",
+        "iban": "NL15PSEUDO49AB10E51B",
+        "maskedPan": ""
+      },
+      "balances": [
+        {
+          "balanceAmount": {
+            "amount": 100.12,
+            "currency": "EUR"
+          },
+          "balanceType": "expected",
+          "lastChangeDateTime": "2026-10-16T00:00:00Z"
+        }
+      ]
+    }
+  }
+}

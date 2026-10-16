@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f902/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:1ecef7",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "X-Jws-Signature": "eyJiNjQiOmZhbHNlLCJ4NXQjUzI1NiI6IjZzQkxJVWRFay1POVVMU3dyVGtERUNmQTZDTzBtcnplTGMwdFhYeWp4Z00iLCJjcml0IjpbInNpZ1QiLCJzaWdEIiwiYjY0Il0sInNpZ1QiOiIyMDI2LTEwLTE2VDEyOjAxOjE0WiIsInNpZ0QiOnsicGFycyI6WyIocmVxdWVzdC10YXJnZXQpIiwiZGlnZXN0IiwiY29udGVudC10eXBlIl0sIm1JZCI6Imh0dHA6Ly91cmkuZXRzaS5vcmcvMTkxODIvSHR0cEhlYWRlcnMifSwiYWxnIjoiUFMyNTYifQ..K7QQi5hKRr6X-ZZoZx11HOoBKwSo1xwfvo1XMVB-qh5qoR9HNDbT7VSjB9uMBASLO2ku-6O6RFVXxiU_fKwrHObw2m2N0sNFxXlc3D83gF7gusuBIWCIQD4_ITz9_6VzXnqI97RPxDDwbRAW9k3V17Yg4WpYrxblMUcIzrywnRePr27Qx-2Ks34D75GTmfK6MWXf5l1LVDUt2RT5Yl_pRnngiko8fyhIhUPkaCqWsMqD09dH83rb-ZbUqyrYDrDK5OnxGi-angdZj_2hKklu4YqbtasxEJDQQR9b4Sho7xxeNoS3dtMl3mbDfofMiDYmHZRgohxjFID0h16gquwQ7g"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "3352e76b-99ad-461b-a8f1-5b1daa802a18"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "SERVICE_BLOCKED",
+          "text": "1.1.202 - Request rejected because of missing required claim in the access token"
+        }
+      ]
+    }
+  }
+}

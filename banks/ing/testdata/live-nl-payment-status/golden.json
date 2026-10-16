@@ -1,0 +1,24 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "111be84f-d65a-469b-b964-892da2840afb",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "ACSC",
+      "final": true,
+      "ref": "obs1.eyJpIjoiaW5nLXBzZDItdjQiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIxMTFiZTg0Zi1kNjVhLTQ2OWItYjk2NC04OTJkYTI4NDBhZmIiLCJ0Ijoic2VwYSJ9"
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "23901d13-d65a-469b-b964-892da2840afb",
+      "type": "sepa",
+      "status": "rejected",
+      "bank_status": "RJCT",
+      "final": true,
+      "ref": "obs1.eyJpIjoiaW5nLXBzZDItdjQiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIyMzkwMWQxMy1kNjVhLTQ2OWItYjk2NC04OTJkYTI4NDBhZmIiLCJ0Ijoic2VwYSJ9"
+    }
+  }
+]

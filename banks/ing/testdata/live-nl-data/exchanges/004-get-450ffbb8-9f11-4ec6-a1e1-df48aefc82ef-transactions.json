@@ -1,0 +1,68 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v4/accounts/450ffbb8-9f11-4ec6-a1e1-df48aefc82ef/transactions",
+    "query": {
+      "fromDateTime": [
+        "2026-09-20T00:00:00.000Z"
+      ],
+      "limit": [
+        "100"
+      ],
+      "toDateTime": [
+        "2026-10-16T12:02:29.000Z"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:e2c25e",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "X-Jws-Signature": "eyJiNjQiOmZhbHNlLCJ4NXQjUzI1NiI6IjZzQkxJVWRFay1POVVMU3dyVGtERUNmQTZDTzBtcnplTGMwdFhYeWp4Z00iLCJjcml0IjpbInNpZ1QiLCJzaWdEIiwiYjY0Il0sInNpZ1QiOiIyMDI2LTEwLTE2VDEyOjAyOjI5WiIsInNpZ0QiOnsicGFycyI6WyIocmVxdWVzdC10YXJnZXQpIiwiZGlnZXN0IiwiY29udGVudC10eXBlIl0sIm1JZCI6Imh0dHA6Ly91cmkuZXRzaS5vcmcvMTkxODIvSHR0cEhlYWRlcnMifSwiYWxnIjoiUFMyNTYifQ..COhDt3kMhKXzKwsoKjiK1F-Z0lDSJnesH2wKx-8igxQlx-nEmdfJ5DwnRw6yhy1Fi-GdZ-r7Rd2LiMPhG7f9Yy-0TZjMEa_qNcJae7VCfz4dhFNlQkrsUxrMEAyO9fKK3BkK50btgpB4cVI9wEMlkJOb1CyHiJGttA8KqWzKxHNn5MRkBszQ-sQz7uCLS6SEc8QIt9T8W4NFutJSP0ibbeF8CHky3CV6nTUefMz7-6pDEwhkm6MLpqjuZz9RElYEfwBemOlVmuARbsPCvfFhdEz3C7vF3-ti6uxYICmOJN3xRUmkFYt8vKPfcLOA4asIt1CQ6T_-1TNEy0ZLaRsPJg"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "currency": "EUR",
+        "iban": "NL15PSEUDO49AB10E51B"
+      },
+      "transactions": {
+        "booked": [
+          {
+            "bookingDate": "2026-10-16",
+            "endToEndId": "NOTPROVIDED",
+            "executionDateTime": "2026-10-16T00:00:00Z",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-7495d5",
+            "transactionAmount": {
+              "amount": 100.00,
+              "currency": "EUR"
+            },
+            "transactionId": "021614321078455845000000001",
+            "transactionType": "Diversen",
+            "valueDate": "2026-10-16"
+          }
+        ],
+        "info": [],
+        "pending": [
+          {
+            "endToEndId": "6434799",
+            "executionDateTime": "2026-09-20T00:00:00Z",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-f42452",
+            "transactionAmount": {
+              "amount": -100.00,
+              "currency": "EUR"
+            },
+            "transactionId": "022614321069976205000000001",
+            "transactionType": "Incasso"
+          }
+        ],
+        "standingOrderAgreementInformation": []
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/oauth2/token/revoke",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:31c4ba",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "token=REDACTED%3Arefresh_token%3A3b7b58&token_type_hint=refresh_token"
+  },
+  "response": {
+    "status": 200
+  }
+}

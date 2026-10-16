@@ -151,7 +151,8 @@ The loop:
    leaves you logged in.
 3. **Read the failure, fix the code, run again.** Errors carry the bank's status, code and text.
 4. **Data calls** use the saved session: `accounts`, `balances ID`, `transactions ID -from 2026-09-01`.
-   Page through transactions with the returned cursor.
+   Page through transactions with the returned cursor: `transactions ID -size 1`, then
+   `-cursor <next_cursor>`.
 5. **Record** once a flow works: put `-record banks/<bank>/testdata/live-<country>-<name>` before the
    command. Record connect and data calls into separate scenarios. Running several commands with the
    same directory appends calls.
@@ -171,10 +172,17 @@ Recording pitfalls:
 - Don't pipe obdev into `head` or anything that exits early. That kills obdev before `scenario.json` is
   saved, and the replay then fails with "recorded exchanges never requested". Redirect to a file instead.
 - A run that failed halfway leaves a partial scenario that breaks `go test`. Delete it and record again.
+- A failed call recorded on purpose is fine (it becomes an error outcome in `golden.json`). To drop one,
+  delete its file in `exchanges/` and its entry in `scenario.json`'s `calls`, plus the `ids` it used.
+- Each obdev command is a new process with a new client. Anything a client caches (ING's application
+  token) is fetched again by the next command, but a replay runs every call on one client and never
+  asks twice. Delete the repeated exchange, or replay fails with "recorded exchanges never requested".
+- Replays match requests on method, path and query. Values that change on every run (timestamps down
+  to the millisecond) must come from the scenario, or be rounded to what the scenario stores (seconds).
 
 ## 6. Common sandbox errors
 
-From Swedbank. Other banks word them differently, but the causes repeat.
+From Swedbank and ING. Other banks word them differently, but the causes repeat.
 
 | Error | Cause | Fix |
 |---|---|---|
@@ -184,6 +192,9 @@ From Swedbank. Other banks word them differently, but the causes repeat.
 | `SERVICE_BLOCKED: Endpoint not allowed` | app not subscribed to that API product, or the change hasn't propagated | subscribe, wait a few minutes |
 | `No MTLS session established` | sandbox app identifier missing (Swedbank: `app-id`), or a certificate is really needed | send the identifier; upload a certificate only if that doesn't help |
 | `Service not found` (404) | wrong base path or version | compare with the paths in the bank's own links |
+| ING consent page: "The value of 'redirect_uri' is not in the allowed redirect URIs list" | the sandbox app allows one fixed URL | use `https://www.example.com/` |
+| ING: `400 SignatureError "Missing required 'x-jws-signature' header"` although it is sent | the payment gateway matches header names case-sensitively | send the name in lower case (Go canonicalizes it; set `req.Header["x-jws-signature"]` directly) |
+| ING: `404` with an empty body | a stub sandbox with no scenario for this exact request | compare with the bank's test-scenario document, field by field |
 
 ## 7. Finish
 

@@ -1,0 +1,84 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to ING to authorise access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://myaccount.sandbox.ing.com/authorize/v2/NL?client_id=REDACTED%3Aclient_id&redirect_uri=https%3A%2F%2Fwww.example.com%2F&response_type=code&scope=payment-accounts%3Abalances%3Aview+payment-accounts%3Atransactions%3Aview&state=af40450d-b326-49f6-b51c-cefaa94c89f5"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "ing",
+        "country": "NL",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "ing-psd2-v4",
+        "generation": 1,
+        "updated_at": "2026-10-16T12:00:34Z",
+        "access_token": "REDACTED:access_token:85c362",
+        "refresh_token": "REDACTED:refresh_token:025eed",
+        "token_type": "Bearer",
+        "scope": "payment-accounts:transactions:view payment-accounts:balances:view",
+        "access_expires_at": "2026-10-16T12:15:34Z",
+        "refresh_expires_at": "2026-11-15T12:00:34Z",
+        "consents": {
+          "accounts": {
+            "id": "",
+            "kind": "accounts",
+            "status": "granted",
+            "valid_until": "2026-11-15T12:00:34Z"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "181fdfd4-5838-4768-b803-91ae2192f902",
+          "stable_id": "af3e4d2fc204fdb56ca517a988c9c4f9",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "AT35PSEUDO4B568A0EAE"
+            }
+          ],
+          "owner_name": "name-19cb43",
+          "currency": "EUR",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f902/balances?currency=EUR"
+              },
+              "transactions": {
+                "href": "/v4/accounts/181fdfd4-5838-4768-b803-91ae2192f902/transactions?currency=EUR"
+              }
+            },
+            "currency": "EUR",
+            "iban": "AT35PSEUDO4B568A0EAE",
+            "maskedPan": "",
+            "name": "name-19cb43",
+            "product": "",
+            "resourceId": "181fdfd4-5838-4768-b803-91ae2192f902"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "balances",
+    "error": {
+      "is": [
+        "reauth_required"
+      ],
+      "message": "obsdk: user must re-authorize: grant_not_valid: obsdk: balances: HTTP 403 SERVICE_BLOCKED: 1.1.202 - Request rejected because of missing required claim in the access token"
+    }
+  }
+]
