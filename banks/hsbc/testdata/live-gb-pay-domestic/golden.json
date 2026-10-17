@@ -1,0 +1,48 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the payment, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://sandbox.ob.hsbc.co.uk/obie/open-banking/v1.1/oauth2/authorize?client_id=REDACTED%3Aclient_id&nonce=f019dea0-a935-46c8-9cd8-ccf921d8d438&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL3NlY3VyZS5zYW5kYm94Lm9iLmhzYmMuY28udWsiLCJjbGFpbXMiOnsiaWRfdG9rZW4iOnsiYWNyIjp7ImVzc2VudGlhbCI6dHJ1ZSwidmFsdWVzIjpbInVybjpvcGVuYmFua2luZzpwc2QyOnNjYSJdfSwib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoiNDY2MzkiLCJlc3NlbnRpYWwiOnRydWV9fSwidXNlcmluZm8iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoiNDY2MzkiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjIyMjc4MSwiaWF0IjoxNzkyMjIyMTgxLCJpc3MiOiJSRURBQ1RFRDpjbGllbnRfaWQiLCJqdGkiOiJlNzg4MDc1MC03M2NkLTQ1NDMtOWUzZi0wMDExODM3ODhkYjEiLCJuYmYiOjE3OTIyMjIxODEsIm5vbmNlIjoiZjAxOWRlYTAtYTkzNS00NmM4LTljZDgtY2NmOTIxZDhkNDM4IiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgcGF5bWVudHMiLCJzdGF0ZSI6IjQ3MGMyOTRhLTA5Y2ItNDc3Ny05YmM0LTM4NGQ3YzNjODZlMyJ9.dGVzdC1zaWduYXR1cmU6U5Nw3_r4PPc&response_type=code+id_token&scope=openid+payments&state=470c294a-09cb-4777-9bc4-384d7c3c86e3"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "20549",
+        "type": "domestic",
+        "status": "in_progress",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaHNiYy1vYi1oc2JjIiwiZiI6ImRvbWVzdGljIiwiaWQiOiIyMDU0OSIsInQiOiJkb21lc3RpYyJ9",
+        "debtor": {
+          "scheme": "SORT_CODE_ACCOUNT",
+          "value": "identification-9a47ba"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "20549",
+      "type": "domestic",
+      "status": "in_progress",
+      "bank_status": "ACSP",
+      "final": false,
+      "ref": "obs1.eyJpIjoiaHNiYy1vYi1oc2JjIiwiZiI6ImRvbWVzdGljIiwiaWQiOiIyMDU0OSIsInQiOiJkb21lc3RpYyJ9",
+      "debtor": {
+        "scheme": "SORT_CODE_ACCOUNT",
+        "value": "identification-9a47ba"
+      }
+    }
+  }
+]

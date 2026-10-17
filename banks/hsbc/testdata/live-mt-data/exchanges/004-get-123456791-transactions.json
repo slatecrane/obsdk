@@ -1,0 +1,155 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v3.1/aisp/accounts/123456791/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2020-01-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-17T07:45:21"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:d2c860",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "7e23abb9-e12d-4ce3-b82f-47102449542a"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "0.10",
+              "Currency": "EUR"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "18.96",
+                "Currency": "EUR"
+              },
+              "CreditDebitIndicator": "Credit",
+              "Type": "InterimBooked"
+            },
+            "BankTransactionCode": {
+              "Code": "123",
+              "SubCode": "456"
+            },
+            "BookingDateTime": "2024-12-19T00:14:20+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress"
+            },
+            "ChargeAmount": {
+              "Amount": "0.30",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-199429",
+              "Name": "name-42ef59",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "CurrencyExchange": {
+              "ExchangeRate": 0.13,
+              "SourceCurrency": "EUR",
+              "TargetCurrency": "EUR",
+              "UnitCurrency": "EUR"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-14d258",
+              "Name": "name-d5aa55",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "Merchant.4511"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "123",
+              "Issuer": "issuer"
+            },
+            "StatementReference": [
+              "ST.RF.16684"
+            ],
+            "Status": "Booked",
+            "TransactionId": "565",
+            "TransactionInformation": "transactioninformation-10368f",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "TR.RF.16684",
+            "ValueDateTime": "2024-12-19T00:14:20+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "0.10",
+              "Currency": "EUR"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "18.96",
+                "Currency": "EUR"
+              },
+              "CreditDebitIndicator": "Credit",
+              "Type": "InterimBooked"
+            },
+            "BankTransactionCode": {
+              "Code": "123",
+              "SubCode": "456"
+            },
+            "BookingDateTime": "2024-11-19T01:14:20+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-199429",
+              "Name": "name-42ef59",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-14d258",
+              "Name": "name-d5aa55",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "Merchant.4511"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "123",
+              "Issuer": "issuer"
+            },
+            "StatementReference": [
+              "ST.RF.16681"
+            ],
+            "Status": "Booked",
+            "TransactionId": "562",
+            "TransactionInformation": "transactioninformation-10368f",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "TR.RF.16681",
+            "ValueDateTime": "2024-11-19T01:14:20+00:00"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.hsbc.com.mt/obie/open-banking/v3.1/aisp/accounts/123456791/transactions?toBookingDateTime=2026-10-17T07:45:21\u0026fromBookingDateTime=2020-01-01T00:00:00"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

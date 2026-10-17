@@ -1,0 +1,25 @@
+[
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "hsbc",
+      "country": "GB",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "hsbc-ob-hsbc",
+      "generation": 3,
+      "updated_at": "2026-10-17T07:28:35Z",
+      "access_token": "REDACTED:access_token",
+      "refresh_token": "REDACTED:refresh_token",
+      "token_type": "Bearer",
+      "scope": "openid accounts",
+      "access_expires_at": "2026-10-17T08:28:34.073893Z"
+    },
+    "disconnect": {
+      "closed": [
+        "accounts"
+      ]
+    }
+  }
+]

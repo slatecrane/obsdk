@@ -1,0 +1,5472 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v4.0/aisp/accounts/123456791/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-17T07:28:22"
+      ],
+      "page": [
+        "1"
+      ],
+      "toBookingDateTime": [
+        "2026-10-17T07:28:22"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:363166",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "fc705812-b61b-4014-80ee-ece2a1827e64"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "26.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "201750.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T13:35:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20420"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14243",
+            "TransactionInformation": "transactioninformation-c667f8",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20420",
+            "ValueDateTime": "2026-09-29T13:35:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "300.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "201450.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T13:35:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20421"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14244",
+            "TransactionInformation": "transactioninformation-c667f9",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20421",
+            "ValueDateTime": "2026-09-29T13:35:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "86.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "201776.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T13:20:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20419"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14242",
+            "TransactionInformation": "transactioninformation-c671f1",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20419",
+            "ValueDateTime": "2026-09-29T13:20:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "86.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "201862.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T13:20:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20418"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14241",
+            "TransactionInformation": "transactioninformation-c671f2",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20418",
+            "ValueDateTime": "2026-09-29T13:20:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "86.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "201948.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T13:10:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20417"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14240",
+            "TransactionInformation": "transactioninformation-c671e7",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20417",
+            "ValueDateTime": "2026-09-29T13:10:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "86.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202034.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T13:05:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20416"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14239",
+            "TransactionInformation": "transactioninformation-c671e8",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20416",
+            "ValueDateTime": "2026-09-29T13:05:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "86.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202120.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T12:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20415"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14238",
+            "TransactionInformation": "transactioninformation-c671e5",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20415",
+            "ValueDateTime": "2026-09-29T12:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202206.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T12:15:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20414"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14237",
+            "TransactionInformation": "transactioninformation-c671e6",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20414",
+            "ValueDateTime": "2026-09-29T12:15:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "100.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202226.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T11:15:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20413"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14236",
+            "TransactionInformation": "transactioninformation-c671eb",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20413",
+            "ValueDateTime": "2026-09-29T11:15:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "123.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202326.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T11:05:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20412"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14235",
+            "TransactionInformation": "transactioninformation-c671ec",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20412",
+            "ValueDateTime": "2026-09-29T11:05:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "200.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202449.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T10:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20411"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14234",
+            "TransactionInformation": "transactioninformation-c671e9",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20411",
+            "ValueDateTime": "2026-09-29T10:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "100.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202649.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T10:45:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20409"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14232",
+            "TransactionInformation": "transactioninformation-c66eed",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20409",
+            "ValueDateTime": "2026-09-29T10:45:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202749.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T10:40:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20408"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14231",
+            "TransactionInformation": "transactioninformation-c66eec",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20408",
+            "ValueDateTime": "2026-09-29T10:40:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "123.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202769.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T10:25:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20406"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14229",
+            "TransactionInformation": "transactioninformation-c66ee6",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20406",
+            "ValueDateTime": "2026-09-29T10:25:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202892.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T10:20:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20405"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14228",
+            "TransactionInformation": "transactioninformation-c66ee9",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20405",
+            "ValueDateTime": "2026-09-29T10:20:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "200.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202902.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T10:15:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20404"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14227",
+            "TransactionInformation": "transactioninformation-c66ee8",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20404",
+            "ValueDateTime": "2026-09-29T10:15:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "200.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "203102.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T10:10:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20403"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14226",
+            "TransactionInformation": "transactioninformation-c66ee3",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20403",
+            "ValueDateTime": "2026-09-29T10:10:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "203302.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T10:00:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20402"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14225",
+            "TransactionInformation": "transactioninformation-c66ee2",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20402",
+            "ValueDateTime": "2026-09-29T10:00:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "203334.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T09:40:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20400"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14223",
+            "TransactionInformation": "transactioninformation-c66ee4",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20400",
+            "ValueDateTime": "2026-09-29T09:40:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "12.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "203322.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T09:40:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20401"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14224",
+            "TransactionInformation": "transactioninformation-c66ee5",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20401",
+            "ValueDateTime": "2026-09-29T09:40:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "67.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "203354.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T09:15:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20399"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14222",
+            "TransactionInformation": "transactioninformation-dfdfe8",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20399",
+            "ValueDateTime": "2026-09-29T09:15:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "203421.48",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T09:10:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20398"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14221",
+            "TransactionInformation": "transactioninformation-dfdfe7",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20398",
+            "ValueDateTime": "2026-09-29T09:10:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "543.21",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202355.06",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T09:00:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-663b5a",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47bb",
+              "Name": "name-ae1ae7",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBT",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20396"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14219",
+            "TransactionMutability": "Immutable",
+            "ValueDateTime": "2026-09-29T09:00:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "3003.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "202898.27",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T08:45:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-0572de",
+              "Name": "name-c8d204",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20394"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14216",
+            "TransactionInformation": "transactioninformation-dfdfe3",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20394",
+            "ValueDateTime": "2026-09-29T08:45:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "4566.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "205901.27",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T08:35:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-0572de",
+              "Name": "name-c8d204",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20393"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14215",
+            "TransactionInformation": "transactioninformation-dfdfde",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20393",
+            "ValueDateTime": "2026-09-29T08:35:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210467.27",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-29T08:00:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-e7375b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20391"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14213",
+            "TransactionInformation": "transactioninformation-dfdfe0",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20391",
+            "ValueDateTime": "2026-09-29T08:00:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "1.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210475.27",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-28T16:50:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47bb",
+              "Name": "name-ae1ae7",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBT",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20390"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14212",
+            "TransactionMutability": "Immutable",
+            "ValueDateTime": "2026-09-28T16:50:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210491.27",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-28T16:30:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20388"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14209",
+            "TransactionInformation": "transactioninformation-dfe36d",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20388",
+            "ValueDateTime": "2026-09-28T16:30:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210476.27",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-28T16:30:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20389"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14210",
+            "TransactionInformation": "transactioninformation-dfe36c",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20389",
+            "ValueDateTime": "2026-09-28T16:30:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210506.27",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-28T16:20:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20387"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14208",
+            "TransactionInformation": "transactioninformation-dfe362",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20387",
+            "ValueDateTime": "2026-09-28T16:20:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "10.84",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210521.27",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-28T15:30:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b90bc4",
+              "Name": "name-bd39d5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20386"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14207",
+            "TransactionInformation": "transactioninformation-dfe363",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20386",
+            "ValueDateTime": "2026-09-28T15:30:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.76",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210532.11",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-28T15:00:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b90bc4",
+              "Name": "name-bd39d5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20385"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14206",
+            "TransactionInformation": "transactioninformation-dfe360",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20385",
+            "ValueDateTime": "2026-09-28T15:00:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "11.82",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210547.87",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T15:10:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b90bc4",
+              "Name": "name-bd39d5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20382"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14202",
+            "TransactionInformation": "transactioninformation-dfe367",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20382",
+            "ValueDateTime": "2026-09-25T15:10:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "11.82",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210559.69",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T14:45:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b90bc4",
+              "Name": "name-bd39d5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20381"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14201",
+            "TransactionInformation": "transactioninformation-dfe364",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20381",
+            "ValueDateTime": "2026-09-25T14:45:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "543.21",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "209485.09",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:55:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-663b5a",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47bb",
+              "Name": "name-ae1ae7",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBT",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20380"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14200",
+            "TransactionMutability": "Immutable",
+            "ValueDateTime": "2026-09-25T12:55:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "10.50",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210028.30",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:50:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b90bc4",
+              "Name": "name-bd39d5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20379"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14198",
+            "TransactionInformation": "transactioninformation-dfe664",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20379",
+            "ValueDateTime": "2026-09-25T12:50:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210093.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:25:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20375"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14194",
+            "TransactionInformation": "transactioninformation-dfe670",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20375",
+            "ValueDateTime": "2026-09-25T12:25:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210078.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:25:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20376"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14195",
+            "TransactionInformation": "transactioninformation-dfe671",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20376",
+            "ValueDateTime": "2026-09-25T12:25:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210053.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:25:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20377"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14196",
+            "TransactionInformation": "transactioninformation-dfe672",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20377",
+            "ValueDateTime": "2026-09-25T12:25:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210038.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:25:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20378"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14197",
+            "TransactionInformation": "transactioninformation-dfe663",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20378",
+            "ValueDateTime": "2026-09-25T12:25:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210158.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:20:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20372"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14191",
+            "TransactionInformation": "transactioninformation-dfe66d",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20372",
+            "ValueDateTime": "2026-09-25T12:20:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210143.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:20:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20373"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14192",
+            "TransactionInformation": "transactioninformation-dfe66e",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20373",
+            "ValueDateTime": "2026-09-25T12:20:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210118.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:20:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20374"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14193",
+            "TransactionInformation": "transactioninformation-dfe66f",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20374",
+            "ValueDateTime": "2026-09-25T12:20:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210188.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:20:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20371"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14190",
+            "TransactionInformation": "transactioninformation-dfe66c",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20371",
+            "ValueDateTime": "2026-09-25T12:20:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210213.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:15:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20370"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14189",
+            "TransactionInformation": "transactioninformation-dfe66b",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20370",
+            "ValueDateTime": "2026-09-25T12:15:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210268.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:10:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20368"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14187",
+            "TransactionInformation": "transactioninformation-dfe9e9",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20368",
+            "ValueDateTime": "2026-09-25T12:10:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210243.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T12:10:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20369"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14188",
+            "TransactionInformation": "transactioninformation-dfe9e8",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20369",
+            "ValueDateTime": "2026-09-25T12:10:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210308.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T11:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20366"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14185",
+            "TransactionInformation": "transactioninformation-dfe9f3",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20366",
+            "ValueDateTime": "2026-09-25T11:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210283.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T11:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20367"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14186",
+            "TransactionInformation": "transactioninformation-dfe9f2",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20367",
+            "ValueDateTime": "2026-09-25T11:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "44.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210353.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T11:25:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20364"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14183",
+            "TransactionInformation": "transactioninformation-dfe9f5",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20364",
+            "ValueDateTime": "2026-09-25T11:25:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210323.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T11:25:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20365"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14184",
+            "TransactionInformation": "transactioninformation-dfe9f4",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20365",
+            "ValueDateTime": "2026-09-25T11:25:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210397.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T11:20:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20363"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14182",
+            "TransactionInformation": "transactioninformation-dfe9ee",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20363",
+            "ValueDateTime": "2026-09-25T11:20:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210422.80",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T11:10:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20362"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14181",
+            "TransactionInformation": "transactioninformation-dfe9ef",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20362",
+            "ValueDateTime": "2026-09-25T11:10:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.55",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210391.15",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T10:50:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47bb",
+              "Name": "name-ae1ae7",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282f"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBT",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20360"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14178",
+            "TransactionMutability": "Immutable",
+            "ValueDateTime": "2026-09-25T10:50:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.55",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210406.70",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T10:50:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47bb",
+              "Name": "name-ae1ae7",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282f"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBT",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20361"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14180",
+            "TransactionMutability": "Immutable",
+            "ValueDateTime": "2026-09-25T10:50:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "543.21",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "209320.28",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T08:20:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-663b5a",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47bb",
+              "Name": "name-ae1ae7",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBT",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20359"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14176",
+            "TransactionMutability": "Immutable",
+            "ValueDateTime": "2026-09-25T08:20:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "209863.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-25T02:05:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20356"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14173",
+            "TransactionInformation": "transactioninformation-dfed71",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20356",
+            "ValueDateTime": "2026-09-25T02:05:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "209928.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-24T13:15:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b56728",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20353"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14170",
+            "TransactionInformation": "transactioninformation-dfed76",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20353",
+            "ValueDateTime": "2026-09-24T13:15:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "209913.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-24T13:15:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20354"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14171",
+            "TransactionInformation": "transactioninformation-dfed73",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20354",
+            "ValueDateTime": "2026-09-24T13:15:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "209888.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-24T13:15:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20355"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14172",
+            "TransactionInformation": "transactioninformation-dfed74",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20355",
+            "ValueDateTime": "2026-09-24T13:15:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "209948.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-24T07:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20351"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14168",
+            "TransactionInformation": "transactioninformation-dfed78",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20351",
+            "ValueDateTime": "2026-09-24T07:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "209978.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-24T07:25:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20350"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14167",
+            "TransactionInformation": "transactioninformation-dfed77",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20350",
+            "ValueDateTime": "2026-09-24T07:25:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210003.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-23T15:45:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20349"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14166",
+            "TransactionInformation": "transactioninformation-dff0e4",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20349",
+            "ValueDateTime": "2026-09-23T15:45:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210018.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-23T10:35:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20348"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14165",
+            "TransactionInformation": "transactioninformation-dff0e5",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20348",
+            "ValueDateTime": "2026-09-23T10:35:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210073.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-23T10:30:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20346"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14163",
+            "TransactionInformation": "transactioninformation-dff0e3",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20346",
+            "ValueDateTime": "2026-09-23T10:30:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210048.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-23T10:30:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20347"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14164",
+            "TransactionInformation": "transactioninformation-dff0e2",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20347",
+            "ValueDateTime": "2026-09-23T10:30:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210088.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-22T02:05:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20345"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14162",
+            "TransactionInformation": "transactioninformation-dff0e0",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20345",
+            "ValueDateTime": "2026-09-22T02:05:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210118.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-22T02:05:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20344"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14161",
+            "TransactionInformation": "transactioninformation-dff0e1",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20344",
+            "ValueDateTime": "2026-09-22T02:05:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210143.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-21T10:05:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20343"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14160",
+            "TransactionInformation": "transactioninformation-dff0de",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20343",
+            "ValueDateTime": "2026-09-21T10:05:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210188.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-21T10:05:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b56728",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20341"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14158",
+            "TransactionInformation": "transactioninformation-dff0dc",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20341",
+            "ValueDateTime": "2026-09-21T10:05:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210173.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-21T10:05:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20342"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14159",
+            "TransactionInformation": "transactioninformation-dff0df",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20342",
+            "ValueDateTime": "2026-09-21T10:05:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "12.50",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210208.49",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-19T09:35:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-525be4",
+              "Name": "name-47680c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20340"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14157",
+            "TransactionInformation": "transactioninformation-dff0dd",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20340",
+            "ValueDateTime": "2026-09-19T09:35:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "1.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210220.99",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-18T14:00:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b56728",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20339"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14156",
+            "TransactionInformation": "transactioninformation-dff46c",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20339",
+            "ValueDateTime": "2026-09-18T14:00:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "3.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210221.99",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-18T13:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20338"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14155",
+            "TransactionInformation": "transactioninformation-dff46b",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20338",
+            "ValueDateTime": "2026-09-18T13:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "1.05",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210224.99",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-18T12:25:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-9e4480",
+              "Name": "name-12506b",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20336"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14153",
+            "TransactionInformation": "transactioninformation-dff461",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20336",
+            "ValueDateTime": "2026-09-18T12:25:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "150.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210226.04",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T19:25:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-a5282d",
+              "Name": "name-4b2544",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20335"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14152",
+            "TransactionInformation": "transactioninformation-dff460",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20335",
+            "ValueDateTime": "2026-09-17T19:25:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.40",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210376.04",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T17:00:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b90bc4",
+              "Name": "name-bd39d5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20334"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14151",
+            "TransactionInformation": "transactioninformation-dff45f",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20334",
+            "ValueDateTime": "2026-09-17T17:00:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "31.79",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210396.44",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T16:05:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b90bc4",
+              "Name": "name-bd39d5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20333"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14150",
+            "TransactionInformation": "transactioninformation-dff466",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20333",
+            "ValueDateTime": "2026-09-17T16:05:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "31.79",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210428.23",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T15:35:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b90bc4",
+              "Name": "name-bd39d5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20332"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14149",
+            "TransactionInformation": "transactioninformation-dff465",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20332",
+            "ValueDateTime": "2026-09-17T15:35:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "20.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210500.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T11:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-b56728",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20329"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14146",
+            "TransactionInformation": "transactioninformation-dff770",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20329",
+            "ValueDateTime": "2026-09-17T11:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210475.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T11:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20330"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14147",
+            "TransactionInformation": "transactioninformation-dff463",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20330",
+            "ValueDateTime": "2026-09-17T11:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210460.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T11:55:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20331"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14148",
+            "TransactionInformation": "transactioninformation-dff464",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20331",
+            "ValueDateTime": "2026-09-17T11:55:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210520.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T11:15:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20328"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14145",
+            "TransactionInformation": "transactioninformation-dff771",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20328",
+            "ValueDateTime": "2026-09-17T11:15:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210535.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T11:15:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20327"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14144",
+            "TransactionInformation": "transactioninformation-dff762",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20327",
+            "ValueDateTime": "2026-09-17T11:15:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210585.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T10:50:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20325"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14142",
+            "TransactionInformation": "transactioninformation-dff764",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20325",
+            "ValueDateTime": "2026-09-17T10:50:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210560.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T10:50:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20326"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14143",
+            "TransactionInformation": "transactioninformation-dff763",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20326",
+            "ValueDateTime": "2026-09-17T10:50:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210600.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T10:25:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20324"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14141",
+            "TransactionInformation": "transactioninformation-dff765",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20324",
+            "ValueDateTime": "2026-09-17T10:25:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210645.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T10:25:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20322"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14139",
+            "TransactionInformation": "transactioninformation-dff767",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20322",
+            "ValueDateTime": "2026-09-17T10:25:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210630.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T10:25:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20323"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14140",
+            "TransactionInformation": "transactioninformation-dff766",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20323",
+            "ValueDateTime": "2026-09-17T10:25:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "30.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210670.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T08:20:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20320"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14137",
+            "TransactionInformation": "transactioninformation-dff769",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20320",
+            "ValueDateTime": "2026-09-17T08:20:01+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "25.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210715.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T08:15:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20318"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14135",
+            "TransactionInformation": "transactioninformation-dffae7",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20318",
+            "ValueDateTime": "2026-09-17T08:15:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210700.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T08:15:02+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20319"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14136",
+            "TransactionInformation": "transactioninformation-dffae8",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20319",
+            "ValueDateTime": "2026-09-17T08:15:02+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address Line 1",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "210740.02",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2026-09-17T08:15:01+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "None",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-180ebb",
+              "Name": "name-d36161"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-25409f",
+              "Name": "name-e4431c",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-9a47ba",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "HSBC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HDFC"
+            },
+            "StatementReference": [
+              "ST.RF.20317"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "14134",
+            "TransactionInformation": "transactioninformation-dffaf2",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "DOMESTIC.PAYMENTS -- 20317",
+            "ValueDateTime": "2026-09-17T08:15:01+00:00"
+          }
+        ]
+      },
+      "Links": {
+        "First": "https://secure.sandbox.ob.hsbc.co.uk/obie/open-banking/v4.0/aisp/accounts/123456791/transactions?page=0\u0026toBookingDateTime=2026-10-17T07:28:22\u0026fromBookingDateTime=2026-09-17T07:28:22",
+        "Prev": "https://secure.sandbox.ob.hsbc.co.uk/obie/open-banking/v4.0/aisp/accounts/123456791/transactions?page=0\u0026toBookingDateTime=2026-10-17T07:28:22\u0026fromBookingDateTime=2026-09-17T07:28:22",
+        "Self": "https://secure.sandbox.ob.hsbc.co.uk/obie/open-banking/v4.0/aisp/accounts/123456791/transactions?page=1\u0026toBookingDateTime=2026-10-17T07:28:22\u0026fromBookingDateTime=2026-09-17T07:28:22"
+      },
+      "Meta": {
+        "TotalPages": 2
+      }
+    }
+  }
+}

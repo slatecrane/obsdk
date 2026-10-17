@@ -1,0 +1,108 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/obie/open-banking/v4.0/pisp/domestic-payments",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:e2895c",
+      "Content-Type": "application/json",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "761adfb9-152b-46bc-a9e1-959aa6c57f5d",
+      "X-Idempotency-Key": "eb00c3d0887e4dffa61bc9f739d1f162",
+      "X-Jws-Signature": "REDACTED:x-jws-signature:9079ab"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "46639",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-25409f",
+            "Name": "name-e4431c",
+            "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+          },
+          "EndToEndIdentification": "d595711513ed4568973dc491b4735e6",
+          "InstructedAmount": {
+            "Amount": "10.50",
+            "Currency": "GBP"
+          },
+          "InstructionIdentification": "1508f9b97cc349db90aa5cfa9751f84e",
+          "LocalInstrument": "UK.OBIE.FPS",
+          "RemittanceInformation": {
+            "Structured": [
+              {
+                "CreditorReferenceInformation": {
+                  "Reference": "reference-592788"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Risk": {
+        "PaymentContextCode": "TransferToThirdParty"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Charges": [
+          {
+            "Amount": {
+              "Amount": "0.05",
+              "Currency": "GBP"
+            },
+            "ChargeBearer": "BorneByDebtor",
+            "Type": "UK.OBIE.CHAPSOut"
+          }
+        ],
+        "ConsentId": "46639",
+        "CreationDateTime": "2026-10-17T07:30:57+00:00",
+        "DomesticPaymentId": "20549",
+        "ExpectedExecutionDateTime": "2026-10-17T07:30:57+00:00",
+        "ExpectedSettlementDateTime": "2026-10-17T07:30:57+00:00",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-25409f",
+            "Name": "name-e4431c",
+            "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+          },
+          "DebtorAccount": {
+            "Identification": "identification-9a47ba",
+            "Name": "name-f9b7c3",
+            "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+          },
+          "EndToEndIdentification": "d595711513ed4568973dc491b4735e6",
+          "InstructedAmount": {
+            "Amount": "10.50",
+            "Currency": "GBP"
+          },
+          "InstructionIdentification": "1508f9b97cc349db90aa5cfa9751f84e",
+          "LocalInstrument": "UK.OBIE.FPS",
+          "RemittanceInformation": {
+            "Structured": [
+              {
+                "CreditorReferenceInformation": {
+                  "Reference": "reference-592788"
+                }
+              }
+            ]
+          }
+        },
+        "Status": "ACSP",
+        "StatusUpdateDateTime": "2026-10-17T07:30:57+00:00"
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.hsbc.co.uk/obie/open-banking/v4.0/pisp/domestic-payments/20549"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

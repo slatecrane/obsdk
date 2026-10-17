@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/obie/open-banking/v4.0/aisp/account-access-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:90a445",
+      "Content-Type": "application/json",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "109ae9ce-2875-4a8e-96bb-36e2cc995cad"
+    },
+    "body": {
+      "Data": {
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ]
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "764352094",
+        "CreationDateTime": "2026-10-17T07:24:57+00:00",
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ],
+        "Status": "AWAU",
+        "StatusUpdateDateTime": "2026-10-17T07:24:57+00:00"
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.hsbc.co.uk/obie/open-banking/v4.0/aisp/account-access-consents/764352094"
+      },
+      "Meta": {
+        "TotalPages": 1
+      },
+      "Risk": {}
+    }
+  }
+}

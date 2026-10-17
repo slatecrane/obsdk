@@ -1,0 +1,208 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://sandbox.ob.firstdirect.com/obie/open-banking/v1.1/oauth2/authorize?client_id=REDACTED%3Aclient_id&nonce=bb5c1c70-6d87-49d7-9bf6-a0643baedd9a&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL3NlY3VyZS5zYW5kYm94Lm9iLmZpcnN0ZGlyZWN0LmNvbSIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJhY3IiOnsiZXNzZW50aWFsIjp0cnVlLCJ2YWx1ZXMiOlsidXJuOm9wZW5iYW5raW5nOnBzZDI6c2NhIl19LCJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiI3NjQzMzA5NTYiLCJlc3NlbnRpYWwiOnRydWV9fSwidXNlcmluZm8iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoiNzY0MzMwOTU2IiwiZXNzZW50aWFsIjp0cnVlfX19LCJjbGllbnRfaWQiOiJSRURBQ1RFRDpjbGllbnRfaWQiLCJleHAiOjE3OTIyMjM0NjAsImlhdCI6MTc5MjIyMjg2MCwiaXNzIjoiUkVEQUNURUQ6Y2xpZW50X2lkIiwianRpIjoiZThhMjUzNWMtMTUyNi00NjBiLWE0YzYtZjFmNTcyYWQ4NWEzIiwibmJmIjoxNzkyMjIyODYwLCJub25jZSI6ImJiNWMxYzcwLTZkODctNDlkNy05YmY2LWEwNjQzYmFlZGQ5YSIsInJlZGlyZWN0X3VyaSI6Imh0dHBzOi8vZXhhbXBsZS5jb20iLCJyZXNwb25zZV90eXBlIjoiY29kZSBpZF90b2tlbiIsInNjb3BlIjoib3BlbmlkIGFjY291bnRzIiwic3RhdGUiOiJhOWE0OWY3OC00MTZiLTRhMjctYTAxNS0wZDkxYWEyYWRhZWYifQ.dGVzdC1zaWduYXR1cmU6IIWeEEvd86I&response_type=code+id_token&scope=openid+accounts&state=a9a49f78-416b-4a27-a015-0d91aa2adaef"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "firstdirect",
+        "country": "GB",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "hsbc-ob-firstdirect",
+        "generation": 1,
+        "updated_at": "2026-10-17T07:41:00Z",
+        "access_token": "REDACTED:access_token:ddcf25",
+        "refresh_token": "REDACTED:refresh_token:f815d5",
+        "token_type": "Bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-17T08:40:59Z",
+        "consents": {
+          "accounts": {
+            "id": "764330956",
+            "kind": "accounts",
+            "status": "Authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "1123456841",
+          "stable_id": "0787eb6e4864ae93dc876ff96bf387b5",
+          "identifiers": [
+            {
+              "scheme": "SORT_CODE_ACCOUNT",
+              "value": "identification-8a0763"
+            },
+            {
+              "scheme": "IBAN",
+              "value": "identification-746979"
+            }
+          ],
+          "owner_name": "name-04d1e5",
+          "currency": "GBP",
+          "product": "BMM ACCOUNT",
+          "type": "SVGS",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-8a0763",
+                "Name": "name-04d1e5",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+              },
+              {
+                "Identification": "identification-746979",
+                "Name": "name-04d1e5",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "1123456841",
+            "AccountTypeCode": "SVGS",
+            "Currency": "GBP",
+            "Description": "BMM ACCOUNT",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            }
+          }
+        },
+        {
+          "id": "123456791",
+          "stable_id": "5036fa1f6624f6f36c633506b3920910",
+          "identifiers": [
+            {
+              "scheme": "SORT_CODE_ACCOUNT",
+              "value": "identification-9a47ba"
+            },
+            {
+              "scheme": "IBAN",
+              "value": "identification-8a009d"
+            }
+          ],
+          "owner_name": "name-f9b7c3",
+          "currency": "GBP",
+          "product": "Description of the account",
+          "type": "CACC",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-9a47ba",
+                "Name": "name-f9b7c3",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+                "SecondaryIdentification": "secondaryidentification-90282e"
+              },
+              {
+                "Identification": "identification-8a009d",
+                "Name": "name-f9b7c3",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "123456791",
+            "AccountTypeCode": "CACC",
+            "Currency": "GBP",
+            "Description": "Description of the account",
+            "MaturityDate": "2025-09-01T00:00:00+00:00",
+            "OpeningDate": "2020-03-01T00:00:00+00:00",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2020-09-01T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          }
+        },
+        {
+          "id": "123456792",
+          "stable_id": "ee832b0195ae5bc06d92acd8201a4ac2",
+          "identifiers": [
+            {
+              "scheme": "SORT_CODE_ACCOUNT",
+              "value": "identification-9a47bb"
+            },
+            {
+              "scheme": "IBAN",
+              "value": "identification-8a009e"
+            }
+          ],
+          "owner_name": "name-ae1ae7",
+          "currency": "GBP",
+          "product": "Description of the account",
+          "type": "CACC",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-9a47bb",
+                "Name": "name-ae1ae7",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+                "SecondaryIdentification": "secondaryidentification-90282f"
+              },
+              {
+                "Identification": "identification-8a009e",
+                "Name": "name-ae1ae7",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "123456792",
+            "AccountTypeCode": "CACC",
+            "Currency": "GBP",
+            "Description": "Description of the account",
+            "MaturityDate": "2025-09-01T00:00:00+00:00",
+            "OpeningDate": "2020-03-01T00:00:00+00:00",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2020-09-01T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          }
+        },
+        {
+          "id": "1123456842",
+          "stable_id": "5383eaa9d8ddabf77e608185cf14fca0",
+          "identifiers": [
+            {
+              "scheme": "PAN",
+              "value": "identification-791af3"
+            }
+          ],
+          "owner_name": "name-783b2e",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-791af3",
+                "Name": "name-783b2e",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "1123456842",
+            "AccountTypeCode": "CARD"
+          }
+        }
+      ]
+    }
+  }
+]

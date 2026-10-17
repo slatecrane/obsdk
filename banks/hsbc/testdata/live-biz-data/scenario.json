@@ -1,0 +1,62 @@
+{
+  "config": {
+    "bank": "hsbc",
+    "country": "GB",
+    "segment": "business",
+    "env": "sandbox",
+    "now": "2026-10-17T07:44:56Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "d6f77bbf-ad9d-40ab-9c24-bd19d454c685",
+        "f3499bfa-8ecb-4181-9405-d92e07199b13",
+        "3fb77f97-5ad1-4546-b438-a8d5dec4bc07",
+        "add3a160-ff49-41e3-992d-06a872cd54f7",
+        "0cb0b302-3634-497e-a4e0-777977237578"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "123456791",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "123456791",
+      "from": "2026-09-17T07:44:57Z",
+      "to": "2026-10-17T07:44:57Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "123456792",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "123456792",
+      "from": "2026-09-17T07:44:59Z",
+      "to": "2026-10-17T07:44:59Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

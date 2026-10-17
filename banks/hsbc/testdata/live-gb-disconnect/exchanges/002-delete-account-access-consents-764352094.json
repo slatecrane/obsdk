@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/obie/open-banking/v4.0/aisp/account-access-consents/764352094",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:8cb316",
+      "X-Fapi-Interaction-Id": "dfbac216-8a2e-413a-abb3-c98bba8ab737"
+    }
+  },
+  "response": {
+    "status": 204,
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  }
+}

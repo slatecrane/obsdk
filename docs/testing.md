@@ -63,7 +63,7 @@ Ops: `connect`, `resume` (uses the previous step's state), `accounts`, `balances
 `"with_session": true` passes the run's session), `payment_status` and `cancel_payment` (these act on
 the last payment the run saw, unless `ref` is set; the recorder stores the `ref` it was given, since refs
 hold no tokens). Secrets that travel under two names (Nordea's `?auth_code=` comes back as the form field
-`code=`) get the same placeholder label, so a replayed request matches what was recorded. The recorder pseudonymizes payment account numbers, and
+`code=`) get the same placeholder label, so a replayed request matches what was recorded. The recorder pseudonymizes payment account numbers (UK sort code and account numbers stay 14 digits, so they still validate), and
 replaces an account number it has already pseudonymized wherever it shows up again in free text (Swedbank
 echoes the payee's IBAN in `psuMessage`). Numbers it never saw under an account key are not caught, so
 still skim exchanges before committing.

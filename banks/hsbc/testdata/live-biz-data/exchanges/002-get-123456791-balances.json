@@ -1,0 +1,51 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v4.0/aisp/accounts/123456791/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:dad434",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "f3499bfa-8ecb-4181-9405-d92e07199b13"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "123456791",
+            "Amount": {
+              "Amount": "302222.69",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditLine": [
+              {
+                "Amount": {
+                  "Amount": "56.10",
+                  "Currency": "GBP"
+                },
+                "Included": true,
+                "Type": "Pre-Agreed"
+              }
+            ],
+            "DateTime": "2021-05-12T05:37:22+00:00",
+            "Type": "ITBD"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.business.hsbc.co.uk/obie/open-banking/v4.0/aisp/accounts/123456791/balances"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

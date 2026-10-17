@@ -1,0 +1,287 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "1123456841",
+        "stable_id": "f45e61b1c31f3d5944088be6a2c4ef66",
+        "identifiers": [
+          {
+            "scheme": "SORT_CODE_ACCOUNT",
+            "value": "identification-71f154"
+          }
+        ],
+        "name": "nickname-04d1e5",
+        "owner_name": "name-04d1e5",
+        "currency": "GBP",
+        "product": "BMM ACCOUNT",
+        "type": "SVGS",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-71f154",
+              "Name": "name-04d1e5",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            }
+          ],
+          "AccountId": "1123456841",
+          "AccountSubType": "Savings",
+          "AccountType": "Personal",
+          "Currency": "GBP",
+          "Description": "BMM ACCOUNT",
+          "Nickname": "nickname-04d1e5",
+          "OpeningDate": "2024-07-22T00:00:00+00:00",
+          "Status": "Enabled",
+          "StatusUpdateDateTime": "2024-07-22T00:00:00+00:00",
+          "SwitchStatus": "UK.CASS.SwitchCompleted"
+        }
+      },
+      {
+        "id": "123456791",
+        "stable_id": "563edf59e73b3d3f01831fa2b01aad3d",
+        "identifiers": [
+          {
+            "scheme": "SORT_CODE_ACCOUNT",
+            "value": "identification-b6aead"
+          }
+        ],
+        "name": "nickname-d5aa55",
+        "owner_name": "name-d5aa55",
+        "currency": "GBP",
+        "product": "BANK A/C",
+        "type": "CACC",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-b6aead",
+              "Name": "name-d5aa55",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            }
+          ],
+          "AccountId": "123456791",
+          "AccountSubType": "CurrentAccount",
+          "AccountType": "Personal",
+          "Currency": "GBP",
+          "Description": "BANK A/C",
+          "Nickname": "nickname-d5aa55",
+          "OpeningDate": "2024-07-22T00:00:00+00:00",
+          "Status": "Enabled",
+          "StatusUpdateDateTime": "2024-07-22T00:00:00+00:00",
+          "SwitchStatus": "UK.CASS.SwitchCompleted"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "1500.00",
+          "currency": "GBP"
+        },
+        "reference_date": "2024-07-22"
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "InterimBooked",
+        "amount": {
+          "amount": "1500.00",
+          "currency": "GBP"
+        },
+        "reference_date": "2024-07-22"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": []
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "565",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-0.10",
+            "currency": "EUR"
+          },
+          "booking_date": "2024-12-19",
+          "value_date": "2024-12-19",
+          "counterparty": {
+            "name": "name-42ef59",
+            "identifiers": [
+              {
+                "scheme": "SORT_CODE_ACCOUNT",
+                "value": "identification-199429"
+              }
+            ]
+          },
+          "remittance": [
+            "transactioninformation-10368f"
+          ],
+          "bank_code": "123",
+          "merchant_category": "4511",
+          "balance_after": {
+            "amount": "18.96",
+            "currency": "EUR"
+          },
+          "raw": {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "0.10",
+              "Currency": "EUR"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "18.96",
+                "Currency": "EUR"
+              },
+              "CreditDebitIndicator": "Credit",
+              "Type": "InterimBooked"
+            },
+            "BankTransactionCode": {
+              "Code": "123",
+              "SubCode": "456"
+            },
+            "BookingDateTime": "2024-12-19T00:14:20+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress"
+            },
+            "ChargeAmount": {
+              "Amount": "0.30",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-199429",
+              "Name": "name-42ef59",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "CurrencyExchange": {
+              "ExchangeRate": 0.13,
+              "SourceCurrency": "EUR",
+              "TargetCurrency": "EUR",
+              "UnitCurrency": "EUR"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-14d258",
+              "Name": "name-d5aa55",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "Merchant.4511"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "123",
+              "Issuer": "issuer"
+            },
+            "StatementReference": [
+              "ST.RF.16684"
+            ],
+            "Status": "Booked",
+            "TransactionId": "565",
+            "TransactionInformation": "transactioninformation-10368f",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "TR.RF.16684",
+            "ValueDateTime": "2024-12-19T00:14:20+00:00"
+          }
+        },
+        {
+          "id": "562",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-0.10",
+            "currency": "EUR"
+          },
+          "booking_date": "2024-11-19",
+          "value_date": "2024-11-19",
+          "counterparty": {
+            "name": "name-42ef59",
+            "identifiers": [
+              {
+                "scheme": "SORT_CODE_ACCOUNT",
+                "value": "identification-199429"
+              }
+            ]
+          },
+          "remittance": [
+            "transactioninformation-10368f"
+          ],
+          "bank_code": "123",
+          "merchant_category": "4511",
+          "balance_after": {
+            "amount": "18.96",
+            "currency": "EUR"
+          },
+          "raw": {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "0.10",
+              "Currency": "EUR"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "18.96",
+                "Currency": "EUR"
+              },
+              "CreditDebitIndicator": "Credit",
+              "Type": "InterimBooked"
+            },
+            "BankTransactionCode": {
+              "Code": "123",
+              "SubCode": "456"
+            },
+            "BookingDateTime": "2024-11-19T01:14:20+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-199429",
+              "Name": "name-42ef59",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-14d258",
+              "Name": "name-d5aa55",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "Merchant.4511"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "123",
+              "Issuer": "issuer"
+            },
+            "StatementReference": [
+              "ST.RF.16681"
+            ],
+            "Status": "Booked",
+            "TransactionId": "562",
+            "TransactionInformation": "transactioninformation-10368f",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "TR.RF.16681",
+            "ValueDateTime": "2024-11-19T01:14:20+00:00"
+          }
+        }
+      ]
+    }
+  }
+]

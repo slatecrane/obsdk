@@ -1,0 +1,20 @@
+{
+  "config": {
+    "bank": "hsbc",
+    "country": "GB",
+    "env": "sandbox",
+    "now": "2026-10-17T07:28:35Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "4193926a-f68c-4300-848b-eaa85547e024",
+        "dfbac216-8a2e-413a-abb3-c98bba8ab737"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "disconnect"
+    }
+  ]
+}

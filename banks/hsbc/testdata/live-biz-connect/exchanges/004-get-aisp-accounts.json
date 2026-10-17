@@ -1,0 +1,212 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v4.0/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:dad434",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "7cc3d125-a1fa-4206-ab7f-da5d00b96b87"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-a89904",
+                "Name": "name-04d1e5",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+              },
+              {
+                "Identification": "identification-af6e53",
+                "Name": "name-04d1e5",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "1123456841",
+            "AccountTypeCode": "SVGS",
+            "Currency": "GBP",
+            "Description": "BMM ACCOUNT",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            }
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-641496",
+                "Name": "name-f9b7c3",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+                "SecondaryIdentification": "secondaryidentification-90282e"
+              },
+              {
+                "Identification": "identification-07da00",
+                "Name": "name-f9b7c3",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "123456791",
+            "AccountTypeCode": "CACC",
+            "Currency": "GBP",
+            "Description": "Description of the account",
+            "MaturityDate": "2025-09-01T00:00:00+00:00",
+            "OpeningDate": "2020-03-01T00:00:00+00:00",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2020-09-01T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-641497",
+                "Name": "name-ae1ae7",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+                "SecondaryIdentification": "secondaryidentification-90282f"
+              },
+              {
+                "Identification": "identification-07da01",
+                "Name": "name-ae1ae7",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "123456792",
+            "AccountTypeCode": "CACC",
+            "Currency": "GBP",
+            "Description": "Description of the account",
+            "MaturityDate": "2025-09-01T00:00:00+00:00",
+            "OpeningDate": "2020-03-01T00:00:00+00:00",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2020-09-01T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-791af3",
+                "Name": "name-783b2e",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "1123456846",
+            "AccountTypeCode": "CARD",
+            "Currency": "GBP",
+            "Description": "COMMERCIAL CARD"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-7924e5",
+                "Name": "name-783b2e",
+                "SchemeName": "UK.OBIE.PAN",
+                "SecondaryIdentification": "secondaryidentification-791af3"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "1123456847",
+            "AccountTypeCode": "CARD",
+            "Currency": "GBP",
+            "Description": "CARDHOLDER"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-7921e4",
+                "Name": "name-783b2e",
+                "SchemeName": "UK.OBIE.PAN",
+                "SecondaryIdentification": "secondaryidentification-791af3"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "1123456848",
+            "AccountTypeCode": "CARD",
+            "Currency": "GBP",
+            "Description": "CARDHOLDER"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-7f6a22",
+                "Name": "name-b40b99",
+                "SchemeName": "UK.OBIE.Wallet"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "1123456842",
+            "AccountTypeCode": "WALT",
+            "Currency": "CAD",
+            "Description": "Global Wallet - CAD"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-4bb54a",
+                "Name": "name-b40b99",
+                "SchemeName": "UK.OBIE.Wallet"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "1123456843",
+            "AccountTypeCode": "WALT",
+            "Currency": "EUR",
+            "Description": "Global Wallet - EUR"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-c24f6c",
+                "Name": "name-b40b99",
+                "SchemeName": "UK.OBIE.Wallet"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "1123456844",
+            "AccountTypeCode": "WALT",
+            "Currency": "USD",
+            "Description": "Global Wallet - USD"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-6ff2f4",
+                "Name": "name-b40b99",
+                "SchemeName": "UK.OBIE.Wallet"
+              }
+            ],
+            "AccountCategory": "Business",
+            "AccountId": "1123456845",
+            "AccountTypeCode": "WALT",
+            "Currency": "AUD",
+            "Description": "Global Wallet - AUD"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.business.hsbc.co.uk/obie/open-banking/v4.0/aisp/accounts"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

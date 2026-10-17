@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v3.1/aisp/accounts/123456791/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-17T07:44:32"
+      ],
+      "toBookingDateTime": [
+        "2026-10-17T07:44:32"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:d2c860",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "69f43636-1798-4b0e-810d-66e680b840cf"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Transaction": []
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.hsbc.com.mt/obie/open-banking/v3.1/aisp/accounts/123456791/transactions?toBookingDateTime=2026-10-17T07:44:32\u0026fromBookingDateTime=2026-09-17T07:44:32"
+      },
+      "Meta": {
+        "TotalPages": 0
+      }
+    }
+  }
+}

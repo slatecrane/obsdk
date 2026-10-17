@@ -1,0 +1,61 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v3.1/aisp/accounts/123456791/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:d2c860",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "b03ec12b-b62b-4793-928e-e5350f4085f4"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "123456791",
+            "Amount": {
+              "Amount": "1500.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditLine": [
+              {
+                "Amount": {
+                  "Amount": "0.00",
+                  "Currency": "GBP"
+                },
+                "Included": false,
+                "Type": "Pre-Agreed"
+              }
+            ],
+            "DateTime": "2024-07-22T09:20:53+00:00",
+            "Type": "InterimAvailable"
+          },
+          {
+            "AccountId": "123456791",
+            "Amount": {
+              "Amount": "1500.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2024-07-22T09:20:59+00:00",
+            "Type": "InterimBooked"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.hsbc.com.mt/obie/open-banking/v3.1/aisp/accounts/123456791/balances"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}
