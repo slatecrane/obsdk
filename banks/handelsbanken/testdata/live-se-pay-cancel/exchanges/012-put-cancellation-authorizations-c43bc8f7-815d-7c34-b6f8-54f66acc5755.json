@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/openbanking/psd2/se/v2/payments/private/sek-credit-transfer/ad023701-25ef-de46-fe1e-018f56152175/cancellation-authorizations/c43bc8f7-815d-7c34-b6f8-54f66acc5755",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:82632c",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "df36f112-37d6-408b-880e-ad887538e3d2",
+      "Tpp-Transaction-Id": "cd324f55-4c22-4b67-bf22-6017ee8f2ca4",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "ad023701-25ef-de46-fe1e-018f56152175",
+      "transactionStatus": "CANC"
+    }
+  }
+}

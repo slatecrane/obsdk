@@ -1,0 +1,45 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/decoupled/mbid/initAuthorization/2.0",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "bisa_same_device": true,
+      "client_id": "REDACTED:client_id",
+      "psu_client_ip": "127.0.0.1",
+      "psu_id": "REDACTED:psu_id:92472d",
+      "scope": "AIS:10f7078d-e000-4cb2-f4a4-420c539baa9e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "cancel": {
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          },
+          "href": "https://sandbox.handelsbanken.com/openbanking/decoupled/mbid/cancel/2.0?sessionId=fba0c19b-04cd-6346-e114-28acdb46dfe8"
+        },
+        "token": {
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          },
+          "href": "https://sandbox.handelsbanken.com/openbanking/decoupled/mbid/token/2.0?sessionId=fba0c19b-04cd-6346-e114-28acdb46dfe8"
+        }
+      },
+      "auto_start_token": "Not a valid auto_start_token",
+      "sleep_time": 2000
+    }
+  }
+}

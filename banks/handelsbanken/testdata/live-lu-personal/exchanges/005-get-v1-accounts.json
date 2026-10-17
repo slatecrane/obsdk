@@ -1,0 +1,48 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/lu/individual/v1/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:461751",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "a15269df-f451-4a5f-b58e-d5e778823a0b",
+      "Tpp-Transaction-Id": "bc9dae7c-bd31-42cd-8cf4-b072e08d2bfb",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/59d3611d-c23a-272b-8ff5-44a8a7f05b59/transactions"
+            }
+          },
+          "accountId": "59d3611d-c23a-272b-8ff5-44a8a7f05b59",
+          "accountType": "Account",
+          "bban": "16047731",
+          "currency": "EUR",
+          "iban": "LU67PSEUDO36ABA74D3C"
+        },
+        {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/2930b6ce-7267-6087-f68c-bf65a04d4816/transactions"
+            }
+          },
+          "accountId": "2930b6ce-7267-6087-f68c-bf65a04d4816",
+          "accountType": "Account",
+          "bban": "17675942",
+          "currency": "USD",
+          "iban": "LU29PSEUDOABCBC8441F"
+        }
+      ]
+    }
+  }
+}

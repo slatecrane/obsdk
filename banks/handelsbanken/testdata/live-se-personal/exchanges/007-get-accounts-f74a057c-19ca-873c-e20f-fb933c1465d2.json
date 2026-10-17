@@ -1,0 +1,53 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/v2/accounts/f74a057c-19ca-873c-e20f-fb933c1465d2",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:da5549",
+      "Country": "SE",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "233b36ba-d377-4a4f-985e-5525d8f7d0ce",
+      "Tpp-Transaction-Id": "2ae40ca8-2ec2-4d3d-ae45-5983d6110f23",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accountId": "f74a057c-19ca-873c-e20f-fb933c1465d2",
+      "accountType": "Privatkonto",
+      "balances": [
+        {
+          "amount": {
+            "content": 100000.00,
+            "currency": "SEK"
+          },
+          "balanceType": "AVAILABLE_AMOUNT"
+        },
+        {
+          "amount": {
+            "content": 100000.00,
+            "currency": "SEK"
+          },
+          "balanceType": "CURRENT"
+        }
+      ],
+      "bban": "936235852",
+      "bic": "HANDSESS",
+      "clearingNumber": "6154",
+      "currency": "SEK",
+      "iban": "SE77PSEUDOF926769ED3",
+      "name": "name-f5bf8c",
+      "ownerName": "ownername-bf2928"
+    }
+  }
+}

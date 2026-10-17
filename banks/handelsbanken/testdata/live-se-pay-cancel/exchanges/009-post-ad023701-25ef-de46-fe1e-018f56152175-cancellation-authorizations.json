@@ -1,0 +1,76 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/psd2/se/v2/payments/private/sek-credit-transfer/ad023701-25ef-de46-fe1e-018f56152175/cancellation-authorizations",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:36c251",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "0a8dd2c3-e365-4bf5-a215-66297bc9df77",
+      "Tpp-Transaction-Id": "87e5bba6-4c98-4952-bec5-7efcbc134b59",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "creditor": {
+        "name": "name-caca06"
+      },
+      "creditorAccount": {
+        "accountType": "BBAN",
+        "value": "123456789"
+      },
+      "creditorAgent": {
+        "identification": {
+          "code": "83279"
+        }
+      },
+      "debtorAccount": {
+        "accountType": "BBAN",
+        "value": "923450017"
+      },
+      "instructedAmount": {
+        "amount": 99,
+        "currency": "SEK"
+      },
+      "remittanceInformation": {
+        "text": "Rent November"
+      },
+      "requestedExecutionDate": "2026-11-25"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "cancellationId": "c43bc8f7-815d-7c34-b6f8-54f66acc5755",
+      "scaMethods": [
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/decoupled/mbid/initAuthorization/2.0",
+                "name": "name-f696e0",
+                "type": "application/json"
+              }
+            ]
+          },
+          "scaMethodType": "DECOUPLED"
+        },
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/oauth2/authorize/1.0",
+                "name": "name-274074",
+                "type": "application/x-www-form-urlencoded"
+              }
+            ]
+          },
+          "scaMethodType": "REDIRECT"
+        }
+      ]
+    }
+  }
+}

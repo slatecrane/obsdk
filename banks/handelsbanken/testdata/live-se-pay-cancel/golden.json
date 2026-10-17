@@ -1,0 +1,75 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Handelsbanken to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3A9f63db&state=89f68297-e278-4a81-81c3-655263a39e0f"
+      },
+      "payment": {
+        "id": "e4a2d97b-b062-bed3-0056-629b2cb5c2b3",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6InNlay1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6ImU0YTJkOTdiLWIwNjItYmVkMy0wMDU2LTYyOWIyY2I1YzJiMyIsImlkcyI6WyJhZDAyMzcwMS0yNWVmLWRlNDYtZmUxZS0wMThmNTYxNTIxNzUiXSwiYiI6eyJkZWJ0b3JBY2NvdW50Ijp7InZhbHVlIjoiNzg1NDE3NTA0IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImluc3RydWN0ZWRBbW91bnQiOnsiYW1vdW50Ijo5OSwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiMDU2OTg3MDk0IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImNyZWRpdG9yIjp7Im5hbWUiOiJuYW1lLWNhY2EwNiJ9LCJjcmVkaXRvckFnZW50Ijp7ImlkZW50aWZpY2F0aW9uIjp7ImNvZGUiOiI4NjUwNiJ9fSwicmVxdWVzdGVkRXhlY3V0aW9uRGF0ZSI6IjIwMjYtMTEtMjUiLCJyZW1pdHRhbmNlSW5mb3JtYXRpb24iOnsidGV4dCI6IlJlbnQgTm92ZW1iZXIifX19"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "e4a2d97b-b062-bed3-0056-629b2cb5c2b3",
+        "type": "domestic",
+        "status": "accepted",
+        "bank_status": "ACCP",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6InNlay1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6ImU0YTJkOTdiLWIwNjItYmVkMy0wMDU2LTYyOWIyY2I1YzJiMyIsImlkcyI6WyJhZDAyMzcwMS0yNWVmLWRlNDYtZmUxZS0wMThmNTYxNTIxNzUiXSwiYiI6eyJkZWJ0b3JBY2NvdW50Ijp7InZhbHVlIjoiNzg1NDE3NTA0IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImluc3RydWN0ZWRBbW91bnQiOnsiYW1vdW50Ijo5OSwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiMDU2OTg3MDk0IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImNyZWRpdG9yIjp7Im5hbWUiOiJuYW1lLWNhY2EwNiJ9LCJjcmVkaXRvckFnZW50Ijp7ImlkZW50aWZpY2F0aW9uIjp7ImNvZGUiOiI4NjUwNiJ9fSwicmVxdWVzdGVkRXhlY3V0aW9uRGF0ZSI6IjIwMjYtMTEtMjUiLCJyZW1pdHRhbmNlSW5mb3JtYXRpb24iOnsidGV4dCI6IlJlbnQgTm92ZW1iZXIifX19"
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Handelsbanken to approve the cancellation, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3A4d6156&state=eea5496a-7aed-4e8f-aa51-3c9d5cf448f1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "e4a2d97b-b062-bed3-0056-629b2cb5c2b3",
+        "type": "domestic",
+        "status": "cancelled",
+        "bank_status": "CANC",
+        "final": true,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6InNlay1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6ImU0YTJkOTdiLWIwNjItYmVkMy0wMDU2LTYyOWIyY2I1YzJiMyIsImlkcyI6WyJhZDAyMzcwMS0yNWVmLWRlNDYtZmUxZS0wMThmNTYxNTIxNzUiXSwiYiI6eyJkZWJ0b3JBY2NvdW50Ijp7InZhbHVlIjoiOTIzNDUwMDE3IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImluc3RydWN0ZWRBbW91bnQiOnsiYW1vdW50Ijo5OSwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiMTIzNDU2Nzg5IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImNyZWRpdG9yIjp7Im5hbWUiOiJBbm5hIFN2ZW5zc29uIn0sImNyZWRpdG9yQWdlbnQiOnsiaWRlbnRpZmljYXRpb24iOnsiY29kZSI6IjgzMjc5In19LCJyZXF1ZXN0ZWRFeGVjdXRpb25EYXRlIjoiMjAyNi0xMS0yNSIsInJlbWl0dGFuY2VJbmZvcm1hdGlvbiI6eyJ0ZXh0IjoiUmVudCBOb3ZlbWJlciJ9fX0"
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "e4a2d97b-b062-bed3-0056-629b2cb5c2b3",
+      "type": "domestic",
+      "status": "cancelled",
+      "bank_status": "CANC",
+      "final": true,
+      "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6InNlay1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6ImU0YTJkOTdiLWIwNjItYmVkMy0wMDU2LTYyOWIyY2I1YzJiMyIsImlkcyI6WyJhZDAyMzcwMS0yNWVmLWRlNDYtZmUxZS0wMThmNTYxNTIxNzUiXSwiYiI6eyJkZWJ0b3JBY2NvdW50Ijp7InZhbHVlIjoiOTIzNDUwMDE3IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImluc3RydWN0ZWRBbW91bnQiOnsiYW1vdW50Ijo5OSwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiMTIzNDU2Nzg5IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImNyZWRpdG9yIjp7Im5hbWUiOiJBbm5hIFN2ZW5zc29uIn0sImNyZWRpdG9yQWdlbnQiOnsiaWRlbnRpZmljYXRpb24iOnsiY29kZSI6IjgzMjc5In19LCJyZXF1ZXN0ZWRFeGVjdXRpb25EYXRlIjoiMjAyNi0xMS0yNSIsInJlbWl0dGFuY2VJbmZvcm1hdGlvbiI6eyJ0ZXh0IjoiUmVudCBOb3ZlbWJlciJ9fX0"
+    }
+  }
+]

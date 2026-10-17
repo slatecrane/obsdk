@@ -1,0 +1,49 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/lu/individual/v1/accounts/59d3611d-c23a-272b-8ff5-44a8a7f05b59",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:461751",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "a9305304-794b-49ed-89a5-a6cdf9c0202d",
+      "Tpp-Transaction-Id": "743f6cda-8742-4f95-9617-81949c3af725",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "transactions": {
+          "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/59d3611d-c23a-272b-8ff5-44a8a7f05b59/transactions"
+        }
+      },
+      "accountId": "59d3611d-c23a-272b-8ff5-44a8a7f05b59",
+      "accountType": "Account",
+      "balances": [
+        {
+          "balanceAmount": {
+            "amount": 10000.00,
+            "currency": "EUR"
+          },
+          "balanceType": "AVAILABLE_AMOUNT"
+        },
+        {
+          "balanceType": "VALUE_DATE"
+        }
+      ],
+      "bban": "16047731",
+      "currency": "EUR",
+      "iban": "LU67PSEUDO36ABA74D3C"
+    }
+  }
+}

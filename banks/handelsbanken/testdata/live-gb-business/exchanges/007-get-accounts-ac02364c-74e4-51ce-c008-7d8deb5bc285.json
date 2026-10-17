@@ -1,0 +1,63 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/gb/v1/accounts/ac02364c-74e4-51ce-c008-7d8deb5bc285",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:801317",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "bd66f432-639d-4470-b6ec-2d479f2ec32d",
+      "Tpp-Transaction-Id": "87a40423-bfd3-4ee6-94dc-d18a2e7ee712",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "transactions": {
+          "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/ac02364c-74e4-51ce-c008-7d8deb5bc285/transactions"
+        }
+      },
+      "accountId": "ac02364c-74e4-51ce-c008-7d8deb5bc285",
+      "accountType": "Current Account",
+      "balances": [
+        {
+          "amount": {
+            "content": 100000.00,
+            "currency": "GBP"
+          },
+          "balanceType": "AVAILABLE_AMOUNT"
+        },
+        {
+          "amount": {
+            "content": 100000.00,
+            "currency": "GBP"
+          },
+          "balanceType": "CLEARED"
+        },
+        {
+          "amount": {
+            "content": 100000.00,
+            "currency": "GBP"
+          },
+          "balanceType": "CURRENT"
+        }
+      ],
+      "bban": "15065489",
+      "bic": "HANDGB22",
+      "clearingNumber": "1234",
+      "currency": "GBP",
+      "iban": "GB83PSEUDOF4E5BDB7CC",
+      "ownerName": "ownername-bb01ac"
+    }
+  }
+}

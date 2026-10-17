@@ -1,0 +1,42 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/nl/v1/accounts/ca8aaba8-4c21-760c-3851-181eaa68263a/transactions",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:1af52c",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "eb8963e1-ceb6-4b74-835a-da7dcf4ca16c",
+      "Tpp-Transaction-Id": "13efb315-d54d-4e09-af11-25a373d80a48",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactions": [
+        {
+          "amount": {
+            "content": 840.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 100000.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-17",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-17"
+        }
+      ]
+    }
+  }
+}

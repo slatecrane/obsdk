@@ -306,6 +306,14 @@ func pseudonym(kind, s string) string {
 			return pseudoIBAN(s[:2], "PSEUDO"+strings.ToUpper(sum[:10]))
 		}
 	case "bban":
+		// A number written with digits and separators (6154923450017,
+		// 8327-9,123456789) gets digits of the same count, first digit kept:
+		// the stand-in still passes format checks, and a Swedish clearing
+		// range (6xxx Handelsbanken, 8xxx Swedbank) still routes the same.
+		if d := strings.Map(digitOnly, s); len(d) >= 6 && strings.Trim(s, "0123456789 -,.") == "" {
+			digits := fmt.Sprintf("%020d", h.Sum64())
+			return d[:1] + digits[len(digits)-len(d)+1:]
+		}
 		return "00PSEUDO" + strings.ToUpper(sum[:8])
 	case "sortcode":
 		// 14 digits, so it still passes as a UK sort code and account number.
@@ -362,4 +370,11 @@ func pseudoIBAN(country, bban string) string {
 	}
 	n, _ := new(big.Int).SetString(b.String(), 10)
 	return fmt.Sprintf("%s%02d%s", country, 98-new(big.Int).Mod(n, big.NewInt(97)).Int64(), bban)
+}
+
+func digitOnly(r rune) rune {
+	if r >= '0' && r <= '9' {
+		return r
+	}
+	return -1
 }

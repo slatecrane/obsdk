@@ -1,0 +1,78 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/psd2/se/v2/payments/private/signing-basket",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:073234",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "ca57c39a-b3da-4f8a-bdf4-44876b97e5c9",
+      "Tpp-Transaction-Id": "e7bf4160-b88d-41fe-a4e5-ef6a37bafa32",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "sekCreditTransfers": [
+        {
+          "creditorAccount": {
+            "accountType": "BG",
+            "value": "5050-1055"
+          },
+          "debtorAccount": {
+            "accountType": "BBAN",
+            "value": "923450017"
+          },
+          "instructedAmount": {
+            "amount": 10.50,
+            "currency": "SEK"
+          },
+          "remittanceInformation": {
+            "text": "1234567897"
+          },
+          "tppPaymentReference": "81fb77c7-cde4-487d-9eef-10ab6e37cf81"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "payments": [
+        {
+          "paymentId": "432da7df-72be-d755-eeb8-8c62ace6d8e7",
+          "tppPaymentReference": "81fb77c7-cde4-487d-9eef-10ab6e37cf81"
+        }
+      ],
+      "scaMethods": [
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/decoupled/mbid/initAuthorization/2.0",
+                "name": "name-f696e0",
+                "type": "application/json"
+              }
+            ]
+          },
+          "scaMethodType": "DECOUPLED"
+        },
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/oauth2/authorize/1.0",
+                "name": "name-274074",
+                "type": "application/x-www-form-urlencoded"
+              }
+            ]
+          },
+          "scaMethodType": "REDIRECT"
+        }
+      ],
+      "signingBasketId": "a7f45f5d-a6a7-241e-16d1-75a42876e328"
+    }
+  }
+}

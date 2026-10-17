@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/decoupled/mbid/token/2.0",
+    "query": {
+      "sessionId": [
+        "fba0c19b-04cd-6346-e114-28acdb46dfe8"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "body": {}
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:51c2c4",
+      "expires_in": 86400,
+      "refresh_token": "REDACTED:refresh_token:e886f1",
+      "result": "COMPLETE",
+      "token_type": "Bearer"
+    }
+  }
+}

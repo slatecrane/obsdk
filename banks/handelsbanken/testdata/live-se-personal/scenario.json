@@ -1,0 +1,63 @@
+{
+  "config": {
+    "bank": "handelsbanken",
+    "country": "SE",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T18:35:46Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "sandbox_user": "SANDBOX-INDIVIDUAL-SE-1"
+    },
+    "ids": {
+      "request": [
+        "4a790696-7bf5-41c8-b9ee-227eaf4b01de",
+        "61fee389-7cf7-43da-b62b-699fa34f2231",
+        "8864444e-a7e2-4eea-92e9-0321351ce5ed",
+        "e4889910-fc90-4766-999f-ef4601ee1ca0",
+        "e7d9da0a-e887-4e9f-9e26-8071910b55ef",
+        "ef9f568b-3626-4f11-b077-7130b6bb84c3",
+        "233b36ba-d377-4a4f-985e-5525d8f7d0ce",
+        "2ae40ca8-2ec2-4d3d-ae45-5983d6110f23",
+        "c7039f2a-48ca-4387-9dfe-aeb57bc3422f",
+        "a39e45d4-7eb8-4c3a-92e7-6b2450b4dd0d"
+      ],
+      "state": [
+        "799c7e10-cfbc-49b2-a7ef-21f191ce74c6"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com?code=REDACTED%3Acode%3A519a4b\u0026state=799c7e10-cfbc-49b2-a7ef-21f191ce74c6"
+    },
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "f74a057c-19ca-873c-e20f-fb933c1465d2",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "f74a057c-19ca-873c-e20f-fb933c1465d2",
+      "from": "2026-10-01T00:00:00Z",
+      "to": "2026-10-17T00:00:00Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "refresh"
+    }
+  ]
+}

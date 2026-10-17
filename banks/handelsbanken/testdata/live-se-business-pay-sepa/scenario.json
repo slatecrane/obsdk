@@ -1,0 +1,73 @@
+{
+  "config": {
+    "bank": "handelsbanken",
+    "country": "SE",
+    "segment": "business",
+    "env": "sandbox",
+    "now": "2026-10-17T18:36:13Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "sandbox_user": "SANDBOX-CORPORATE-SE-1"
+    },
+    "ids": {
+      "request": [
+        "ab5c2c35-939b-4122-a487-b300c0ba41a6",
+        "1d31dacd-f3eb-40a3-af7d-5314fec1b962",
+        "f04f0771-0314-4937-96ad-c78808282779",
+        "4a1fe6f8-7f0d-415f-9db3-d925d9a4369b"
+      ],
+      "state": [
+        "b6a1181e-701d-4bd4-83ad-a52251f7d0b1"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "SE08PSEUDO8D6BC9DB14"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "10",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-d52ad6",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE59PSEUDO1360B051B8"
+              },
+              "address": {
+                "town": "Berlin",
+                "country": "DE"
+              }
+            },
+            "remittance": [
+              "Invoice 7"
+            ],
+            "end_to_end_id": "E2E-77"
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "corporate_id": "SANDBOX-CORPORATE-SE-1"
+      }
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com?code=REDACTED%3Acode%3Ae712f8\u0026state=b6a1181e-701d-4bd4-83ad-a52251f7d0b1"
+    }
+  ]
+}

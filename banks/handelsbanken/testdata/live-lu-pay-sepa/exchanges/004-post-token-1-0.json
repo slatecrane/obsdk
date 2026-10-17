@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/oauth2/token/1.0",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026code=REDACTED%3Acode%3A672d61\u0026grant_type=authorization_code\u0026redirect_uri=https%3A%2F%2Fexample.com\u0026scope=PIS%3Af3e015c8-dde3-737f-d6f6-df1038458d32"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:05e683",
+      "expires_in": 900,
+      "token_type": "Bearer"
+    }
+  }
+}

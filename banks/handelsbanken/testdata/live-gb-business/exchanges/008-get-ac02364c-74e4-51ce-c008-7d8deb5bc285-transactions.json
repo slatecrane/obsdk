@@ -1,0 +1,321 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/gb/v1/accounts/ac02364c-74e4-51ce-c008-7d8deb5bc285/transactions",
+    "query": {
+      "dateFrom": [
+        "2026-10-01"
+      ],
+      "dateTo": [
+        "2026-10-17"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:801317",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "06be65a5-57a7-4518-9c49-4c468d7200ff",
+      "Tpp-Transaction-Id": "ac3c5c1a-18a2-47b5-81e6-f79c751368ed",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactions": [
+        {
+          "amount": {
+            "content": 920.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 100000.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-17"
+        },
+        {
+          "amount": {
+            "content": 920.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 99080.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-16"
+        },
+        {
+          "amount": {
+            "content": 0.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 100000.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-15"
+        },
+        {
+          "amount": {
+            "content": 680.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 100000.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-14"
+        },
+        {
+          "amount": {
+            "content": 1320.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 100680.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-13"
+        },
+        {
+          "amount": {
+            "content": 660.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 102000.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-12"
+        },
+        {
+          "amount": {
+            "content": 300.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 102660.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-11"
+        },
+        {
+          "amount": {
+            "content": 740.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 102960.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-10"
+        },
+        {
+          "amount": {
+            "content": 1440.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 102220.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-09"
+        },
+        {
+          "amount": {
+            "content": 480.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 100780.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-08"
+        },
+        {
+          "amount": {
+            "content": 1080.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 101260.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-07"
+        },
+        {
+          "amount": {
+            "content": 440.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 100180.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-06"
+        },
+        {
+          "amount": {
+            "content": 200.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 99740.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-05"
+        },
+        {
+          "amount": {
+            "content": 380.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 99540.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-04"
+        },
+        {
+          "amount": {
+            "content": 100.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 99920.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-03"
+        },
+        {
+          "amount": {
+            "content": 1280.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 99820.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-02"
+        },
+        {
+          "amount": {
+            "content": 660.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 101100.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Product sale",
+          "status": "BOOKED",
+          "valueDate": "2026-10-01"
+        }
+      ]
+    }
+  }
+}

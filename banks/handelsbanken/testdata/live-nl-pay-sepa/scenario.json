@@ -1,0 +1,62 @@
+{
+  "config": {
+    "bank": "handelsbanken",
+    "country": "NL",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T18:36:14Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "sandbox_user": "SANDBOX-INDIVIDUAL-NL-1"
+    },
+    "ids": {
+      "request": [
+        "1b0b7983-928c-4945-96aa-f694bd1ab580",
+        "4445793e-1e22-461e-a1f1-dc283da6bc88",
+        "68f49d34-2bf8-4785-8b00-8f92f15fa966",
+        "4c37f131-bdef-4cea-a75d-9f4d17dab826"
+      ],
+      "state": [
+        "83a62a73-ecfa-4148-a9d4-4e92ab6a713b"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "NL40PSEUDOC22F51CF03"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "10",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-d52ad6",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE59PSEUDO1360B051B8"
+              }
+            },
+            "remittance": [
+              "Invoice 7"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com?code=REDACTED%3Acode%3Afe6d2b\u0026state=83a62a73-ecfa-4148-a9d4-4e92ab6a713b"
+    }
+  ]
+}

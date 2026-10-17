@@ -1,0 +1,70 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/psd2/lu/v1/payments/sepa-credit-transfer",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:6a0601",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "bf803134-0881-4507-9dbb-89f58c128cfa",
+      "Tpp-Transaction-Id": "ac51ad58-dc42-472d-94ce-a2f6d454c32d",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "chargeBearer": "SLEV",
+      "creditor": {
+        "name": "name-d52ad6"
+      },
+      "creditorAccount": {
+        "accountType": "IBAN",
+        "country": "DE",
+        "value": "DE59PSEUDO1360B051B8"
+      },
+      "debtorAccount": {
+        "accountType": "IBAN",
+        "currency": "EUR",
+        "value": "LU67PSEUDO36ABA74D3C"
+      },
+      "instructedAmount": {
+        "amount": 10,
+        "currency": "EUR"
+      },
+      "paymentTypeInformation": {
+        "categoryPurpose": {
+          "code": "SUPP"
+        },
+        "serviceLevel": {
+          "code": "SEPA"
+        }
+      },
+      "remittanceInformation": {
+        "text": "Invoice 7"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "f3e015c8-dde3-737f-d6f6-df1038458d32",
+      "scaMethods": [
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/oauth2/authorize/1.0",
+                "name": "name-274074",
+                "type": "application/x-www-form-urlencoded"
+              }
+            ]
+          },
+          "scaMethodType": "REDIRECT"
+        }
+      ],
+      "transactionStatus": "ACTC"
+    }
+  }
+}

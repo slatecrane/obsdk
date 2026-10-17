@@ -182,7 +182,7 @@ Recording pitfalls:
 
 ## 6. Common sandbox errors
 
-From Swedbank, ING, Nordea, HSBC, Rabobank and bunq. Other banks word them differently, but the causes repeat.
+From Swedbank, ING, Nordea, HSBC, Rabobank, bunq and Handelsbanken. Other banks word them differently, but the causes repeat.
 
 | Error | Cause | Fix |
 |---|---|---|
@@ -203,6 +203,10 @@ From Swedbank, ING, Nordea, HSBC, Rabobank and bunq. Other banks word them diffe
 | bunq: `400 "A device already exists for the current installation."` | a second device-server on one installation | make a new installation for every API key or access token |
 | bunq: `400 {"error":"invalid_request","error_description":"Missing required GET parameter \"grant_type\"."}` on the token endpoint | OAuth parameters sent as a form body | put them in the query string of the POST |
 | bunq: `403 "Insufficient authentication."` on a data call | the session token expired or was deleted | start a new session (session-server), i.e. `Refresh` |
+| Handelsbanken: `401 "Invalid client id or secret."` on a consent, although the token call worked | the token endpoint issues tokens for any client id; the API gateway checks it | use the app's client id (32 hex digits in the sandbox) |
+| Handelsbanken: `500 "Unexpected error"` on a business consent | the sandbox doesn't know the company id | send the sandbox user's name (`SANDBOX-CORPORATE-SE-1`) as `PSU-Corporate-ID` |
+| Handelsbanken NL: `400 "Invalid date format (dateFrom)"` | the NL sandbox rejects the date filter in every format | leave the dates out and filter yourself |
+| Handelsbanken SE: `400 "Field chargeBearer allows [SHAR]"` on a business SEPA payment | the Swedish corporate API wants `SHAR` where NL/LU want `SLEV` | send `SHAR` |
 | A login call returns `302` and the next call fails | the HTTP client followed the bank's redirect to its login page (or to your redirect URI) | don't follow redirects on that call; hand `Location` to the user (Nordea's `/authorize`) |
 
 ## 7. Finish

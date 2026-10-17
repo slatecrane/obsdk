@@ -137,6 +137,24 @@ func TestRedactor(t *testing.T) {
 	}
 }
 
+// TestBBANPseudonymKeepsShape: numeric account numbers stay numeric, with the
+// same digit count and first digit, so replayed payments pass the same checks.
+func TestBBANPseudonymKeepsShape(t *testing.T) {
+	for _, raw := range []string{"6154923450017", "8327-9,123456789", "12341011"} {
+		p := pseudonym("bban", raw)
+		digits := strings.Map(digitOnly, raw)
+		if p == digits || len(p) != len(digits) || p[0] != digits[0] || strings.Map(digitOnly, p) != p {
+			t.Errorf("pseudonym(%q) = %q", raw, p)
+		}
+		if pseudonym("bban", raw) != p {
+			t.Errorf("pseudonym(%q) is not stable", raw)
+		}
+	}
+	if p := pseudonym("bban", "ABC-12"); !strings.HasPrefix(p, "00PSEUDO") {
+		t.Errorf("non-numeric: %q", p)
+	}
+}
+
 func TestRedactZip(t *testing.T) {
 	var buf bytes.Buffer
 	zw := zip.NewWriter(&buf)

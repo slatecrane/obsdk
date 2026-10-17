@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/oauth2/authorize/1.0",
+    "query": {
+      "client_id": [
+        "REDACTED:client_id"
+      ],
+      "redirect_uri": [
+        "https://example.com"
+      ],
+      "response_type": [
+        "code"
+      ],
+      "scope": [
+        "PIS:6d97f960-8fb9-8d23-7a03-f81b988ac170"
+      ],
+      "state": [
+        "8a7b637c-3b16-4ed3-8b73-0d895fcfd58e"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "X-Sandbox-User": "SANDBOX-INDIVIDUAL-GB-1"
+    }
+  },
+  "response": {
+    "status": 302,
+    "headers": {
+      "Location": "https://example.com?code=REDACTED%3Acode%3Ae97a64\u0026state=8a7b637c-3b16-4ed3-8b73-0d895fcfd58e"
+    }
+  }
+}

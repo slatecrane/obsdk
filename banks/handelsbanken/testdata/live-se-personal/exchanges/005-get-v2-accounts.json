@@ -1,0 +1,79 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/v2/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:da5549",
+      "Country": "SE",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "8864444e-a7e2-4eea-92e9-0321351ce5ed",
+      "Tpp-Transaction-Id": "e4889910-fc90-4766-999f-ef4601ee1ca0",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "accountId": "f74a057c-19ca-873c-e20f-fb933c1465d2",
+          "accountType": "Privatkonto",
+          "balances": [
+            {
+              "amount": {
+                "content": 100000.00,
+                "currency": "SEK"
+              },
+              "balanceType": "AVAILABLE_AMOUNT"
+            },
+            {
+              "amount": {
+                "content": 100000.00,
+                "currency": "SEK"
+              },
+              "balanceType": "CURRENT"
+            }
+          ],
+          "bban": "936235852",
+          "bic": "HANDSESS",
+          "clearingNumber": "6154",
+          "currency": "SEK",
+          "iban": "SE77PSEUDOF926769ED3",
+          "name": "name-f5bf8c",
+          "ownerName": "ownername-bf2928"
+        },
+        {
+          "accountId": "244735ef-7fd5-3fd2-aadf-32947073a002",
+          "accountType": "Valutakonto",
+          "balances": [
+            {
+              "amount": {
+                "content": 10000.00,
+                "currency": "EUR"
+              },
+              "balanceType": "AVAILABLE_AMOUNT"
+            },
+            {
+              "amount": {
+                "content": 10000.00,
+                "currency": "EUR"
+              },
+              "balanceType": "CURRENT"
+            }
+          ],
+          "bban": "913077110",
+          "bic": "HANDSESS",
+          "clearingNumber": "6001",
+          "currency": "EUR",
+          "iban": "SE43PSEUDOE9CC9FB92D",
+          "name": "name-f5bf8c",
+          "ownerName": "ownername-bf2928"
+        }
+      ]
+    }
+  }
+}

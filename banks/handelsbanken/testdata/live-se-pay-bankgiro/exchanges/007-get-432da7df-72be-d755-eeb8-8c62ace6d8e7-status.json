@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/se/v2/payments/private/sek-credit-transfer/432da7df-72be-d755-eeb8-8c62ace6d8e7/status",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:466104",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "9d391a78-4b67-499e-ab96-179fe890a5e5",
+      "Tpp-Transaction-Id": "7d7e0fb7-6d55-4ef1-84f4-9e9550baad59",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "432da7df-72be-d755-eeb8-8c62ace6d8e7",
+      "transactionStatus": "ACCP"
+    }
+  }
+}

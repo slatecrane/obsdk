@@ -1,0 +1,55 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/psd2/v1/consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b4b9de",
+      "Content-Type": "application/json",
+      "Country": "SE",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "4a790696-7bf5-41c8-b9ee-227eaf4b01de",
+      "Tpp-Transaction-Id": "61fee389-7cf7-43da-b62b-699fa34f2231",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "access": "ALL_ACCOUNTS"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentId": "0ae8aa84-50fa-7df8-1e16-b9211f780fa7",
+      "consentStatus": "RECEIVED",
+      "scaMethods": [
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/oauth2/authorize/1.0",
+                "name": "name-274074",
+                "type": "application/x-www-form-urlencoded"
+              }
+            ]
+          },
+          "scaMethodType": "REDIRECT"
+        },
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/decoupled/mbid/initAuthorization/2.0",
+                "name": "name-f696e0",
+                "type": "application/json"
+              }
+            ]
+          },
+          "scaMethodType": "DECOUPLED"
+        }
+      ]
+    }
+  }
+}

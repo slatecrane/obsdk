@@ -1,0 +1,804 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Handelsbanken to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3A43742c&state=bb0e9998-3558-4cfb-b2b2-7b6909f51214"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "handelsbanken",
+        "country": "GB",
+        "segment": "business",
+        "env": "sandbox",
+        "integration": "handelsbanken-psd2-v1",
+        "generation": 1,
+        "updated_at": "2026-10-17T18:35:53Z",
+        "access_token": "REDACTED:access_token:bf7b5e",
+        "refresh_token": "REDACTED:refresh_token:c32695",
+        "token_type": "Bearer",
+        "scope": "AIS:5bffc8a9-ad19-9268-9515-8ec318de21d9",
+        "access_expires_at": "2026-10-18T18:35:53Z",
+        "consents": {
+          "accounts": {
+            "id": "5bffc8a9-ad19-9268-9515-8ec318de21d9",
+            "kind": "accounts",
+            "status": "valid",
+            "valid_until": "2027-01-15T18:35:53Z"
+          }
+        },
+        "meta": {
+          "method": "redirect"
+        }
+      },
+      "accounts": [
+        {
+          "id": "ac02364c-74e4-51ce-c008-7d8deb5bc285",
+          "stable_id": "4ed49d4fdf9762abdecea93fd5e2cc16",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "GB83PSEUDOF4E5BDB7CC"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "15065489"
+            }
+          ],
+          "owner_name": "ownername-bb01ac",
+          "currency": "GBP",
+          "product": "Current Account",
+          "usage": "ORGA",
+          "bic": "HANDGB22",
+          "raw": {
+            "_links": {
+              "transactions": {
+                "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/ac02364c-74e4-51ce-c008-7d8deb5bc285/transactions"
+              }
+            },
+            "accountId": "ac02364c-74e4-51ce-c008-7d8deb5bc285",
+            "accountType": "Current Account",
+            "bban": "15065489",
+            "bic": "HANDGB22",
+            "clearingNumber": "1234",
+            "currency": "GBP",
+            "iban": "GB83PSEUDOF4E5BDB7CC",
+            "ownerName": "ownername-bb01ac"
+          }
+        },
+        {
+          "id": "077fe317-6417-256b-395f-47a44b135b61",
+          "stable_id": "59a2a22adf6291cbd3914bee4b468a08",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "GB39PSEUDOA34B085708"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "10180856"
+            }
+          ],
+          "owner_name": "ownername-bb01ac",
+          "currency": "EUR",
+          "product": "Current Account",
+          "usage": "ORGA",
+          "bic": "HANDGB22",
+          "raw": {
+            "_links": {
+              "transactions": {
+                "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/077fe317-6417-256b-395f-47a44b135b61/transactions"
+              }
+            },
+            "accountId": "077fe317-6417-256b-395f-47a44b135b61",
+            "accountType": "Current Account",
+            "bban": "10180856",
+            "bic": "HANDGB22",
+            "clearingNumber": "1234",
+            "currency": "EUR",
+            "iban": "GB39PSEUDOA34B085708",
+            "ownerName": "ownername-bb01ac"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "ac02364c-74e4-51ce-c008-7d8deb5bc285",
+        "stable_id": "4ed49d4fdf9762abdecea93fd5e2cc16",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "GB83PSEUDOF4E5BDB7CC"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "15065489"
+          }
+        ],
+        "owner_name": "ownername-bb01ac",
+        "currency": "GBP",
+        "product": "Current Account",
+        "usage": "ORGA",
+        "bic": "HANDGB22",
+        "raw": {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/ac02364c-74e4-51ce-c008-7d8deb5bc285/transactions"
+            }
+          },
+          "accountId": "ac02364c-74e4-51ce-c008-7d8deb5bc285",
+          "accountType": "Current Account",
+          "bban": "15065489",
+          "bic": "HANDGB22",
+          "clearingNumber": "1234",
+          "currency": "GBP",
+          "iban": "GB83PSEUDOF4E5BDB7CC",
+          "ownerName": "ownername-bb01ac"
+        }
+      },
+      {
+        "id": "077fe317-6417-256b-395f-47a44b135b61",
+        "stable_id": "59a2a22adf6291cbd3914bee4b468a08",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "GB39PSEUDOA34B085708"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "10180856"
+          }
+        ],
+        "owner_name": "ownername-bb01ac",
+        "currency": "EUR",
+        "product": "Current Account",
+        "usage": "ORGA",
+        "bic": "HANDGB22",
+        "raw": {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/077fe317-6417-256b-395f-47a44b135b61/transactions"
+            }
+          },
+          "accountId": "077fe317-6417-256b-395f-47a44b135b61",
+          "accountType": "Current Account",
+          "bban": "10180856",
+          "bic": "HANDGB22",
+          "clearingNumber": "1234",
+          "currency": "EUR",
+          "iban": "GB39PSEUDOA34B085708",
+          "ownerName": "ownername-bb01ac"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "AVAILABLE_AMOUNT",
+        "amount": {
+          "amount": "100000.00",
+          "currency": "GBP"
+        }
+      },
+      {
+        "kind": "other",
+        "bank_type": "CLEARED",
+        "amount": {
+          "amount": "100000.00",
+          "currency": "GBP"
+        }
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "CURRENT",
+        "amount": {
+          "amount": "100000.00",
+          "currency": "GBP"
+        }
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "920.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-17",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "100000.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 920.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 100000.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-17"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-920.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-16",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "99080.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 920.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 99080.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "DEBITED",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED",
+            "valueDate": "2026-10-16"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "0.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-15",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "100000.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 0.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 100000.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-15"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-680.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-14",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "100000.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 680.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 100000.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "DEBITED",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED",
+            "valueDate": "2026-10-14"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1320.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-13",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "100680.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 1320.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 100680.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "DEBITED",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED",
+            "valueDate": "2026-10-13"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-660.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-12",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "102000.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 660.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 102000.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "DEBITED",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED",
+            "valueDate": "2026-10-12"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-300.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-11",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "102660.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 300.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 102660.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "DEBITED",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED",
+            "valueDate": "2026-10-11"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "740.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-10",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "102960.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 740.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 102960.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-10"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1440.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-09",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "102220.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 1440.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 102220.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-09"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-480.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-08",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "100780.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 480.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 100780.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "DEBITED",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED",
+            "valueDate": "2026-10-08"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1080.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-07",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "101260.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 1080.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 101260.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-07"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "440.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-06",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "100180.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 440.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 100180.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-06"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "200.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-05",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "99740.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 200.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 99740.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-05"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-380.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-04",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "99540.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 380.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 99540.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "DEBITED",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED",
+            "valueDate": "2026-10-04"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "100.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-03",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "99920.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 100.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 99920.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-03"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1280.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-02",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "99820.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 1280.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 99820.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "DEBITED",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED",
+            "valueDate": "2026-10-02"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "660.00",
+            "currency": "GBP"
+          },
+          "value_date": "2026-10-01",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "101100.00",
+            "currency": "GBP"
+          },
+          "raw": {
+            "amount": {
+              "content": 660.00,
+              "currency": "GBP"
+            },
+            "balance": {
+              "amount": {
+                "content": 101100.00,
+                "currency": "GBP"
+              },
+              "balanceType": "BOOKED"
+            },
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-01"
+          }
+        }
+      ]
+    }
+  }
+]

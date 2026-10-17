@@ -1,0 +1,966 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Handelsbanken to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3A519a4b&state=799c7e10-cfbc-49b2-a7ef-21f191ce74c6"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "handelsbanken",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "handelsbanken-psd2-v1",
+        "generation": 1,
+        "updated_at": "2026-10-17T18:35:46Z",
+        "access_token": "REDACTED:access_token:3f72a4",
+        "refresh_token": "REDACTED:refresh_token:4eabfe",
+        "token_type": "Bearer",
+        "scope": "AIS:0ae8aa84-50fa-7df8-1e16-b9211f780fa7",
+        "access_expires_at": "2026-10-18T18:35:46Z",
+        "consents": {
+          "accounts": {
+            "id": "0ae8aa84-50fa-7df8-1e16-b9211f780fa7",
+            "kind": "accounts",
+            "status": "valid",
+            "valid_until": "2027-04-15T18:35:46Z"
+          }
+        },
+        "meta": {
+          "method": "redirect"
+        }
+      },
+      "accounts": [
+        {
+          "id": "f74a057c-19ca-873c-e20f-fb933c1465d2",
+          "stable_id": "249df479bf6b2b63c497d5f855813b67",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE77PSEUDOF926769ED3"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "6154936235852"
+            }
+          ],
+          "name": "name-f5bf8c",
+          "owner_name": "ownername-bf2928",
+          "currency": "SEK",
+          "product": "Privatkonto",
+          "usage": "PRIV",
+          "bic": "HANDSESS",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "AVAILABLE_AMOUNT",
+              "amount": {
+                "amount": "100000.00",
+                "currency": "SEK"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "CURRENT",
+              "amount": {
+                "amount": "100000.00",
+                "currency": "SEK"
+              }
+            }
+          ],
+          "raw": {
+            "accountId": "f74a057c-19ca-873c-e20f-fb933c1465d2",
+            "accountType": "Privatkonto",
+            "balances": [
+              {
+                "amount": {
+                  "content": 100000.00,
+                  "currency": "SEK"
+                },
+                "balanceType": "AVAILABLE_AMOUNT"
+              },
+              {
+                "amount": {
+                  "content": 100000.00,
+                  "currency": "SEK"
+                },
+                "balanceType": "CURRENT"
+              }
+            ],
+            "bban": "936235852",
+            "bic": "HANDSESS",
+            "clearingNumber": "6154",
+            "currency": "SEK",
+            "iban": "SE77PSEUDOF926769ED3",
+            "name": "name-f5bf8c",
+            "ownerName": "ownername-bf2928"
+          }
+        },
+        {
+          "id": "244735ef-7fd5-3fd2-aadf-32947073a002",
+          "stable_id": "55c5ecb798f008eb80d8154cc9cb55c2",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE43PSEUDOE9CC9FB92D"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "6001913077110"
+            }
+          ],
+          "name": "name-f5bf8c",
+          "owner_name": "ownername-bf2928",
+          "currency": "EUR",
+          "product": "Valutakonto",
+          "usage": "PRIV",
+          "bic": "HANDSESS",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "AVAILABLE_AMOUNT",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "CURRENT",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "accountId": "244735ef-7fd5-3fd2-aadf-32947073a002",
+            "accountType": "Valutakonto",
+            "balances": [
+              {
+                "amount": {
+                  "content": 10000.00,
+                  "currency": "EUR"
+                },
+                "balanceType": "AVAILABLE_AMOUNT"
+              },
+              {
+                "amount": {
+                  "content": 10000.00,
+                  "currency": "EUR"
+                },
+                "balanceType": "CURRENT"
+              }
+            ],
+            "bban": "913077110",
+            "bic": "HANDSESS",
+            "clearingNumber": "6001",
+            "currency": "EUR",
+            "iban": "SE43PSEUDOE9CC9FB92D",
+            "name": "name-f5bf8c",
+            "ownerName": "ownername-bf2928"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "f74a057c-19ca-873c-e20f-fb933c1465d2",
+        "stable_id": "249df479bf6b2b63c497d5f855813b67",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "SE77PSEUDOF926769ED3"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "6154936235852"
+          }
+        ],
+        "name": "name-f5bf8c",
+        "owner_name": "ownername-bf2928",
+        "currency": "SEK",
+        "product": "Privatkonto",
+        "usage": "PRIV",
+        "bic": "HANDSESS",
+        "balances": [
+          {
+            "kind": "interim_available",
+            "bank_type": "AVAILABLE_AMOUNT",
+            "amount": {
+              "amount": "100000.00",
+              "currency": "SEK"
+            }
+          },
+          {
+            "kind": "interim_booked",
+            "bank_type": "CURRENT",
+            "amount": {
+              "amount": "100000.00",
+              "currency": "SEK"
+            }
+          }
+        ],
+        "raw": {
+          "accountId": "f74a057c-19ca-873c-e20f-fb933c1465d2",
+          "accountType": "Privatkonto",
+          "balances": [
+            {
+              "amount": {
+                "content": 100000.00,
+                "currency": "SEK"
+              },
+              "balanceType": "AVAILABLE_AMOUNT"
+            },
+            {
+              "amount": {
+                "content": 100000.00,
+                "currency": "SEK"
+              },
+              "balanceType": "CURRENT"
+            }
+          ],
+          "bban": "936235852",
+          "bic": "HANDSESS",
+          "clearingNumber": "6154",
+          "currency": "SEK",
+          "iban": "SE77PSEUDOF926769ED3",
+          "name": "name-f5bf8c",
+          "ownerName": "ownername-bf2928"
+        }
+      },
+      {
+        "id": "244735ef-7fd5-3fd2-aadf-32947073a002",
+        "stable_id": "55c5ecb798f008eb80d8154cc9cb55c2",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "SE43PSEUDOE9CC9FB92D"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "6001913077110"
+          }
+        ],
+        "name": "name-f5bf8c",
+        "owner_name": "ownername-bf2928",
+        "currency": "EUR",
+        "product": "Valutakonto",
+        "usage": "PRIV",
+        "bic": "HANDSESS",
+        "balances": [
+          {
+            "kind": "interim_available",
+            "bank_type": "AVAILABLE_AMOUNT",
+            "amount": {
+              "amount": "10000.00",
+              "currency": "EUR"
+            }
+          },
+          {
+            "kind": "interim_booked",
+            "bank_type": "CURRENT",
+            "amount": {
+              "amount": "10000.00",
+              "currency": "EUR"
+            }
+          }
+        ],
+        "raw": {
+          "accountId": "244735ef-7fd5-3fd2-aadf-32947073a002",
+          "accountType": "Valutakonto",
+          "balances": [
+            {
+              "amount": {
+                "content": 10000.00,
+                "currency": "EUR"
+              },
+              "balanceType": "AVAILABLE_AMOUNT"
+            },
+            {
+              "amount": {
+                "content": 10000.00,
+                "currency": "EUR"
+              },
+              "balanceType": "CURRENT"
+            }
+          ],
+          "bban": "913077110",
+          "bic": "HANDSESS",
+          "clearingNumber": "6001",
+          "currency": "EUR",
+          "iban": "SE43PSEUDOE9CC9FB92D",
+          "name": "name-f5bf8c",
+          "ownerName": "ownername-bf2928"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "AVAILABLE_AMOUNT",
+        "amount": {
+          "amount": "100000.00",
+          "currency": "SEK"
+        }
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "CURRENT",
+        "amount": {
+          "amount": "100000.00",
+          "currency": "SEK"
+        }
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "640.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-17",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "100000.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 640.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 100000.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-17",
+            "creditDebit": "CREDITED",
+            "ledgerDate": "2026-10-17",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1700.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-16",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "99360.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1700.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 99360.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-16",
+            "creditDebit": "CREDITED",
+            "ledgerDate": "2026-10-16",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1440.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-15",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "97660.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1440.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 97660.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-15",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-15",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "720.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-14",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "99100.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 720.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 99100.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-14",
+            "creditDebit": "CREDITED",
+            "ledgerDate": "2026-10-14",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1240.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-13",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "98380.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1240.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 98380.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-13",
+            "creditDebit": "CREDITED",
+            "ledgerDate": "2026-10-13",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1020.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "97140.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1020.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 97140.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-12",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-12",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-180.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-11",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "98160.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 180.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 98160.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-11",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-11",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "440.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-10",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "98340.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 440.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 98340.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-10",
+            "creditDebit": "CREDITED",
+            "ledgerDate": "2026-10-10",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1300.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-09",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "97900.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1300.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 97900.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-09",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-09",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-980.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "99200.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 980.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 99200.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-08",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-08",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1080.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-07",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "100180.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1080.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 100180.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-07",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-07",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-940.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "101260.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 940.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 101260.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-06",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-06",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-80.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-05",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "102200.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 80.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 102200.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-05",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-05",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1640.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-04",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "102280.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1640.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 102280.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-04",
+            "creditDebit": "CREDITED",
+            "ledgerDate": "2026-10-04",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1080.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-03",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "100640.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1080.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 100640.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-03",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-03",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1460.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-02",
+          "counterparty": {},
+          "remittance": [
+            "Milk"
+          ],
+          "balance_after": {
+            "amount": "101720.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 1460.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 101720.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-02",
+            "creditDebit": "DEBITED",
+            "ledgerDate": "2026-10-02",
+            "remittanceInformation": "Milk",
+            "status": "BOOKED"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "180.00",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-01",
+          "counterparty": {},
+          "remittance": [
+            "Salary"
+          ],
+          "balance_after": {
+            "amount": "103180.00",
+            "currency": "SEK"
+          },
+          "raw": {
+            "amount": {
+              "content": 180.00,
+              "currency": "SEK"
+            },
+            "balance": {
+              "amount": {
+                "content": 103180.00,
+                "currency": "SEK"
+              },
+              "balanceType": "BOOKED"
+            },
+            "bookingDate": "2026-10-01",
+            "creditDebit": "CREDITED",
+            "ledgerDate": "2026-10-01",
+            "remittanceInformation": "Salary",
+            "status": "BOOKED"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "handelsbanken",
+      "country": "SE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "handelsbanken-psd2-v1",
+      "generation": 2,
+      "updated_at": "2026-10-17T18:35:46Z",
+      "access_token": "REDACTED:access_token:510243",
+      "refresh_token": "REDACTED:refresh_token:4eabfe",
+      "token_type": "Bearer",
+      "scope": "AIS:0ae8aa84-50fa-7df8-1e16-b9211f780fa7",
+      "access_expires_at": "2026-10-18T18:35:46Z",
+      "consents": {
+        "accounts": {
+          "id": "0ae8aa84-50fa-7df8-1e16-b9211f780fa7",
+          "kind": "accounts",
+          "status": "valid",
+          "valid_until": "2027-04-15T18:35:46Z"
+        }
+      },
+      "meta": {
+        "method": "redirect"
+      }
+    }
+  }
+]

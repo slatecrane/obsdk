@@ -5,6 +5,7 @@ package all
 
 import (
 	_ "github.com/slatecrane/obsdk/banks/bunq"
+	_ "github.com/slatecrane/obsdk/banks/handelsbanken"
 	_ "github.com/slatecrane/obsdk/banks/hsbc"
 	_ "github.com/slatecrane/obsdk/banks/ing"
 	_ "github.com/slatecrane/obsdk/banks/nordea"

@@ -1,0 +1,181 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": false,
+      "message": "Waiting for the user to confirm in Mobile BankID.",
+      "challenge": {
+        "auto_start_token": "Not a valid auto_start_token",
+        "text": "Open Mobile BankID and confirm."
+      },
+      "wait_for": 2000000000
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "handelsbanken",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "handelsbanken-psd2-v1",
+        "generation": 1,
+        "updated_at": "2026-10-17T18:36:03Z",
+        "access_token": "REDACTED:access_token:51c2c4",
+        "refresh_token": "REDACTED:refresh_token:e886f1",
+        "token_type": "Bearer",
+        "scope": "AIS:10f7078d-e000-4cb2-f4a4-420c539baa9e",
+        "access_expires_at": "2026-10-18T18:36:03Z",
+        "consents": {
+          "accounts": {
+            "id": "10f7078d-e000-4cb2-f4a4-420c539baa9e",
+            "kind": "accounts",
+            "status": "valid",
+            "valid_until": "2027-04-15T18:36:03Z"
+          }
+        },
+        "meta": {
+          "method": "decoupled"
+        }
+      },
+      "accounts": [
+        {
+          "id": "bf659f7e-8fb3-5b36-45ad-c22c5418045b",
+          "stable_id": "249df479bf6b2b63c497d5f855813b67",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE77PSEUDOF926769ED3"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "6154936235852"
+            }
+          ],
+          "name": "name-f5bf8c",
+          "owner_name": "ownername-bf2928",
+          "currency": "SEK",
+          "product": "Privatkonto",
+          "usage": "PRIV",
+          "bic": "HANDSESS",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "AVAILABLE_AMOUNT",
+              "amount": {
+                "amount": "100000.00",
+                "currency": "SEK"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "CURRENT",
+              "amount": {
+                "amount": "100000.00",
+                "currency": "SEK"
+              }
+            }
+          ],
+          "raw": {
+            "accountId": "bf659f7e-8fb3-5b36-45ad-c22c5418045b",
+            "accountType": "Privatkonto",
+            "balances": [
+              {
+                "amount": {
+                  "content": 100000.00,
+                  "currency": "SEK"
+                },
+                "balanceType": "AVAILABLE_AMOUNT"
+              },
+              {
+                "amount": {
+                  "content": 100000.00,
+                  "currency": "SEK"
+                },
+                "balanceType": "CURRENT"
+              }
+            ],
+            "bban": "936235852",
+            "bic": "HANDSESS",
+            "clearingNumber": "6154",
+            "currency": "SEK",
+            "iban": "SE77PSEUDOF926769ED3",
+            "name": "name-f5bf8c",
+            "ownerName": "ownername-bf2928"
+          }
+        },
+        {
+          "id": "92dc9f5a-e217-a62f-52b5-cb58113bc4a4",
+          "stable_id": "55c5ecb798f008eb80d8154cc9cb55c2",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "SE43PSEUDOE9CC9FB92D"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "6001913077110"
+            }
+          ],
+          "name": "name-f5bf8c",
+          "owner_name": "ownername-bf2928",
+          "currency": "EUR",
+          "product": "Valutakonto",
+          "usage": "PRIV",
+          "bic": "HANDSESS",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "AVAILABLE_AMOUNT",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "CURRENT",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "accountId": "92dc9f5a-e217-a62f-52b5-cb58113bc4a4",
+            "accountType": "Valutakonto",
+            "balances": [
+              {
+                "amount": {
+                  "content": 10000.00,
+                  "currency": "EUR"
+                },
+                "balanceType": "AVAILABLE_AMOUNT"
+              },
+              {
+                "amount": {
+                  "content": 10000.00,
+                  "currency": "EUR"
+                },
+                "balanceType": "CURRENT"
+              }
+            ],
+            "bban": "913077110",
+            "bic": "HANDSESS",
+            "clearingNumber": "6001",
+            "currency": "EUR",
+            "iban": "SE43PSEUDOE9CC9FB92D",
+            "name": "name-f5bf8c",
+            "ownerName": "ownername-bf2928"
+          }
+        }
+      ]
+    }
+  }
+]

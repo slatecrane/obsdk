@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/gb/v1/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:dc6246",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "2d7ec621-f480-434d-80e3-269bd1c00284",
+      "Tpp-Transaction-Id": "fa49c2ce-6186-430a-a7af-992b9280b3e8",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/8fb155a5-416c-5525-11b5-7ebac81467c4/transactions"
+            }
+          },
+          "accountId": "8fb155a5-416c-5525-11b5-7ebac81467c4",
+          "accountType": "Current Account",
+          "bban": "16919538",
+          "bic": "HANDGB22",
+          "clearingNumber": "1234",
+          "creditLimit": 1000.00,
+          "currency": "GBP",
+          "iban": "GB61PSEUDO1304EE4550",
+          "name": "name-010445",
+          "ownerName": "ownername-d0d120"
+        },
+        {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/8ded16e0-562b-4440-fe23-a90df50f6602/transactions"
+            }
+          },
+          "accountId": "8ded16e0-562b-4440-fe23-a90df50f6602",
+          "accountType": "Current Account",
+          "bban": "15291327",
+          "bic": "HANDGB22",
+          "clearingNumber": "1234",
+          "creditLimit": 1000.00,
+          "currency": "GBP",
+          "iban": "GB35PSEUDOC1A6B551F4",
+          "name": "name-010445",
+          "ownerName": "ownername-d0d120"
+        }
+      ]
+    }
+  }
+}
