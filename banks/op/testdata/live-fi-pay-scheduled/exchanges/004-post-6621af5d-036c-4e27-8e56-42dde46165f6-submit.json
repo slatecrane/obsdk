@@ -1,0 +1,44 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/payments-psd2/v2/scheduled-sepa-payments/6621af5d-036c-4e27-8e56-42dde46165f6/submit",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:94f4f0",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:bad1ba",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "1a86fbc0-3463-4b68-959f-231553c3f58a"
+    },
+    "body": {}
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "amountEUR": "3.00",
+      "archiveId": "20261017598479000002",
+      "authorizationId": "d82401bd-9b03-4bb5-833c-353985db6f33",
+      "authorized": "2026-10-17T22:16:53.977+03:00",
+      "created": "2026-10-17T22:16:13.338+03:00",
+      "dueDate": "2026-10-30",
+      "executionType": "SCT_INST",
+      "modified": "2026-10-17T22:17:15.926+03:00",
+      "payee": {
+        "iban": "FI55PSEUDOB1337CEC1C",
+        "name": "name-27d3ff"
+      },
+      "payer": {
+        "iban": "FI03PSEUDOAB1302E32B",
+        "name": "name-5ef9a1"
+      },
+      "paymentId": "6621af5d-036c-4e27-8e56-42dde46165f6",
+      "reference": "reference-7a14fa",
+      "status": "Processing",
+      "submitted": "2026-10-17T22:17:15.88+03:00"
+    }
+  }
+}

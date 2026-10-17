@@ -1,0 +1,141 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to OP to approve account access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://authorize.psd2-sandbox.op.fi/oauth/authorize?client_id=REDACTED%3Aclient_id&request=eyJhbGciOiJSUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL210bHMuYXBpcy5vcC5maSIsImlzcyI6IlJFREFDVEVEOmNsaWVudF9pZCIsImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbS9jYiIsInNjb3BlIjoib3BlbmlkIGFjY291bnRzIiwic3RhdGUiOiIyZDVhMzhjOS0wZTZjLTRkNjAtYTI1NS03ZDI4N2NmZjk4NDgiLCJub25jZSI6IjVhMTM5YzQxLTk2MzktNDI5ZC04MGViLWVlNjUxYjZkMDE5NSIsIm1heF9hZ2UiOjg2NDAwLCJpYXQiOjE3OTIyNjQwMDcsImV4cCI6MTc5MjI2NDkwNywiY2xhaW1zIjp7InVzZXJpbmZvIjp7ImF1dGhvcml6YXRpb25JZCI6eyJ2YWx1ZSI6ImZhODJjODJlLTMyOWUtNGJmYi1hNDNlLWNjNjQ5MWNmYmIyOSIsImVzc2VudGlhbCI6dHJ1ZX19LCJpZF90b2tlbiI6eyJhY3IiOnsidmFsdWVzIjpbInVybjpvcGVuYmFua2luZzpwc2QyOnNjYSJdLCJlc3NlbnRpYWwiOnRydWV9LCJhdXRob3JpemF0aW9uSWQiOnsidmFsdWUiOiJmYTgyYzgyZS0zMjllLTRiZmItYTQzZS1jYzY0OTFjZmJiMjkiLCJlc3NlbnRpYWwiOnRydWV9fX19.dGVzdC1zaWduYXR1cmU6PgziOKyP8Aw&response_type=code+id_token&scope=openid+accounts"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "op",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "op-psd2-v1",
+        "generation": 1,
+        "updated_at": "2026-10-17T19:06:47Z",
+        "access_token": "REDACTED:access_token:4f48ab",
+        "refresh_token": "REDACTED:refresh_token:2a3b12",
+        "token_type": "bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-17T19:11:46Z",
+        "refresh_expires_at": "2026-12-01T19:06:47Z",
+        "consents": {
+          "accounts": {
+            "id": "fa82c82e-329e-4bfb-a43e-cc6491cfbb29",
+            "kind": "accounts",
+            "status": "Authorized",
+            "valid_until": "2027-04-15T19:06:47.912Z"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "dd4b8949f9768e42b6bec689d4a9748f858652f23e5cd854a3862f8951aa6e89",
+          "stable_id": "0c4123dbe3c11740c5bfddc7a0e61cd2",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI8659986920068681"
+            }
+          ],
+          "name": "KÄYTTÖTILI",
+          "owner_name": "MEIKÄLÄINEN MATTI",
+          "currency": "EUR",
+          "product": "KÄYTTÖTILI",
+          "type": "CACC",
+          "usage": "PRIV",
+          "bic": "OKOYFIHH",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "netBalance",
+              "amount": {
+                "amount": "5349.37",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "grossBalance",
+              "amount": {
+                "amount": "5349.37",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "accountId": "dd4b8949f9768e42b6bec689d4a9748f858652f23e5cd854a3862f8951aa6e89",
+            "currency": "EUR",
+            "grossBalance": "5349.37",
+            "identifier": "FI8659986920068681",
+            "identifierSchema": "IBAN",
+            "netBalance": "5349.37",
+            "owner": "MEIKÄLÄINEN MATTI",
+            "productName": "KÄYTTÖTILI",
+            "servicer": "OKOYFIHH",
+            "servicerSchema": "BIC"
+          }
+        },
+        {
+          "id": "e7036f6a79a4005faaf4caccbb76f805fb533f055fcbd425800d2b5246bce6d2",
+          "stable_id": "8542359fdb0592fab8b864579d8c277d",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI5850009420172322"
+            }
+          ],
+          "name": "KÄYTTÖTILI",
+          "owner_name": "MEIKÄLÄINEN MATTI",
+          "currency": "EUR",
+          "product": "KÄYTTÖTILI",
+          "type": "CACC",
+          "usage": "PRIV",
+          "bic": "OKOYFIHH",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "netBalance",
+              "amount": {
+                "amount": "802.98",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "interim_booked",
+              "bank_type": "grossBalance",
+              "amount": {
+                "amount": "802.98",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "accountId": "e7036f6a79a4005faaf4caccbb76f805fb533f055fcbd425800d2b5246bce6d2",
+            "currency": "EUR",
+            "grossBalance": "802.98",
+            "identifier": "FI5850009420172322",
+            "identifierSchema": "IBAN",
+            "netBalance": "802.98",
+            "owner": "MEIKÄLÄINEN MATTI",
+            "productName": "KÄYTTÖTILI",
+            "servicer": "OKOYFIHH",
+            "servicerSchema": "BIC"
+          }
+        }
+      ]
+    }
+  }
+]

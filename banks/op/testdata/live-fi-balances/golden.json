@@ -1,0 +1,23 @@
+[
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "netBalance",
+        "amount": {
+          "amount": "5349.37",
+          "currency": "EUR"
+        }
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "grossBalance",
+        "amount": {
+          "amount": "5349.37",
+          "currency": "EUR"
+        }
+      }
+    ]
+  }
+]

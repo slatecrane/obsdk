@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/accounts-psd2/v1/accounts/dd4b8949f9768e42b6bec689d4a9748f858652f23e5cd854a3862f8951aa6e89",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:5881da",
+      "X-Api-Key": "REDACTED:x-api-key:bad1ba",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "45b2a747-5706-4942-84e0-fca09ef93776"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "accountId": "dd4b8949f9768e42b6bec689d4a9748f858652f23e5cd854a3862f8951aa6e89",
+      "currency": "EUR",
+      "grossBalance": "5349.37",
+      "identifier": "FI8659986920068681",
+      "identifierSchema": "IBAN",
+      "netBalance": "5349.37",
+      "owner": "MEIKÄLÄINEN MATTI",
+      "productName": "KÄYTTÖTILI",
+      "servicer": "OKOYFIHH",
+      "servicerSchema": "BIC"
+    }
+  }
+}

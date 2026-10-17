@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/oauth/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026client_secret=REDACTED%3Aclient_secret\u0026grant_type=refresh_token\u0026refresh_token=REDACTED%3Arefresh_token%3A2a3b12"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:7bca08",
+      "expires_in": 299,
+      "id_token": "REDACTED:id_token:008f61",
+      "refresh_token": "REDACTED:refresh_token:a40a20",
+      "scope": "openid accounts",
+      "token_type": "bearer"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "config": {
+    "bank": "op",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T19:15:49Z",
+    "redirect_url": "https://example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:bad1ba"
+    },
+    "ids": {
+      "request": [
+        "2aba5674-4c6f-4e0d-b32b-6b131d135777"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoib3AtcHNkMi12MSIsInQiOiJzZXBhIiwiayI6InNlcGEtcGF5bWVudHMiLCJhIjoiOGUzZDU2MzYtMmQ2YS00NzFkLWE3NTYtZDRkZjg3MDE2MDU5IiwiaWRzIjpbIjdiZmM5ZGFmLTYzYzAtNGE2NC05NzVlLWRjYmYyMjM5ZDQyNCJdfQ",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

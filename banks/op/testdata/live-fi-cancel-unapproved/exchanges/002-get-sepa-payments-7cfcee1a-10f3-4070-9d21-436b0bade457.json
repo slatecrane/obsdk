@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/payments-psd2/v2/sepa-payments/7cfcee1a-10f3-4070-9d21-436b0bade457",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:76a252",
+      "X-Api-Key": "REDACTED:x-api-key:bad1ba",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "80289360-f194-4447-9060-123af9151414"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "amountEUR": "2.00",
+      "authorizationId": "f90d2d5e-3d1e-441b-ba93-4cdbe4c4446a",
+      "created": "2026-10-17T22:15:58.124+03:00",
+      "message": "obsdk revoke test",
+      "modified": "2026-10-17T22:15:58.124+03:00",
+      "payee": {
+        "iban": "FI55PSEUDOB1337CEC1C",
+        "name": "name-27d3ff"
+      },
+      "payer": {
+        "iban": "FI03PSEUDOAB1302E32B"
+      },
+      "paymentId": "7cfcee1a-10f3-4070-9d21-436b0bade457",
+      "status": "Unauthorized"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/payments-psd2/v2/authorizations/f90d2d5e-3d1e-441b-ba93-4cdbe4c4446a",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b0e32e",
+      "X-Api-Key": "REDACTED:x-api-key:bad1ba",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "86275dc7-8034-4bde-9fa1-3e3868b2826e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "authorizationId": "f90d2d5e-3d1e-441b-ba93-4cdbe4c4446a",
+      "created": "2026-10-17T22:15:58.124+03:00",
+      "modified": "2026-10-17T22:15:58.124+03:00",
+      "status": "Revoked"
+    }
+  }
+}

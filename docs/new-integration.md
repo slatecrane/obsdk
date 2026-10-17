@@ -182,7 +182,7 @@ Recording pitfalls:
 
 ## 6. Common sandbox errors
 
-From Swedbank, ING, Nordea, HSBC, Rabobank, bunq and Handelsbanken. Other banks word them differently, but the causes repeat.
+From Swedbank, ING, Nordea, HSBC, Rabobank, bunq, Handelsbanken and OP. Other banks word them differently, but the causes repeat.
 
 | Error | Cause | Fix |
 |---|---|---|
@@ -207,6 +207,8 @@ From Swedbank, ING, Nordea, HSBC, Rabobank, bunq and Handelsbanken. Other banks 
 | Handelsbanken: `500 "Unexpected error"` on a business consent | the sandbox doesn't know the company id | send the sandbox user's name (`SANDBOX-CORPORATE-SE-1`) as `PSU-Corporate-ID` |
 | Handelsbanken NL: `400 "Invalid date format (dateFrom)"` | the NL sandbox rejects the date filter in every format | leave the dates out and filter yourself |
 | Handelsbanken SE: `400 "Field chargeBearer allows [SHAR]"` on a business SEPA payment | the Swedish corporate API wants `SHAR` where NL/LU want `SLEV` | send `SHAR` |
+| OP: `400 VALIDATION "Bad request"` on `POST .../{paymentId}/submit` | the submit call has no body; the spec defines an (empty) JSON request body | send `{}` with `Content-Type: application/json` |
+| OP: `404 "Authorization ... not found"` on `DELETE .../authorizations/{id}`, while `GET` shows it `Authorized` | the sandbox can't revoke an approved authorization | don't count a 404 as revoked; read the authorization to check |
 | A login call returns `302` and the next call fails | the HTTP client followed the bank's redirect to its login page (or to your redirect URI) | don't follow redirects on that call; hand `Location` to the user (Nordea's `/authorize`) |
 
 ## 7. Finish

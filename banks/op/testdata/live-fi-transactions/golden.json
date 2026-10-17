@@ -1,0 +1,1265 @@
+[
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "entry_reference": "20261015593619503445",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-26.61",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "value_date": "2026-10-15",
+          "transaction_date": "2026-10-15",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-26.61",
+            "archiveId": "20261015593619503445",
+            "bookingDate": "2026-10-15",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-10-15",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-10-15"
+          }
+        },
+        {
+          "entry_reference": "20261007593619503443",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-2.95",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-07",
+          "value_date": "2026-10-07",
+          "transaction_date": "2026-10-07",
+          "counterparty": {
+            "name": "name-9fadf5"
+          },
+          "remittance": [
+            "TILIASIOINNIN PALVELUMAKSUT        \nAJALTA 1.9-30.9.2026"
+          ],
+          "reference_number": "reference-f299b9",
+          "bank_code_text": "PALVELUMAKSU",
+          "raw": {
+            "amount": "-2.95",
+            "archiveId": "20261007593619503443",
+            "bookingDate": "2026-10-07",
+            "currency": "EUR",
+            "message": "TILIASIOINNIN PALVELUMAKSUT        \nAJALTA 1.9-30.9.2026",
+            "paymentDate": "2026-10-07",
+            "proprietaryTransactionDescription": "PALVELUMAKSU",
+            "recipient": {
+              "name": "name-9fadf5"
+            },
+            "reference": "reference-f299b9",
+            "valueDate": "2026-10-07"
+          }
+        },
+        {
+          "entry_reference": "20261007593619503442",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-5.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-07",
+          "value_date": "2026-10-07",
+          "transaction_date": "2026-10-07",
+          "counterparty": {
+            "name": "name-9fadf5"
+          },
+          "remittance": [
+            "OMAISUUDENHOIDON PALVELUMAKSUT        \nAJALTA 1.9-30.9.2026"
+          ],
+          "reference_number": "reference-37d1b4",
+          "bank_code_text": "PALVELUMAKSU",
+          "raw": {
+            "amount": "-5.00",
+            "archiveId": "20261007593619503442",
+            "bookingDate": "2026-10-07",
+            "currency": "EUR",
+            "message": "OMAISUUDENHOIDON PALVELUMAKSUT        \nAJALTA 1.9-30.9.2026",
+            "paymentDate": "2026-10-07",
+            "proprietaryTransactionDescription": "PALVELUMAKSU",
+            "recipient": {
+              "name": "name-9fadf5"
+            },
+            "reference": "reference-37d1b4",
+            "valueDate": "2026-10-07"
+          }
+        },
+        {
+          "entry_reference": "20261007593619503440",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-187.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-07",
+          "value_date": "2026-10-07",
+          "transaction_date": "2026-10-07",
+          "counterparty": {
+            "name": "name-407db7",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI9050009420021008"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "bank_code_text": "ARVOPAPERI",
+          "raw": {
+            "amount": "-187.85",
+            "archiveId": "20261007593619503440",
+            "bookingDate": "2026-10-07",
+            "currency": "EUR",
+            "message": "",
+            "paymentDate": "2026-10-07",
+            "proprietaryTransactionDescription": "ARVOPAPERI",
+            "recipient": {
+              "identifier": "FI9050009420021008",
+              "name": "name-407db7",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-10-07"
+          }
+        },
+        {
+          "entry_reference": "20261005593619503450",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-4.74",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "transaction_date": "2026-10-05",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-4.74",
+            "archiveId": "20261005593619503450",
+            "bookingDate": "2026-10-05",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-10-05",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-10-05"
+          }
+        },
+        {
+          "entry_reference": "20261005593619503439",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-7.98",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "transaction_date": "2026-10-05",
+          "counterparty": {
+            "name": "name-5ef9a1",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI3459986920239852"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Siirto Säästölippaaseen"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-7.98",
+            "archiveId": "20261005593619503439",
+            "bookingDate": "2026-10-05",
+            "currency": "EUR",
+            "message": "Siirto Säästölippaaseen",
+            "paymentDate": "2026-10-05",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI3459986920239852",
+              "name": "name-5ef9a1",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-10-05"
+          }
+        },
+        {
+          "entry_reference": "20260930593619503459",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-145.37",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "value_date": "2026-09-30",
+          "transaction_date": "2026-09-30",
+          "counterparty": {
+            "name": "name-9fadf5",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI3959986920068848"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "reference_number": "reference-17733e",
+          "bank_code_text": "PKORTTIMAKSU",
+          "raw": {
+            "amount": "-145.37",
+            "archiveId": "20260930593619503459",
+            "bookingDate": "2026-09-30",
+            "currency": "EUR",
+            "paymentDate": "2026-09-30",
+            "proprietaryTransactionDescription": "PKORTTIMAKSU",
+            "recipient": {
+              "identifier": "FI3959986920068848",
+              "name": "name-9fadf5",
+              "servicer": "OKOYFIHH"
+            },
+            "reference": "reference-17733e",
+            "valueDate": "2026-09-30"
+          }
+        },
+        {
+          "entry_reference": "20260930593619503455",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2502.45",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "value_date": "2026-09-30",
+          "transaction_date": "2026-09-30",
+          "counterparty": {
+            "name": "name-c283ad"
+          },
+          "remittance": [
+            "Palkka ajalta 1.9-30.9.2026"
+          ],
+          "bank_code_text": "PALKKA",
+          "raw": {
+            "amount": "2502.45",
+            "archiveId": "20260930593619503455",
+            "bookingDate": "2026-09-30",
+            "currency": "EUR",
+            "message": "Palkka ajalta 1.9-30.9.2026",
+            "payer": {
+              "name": "name-c283ad"
+            },
+            "paymentDate": "2026-09-30",
+            "proprietaryTransactionDescription": "PALKKA",
+            "valueDate": "2026-09-30"
+          }
+        },
+        {
+          "entry_reference": "20260925593619503456",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "34.02",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-25",
+          "value_date": "2026-09-25",
+          "transaction_date": "2026-09-25",
+          "counterparty": {
+            "name": "name-5ef9a1"
+          },
+          "remittance": [
+            "Nosto Säästölippaasta"
+          ],
+          "bank_code_text": "PANO",
+          "raw": {
+            "amount": "34.02",
+            "archiveId": "20260925593619503456",
+            "bookingDate": "2026-09-25",
+            "currency": "EUR",
+            "message": "Nosto Säästölippaasta",
+            "payer": {
+              "name": "name-5ef9a1"
+            },
+            "paymentDate": "2026-09-25",
+            "proprietaryTransactionDescription": "PANO",
+            "valueDate": "2026-09-25"
+          }
+        },
+        {
+          "entry_reference": "20260915593619503468",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-55.13",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-15",
+          "value_date": "2026-09-15",
+          "transaction_date": "2026-09-15",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-55.13",
+            "archiveId": "20260915593619503468",
+            "bookingDate": "2026-09-15",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-09-15",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-09-15"
+          }
+        },
+        {
+          "entry_reference": "20260907593619503471",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-50.34",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-07",
+          "value_date": "2026-09-07",
+          "transaction_date": "2026-09-07",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-50.34",
+            "archiveId": "20260907593619503471",
+            "bookingDate": "2026-09-07",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-09-07",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-09-07"
+          }
+        },
+        {
+          "entry_reference": "20260907593619503469",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-55.05",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-07",
+          "value_date": "2026-09-07",
+          "transaction_date": "2026-09-07",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-55.05",
+            "archiveId": "20260907593619503469",
+            "bookingDate": "2026-09-07",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-09-07",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-09-07"
+          }
+        },
+        {
+          "entry_reference": "20260907593619503461",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-2.95",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-07",
+          "value_date": "2026-09-07",
+          "transaction_date": "2026-09-07",
+          "counterparty": {
+            "name": "name-9fadf5"
+          },
+          "remittance": [
+            "TILIASIOINNIN PALVELUMAKSUT        \nAJALTA 1.8-31.8.2026"
+          ],
+          "reference_number": "reference-f299b9",
+          "bank_code_text": "PALVELUMAKSU",
+          "raw": {
+            "amount": "-2.95",
+            "archiveId": "20260907593619503461",
+            "bookingDate": "2026-09-07",
+            "currency": "EUR",
+            "message": "TILIASIOINNIN PALVELUMAKSUT        \nAJALTA 1.8-31.8.2026",
+            "paymentDate": "2026-09-07",
+            "proprietaryTransactionDescription": "PALVELUMAKSU",
+            "recipient": {
+              "name": "name-9fadf5"
+            },
+            "reference": "reference-f299b9",
+            "valueDate": "2026-09-07"
+          }
+        },
+        {
+          "entry_reference": "20260907593619503460",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-5.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-07",
+          "value_date": "2026-09-07",
+          "transaction_date": "2026-09-07",
+          "counterparty": {
+            "name": "name-9fadf5"
+          },
+          "remittance": [
+            "OMAISUUDENHOIDON PALVELUMAKSUT        \nAJALTA 1.8-31.8.2026"
+          ],
+          "reference_number": "reference-37d1b4",
+          "bank_code_text": "PALVELUMAKSU",
+          "raw": {
+            "amount": "-5.00",
+            "archiveId": "20260907593619503460",
+            "bookingDate": "2026-09-07",
+            "currency": "EUR",
+            "message": "OMAISUUDENHOIDON PALVELUMAKSUT        \nAJALTA 1.8-31.8.2026",
+            "paymentDate": "2026-09-07",
+            "proprietaryTransactionDescription": "PALVELUMAKSU",
+            "recipient": {
+              "name": "name-9fadf5"
+            },
+            "reference": "reference-37d1b4",
+            "valueDate": "2026-09-07"
+          }
+        },
+        {
+          "entry_reference": "20260907593619503458",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-131.15",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-07",
+          "value_date": "2026-09-07",
+          "transaction_date": "2026-09-07",
+          "counterparty": {
+            "name": "name-407db7",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI9050009420021008"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "bank_code_text": "ARVOPAPERI",
+          "raw": {
+            "amount": "-131.15",
+            "archiveId": "20260907593619503458",
+            "bookingDate": "2026-09-07",
+            "currency": "EUR",
+            "message": "",
+            "paymentDate": "2026-09-07",
+            "proprietaryTransactionDescription": "ARVOPAPERI",
+            "recipient": {
+              "identifier": "FI9050009420021008",
+              "name": "name-407db7",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-09-07"
+          }
+        },
+        {
+          "entry_reference": "20260907593619503457",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-27.65",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-07",
+          "value_date": "2026-09-07",
+          "transaction_date": "2026-09-07",
+          "counterparty": {
+            "name": "name-5ef9a1",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI3459986920239852"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Siirto Säästölippaaseen"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-27.65",
+            "archiveId": "20260907593619503457",
+            "bookingDate": "2026-09-07",
+            "currency": "EUR",
+            "message": "Siirto Säästölippaaseen",
+            "paymentDate": "2026-09-07",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI3459986920239852",
+              "name": "name-5ef9a1",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-09-07"
+          }
+        },
+        {
+          "entry_reference": "20260831593619503477",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-53.22",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-31",
+          "value_date": "2026-08-31",
+          "transaction_date": "2026-08-31",
+          "counterparty": {
+            "name": "name-9fadf5",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI3959986920068848"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "reference_number": "reference-17733e",
+          "bank_code_text": "PKORTTIMAKSU",
+          "raw": {
+            "amount": "-53.22",
+            "archiveId": "20260831593619503477",
+            "bookingDate": "2026-08-31",
+            "currency": "EUR",
+            "paymentDate": "2026-08-31",
+            "proprietaryTransactionDescription": "PKORTTIMAKSU",
+            "recipient": {
+              "identifier": "FI3959986920068848",
+              "name": "name-9fadf5",
+              "servicer": "OKOYFIHH"
+            },
+            "reference": "reference-17733e",
+            "valueDate": "2026-08-31"
+          }
+        },
+        {
+          "entry_reference": "20260831593619503473",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2502.45",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-31",
+          "value_date": "2026-08-31",
+          "transaction_date": "2026-08-31",
+          "counterparty": {
+            "name": "name-c283ad"
+          },
+          "remittance": [
+            "Palkka ajalta 1.8-31.8.2026"
+          ],
+          "bank_code_text": "PALKKA",
+          "raw": {
+            "amount": "2502.45",
+            "archiveId": "20260831593619503473",
+            "bookingDate": "2026-08-31",
+            "currency": "EUR",
+            "message": "Palkka ajalta 1.8-31.8.2026",
+            "payer": {
+              "name": "name-c283ad"
+            },
+            "paymentDate": "2026-08-31",
+            "proprietaryTransactionDescription": "PALKKA",
+            "valueDate": "2026-08-31"
+          }
+        },
+        {
+          "entry_reference": "20260827593619503481",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-32.41",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-27",
+          "value_date": "2026-08-27",
+          "transaction_date": "2026-08-27",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-32.41",
+            "archiveId": "20260827593619503481",
+            "bookingDate": "2026-08-27",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-08-27",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-08-27"
+          }
+        },
+        {
+          "entry_reference": "20260824593619503487",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-32.47",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-24",
+          "value_date": "2026-08-24",
+          "transaction_date": "2026-08-24",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-32.47",
+            "archiveId": "20260824593619503487",
+            "bookingDate": "2026-08-24",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-08-24",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-08-24"
+          }
+        },
+        {
+          "entry_reference": "20260824593619503474",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "20.10",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-24",
+          "value_date": "2026-08-24",
+          "transaction_date": "2026-08-24",
+          "counterparty": {
+            "name": "name-5ef9a1"
+          },
+          "remittance": [
+            "Nosto Säästölippaasta"
+          ],
+          "bank_code_text": "PANO",
+          "raw": {
+            "amount": "20.10",
+            "archiveId": "20260824593619503474",
+            "bookingDate": "2026-08-24",
+            "currency": "EUR",
+            "message": "Nosto Säästölippaasta",
+            "payer": {
+              "name": "name-5ef9a1"
+            },
+            "paymentDate": "2026-08-24",
+            "proprietaryTransactionDescription": "PANO",
+            "valueDate": "2026-08-24"
+          }
+        },
+        {
+          "entry_reference": "20260807593619503479",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-2.95",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-07",
+          "value_date": "2026-08-07",
+          "transaction_date": "2026-08-07",
+          "counterparty": {
+            "name": "name-9fadf5"
+          },
+          "remittance": [
+            "TILIASIOINNIN PALVELUMAKSUT        \nAJALTA 1.7-31.7.2026"
+          ],
+          "reference_number": "reference-f299b9",
+          "bank_code_text": "PALVELUMAKSU",
+          "raw": {
+            "amount": "-2.95",
+            "archiveId": "20260807593619503479",
+            "bookingDate": "2026-08-07",
+            "currency": "EUR",
+            "message": "TILIASIOINNIN PALVELUMAKSUT        \nAJALTA 1.7-31.7.2026",
+            "paymentDate": "2026-08-07",
+            "proprietaryTransactionDescription": "PALVELUMAKSU",
+            "recipient": {
+              "name": "name-9fadf5"
+            },
+            "reference": "reference-f299b9",
+            "valueDate": "2026-08-07"
+          }
+        },
+        {
+          "entry_reference": "20260807593619503478",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-5.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-07",
+          "value_date": "2026-08-07",
+          "transaction_date": "2026-08-07",
+          "counterparty": {
+            "name": "name-9fadf5"
+          },
+          "remittance": [
+            "OMAISUUDENHOIDON PALVELUMAKSUT        \nAJALTA 1.7-31.7.2026"
+          ],
+          "reference_number": "reference-37d1b4",
+          "bank_code_text": "PALVELUMAKSU",
+          "raw": {
+            "amount": "-5.00",
+            "archiveId": "20260807593619503478",
+            "bookingDate": "2026-08-07",
+            "currency": "EUR",
+            "message": "OMAISUUDENHOIDON PALVELUMAKSUT        \nAJALTA 1.7-31.7.2026",
+            "paymentDate": "2026-08-07",
+            "proprietaryTransactionDescription": "PALVELUMAKSU",
+            "recipient": {
+              "name": "name-9fadf5"
+            },
+            "reference": "reference-37d1b4",
+            "valueDate": "2026-08-07"
+          }
+        },
+        {
+          "entry_reference": "20260805593619503482",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-90.53",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-05",
+          "value_date": "2026-08-05",
+          "transaction_date": "2026-08-05",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-90.53",
+            "archiveId": "20260805593619503482",
+            "bookingDate": "2026-08-05",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-08-05",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-08-05"
+          }
+        },
+        {
+          "entry_reference": "20260805593619503476",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-91.66",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-05",
+          "value_date": "2026-08-05",
+          "transaction_date": "2026-08-05",
+          "counterparty": {
+            "name": "name-407db7",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI9050009420021008"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "bank_code_text": "ARVOPAPERI",
+          "raw": {
+            "amount": "-91.66",
+            "archiveId": "20260805593619503476",
+            "bookingDate": "2026-08-05",
+            "currency": "EUR",
+            "message": "",
+            "paymentDate": "2026-08-05",
+            "proprietaryTransactionDescription": "ARVOPAPERI",
+            "recipient": {
+              "identifier": "FI9050009420021008",
+              "name": "name-407db7",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-08-05"
+          }
+        },
+        {
+          "entry_reference": "20260804593619503475",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-32.57",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-04",
+          "value_date": "2026-08-04",
+          "transaction_date": "2026-08-04",
+          "counterparty": {
+            "name": "name-5ef9a1",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI3459986920239852"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Siirto Säästölippaaseen"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-32.57",
+            "archiveId": "20260804593619503475",
+            "bookingDate": "2026-08-04",
+            "currency": "EUR",
+            "message": "Siirto Säästölippaaseen",
+            "paymentDate": "2026-08-04",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI3459986920239852",
+              "name": "name-5ef9a1",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-08-04"
+          }
+        },
+        {
+          "entry_reference": "20260803593619503491",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1800.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-03",
+          "value_date": "2026-08-03",
+          "transaction_date": "2026-08-03",
+          "counterparty": {
+            "name": "name-81ed69",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI3959986920068848"
+              }
+            ]
+          },
+          "remittance": [
+            "VUOKRAVAKUUS"
+          ],
+          "bank_code_text": "VAKUUSTALLETUS",
+          "raw": {
+            "amount": "-1800.00",
+            "archiveId": "20260803593619503491",
+            "bookingDate": "2026-08-03",
+            "currency": "EUR",
+            "message": "VUOKRAVAKUUS",
+            "paymentDate": "2026-08-03",
+            "proprietaryTransactionDescription": "VAKUUSTALLETUS",
+            "recipient": {
+              "identifier": "FI3959986920068848",
+              "name": "name-81ed69"
+            },
+            "valueDate": "2026-08-03"
+          }
+        },
+        {
+          "entry_reference": "20260803593619503491",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-19.95",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-03",
+          "value_date": "2026-08-03",
+          "transaction_date": "2026-08-03",
+          "counterparty": {
+            "name": "name-9fadf5"
+          },
+          "remittance": [
+            "PALVELUMAKSU"
+          ],
+          "bank_code_text": "PALVELUMAKSU",
+          "raw": {
+            "amount": "-19.95",
+            "archiveId": "20260803593619503491",
+            "bookingDate": "2026-08-03",
+            "currency": "EUR",
+            "message": "PALVELUMAKSU",
+            "paymentDate": "2026-08-03",
+            "proprietaryTransactionDescription": "PALVELUMAKSU",
+            "recipient": {
+              "name": "name-9fadf5"
+            },
+            "valueDate": "2026-08-03"
+          }
+        },
+        {
+          "entry_reference": "20260731593619503496",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-24.17",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-31",
+          "value_date": "2026-07-31",
+          "transaction_date": "2026-07-31",
+          "counterparty": {
+            "name": "name-9fadf5",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI3959986920068848"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "reference_number": "reference-17733e",
+          "bank_code_text": "PKORTTIMAKSU",
+          "raw": {
+            "amount": "-24.17",
+            "archiveId": "20260731593619503496",
+            "bookingDate": "2026-07-31",
+            "currency": "EUR",
+            "paymentDate": "2026-07-31",
+            "proprietaryTransactionDescription": "PKORTTIMAKSU",
+            "recipient": {
+              "identifier": "FI3959986920068848",
+              "name": "name-9fadf5",
+              "servicer": "OKOYFIHH"
+            },
+            "reference": "reference-17733e",
+            "valueDate": "2026-07-31"
+          }
+        },
+        {
+          "entry_reference": "20260731593619503492",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2502.45",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-31",
+          "value_date": "2026-07-31",
+          "transaction_date": "2026-07-31",
+          "counterparty": {
+            "name": "name-c283ad"
+          },
+          "remittance": [
+            "Palkka ajalta 1.7-31.7.2026"
+          ],
+          "bank_code_text": "PALKKA",
+          "raw": {
+            "amount": "2502.45",
+            "archiveId": "20260731593619503492",
+            "bookingDate": "2026-07-31",
+            "currency": "EUR",
+            "message": "Palkka ajalta 1.7-31.7.2026",
+            "payer": {
+              "name": "name-c283ad"
+            },
+            "paymentDate": "2026-07-31",
+            "proprietaryTransactionDescription": "PALKKA",
+            "valueDate": "2026-07-31"
+          }
+        },
+        {
+          "entry_reference": "20260723593619503500",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-76.69",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-23",
+          "value_date": "2026-07-23",
+          "transaction_date": "2026-07-23",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-76.69",
+            "archiveId": "20260723593619503500",
+            "bookingDate": "2026-07-23",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-07-23",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-07-23"
+          }
+        },
+        {
+          "entry_reference": "20260722593619503508",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-20.23",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-22",
+          "value_date": "2026-07-22",
+          "transaction_date": "2026-07-22",
+          "counterparty": {
+            "name": "name-27d3ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI8050001510000018"
+              },
+              {
+                "scheme": "BIC",
+                "value": "OKOYFIHH"
+              }
+            ]
+          },
+          "remittance": [
+            "Test transaction"
+          ],
+          "bank_code_text": "TILISIIRTO",
+          "raw": {
+            "amount": "-20.23",
+            "archiveId": "20260722593619503508",
+            "bookingDate": "2026-07-22",
+            "currency": "EUR",
+            "message": "Test transaction",
+            "paymentDate": "2026-07-22",
+            "proprietaryTransactionDescription": "TILISIIRTO",
+            "recipient": {
+              "identifier": "FI8050001510000018",
+              "name": "name-27d3ff",
+              "servicer": "OKOYFIHH"
+            },
+            "valueDate": "2026-07-22"
+          }
+        }
+      ]
+    }
+  }
+]

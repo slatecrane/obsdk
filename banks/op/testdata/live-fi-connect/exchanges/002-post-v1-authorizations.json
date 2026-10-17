@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/accounts-psd2/v1/authorizations",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:4f9dea",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:bad1ba",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "6bb91976-0d44-4f2d-b174-a671188e5d27"
+    },
+    "body": {
+      "expires": "2027-04-15T19:06:47.912Z"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "authorizationId": "fa82c82e-329e-4bfb-a43e-cc6491cfbb29",
+      "created": "2026-10-17T22:06:49+03:00",
+      "expires": "2027-04-15T22:06:47.912+03:00",
+      "modified": "2026-10-17T22:06:49+03:00",
+      "status": "Unauthorized"
+    }
+  }
+}
