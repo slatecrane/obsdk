@@ -1,0 +1,24 @@
+{
+  "config": {
+    "bank": "op",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T19:18:47Z",
+    "redirect_url": "https://example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:bad1ba"
+    },
+    "ids": {
+      "request": [
+        "46949c7c-4532-40af-8f27-d0bf2a9f1bf8",
+        "ab1c2904-715a-4016-adc0-75c2614dbc0b"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "disconnect"
+    }
+  ]
+}

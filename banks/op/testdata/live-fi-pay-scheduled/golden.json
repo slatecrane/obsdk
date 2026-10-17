@@ -1,0 +1,41 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to OP to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://authorize.psd2-sandbox.op.fi/oauth/authorize?client_id=REDACTED%3Aclient_id&request=eyJhbGciOiJSUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL210bHMuYXBpcy5vcC5maSIsImlzcyI6IlJFREFDVEVEOmNsaWVudF9pZCIsImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbS9jYiIsInNjb3BlIjoib3BlbmlkIHBheW1lbnRzIiwic3RhdGUiOiIxYWQ3OTdkOC1mNTRiLTQyNDctYmM4MC1iYzNhOGVhNjYzZTQiLCJub25jZSI6ImU1NzEzNmFlLTU3MjAtNDU0MC04OGJlLTU3NDA5Y2U2OWZiYSIsIm1heF9hZ2UiOjg2NDAwLCJpYXQiOjE3OTIyNjQ1NzIsImV4cCI6MTc5MjI2NTQ3MiwiY2xhaW1zIjp7InVzZXJpbmZvIjp7ImF1dGhvcml6YXRpb25JZCI6eyJ2YWx1ZSI6ImQ4MjQwMWJkLTliMDMtNGJiNS04MzNjLTM1Mzk4NWRiNmYzMyIsImVzc2VudGlhbCI6dHJ1ZX19LCJpZF90b2tlbiI6eyJhY3IiOnsidmFsdWVzIjpbInVybjpvcGVuYmFua2luZzpwc2QyOnNjYSJdLCJlc3NlbnRpYWwiOnRydWV9LCJhdXRob3JpemF0aW9uSWQiOnsidmFsdWUiOiJkODI0MDFiZC05YjAzLTRiYjUtODMzYy0zNTM5ODVkYjZmMzMiLCJlc3NlbnRpYWwiOnRydWV9fX19.dGVzdC1zaWduYXR1cmU6dVym2Y5zBd4&response_type=code+id_token&scope=openid+payments"
+      },
+      "payment": {
+        "id": "6621af5d-036c-4e27-8e56-42dde46165f6",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "Unauthorized",
+        "final": false,
+        "ref": "obs1.eyJpIjoib3AtcHNkMi12MSIsInQiOiJzZXBhIiwiayI6InNjaGVkdWxlZC1zZXBhLXBheW1lbnRzIiwiYSI6ImQ4MjQwMWJkLTliMDMtNGJiNS04MzNjLTM1Mzk4NWRiNmYzMyIsImlkcyI6WyI2NjIxYWY1ZC0wMzZjLTRlMjctOGU1Ni00MmRkZTQ2MTY1ZjYiXX0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "6621af5d-036c-4e27-8e56-42dde46165f6",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "Processing",
+        "final": false,
+        "ref": "obs1.eyJpIjoib3AtcHNkMi12MSIsInQiOiJzZXBhIiwiayI6InNjaGVkdWxlZC1zZXBhLXBheW1lbnRzIiwiYSI6ImQ4MjQwMWJkLTliMDMtNGJiNS04MzNjLTM1Mzk4NWRiNmYzMyIsImlkcyI6WyI2NjIxYWY1ZC0wMzZjLTRlMjctOGU1Ni00MmRkZTQ2MTY1ZjYiXX0",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "FI03PSEUDOAB1302E32B"
+        }
+      }
+    }
+  }
+]

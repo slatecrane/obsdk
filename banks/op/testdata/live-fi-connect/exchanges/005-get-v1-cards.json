@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/accounts-psd2/v1/cards",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:5881da",
+      "X-Api-Key": "REDACTED:x-api-key:bad1ba",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "09f8f810-2172-47af-8f08-dc9a11040f15"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": []
+  }
+}

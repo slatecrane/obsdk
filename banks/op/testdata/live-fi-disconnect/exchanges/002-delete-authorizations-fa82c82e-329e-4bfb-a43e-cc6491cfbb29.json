@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/accounts-psd2/v1/authorizations/fa82c82e-329e-4bfb-a43e-cc6491cfbb29",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:9d56f5",
+      "X-Api-Key": "REDACTED:x-api-key:bad1ba",
+      "X-Fapi-Interaction-Id": "46949c7c-4532-40af-8f27-d0bf2a9f1bf8"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "id": "G5f28ba53-0bb6-4f1e-a026-06136cc04ffe",
+      "message": "Authorization fa82c82e-329e-4bfb-a43e-cc6491cfbb29 not found",
+      "type": "TECHNICAL"
+    }
+  }
+}

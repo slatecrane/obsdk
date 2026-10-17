@@ -1,0 +1,21 @@
+[
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "7cfcee1a-10f3-4070-9d21-436b0bade457",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "Revoked",
+        "final": true,
+        "ref": "obs1.eyJpIjoib3AtcHNkMi12MSIsInQiOiJzZXBhIiwiayI6InNlcGEtcGF5bWVudHMiLCJhIjoiZjkwZDJkNWUtM2QxZS00NDFiLWJhOTMtNGNkYmU0YzQ0NDZhIiwiaWRzIjpbIjdjZmNlZTFhLTEwZjMtNDA3MC05ZDIxLTQzNmIwYmFkZTQ1NyJdfQ",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "FI03PSEUDOAB1302E32B"
+        }
+      }
+    }
+  }
+]

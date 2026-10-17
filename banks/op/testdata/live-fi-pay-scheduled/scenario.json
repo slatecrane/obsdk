@@ -1,0 +1,64 @@
+{
+  "config": {
+    "bank": "op",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T19:16:12Z",
+    "redirect_url": "https://example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:bad1ba"
+    },
+    "ids": {
+      "request": [
+        "21d1b7c7-21dc-41c2-99c3-ad180ee25b3c",
+        "bf43d1f0-3aaf-4dd0-8d98-162142d0bc82",
+        "1a86fbc0-3463-4b68-959f-231553c3f58a"
+      ],
+      "state": [
+        "1ad797d8-f54b-4247-bc80-bc3a8ea663e4",
+        "e57136ae-5720-4540-88be-57409ce69fba"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI03PSEUDOAB1302E32B"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "3.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-27d3ff",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI55PSEUDOB1337CEC1C"
+              }
+            },
+            "reference": {
+              "scheme": "RF",
+              "value": "RF18539007547034"
+            }
+          }
+        ],
+        "execution_date": "2026-10-30"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/cb#code=REDACTED%3Acode%3Add8abe\u0026id_token=REDACTED%3Aid_token%3A2521b6\u0026iss=REDACTED%3Aiss%3A59b194\u0026state=1ad797d8-f54b-4247-bc80-bc3a8ea663e4"
+    }
+  ]
+}

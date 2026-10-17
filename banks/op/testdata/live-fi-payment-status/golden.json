@@ -1,0 +1,17 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "7bfc9daf-63c0-4a64-975e-dcbf2239d424",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "Credited",
+      "final": true,
+      "ref": "obs1.eyJpIjoib3AtcHNkMi12MSIsInQiOiJzZXBhIiwiayI6InNlcGEtcGF5bWVudHMiLCJhIjoiOGUzZDU2MzYtMmQ2YS00NzFkLWE3NTYtZDRkZjg3MDE2MDU5IiwiaWRzIjpbIjdiZmM5ZGFmLTYzYzAtNGE2NC05NzVlLWRjYmYyMjM5ZDQyNCJdfQ",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "FI03PSEUDOAB1302E32B"
+      }
+    }
+  }
+]

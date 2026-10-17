@@ -1,0 +1,35 @@
+{
+  "config": {
+    "bank": "op",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T19:06:47Z",
+    "redirect_url": "https://example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:bad1ba"
+    },
+    "ids": {
+      "request": [
+        "6bb91976-0d44-4f2d-b174-a671188e5d27",
+        "990085c6-bb5c-4fa1-b465-2411cf93a81d",
+        "09f8f810-2172-47af-8f08-dc9a11040f15"
+      ],
+      "state": [
+        "2d5a38c9-0e6c-4d60-a255-7d287cff9848",
+        "5a139c41-9639-429d-80eb-ee651b6d0195"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/cb#code=REDACTED%3Acode%3A4a8d58\u0026id_token=REDACTED%3Aid_token%3A87737c\u0026iss=REDACTED%3Aiss%3A59b194\u0026state=2d5a38c9-0e6c-4d60-a255-7d287cff9848"
+    }
+  ]
+}
