@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync"
 	"time"
 
@@ -125,6 +126,12 @@ func (r *ScenarioRecorder) SetStartSession(s *obsdk.Session) error {
 			con.Accounts[i] = pseudonym("iban", a)
 		}
 		c.Consents[k] = con
+	}
+	// Integrations keep other credentials in Meta (bunq's installation token).
+	for k, v := range c.Meta {
+		if lk := strings.ToLower(k); r.Red.SecretKeys[lk] || strings.Contains(lk, "token") || strings.Contains(lk, "secret") {
+			c.Meta[k] = r.Red.mask(lk, v)
+		}
 	}
 	b, err := c.Marshal()
 	if err != nil {

@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/v1/device-server",
+    "headers": {
+      "Accept": "application/json",
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
+      "X-Bunq-Client-Authentication": "REDACTED:x-bunq-client-authentication:edacc4",
+      "X-Bunq-Client-Request-Id": "91241106-a012-4e81-b456-9c51e0a50c1c",
+      "X-Bunq-Client-Signature": "REDACTED:x-bunq-client-signature:94dd22",
+      "X-Bunq-Geolocation": "0 0 0 0 000",
+      "X-Bunq-Language": "en_US",
+      "X-Bunq-Region": "nl_NL"
+    },
+    "body": {
+      "description": "description-f31ebb",
+      "secret": "REDACTED:secret:fba80c"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Response": [
+        {
+          "Id": {
+            "id": 5188013
+          }
+        }
+      ]
+    }
+  }
+}

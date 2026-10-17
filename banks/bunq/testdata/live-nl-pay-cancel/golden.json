@@ -1,0 +1,72 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "The user approves the payment in the bunq app. Call Resume after WaitFor to check.",
+      "challenge": {
+        "text": "Open the bunq app and accept the payment request."
+      },
+      "wait_for": 5000000000,
+      "payment": {
+        "id": "9047",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "PENDING",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDciLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL64PSEUDOFABD8A44B6"
+        }
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "9047",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "REJECTED",
+        "final": true,
+        "reason": "withdrawn",
+        "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDciLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL64PSEUDOFABD8A44B6"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "9047",
+      "type": "sepa",
+      "status": "rejected",
+      "bank_status": "REJECTED",
+      "final": true,
+      "reason": "rejected",
+      "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDciLCJ0Ijoic2VwYSJ9",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "NL64PSEUDOFABD8A44B6"
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "error": {
+      "is": [
+        "invalid_request"
+      ],
+      "message": "obsdk: invalid request: only a payment the user has not answered can be cancelled (status REJECTED)"
+    }
+  }
+]

@@ -10,6 +10,8 @@ import (
 	"path/filepath"
 	"strings"
 	"testing"
+
+	obsdk "github.com/slatecrane/obsdk"
 )
 
 func get(t *testing.T, c *http.Client, url string) (*http.Response, string) {
@@ -262,5 +264,40 @@ func TestRedactorScrubsEchoedAccountNumbers(t *testing.T) {
 	}
 	if want := pseudonym("iban", "SE4880000123451234567890"); !strings.Contains(msg, want) {
 		t.Errorf("message should carry the same pseudonym %s: %s", want, msg)
+	}
+}
+
+func TestRedactorBunqShapes(t *testing.T) {
+	r := DefaultRedactor(nil)
+	out := string(r.JSON([]byte(`{"Response":[{"Token":{"token":"SESSION"}},{"MonetaryAccountBank":{
+		"balance":{"value":"12.00","currency":"EUR"},"display_name":"Ann Lee",
+		"alias":[{"type":"EMAIL","value":"ann@bunq.example","name":"ann"},{"type":"PHONE_NUMBER","value":"+31612345678"},{"type":"IBAN","value":"NL98BUNQ2107727112"}]}}],
+		"secret":"sandbox_key"}`)))
+	for _, leak := range []string{"SESSION", "Ann Lee", "ann@bunq.example", "+31612345678", "NL98BUNQ2107727112", "sandbox_key"} {
+		if strings.Contains(out, leak) {
+			t.Errorf("leaked %s in %s", leak, out)
+		}
+	}
+	if !strings.Contains(out, `"12.00"`) {
+		t.Errorf("amount values must survive: %s", out)
+	}
+	if got := r.Header("X-Bunq-Client-Authentication", "SESSION"); !strings.HasPrefix(got, "REDACTED:") {
+		t.Errorf("auth header: %s", got)
+	}
+}
+
+func TestStartSessionMasksMetaTokens(t *testing.T) {
+	dir := t.TempDir()
+	rec, err := NewScenarioRecorder(dir, ScenarioConfig{Bank: "x", Env: "sandbox"}, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	s := &obsdk.Session{Version: 1, Bank: "x", AccessToken: "AT", Meta: map[string]string{"installation_token": "INSTALL", "user_id": "42"}}
+	if err := rec.SetStartSession(s); err != nil {
+		t.Fatal(err)
+	}
+	b, _ := os.ReadFile(filepath.Join(dir, "session.json"))
+	if strings.Contains(string(b), "INSTALL") || !strings.Contains(string(b), `"42"`) {
+		t.Errorf("session.json: %s", b)
 	}
 }

@@ -1,0 +1,47 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/v1/installation",
+    "headers": {
+      "Accept": "application/json",
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
+      "X-Bunq-Client-Request-Id": "9e3e34ce-af1f-4075-adb1-569da6276acc",
+      "X-Bunq-Client-Signature": "REDACTED:x-bunq-client-signature:44cde5",
+      "X-Bunq-Geolocation": "0 0 0 0 000",
+      "X-Bunq-Language": "en_US",
+      "X-Bunq-Region": "nl_NL"
+    },
+    "body": {
+      "client_public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuq59htcMsQ50H7clNIYB\nWu2VDhckLHNUAP4YMKfqJifIGlcwxhdjDPt/Bbge81hd6bCeVtXYIeHyB8y0dgoA\nAGnQPTe2zN3E7eu70OBgxlmeYVsclMGNT55Z8mJQC1TsLsVX5LocGeTshomSTixT\nu2SF0esGY2K0l4aOpxTlFjl6Mvb+qBh8+Qg2mcEz4QIUuIfDktWL0OApAbZGYrem\nSg2KliCIeOJ6YxqUE3kukGSAmTH8Ki4hS4qKR2tQuppnaTBRDfWm0AOjay0zg36n\n3eREkjJu6PYq+wOmKSu4e8bzHleiXqPeDmD/AEbhL0NJa1bovaY42ITBgGLh8QEp\nDQIDAQAB\n-----END PUBLIC KEY-----\n"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Response": [
+        {
+          "Id": {
+            "id": 10409785
+          }
+        },
+        {
+          "Token": {
+            "created": "2026-10-17 09:34:22.618686",
+            "id": 32046991,
+            "token": "REDACTED:token:c4e79a",
+            "updated": "2026-10-17 09:34:22.618686"
+          }
+        },
+        {
+          "ServerPublicKey": {
+            "server_public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyx/CvB8YR0y5pHfDzHY6\n7c6nGnKstF1xEz9tZCNGmsyYkA++5KwsysGHXBPB9BwQgIElz+FLDdqrplxMvDOj\n0S5+LrXWf2vYXK6vRFHO6xCzjB5xMUKlLnZWGQXiRWPZmYQbanWjRMC2ppoZuyMe\nQRw4bIv3BE0rdTouxkJCfK7oZmT8liHmyyJdguSBkq5jOc3QmMPYqqliTgd8okbL\nPXbNpqKiMXXt5VafaIn8t5DKYPQe+6saNGb/8piecl42BRr69xQbPfwiBugPleeL\nZLc3nGb/HhxHYKtSzR6DxYk1jsBkXVG+6bs8uE2xS4kKJ4c5Lk0CDcB4Ea8oPRqJ\naQIDAQAB\n-----END PUBLIC KEY-----\n"
+          }
+        }
+      ]
+    }
+  }
+}

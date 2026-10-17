@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/v1/session/32046994",
+    "headers": {
+      "Accept": "application/json",
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
+      "X-Bunq-Client-Authentication": "REDACTED:x-bunq-client-authentication:07ac5e",
+      "X-Bunq-Client-Request-Id": "a41b52ad-c1a7-4922-b283-f9ed7765f96a",
+      "X-Bunq-Geolocation": "0 0 0 0 000",
+      "X-Bunq-Language": "en_US",
+      "X-Bunq-Region": "nl_NL"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Response": []
+    }
+  }
+}

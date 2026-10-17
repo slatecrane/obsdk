@@ -1,0 +1,176 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Create an API key in the bunq app (Profile, Settings, Developers, API keys) and enter it.",
+      "fields": [
+        {
+          "key": "api_key",
+          "label": "bunq API key",
+          "kind": "secret",
+          "required": true
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "bunq",
+        "country": "NL",
+        "segment": "business",
+        "env": "sandbox",
+        "integration": "bunq-api",
+        "generation": 1,
+        "updated_at": "2026-10-17T09:35:50Z",
+        "access_token": "REDACTED:token:07ac5e",
+        "refresh_token": "REDACTED:api_key:fba80c",
+        "token_type": "bunq-session",
+        "access_expires_at": "2026-10-24T09:35:50Z",
+        "consents": {
+          "api_key": {
+            "id": "",
+            "kind": "api_key",
+            "status": "valid",
+            "accounts": [
+              "NL85PSEUDO6FF69D12E4"
+            ]
+          }
+        },
+        "meta": {
+          "installation_token": "REDACTED:token:edacc4",
+          "method": "api_key",
+          "session_id": "32046994",
+          "user_id": "3780034",
+          "user_type": "UserCompany"
+        }
+      },
+      "accounts": [
+        {
+          "id": "3798049",
+          "stable_id": "97198532686889f5de42d29c412a55d7",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "NL85PSEUDO6FF69D12E4"
+            }
+          ],
+          "name": "description-b21508",
+          "owner_name": "display_name-ee25a4",
+          "currency": "EUR",
+          "product": "Bank",
+          "type": "CACC",
+          "usage": "ORGA",
+          "bic": "BUNQNL2A",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "balance",
+              "amount": {
+                "amount": "0.00",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-17"
+            }
+          ],
+          "raw": {
+            "alias": [
+              {
+                "name": "name-abf7ad",
+                "type": "PHONE_NUMBER",
+                "value": "phone-abf7ad"
+              },
+              {
+                "name": "name-8dc37c",
+                "type": "EMAIL",
+                "value": "email-8dc37c@example.com"
+              },
+              {
+                "name": "name-ee25a4",
+                "type": "IBAN",
+                "value": "NL85PSEUDO6FF69D12E4"
+              }
+            ],
+            "all_access": [
+              {
+                "MonetaryAccountAccess": {
+                  "access_type": "FULL_PERMANENT",
+                  "created": "2026-10-17 09:23:21.367211",
+                  "id": 3888913,
+                  "updated": "2026-10-17 09:23:21.367211"
+                }
+              }
+            ],
+            "all_auto_save_id": [],
+            "avatar": {
+              "anchor_uuid": "fcfc758d-b806-4bb4-812c-251a59d5b3fe",
+              "image": [
+                {
+                  "attachment_public_uuid": "72530ae1-714b-4ca1-8477-e270511d7355",
+                  "content_type": "image/png",
+                  "height": 1023,
+                  "urls": [
+                    {
+                      "type": "ORIGINAL",
+                      "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/921ece497cd00f4e0cef3f0f63a962c31cf3f8e35311d127d5a7b23be3d074d5.png"
+                    }
+                  ],
+                  "width": 1024
+                }
+              ],
+              "style": "NONE",
+              "uuid": "144edcec-7b2e-45f0-adc0-0d2601b0bade"
+            },
+            "balance": {
+              "currency": "EUR",
+              "value": "0.00"
+            },
+            "balance_converted": {
+              "currency": "EUR",
+              "value": "0.00"
+            },
+            "budget": [],
+            "connected_cards": [],
+            "country": "NL",
+            "created": "2026-10-17 09:23:21.359729",
+            "currency": "EUR",
+            "daily_limit": {
+              "currency": "EUR",
+              "value": "5000.00"
+            },
+            "description": "description-b21508",
+            "display_name": "display_name-ee25a4",
+            "id": 3798049,
+            "monetary_account_profile": null,
+            "overdraft_limit": {
+              "currency": "EUR",
+              "value": "0.00"
+            },
+            "public_uuid": "fcfc758d-b806-4bb4-812c-251a59d5b3fe",
+            "setting": {
+              "color": "#FF7819",
+              "default_avatar_status": "AVATAR_DEFAULT",
+              "emoji": null,
+              "icon": null,
+              "restriction_chat": "ALLOW_INCOMING",
+              "sdd_expiration_action": "AUTO_ACCEPT"
+            },
+            "status": "ACTIVE",
+            "sub_status": "NONE",
+            "timezone": "europe/amsterdam",
+            "transaction_limit": null,
+            "updated": "2026-10-17 09:23:21.359729",
+            "user_id": 3780034
+          }
+        }
+      ]
+    }
+  }
+]

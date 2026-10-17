@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "bunq",
+    "country": "NL",
+    "segment": "business",
+    "env": "sandbox",
+    "now": "2026-10-17T09:35:58Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "a41b52ad-c1a7-4922-b283-f9ed7765f96a"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "disconnect"
+    },
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "config": {
+    "bank": "bunq",
+    "country": "NL",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T09:34:31Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "1c36d261-f229-44c1-981f-c65d696fce05"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "refresh"
+    }
+  ]
+}

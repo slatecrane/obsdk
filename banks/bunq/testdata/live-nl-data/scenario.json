@@ -1,0 +1,70 @@
+{
+  "config": {
+    "bank": "bunq",
+    "country": "NL",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T09:34:43Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "c5bd369d-efbd-4562-b831-2959db9833c3",
+        "5f7e0c30-3641-42b1-ac07-18763c43ba16",
+        "fe205c82-cbc2-447a-b990-3fda25c2a494",
+        "d3dc7029-e545-4d1d-86b1-9dd5e0825bd1",
+        "b109b4e2-4a5f-4ad1-86d5-96783495406e"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "3798063",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "3798063",
+      "from": "2026-10-01T00:00:00Z",
+      "to": "2026-10-17T09:34:48Z",
+      "page_size": 2,
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "3798063",
+      "from": "2026-09-17T09:34:51Z",
+      "to": "2026-10-17T09:34:51Z",
+      "cursor": "obs1.eyJ1IjoiL3YxL3VzZXIvMzc4MDA0My9tb25ldGFyeS1hY2NvdW50LzM3OTgwNjMvcGF5bWVudD9jb3VudD0yXHUwMDI2b2xkZXJfaWQ9MzU5MzA0MDciLCJmIjoxNzkwODEyODAwLCJ0IjoxNzkyMjI5Njg4fQ",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "3798063",
+      "from": "2026-09-17T09:34:53Z",
+      "to": "2026-10-17T09:34:53Z",
+      "cursor": "obs1.eyJ1IjoiL3YxL3VzZXIvMzc4MDA0My9tb25ldGFyeS1hY2NvdW50LzM3OTgwNjMvcGF5bWVudD9jb3VudD0yXHUwMDI2b2xkZXJfaWQ9MzU5MzA0MDMiLCJmIjoxNzkwODEyODAwLCJ0IjoxNzkyMjI5Njg4fQ",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "3798063",
+      "from": "2026-09-17T09:34:53Z",
+      "to": "2026-10-17T09:34:53Z",
+      "status": [
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

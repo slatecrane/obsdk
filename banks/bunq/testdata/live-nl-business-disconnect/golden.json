@@ -1,0 +1,35 @@
+[
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "bunq",
+      "country": "NL",
+      "segment": "business",
+      "env": "sandbox",
+      "integration": "bunq-api",
+      "generation": 2,
+      "updated_at": "2026-10-17T09:35:58Z",
+      "token_type": "bunq-session",
+      "meta": {
+        "method": "api_key",
+        "user_id": "3780034",
+        "user_type": "UserCompany"
+      }
+    },
+    "disconnect": {
+      "failed": {
+        "api_key": "bunq has no API to revoke this access; the user can revoke it in the bunq app (Settings, Security, connected apps or API keys)"
+      }
+    }
+  },
+  {
+    "op": "accounts",
+    "error": {
+      "is": [
+        "reauth_required"
+      ],
+      "message": "obsdk: user must re-authorize: no_session_token"
+    }
+  }
+]
