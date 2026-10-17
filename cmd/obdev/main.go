@@ -55,7 +55,7 @@ func main() {
 const usage = `usage: obdev [-record DIR] <command> [args]
 
 commands:
-  connect                          log in (redirect/decoupled) and save the session
+  connect [-method M] [-caps C,..] log in (redirect/decoupled) and save the session
   accounts
   balances ACCOUNT_ID
   transactions ACCOUNT_ID [-from D] [-to D] [-status booked,pending] [-size N] [-cursor C]
@@ -184,8 +184,15 @@ func dispatch(ctx context.Context, l *obsdktest.Live, c obsdk.Client, s *obsdk.S
 		fs := flag.NewFlagSet("connect", flag.ExitOnError)
 		method := fs.String("method", "", "login method, e.g. redirect or decoupled")
 		days := fs.Int("days", 0, "consent validity in days")
+		caps := fs.String("caps", "", "comma-separated capabilities to request, e.g. aisp.accounts,aisp.transactions_history (default: all AISP)")
 		_ = fs.Parse(args[1:])
-		step, err := c.Connect(ctx, obsdk.ConnectRequest{Method: *method, ConsentValidityDays: *days, PSU: l.PSU})
+		var capList []obsdk.Capability
+		for _, c := range strings.Split(*caps, ",") {
+			if c = strings.TrimSpace(c); c != "" {
+				capList = append(capList, obsdk.Capability(c))
+			}
+		}
+		step, err := c.Connect(ctx, obsdk.ConnectRequest{Method: *method, ConsentValidityDays: *days, PSU: l.PSU, Capabilities: capList})
 		if err != nil {
 			return err
 		}

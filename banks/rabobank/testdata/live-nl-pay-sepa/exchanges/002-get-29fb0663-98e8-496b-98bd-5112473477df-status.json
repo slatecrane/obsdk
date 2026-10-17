@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openapi/sandbox/payments/payment-initiation/pis/v1/payments/sepa-credit-transfers/29fb0663-98e8-496b-98bd-5112473477df/status",
+    "headers": {
+      "Accept": "application/json",
+      "Digest": "sha-512=z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Signature": "keyId=\"474941545142452678797059264714336600071935444114\",algorithm=\"rsa-sha512\",headers=\"date digest x-request-id\",signature=\"l2yCIL9pM0vbcLa8qEFMtd4kmQYRGf3JYbDBoKiwnLbAPG6x7qfhVad7oMMtwPHuhkQ6VsJ61gKJBhBxz0V35I4rF0i/ju9vcB5sdVsw5jIVvv2FEbtBDY2Guc8LbY9nktlS2hljTCJLyPXStd+mMshq85mDrKiWe0TNKcUCP7n9IWp5TEg4qs5BcwoWo85JGRZEyN7gWv4xKPE5iH5oRVL1YNeq+mK/BRTWp4MiKrdGYagUXKbR5tUdp9tmYPM0q8qXdwdDqPwDWq0QzZkzs1nYhVCK7hsWXjBPH+qpfuMX5OzeEp0WFeVSkRnzCcrWPmMQML5efqz670HELgMDIw==\"",
+      "Tpp-Signature-Certificate": "MIID9DCCAtygAwIBAgIUUzEdjjbjLOePU7NeZfai6bv9RJIwDQYJKoZIhvcNAQELBQAweDEyMDAGA1UEAwwpUmFib2JhbmsgZGV2ZWxvcGVyIHBvcnRhbCBTYW5kYm94IHRlc3RpbmcxCzAJBgNVBAYTAk5MMRAwDgYDVQQIDAdVdHJlY2h0MRAwDgYDVQQHDAdVdHJlY2h0MREwDwYDVQQKDAhSYWJvYmFuazAgFw0yNTExMTIxNTQ3MzRaGA8yMTAwMTAyNTE1NDczNFoweDEyMDAGA1UEAwwpUmFib2JhbmsgZGV2ZWxvcGVyIHBvcnRhbCBTYW5kYm94IHRlc3RpbmcxCzAJBgNVBAYTAk5MMRAwDgYDVQQIDAdVdHJlY2h0MRAwDgYDVQQHDAdVdHJlY2h0MREwDwYDVQQKDAhSYWJvYmFuazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALGoQqBxfADuEAHs/k1UoKkqn1XrK3ocV/rItsnCU3ynW9gahC8Ggj4UtcjNcXh8fBieV+6oeFcMRXofY6PiS6IM3YxofwMUM0JqTC/JZcoVhnEButAbg+DVJJfR7jxEDFUR2LL2RTLHYugtJdbg92kuUy7bXjayj6/Ef2R3s+cI7rHiI7oAftce61k4sVmQxGtxAVt+jrSB8eX/hVqdzfNb1MSzRbfII56rLgeaSbWm7gkYcJimyWjPuabqxY0cIvwkum5BRJ87x+QRdxzJuXYuwZsUMaY4ETYiiwUv7Q2vOZ066a6zBs++JSdgCUypvqm9YvRn3vCxB3+me+jvhdUCAwEAAaN0MHIwHQYDVR0OBBYEFHr3mI71/GxAJ/nDhNTZL+XEX6cZMB8GA1UdIwQYMBaAFHr3mI71/GxAJ/nDhNTZL+XEX6cZMA4GA1UdDwEB/wQEAwIFoDAgBgNVHSUBAf8EFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEZod53U0IhIQZSVo4mVSn/bWT53uaeAcSwtRi+hyb8K2nDmT8wWdb6xewghd6EXIpWwetG8+odqvCaatdwPa4XjxE9XEecZC+EAYucY7joEk+maDjgJdgNNCwmWGQvOi9Fav9o2bbSGC3Y615K34aMmSNfuCGJHTw88RciLhPUdLMQF3gUTcQjlRcmE0oBZilZ0BF8Q1BIaJiFZZ7nNb4FGYB3ouySsmz/aPTz+VENZp2geCGjxW+SUIVpKiWA6NN2iJkp4Zywe39FxCca0Fw+QHl0vuMhh5fxyFA3eJLZREsZdgqwXnvIwNIM6/Yd1lxUIEyHL1J/m/vcJv/X0ZY4=",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "RESOURCE_UNKNOWN",
+          "text": "Forced status not found."
+        }
+      ],
+      "transactionStatus": "RJCT"
+    }
+  }
+}

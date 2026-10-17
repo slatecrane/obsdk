@@ -1,0 +1,54 @@
+{
+  "config": {
+    "bank": "rabobank",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-17T09:08:58Z",
+    "redirect_url": "https://example.com/cb",
+    "ids": {
+      "request": [
+        "a69edc56-e682-48f9-a0d1-9088e970cbab",
+        "e30324f6-b83a-4187-8c55-741da161d178",
+        "b66d5e2c-f010-4160-aff6-92b79969dce7",
+        "5771d083-4539-40a8-862d-0b58273b80a5",
+        "563f97f7-8669-4ca5-8e89-2975f92ce130"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "Tkw4MFJBQk8xMTI3MDAwMDAyOkVVUg",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "Tkw4MlJBQk8xMTA4MDAzMDAxOkVVUg",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "Tkw4MFJBQk8xMTI3MDAwMDAyOkVVUg",
+      "from": "2026-07-20T00:00:00Z",
+      "to": "2026-10-17T00:00:00Z",
+      "page_size": 50,
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "Tkw4MFJBQk8xMTI3MDAwMDAyOkVVUg",
+      "from": "2015-01-01T00:00:00Z",
+      "to": "2026-10-17T00:00:00Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

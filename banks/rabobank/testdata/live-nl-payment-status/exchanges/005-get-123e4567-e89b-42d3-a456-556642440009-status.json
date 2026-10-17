@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openapi/sandbox/payments/payment-initiation/pis/v1/payments/sepa-credit-transfers/123e4567-e89b-42d3-a456-556642440009/status",
+    "headers": {
+      "Accept": "application/json",
+      "Digest": "sha-512=z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Signature": "keyId=\"474941545142452678797059264714336600071935444114\",algorithm=\"rsa-sha512\",headers=\"date digest x-request-id\",signature=\"QSH9NNcv9Bn8DrQXT2xejt5MfIei0Pan1vtW5/uAVN6ybpNzhbAIfF+m5K8xjm7BJH8jIjyjSyV0uy5/eECq72ryYNWJm9Esyq0rLRUIztSLsmkI7Q/yi5EiUodgpOCpfIZYDT2uQSocTq/CMfu3oM1Ujvc6jeUiCc1JZ2GLVmhHymUltSY6DeJn71kUwMaHMcWEl7QYMgTGQd/ZbYQHpqMuJr9OCchuhogw0d9DHzKS6+z9OlEOWZ+/wg4imAp8IYWSN8CxPvCfeOv+bmrQLcp/jmMVhzCz31dlVpUzVaHNLIpCfiepuyc1PMrswtIkCn1YynWndLYN901bJdUpUw==\"",
+      "Tpp-Signature-Certificate": "MIID9DCCAtygAwIBAgIUUzEdjjbjLOePU7NeZfai6bv9RJIwDQYJKoZIhvcNAQELBQAweDEyMDAGA1UEAwwpUmFib2JhbmsgZGV2ZWxvcGVyIHBvcnRhbCBTYW5kYm94IHRlc3RpbmcxCzAJBgNVBAYTAk5MMRAwDgYDVQQIDAdVdHJlY2h0MRAwDgYDVQQHDAdVdHJlY2h0MREwDwYDVQQKDAhSYWJvYmFuazAgFw0yNTExMTIxNTQ3MzRaGA8yMTAwMTAyNTE1NDczNFoweDEyMDAGA1UEAwwpUmFib2JhbmsgZGV2ZWxvcGVyIHBvcnRhbCBTYW5kYm94IHRlc3RpbmcxCzAJBgNVBAYTAk5MMRAwDgYDVQQIDAdVdHJlY2h0MRAwDgYDVQQHDAdVdHJlY2h0MREwDwYDVQQKDAhSYWJvYmFuazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALGoQqBxfADuEAHs/k1UoKkqn1XrK3ocV/rItsnCU3ynW9gahC8Ggj4UtcjNcXh8fBieV+6oeFcMRXofY6PiS6IM3YxofwMUM0JqTC/JZcoVhnEButAbg+DVJJfR7jxEDFUR2LL2RTLHYugtJdbg92kuUy7bXjayj6/Ef2R3s+cI7rHiI7oAftce61k4sVmQxGtxAVt+jrSB8eX/hVqdzfNb1MSzRbfII56rLgeaSbWm7gkYcJimyWjPuabqxY0cIvwkum5BRJ87x+QRdxzJuXYuwZsUMaY4ETYiiwUv7Q2vOZ066a6zBs++JSdgCUypvqm9YvRn3vCxB3+me+jvhdUCAwEAAaN0MHIwHQYDVR0OBBYEFHr3mI71/GxAJ/nDhNTZL+XEX6cZMB8GA1UdIwQYMBaAFHr3mI71/GxAJ/nDhNTZL+XEX6cZMA4GA1UdDwEB/wQEAwIFoDAgBgNVHSUBAf8EFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAEZod53U0IhIQZSVo4mVSn/bWT53uaeAcSwtRi+hyb8K2nDmT8wWdb6xewghd6EXIpWwetG8+odqvCaatdwPa4XjxE9XEecZC+EAYucY7joEk+maDjgJdgNNCwmWGQvOi9Fav9o2bbSGC3Y615K34aMmSNfuCGJHTw88RciLhPUdLMQF3gUTcQjlRcmE0oBZilZ0BF8Q1BIaJiFZZ7nNb4FGYB3ouySsmz/aPTz+VENZp2geCGjxW+SUIVpKiWA6NN2iJkp4Zywe39FxCca0Fw+QHl0vuMhh5fxyFA3eJLZREsZdgqwXnvIwNIM6/Yd1lxUIEyHL1J/m/vcJv/X0ZY4=",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "fundsAvailable": "true",
+      "transactionStatus": "ACSC"
+    }
+  }
+}

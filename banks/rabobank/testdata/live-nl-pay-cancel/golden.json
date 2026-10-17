@@ -1,0 +1,49 @@
+[
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "123e4567-e89b-42d3-a456-600000000001",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "CANC",
+        "final": true,
+        "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTYwMDAwMDAwMDAwMSIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "error": {
+      "message": "obsdk: payment_cancel: HTTP 405 CANCELLATION_INVALID: payment_is_not_cancellable"
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Rabobank to sign the cancellation, then call Resume when they come back.",
+      "redirect": {
+        "url": "https://bankieren.rabobank.nl/klanten?paymentinitiationid=123e4567-e89b-42d3-a456-600000000002&flow=delete"
+      },
+      "payment": {
+        "id": "123e4567-e89b-42d3-a456-600000000002",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTYwMDAwMDAwMDAwMiIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "message": "obsdk: payment_status: HTTP 404 RESOURCE_UNKNOWN: Forced status not found."
+    }
+  }
+]

@@ -182,7 +182,7 @@ Recording pitfalls:
 
 ## 6. Common sandbox errors
 
-From Swedbank, ING, Nordea and HSBC. Other banks word them differently, but the causes repeat.
+From Swedbank, ING, Nordea, HSBC and Rabobank. Other banks word them differently, but the causes repeat.
 
 | Error | Cause | Fix |
 |---|---|---|
@@ -197,6 +197,9 @@ From Swedbank, ING, Nordea and HSBC. Other banks word them differently, but the 
 | ING: `404` with an empty body | a stub sandbox with no scenario for this exact request | compare with the bank's test-scenario document, field by field |
 | Nordea: `401 error.digest.invalid` on `/authorize/token` | the digest of a form body is expected over the sorted, *unencoded* `name=value` pairs | hash what the bank's own Postman script hashes, not the bytes sent |
 | HSBC: `400 UK.OBIE.Signature.InvalidClaim` on a payment consent | the `http://openbanking.org.uk/iss` claim must be the signing certificate's subject DN exactly as `openssl -nameopt RFC2253` prints it; Go's `pkix.Name` reorders attributes | format the DN from the certificate's raw subject |
+| Rabobank: `401 Application is not registered with mutual tls` | no client certificate linked to the app, although the sandbox accepts any certificate | link one under the app's Configuration → Add certificate (whole PEM chain) |
+| Rabobank: `401 CERTIFICATE_MISSING "The certificate header is empty."` | mTLS passed, but the request lacks `TPP-Signature-Certificate` / `Signature` | sign every API call, including payment status |
+| Rabobank: `400 FORMAT_ERROR "Currently only bookingStatus booked is allowed"` | `bookingStatus` `pending` or `both`, though the spec lists them | ask for `booked` only |
 | A login call returns `302` and the next call fails | the HTTP client followed the bank's redirect to its login page (or to your redirect URI) | don't follow redirects on that call; hand `Location` to the user (Nordea's `/authorize`) |
 
 ## 7. Finish

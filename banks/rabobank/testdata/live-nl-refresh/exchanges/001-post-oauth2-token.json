@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openapi/sandbox/oauth2/token",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:9a10fe",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "grant_type=refresh_token\u0026refresh_token=REDACTED%3Arefresh_token%3A04752a"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:fe84c0",
+      "consented_on": 1792227943,
+      "expires_in": 3600,
+      "refresh_token": "REDACTED:refresh_token:000877",
+      "refresh_token_expires_in": 432000,
+      "scope": "ais.balances.read ais.transactions.read-90days ab2f9e21-021f-43c3-a225-190fbc085a45_ais.balances.read ab2f9e21-021f-43c3-a225-190fbc085a45_ais.transactions.read-90days",
+      "token_type": "Bearer"
+    }
+  }
+}

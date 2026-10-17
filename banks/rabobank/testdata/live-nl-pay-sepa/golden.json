@@ -1,0 +1,28 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Rabobank to sign the payment, then call Resume when they come back.",
+      "redirect": {
+        "url": "https://bankieren.rabobank.nl/klanten?paymentinitiationid=29fb0663-98e8-496b-98bd-5112473477df"
+      },
+      "payment": {
+        "id": "29fb0663-98e8-496b-98bd-5112473477df",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjI5ZmIwNjYzLTk4ZTgtNDk2Yi05OGJkLTUxMTI0NzM0NzdkZiIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "message": "obsdk: payment_status: HTTP 404 RESOURCE_UNKNOWN: Forced status not found."
+    }
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "rabobank",
+      "country": "NL",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "rabobank-psd2",
+      "generation": 3,
+      "updated_at": "2026-10-17T09:10:19Z",
+      "token_type": "Bearer",
+      "scope": "ais.balances.read ais.transactions.read-90days ab2f9e21-021f-43c3-a225-190fbc085a45_ais.balances.read ab2f9e21-021f-43c3-a225-190fbc085a45_ais.transactions.read-90days",
+      "meta": {
+        "consented_on": "2026-10-17T09:05:43Z"
+      }
+    },
+    "disconnect": {
+      "closed": [
+        "ais"
+      ]
+    }
+  },
+  {
+    "op": "accounts",
+    "error": {
+      "is": [
+        "reauth_required"
+      ],
+      "message": "obsdk: user must re-authorize: no_access_token"
+    }
+  }
+]

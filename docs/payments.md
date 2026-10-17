@@ -90,17 +90,17 @@ Errors:
 
 ## Per bank
 
-| | Swedbank | Revolut | ING | Nordea | HSBC (UK brands) |
-|---|---|---|---|---|---|
-| Types | SE: `domestic` (incl. Bankgiro/Plusgiro), `crossborder`. EE/LV/LT: `sepa`, `sepa_instant`, `crossborder` | GB: `domestic` (GBP, sort code). EEA: `sepa` (EUR). All: `crossborder` | `sepa` (all 7 countries), `sepa_instant` (not RO), `domestic` (RO, RON), `crossborder` (not IT) | Personal only. FI: `sepa`, `sepa_instant`. SE: `domestic` (incl. Bankgiro/Plusgiro + OCR). DK, NO: `domestic` (NO with KID) | GB: `domestic` (Faster Payments, GBP, sort code; the reference is required: 18 characters, no spaces) |
-| Login | Needs a user login first: a new one, or the one in `PaymentRequest.Session` | None: the approval itself is the login | None: the approval itself is the login | None: the signature itself is the login | None: the approval itself is the login |
-| Approval | Redirect, or app (BankID / Smart-ID / Mobile-ID) with polling | Redirect | Redirect | Redirect | Redirect |
-| Future-dated | `execution_date` | `execution_date`, through Revolut's scheduled-payment API (beta) | `execution_date` | `execution_date` | `execution_date`, through the scheduled-payment API |
-| Cancel | Yes, while not executed | No (no endpoint) | Yes, while not executed; no user approval | Yes, while not executed, with the session the approval returned | No (no endpoint) |
-| Status | With the user's session | With an app token; no session needed | With an app token; no session needed | No session needed | With an app token; no session needed |
-| Verified | SE sandbox, 2026-10-14: domestic, Bankgiro + OCR and international with app approval, and a future-dated payment cancelled. Redirect approval and the Baltics are not run yet. | Fake bank only. The sandbox app still needs the `payments` scope. | NL sandbox, 2026-10-16: status reads (completed, rejected). Creation, approval and cancel against a fake server only: the sandbox stub accepts only bodies the SDK cannot produce. | FI and SE sandbox, 2026-10-16: SEPA, Bankgiro + OCR and a future-dated payment cancelled; FI instant, DK and NO also `Paid` (not recorded). | GB personal sandbox, 2026-10-17: a Faster Payment approved and executed (`ACSP`), status read. Scheduled payments and first direct / M&S not run. |
+| | Swedbank | Revolut | ING | Nordea | HSBC (UK brands) | Rabobank |
+|---|---|---|---|---|---|---|
+| Types | SE: `domestic` (incl. Bankgiro/Plusgiro), `crossborder`. EE/LV/LT: `sepa`, `sepa_instant`, `crossborder` | GB: `domestic` (GBP, sort code). EEA: `sepa` (EUR). All: `crossborder` | `sepa` (all 7 countries), `sepa_instant` (not RO), `domestic` (RO, RON), `crossborder` (not IT) | Personal only. FI: `sepa`, `sepa_instant`. SE: `domestic` (incl. Bankgiro/Plusgiro + OCR). DK, NO: `domestic` (NO with KID) | GB: `domestic` (Faster Payments, GBP, sort code; the reference is required: 18 characters, no spaces) | NL: `sepa` (EUR; sent instant when the payee bank can take it), `crossborder` |
+| Login | Needs a user login first: a new one, or the one in `PaymentRequest.Session` | None: the approval itself is the login | None: the approval itself is the login | None: the signature itself is the login | None: the approval itself is the login | None: the approval itself is the login |
+| Approval | Redirect, or app (BankID / Smart-ID / Mobile-ID) with polling | Redirect | Redirect | Redirect | Redirect | Redirect |
+| Future-dated | `execution_date` | `execution_date`, through Revolut's scheduled-payment API (beta) | `execution_date` | `execution_date` | `execution_date`, through the scheduled-payment API | `execution_date` |
+| Cancel | Yes, while not executed | No (no endpoint) | Yes, while not executed; no user approval | Yes, while not executed, with the session the approval returned | No (no endpoint) | Yes, while not executed; Rabobank may ask the user to sign the cancellation (redirect step) |
+| Status | With the user's session | With an app token; no session needed | With an app token; no session needed | No session needed | With an app token; no session needed | Client id and signature only; no session needed |
+| Verified | SE sandbox, 2026-10-14: domestic, Bankgiro + OCR and international with app approval, and a future-dated payment cancelled. Redirect approval and the Baltics are not run yet. | Fake bank only. The sandbox app still needs the `payments` scope. | NL sandbox, 2026-10-16: status reads (completed, rejected). Creation, approval and cancel against a fake server only: the sandbox stub accepts only bodies the SDK cannot produce. | FI and SE sandbox, 2026-10-16: SEPA, Bankgiro + OCR and a future-dated payment cancelled; FI instant, DK and NO also `Paid` (not recorded). | GB personal sandbox, 2026-10-17: a Faster Payment approved and executed (`ACSP`), status read. Scheduled payments and first direct / M&S not run. | NL sandbox, 2026-10-17: creation (SEPA, cross-border), every documented status, cancel (cancelled, already cancelled, needs signing). Signing a created payment can't be done in the sandbox (its redirect goes to the real online bank). |
 
-Details: [swedbank.md](swedbank.md#payments), [revolut.md](revolut.md#payments), [ing.md](ing.md#payments), [nordea.md](nordea.md#payments), [hsbc.md](hsbc.md#payments).
+Details: [swedbank.md](swedbank.md#payments), [revolut.md](revolut.md#payments), [ing.md](ing.md#payments), [nordea.md](nordea.md#payments), [hsbc.md](hsbc.md#payments), [rabobank.md](rabobank.md#payments).
 
 ## Not yet
 
@@ -110,4 +110,4 @@ Bulk payments, standing orders and periodic payments all fit the model but are n
 - **Standing orders:** a schedule on the request.
 
 Swedbank has `bulk-payments`, `periodic-payments` and `signing-baskets`. Revolut has file payments and
-standing orders. ING has periodic and bulk payments. Nordea has recurring payments, a 2SCA API and separate business payment APIs. HSBC has standing orders, international payments and VRP. Multi-signer business payments surface as `partially_accepted`.
+standing orders. ING has periodic and bulk payments. Nordea has recurring payments, a 2SCA API and separate business payment APIs. HSBC has standing orders, international payments and VRP. Rabobank has periodic and bulk (pain.001) payments. Multi-signer business payments surface as `partially_accepted`.

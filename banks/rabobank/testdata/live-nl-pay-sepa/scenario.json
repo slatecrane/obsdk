@@ -1,0 +1,54 @@
+{
+  "config": {
+    "bank": "rabobank",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-17T09:09:09Z",
+    "redirect_url": "https://example.com/cb",
+    "ids": {
+      "request": [
+        "48b24c46-eacf-4efd-87e3-fe90d461cb08",
+        "736f6ac1-333d-4ac9-a6b8-747c58b27d16"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "NL11PSEUDO3FD53BDDC5"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "10.25",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-7cb4e5",
+              "account": {
+                "scheme": "IBAN",
+                "value": "NL41PSEUDO1F8BA6A0FC"
+              }
+            },
+            "remittance": [
+              "abcde"
+            ],
+            "end_to_end_id": "1515140706132013"
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/cb"
+    }
+  ]
+}

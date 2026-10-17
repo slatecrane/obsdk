@@ -1,0 +1,177 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "Tkw4MlJBQk8xMTA4MDAzMDAxOkVVUg",
+        "stable_id": "d57749b9872c82c6e58c719b2b09ea2a",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL11PSEUDO3FD53BDDC5"
+          }
+        ],
+        "owner_name": "ownername-d346f4",
+        "currency": "EUR",
+        "bic": "RABONL2U",
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "/accounts/Tkw4MlJBQk8xMTA4MDAzMDAxOkVVUg/balances"
+            },
+            "transactions": {
+              "href": "/accounts/Tkw4MlJBQk8xMTA4MDAzMDAxOkVVUg/transactions"
+            }
+          },
+          "currency": "EUR",
+          "iban": "NL11PSEUDO3FD53BDDC5",
+          "ownerName": "ownername-d346f4",
+          "resourceId": "Tkw4MlJBQk8xMTA4MDAzMDAxOkVVUg",
+          "status": "enabled"
+        }
+      },
+      {
+        "id": "TkwxMFJBQk8xMTI3MDAwMDAxOkVVUg",
+        "stable_id": "5ceab0001cf6eed6b14c5cd8ccfe8ac0",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL68PSEUDOB4CA2CA988"
+          }
+        ],
+        "owner_name": "ownername-d346f4",
+        "currency": "EUR",
+        "bic": "RABONL2U",
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "/accounts/TkwxMFJBQk8xMTI3MDAwMDAxOkVVUg/balances"
+            },
+            "transactions": {
+              "href": "/accounts/TkwxMFJBQk8xMTI3MDAwMDAxOkVVUg/transactions"
+            }
+          },
+          "currency": "EUR",
+          "iban": "NL68PSEUDOB4CA2CA988",
+          "ownerName": "ownername-d346f4",
+          "resourceId": "TkwxMFJBQk8xMTI3MDAwMDAxOkVVUg",
+          "status": "enabled"
+        }
+      },
+      {
+        "id": "Tkw1M1JBQk8xMTA4MDAxMDAxOkVVUg",
+        "stable_id": "45c3988b88fef2541e707c934c338b5c",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL21PSEUDO8672FBCF28"
+          }
+        ],
+        "owner_name": "ownername-d346f4",
+        "currency": "EUR",
+        "bic": "RABONL2U",
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "/accounts/Tkw1M1JBQk8xMTA4MDAxMDAxOkVVUg/balances"
+            },
+            "transactions": {
+              "href": "/accounts/Tkw1M1JBQk8xMTA4MDAxMDAxOkVVUg/transactions"
+            }
+          },
+          "currency": "EUR",
+          "iban": "NL21PSEUDO8672FBCF28",
+          "ownerName": "ownername-d346f4",
+          "resourceId": "Tkw1M1JBQk8xMTA4MDAxMDAxOkVVUg",
+          "status": "enabled"
+        }
+      },
+      {
+        "id": "Tkw4MFJBQk8xMTI3MDAwMDAyOkVVUg",
+        "stable_id": "5cdfb5b237207feb90e9e49f71f1a1e2",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL17PSEUDO52F896959C"
+          }
+        ],
+        "owner_name": "ownername-d346f4",
+        "currency": "EUR",
+        "bic": "RABONL2U",
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "/accounts/Tkw4MFJBQk8xMTI3MDAwMDAyOkVVUg/balances"
+            },
+            "transactions": {
+              "href": "/accounts/Tkw4MFJBQk8xMTI3MDAwMDAyOkVVUg/transactions"
+            }
+          },
+          "currency": "EUR",
+          "iban": "NL17PSEUDO52F896959C",
+          "ownerName": "ownername-d346f4",
+          "resourceId": "Tkw4MFJBQk8xMTI3MDAwMDAyOkVVUg",
+          "status": "enabled"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "other",
+        "bank_type": "expected",
+        "amount": {
+          "amount": "82.17",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-13"
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "interimBooked",
+        "amount": {
+          "amount": "82.17",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-13"
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "other",
+        "bank_type": "expected",
+        "amount": {
+          "amount": "0.0",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-13"
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "interimBooked",
+        "amount": {
+          "amount": "0.0",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-13"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": []
+    }
+  },
+  {
+    "op": "transactions",
+    "error": {
+      "message": "obsdk: transactions: HTTP 400 FORMAT_ERROR: Date can't be further than 8 years in the past."
+    }
+  }
+]

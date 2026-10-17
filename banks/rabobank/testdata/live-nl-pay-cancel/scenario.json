@@ -1,0 +1,41 @@
+{
+  "config": {
+    "bank": "rabobank",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-17T09:09:47Z",
+    "redirect_url": "https://example.com/cb",
+    "ids": {
+      "request": [
+        "9b83ff89-140d-4460-8676-1cac4a689cbd",
+        "6996f91b-003a-47ba-99f3-13ae6e72fa88",
+        "e7133266-c4b9-47e9-8551-0ace63b9c674",
+        "eeabd2b5-c116-4029-90d8-2a52831b87ab"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTYwMDAwMDAwMDAwMSIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTYwMDAwMDAwMDAwMyIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTYwMDAwMDAwMDAwMiIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/cb"
+    }
+  ]
+}
