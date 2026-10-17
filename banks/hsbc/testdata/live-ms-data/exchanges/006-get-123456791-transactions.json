@@ -1,0 +1,826 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v4.0/aisp/accounts/123456791/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2020-01-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-17T07:45:22"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:be0923",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "fe99811c-7cd3-4373-b9a3-367bab36eafb"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "82.10",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "82.10",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2023-06-28T06:12:55+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282f"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "Merchant.4511"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.2444"
+            ],
+            "Status": "PDNG",
+            "TransactionId": "307",
+            "TransactionInformation": "transactioninformation-80f5a2",
+            "TransactionMutability": "Mutable",
+            "TransactionReference": "TR.RF.2444",
+            "ValueDateTime": "2023-06-28T06:12:55+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "120.00",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "120.00",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2023-06-09T06:12:55+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282f"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4121",
+              "MerchantName": "Merchant.4121"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.2440"
+            ],
+            "Status": "PDNG",
+            "TransactionId": "305",
+            "TransactionInformation": "transactioninformation-80f5a2",
+            "TransactionMutability": "Mutable",
+            "TransactionReference": "TR.RF.2440",
+            "ValueDateTime": "2023-06-09T06:12:55+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "201.50",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "201.50",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2023-06-08T06:12:55+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282f"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4511",
+              "MerchantName": "Merchant.4511"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.2442"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "306",
+            "TransactionInformation": "transactioninformation-80f5a2",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "TR.RF.2442",
+            "ValueDateTime": "2023-06-08T06:12:55+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "82.90",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "82.90",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2023-05-28T06:12:55+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282f"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4121",
+              "MerchantName": "Merchant.4121"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.2438"
+            ],
+            "Status": "PDNG",
+            "TransactionId": "304",
+            "TransactionInformation": "transactioninformation-80f5a2",
+            "TransactionMutability": "Mutable",
+            "TransactionReference": "TR.RF.2438",
+            "ValueDateTime": "2023-05-28T06:12:55+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "199.90",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "199.90",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2023-05-09T06:12:55+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282f"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4121",
+              "MerchantName": "Merchant.4121"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.2434"
+            ],
+            "Status": "PDNG",
+            "TransactionId": "302",
+            "TransactionInformation": "transactioninformation-80f5a2",
+            "TransactionMutability": "Mutable",
+            "TransactionReference": "TR.RF.2434",
+            "ValueDateTime": "2023-05-09T06:12:55+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Address line 1",
+            "Amount": {
+              "Amount": "201.90",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "201.90",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2023-05-08T06:12:55+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-9a47ba",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282f"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4111",
+              "MerchantName": "Merchant.4111"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.2436"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "303",
+            "TransactionInformation": "transactioninformation-80f5a2",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "TR.RF.2436",
+            "ValueDateTime": "2023-05-08T06:12:55+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Adderess Line 1",
+            "Amount": {
+              "Amount": "25.50",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "5019.14",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2020-09-06T18:54:57+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-cc817a",
+              "Name": "name-fb933d",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-51cd0f"
+            },
+            "CreditorAgent": {
+              "Identification": "identification-aa3f4d",
+              "Name": "name-41266b",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAgent": {
+              "Identification": "identification-31c4a5",
+              "Name": "name-4020af",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "PostalAddressID": "1207"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4592",
+              "MerchantName": "DAC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.315"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "39",
+            "TransactionInformation": "transactioninformation-1b0a23",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "Domestic Payment -- 315",
+            "ValueDateTime": "2020-09-06T18:54:57+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Adderess Line 1",
+            "Amount": {
+              "Amount": "15.55",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "5121.14",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2020-09-06T18:11:56+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-cc817a",
+              "Name": "name-fb933d",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-51cd0f"
+            },
+            "CreditorAgent": {
+              "Identification": "identification-aa3f4d",
+              "Name": "name-41266b",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAgent": {
+              "Identification": "identification-31c4a5",
+              "Name": "name-4020af",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "PostalAddressID": "1206"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4592",
+              "MerchantName": "DAC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.310"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "38",
+            "TransactionInformation": "transactioninformation-1b0a28",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "Domestic Payment -- 310",
+            "ValueDateTime": "2020-09-06T18:11:56+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Adderess Line 1",
+            "Amount": {
+              "Amount": "15.55",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "5187.69",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2020-09-06T16:44:03+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-cc817a",
+              "Name": "name-fb933d",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-51cd0f"
+            },
+            "CreditorAgent": {
+              "Identification": "identification-aa3f4d",
+              "Name": "name-41266b",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAgent": {
+              "Identification": "identification-31c4a5",
+              "Name": "name-4020af",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "PostalAddressID": "1205"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4592",
+              "MerchantName": "DAC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.310"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "37",
+            "TransactionInformation": "transactioninformation-1b0a28",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "Domestic Payment -- 310",
+            "ValueDateTime": "2020-09-06T16:44:03+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Adderess Line 1",
+            "Amount": {
+              "Amount": "15.55",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "5203.24",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2020-09-06T14:52:36+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-cc817a",
+              "Name": "name-fb933d",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-51cd0f"
+            },
+            "CreditorAgent": {
+              "Identification": "identification-aa3f4d",
+              "Name": "name-41266b",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAgent": {
+              "Identification": "identification-31c4a5",
+              "Name": "name-4020af",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "PostalAddressID": "1204"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4592",
+              "MerchantName": "DAC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.310"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "36",
+            "TransactionInformation": "transactioninformation-1b0a28",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "Domestic Payment -- 310",
+            "ValueDateTime": "2020-09-06T14:52:36+00:00"
+          },
+          {
+            "AccountId": "123456791",
+            "AddressLine": "Adderess Line 1",
+            "Amount": {
+              "Amount": "15.55",
+              "Currency": "GBP"
+            },
+            "Balance": {
+              "Amount": {
+                "Amount": "5218.79",
+                "Currency": "GBP"
+              },
+              "CreditDebitIndicator": "Debit",
+              "Type": "ITBD"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "OTHR"
+            },
+            "BookingDateTime": "2020-09-06T14:25:35+00:00",
+            "CardInstrument": {
+              "AuthorisationType": "Contactless",
+              "CardSchemeName": "AmericanExpress",
+              "Identification": "identification-807724",
+              "Name": "name-cedd56"
+            },
+            "ChargeAmount": {
+              "Amount": "0.00",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Identification": "identification-cc817a",
+              "Name": "name-fb933d",
+              "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+              "SecondaryIdentification": "secondaryidentification-51cd0f"
+            },
+            "CreditorAgent": {
+              "Identification": "identification-aa3f4d",
+              "Name": "name-41266b",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "DebtorAccount": {
+              "Identification": "identification-80668f",
+              "Name": "name-f9b7c3",
+              "SchemeName": "UK.OBIE.PAN",
+              "SecondaryIdentification": "secondaryidentification-90282e"
+            },
+            "DebtorAgent": {
+              "Identification": "identification-31c4a5",
+              "Name": "name-4020af",
+              "PostalAddress": {
+                "AddressType": "BIZZ",
+                "BuildingNumber": "12/5A",
+                "Country": "IN",
+                "CountrySubDivision": "SI",
+                "PostCode": "560032",
+                "StreetName": "Rustam Bagh",
+                "TownName": "Langford Town"
+              },
+              "PostalAddressID": "1203"
+            },
+            "MerchantDetails": {
+              "MerchantCategoryCode": "4592",
+              "MerchantName": "DAC Sample Merchant"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "OBP",
+              "Issuer": "HSBC"
+            },
+            "StatementReference": [
+              "ST.RF.310"
+            ],
+            "Status": "BOOK",
+            "TransactionId": "35",
+            "TransactionInformation": "transactioninformation-1b0a28",
+            "TransactionMutability": "Immutable",
+            "TransactionReference": "Domestic Payment -- 310",
+            "ValueDateTime": "2020-09-06T14:25:35+00:00"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.mandsbank.com/obie/open-banking/v4.0/aisp/accounts/123456791/transactions?toBookingDateTime=2026-10-17T07:45:22\u0026fromBookingDateTime=2020-01-01T00:00:00"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

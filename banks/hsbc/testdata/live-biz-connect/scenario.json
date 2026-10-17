@@ -1,0 +1,34 @@
+{
+  "config": {
+    "bank": "hsbc",
+    "country": "GB",
+    "segment": "business",
+    "env": "sandbox",
+    "now": "2026-10-17T07:43:13Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "b95db9fb-c788-4047-bd66-d475c429b74b",
+        "17d8a653-9f93-4c50-978e-8d8015b37ba2",
+        "f34b6737-a784-46c2-92a8-53a27aa01c0c",
+        "fb13bcbf-d46f-47de-b8f4-289e2adf2858",
+        "7cc3d125-a1fa-4206-ab7f-da5d00b96b87"
+      ],
+      "state": [
+        "c3d6bff6-2579-4173-bb10-cdad9770e1e2",
+        "6c22232d-6ae2-4bc2-a511-77c3efb3bf35"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A48ee1e\u0026id_token=REDACTED%3Aid_token%3A0c5087\u0026scope=openid+accounts\u0026state=c3d6bff6-2579-4173-bb10-cdad9770e1e2"
+    }
+  ]
+}

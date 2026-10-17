@@ -9,7 +9,10 @@ Production is `unverified` for every bank: it needs real QWAC/QSealC certificate
 
 | Bank | Countries | Spec | Sandbox | Payments | Notes |
 |---|---|---|---|---|---|
+| `firstdirect` | GB | UK OBIE v4.0 (HSBC) | personal `sandbox_verified` (2026-10-17) | `domestic` (Faster Payments); built like `hsbc`, not run for this brand | [hsbc.md](hsbc.md) |
+| `hsbc` | GB, MT | UK OBIE (v4.0 UK, v3.1 Malta) | GB personal, GB business, MT personal `sandbox_verified` (2026-10-17) | UK: `domestic` (Faster Payments); approved and executed in the sandbox for GB personal | [hsbc.md](hsbc.md) |
 | `ing` | BE, DE, ES, IT, LU, NL, RO | custom (Berlin Group-like, JWS-signed) | NL personal `sandbox_verified` (2026-10-16); others `experimental` | `sepa`, `sepa_instant`, `domestic` (RO), `crossborder`; status read in the sandbox, creation tested against a fake server | [ing.md](ing.md) |
+| `mandsbank` | GB | UK OBIE v4.0 (HSBC) | personal `sandbox_verified` (2026-10-17) | `domestic` (Faster Payments); built like `hsbc`, not run for this brand | [hsbc.md](hsbc.md) |
 | `nordea` | DK, FI, NO, SE | custom | FI personal and business `sandbox_verified` (2026-10-16); others `experimental` | personal: `sepa`, `sepa_instant` (FI), `domestic` (SE incl. Bankgiro/Plusgiro, DK, NO); created, signed and cancelled in the sandbox | [nordea.md](nordea.md) |
 | `revolut` | GB, EEA (30) | UK OBIE | GB personal `sandbox_verified` (2026-10-14); others `experimental` | domestic, SEPA, cross-border; not run in the sandbox yet | [revolut.md](revolut.md) |
 | `swedbank` | SE, EE, LV, LT | custom | SE `sandbox_verified` (2026-10-14); Baltics `experimental` | SE domestic, Bankgiro, international and cancel run in the sandbox; Baltic SEPA unverified | [swedbank.md](swedbank.md) |

@@ -1,0 +1,33 @@
+{
+  "config": {
+    "bank": "firstdirect",
+    "country": "GB",
+    "env": "sandbox",
+    "now": "2026-10-17T07:41:00Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "dea26eac-5575-4901-a806-d97f8d344729",
+        "d9d35176-a285-4c29-8b44-8a3149f2cae4",
+        "e8a2535c-1526-460b-a4c6-f1f572ad85a3",
+        "2811584a-7d94-4469-adda-35c8c65d41c6",
+        "a1c383ea-6a39-4f09-90e9-516ebd4a5dee"
+      ],
+      "state": [
+        "a9a49f78-416b-4a27-a015-0d91aa2adaef",
+        "bb5c1c70-6d87-49d7-9bf6-a0643baedd9a"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A0b44e5\u0026id_token=REDACTED%3Aid_token%3A0c5087\u0026scope=openid+accounts\u0026state=a9a49f78-416b-4a27-a015-0d91aa2adaef"
+    }
+  ]
+}

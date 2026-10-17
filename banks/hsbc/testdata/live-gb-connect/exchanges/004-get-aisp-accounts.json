@@ -1,0 +1,139 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v4.0/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:363166",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "0c273c9d-3520-4a29-9d85-9d57c7c04764"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-8a0763",
+                "Name": "name-04d1e5",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+              },
+              {
+                "Identification": "identification-746979",
+                "Name": "name-04d1e5",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "1123456841",
+            "AccountTypeCode": "SVGS",
+            "Currency": "GBP",
+            "Description": "BMM ACCOUNT",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            }
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-9a47ba",
+                "Name": "name-f9b7c3",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+                "SecondaryIdentification": "secondaryidentification-90282e"
+              },
+              {
+                "Identification": "identification-8a009d",
+                "Name": "name-f9b7c3",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "123456791",
+            "AccountTypeCode": "CACC",
+            "Currency": "GBP",
+            "Description": "Description of the account",
+            "MaturityDate": "2025-09-01T00:00:00+00:00",
+            "OpeningDate": "2020-03-01T00:00:00+00:00",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2020-09-01T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-9a47bb",
+                "Name": "name-ae1ae7",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber",
+                "SecondaryIdentification": "secondaryidentification-90282f"
+              },
+              {
+                "Identification": "identification-8a009e",
+                "Name": "name-ae1ae7",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "123456792",
+            "AccountTypeCode": "CACC",
+            "Currency": "GBP",
+            "Description": "Description of the account",
+            "MaturityDate": "2025-09-01T00:00:00+00:00",
+            "OpeningDate": "2020-03-01T00:00:00+00:00",
+            "Servicer": {
+              "Identification": "identification-492482",
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2020-09-01T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-06c1bf",
+                "Name": "name-cc3588",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "1123456843",
+            "AccountTypeCode": "CACC",
+            "Currency": "GBP",
+            "Description": "GLOBAL MONEY ACCOUNT"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-791af3",
+                "Name": "name-783b2e",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "1123456842",
+            "AccountTypeCode": "CARD",
+            "Currency": "GBP"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.hsbc.co.uk/obie/open-banking/v4.0/aisp/accounts"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

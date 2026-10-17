@@ -1,0 +1,79 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v4.0/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:be0923",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "cb9dfa1f-c64c-43ed-9e93-59d00b289947"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-80668f",
+                "Name": "name-f9b7c3",
+                "SchemeName": "UK.OBIE.PAN",
+                "SecondaryIdentification": "secondaryidentification-900cb6"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "123456791",
+            "AccountTypeCode": "CARD",
+            "Currency": "GBP",
+            "Description": "Description of the account",
+            "MaturityDate": "2025-09-01T00:00:00+00:00",
+            "OpeningDate": "2020-03-01T00:00:00+00:00",
+            "Servicer": {
+              "Identification": "identification-3112dc",
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2020-09-01T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-80668e",
+                "Name": "name-ae1ae7",
+                "SchemeName": "UK.OBIE.PAN",
+                "SecondaryIdentification": "secondaryidentification-900cb6"
+              }
+            ],
+            "AccountCategory": "Personal",
+            "AccountId": "123456792",
+            "AccountTypeCode": "CARD",
+            "Currency": "GBP",
+            "Description": "Description of the account",
+            "MaturityDate": "2025-09-01T00:00:00+00:00",
+            "OpeningDate": "2020-03-01T00:00:00+00:00",
+            "Servicer": {
+              "Identification": "identification-3112dc",
+              "SchemeName": "UK.OBIE.BICFI"
+            },
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2020-09-01T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.mandsbank.com/obie/open-banking/v4.0/aisp/accounts"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

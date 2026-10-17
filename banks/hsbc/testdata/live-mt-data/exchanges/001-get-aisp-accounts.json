@@ -1,0 +1,69 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v3.1/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:d2c860",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "e7f73aa9-2d61-442f-b90a-6c13ff893448"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-71f154",
+                "Name": "name-04d1e5",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+              }
+            ],
+            "AccountId": "1123456841",
+            "AccountSubType": "Savings",
+            "AccountType": "Personal",
+            "Currency": "GBP",
+            "Description": "BMM ACCOUNT",
+            "Nickname": "nickname-04d1e5",
+            "OpeningDate": "2024-07-22T00:00:00+00:00",
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2024-07-22T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-b6aead",
+                "Name": "name-d5aa55",
+                "SchemeName": "UK.OBIE.SortCodeAccountNumber"
+              }
+            ],
+            "AccountId": "123456791",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "GBP",
+            "Description": "BANK A/C",
+            "Nickname": "nickname-d5aa55",
+            "OpeningDate": "2024-07-22T00:00:00+00:00",
+            "Status": "Enabled",
+            "StatusUpdateDateTime": "2024-07-22T00:00:00+00:00",
+            "SwitchStatus": "UK.CASS.SwitchCompleted"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.hsbc.com.mt/obie/open-banking/v3.1/aisp/accounts"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

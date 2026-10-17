@@ -47,7 +47,7 @@ type Redactor struct {
 func DefaultRedactor(literals map[string]string) *Redactor {
 	r := &Redactor{Literals: map[string]string{}, SecretKeys: set(
 		"authorization", "cookie", "set-cookie", "x-api-key", "psu-id", "psu-corporate-id", "psu-ip-address", "x-fapi-customer-ip-address",
-		"client_secret", "client_id", "app-id", "apikey", "refresh_token", "access_token", "id_token", "token",
+		"client_secret", "client_id", "client_assertion", "x-jws-signature", "app-id", "apikey", "refresh_token", "access_token", "id_token", "token",
 		"code", "access_code", "authorizationcode", "authorization_code", "auth_code", "otp", "password",
 		"personalid", "personal_id", "phonenumber", "phone_number", "psu_id", "psuid", "clientid",
 	), PIIKeys: set(
@@ -281,6 +281,9 @@ func pseudonym(kind, s string) string {
 		}
 	case "bban":
 		return "00PSEUDO" + strings.ToUpper(sum[:8])
+	case "sortcode":
+		// 14 digits, so it still passes as a UK sort code and account number.
+		return fmt.Sprintf("%014d", h.Sum64()%100000000000000)
 	}
 	return kind + "-" + sum[:6]
 }

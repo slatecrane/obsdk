@@ -1,0 +1,67 @@
+{
+  "config": {
+    "bank": "hsbc",
+    "country": "GB",
+    "env": "sandbox",
+    "now": "2026-10-17T07:29:41Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "1508f9b9-7cc3-49db-90aa-5cfa9751f84e",
+        "d5957115-13ed-4568-973d-c491b4735e6b",
+        "eb00c3d0-887e-4dff-a61b-c9f739d1f162",
+        "095030b5-6aca-4317-b479-3dd4c814a39f",
+        "1edf69b0-f92c-40a3-87b5-23b59f9c86e3",
+        "8f3ae469-1c85-4782-8bab-4f3698f43eec",
+        "e7880750-73cd-4543-9e3f-001183788db1",
+        "ed461312-444e-45fd-b6c2-230bfb2edc1f",
+        "761adfb9-152b-46bc-a9e1-959aa6c57f5d",
+        "d66cef68-6361-4045-8d7f-c21c5c2fe9f2",
+        "76c8a6b2-3728-4e58-8e9a-3410796ed531"
+      ],
+      "state": [
+        "470c294a-09cb-4777-9bc4-384d7c3c86e3",
+        "f019dea0-a935-46c8-9cd8-ccf921d8d438"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "domestic",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "10.50",
+              "currency": "GBP"
+            },
+            "creditor": {
+              "name": "name-e4431c",
+              "account": {
+                "scheme": "SORT_CODE_ACCOUNT",
+                "value": "20577352229249"
+              }
+            },
+            "remittance": [
+              "INV-1234"
+            ]
+          }
+        ],
+        "context": "party_to_party"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A0e4868\u0026id_token=REDACTED%3Aid_token%3A0c5087\u0026scope=openid+payments\u0026state=470c294a-09cb-4777-9bc4-384d7c3c86e3"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiaHNiYy1vYi1oc2JjIiwiZiI6ImRvbWVzdGljIiwiaWQiOiIyMDU0OSIsInQiOiJkb21lc3RpYyJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

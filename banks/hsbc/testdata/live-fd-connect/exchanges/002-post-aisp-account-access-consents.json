@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/obie/open-banking/v4.0/aisp/account-access-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:fd6a6a",
+      "Content-Type": "application/json",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "d9d35176-a285-4c29-8b44-8a3149f2cae4"
+    },
+    "body": {
+      "Data": {
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ]
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "764330956",
+        "CreationDateTime": "2026-10-17T07:41:01+00:00",
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ],
+        "Status": "AWAU",
+        "StatusUpdateDateTime": "2026-10-17T07:41:01+00:00"
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.firstdirect.com/obie/open-banking/v4.0/aisp/account-access-consents/764330956"
+      },
+      "Meta": {
+        "TotalPages": 1
+      },
+      "Risk": {}
+    }
+  }
+}

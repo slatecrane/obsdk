@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/obie/open-banking/v1.1/oauth2/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_assertion=REDACTED%3Aclient_assertion%3A25fa84\u0026client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer\u0026client_id=REDACTED%3Aclient_id\u0026grant_type=refresh_token\u0026refresh_token=REDACTED%3Arefresh_token%3A29ae51"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:47e5cf",
+      "expires_in": 3599,
+      "id_token": "REDACTED:id_token:588186",
+      "refresh_token": "REDACTED:refresh_token:29ae51",
+      "scope": "openid accounts",
+      "token_type": "Bearer"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "config": {
+    "bank": "hsbc",
+    "country": "GB",
+    "env": "sandbox",
+    "now": "2026-10-17T07:27:58Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "f9d8cb3c-ccba-4715-9bbd-9e99cc26cef3",
+        "db6c518c-e9a9-476b-a128-259a0a15fc8a",
+        "1577e497-f984-4043-8eb0-02bc3bb91f02",
+        "fc705812-b61b-4014-80ee-ece2a1827e64",
+        "5a604848-7a0d-457e-9b7e-98a062d503a2",
+        "498bf41b-51d2-4a32-b79b-724231ca12b1"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "123456791",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "123456791",
+      "from": "2026-09-17T07:28:03Z",
+      "to": "2026-10-17T07:28:03Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "123456791",
+      "from": "2026-09-17T07:28:25Z",
+      "to": "2026-10-17T07:28:25Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "cursor": "https://secure.sandbox.ob.hsbc.co.uk/obie/open-banking/v4.0/aisp/accounts/123456791/transactions?page=1\u0026toBookingDateTime=2026-10-17T07:28:22\u0026fromBookingDateTime=2026-09-17T07:28:22",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "1123456842",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "refresh"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v4.0/aisp/accounts/123456792/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:be0923",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "27df7713-512b-47d8-84b3-1de1763b7c29"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "123456792",
+            "Amount": {
+              "Amount": "10025.50",
+              "Currency": "GBP"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditLine": [
+              {
+                "Amount": {
+                  "Amount": "47.28",
+                  "Currency": "GBP"
+                },
+                "Included": true,
+                "Type": "Credit"
+              }
+            ],
+            "DateTime": "2020-05-12T05:36:46+00:00",
+            "Type": "ITAV"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.mandsbank.com/obie/open-banking/v4.0/aisp/accounts/123456792/balances"
+      },
+      "Meta": {
+        "TotalPages": 1
+      }
+    }
+  }
+}

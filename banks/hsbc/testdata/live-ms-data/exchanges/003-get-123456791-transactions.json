@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/obie/open-banking/v4.0/aisp/accounts/123456791/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-17T07:44:54"
+      ],
+      "toBookingDateTime": [
+        "2026-10-17T07:44:54"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:be0923",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:a3d11e",
+      "X-Fapi-Interaction-Id": "8352a540-baa0-48ac-946d-e1e7017cc68a"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Data": {
+        "Transaction": []
+      },
+      "Links": {
+        "Self": "https://secure.sandbox.ob.mandsbank.com/obie/open-banking/v4.0/aisp/accounts/123456791/transactions?toBookingDateTime=2026-10-17T07:44:54\u0026fromBookingDateTime=2026-09-17T07:44:54"
+      },
+      "Meta": {
+        "TotalPages": 0
+      }
+    }
+  }
+}

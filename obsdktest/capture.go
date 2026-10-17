@@ -278,6 +278,8 @@ func (r *ScenarioRecorder) pseudoIdentifier(id obsdk.Identifier) obsdk.Identifie
 	case obsdk.SchemeBankgiro, obsdk.SchemePlusgiro:
 	case obsdk.SchemeIBAN:
 		id.Value = r.Red.account("iban", id.Value)
+	case obsdk.SchemeSortCodeAccount:
+		id.Value = r.Red.account("sortcode", id.Value)
 	default:
 		id.Value = r.Red.account("bban", id.Value)
 	}

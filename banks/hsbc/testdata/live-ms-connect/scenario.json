@@ -1,0 +1,33 @@
+{
+  "config": {
+    "bank": "mandsbank",
+    "country": "GB",
+    "env": "sandbox",
+    "now": "2026-10-17T07:42:10Z",
+    "redirect_url": "https://example.com",
+    "ids": {
+      "request": [
+        "e4bcebde-d6e9-4e89-a7a6-073ef2db55b7",
+        "3ef5e6f4-b83c-4b7f-b15b-398d96c3e986",
+        "af5f7d16-2413-4bce-b84c-2d8a8606978b",
+        "29224279-83ab-48de-89d9-d3dbea97254d",
+        "6aec105f-2386-47c0-aa48-16ab0072c2bb"
+      ],
+      "state": [
+        "d35e403e-0fdc-4ba3-aecf-8435ee8abff2",
+        "da3c22d7-e05b-4ea9-b344-1f759c8292d8"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A9860d5\u0026id_token=REDACTED%3Aid_token%3A0c5087\u0026scope=openid+accounts\u0026state=d35e403e-0fdc-4ba3-aecf-8435ee8abff2"
+    }
+  ]
+}
