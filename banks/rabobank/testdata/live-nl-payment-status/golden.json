@@ -1,0 +1,98 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "123e4567-e89b-42d3-a456-556642440005",
+      "type": "sepa",
+      "status": "received",
+      "bank_status": "ACTC",
+      "final": false,
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwNSIsInQiOiJzZXBhIn0"
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "123e4567-e89b-42d3-a456-556642440006",
+      "type": "sepa",
+      "status": "received",
+      "bank_status": "PDNG",
+      "final": false,
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwNiIsInQiOiJzZXBhIn0"
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "123e4567-e89b-42d3-a456-556642440007",
+      "type": "sepa",
+      "status": "in_progress",
+      "bank_status": "ACSP",
+      "final": false,
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwNyIsInQiOiJzZXBhIn0"
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "123e4567-e89b-42d3-a456-556642440018",
+      "type": "sepa",
+      "status": "in_progress",
+      "bank_status": "ACSP",
+      "final": false,
+      "reason": "insufficient_funds",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAxOCIsInQiOiJzZXBhIn0"
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "123e4567-e89b-42d3-a456-556642440009",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "ACSC",
+      "final": true,
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwOSIsInQiOiJzZXBhIn0"
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "123e4567-e89b-42d3-a456-556642440011",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "ACCC",
+      "final": true,
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAxMSIsInQiOiJzZXBhIn0"
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "123e4567-e89b-42d3-a456-556642440008",
+      "type": "sepa",
+      "status": "rejected",
+      "bank_status": "RJCT",
+      "final": true,
+      "reason": "AM04",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwOCIsInQiOiJzZXBhIn0"
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "123e4567-e89b-42d3-a456-556642440014",
+      "type": "sepa",
+      "status": "cancelled",
+      "bank_status": "CANC",
+      "final": true,
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAxNCIsInQiOiJzZXBhIn0"
+    }
+  },
+  {
+    "op": "payment_status",
+    "error": {
+      "message": "obsdk: payment_status: HTTP 404 RESOURCE_UNKNOWN: Forced status not found."
+    }
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "config": {
+    "bank": "rabobank",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-17T09:09:43Z",
+    "redirect_url": "https://example.com/cb",
+    "ids": {
+      "request": [
+        "66348fe5-25f5-48b8-b6b6-47242b77c672",
+        "43fd6212-ef75-42f6-8286-856d2cc1f871",
+        "272095ad-1491-418a-94b6-6464ea71dab0",
+        "89292140-9bc3-4054-a0d3-e8833c2e3e67",
+        "f11ac877-3dff-4389-a898-b967c5b17d18",
+        "0ee5a89d-c184-471a-9a1e-62f29f871d05",
+        "53163406-da18-4727-8e2e-cdfe10e20bf4",
+        "f58e8234-0216-4849-a12e-7af3e152783f",
+        "44332a9b-1a20-4395-aa9a-492796ccd1e1"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwNSIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwNiIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwNyIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAxOCIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwOSIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAxMSIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwOCIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAxNCIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmFib2JhbmstcHNkMiIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6IjEyM2U0NTY3LWU4OWItNDJkMy1hNDU2LTU1NjY0MjQ0MDAwMSIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

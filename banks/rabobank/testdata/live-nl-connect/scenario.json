@@ -1,0 +1,28 @@
+{
+  "config": {
+    "bank": "rabobank",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-17T08:57:47Z",
+    "redirect_url": "https://example.com/cb",
+    "ids": {
+      "request": [
+        "167dda18-6a0f-4caa-a3af-1cec311e2751"
+      ],
+      "state": [
+        "91698793-d27a-482e-9ad3-71286ef32e60"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/cb?code=REDACTED%3Acode%3A8ac961\u0026state=91698793-d27a-482e-9ad3-71286ef32e60"
+    }
+  ]
+}

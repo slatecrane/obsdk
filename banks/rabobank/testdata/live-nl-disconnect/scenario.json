@@ -1,0 +1,24 @@
+{
+  "config": {
+    "bank": "rabobank",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-17T09:10:19Z",
+    "redirect_url": "https://example.com/cb",
+    "ids": {
+      "request": [
+        "4890dde2-6c53-40c6-b216-77966a1f2e62"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "disconnect"
+    },
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

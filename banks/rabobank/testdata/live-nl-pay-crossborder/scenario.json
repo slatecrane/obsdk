@@ -1,0 +1,63 @@
+{
+  "config": {
+    "bank": "rabobank",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-17T09:10:12Z",
+    "redirect_url": "https://example.com/cb",
+    "ids": {
+      "request": [
+        "af7195be-b7c1-42c2-bc38-6bbe43817e91",
+        "9be0a6b2-84e2-420e-9cfa-4a76e38a32a9"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "crossborder",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "NL11PSEUDO3FD53BDDC5"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "10.25",
+              "currency": "USD"
+            },
+            "creditor": {
+              "name": "name-7cb4e5",
+              "account": {
+                "scheme": "BBAN",
+                "value": "00PSEUDO99924FCF"
+              },
+              "agent": {
+                "bic": "BANKUS33XXX"
+              },
+              "address": {
+                "street": "5th Ave",
+                "post_code": "5017",
+                "town": "New York",
+                "country": "US"
+              }
+            },
+            "remittance": [
+              "Invoice 42"
+            ]
+          }
+        ],
+        "charge_bearer": "DEBT"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/cb"
+    }
+  ]
+}
