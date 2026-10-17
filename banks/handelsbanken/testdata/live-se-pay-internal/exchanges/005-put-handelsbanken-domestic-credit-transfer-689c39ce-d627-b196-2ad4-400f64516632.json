@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/openbanking/psd2/se/v2/payments/private/single/handelsbanken-domestic-credit-transfer/689c39ce-d627-b196-2ad4-400f64516632",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:f7523e",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "ebeca599-ada8-466a-97b8-0c65be4c937e",
+      "Tpp-Transaction-Id": "fa28f9de-e423-4897-83bc-7f2bb165123b",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "689c39ce-d627-b196-2ad4-400f64516632",
+      "transactionStatus": "ACCC"
+    }
+  }
+}

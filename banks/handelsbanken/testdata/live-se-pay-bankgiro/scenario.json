@@ -1,0 +1,62 @@
+{
+  "config": {
+    "bank": "handelsbanken",
+    "country": "SE",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T18:36:06Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "sandbox_user": "SANDBOX-INDIVIDUAL-SE-1"
+    },
+    "ids": {
+      "request": [
+        "81fb77c7-cde4-487d-9eef-10ab6e37cf81",
+        "ca57c39a-b3da-4f8a-bdf4-44876b97e5c9",
+        "e7bf4160-b88d-41fe-a4e5-ef6a37bafa32",
+        "474d98ae-7da1-40b2-a667-087933bbb707",
+        "ce9e4ed7-2805-4542-a359-02959b5515c9",
+        "9d391a78-4b67-499e-ab96-179fe890a5e5",
+        "7d7e0fb7-6d55-4ef1-84f4-9e9550baad59"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "decoupled",
+      "payment": {
+        "type": "domestic",
+        "debtor": {
+          "account": {
+            "scheme": "BBAN",
+            "value": "6742785417504"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "10.50",
+              "currency": "SEK"
+            },
+            "creditor": {
+              "account": {
+                "scheme": "BANKGIRO",
+                "value": "5050-1055"
+              }
+            },
+            "reference": {
+              "scheme": "OCR",
+              "value": "1234567897"
+            }
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume"
+    }
+  ]
+}

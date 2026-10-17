@@ -1,0 +1,39 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": false,
+      "message": "Waiting for the user to confirm in Mobile BankID.",
+      "challenge": {
+        "auto_start_token": "Not a valid auto_start_token",
+        "text": "Open Mobile BankID and confirm."
+      },
+      "wait_for": 2000000000,
+      "payment": {
+        "id": "a7f45f5d-a6a7-241e-16d1-75a42876e328",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6InNlay1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6ImE3ZjQ1ZjVkLWE2YTctMjQxZS0xNmQxLTc1YTQyODc2ZTMyOCIsImlkcyI6WyI0MzJkYTdkZi03MmJlLWQ3NTUtZWViOC04YzYyYWNlNmQ4ZTciXSwiYiI6eyJkZWJ0b3JBY2NvdW50Ijp7InZhbHVlIjoiNzg1NDE3NTA0IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImluc3RydWN0ZWRBbW91bnQiOnsiYW1vdW50IjoxMC41MCwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiNTA1MC0xMDU1IiwiYWNjb3VudFR5cGUiOiJCRyJ9LCJyZW1pdHRhbmNlSW5mb3JtYXRpb24iOnsidGV4dCI6IjEyMzQ1Njc4OTcifX19"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "a7f45f5d-a6a7-241e-16d1-75a42876e328",
+        "type": "domestic",
+        "status": "accepted",
+        "bank_status": "ACCP",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6InNlay1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6ImE3ZjQ1ZjVkLWE2YTctMjQxZS0xNmQxLTc1YTQyODc2ZTMyOCIsImlkcyI6WyI0MzJkYTdkZi03MmJlLWQ3NTUtZWViOC04YzYyYWNlNmQ4ZTciXSwiYiI6eyJkZWJ0b3JBY2NvdW50Ijp7InZhbHVlIjoiNzg1NDE3NTA0IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImluc3RydWN0ZWRBbW91bnQiOnsiYW1vdW50IjoxMC41MCwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiNTA1MC0xMDU1IiwiYWNjb3VudFR5cGUiOiJCRyJ9LCJyZW1pdHRhbmNlSW5mb3JtYXRpb24iOnsidGV4dCI6IjEyMzQ1Njc4OTcifX19"
+      }
+    }
+  }
+]

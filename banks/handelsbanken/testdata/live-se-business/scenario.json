@@ -1,0 +1,66 @@
+{
+  "config": {
+    "bank": "handelsbanken",
+    "country": "SE",
+    "segment": "business",
+    "env": "sandbox",
+    "now": "2026-10-17T18:35:48Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "sandbox_user": "SANDBOX-CORPORATE-SE-1"
+    },
+    "ids": {
+      "request": [
+        "4f450fbd-94d0-4941-abad-4c178974bcc3",
+        "ef8a605b-26fd-4b48-bd58-a637faa6e7b0",
+        "3075139e-b99e-4527-bfa3-18cb0275494b",
+        "961ec310-11ce-450d-93ad-81abf550b381",
+        "8b961bb0-43a5-4aed-b22f-58ecdec5323d",
+        "93c75bae-4f13-4a1a-a573-5da9f1c5c321",
+        "0bb23ade-7c0f-4bfa-bb84-13ab7c7c623e",
+        "efeac603-d786-4fcd-9ef9-5abe890bb42f",
+        "c3325f35-e21c-4aa7-adaf-00481db7d506",
+        "d5abe4bd-3021-4681-94ce-b2674405dec6"
+      ],
+      "state": [
+        "2406c17c-245b-4779-99c7-445f6c89e547"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "corporate_id": "SANDBOX-CORPORATE-SE-1"
+      }
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com?code=REDACTED%3Acode%3A67b8de\u0026state=2406c17c-245b-4779-99c7-445f6c89e547"
+    },
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "66f6ebe2-04e8-dac6-035a-b1de92345d2e",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "66f6ebe2-04e8-dac6-035a-b1de92345d2e",
+      "from": "2026-10-01T00:00:00Z",
+      "to": "2026-10-17T00:00:00Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

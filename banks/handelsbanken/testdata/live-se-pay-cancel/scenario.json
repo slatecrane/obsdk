@@ -1,0 +1,89 @@
+{
+  "config": {
+    "bank": "handelsbanken",
+    "country": "SE",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T18:36:09Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "sandbox_user": "SANDBOX-INDIVIDUAL-SE-1"
+    },
+    "ids": {
+      "request": [
+        "96919a07-b292-4a44-a23d-f18ea96e5751",
+        "a191141c-7464-4250-be05-c86fdbd495eb",
+        "c31aea9d-da0e-4b69-9ab7-19e296d6f442",
+        "5c7cad76-cbba-46e1-804d-222ae24791e6",
+        "d5b40e74-f4c0-4311-9fa4-1b1a376a148f",
+        "dd0c19bf-1599-4848-a1eb-5269e9d9bb09",
+        "3cee9094-1207-4120-b4fd-3fd8b6a112bc",
+        "0a8dd2c3-e365-4bf5-a215-66297bc9df77",
+        "87e5bba6-4c98-4952-bec5-7efcbc134b59",
+        "df36f112-37d6-408b-880e-ad887538e3d2",
+        "cd324f55-4c22-4b67-bf22-6017ee8f2ca4",
+        "540e2717-66a3-4305-8b11-89331b281cc0",
+        "8499f5d3-45e6-46b0-a471-c58eb5e00cbc"
+      ],
+      "state": [
+        "89f68297-e278-4a81-81c3-655263a39e0f",
+        "eea5496a-7aed-4e8f-aa51-3c9d5cf448f1"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "domestic",
+        "debtor": {
+          "account": {
+            "scheme": "BBAN",
+            "value": "6742785417504"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "99",
+              "currency": "SEK"
+            },
+            "creditor": {
+              "name": "name-caca06",
+              "account": {
+                "scheme": "BBAN",
+                "value": "86506056987094"
+              }
+            },
+            "remittance": [
+              "Rent November"
+            ]
+          }
+        ],
+        "execution_date": "2026-11-25"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com?code=REDACTED%3Acode%3A9f63db\u0026state=89f68297-e278-4a81-81c3-655263a39e0f"
+    },
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6InNlay1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6ImU0YTJkOTdiLWIwNjItYmVkMy0wMDU2LTYyOWIyY2I1YzJiMyIsImlkcyI6WyJhZDAyMzcwMS0yNWVmLWRlNDYtZmUxZS0wMThmNTYxNTIxNzUiXSwiYiI6eyJkZWJ0b3JBY2NvdW50Ijp7InZhbHVlIjoiOTIzNDUwMDE3IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImluc3RydWN0ZWRBbW91bnQiOnsiYW1vdW50Ijo5OSwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiMTIzNDU2Nzg5IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImNyZWRpdG9yIjp7Im5hbWUiOiJBbm5hIFN2ZW5zc29uIn0sImNyZWRpdG9yQWdlbnQiOnsiaWRlbnRpZmljYXRpb24iOnsiY29kZSI6IjgzMjc5In19LCJyZXF1ZXN0ZWRFeGVjdXRpb25EYXRlIjoiMjAyNi0xMS0yNSIsInJlbWl0dGFuY2VJbmZvcm1hdGlvbiI6eyJ0ZXh0IjoiUmVudCBOb3ZlbWJlciJ9fX0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com?code=REDACTED%3Acode%3A4d6156\u0026state=eea5496a-7aed-4e8f-aa51-3c9d5cf448f1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6InNlay1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6ImU0YTJkOTdiLWIwNjItYmVkMy0wMDU2LTYyOWIyY2I1YzJiMyIsImlkcyI6WyJhZDAyMzcwMS0yNWVmLWRlNDYtZmUxZS0wMThmNTYxNTIxNzUiXSwiYiI6eyJkZWJ0b3JBY2NvdW50Ijp7InZhbHVlIjoiOTIzNDUwMDE3IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImluc3RydWN0ZWRBbW91bnQiOnsiYW1vdW50Ijo5OSwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiMTIzNDU2Nzg5IiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImNyZWRpdG9yIjp7Im5hbWUiOiJBbm5hIFN2ZW5zc29uIn0sImNyZWRpdG9yQWdlbnQiOnsiaWRlbnRpZmljYXRpb24iOnsiY29kZSI6IjgzMjc5In19LCJyZXF1ZXN0ZWRFeGVjdXRpb25EYXRlIjoiMjAyNi0xMS0yNSIsInJlbWl0dGFuY2VJbmZvcm1hdGlvbiI6eyJ0ZXh0IjoiUmVudCBOb3ZlbWJlciJ9fX0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

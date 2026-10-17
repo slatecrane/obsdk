@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/nl/v1/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:d91215",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "4436a91b-b8e8-4340-8b8e-46c2cd192cb7",
+      "Tpp-Transaction-Id": "a905816a-c538-45a3-886d-5e670d07c1d5",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/9e482191-bb03-7bee-bb61-3fd067822975/transactions"
+            }
+          },
+          "accountId": "9e482191-bb03-7bee-bb61-3fd067822975",
+          "accountType": "Betaalrekening",
+          "bic": "HANDNL2A",
+          "currency": "EUR",
+          "iban": "NL40PSEUDOC22F51CF03",
+          "ownerName": "ownername-f84e08"
+        },
+        {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/b3fafbda-9009-4198-1bbb-8068acbd8590/transactions"
+            }
+          },
+          "accountId": "b3fafbda-9009-4198-1bbb-8068acbd8590",
+          "accountType": "Betaalrekening",
+          "bic": "HANDNL2A",
+          "currency": "EUR",
+          "iban": "NL78PSEUDOBBA96C7F1B",
+          "ownerName": "ownername-f84e08"
+        }
+      ]
+    }
+  }
+}

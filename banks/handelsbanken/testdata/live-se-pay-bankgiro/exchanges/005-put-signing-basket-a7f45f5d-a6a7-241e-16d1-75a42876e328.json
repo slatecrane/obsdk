@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/openbanking/psd2/se/v2/payments/private/signing-basket/a7f45f5d-a6a7-241e-16d1-75a42876e328",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:5376f2",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "474d98ae-7da1-40b2-a667-087933bbb707",
+      "Tpp-Transaction-Id": "ce9e4ed7-2805-4542-a359-02959b5515c9",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "signingBasketId": "a7f45f5d-a6a7-241e-16d1-75a42876e328",
+      "transactionStatus": "SUCCEEDED"
+    }
+  }
+}

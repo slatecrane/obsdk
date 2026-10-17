@@ -1,0 +1,247 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Handelsbanken needs the company's id for a business connection.",
+      "fields": [
+        {
+          "key": "corporate_id",
+          "label": "Company id (SE: organisation number, NL: corporate number)",
+          "kind": "text",
+          "required": true
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Handelsbanken to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3A18b6c7&state=82d67a0b-6c15-40ab-9412-2d5035ae3805"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "handelsbanken",
+        "country": "NL",
+        "segment": "business",
+        "env": "sandbox",
+        "integration": "handelsbanken-psd2-v1",
+        "generation": 1,
+        "updated_at": "2026-10-17T18:35:58Z",
+        "access_token": "REDACTED:access_token:3c7051",
+        "refresh_token": "REDACTED:refresh_token:432f87",
+        "token_type": "Bearer",
+        "scope": "AIS:9425f87e-38b0-6e36-e8d1-d90761d97e1e",
+        "access_expires_at": "2026-10-18T18:35:58Z",
+        "consents": {
+          "accounts": {
+            "id": "9425f87e-38b0-6e36-e8d1-d90761d97e1e",
+            "kind": "accounts",
+            "status": "valid",
+            "valid_until": "2027-04-15T18:35:58Z"
+          }
+        },
+        "meta": {
+          "method": "redirect"
+        }
+      },
+      "accounts": [
+        {
+          "id": "ca8aaba8-4c21-760c-3851-181eaa68263a",
+          "stable_id": "90cace7be2df8bd4a2debc61f4f65714",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "NL23PSEUDO0B3A291E81"
+            }
+          ],
+          "name": "name-010445",
+          "owner_name": "ownername-f3fff7",
+          "currency": "EUR",
+          "usage": "ORGA",
+          "bic": "HANDNL22",
+          "raw": {
+            "_links": {
+              "transactions": {
+                "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/ca8aaba8-4c21-760c-3851-181eaa68263a/transactions"
+              }
+            },
+            "accountId": "ca8aaba8-4c21-760c-3851-181eaa68263a",
+            "bic": "HANDNL22",
+            "currency": "EUR",
+            "iban": "NL23PSEUDO0B3A291E81",
+            "name": "name-010445",
+            "ownerName": "ownername-f3fff7"
+          }
+        },
+        {
+          "id": "da60aeb7-ed40-4cdf-d9eb-2c868ee28212",
+          "stable_id": "44f6a54c021506a3becf9a2ae621721b",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "NL30PSEUDOC8E68F40CB"
+            }
+          ],
+          "name": "name-010445",
+          "owner_name": "ownername-f3fff7",
+          "currency": "EUR",
+          "usage": "ORGA",
+          "bic": "HANDNL22",
+          "raw": {
+            "_links": {
+              "transactions": {
+                "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/da60aeb7-ed40-4cdf-d9eb-2c868ee28212/transactions"
+              }
+            },
+            "accountId": "da60aeb7-ed40-4cdf-d9eb-2c868ee28212",
+            "bic": "HANDNL22",
+            "currency": "EUR",
+            "iban": "NL30PSEUDOC8E68F40CB",
+            "name": "name-010445",
+            "ownerName": "ownername-f3fff7"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "ca8aaba8-4c21-760c-3851-181eaa68263a",
+        "stable_id": "90cace7be2df8bd4a2debc61f4f65714",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL23PSEUDO0B3A291E81"
+          }
+        ],
+        "name": "name-010445",
+        "owner_name": "ownername-f3fff7",
+        "currency": "EUR",
+        "usage": "ORGA",
+        "bic": "HANDNL22",
+        "raw": {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/ca8aaba8-4c21-760c-3851-181eaa68263a/transactions"
+            }
+          },
+          "accountId": "ca8aaba8-4c21-760c-3851-181eaa68263a",
+          "bic": "HANDNL22",
+          "currency": "EUR",
+          "iban": "NL23PSEUDO0B3A291E81",
+          "name": "name-010445",
+          "ownerName": "ownername-f3fff7"
+        }
+      },
+      {
+        "id": "da60aeb7-ed40-4cdf-d9eb-2c868ee28212",
+        "stable_id": "44f6a54c021506a3becf9a2ae621721b",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL30PSEUDOC8E68F40CB"
+          }
+        ],
+        "name": "name-010445",
+        "owner_name": "ownername-f3fff7",
+        "currency": "EUR",
+        "usage": "ORGA",
+        "bic": "HANDNL22",
+        "raw": {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/da60aeb7-ed40-4cdf-d9eb-2c868ee28212/transactions"
+            }
+          },
+          "accountId": "da60aeb7-ed40-4cdf-d9eb-2c868ee28212",
+          "bic": "HANDNL22",
+          "currency": "EUR",
+          "iban": "NL30PSEUDOC8E68F40CB",
+          "name": "name-010445",
+          "ownerName": "ownername-f3fff7"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "CURRENT",
+        "amount": {
+          "amount": "100000.00",
+          "currency": "EUR"
+        }
+      },
+      {
+        "kind": "other",
+        "bank_type": "VALUE_DATE",
+        "amount": {
+          "amount": "100000.00",
+          "currency": "EUR"
+        }
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "840.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-17",
+          "value_date": "2026-10-17",
+          "counterparty": {},
+          "remittance": [
+            "Product sale"
+          ],
+          "balance_after": {
+            "amount": "100000.00",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": {
+              "content": 840.00,
+              "currency": "EUR"
+            },
+            "balance": {
+              "amount": {
+                "content": 100000.00,
+                "currency": "EUR"
+              },
+              "balanceType": "CURRENT"
+            },
+            "bookingDate": "2026-10-17",
+            "creditDebit": "CREDITED",
+            "remittanceInformation": "Product sale",
+            "status": "BOOKED",
+            "valueDate": "2026-10-17"
+          }
+        }
+      ]
+    }
+  }
+]

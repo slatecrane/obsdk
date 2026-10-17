@@ -1,0 +1,75 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/psd2/se/v2/payments/private/single/handelsbanken-domestic-credit-transfer",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:068ddb",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "18f844e5-fef3-427c-9c89-19b68a087e33",
+      "Tpp-Transaction-Id": "94598c0f-7523-45d0-830e-7d224bf5beff",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "creditorAccount": {
+        "accountType": "BBAN",
+        "value": "923460012"
+      },
+      "creditorAgent": {
+        "identification": {
+          "code": "6001",
+          "type": "SESBA"
+        }
+      },
+      "debtorAccount": {
+        "accountType": "BBAN",
+        "text": "Savings",
+        "value": "923450017"
+      },
+      "instructedAmount": {
+        "amount": 5,
+        "currency": "SEK"
+      },
+      "remittanceInformation": {
+        "text": "Savings"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "689c39ce-d627-b196-2ad4-400f64516632",
+      "scaMethods": [
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/decoupled/mbid/initAuthorization/2.0",
+                "name": "name-f696e0",
+                "type": "application/json"
+              }
+            ]
+          },
+          "scaMethodType": "DECOUPLED"
+        },
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/oauth2/authorize/1.0",
+                "name": "name-274074",
+                "type": "application/x-www-form-urlencoded"
+              }
+            ]
+          },
+          "scaMethodType": "REDIRECT"
+        }
+      ],
+      "transactionStatus": "ACTC"
+    }
+  }
+}

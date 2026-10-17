@@ -1,0 +1,582 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/nl/v1/accounts/9e482191-bb03-7bee-bb61-3fd067822975/transactions",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:d91215",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "007305dd-59c5-4756-98df-7b9222a74204",
+      "Tpp-Transaction-Id": "9e0ec5d9-8261-4746-8656-b39790296418",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactions": [
+        {
+          "amount": {
+            "content": 114.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10000.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-17",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-17"
+        },
+        {
+          "amount": {
+            "content": 12.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10114.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-16",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-16"
+        },
+        {
+          "amount": {
+            "content": 48.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10126.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-15",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-15"
+        },
+        {
+          "amount": {
+            "content": 84.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10174.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-14",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-14"
+        },
+        {
+          "amount": {
+            "content": 88.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10090.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-13",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-13"
+        },
+        {
+          "amount": {
+            "content": 196.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10178.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-12",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-12"
+        },
+        {
+          "amount": {
+            "content": 44.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 9982.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-11",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-11"
+        },
+        {
+          "amount": {
+            "content": 90.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10026.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-10",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-10"
+        },
+        {
+          "amount": {
+            "content": 76.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10116.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-09",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-09"
+        },
+        {
+          "amount": {
+            "content": 168.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10192.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-08",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-08"
+        },
+        {
+          "amount": {
+            "content": 78.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10360.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-07",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-07"
+        },
+        {
+          "amount": {
+            "content": 86.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10438.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-06",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-06"
+        },
+        {
+          "amount": {
+            "content": 90.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10524.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-05",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-05"
+        },
+        {
+          "amount": {
+            "content": 4.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10434.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-04",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-04"
+        },
+        {
+          "amount": {
+            "content": 130.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10438.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-03",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-03"
+        },
+        {
+          "amount": {
+            "content": 108.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10568.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-02",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-02"
+        },
+        {
+          "amount": {
+            "content": 108.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10460.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-10-01",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-01"
+        },
+        {
+          "amount": {
+            "content": 52.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10568.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-30",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-30"
+        },
+        {
+          "amount": {
+            "content": 150.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10620.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-29",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-29"
+        },
+        {
+          "amount": {
+            "content": 180.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10770.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-28",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-09-28"
+        },
+        {
+          "amount": {
+            "content": 84.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10590.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-27",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-09-27"
+        },
+        {
+          "amount": {
+            "content": 8.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10506.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-26",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-09-26"
+        },
+        {
+          "amount": {
+            "content": 4.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10498.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-25",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-25"
+        },
+        {
+          "amount": {
+            "content": 120.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10502.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-24",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-24"
+        },
+        {
+          "amount": {
+            "content": 110.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10622.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-23",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-23"
+        },
+        {
+          "amount": {
+            "content": 110.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10732.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-22",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-22"
+        },
+        {
+          "amount": {
+            "content": 182.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10842.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-21",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-21"
+        },
+        {
+          "amount": {
+            "content": 26.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 11024.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-20",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-20"
+        },
+        {
+          "amount": {
+            "content": 122.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 11050.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-19",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-09-19"
+        },
+        {
+          "amount": {
+            "content": 98.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 10928.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-18",
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-09-18"
+        },
+        {
+          "amount": {
+            "content": 110.00,
+            "currency": "EUR"
+          },
+          "balance": {
+            "amount": {
+              "content": 11026.00,
+              "currency": "EUR"
+            },
+            "balanceType": "CURRENT"
+          },
+          "bookingDate": "2026-09-17",
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-09-17"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/v2/accounts/66f6ebe2-04e8-dac6-035a-b1de92345d2e",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f5cb7",
+      "Country": "SE",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "0bb23ade-7c0f-4bfa-bb84-13ab7c7c623e",
+      "Tpp-Transaction-Id": "efeac603-d786-4fcd-9ef9-5abe890bb42f",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "transactions": {
+          "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/66f6ebe2-04e8-dac6-035a-b1de92345d2e/transactions"
+        }
+      },
+      "accountId": "66f6ebe2-04e8-dac6-035a-b1de92345d2e",
+      "accountType": "Checkkonto",
+      "balances": [
+        {
+          "amount": {
+            "content": 1000000.00,
+            "currency": "SEK"
+          },
+          "balanceType": "AVAILABLE_AMOUNT"
+        },
+        {
+          "amount": {
+            "content": 1000000.00,
+            "currency": "SEK"
+          },
+          "balanceType": "CURRENT"
+        }
+      ],
+      "bban": "981020991",
+      "bic": "HANDSESS",
+      "clearingNumber": "6112",
+      "currency": "SEK",
+      "iban": "SE08PSEUDO8D6BC9DB14",
+      "name": "name-f5bf8c",
+      "ownerName": "ownername-220fae"
+    }
+  }
+}

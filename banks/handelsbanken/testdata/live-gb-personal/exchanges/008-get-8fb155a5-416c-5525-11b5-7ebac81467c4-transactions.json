@@ -1,0 +1,321 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/gb/v1/accounts/8fb155a5-416c-5525-11b5-7ebac81467c4/transactions",
+    "query": {
+      "dateFrom": [
+        "2026-10-01"
+      ],
+      "dateTo": [
+        "2026-10-17"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:dc6246",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "239f51b6-0ccb-440b-8437-b64bfcfce1e5",
+      "Tpp-Transaction-Id": "e87a9a56-71a7-46bb-a45e-2e0d36733ad2",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactions": [
+        {
+          "amount": {
+            "content": 100.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10000.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-17"
+        },
+        {
+          "amount": {
+            "content": 62.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10100.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-16"
+        },
+        {
+          "amount": {
+            "content": 96.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10038.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-15"
+        },
+        {
+          "amount": {
+            "content": 32.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10134.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-14"
+        },
+        {
+          "amount": {
+            "content": 44.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10166.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-13"
+        },
+        {
+          "amount": {
+            "content": 62.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10122.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-12"
+        },
+        {
+          "amount": {
+            "content": 82.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10184.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-11"
+        },
+        {
+          "amount": {
+            "content": 106.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10102.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-10"
+        },
+        {
+          "amount": {
+            "content": 142.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10208.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-09"
+        },
+        {
+          "amount": {
+            "content": 92.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10350.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-08"
+        },
+        {
+          "amount": {
+            "content": 178.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10442.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-07"
+        },
+        {
+          "amount": {
+            "content": 198.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10264.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-06"
+        },
+        {
+          "amount": {
+            "content": 90.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10066.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-05"
+        },
+        {
+          "amount": {
+            "content": 38.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10156.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-04"
+        },
+        {
+          "amount": {
+            "content": 28.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10194.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-03"
+        },
+        {
+          "amount": {
+            "content": 102.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10166.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "CREDITED",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED",
+          "valueDate": "2026-10-02"
+        },
+        {
+          "amount": {
+            "content": 88.00,
+            "currency": "GBP"
+          },
+          "balance": {
+            "amount": {
+              "content": 10064.00,
+              "currency": "GBP"
+            },
+            "balanceType": "BOOKED"
+          },
+          "creditDebit": "DEBITED",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED",
+          "valueDate": "2026-10-01"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Handelsbanken needs the company's id for a business payment.",
+      "fields": [
+        {
+          "key": "corporate_id",
+          "label": "Company id (SE: organisation number, NL: corporate number)",
+          "kind": "text",
+          "required": true
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Handelsbanken to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3Ae712f8&state=b6a1181e-701d-4bd4-83ad-a52251f7d0b1"
+      },
+      "payment": {
+        "id": "31192eca-7610-9079-9f25-d365abe1fdeb",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6InNlcGEiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6IjMxMTkyZWNhLTc2MTAtOTA3OS05ZjI1LWQzNjVhYmUxZmRlYiIsImIiOnsiZGVidG9yQWNjb3VudCI6eyJ2YWx1ZSI6IlNFMDhQU0VVRE84RDZCQzlEQjE0IiwiYWNjb3VudFR5cGUiOiJJQkFOIiwiY3VycmVuY3kiOiJFVVIifSwiaW5zdHJ1Y3RlZEFtb3VudCI6eyJhbW91bnQiOjEwLCJjdXJyZW5jeSI6IkVVUiJ9LCJwYXltZW50SWRlbnRpZmljYXRpb24iOnsiZW5kVG9FbmRJZGVudGlmaWNhdGlvbiI6IkUyRS03NyJ9LCJwYXltZW50VHlwZUluZm9ybWF0aW9uIjp7InNlcnZpY2VMZXZlbCI6eyJjb2RlIjoiU0VQQSJ9LCJjYXRlZ29yeVB1cnBvc2UiOnsiY29kZSI6IlNVUFAifX0sImNoYXJnZUJlYXJlciI6IlNIQVIiLCJjcmVkaXRvckFjY291bnQiOnsidmFsdWUiOiJERTU5UFNFVURPMTM2MEIwNTFCOCIsImFjY291bnRUeXBlIjoiSUJBTiIsImNvdW50cnkiOiJERSJ9LCJjcmVkaXRvciI6eyJuYW1lIjoibmFtZS1kNTJhZDYiLCJwb3N0YWxBZGRyZXNzIjp7InRvd25OYW1lIjoiQmVybGluIiwiY291bnRyeSI6IkRFIn19LCJyZW1pdHRhbmNlSW5mb3JtYXRpb24iOnsidGV4dCI6Ikludm9pY2UgNyJ9fX0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "31192eca-7610-9079-9f25-d365abe1fdeb",
+        "type": "sepa",
+        "status": "accepted",
+        "bank_status": "ACCP",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6InNlcGEiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXIiLCJpZCI6IjMxMTkyZWNhLTc2MTAtOTA3OS05ZjI1LWQzNjVhYmUxZmRlYiIsImIiOnsiZGVidG9yQWNjb3VudCI6eyJ2YWx1ZSI6IlNFMDhQU0VVRE84RDZCQzlEQjE0IiwiYWNjb3VudFR5cGUiOiJJQkFOIiwiY3VycmVuY3kiOiJFVVIifSwiaW5zdHJ1Y3RlZEFtb3VudCI6eyJhbW91bnQiOjEwLCJjdXJyZW5jeSI6IkVVUiJ9LCJwYXltZW50SWRlbnRpZmljYXRpb24iOnsiZW5kVG9FbmRJZGVudGlmaWNhdGlvbiI6IkUyRS03NyJ9LCJwYXltZW50VHlwZUluZm9ybWF0aW9uIjp7InNlcnZpY2VMZXZlbCI6eyJjb2RlIjoiU0VQQSJ9LCJjYXRlZ29yeVB1cnBvc2UiOnsiY29kZSI6IlNVUFAifX0sImNoYXJnZUJlYXJlciI6IlNIQVIiLCJjcmVkaXRvckFjY291bnQiOnsidmFsdWUiOiJERTU5UFNFVURPMTM2MEIwNTFCOCIsImFjY291bnRUeXBlIjoiSUJBTiIsImNvdW50cnkiOiJERSJ9LCJjcmVkaXRvciI6eyJuYW1lIjoibmFtZS1kNTJhZDYiLCJwb3N0YWxBZGRyZXNzIjp7InRvd25OYW1lIjoiQmVybGluIiwiY291bnRyeSI6IkRFIn19LCJyZW1pdHRhbmNlSW5mb3JtYXRpb24iOnsidGV4dCI6Ikludm9pY2UgNyJ9fX0"
+      }
+    }
+  }
+]

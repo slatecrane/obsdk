@@ -1,0 +1,57 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/v2/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:7f5cb7",
+      "Country": "SE",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "3075139e-b99e-4527-bfa3-18cb0275494b",
+      "Tpp-Transaction-Id": "961ec310-11ce-450d-93ad-81abf550b381",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/66f6ebe2-04e8-dac6-035a-b1de92345d2e/transactions"
+            }
+          },
+          "accountId": "66f6ebe2-04e8-dac6-035a-b1de92345d2e",
+          "accountType": "Checkkonto",
+          "bban": "981020991",
+          "bic": "HANDSESS",
+          "clearingNumber": "6112",
+          "currency": "SEK",
+          "iban": "SE08PSEUDO8D6BC9DB14",
+          "name": "name-f5bf8c",
+          "ownerName": "ownername-220fae"
+        },
+        {
+          "_links": {
+            "transactions": {
+              "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/f7bb80dd-9729-a77b-7501-6bb1e233d8ee/transactions"
+            }
+          },
+          "accountId": "f7bb80dd-9729-a77b-7501-6bb1e233d8ee",
+          "accountType": "Valutakonto",
+          "bban": "974093235",
+          "bic": "HANDSESS",
+          "clearingNumber": "6001",
+          "currency": "EUR",
+          "iban": "SE94PSEUDO6CE4F99E55",
+          "name": "name-f5bf8c",
+          "ownerName": "ownername-220fae"
+        }
+      ]
+    }
+  }
+}

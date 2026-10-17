@@ -1,0 +1,37 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Handelsbanken to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3Ae97a64&state=8a7b637c-3b16-4ed3-8b73-0d895fcfd58e"
+      },
+      "payment": {
+        "id": "6d97f960-8fb9-8d23-7a03-f81b988ac170",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6ImJyaXRpc2gtZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVyIiwiaWQiOiI2ZDk3Zjk2MC04ZmI5LThkMjMtN2EwMy1mODFiOTg4YWMxNzAifQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "6d97f960-8fb9-8d23-7a03-f81b988ac170",
+        "type": "domestic",
+        "status": "accepted",
+        "bank_status": "ACCP",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImRvbWVzdGljIiwicCI6ImJyaXRpc2gtZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVyIiwiaWQiOiI2ZDk3Zjk2MC04ZmI5LThkMjMtN2EwMy1mODFiOTg4YWMxNzAifQ"
+      }
+    }
+  }
+]

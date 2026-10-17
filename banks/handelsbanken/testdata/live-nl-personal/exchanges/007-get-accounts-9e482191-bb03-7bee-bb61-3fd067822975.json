@@ -1,0 +1,54 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/nl/v1/accounts/9e482191-bb03-7bee-bb61-3fd067822975",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:d91215",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "310e4fac-4d6e-4087-9725-c5523fac5acd",
+      "Tpp-Transaction-Id": "152af406-bdeb-4026-9d46-57867ab0231a",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "transactions": {
+          "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/9e482191-bb03-7bee-bb61-3fd067822975/transactions"
+        }
+      },
+      "accountId": "9e482191-bb03-7bee-bb61-3fd067822975",
+      "accountType": "Betaalrekening",
+      "balances": [
+        {
+          "amount": {
+            "content": 10000.00,
+            "currency": "EUR"
+          },
+          "balanceType": "CURRENT"
+        },
+        {
+          "amount": {
+            "content": 10000.00,
+            "currency": "EUR"
+          },
+          "balanceType": "VALUE_DATE"
+        }
+      ],
+      "bic": "HANDNL2A",
+      "currency": "EUR",
+      "iban": "NL40PSEUDOC22F51CF03",
+      "ownerName": "ownername-f84e08"
+    }
+  }
+}

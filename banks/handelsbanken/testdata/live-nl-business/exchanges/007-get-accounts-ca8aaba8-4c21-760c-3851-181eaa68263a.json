@@ -1,0 +1,53 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/nl/v1/accounts/ca8aaba8-4c21-760c-3851-181eaa68263a",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:1af52c",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "d766ee51-a4bc-4417-8882-405e46d0ead0",
+      "Tpp-Transaction-Id": "8d65d9de-b06d-4faa-a874-0527f63ba907",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "_links": {
+        "transactions": {
+          "href": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/ca8aaba8-4c21-760c-3851-181eaa68263a/transactions"
+        }
+      },
+      "accountId": "ca8aaba8-4c21-760c-3851-181eaa68263a",
+      "balances": [
+        {
+          "amount": {
+            "content": 100000.00,
+            "currency": "EUR"
+          },
+          "balanceType": "CURRENT"
+        },
+        {
+          "amount": {
+            "content": 100000.00,
+            "currency": "EUR"
+          },
+          "balanceType": "VALUE_DATE"
+        }
+      ],
+      "bic": "HANDNL22",
+      "currency": "EUR",
+      "iban": "NL23PSEUDO0B3A291E81",
+      "ownerName": "ownername-f3fff7"
+    }
+  }
+}

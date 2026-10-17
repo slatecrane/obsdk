@@ -1,0 +1,77 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/psd2/gb/v1/payments/british-domestic-credit-transfer",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:758f46",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "209c6cf7-88af-4d5a-b155-717e00296fba",
+      "Tpp-Transaction-Id": "1606855e-5c25-4163-aa15-c27990db7570",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "chargeBearer": "SHAR",
+      "creditor": {
+        "name": "name-dec1f3",
+        "postalAddress": {
+          "country": "GB"
+        }
+      },
+      "creditorAccount": {
+        "accountType": "BBAN",
+        "value": "12345678"
+      },
+      "creditorAgent": {
+        "identification": {
+          "code": "400515",
+          "type": "GBDSC"
+        }
+      },
+      "debtorAccount": {
+        "accountType": "BBAN",
+        "value": "16919538"
+      },
+      "instructedAmount": {
+        "amount": 10,
+        "currency": "GBP"
+      },
+      "paymentTypeInformation": {
+        "categoryPurpose": {
+          "code": "SUPP"
+        },
+        "serviceLevel": {
+          "code": "NURG"
+        }
+      },
+      "remittanceInformation": {
+        "text": "Invoice 7"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "6d97f960-8fb9-8d23-7a03-f81b988ac170",
+      "scaMethods": [
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/oauth2/authorize/1.0",
+                "name": "name-274074",
+                "type": "application/x-www-form-urlencoded"
+              }
+            ]
+          },
+          "scaMethodType": "REDIRECT"
+        }
+      ],
+      "transactionStatus": "ACTC"
+    }
+  }
+}

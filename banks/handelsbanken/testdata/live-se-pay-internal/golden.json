@@ -1,0 +1,37 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Handelsbanken to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://example.com?code=REDACTED%3Acode%3A34ba80&state=d6a0a9c8-69e5-4c87-aec5-efefcfd472a4"
+      },
+      "payment": {
+        "id": "689c39ce-d627-b196-2ad4-400f64516632",
+        "type": "internal",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImludGVybmFsIiwicCI6ImhhbmRlbHNiYW5rZW4tZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVyIiwiaWQiOiI2ODljMzljZS1kNjI3LWIxOTYtMmFkNC00MDBmNjQ1MTY2MzIiLCJiIjp7ImRlYnRvckFjY291bnQiOnsidmFsdWUiOiI3ODU0MTc1MDQiLCJhY2NvdW50VHlwZSI6IkJCQU4iLCJ0ZXh0IjoiU2F2aW5ncyJ9LCJpbnN0cnVjdGVkQW1vdW50Ijp7ImFtb3VudCI6NSwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiODAxNTMzNjUzIiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImNyZWRpdG9yQWdlbnQiOnsiaWRlbnRpZmljYXRpb24iOnsiY29kZSI6IjY2MzMiLCJ0eXBlIjoiU0VTQkEifX0sInJlbWl0dGFuY2VJbmZvcm1hdGlvbiI6eyJ0ZXh0IjoiU2F2aW5ncyJ9fX0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "689c39ce-d627-b196-2ad4-400f64516632",
+        "type": "internal",
+        "status": "completed",
+        "bank_status": "ACCC",
+        "final": true,
+        "ref": "obs1.eyJpIjoiaGFuZGVsc2Jhbmtlbi1wc2QyLXYxIiwidCI6ImludGVybmFsIiwicCI6ImhhbmRlbHNiYW5rZW4tZG9tZXN0aWMtY3JlZGl0LXRyYW5zZmVyIiwiaWQiOiI2ODljMzljZS1kNjI3LWIxOTYtMmFkNC00MDBmNjQ1MTY2MzIiLCJiIjp7ImRlYnRvckFjY291bnQiOnsidmFsdWUiOiI3ODU0MTc1MDQiLCJhY2NvdW50VHlwZSI6IkJCQU4iLCJ0ZXh0IjoiU2F2aW5ncyJ9LCJpbnN0cnVjdGVkQW1vdW50Ijp7ImFtb3VudCI6NSwiY3VycmVuY3kiOiJTRUsifSwiY3JlZGl0b3JBY2NvdW50Ijp7InZhbHVlIjoiODAxNTMzNjUzIiwiYWNjb3VudFR5cGUiOiJCQkFOIn0sImNyZWRpdG9yQWdlbnQiOnsiaWRlbnRpZmljYXRpb24iOnsiY29kZSI6IjY2MzMiLCJ0eXBlIjoiU0VTQkEifX0sInJlbWl0dGFuY2VJbmZvcm1hdGlvbiI6eyJ0ZXh0IjoiU2F2aW5ncyJ9fX0"
+      }
+    }
+  }
+]

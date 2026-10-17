@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/openbanking/psd2/lu/v1/payments/sepa-credit-transfer/f3e015c8-dde3-737f-d6f6-df1038458d32",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:641172",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "81e994b1-4d3c-47e0-a33c-d27f289d3ac6",
+      "Tpp-Transaction-Id": "bb10d234-dcc7-4251-ad79-551a7b8fe16f",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "f3e015c8-dde3-737f-d6f6-df1038458d32",
+      "transactionStatus": "ACSC"
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/openbanking/psd2/v2/accounts/f74a057c-19ca-873c-e20f-fb933c1465d2/transactions",
+    "query": {
+      "dateFrom": [
+        "2026-10-01"
+      ],
+      "dateTo": [
+        "2026-10-17"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:da5549",
+      "Country": "SE",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "c7039f2a-48ca-4387-9dfe-aeb57bc3422f",
+      "Tpp-Transaction-Id": "a39e45d4-7eb8-4c3a-92e7-6b2450b4dd0d",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactions": [
+        {
+          "amount": {
+            "content": 640.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 100000.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-17",
+          "creditDebit": "CREDITED",
+          "ledgerDate": "2026-10-17",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1700.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 99360.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-16",
+          "creditDebit": "CREDITED",
+          "ledgerDate": "2026-10-16",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1440.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 97660.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-15",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-15",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 720.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 99100.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-14",
+          "creditDebit": "CREDITED",
+          "ledgerDate": "2026-10-14",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1240.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 98380.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-13",
+          "creditDebit": "CREDITED",
+          "ledgerDate": "2026-10-13",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1020.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 97140.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-12",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-12",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 180.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 98160.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-11",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-11",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 440.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 98340.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-10",
+          "creditDebit": "CREDITED",
+          "ledgerDate": "2026-10-10",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1300.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 97900.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-09",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-09",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 980.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 99200.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-08",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-08",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1080.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 100180.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-07",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-07",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 940.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 101260.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-06",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-06",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 80.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 102200.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-05",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-05",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1640.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 102280.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-04",
+          "creditDebit": "CREDITED",
+          "ledgerDate": "2026-10-04",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1080.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 100640.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-03",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-03",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 1460.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 101720.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-02",
+          "creditDebit": "DEBITED",
+          "ledgerDate": "2026-10-02",
+          "remittanceInformation": "Milk",
+          "status": "BOOKED"
+        },
+        {
+          "amount": {
+            "content": 180.00,
+            "currency": "SEK"
+          },
+          "balance": {
+            "amount": {
+              "content": 103180.00,
+              "currency": "SEK"
+            },
+            "balanceType": "BOOKED"
+          },
+          "bookingDate": "2026-10-01",
+          "creditDebit": "CREDITED",
+          "ledgerDate": "2026-10-01",
+          "remittanceInformation": "Salary",
+          "status": "BOOKED"
+        }
+      ]
+    }
+  }
+}

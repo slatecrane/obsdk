@@ -1,0 +1,91 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/psd2/se/v2/payments/corporate/single/sepa-credit-transfer",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:be3562",
+      "Content-Type": "application/json",
+      "Psu-Corporate-Id": "REDACTED:psu-corporate-id:864533",
+      "Psu-Corporate-Id-Type": "BANK",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "ab5c2c35-939b-4122-a487-b300c0ba41a6",
+      "Tpp-Transaction-Id": "1d31dacd-f3eb-40a3-af7d-5314fec1b962",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "chargeBearer": "SHAR",
+      "creditor": {
+        "name": "name-d52ad6",
+        "postalAddress": {
+          "country": "DE",
+          "townName": "Berlin"
+        }
+      },
+      "creditorAccount": {
+        "accountType": "IBAN",
+        "country": "DE",
+        "value": "DE59PSEUDO1360B051B8"
+      },
+      "debtorAccount": {
+        "accountType": "IBAN",
+        "currency": "EUR",
+        "value": "SE08PSEUDO8D6BC9DB14"
+      },
+      "instructedAmount": {
+        "amount": 10,
+        "currency": "EUR"
+      },
+      "paymentIdentification": {
+        "endToEndIdentification": "E2E-77"
+      },
+      "paymentTypeInformation": {
+        "categoryPurpose": {
+          "code": "SUPP"
+        },
+        "serviceLevel": {
+          "code": "SEPA"
+        }
+      },
+      "remittanceInformation": {
+        "text": "Invoice 7"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "31192eca-7610-9079-9f25-d365abe1fdeb",
+      "scaMethods": [
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/decoupled/mbid/initAuthorization/2.0",
+                "name": "name-f696e0",
+                "type": "application/json"
+              }
+            ]
+          },
+          "scaMethodType": "DECOUPLED"
+        },
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/oauth2/authorize/1.0",
+                "name": "name-274074",
+                "type": "application/x-www-form-urlencoded"
+              }
+            ]
+          },
+          "scaMethodType": "REDIRECT"
+        }
+      ],
+      "transactionStatus": "ACTC"
+    }
+  }
+}

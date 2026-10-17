@@ -1,0 +1,87 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/openbanking/psd2/se/v2/payments/private/signing-basket",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:587ee0",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:a3d11e",
+      "Tpp-Request-Id": "a191141c-7464-4250-be05-c86fdbd495eb",
+      "Tpp-Transaction-Id": "c31aea9d-da0e-4b69-9ab7-19e296d6f442",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "sekCreditTransfers": [
+        {
+          "creditor": {
+            "name": "name-caca06"
+          },
+          "creditorAccount": {
+            "accountType": "BBAN",
+            "value": "123456789"
+          },
+          "creditorAgent": {
+            "identification": {
+              "code": "83279"
+            }
+          },
+          "debtorAccount": {
+            "accountType": "BBAN",
+            "value": "923450017"
+          },
+          "instructedAmount": {
+            "amount": 99,
+            "currency": "SEK"
+          },
+          "remittanceInformation": {
+            "text": "Rent November"
+          },
+          "requestedExecutionDate": "2026-11-25",
+          "tppPaymentReference": "96919a07-b292-4a44-a23d-f18ea96e5751"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "payments": [
+        {
+          "paymentId": "ad023701-25ef-de46-fe1e-018f56152175",
+          "tppPaymentReference": "96919a07-b292-4a44-a23d-f18ea96e5751"
+        }
+      ],
+      "scaMethods": [
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/decoupled/mbid/initAuthorization/2.0",
+                "name": "name-f696e0",
+                "type": "application/json"
+              }
+            ]
+          },
+          "scaMethodType": "DECOUPLED"
+        },
+        {
+          "_links": {
+            "authorization": [
+              {
+                "href": "https://sandbox.handelsbanken.com/openbanking/oauth2/authorize/1.0",
+                "name": "name-274074",
+                "type": "application/x-www-form-urlencoded"
+              }
+            ]
+          },
+          "scaMethodType": "REDIRECT"
+        }
+      ],
+      "signingBasketId": "e4a2d97b-b062-bed3-0056-629b2cb5c2b3"
+    }
+  }
+}
