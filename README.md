@@ -4,6 +4,10 @@ A stateless Go client library for European open banking APIs (account informatio
 One small interface over Berlin Group, STET, UK, Polish API and bank-specific variants,
 so applications don't write per-bank code.
 
+**Market scope:** the EU/EEA is the primary market. The UK (OBIE) is secondary: it's supported where
+it comes cheaply, such as a bank that serves GB and the EEA from one API. Other countries and regions
+are out of scope.
+
 > **Status: early.** Integrations are written from the banks' published specs and checked against
 > their sandboxes; production is unverified everywhere. See [docs/banks.md](docs/banks.md) for the
 > banks covered and how far each is verified.
