@@ -1,0 +1,71 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "The user approves the payment in the bunq app. Call Resume after WaitFor to check.",
+      "challenge": {
+        "text": "Open the bunq app and accept the payment request."
+      },
+      "wait_for": 5000000000,
+      "payment": {
+        "id": "9046",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "PENDING",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDYiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL64PSEUDOFABD8A44B6"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "The user approves the payment in the bunq app. Call Resume after WaitFor to check.",
+      "challenge": {
+        "text": "Open the bunq app and accept the payment request."
+      },
+      "wait_for": 5000000000,
+      "payment": {
+        "id": "9046",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "PENDING",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDYiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL64PSEUDOFABD8A44B6"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "9046",
+        "type": "sepa",
+        "status": "completed",
+        "bank_status": "ACCEPTED",
+        "final": true,
+        "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDYiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL64PSEUDOFABD8A44B6"
+        }
+      }
+    }
+  }
+]

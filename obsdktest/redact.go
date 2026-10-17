@@ -50,6 +50,8 @@ func DefaultRedactor(literals map[string]string) *Redactor {
 		"client_secret", "client_id", "client_assertion", "x-jws-signature", "app-id", "apikey", "refresh_token", "access_token", "id_token", "token",
 		"code", "access_code", "authorizationcode", "authorization_code", "auth_code", "otp", "password",
 		"personalid", "personal_id", "phonenumber", "phone_number", "psu_id", "psuid", "clientid",
+		// bunq: tokens travel in X-Bunq-Client-Authentication, API keys and OAuth tokens as "secret"
+		"x-bunq-client-authentication", "x-bunq-client-signature", "x-bunq-server-signature", "secret", "api_key", "login_code",
 	), PIIKeys: set(
 		"ownername", "name", "creditorname", "debtorname", "ultimatecreditor", "ultimatedebtor", "creditorid", "debtorid",
 		"iban", "bban", "remittanceinformationunstructured", "remittanceinformationstructured", "remittanceinformationunstructuredarray",
@@ -58,6 +60,10 @@ func DefaultRedactor(literals map[string]string) *Redactor {
 		"identification", "secondaryidentification", "transactioninformation", "nickname",
 		// ING card accounts
 		"maskedpan", "transactiondetails",
+		// bunq users, labels and payment descriptions
+		"display_name", "public_nick_name", "first_name", "middle_name", "last_name", "legal_name", "description",
+		"date_of_birth", "place_of_birth", "country_of_birth", "street", "house_number", "po_box", "postal_code", "city",
+		"tax_number", "document_number", "chamber_of_commerce_number", "swift_account_number", "mailbox_name", "gender",
 	), KeepQueryInURLs: set("state", "response_type", "scope", "bic", "redirect_uri", "language", "success")}
 	for v, label := range literals {
 		if v != "" {
@@ -238,6 +244,7 @@ func (r *Redactor) walk(key string, v any, pii bool) any {
 		for k, x := range t {
 			out[k] = r.walk(k, x, pii || r.PIIKeys[strings.ToLower(k)])
 		}
+		r.pointer(t, out)
 		return out
 	case []any:
 		out := make([]any, len(t))
@@ -262,6 +269,25 @@ func (r *Redactor) walk(key string, v any, pii bool) any {
 		return v
 	}
 	return v
+}
+
+// pointer pseudonymizes the value of an alias such as bunq's
+// {"type": "EMAIL", "value": "...", "name": "..."}, whose key ("value") is
+// too generic to list: amounts use it too.
+func (r *Redactor) pointer(in, out map[string]any) {
+	typ, _ := in["type"].(string)
+	v, ok := in["value"].(string)
+	if !ok || v == "" {
+		return
+	}
+	switch typ {
+	case "IBAN":
+		out["value"] = r.account("iban", v)
+	case "EMAIL":
+		out["value"] = pseudonym("email", v) + "@example.com"
+	case "PHONE_NUMBER":
+		out["value"] = pseudonym("phone", v)
+	}
 }
 
 // pseudonym is a stable, readable stand-in for personal data. IBANs keep their

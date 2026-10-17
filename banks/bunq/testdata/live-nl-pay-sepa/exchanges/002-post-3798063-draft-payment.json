@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/v1/user/3780043/monetary-account/3798063/draft-payment",
+    "headers": {
+      "Accept": "application/json",
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
+      "X-Bunq-Client-Authentication": "REDACTED:x-bunq-client-authentication:54fd53",
+      "X-Bunq-Client-Request-Id": "ee552ac6-855c-412f-8012-551ef4f9c559",
+      "X-Bunq-Client-Signature": "REDACTED:x-bunq-client-signature:5d9c79",
+      "X-Bunq-Geolocation": "0 0 0 0 000",
+      "X-Bunq-Language": "en_US",
+      "X-Bunq-Region": "nl_NL"
+    },
+    "body": {
+      "entries": [
+        {
+          "amount": {
+            "currency": "EUR",
+            "value": "4.20"
+          },
+          "counterparty_alias": {
+            "name": "name-92b41c",
+            "type": "IBAN",
+            "value": "NL22PSEUDO951D285DB5"
+          },
+          "description": "description-d2b614"
+        }
+      ],
+      "number_of_required_accepts": 1,
+      "status": "PENDING"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Response": [
+        {
+          "Id": {
+            "id": 9046
+          }
+        }
+      ]
+    }
+  }
+}

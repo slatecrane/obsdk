@@ -1,0 +1,59 @@
+{
+  "config": {
+    "bank": "bunq",
+    "country": "NL",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T09:35:04Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "50b13801-b8b0-4a0c-88b8-5b42e71d9a81",
+        "ee552ac6-855c-412f-8012-551ef4f9c559",
+        "029c3e92-dcc0-4802-b7bc-8b6a56e17e97",
+        "f541a637-0cdf-4591-accc-aa6b22f74937"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "NL64PSEUDOFABD8A44B6"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "4.20",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-92b41c",
+              "account": {
+                "scheme": "IBAN",
+                "value": "NL22PSEUDO951D285DB5"
+              }
+            },
+            "remittance": [
+              "obsdk test"
+            ]
+          }
+        ],
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume"
+    },
+    {
+      "op": "resume"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/user/3780043/monetary-account/3798063",
+    "headers": {
+      "Accept": "application/json",
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
+      "X-Bunq-Client-Authentication": "REDACTED:x-bunq-client-authentication:54fd53",
+      "X-Bunq-Client-Request-Id": "5f7e0c30-3641-42b1-ac07-18763c43ba16",
+      "X-Bunq-Geolocation": "0 0 0 0 000",
+      "X-Bunq-Language": "en_US",
+      "X-Bunq-Region": "nl_NL"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Response": [
+        {
+          "MonetaryAccountBank": {
+            "alias": [
+              {
+                "name": "name-731b92",
+                "type": "PHONE_NUMBER",
+                "value": "phone-731b92"
+              },
+              {
+                "name": "name-e95079",
+                "type": "EMAIL",
+                "value": "email-e95079@example.com"
+              },
+              {
+                "name": "name-2664c8",
+                "type": "IBAN",
+                "value": "NL64PSEUDOFABD8A44B6"
+              }
+            ],
+            "all_access": [
+              {
+                "MonetaryAccountAccess": {
+                  "access_type": "FULL_PERMANENT",
+                  "created": "2026-10-17 09:31:41.110273",
+                  "id": 3888927,
+                  "updated": "2026-10-17 09:31:41.110273"
+                }
+              }
+            ],
+            "all_auto_save_id": [],
+            "avatar": {
+              "anchor_uuid": "32fa8fab-1504-45b0-b9c5-1dfdd6b239f6",
+              "image": [
+                {
+                  "attachment_public_uuid": "a5b90734-808d-4edc-b7a3-874f5c895ca4",
+                  "content_type": "image/png",
+                  "height": 1023,
+                  "urls": [
+                    {
+                      "type": "ORIGINAL",
+                      "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/921ece497cd00f4e0cef3f0f63a962c31cf3f8e35311d127d5a7b23be3d074d5.png"
+                    }
+                  ],
+                  "width": 1024
+                }
+              ],
+              "style": "NONE",
+              "uuid": "4a118c6e-56c6-420d-acc0-2be561116b12"
+            },
+            "balance": {
+              "currency": "EUR",
+              "value": "86.55"
+            },
+            "balance_converted": {
+              "currency": "EUR",
+              "value": "86.55"
+            },
+            "budget": [],
+            "connected_cards": [],
+            "country": "NL",
+            "created": "2026-10-17 09:31:41.103259",
+            "currency": "EUR",
+            "daily_limit": {
+              "currency": "EUR",
+              "value": "5000.00"
+            },
+            "description": "description-b21508",
+            "display_name": "display_name-2664c8",
+            "id": 3798063,
+            "monetary_account_profile": null,
+            "overdraft_limit": {
+              "currency": "EUR",
+              "value": "0.00"
+            },
+            "public_uuid": "32fa8fab-1504-45b0-b9c5-1dfdd6b239f6",
+            "setting": {
+              "color": "#FF7819",
+              "default_avatar_status": "AVATAR_DEFAULT",
+              "emoji": null,
+              "icon": null,
+              "restriction_chat": "ALLOW_INCOMING",
+              "sdd_expiration_action": "AUTO_ACCEPT"
+            },
+            "status": "ACTIVE",
+            "sub_status": "NONE",
+            "timezone": "europe/amsterdam",
+            "transaction_limit": null,
+            "updated": "2026-10-17 09:31:41.103259",
+            "user_id": 3780043
+          }
+        }
+      ]
+    }
+  }
+}

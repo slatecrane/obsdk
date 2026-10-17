@@ -1,0 +1,317 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/user/3780043/monetary-account/3798063/payment",
+    "query": {
+      "count": [
+        "2"
+      ],
+      "older_id": [
+        "35930403"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
+      "X-Bunq-Client-Authentication": "REDACTED:x-bunq-client-authentication:54fd53",
+      "X-Bunq-Client-Request-Id": "b109b4e2-4a5f-4ad1-86d5-96783495406e",
+      "X-Bunq-Geolocation": "0 0 0 0 000",
+      "X-Bunq-Language": "en_US",
+      "X-Bunq-Region": "nl_NL"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Pagination": {
+        "future_url": null,
+        "newer_url": "/v1/user/3780043/monetary-account/3798063/payment?count=2\u0026newer_id=35930401",
+        "older_url": null
+      },
+      "Response": [
+        {
+          "Payment": {
+            "address_billing": null,
+            "address_shipping": null,
+            "alias": {
+              "avatar": {
+                "anchor_uuid": null,
+                "image": [
+                  {
+                    "attachment_public_uuid": "a5b90734-808d-4edc-b7a3-874f5c895ca4",
+                    "content_type": "image/png",
+                    "height": 1023,
+                    "urls": [
+                      {
+                        "type": "ORIGINAL",
+                        "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/921ece497cd00f4e0cef3f0f63a962c31cf3f8e35311d127d5a7b23be3d074d5.png"
+                      }
+                    ],
+                    "width": 1024
+                  }
+                ],
+                "style": "NONE",
+                "uuid": "4a118c6e-56c6-420d-acc0-2be561116b12"
+              },
+              "country": "NL",
+              "display_name": "display_name-2664c8",
+              "iban": "NL64PSEUDOFABD8A44B6",
+              "is_light": false,
+              "label_user": {
+                "avatar": {
+                  "anchor_uuid": "c3acf306-b001-485c-888c-fe6e81d8deda",
+                  "image": [
+                    {
+                      "attachment_public_uuid": "4b7e0d1d-9167-48ac-990a-70e342c87812",
+                      "content_type": "image/jpeg",
+                      "height": 126,
+                      "urls": [
+                        {
+                          "type": "ORIGINAL",
+                          "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                        }
+                      ],
+                      "width": 200
+                    }
+                  ],
+                  "style": "NONE",
+                  "uuid": "9debf55b-70b1-4d43-8d51-d6e7bd42fb5b"
+                },
+                "country": "NL",
+                "display_name": "display_name-2664c8",
+                "public_nick_name": "public_nick_name-895035",
+                "type": "PERSON",
+                "uuid": "c3acf306-b001-485c-888c-fe6e81d8deda"
+              }
+            },
+            "amount": {
+              "currency": "EUR",
+              "value": "-1.25"
+            },
+            "approval_request": null,
+            "attachment": [],
+            "balance_after_mutation": {
+              "currency": "EUR",
+              "value": "98.75"
+            },
+            "batch_id": null,
+            "counterparty_alias": {
+              "avatar": {
+                "anchor_uuid": null,
+                "image": [
+                  {
+                    "attachment_public_uuid": "23f17b08-9ece-4c05-8dd8-4caf2b6ef549",
+                    "content_type": "image/png",
+                    "height": 1023,
+                    "urls": [
+                      {
+                        "type": "ORIGINAL",
+                        "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                      }
+                    ],
+                    "width": 1024
+                  }
+                ],
+                "style": "NONE",
+                "uuid": "3fada745-8305-45ab-b8c2-09cc05a51b65"
+              },
+              "country": "NL",
+              "display_name": "display_name-9d26ea",
+              "iban": "NL17PSEUDO53D714BF30",
+              "is_light": false,
+              "label_user": {
+                "avatar": {
+                  "anchor_uuid": "297f4374-38c5-4611-9708-71297ab56a4b",
+                  "image": [
+                    {
+                      "attachment_public_uuid": "1d011c65-fb79-4f1d-a82b-af64f7b05cbe",
+                      "content_type": "image/jpeg",
+                      "height": 1200,
+                      "urls": [
+                        {
+                          "type": "ORIGINAL",
+                          "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                        }
+                      ],
+                      "width": 1200
+                    }
+                  ],
+                  "style": "NONE",
+                  "uuid": "0b305c7e-fa1b-4736-8704-65d90d1bdcb4"
+                },
+                "country": "NL",
+                "display_name": "display_name-9d26ea",
+                "public_nick_name": "public_nick_name-9d26ea",
+                "type": "PERSON",
+                "uuid": "297f4374-38c5-4611-9708-71297ab56a4b"
+              }
+            },
+            "created": "2026-10-17 09:31:55.472063",
+            "description": "description-481197",
+            "geolocation": null,
+            "id": 35930401,
+            "merchant_reference": null,
+            "monetary_account_id": 3798063,
+            "payment_arrival_expected": {
+              "status": "ARRIVED",
+              "time": null
+            },
+            "payment_auto_allocate_instance": null,
+            "payment_fee": null,
+            "payment_suspended_outgoing": null,
+            "request_reference_split_the_bill": [],
+            "scheduled_id": null,
+            "sepa_information": null,
+            "sub_type": "PAYMENT",
+            "type": "BUNQ",
+            "updated": "2026-10-17 09:31:55.472063",
+            "wero_payment": null
+          }
+        },
+        {
+          "Payment": {
+            "address_billing": null,
+            "address_shipping": null,
+            "alias": {
+              "avatar": {
+                "anchor_uuid": null,
+                "image": [
+                  {
+                    "attachment_public_uuid": "a5b90734-808d-4edc-b7a3-874f5c895ca4",
+                    "content_type": "image/png",
+                    "height": 1023,
+                    "urls": [
+                      {
+                        "type": "ORIGINAL",
+                        "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/921ece497cd00f4e0cef3f0f63a962c31cf3f8e35311d127d5a7b23be3d074d5.png"
+                      }
+                    ],
+                    "width": 1024
+                  }
+                ],
+                "style": "NONE",
+                "uuid": "4a118c6e-56c6-420d-acc0-2be561116b12"
+              },
+              "country": "NL",
+              "display_name": "display_name-2664c8",
+              "iban": "NL64PSEUDOFABD8A44B6",
+              "is_light": false,
+              "label_user": {
+                "avatar": {
+                  "anchor_uuid": "c3acf306-b001-485c-888c-fe6e81d8deda",
+                  "image": [
+                    {
+                      "attachment_public_uuid": "4b7e0d1d-9167-48ac-990a-70e342c87812",
+                      "content_type": "image/jpeg",
+                      "height": 126,
+                      "urls": [
+                        {
+                          "type": "ORIGINAL",
+                          "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                        }
+                      ],
+                      "width": 200
+                    }
+                  ],
+                  "style": "NONE",
+                  "uuid": "9debf55b-70b1-4d43-8d51-d6e7bd42fb5b"
+                },
+                "country": "NL",
+                "display_name": "display_name-2664c8",
+                "public_nick_name": "public_nick_name-895035",
+                "type": "PERSON",
+                "uuid": "c3acf306-b001-485c-888c-fe6e81d8deda"
+              }
+            },
+            "amount": {
+              "currency": "EUR",
+              "value": "100.00"
+            },
+            "approval_request": null,
+            "attachment": [],
+            "balance_after_mutation": {
+              "currency": "EUR",
+              "value": "100.00"
+            },
+            "batch_id": null,
+            "counterparty_alias": {
+              "avatar": {
+                "anchor_uuid": null,
+                "image": [
+                  {
+                    "attachment_public_uuid": "23f17b08-9ece-4c05-8dd8-4caf2b6ef549",
+                    "content_type": "image/png",
+                    "height": 1023,
+                    "urls": [
+                      {
+                        "type": "ORIGINAL",
+                        "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                      }
+                    ],
+                    "width": 1024
+                  }
+                ],
+                "style": "NONE",
+                "uuid": "3fada745-8305-45ab-b8c2-09cc05a51b65"
+              },
+              "country": "NL",
+              "display_name": "display_name-9d26ea",
+              "iban": "NL17PSEUDO53D714BF30",
+              "is_light": false,
+              "label_user": {
+                "avatar": {
+                  "anchor_uuid": "297f4374-38c5-4611-9708-71297ab56a4b",
+                  "image": [
+                    {
+                      "attachment_public_uuid": "1d011c65-fb79-4f1d-a82b-af64f7b05cbe",
+                      "content_type": "image/jpeg",
+                      "height": 1200,
+                      "urls": [
+                        {
+                          "type": "ORIGINAL",
+                          "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                        }
+                      ],
+                      "width": 1200
+                    }
+                  ],
+                  "style": "NONE",
+                  "uuid": "0b305c7e-fa1b-4736-8704-65d90d1bdcb4"
+                },
+                "country": "NL",
+                "display_name": "display_name-9d26ea",
+                "public_nick_name": "public_nick_name-9d26ea",
+                "type": "PERSON",
+                "uuid": "297f4374-38c5-4611-9708-71297ab56a4b"
+              }
+            },
+            "created": "2026-10-17 09:31:45.609879",
+            "description": "description-607a4a",
+            "geolocation": null,
+            "id": 35930400,
+            "merchant_reference": null,
+            "monetary_account_id": 3798063,
+            "payment_arrival_expected": {
+              "status": "ARRIVED",
+              "time": null
+            },
+            "payment_auto_allocate_instance": null,
+            "payment_fee": null,
+            "payment_suspended_outgoing": null,
+            "request_reference_split_the_bill": [],
+            "scheduled_id": null,
+            "sepa_information": null,
+            "sub_type": "REQUEST",
+            "type": "BUNQ",
+            "updated": "2026-10-17 09:31:45.609879",
+            "wero_payment": null
+          }
+        }
+      ]
+    }
+  }
+}

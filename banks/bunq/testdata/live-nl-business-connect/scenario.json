@@ -1,0 +1,32 @@
+{
+  "config": {
+    "bank": "bunq",
+    "country": "NL",
+    "segment": "business",
+    "env": "sandbox",
+    "now": "2026-10-17T09:35:50Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "8da45a1f-1b7e-436b-ace6-8ccf5fec6355",
+        "91241106-a012-4e81-b456-9c51e0a50c1c",
+        "a01c9302-bde5-46e4-8e5e-dd224ef354d0",
+        "4fa4a04e-c185-4470-8173-2cb5cd83c38a"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "api_key",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "api_key": "REDACTED:api_key:fba80c"
+      }
+    }
+  ]
+}

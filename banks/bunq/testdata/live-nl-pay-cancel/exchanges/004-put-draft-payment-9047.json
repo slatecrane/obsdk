@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/v1/user/3780043/monetary-account/3798063/draft-payment/9047",
+    "headers": {
+      "Accept": "application/json",
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
+      "X-Bunq-Client-Authentication": "REDACTED:x-bunq-client-authentication:54fd53",
+      "X-Bunq-Client-Request-Id": "1577fe37-3141-47f9-987e-b4e8317914e3",
+      "X-Bunq-Client-Signature": "REDACTED:x-bunq-client-signature:0b594d",
+      "X-Bunq-Geolocation": "0 0 0 0 000",
+      "X-Bunq-Language": "en_US",
+      "X-Bunq-Region": "nl_NL"
+    },
+    "body": {
+      "previous_updated_timestamp": "2026-10-17 09:35:30.453137",
+      "status": "REJECTED"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Response": [
+        {
+          "Id": {
+            "id": 9047
+          }
+        }
+      ]
+    }
+  }
+}

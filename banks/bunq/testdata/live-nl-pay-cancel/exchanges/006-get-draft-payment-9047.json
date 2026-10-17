@@ -1,0 +1,173 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/user/3780043/monetary-account/3798063/draft-payment/9047",
+    "headers": {
+      "Accept": "application/json",
+      "Cache-Control": "no-cache",
+      "Content-Type": "application/json",
+      "X-Bunq-Client-Authentication": "REDACTED:x-bunq-client-authentication:54fd53",
+      "X-Bunq-Client-Request-Id": "29986535-0249-44bb-aeb4-89df06462ee2",
+      "X-Bunq-Geolocation": "0 0 0 0 000",
+      "X-Bunq-Language": "en_US",
+      "X-Bunq-Region": "nl_NL"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Response": [
+        {
+          "DraftPayment": {
+            "created": "2026-10-17 09:35:30.453137",
+            "entries": [
+              {
+                "alias": {
+                  "avatar": {
+                    "anchor_uuid": null,
+                    "image": [
+                      {
+                        "attachment_public_uuid": "a5b90734-808d-4edc-b7a3-874f5c895ca4",
+                        "content_type": "image/png",
+                        "height": 1023,
+                        "urls": [
+                          {
+                            "type": "ORIGINAL",
+                            "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/921ece497cd00f4e0cef3f0f63a962c31cf3f8e35311d127d5a7b23be3d074d5.png"
+                          }
+                        ],
+                        "width": 1024
+                      }
+                    ],
+                    "style": "NONE",
+                    "uuid": "4a118c6e-56c6-420d-acc0-2be561116b12"
+                  },
+                  "country": "NL",
+                  "display_name": "display_name-2664c8",
+                  "iban": "NL64PSEUDOFABD8A44B6",
+                  "is_light": false,
+                  "label_user": {
+                    "avatar": {
+                      "anchor_uuid": "c3acf306-b001-485c-888c-fe6e81d8deda",
+                      "image": [
+                        {
+                          "attachment_public_uuid": "4b7e0d1d-9167-48ac-990a-70e342c87812",
+                          "content_type": "image/jpeg",
+                          "height": 126,
+                          "urls": [
+                            {
+                              "type": "ORIGINAL",
+                              "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                            }
+                          ],
+                          "width": 200
+                        }
+                      ],
+                      "style": "NONE",
+                      "uuid": "9debf55b-70b1-4d43-8d51-d6e7bd42fb5b"
+                    },
+                    "country": "NL",
+                    "display_name": "display_name-2664c8",
+                    "public_nick_name": "public_nick_name-895035",
+                    "type": "PERSON",
+                    "uuid": "c3acf306-b001-485c-888c-fe6e81d8deda"
+                  }
+                },
+                "amount": {
+                  "currency": "EUR",
+                  "value": "1.50"
+                },
+                "attachment": [],
+                "counterparty_alias": {
+                  "avatar": null,
+                  "country": "NL",
+                  "display_name": "display_name-92b41c",
+                  "iban": "NL22PSEUDO951D285DB5",
+                  "is_light": false,
+                  "label_user": {
+                    "avatar": null,
+                    "country": "NL",
+                    "display_name": "display_name-92b41c",
+                    "public_nick_name": "public_nick_name-92b41c",
+                    "type": null,
+                    "uuid": null
+                  }
+                },
+                "description": "description-b6784b",
+                "merchant_reference": null,
+                "type": "BUNQ"
+              }
+            ],
+            "id": 9047,
+            "monetary_account_id": 3798063,
+            "object": null,
+            "request_reference_split_the_bill": [],
+            "responses": [
+              {
+                "status": "REJECTED",
+                "user_alias_created": {
+                  "avatar": {
+                    "anchor_uuid": "c3acf306-b001-485c-888c-fe6e81d8deda",
+                    "image": [
+                      {
+                        "attachment_public_uuid": "4b7e0d1d-9167-48ac-990a-70e342c87812",
+                        "content_type": "image/jpeg",
+                        "height": 126,
+                        "urls": [
+                          {
+                            "type": "ORIGINAL",
+                            "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                          }
+                        ],
+                        "width": 200
+                      }
+                    ],
+                    "style": "NONE",
+                    "uuid": "9debf55b-70b1-4d43-8d51-d6e7bd42fb5b"
+                  },
+                  "country": "NL",
+                  "display_name": "display_name-2664c8",
+                  "public_nick_name": "public_nick_name-895035",
+                  "type": "PERSON",
+                  "uuid": "c3acf306-b001-485c-888c-fe6e81d8deda"
+                }
+              }
+            ],
+            "status": "REJECTED",
+            "type": "BUNQ",
+            "updated": "2026-10-17 09:35:32.995637",
+            "user_alias_created": {
+              "avatar": {
+                "anchor_uuid": "c3acf306-b001-485c-888c-fe6e81d8deda",
+                "image": [
+                  {
+                    "attachment_public_uuid": "4b7e0d1d-9167-48ac-990a-70e342c87812",
+                    "content_type": "image/jpeg",
+                    "height": 126,
+                    "urls": [
+                      {
+                        "type": "ORIGINAL",
+                        "url": "https://bunq-triage-model-storage-public.s3.eu-central-1.amazonaws.com/bunq_file/File/content/6b75ab0a0e3d217826044b336b7a1a04646a55dcc9e0cc0a28f9ec9fe2bdb96f.jpg"
+                      }
+                    ],
+                    "width": 200
+                  }
+                ],
+                "style": "NONE",
+                "uuid": "9debf55b-70b1-4d43-8d51-d6e7bd42fb5b"
+              },
+              "country": "NL",
+              "display_name": "display_name-2664c8",
+              "public_nick_name": "public_nick_name-895035",
+              "type": "PERSON",
+              "uuid": "c3acf306-b001-485c-888c-fe6e81d8deda"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

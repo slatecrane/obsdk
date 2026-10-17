@@ -1,0 +1,73 @@
+{
+  "config": {
+    "bank": "bunq",
+    "country": "NL",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-17T09:35:30Z",
+    "redirect_url": "http://localhost/cb",
+    "ids": {
+      "request": [
+        "5d30fbf9-a905-47cd-828f-67ebfb6cea67",
+        "5cf78b16-ea3b-4ef2-82fb-dc0e0c5500d1",
+        "fe5dbb41-8206-429a-a4cd-76a4be7845da",
+        "1577fe37-3141-47f9-987e-b4e8317914e3",
+        "d4ea3b02-6743-4bb0-bb0d-752cde2faedb",
+        "29986535-0249-44bb-aeb4-89df06462ee2"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "NL64PSEUDOFABD8A44B6"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.50",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-92b41c",
+              "account": {
+                "scheme": "IBAN",
+                "value": "NL22PSEUDO951D285DB5"
+              }
+            },
+            "remittance": [
+              "to cancel"
+            ]
+          }
+        ],
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDciLCJ0Ijoic2VwYSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDciLCJ0Ijoic2VwYSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoiYnVucS1hcGkiLCJ1IjoiMzc4MDA0MyIsImEiOiIzNzk4MDYzIiwiZCI6IjkwNDciLCJ0Ijoic2VwYSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

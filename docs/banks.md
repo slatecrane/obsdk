@@ -9,6 +9,7 @@ Production is `unverified` for every bank: it needs real QWAC/QSealC certificate
 
 | Bank | Countries | Spec | Sandbox | Payments | Notes |
 |---|---|---|---|---|---|
+| `bunq` | EEA (30) | custom (bunq API, OAuth) | NL personal and business `sandbox_verified` (2026-10-17, method `api_key`; OAuth consent needs the sandbox app, not run); others `experimental` | `sepa` as draft payments approved in the bunq app; created, approved, withdrawn and read in the sandbox | [bunq.md](bunq.md) |
 | `firstdirect` | GB | UK OBIE v4.0 (HSBC) | personal `sandbox_verified` (2026-10-17) | `domestic` (Faster Payments); built like `hsbc`, not run for this brand | [hsbc.md](hsbc.md) |
 | `hsbc` | GB, MT | UK OBIE (v4.0 UK, v3.1 Malta) | GB personal, GB business, MT personal `sandbox_verified` (2026-10-17) | UK: `domestic` (Faster Payments); approved and executed in the sandbox for GB personal | [hsbc.md](hsbc.md) |
 | `ing` | BE, DE, ES, IT, LU, NL, RO | custom (Berlin Group-like, JWS-signed) | NL personal `sandbox_verified` (2026-10-16); others `experimental` | `sepa`, `sepa_instant`, `domestic` (RO), `crossborder`; status read in the sandbox, creation tested against a fake server | [ing.md](ing.md) |
