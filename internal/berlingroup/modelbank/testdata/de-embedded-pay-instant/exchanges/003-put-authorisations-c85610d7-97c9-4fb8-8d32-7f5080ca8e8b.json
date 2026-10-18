@@ -1,0 +1,48 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/v1/payments/instant-sepa-credit-transfers/dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/c85610d7-97c9-4fb8-8d32-7f5080ca8e8b",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Id": "REDACTED:psu-id:ccc53e",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    },
+    "body": {
+      "scaAuthenticationData": "REDACTED:scaauthenticationdata:038827"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "EMBEDDED",
+      "Content-Type": "application/json",
+      "X-Request-Id": "12c2ecb0-3f75-4b74-b228-37fe57072b97"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/payments/instant-sepa-credit-transfers/dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/c85610d7-97c9-4fb8-8d32-7f5080ca8e8b"
+        }
+      },
+      "currencyConversionFees": {
+        "amount": "300",
+        "currency": "EUR"
+      },
+      "estimatedInterbankSettlementAmount": {
+        "amount": "250",
+        "currency": "EUR"
+      },
+      "estimatedTotalAmount": {
+        "amount": "900",
+        "currency": "EUR"
+      },
+      "scaStatus": "finalised",
+      "transactionFees": {
+        "amount": "500",
+        "currency": "EUR"
+      }
+    }
+  }
+}

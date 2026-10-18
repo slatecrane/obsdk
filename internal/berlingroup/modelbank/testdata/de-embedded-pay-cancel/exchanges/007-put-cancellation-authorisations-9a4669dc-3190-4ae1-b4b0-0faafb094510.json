@@ -1,0 +1,47 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/cancellation-authorisations/9a4669dc-3190-4ae1-b4b0-0faafb094510",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Id": "REDACTED:psu-id:ccc218",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    },
+    "body": {
+      "psuData": {
+        "password": "REDACTED:password:c2c0d8"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "EMBEDDED",
+      "Content-Type": "application/json",
+      "X-Request-Id": "2023ccce-329b-444c-8abc-c46294556395"
+    },
+    "body": {
+      "_links": {
+        "authoriseTransaction": {
+          "href": "http://localhost:8089/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/cancellation-authorisations/9a4669dc-3190-4ae1-b4b0-0faafb094510"
+        },
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/cancellation-authorisations/9a4669dc-3190-4ae1-b4b0-0faafb094510"
+        }
+      },
+      "challengeData": {
+        "additionalInformation": "SCA method EMAIL: tan is OwLfZ9 . sent email to DE_36686519_embeddedSca.1@mail.de.",
+        "otpFormat": "integer",
+        "otpMaxLength": 6
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "DVU_XpM8RCQjX-XTxv9kjA",
+        "authenticationType": "EMAIL",
+        "name": "name-92dccb"
+      },
+      "scaStatus": "scaMethodSelected"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Please confirm the access in your banking app.",
+      "wait_for": 3000000000
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "auth_failed"
+      ],
+      "message": "obsdk: authorization failed: access was not approved (scaStatus failed)"
+    }
+  }
+]

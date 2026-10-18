@@ -50,6 +50,11 @@ defined in [obsdktest/live.go](obsdktest/live.go).
   fragment, JSON, ...); [internal/bgstatus](internal/bgstatus/bgstatus.go) maps Berlin Group payment status
   codes. Request signing is still per bank (`jwt.go` in revolut/hsbc; `http.go` in ing, rabobank,
   nordea, bunq).
+- **Berlin Group adapter:** [internal/berlingroup](internal/berlingroup) implements NextGenPSD2 once (consents,
+  redirect/decoupled/embedded SCA driven by steering links, AIS, single payments, cancellation, signing). A
+  Berlin Group bank is a package with a `berlingroup.Profile` passed to `berlingroup.Register`. Its dev target,
+  adorsys' ModelBank run locally, is `internal/berlingroup/modelbank` (bank `modelbank`, imported only by obdev
+  and tests). See [docs/berlin-group.md](docs/berlin-group.md).
 - **Bank package layout:** `<bank>.go` (registration, `Info`, client construction), `flow.go`, `ais.go`,
   `payment.go`, `http.go` (request helper + error mapping), tests, `testdata/` scenarios,
   `sandbox.env.example`. Swedbank also splits out `consent.go`, `sca.go`, `token.go`, `statement.go`.
@@ -96,6 +101,7 @@ every file in `exchanges/` for personal data before committing — redaction is 
 - [docs/new-integration.md](docs/new-integration.md) — full walkthrough for adding a bank, including a table
   of common sandbox errors; extend it when you hit a new one.
 - [docs/payments.md](docs/payments.md) — payment model and per-bank payment coverage.
+- [docs/berlin-group.md](docs/berlin-group.md) — the Berlin Group adapter, the local ModelBank, what is verified.
 
 ## Secrets and git hygiene
 

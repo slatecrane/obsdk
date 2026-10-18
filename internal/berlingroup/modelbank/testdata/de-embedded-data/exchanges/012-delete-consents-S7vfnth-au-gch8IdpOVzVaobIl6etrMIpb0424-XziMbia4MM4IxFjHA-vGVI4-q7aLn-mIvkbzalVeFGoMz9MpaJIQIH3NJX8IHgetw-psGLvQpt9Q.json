@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/v1/consents/S7vfnth-au-_gch8IdpOVzVaobIl6etrMIpb0424_XziMbia4MM4IxFjHA_-vGVI4-q7aLn-mIvkbzalVeFGoMz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 204,
+    "headers": {
+      "X-Request-Id": "f9faf57b-bd19-457f-b2af-4117fcd8d270"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/v1/payments/instant-sepa-credit-transfers/dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/c85610d7-97c9-4fb8-8d32-7f5080ca8e8b",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Id": "REDACTED:psu-id:ccc53e",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    },
+    "body": {
+      "psuData": {
+        "password": "REDACTED:password:c2c0d8"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "EMBEDDED",
+      "Content-Type": "application/json",
+      "X-Request-Id": "849df792-d886-4df9-93e8-68fcfd9dbd13"
+    },
+    "body": {
+      "_links": {
+        "authoriseTransaction": {
+          "href": "http://localhost:8089/v1/payments/instant-sepa-credit-transfers/dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/c85610d7-97c9-4fb8-8d32-7f5080ca8e8b"
+        },
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/payments/instant-sepa-credit-transfers/dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/c85610d7-97c9-4fb8-8d32-7f5080ca8e8b"
+        }
+      },
+      "challengeData": {
+        "additionalInformation": "SCA method EMAIL: tan is pM4t54 . sent email to DE_36686519_embeddedSca.1c@mail.de.",
+        "otpFormat": "integer",
+        "otpMaxLength": 6
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "Wo9MjIbaRMgrNjRLWA2Txs",
+        "authenticationType": "EMAIL",
+        "name": "name-c3cf0b"
+      },
+      "currencyConversionFees": {
+        "amount": "300",
+        "currency": "EUR"
+      },
+      "estimatedInterbankSettlementAmount": {
+        "amount": "250",
+        "currency": "EUR"
+      },
+      "estimatedTotalAmount": {
+        "amount": "900",
+        "currency": "EUR"
+      },
+      "scaStatus": "scaMethodSelected",
+      "transactionFees": {
+        "amount": "500",
+        "currency": "EUR"
+      }
+    }
+  }
+}

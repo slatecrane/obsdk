@@ -1,0 +1,191 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Consent-Id": "V3JG83rIAG8rgMtrzBZgAQTSu-sKmiqhOSi14FYztrlqcrrsBUdqOBdudFePGsVZMVfuxCAlZeQD5TEK3FZAN8z9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "197552fb-765c-46d1-a21e-ede30b7feeda"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "http://localhost:8089/v1/accounts/cUUztKFISgkrwG-aWQ8LV4/balances"
+            },
+            "transactions": {
+              "href": "http://localhost:8089/v1/accounts/cUUztKFISgkrwG-aWQ8LV4/transactions"
+            }
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "231.67",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.588+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            {
+              "balanceAmount": {
+                "amount": "231.67",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked",
+              "lastChangeDateTime": "2026-10-18T06:57:17.588+02:00",
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "details": "Private PSU that is used to trigger default behaviour of the ASPSP",
+          "displayName": "mock display name",
+          "iban": "DE48PSEUDO59B5217A40",
+          "linkedAccounts": "uzkNGiFQRloiVupG1ncLQY",
+          "name": "name-d264d4",
+          "product": "Cash24",
+          "resourceId": "cUUztKFISgkrwG-aWQ8LV4",
+          "status": "enabled",
+          "usage": "PRIV"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "http://localhost:8089/v1/accounts/pTAOw3fRTQ4v8-8X0hYDcE/balances"
+            },
+            "transactions": {
+              "href": "http://localhost:8089/v1/accounts/pTAOw3fRTQ4v8-8X0hYDcE/transactions"
+            }
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "190.55",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.626+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            {
+              "balanceAmount": {
+                "amount": "190.55",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked",
+              "lastChangeDateTime": "2026-10-18T06:57:17.626+02:00",
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "details": "Private PSU that is used to trigger default behaviour of the ASPSP",
+          "displayName": "mock display name",
+          "iban": "DE22PSEUDOE1F211BC89",
+          "linkedAccounts": "I1OVvYtHQGApRTCQg6m07M",
+          "name": "name-d264d4",
+          "product": "Cash24",
+          "resourceId": "pTAOw3fRTQ4v8-8X0hYDcE",
+          "status": "enabled",
+          "usage": "PRIV"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "http://localhost:8089/v1/accounts/7wVZKoIpR5UiaEPpBLH4eI/balances"
+            },
+            "transactions": {
+              "href": "http://localhost:8089/v1/accounts/7wVZKoIpR5UiaEPpBLH4eI/transactions"
+            }
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "382.64",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.6+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            {
+              "balanceAmount": {
+                "amount": "382.64",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked",
+              "lastChangeDateTime": "2026-10-18T06:57:17.6+02:00",
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "details": "Private PSU that is used to trigger default behaviour of the ASPSP",
+          "displayName": "mock display name",
+          "iban": "DE53PSEUDO339393041F",
+          "linkedAccounts": "ZPF7xudnRXgsh0kT66CKzc",
+          "name": "name-d264d4",
+          "product": "Cash24",
+          "resourceId": "7wVZKoIpR5UiaEPpBLH4eI",
+          "status": "enabled",
+          "usage": "PRIV"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "http://localhost:8089/v1/accounts/SOTqTC5STnkv16T7uBvU2Q/balances"
+            },
+            "transactions": {
+              "href": "http://localhost:8089/v1/accounts/SOTqTC5STnkv16T7uBvU2Q/transactions"
+            }
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "650.88",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.574+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            {
+              "balanceAmount": {
+                "amount": "650.88",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked",
+              "lastChangeDateTime": "2026-10-18T06:57:17.574+02:00",
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "details": "Private PSU that is used to trigger default behaviour of the ASPSP",
+          "displayName": "mock display name",
+          "iban": "DE87PSEUDO241E5A9289",
+          "linkedAccounts": "5DgdpfFHSL4s1kL2Rr7q0k",
+          "name": "name-d264d4",
+          "product": "Cash24",
+          "resourceId": "SOTqTC5STnkv16T7uBvU2Q",
+          "status": "enabled",
+          "usage": "PRIV"
+        }
+      ]
+    }
+  }
+}

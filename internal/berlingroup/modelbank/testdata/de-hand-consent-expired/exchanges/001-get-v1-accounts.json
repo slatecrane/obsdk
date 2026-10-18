@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "CONSENT_EXPIRED",
+          "text": "The consent was created by this TPP but has expired and needs to be renewed"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/v1/consents/V3JG83rIAG8rgMtrzBZgAQTSu-sKmiqhOSi14FYztrlqcrrsBUdqOBdudFePGsVZMVfuxCAlZeQD5TEK3FZAN8z9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q/authorisations/db8c4c48-4887-424a-98b0-28a4b8bbe132",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Id": "REDACTED:psu-id:f35b36",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    },
+    "body": {
+      "psuData": {
+        "password": "REDACTED:password:c2c0d8"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "EMBEDDED",
+      "Content-Type": "application/json",
+      "X-Request-Id": "885885b1-7ce7-4537-bf8f-d4290c6473e9"
+    },
+    "body": {
+      "_links": {
+        "authoriseTransaction": {
+          "href": "http://localhost:8089/v1/consents/V3JG83rIAG8rgMtrzBZgAQTSu-sKmiqhOSi14FYztrlqcrrsBUdqOBdudFePGsVZMVfuxCAlZeQD5TEK3FZAN8z9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q/authorisations/db8c4c48-4887-424a-98b0-28a4b8bbe132"
+        },
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/consents/V3JG83rIAG8rgMtrzBZgAQTSu-sKmiqhOSi14FYztrlqcrrsBUdqOBdudFePGsVZMVfuxCAlZeQD5TEK3FZAN8z9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q/authorisations/db8c4c48-4887-424a-98b0-28a4b8bbe132"
+        }
+      },
+      "challengeData": {
+        "additionalInformation": "SCA method EMAIL: tan is 8iIvZN . sent email to DE_36686519_defaultPsu.private@mail.de.",
+        "otpFormat": "integer",
+        "otpMaxLength": 6
+      },
+      "chosenScaMethod": {
+        "authenticationMethodId": "zbtuzC8tTvYp3MNpEgJH7E",
+        "authenticationType": "EMAIL",
+        "name": "name-dd4045"
+      },
+      "scaStatus": "scaMethodSelected"
+    }
+  }
+}

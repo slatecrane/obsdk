@@ -1,0 +1,36 @@
+{
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T05:43:43Z",
+    "redirect_url": "https://app.example/callback",
+    "ids": {
+      "request": [
+        "5c244b33-f511-4e1e-a5a4-fce5660ef69e",
+        "9cefa55e-77a7-4ffe-831b-961b376cd7dc",
+        "05d8f77c-7fa6-4566-a3fc-8c1e05ce051e"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "embedded",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "password": "REDACTED:password:c2c0d8",
+        "psu_id": "REDACTED:psu_id:ccc6d1"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "otp": "REDACTED:otp:d6565d"
+      }
+    }
+  ]
+}

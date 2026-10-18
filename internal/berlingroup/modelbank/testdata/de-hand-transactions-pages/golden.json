@@ -1,0 +1,167 @@
+[
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "t-1",
+          "entry_reference": "E1",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-25.90",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-01",
+          "value_date": "2026-10-01",
+          "counterparty": {
+            "name": "Grocer",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE02120300000000202051"
+              }
+            ]
+          },
+          "remittance": [
+            "Card payment"
+          ],
+          "bank_code": "PMNT-CCRD-POSD",
+          "bank_code_text": "105",
+          "merchant_category": "5411",
+          "raw": {
+            "transactionId": "t-1",
+            "bookingDate": "2026-10-01",
+            "valueDate": "2026-10-01",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-25.90"
+            },
+            "creditorName": "Grocer",
+            "creditorAccount": {
+              "iban": "DE02120300000000202051"
+            },
+            "remittanceInformationUnstructured": "Card payment",
+            "merchantCategoryCode": "5411",
+            "entryReference": "E1",
+            "bankTransactionCode": "PMNT-CCRD-POSD",
+            "proprietaryBankTransactionCode": "105"
+          }
+        },
+        {
+          "id": "t-2",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1500.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-01",
+          "value_date": "2026-10-01",
+          "counterparty": {
+            "name": "Employer GmbH",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE75512108001245126199"
+              }
+            ]
+          },
+          "reference_number": "RF18539007547034",
+          "end_to_end_id": "SAL-2026-10",
+          "raw": {
+            "transactionId": "t-2",
+            "bookingDate": "2026-10-01",
+            "valueDate": "2026-10-01",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "1500.00"
+            },
+            "debtorName": "Employer GmbH",
+            "debtorAccount": {
+              "iban": "DE75512108001245126199"
+            },
+            "remittanceInformationStructured": {
+              "reference": "RF18539007547034",
+              "referenceType": "SCOR"
+            },
+            "endToEndId": "SAL-2026-10"
+          }
+        }
+      ],
+      "next_cursor": "/v1/accounts/acc-giro-1/transactions?dateFrom=2026-09-01&bookingStatus=booked&page=2"
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "t-3",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-9.99",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-15",
+          "value_date": "2026-09-15",
+          "counterparty": {
+            "name": "Streaming Ltd"
+          },
+          "remittance": [
+            "Subscription",
+            "September"
+          ],
+          "balance_after": {
+            "amount": "1474.11",
+            "currency": "EUR"
+          },
+          "raw": {
+            "transactionId": "t-3",
+            "bookingDate": "2026-09-15",
+            "valueDate": "2026-09-15",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "9.99"
+            },
+            "creditDebitIndicator": "DBIT",
+            "creditorName": "Streaming Ltd",
+            "remittanceInformationUnstructuredArray": [
+              "Subscription",
+              "September"
+            ],
+            "endToEndId": "NOTPROVIDED",
+            "balanceAfterTransaction": {
+              "balanceType": "closingBooked",
+              "balanceAmount": {
+                "currency": "EUR",
+                "amount": "1474.11"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "transactions",
+    "note": "a cursor of another account is refused",
+    "error": {
+      "is": [
+        "invalid_request"
+      ],
+      "message": "obsdk: invalid request: cursor is not a next link of this account's transactions"
+    }
+  },
+  {
+    "op": "transactions",
+    "note": "ModelBank reports booked transactions only",
+    "error": {
+      "is": [
+        "unsupported"
+      ],
+      "message": "obsdk: operation not supported: adorsys ModelBank only reports booked transactions"
+    }
+  }
+]

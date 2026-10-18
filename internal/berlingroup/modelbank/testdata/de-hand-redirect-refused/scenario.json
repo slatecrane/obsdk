@@ -1,0 +1,20 @@
+{
+  "description": "Hand-written: the user cancels at the bank and returns through TPP-Nok-Redirect-URI (error=access_denied).",
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T09:00:00Z"
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "redirect",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback?error=access_denied"
+    }
+  ]
+}

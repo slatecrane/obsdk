@@ -1,0 +1,68 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Consent-Id": "7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "829f3756-b30c-4e4f-a3b9-57909c928dd1"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "http://localhost:8089/v1/accounts/sEAEnXfkT24qf603yoxEW4/balances"
+            },
+            "transactions": {
+              "href": "http://localhost:8089/v1/accounts/sEAEnXfkT24qf603yoxEW4/transactions"
+            }
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "725.00",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.536+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            {
+              "balanceAmount": {
+                "amount": "725.00",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked",
+              "lastChangeDateTime": "2026-10-18T06:57:17.536+02:00",
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "details": "PSU for whom only one SCA method and only Redirect SCA approach is supported. It refers to a corporate account.",
+          "displayName": "mock display name",
+          "iban": "DE51PSEUDO3D070BB12E",
+          "linkedAccounts": "xycMHH6oQ48i1_Gj8Oiu_k",
+          "name": "name-dc6269",
+          "product": "Cash24",
+          "resourceId": "sEAEnXfkT24qf603yoxEW4",
+          "status": "enabled",
+          "usage": "PRIV"
+        }
+      ]
+    }
+  }
+}

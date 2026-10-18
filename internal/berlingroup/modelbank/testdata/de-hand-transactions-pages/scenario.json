@@ -1,0 +1,37 @@
+{
+  "description": "Hand-written: two pages of transactions linked by next; signed and unsigned (DBIT) amounts, structured reference object.",
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T09:00:00Z"
+  },
+  "calls": [
+    {
+      "op": "transactions",
+      "account": "acc-giro-1",
+      "from": "2026-09-01",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "acc-giro-1",
+      "psu_ip": "203.0.113.7",
+      "cursor": "/v1/accounts/acc-giro-1/transactions?dateFrom=2026-09-01&bookingStatus=booked&page=2"
+    },
+    {
+      "op": "transactions",
+      "account": "acc-giro-1",
+      "cursor": "/v1/accounts/other/transactions?page=2",
+      "note": "a cursor of another account is refused"
+    },
+    {
+      "op": "transactions",
+      "account": "acc-giro-1",
+      "status": [
+        "pending"
+      ],
+      "note": "ModelBank reports booked transactions only"
+    }
+  ]
+}

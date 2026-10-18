@@ -1,0 +1,55 @@
+{
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T05:43:41Z",
+    "redirect_url": "https://app.example/callback",
+    "ids": {
+      "request": [
+        "6721066f-0e6c-429c-bc90-4dc48ecca20a",
+        "885885b1-7ce7-4537-bf8f-d4290c6473e9",
+        "868d4a5c-f3df-489c-92dd-9bf01a8dc51a",
+        "f2fba13e-5f43-413c-be59-e36a364a06c2",
+        "a2a7cdaf-a0d9-4b72-a8a7-fea09aa780f9",
+        "197552fb-765c-46d1-a21e-ede30b7feeda",
+        "2b3f922d-017e-4b9e-955a-24b6dd4c38e2",
+        "33ab37ff-6fe5-4df2-a85a-a46b9c63bbc0"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "embedded",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "password": "REDACTED:password:c2c0d8",
+        "psu_id": "REDACTED:psu_id:f35b36"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "otp": "REDACTED:otp:9304f1"
+      }
+    },
+    {
+      "op": "transactions",
+      "account": "cUUztKFISgkrwG-aWQ8LV4",
+      "from": "2025-01-01T00:00:00Z",
+      "to": "2026-10-18T05:43:43Z",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "pTAOw3fRTQ4v8-8X0hYDcE",
+      "from": "2025-01-01T00:00:00Z",
+      "to": "2026-10-18T05:43:43Z",
+      "psu_ip": "203.0.113.7"
+    }
+  ]
+}

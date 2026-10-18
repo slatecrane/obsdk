@@ -1,0 +1,27 @@
+{
+  "description": "Hand-written: decoupled approval polled through scaStatus until finalised. The local ModelBank never confirms decoupled approvals.",
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T09:00:00Z"
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "decoupled",
+      "values": {
+        "psu_id": "REDACTED:psu_id:hand"
+      },
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "note": "still waiting in the app"
+    },
+    {
+      "op": "resume",
+      "note": "approved"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "description": "Hand-written: an expired consent asks for re-authorisation on reads and on refresh.",
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T09:00:00Z"
+  },
+  "calls": [
+    {
+      "op": "accounts"
+    },
+    {
+      "op": "refresh"
+    }
+  ]
+}

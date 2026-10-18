@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/consents/S7vfnth-au-_gch8IdpOVzVaobIl6etrMIpb0424_XziMbia4MM4IxFjHA_-vGVI4-q7aLn-mIvkbzalVeFGoMz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Id": "REDACTED:psu-id:27e030",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "4e81b162-fc09-4020-ae00-4d3346ab0322"
+    },
+    "body": {
+      "access": {
+        "accounts": [],
+        "allPsd2": "allAccounts",
+        "balances": [],
+        "transactions": []
+      },
+      "consentStatus": "valid",
+      "frequencyPerDay": 4,
+      "lastActionDate": "2026-10-18",
+      "recurringIndicator": true,
+      "validUntil": "2027-01-15"
+    }
+  }
+}

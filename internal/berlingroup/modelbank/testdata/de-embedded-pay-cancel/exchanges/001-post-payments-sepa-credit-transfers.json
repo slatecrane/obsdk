@@ -1,0 +1,72 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/v1/payments/sepa-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    },
+    "body": {
+      "creditorAccount": {
+        "iban": "DE22PSEUDOA4578B542C"
+      },
+      "creditorName": "creditorname-0c264c",
+      "debtorAccount": {
+        "currency": "EUR",
+        "iban": "DE95PSEUDO0B0702EBA1"
+      },
+      "endToEndIdentification": "obsdk-e2e-1",
+      "instructedAmount": {
+        "amount": "12.34",
+        "currency": "EUR"
+      },
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-d2b614",
+      "requestedExecutionDate": "2026-10-30"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "EMBEDDED",
+      "Content-Type": "application/json",
+      "Location": "http://localhost:8089/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+      "X-Request-Id": "59405fc2-c496-4ffa-9ac7-dc256f4926c2"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/edd66221-c5f2-437a-9f09-6d28baa7bc56"
+        },
+        "self": {
+          "href": "http://localhost:8089/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q"
+        },
+        "status": {
+          "href": "http://localhost:8089/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/status"
+        },
+        "updatePsuAuthentication": {
+          "href": "http://localhost:8089/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/edd66221-c5f2-437a-9f09-6d28baa7bc56"
+        }
+      },
+      "paymentId": "ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+      "psuMessage": "mocked PSU message",
+      "scaMethods": [
+        {
+          "authenticationMethodId": "Mocked Authentication id",
+          "authenticationType": "Mocked Authentication type",
+          "authenticationVersion": "Mocked Authentication version",
+          "name": "name-3b6fc7"
+        }
+      ],
+      "tppMessages": [
+        {
+          "category": "WARNING",
+          "code": "WARNING",
+          "text": "Mocked tpp message from the bank"
+        }
+      ],
+      "transactionStatus": "RCVD"
+    }
+  }
+}

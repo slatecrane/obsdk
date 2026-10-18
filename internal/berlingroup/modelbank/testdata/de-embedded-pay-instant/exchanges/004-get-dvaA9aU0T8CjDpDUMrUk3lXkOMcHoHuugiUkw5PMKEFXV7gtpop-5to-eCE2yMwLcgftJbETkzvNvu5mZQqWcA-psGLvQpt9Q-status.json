@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/payments/instant-sepa-credit-transfers/dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/status",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Id": "REDACTED:psu-id:ccc53e",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "2d944f31-2d8a-44e7-845b-eb12872d2b3a"
+    },
+    "body": {
+      "_links": {
+        "account": {
+          "href": "Mock spi account link"
+        }
+      },
+      "psuMessage": "Mocked PSU message from SPI for this payment",
+      "tppMessage": [
+        {
+          "category": "WARNING",
+          "code": "WARNING",
+          "text": "Mocked tpp message from the bank"
+        }
+      ],
+      "transactionStatus": "ACCC"
+    }
+  }
+}

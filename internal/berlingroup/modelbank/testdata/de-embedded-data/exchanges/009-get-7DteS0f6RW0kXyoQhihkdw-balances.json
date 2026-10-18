@@ -1,0 +1,44 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/7DteS0f6RW0kXyoQhihkdw/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Consent-Id": "S7vfnth-au-_gch8IdpOVzVaobIl6etrMIpb0424_XziMbia4MM4IxFjHA_-vGVI4-q7aLn-mIvkbzalVeFGoMz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "70ee657a-bc70-4419-b212-373b34197194"
+    },
+    "body": {
+      "account": {
+        "currency": "EUR",
+        "iban": "DE10PSEUDO1B2D0BE4A1"
+      },
+      "balances": [
+        {
+          "balanceAmount": {
+            "amount": "55.21",
+            "currency": "EUR"
+          },
+          "balanceType": "interimAvailable",
+          "lastChangeDateTime": "2026-10-18T06:57:17.243+02:00",
+          "referenceDate": "2026-10-18"
+        },
+        {
+          "balanceAmount": {
+            "amount": "55.21",
+            "currency": "EUR"
+          },
+          "balanceType": "closingBooked",
+          "lastChangeDateTime": "2026-10-18T06:57:17.243+02:00",
+          "referenceDate": "2026-10-18"
+        }
+      ]
+    }
+  }
+}

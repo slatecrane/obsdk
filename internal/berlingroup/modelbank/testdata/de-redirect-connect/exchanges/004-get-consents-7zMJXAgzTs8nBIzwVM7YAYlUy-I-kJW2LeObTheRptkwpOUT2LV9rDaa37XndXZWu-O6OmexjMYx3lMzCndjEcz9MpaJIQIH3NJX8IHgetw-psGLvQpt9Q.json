@@ -1,0 +1,44 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/consents/7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "e47595d1-f120-477b-9041-002e06323c69"
+    },
+    "body": {
+      "access": {
+        "accounts": [
+          {
+            "currency": "EUR",
+            "iban": "DE51PSEUDO3D070BB12E"
+          }
+        ],
+        "balances": [
+          {
+            "currency": "EUR",
+            "iban": "DE51PSEUDO3D070BB12E"
+          }
+        ],
+        "transactions": [
+          {
+            "currency": "EUR",
+            "iban": "DE51PSEUDO3D070BB12E"
+          }
+        ]
+      },
+      "consentStatus": "valid",
+      "frequencyPerDay": 4,
+      "lastActionDate": "2026-10-18",
+      "recurringIndicator": true,
+      "validUntil": "2027-01-15"
+    }
+  }
+}
