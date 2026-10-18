@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.6/aisp/account-access-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:6b3359",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "4288af15-5232-4037-a172-c5a5f4510458"
+    },
+    "body": {
+      "Data": {
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ]
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "9fe73637-b55e-407a-b6ef-7186c897764e",
+        "CreationDateTime": "2026-10-18T11:37:45.916944586Z",
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ],
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-18T11:37:45.916963236Z"
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/account-access-consents/9fe73637-b55e-407a-b6ef-7186c897764e"
+      },
+      "Meta": {}
+    }
+  }
+}

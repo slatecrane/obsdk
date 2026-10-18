@@ -1,0 +1,37 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/2ac59366-5512-11e9-9d38-8f6d1aa12f2f/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:31:33"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:380f6e",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "a1c3fad4-067c-40b5-879d-f5eb19c92507"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": []
+      },
+      "Links": {
+        "Self": "https://alandsbanken-fi-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/2ac59366-5512-11e9-9d38-8f6d1aa12f2f/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:31:33Z"
+      },
+      "Meta": {}
+    }
+  }
+}

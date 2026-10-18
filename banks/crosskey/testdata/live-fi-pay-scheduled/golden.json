@@ -1,0 +1,86 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the payment, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://s-pankki-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=ea59ae3e-e930-4f84-ba57-29c2aae2d34d&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL3MtcGFua2tpLWFwaS1zYW5kYm94LmNyb3Nza2V5LmlvIiwiY2xhaW1zIjp7ImlkX3Rva2VuIjp7Im9wZW5iYW5raW5nX2ludGVudF9pZCI6eyJ2YWx1ZSI6InVybjpzLXBhbmtraTpwYXltZW50OjE4M2VmZjFkLTAwNjMtNDRjNi1hZDEyLTFiMzhkZGRiMzRmNyIsImVzc2VudGlhbCI6dHJ1ZX19LCJ1c2VyaW5mbyI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJ1cm46cy1wYW5ra2k6cGF5bWVudDoxODNlZmYxZC0wMDYzLTQ0YzYtYWQxMi0xYjM4ZGRkYjM0ZjciLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNDYxOCwiaWF0IjoxNzkyMzIyODE4LCJpc3MiOiIiLCJqdGkiOiJlN2IwY2NmNi05NmZkLTQ3MzgtOTc1MS1jODA1YzRiNjRmM2MiLCJuYmYiOjE3OTIzMjI4MTgsIm5vbmNlIjoiZWE1OWFlM2UtZTkzMC00Zjg0LWJhNTctMjljMmFhZTJkMzRkIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgcGF5bWVudHMiLCJzdGF0ZSI6IjcxNWYxOGY2LWY2MTItNDZiMC1hOGUzLWFjOWU5ZTQxMjcwYSJ9.dGVzdC1zaWduYXR1cmU6lUeePy_uuLo&response_type=code+id_token&scope=openid+payments&state=715f18f6-f612-46b0-a8e3-ac9e9e41270a"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "5e54a5b7-31c2-4f81-b307-352ccd0159fc",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "InitiationCompleted",
+        "final": true,
+        "reason": "scheduled; the later execution is not reported through this API",
+        "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcy1wYW5ra2kiLCJmIjoiaW50ZXJuYXRpb25hbC1zY2hlZHVsZWQiLCJpZCI6IjVlNTRhNWI3LTMxYzItNGY4MS1iMzA3LTM1MmNjZDAxNTlmYyIsInQiOiJzZXBhIn0",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "identification-de26b0"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "5e54a5b7-31c2-4f81-b307-352ccd0159fc",
+      "type": "sepa",
+      "status": "in_progress",
+      "bank_status": "InitiationCompleted",
+      "final": true,
+      "reason": "scheduled; the later execution is not reported through this API",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcy1wYW5ra2kiLCJmIjoiaW50ZXJuYXRpb25hbC1zY2hlZHVsZWQiLCJpZCI6IjVlNTRhNWI3LTMxYzItNGY4MS1iMzA3LTM1MmNjZDAxNTlmYyIsInQiOiJzZXBhIn0",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "identification-de26b0"
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "5e54a5b7-31c2-4f81-b307-352ccd0159fc",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "InitiationCompleted",
+        "final": true,
+        "reason": "deleted; the bank still reports InitiationCompleted",
+        "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcy1wYW5ra2kiLCJmIjoiaW50ZXJuYXRpb25hbC1zY2hlZHVsZWQiLCJpZCI6IjVlNTRhNWI3LTMxYzItNGY4MS1iMzA3LTM1MmNjZDAxNTlmYyIsInQiOiJzZXBhIn0",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "identification-de26b0"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "5e54a5b7-31c2-4f81-b307-352ccd0159fc",
+      "type": "sepa",
+      "status": "in_progress",
+      "bank_status": "InitiationCompleted",
+      "final": true,
+      "reason": "scheduled; the later execution is not reported through this API",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcy1wYW5ra2kiLCJmIjoiaW50ZXJuYXRpb25hbC1zY2hlZHVsZWQiLCJpZCI6IjVlNTRhNWI3LTMxYzItNGY4MS1iMzA3LTM1MmNjZDAxNTlmYyIsInQiOiJzZXBhIn0",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "identification-de26b0"
+      }
+    }
+  }
+]

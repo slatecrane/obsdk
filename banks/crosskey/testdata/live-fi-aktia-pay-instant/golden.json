@@ -1,0 +1,48 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the payment, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://aktia-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=d7ff27ae-a142-4658-a58b-af82895acbfe&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2FrdGlhLWFwaS1zYW5kYm94LmNyb3Nza2V5LmlvIiwiY2xhaW1zIjp7ImlkX3Rva2VuIjp7Im9wZW5iYW5raW5nX2ludGVudF9pZCI6eyJ2YWx1ZSI6InVybjpha3RpYTpwYXltZW50OjgzNDZkMmY5LWFkYmEtNGRkZC1iNzNkLTNhMDBiNWRlNTY5YSIsImVzc2VudGlhbCI6dHJ1ZX19LCJ1c2VyaW5mbyI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJ1cm46YWt0aWE6cGF5bWVudDo4MzQ2ZDJmOS1hZGJhLTRkZGQtYjczZC0zYTAwYjVkZTU2OWEiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyMzA0NCwiaWF0IjoxNzkyMzIxMjQ0LCJpc3MiOiIiLCJqdGkiOiIyMWUzMDYwZi02NjQ0LTQyOGQtOTk0YS1jZTIwZmE1MmYzYWUiLCJuYmYiOjE3OTIzMjEyNDQsIm5vbmNlIjoiZDdmZjI3YWUtYTE0Mi00NjU4LWE1OGItYWY4Mjg5NWFjYmZlIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgcGF5bWVudHMiLCJzdGF0ZSI6ImQwM2FhNzg3LTU2M2UtNDcyYi05MzMxLThkN2MzOTE5MDExNyJ9.dGVzdC1zaWduYXR1cmU64SerXWeEpG0&response_type=code+id_token&scope=openid+payments&state=d03aa787-563e-472b-9331-8d7c39190117"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "98f712c5-a222-46d0-9113-4693a27dac6e",
+        "type": "sepa_instant",
+        "status": "completed",
+        "bank_status": "AcceptedCreditSettlementCompleted",
+        "final": true,
+        "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWt0aWEiLCJmIjoiaW50ZXJuYXRpb25hbCIsImlkIjoiOThmNzEyYzUtYTIyMi00NmQwLTkxMTMtNDY5M2EyN2RhYzZlIiwidCI6InNlcGFfaW5zdGFudCJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "identification-525f4c"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "98f712c5-a222-46d0-9113-4693a27dac6e",
+      "type": "sepa_instant",
+      "status": "completed",
+      "bank_status": "AcceptedCreditSettlementCompleted",
+      "final": true,
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWt0aWEiLCJmIjoiaW50ZXJuYXRpb25hbCIsImlkIjoiOThmNzEyYzUtYTIyMi00NmQwLTkxMTMtNDY5M2EyN2RhYzZlIiwidCI6InNlcGFfaW5zdGFudCJ9",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "identification-525f4c"
+      }
+    }
+  }
+]

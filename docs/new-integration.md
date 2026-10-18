@@ -215,6 +215,9 @@ From Swedbank, ING, Nordea, HSBC, Rabobank, bunq, Handelsbanken and OP. Other ba
 | OP: `400 VALIDATION "Bad request"` on `POST .../{paymentId}/submit` | the submit call has no body; the spec defines an (empty) JSON request body | send `{}` with `Content-Type: application/json` |
 | OP: `404 "Authorization ... not found"` on `DELETE .../authorizations/{id}`, while `GET` shows it `Authorized` | the sandbox can't revoke an approved authorization | don't count a 404 as revoked; read the authorization to check |
 | A login call returns `302` and the next call fails | the HTTP client followed the bank's redirect to its login page (or to your redirect URI) | don't follow redirects on that call; hand `Location` to the user (Nordea's `/authorize`) |
+| `#error=invalid_request_object&error_description=Expired JWT` on the callback (Crosskey) | the signed request object's `exp` passed before the user opened the link | open the link sooner, or raise `obie.Profile.RequestObjectTTL` (FAPI allows up to 60 minutes) |
+| `401 invalid_client: Client authentication failed` right after creating an app (Crosskey) | the new client is not active yet | wait a few minutes and retry |
+| `400 UK.OBIE.Header.Invalid: Mandatory header x-fapi-financial-id is missing` (Crosskey, Resurs) | one store serves several countries | send `x-fapi-financial-id: <store>/<country>` on every API call (profile `Headers`) |
 
 ## 7. Finish
 

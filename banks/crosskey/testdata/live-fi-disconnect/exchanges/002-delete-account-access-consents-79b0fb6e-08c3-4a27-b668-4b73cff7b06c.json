@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/open-banking/v3.1.6/aisp/account-access-consents/79b0fb6e-08c3-4a27-b668-4b73cff7b06c",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:0742d6",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Fapi-Interaction-Id": "f9f900c2-8bcb-4a23-b3e4-605ca79a7204"
+    }
+  },
+  "response": {
+    "status": 204,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/430e3afe-7047-11ee-86a5-5bda99308d4e/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:40:37"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a80ace",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "f3dd2252-2d6f-4a40-9536-b209b9844c39"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-13T00:00:00Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "86.85",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-10-13T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "98f31251-5097-4fbc-9dbd-623b4d3a8f0c",
+            "ValueDateTime": "2026-10-13T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "60.72",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "35b80b51-f575-4325-96f1-7b9e47821973",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:00.859157Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "11.15",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-28T22:15:00.859157Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6e9148f0-8da3-4136-9aa3-1b07bc2d2fdf",
+            "ValueDateTime": "2026-09-28T22:15:00.859157Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-23T22:15:01.414353Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "77.59",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-23T22:15:01.414353Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "f29847a0-3227-439b-8084-3579a16416f4",
+            "ValueDateTime": "2026-09-23T22:15:01.414353Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-14T22:15:01.632655Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "20.37",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-14T22:15:01.632655Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "67b2bb23-db1c-4cc4-ae05-499dc2325e3a",
+            "ValueDateTime": "2026-09-14T22:15:01.632655Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-09T22:15:00.862862Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "81.15",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-09T22:15:00.862862Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "9afa2397-362c-4bf5-8859-41b4e19626ad",
+            "ValueDateTime": "2026-09-09T22:15:00.862862Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-01T22:15:01.605397Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "73.94",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-01T22:15:01.605397Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "4715b38c-95d0-49ef-a626-372a035eff38",
+            "ValueDateTime": "2026-09-01T22:15:01.605397Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/430e3afe-7047-11ee-86a5-5bda99308d4e/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:40:37Z"
+      },
+      "Meta": {}
+    }
+  }
+}

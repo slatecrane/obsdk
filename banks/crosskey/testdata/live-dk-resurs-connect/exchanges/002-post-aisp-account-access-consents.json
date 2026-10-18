@@ -1,0 +1,57 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.6/aisp/account-access-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:fac1e0",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Financial-Id": "resursbank/dk",
+      "X-Fapi-Interaction-Id": "31481463-25d0-42ce-bca3-caa6ce9beddd"
+    },
+    "body": {
+      "Data": {
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ]
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "b81fe55d-2a58-49c9-a021-8f1b23baea8f",
+        "CreationDateTime": "2026-10-18T17:17:51.175953176Z",
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ],
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-18T17:17:51.175973057Z"
+      },
+      "Links": {
+        "Self": "https://resursbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/account-access-consents/b81fe55d-2a58-49c9-a021-8f1b23baea8f"
+      },
+      "Meta": {}
+    }
+  }
+}

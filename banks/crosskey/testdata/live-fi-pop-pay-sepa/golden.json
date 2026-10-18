@@ -1,0 +1,48 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the payment, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://pop-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=e2515da3-27d7-4bd6-b26f-393adda8b12c&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL3BvcC1hcGktc2FuZGJveC5jcm9zc2tleS5pbyIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJ1cm46cG9wOnBheW1lbnQ6NzRiZmM3ZTUtM2QwMy00ZDEzLWJkYjUtYmVlMGNiNmE1ZTFjIiwiZXNzZW50aWFsIjp0cnVlfX0sInVzZXJpbmZvIjp7Im9wZW5iYW5raW5nX2ludGVudF9pZCI6eyJ2YWx1ZSI6InVybjpwb3A6cGF5bWVudDo3NGJmYzdlNS0zZDAzLTRkMTMtYmRiNS1iZWUwY2I2YTVlMWMiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNDc4OCwiaWF0IjoxNzkyMzIyOTg4LCJpc3MiOiIiLCJqdGkiOiIyMGUxY2ZiZS1iMjMzLTQwYjktOWZlZi05N2Y2MTI3OGUwOGQiLCJuYmYiOjE3OTIzMjI5ODgsIm5vbmNlIjoiZTI1MTVkYTMtMjdkNy00YmQ2LWIyNmYtMzkzYWRkYThiMTJjIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgcGF5bWVudHMiLCJzdGF0ZSI6ImE0Y2MzOGVjLWNmYzktNGRmYy05M2Q3LTM5ZDAwYTc4NjMyZiJ9.dGVzdC1zaWduYXR1cmU64yrHz0dTDTA&response_type=code+id_token&scope=openid+payments&state=a4cc38ec-cfc9-4dfc-93d7-39d00a78632f"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "e3d61355-5008-40b2-aa57-e7867bfcfd0b",
+        "type": "sepa",
+        "status": "accepted",
+        "bank_status": "Pending",
+        "final": false,
+        "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcG9wIiwiZiI6ImludGVybmF0aW9uYWwiLCJpZCI6ImUzZDYxMzU1LTUwMDgtNDBiMi1hYTU3LWU3ODY3YmZjZmQwYiIsInQiOiJzZXBhIn0",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "identification-e834df"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "e3d61355-5008-40b2-aa57-e7867bfcfd0b",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "AcceptedSettlementCompleted",
+      "final": true,
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcG9wIiwiZiI6ImludGVybmF0aW9uYWwiLCJpZCI6ImUzZDYxMzU1LTUwMDgtNDBiMi1hYTU3LWU3ODY3YmZjZmQwYiIsInQiOiJzZXBhIn0",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "identification-e834df"
+      }
+    }
+  }
+]

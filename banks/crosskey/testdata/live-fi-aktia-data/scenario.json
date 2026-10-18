@@ -1,0 +1,73 @@
+{
+  "config": {
+    "bank": "aktia",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T10:58:18Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "a80aa0b3-50c5-41cb-82f7-9f0303e0e18e",
+        "226f7233-5e41-42cf-a015-b29c2f91e710",
+        "f93e64e2-7ebe-45da-b478-6a981dc7d4e0",
+        "37a63b2d-c33a-4e9d-b876-1268654ab835",
+        "fc8e0358-bc25-405a-9978-a37d19246cf1",
+        "bb1ddc79-dfd3-4de4-8abe-73b04c04da06",
+        "9840ba1f-d46d-41a3-9761-d4a60c32dcce"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+      "from": "2020-01-01T00:00:00Z",
+      "to": "2026-10-18T10:58:19Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "1efc7638-58b4-11f0-9f3d-3b92bf1020d0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "1efc7638-58b4-11f0-9f3d-3b92bf1020d0",
+      "from": "2020-01-01T00:00:00Z",
+      "to": "2026-10-18T10:58:20Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+      "from": "2020-01-01T00:00:00Z",
+      "to": "2026-10-18T10:58:21Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

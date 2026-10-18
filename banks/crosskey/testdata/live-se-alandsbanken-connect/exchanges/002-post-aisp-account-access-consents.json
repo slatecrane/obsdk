@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.6/aisp/account-access-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:3e67a9",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "5fca4bc0-2a00-4367-b831-9a495c9b7a04"
+    },
+    "body": {
+      "Data": {
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ]
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "20ced76c-0c4c-41d7-bc61-79f40436fda9",
+        "CreationDateTime": "2026-10-18T11:32:41.79088418Z",
+        "Permissions": [
+          "ReadAccountsBasic",
+          "ReadAccountsDetail",
+          "ReadBalances",
+          "ReadTransactionsBasic",
+          "ReadTransactionsDetail",
+          "ReadTransactionsCredits",
+          "ReadTransactionsDebits"
+        ],
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-18T11:32:41.790903461Z"
+      },
+      "Links": {
+        "Self": "https://alandsbanken-se-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/account-access-consents/20ced76c-0c4c-41d7-bc61-79f40436fda9"
+      },
+      "Meta": {}
+    }
+  }
+}

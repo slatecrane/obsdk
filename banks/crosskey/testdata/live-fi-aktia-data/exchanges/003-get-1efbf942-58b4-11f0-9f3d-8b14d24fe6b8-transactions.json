@@ -1,0 +1,1426 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/1efbf942-58b4-11f0-9f3d-8b14d24fe6b8/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2020-01-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T10:58:19"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:c81e7b",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "f93e64e2-7ebe-45da-b478-6a981dc7d4e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "278.19",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "afe2f71e-72d3-4094-83f9-a798eb6ffbd9",
+            "TransactionReference": "17918433017936",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-06T00:00:00Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "295.58",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-10-06T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "bcb3e0a0-f628-42c7-92aa-b53a49a9a9b0",
+            "TransactionReference": "17913249013226",
+            "ValueDateTime": "2026-10-06T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "1910.31",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "6a06af6c-e528-4a32-9048-224932c303cd",
+            "TransactionReference": "17908065027618",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-29T00:00:00Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "342.11",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-09-29T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "146f3d24-509f-49b4-abf6-06b5f0a9b176",
+            "TransactionReference": "17907201013490",
+            "ValueDateTime": "2026-09-29T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:01.936231Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "324.74",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-09-21T22:15:01.936231Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "61808602-1184-4047-882e-f57e6c13f752",
+            "TransactionReference": "17900289019361",
+            "ValueDateTime": "2026-09-21T22:15:01.936231Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-14T22:15:02.097692Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "382.67",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-09-14T22:15:02.097692Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "077caf1d-fd3b-401c-9039-808610c9c6be",
+            "TransactionReference": "17894241020970",
+            "ValueDateTime": "2026-09-14T22:15:02.097692Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-10T22:15:01.041213Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "356.94",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-09-10T22:15:01.041213Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "d8b62253-edaa-4b1c-8a91-2cd76cd938f6",
+            "TransactionReference": "17890785010411",
+            "ValueDateTime": "2026-09-10T22:15:01.041213Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-01T22:15:01.7658Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "300.72",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-09-01T22:15:01.7658Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "03961fb0-0b08-45b7-9d09-7f0832e0351e",
+            "TransactionReference": "17883009017657",
+            "ValueDateTime": "2026-09-01T22:15:01.7658Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:03.420995Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "2062.39",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-08-31T22:15:03.420995Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "11e00d78-2f0b-4849-b330-5519b3dee888",
+            "TransactionReference": "17882145034210",
+            "ValueDateTime": "2026-08-31T22:15:03.420995Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:02.475142Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "334.67",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "RIMB"
+            },
+            "BookingDateTime": "2026-08-31T22:15:02.475142Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Loan Payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "01f9cff6-2314-4911-a654-bba8f74c522d",
+            "TransactionReference": "17882145024754",
+            "ValueDateTime": "2026-08-31T22:15:02.475142Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:02.452492Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "417.84",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-08-31T22:15:02.452492Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "56007970-6291-4754-9a37-3edd65502d5e",
+            "TransactionReference": "17882145024521",
+            "ValueDateTime": "2026-08-31T22:15:02.452492Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:01.379841Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "214.19",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-08-31T22:15:01.379841Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-530c9f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "3588a4ec-523c-4ddc-b6ed-e8ad59483990",
+            "TransactionReference": "17882145013794",
+            "ValueDateTime": "2026-08-31T22:15:01.379841Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-24T22:15:03.189717Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "374.37",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-08-24T22:15:03.189717Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "f03d3002-82be-4b14-b2ab-d19ec14e42a7",
+            "TransactionReference": "17876097031898",
+            "ValueDateTime": "2026-08-24T22:15:03.189717Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-18T22:15:02.173371Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "318.79",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-08-18T22:15:02.173371Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "1f1769f1-8d92-4a65-a0fc-972484c10f68",
+            "TransactionReference": "17870913021739",
+            "ValueDateTime": "2026-08-18T22:15:02.173371Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-13T22:15:01.008895Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "353.54",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-08-13T22:15:01.008895Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "02727a03-e4cb-4368-8066-417c4ebe654f",
+            "TransactionReference": "17866593010080",
+            "ValueDateTime": "2026-08-13T22:15:01.008895Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-03T22:15:02.331935Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "261.88",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-08-03T22:15:02.331935Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "f4e33c0c-24cf-4504-af69-8d206be8930d",
+            "TransactionReference": "17857953023312",
+            "ValueDateTime": "2026-08-03T22:15:02.331935Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-31T22:15:02.211936Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "1985.24",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-07-31T22:15:02.211936Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "cdf4ccc4-eaed-4700-a511-e6fe4e74ccb8",
+            "TransactionReference": "17855361022114",
+            "ValueDateTime": "2026-07-31T22:15:02.211936Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-31T22:15:00.63137Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "344.74",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-07-31T22:15:00.63137Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-530c9f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "f3abf366-ea13-4f51-8605-dbc15e7b4215",
+            "TransactionReference": "17855361006318",
+            "ValueDateTime": "2026-07-31T22:15:00.63137Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-30T22:15:00.792568Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "423.24",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-07-30T22:15:00.792568Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "4b474eba-502f-4995-b53f-0a73330f8b8b",
+            "TransactionReference": "17854497007923",
+            "ValueDateTime": "2026-07-30T22:15:00.792568Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-20T22:15:02.735227Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "391.11",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-07-20T22:15:02.735227Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "47de59ed-910f-4ad6-9400-809c78462416",
+            "TransactionReference": "17845857027358",
+            "ValueDateTime": "2026-07-20T22:15:02.735227Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-14T22:15:01.461238Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "404.63",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-07-14T22:15:01.461238Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "7a657bf2-d1cd-4b1e-98a4-e1a30fb7e6b4",
+            "TransactionReference": "17840673014618",
+            "ValueDateTime": "2026-07-14T22:15:01.461238Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-07T22:15:01.871174Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "415.71",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-07-07T22:15:01.871174Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "5ed6f2f1-da11-4a6e-988b-c20201cd775b",
+            "TransactionReference": "17834625018717",
+            "ValueDateTime": "2026-07-07T22:15:01.871174Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-01T22:15:01.516516Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "272.62",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-07-01T22:15:01.516516Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "2e33d61d-b188-4a78-8f8b-b43261d455df",
+            "TransactionReference": "17829441015161",
+            "ValueDateTime": "2026-07-01T22:15:01.516516Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-30T22:15:02.881502Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "2170.11",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-06-30T22:15:02.881502Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "890fb5dc-29ca-4a98-935c-238f1997ebc0",
+            "TransactionReference": "17828577028816",
+            "ValueDateTime": "2026-06-30T22:15:02.881502Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-16T22:15:01.309157Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "497.64",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-06-16T22:15:01.309157Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "2098873f-e746-4414-a7f1-d55994e54f08",
+            "TransactionReference": "17816481013097",
+            "ValueDateTime": "2026-06-16T22:15:01.309157Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-11T22:15:01.43698Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "325.62",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-06-11T22:15:01.43698Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "cc2ec2ff-bcbb-4f6c-9536-14363eb2b004",
+            "TransactionReference": "17812161014378",
+            "ValueDateTime": "2026-06-11T22:15:01.43698Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-02T22:15:02.170885Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "458.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-06-02T22:15:02.170885Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "e57f1415-8297-4e1a-8981-97c93a5c82a3",
+            "TransactionReference": "17804385021702",
+            "ValueDateTime": "2026-06-02T22:15:02.170885Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-31T22:15:02.140972Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "367.22",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-05-31T22:15:02.140972Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "5bb2f9a6-e2bb-404b-bb7a-6a6f8a9cca22",
+            "TransactionReference": "17802657021416",
+            "ValueDateTime": "2026-05-31T22:15:02.140972Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-29T22:15:02.087212Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "1680.41",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-05-29T22:15:02.087212Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "bde1c870-7dda-4b03-8c12-93e701fd59ea",
+            "TransactionReference": "17800929020875",
+            "ValueDateTime": "2026-05-29T22:15:02.087212Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-29T22:15:01.051455Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "220.83",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-05-29T22:15:01.051455Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-530c9f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "165d2ca0-c489-409d-a0ab-bb6d3322cab8",
+            "TransactionReference": "17800929010513",
+            "ValueDateTime": "2026-05-29T22:15:01.051455Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-21T22:15:01.395311Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "447.26",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-05-21T22:15:01.395311Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "5114284b-e9c2-4683-a0b2-9e6cbab22b59",
+            "TransactionReference": "17794017013952",
+            "ValueDateTime": "2026-05-21T22:15:01.395311Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-13T22:15:01.639944Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "468.27",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-05-13T22:15:01.639944Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "b3565471-b8ce-41f5-9138-53189abfa18a",
+            "TransactionReference": "17787105016399",
+            "ValueDateTime": "2026-05-13T22:15:01.639944Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-05T22:15:01.329926Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "498.95",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-05-05T22:15:01.329926Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "b9b7669c-71bf-43e4-987b-9b7c2cc4353a",
+            "TransactionReference": "17780193013291",
+            "ValueDateTime": "2026-05-05T22:15:01.329926Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-02T22:15:00.863307Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "283.54",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-05-02T22:15:00.863307Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "6da542ed-6d53-40bb-9338-699a20e715ce",
+            "TransactionReference": "17777601008633",
+            "ValueDateTime": "2026-05-02T22:15:00.863307Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-30T22:15:01.638664Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "1823.42",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-04-30T22:15:01.638664Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "f3bf49d7-2779-458c-acf2-8c1352fb25c9",
+            "TransactionReference": "17775873016387",
+            "ValueDateTime": "2026-04-30T22:15:01.638664Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-20T22:15:02.214652Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "409.47",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-04-20T22:15:02.214652Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "d97327cd-a820-4174-a803-5579eb130fdb",
+            "TransactionReference": "17767233022149",
+            "ValueDateTime": "2026-04-20T22:15:02.214652Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-13T22:15:02.135043Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "453.74",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-04-13T22:15:02.135043Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "d508d71d-8ef1-48bb-a221-37661abc55d2",
+            "TransactionReference": "17761185021359",
+            "ValueDateTime": "2026-04-13T22:15:02.135043Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-08T22:15:01.166096Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "287.91",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-04-08T22:15:01.166096Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "677eb624-c480-4a59-9dd6-e98b1b99b72a",
+            "TransactionReference": "17756865011665",
+            "ValueDateTime": "2026-04-08T22:15:01.166096Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-01T22:15:01.651162Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "489.96",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-04-01T22:15:01.651162Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "53e448e4-842d-47c4-9c7a-9a11cbe010bf",
+            "TransactionReference": "17750817016517",
+            "ValueDateTime": "2026-04-01T22:15:01.651162Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-31T22:15:02.273422Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "1736.87",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-03-31T22:15:02.273422Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "f5f6d077-46b1-4b81-8508-d2401443c5a3",
+            "TransactionReference": "17749953022735",
+            "ValueDateTime": "2026-03-31T22:15:02.273422Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-31T22:15:01.017925Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "466.24",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-03-31T22:15:01.017925Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "76023254-b8fe-442d-b069-cfe8ceecc067",
+            "TransactionReference": "17749953010174",
+            "ValueDateTime": "2026-03-31T22:15:01.017925Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-31T22:15:00.934665Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "247.48",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-03-31T22:15:00.934665Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-530c9f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "1da29057-a8a9-4e3f-a8b8-82786a12353d",
+            "TransactionReference": "17749953009347",
+            "ValueDateTime": "2026-03-31T22:15:00.934665Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-23T22:15:01.527875Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "307.49",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-03-23T22:15:01.527875Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "af5b3749-c1f8-4589-b1d6-64dc2fc84faa",
+            "TransactionReference": "17743041015278",
+            "ValueDateTime": "2026-03-23T22:15:01.527875Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-16T22:15:01.773002Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "275.78",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-03-16T22:15:01.773002Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "262d63e0-0645-45b8-a277-dbdc03fcd41f",
+            "TransactionReference": "17736993017739",
+            "ValueDateTime": "2026-03-16T22:15:01.773002Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-09T22:15:01.818034Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "257.99",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-03-09T22:15:01.818034Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "8719dd1b-7e72-4cbb-b87b-d083ee42ea51",
+            "TransactionReference": "17730945018180",
+            "ValueDateTime": "2026-03-09T22:15:01.818034Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-02T22:15:01.52455Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "459.32",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-03-02T22:15:01.52455Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "375adffb-b9d0-4fff-93be-58a04d9ae259",
+            "TransactionReference": "17724897015247",
+            "ValueDateTime": "2026-03-02T22:15:01.52455Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-27T22:15:01.125716Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "2143.27",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-02-27T22:15:01.125716Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "72db43f3-9c95-4f57-93fe-48887e72e9c3",
+            "TransactionReference": "17722305011256",
+            "ValueDateTime": "2026-02-27T22:15:01.125716Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-23T22:15:01.932339Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "449.51",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-02-23T22:15:01.932339Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "ca268dce-6b0e-4bf1-95ee-72daeb517e58",
+            "TransactionReference": "17718849019320",
+            "ValueDateTime": "2026-02-23T22:15:01.932339Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-17T22:15:00.991335Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "393.95",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-02-17T22:15:00.991335Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "1afa1fe1-d681-4f94-9c00-deb9ab1858e4",
+            "TransactionReference": "17713665009917",
+            "ValueDateTime": "2026-02-17T22:15:00.991335Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-13T22:15:00.736827Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "303.79",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-02-13T22:15:00.736827Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "a4971d65-d26a-4d9d-880e-54b0c0c684cf",
+            "TransactionReference": "17710209007365",
+            "ValueDateTime": "2026-02-13T22:15:00.736827Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-03T22:15:01.257136Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "455.88",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-02-03T22:15:01.257136Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "2b056da2-fa16-4571-9d84-371a4c598424",
+            "TransactionReference": "17701569012575",
+            "ValueDateTime": "2026-02-03T22:15:01.257136Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-01T22:15:01.164976Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "365.50",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-02-01T22:15:01.164976Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "6acd42e0-829d-4309-92a8-c377bd07bf45",
+            "TransactionReference": "17699841011649",
+            "ValueDateTime": "2026-02-01T22:15:01.164976Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-30T22:15:01.072064Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "1730.48",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-01-30T22:15:01.072064Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Salary"
+            },
+            "Status": "Booked",
+            "TransactionId": "1520eda0-01aa-4cd8-bde1-f9f22fa4026f",
+            "TransactionReference": "17698113010722",
+            "ValueDateTime": "2026-01-30T22:15:01.072064Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-23T22:15:00.669287Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "360.30",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-01-23T22:15:00.669287Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "8ddd4acb-47dc-4a32-84e1-9446af8e171d",
+            "TransactionReference": "17692065006699",
+            "ValueDateTime": "2026-01-23T22:15:00.669287Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-14T22:15:01.059934Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "488.13",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-01-14T22:15:01.059934Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "4040e182-f331-490f-a2c9-b1207a2bf6ec",
+            "TransactionReference": "17684289010592",
+            "ValueDateTime": "2026-01-14T22:15:01.059934Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-06T22:15:01.197692Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "500.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-01-06T22:15:01.197692Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "da40b6a3-d269-4242-889e-6fa8304bf8fc",
+            "TransactionReference": "17677377011973",
+            "ValueDateTime": "2026-01-06T22:15:01.197692Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-01T22:15:01.908454Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "312.60",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCARD",
+              "SubCode": "NTAV"
+            },
+            "BookingDateTime": "2026-01-01T22:15:01.908454Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-5a041f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "58827332-5ab1-402c-bf33-bf123e188f82",
+            "TransactionReference": "17673057019082",
+            "ValueDateTime": "2026-01-01T22:15:01.908454Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-04-30T22:15:01.332795Z",
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "Amount": {
+              "Amount": "2417.64",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-04-30T22:15:01.332795Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5e1428"
+            },
+            "Status": "Booked",
+            "TransactionId": "d65df41a-00e2-11f1-b87e-c39c186204a7",
+            "ValueDateTime": "2025-04-30T22:15:01.332795Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://aktia-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/1efbf942-58b4-11f0-9f3d-8b14d24fe6b8/transactions?fromBookingDateTime=2020-01-01T00:00Z\u0026toBookingDateTime=2026-10-18T10:58:19Z"
+      },
+      "Meta": {}
+    }
+  }
+}

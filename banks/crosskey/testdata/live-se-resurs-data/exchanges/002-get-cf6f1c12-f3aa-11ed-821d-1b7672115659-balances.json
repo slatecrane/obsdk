@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/cf6f1c12-f3aa-11ed-821d-1b7672115659/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:cbafcd",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Financial-Id": "resursbank/se",
+      "X-Fapi-Interaction-Id": "58c5d18f-a769-4e93-88ac-c64e4db12446"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "cf6f1c12-f3aa-11ed-821d-1b7672115659",
+            "Amount": {
+              "Amount": "124084.17",
+              "Currency": "SEK"
+            },
+            "CreditDebitIndicator": "Credit",
+            "CreditLine": [
+              {
+                "Amount": {
+                  "Amount": "50000.00",
+                  "Currency": "SEK"
+                },
+                "Included": true
+              }
+            ],
+            "DateTime": "2026-10-18T17:21:12.431617798Z",
+            "Type": "Expected"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://resursbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/cf6f1c12-f3aa-11ed-821d-1b7672115659/balances"
+      },
+      "Meta": {}
+    }
+  }
+}

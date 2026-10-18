@@ -1,0 +1,84 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.7/pisp/international-payment-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:32ff54",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "bebf9666-f07d-4fcf-ba09-e7f23b1259d0",
+      "X-Idempotency-Key": "036bc757ed5d4cd29e7a36b540001f25",
+      "X-Jws-Signature": "REDACTED:x-jws-signature:f496c2"
+    },
+    "body": {
+      "Data": {
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-2ba473",
+            "Name": "name-8b7502",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "CurrencyOfTransfer": "EUR",
+          "DebtorAccount": {
+            "Identification": "identification-de26b0",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "9ffc955b96934b29bd1f5a71a22305eb",
+          "InstructedAmount": {
+            "Amount": "1.50",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "a532b790c7f44e7c8262f074a6938f05",
+          "LocalInstrument": "UK.OBIE.SEPACreditTransfer",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        }
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "fe30d283-bbb4-4d4b-9012-15dec05b2b31",
+        "CreationDateTime": "2026-10-18T10:36:51.394881338Z",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-2ba473",
+            "Name": "name-8b7502",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "CurrencyOfTransfer": "EUR",
+          "DebtorAccount": {
+            "Identification": "identification-de26b0",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "9ffc955b96934b29bd1f5a71a22305eb",
+          "InstructedAmount": {
+            "Amount": "1.50",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "a532b790c7f44e7c8262f074a6938f05",
+          "LocalInstrument": "UK.OBIE.SEPACreditTransfer",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        },
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-18T10:36:51.394881338Z"
+      },
+      "Links": {
+        "Self": "https://s-pankki-api-sandbox.crosskey.io/open-banking/v3.1.7/pisp/international-payment-consents/fe30d283-bbb4-4d4b-9012-15dec05b2b31"
+      },
+      "Risk": {}
+    }
+  }
+}

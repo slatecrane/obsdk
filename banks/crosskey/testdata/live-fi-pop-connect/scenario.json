@@ -1,0 +1,35 @@
+{
+  "config": {
+    "bank": "poppankki",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:28:30Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "4438c25d-76f0-489b-aa48-246eac925e4d",
+        "37e1b342-79b8-434c-ac4e-5e842dba3344",
+        "75c64b64-7b6e-41b5-a4bb-e763b372b128"
+      ],
+      "state": [
+        "a0c3b118-6e0d-45c0-b949-7820f07b340e",
+        "951f5086-15f0-4b23-b193-987018c15927"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A0c2b19\u0026id_token=REDACTED%3Aid_token%3A48a62c\u0026state=a0c3b118-6e0d-45c0-b949-7820f07b340e"
+    }
+  ]
+}

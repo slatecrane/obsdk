@@ -1,0 +1,1767 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/1efce6a4-58b4-11f0-9f3d-5fb180922b28/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2020-01-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T10:58:21"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:c81e7b",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "9840ba1f-d46d-41a3-9761-d4a60c32dcce"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.58",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Tilisiirto Luottotililt"
+            },
+            "Status": "Booked",
+            "TransactionId": "5da3840f-b192-42b1-a98b-324572e20433",
+            "TransactionReference": "17918433024880",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-07T00:00:00Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "74.24",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-10-07T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Tilisiirto Luottotililt"
+            },
+            "Status": "Booked",
+            "TransactionId": "6749e7a8-b375-4265-9682-802b546bd5b8",
+            "TransactionReference": "17914113000458",
+            "ValueDateTime": "2026-10-07T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-06T00:00:00Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-10-06T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Tilisiirto Luottotililt"
+            },
+            "Status": "Booked",
+            "TransactionId": "2ead1019-ad88-479a-b7fe-0c73faab53bc",
+            "TransactionReference": "17913249017769",
+            "ValueDateTime": "2026-10-06T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Tilisiirto Luottotililt"
+            },
+            "Status": "Booked",
+            "TransactionId": "f7b17ece-56e1-4d1d-a2c8-713cbd72787f",
+            "TransactionReference": "17908065030841",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "99.44",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Maksu"
+            },
+            "Status": "Booked",
+            "TransactionId": "f9d48e21-b714-4c48-b115-2235c36d2d77",
+            "TransactionReference": "17908065009636",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-23T22:15:01.814869Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-23T22:15:01.814869Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "e962a9e0-6be2-4809-9049-5447b5b4d87d",
+            "TransactionReference": "17902017018147",
+            "ValueDateTime": "2026-09-23T22:15:01.814869Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-15T22:15:02.378565Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.79",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-15T22:15:02.378565Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "4f019db7-0584-4cc0-b393-7df8ab2489a8",
+            "TransactionReference": "17895105023782",
+            "ValueDateTime": "2026-09-15T22:15:02.378565Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-09T22:15:01.378566Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-09T22:15:01.378566Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "b67dc431-32e4-4669-b743-06a8002812b8",
+            "TransactionReference": "17889921013788",
+            "ValueDateTime": "2026-09-09T22:15:01.378566Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-03T22:15:00.544358Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "66.80",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-03T22:15:00.544358Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "574f65a9-2817-400e-8265-727c2a44bbe0",
+            "TransactionReference": "17884737005448",
+            "ValueDateTime": "2026-09-03T22:15:00.544358Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-02T22:15:01.532763Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-02T22:15:01.532763Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "49476e62-0f99-4de1-bcca-bf6bd37db7cf",
+            "TransactionReference": "17883873015322",
+            "ValueDateTime": "2026-09-02T22:15:01.532763Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:01.483583Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "76.45",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-08-31T22:15:01.483583Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "018b016f-c59a-4f2b-8c6d-e48db97a9e97",
+            "TransactionReference": "17882145014832",
+            "ValueDateTime": "2026-08-31T22:15:01.483583Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-10T22:15:02.667866Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.87",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-08-10T22:15:02.667866Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "a713a1f4-0e93-455e-863a-e4fbc2b17025",
+            "TransactionReference": "17864001026678",
+            "ValueDateTime": "2026-08-10T22:15:02.667866Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-05T22:15:01.226856Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-08-05T22:15:01.226856Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "e2b34c4c-4ce4-46fe-bc9d-bda308ce7f0e",
+            "TransactionReference": "17859681012266",
+            "ValueDateTime": "2026-08-05T22:15:01.226856Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-02T22:15:00.923022Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "72.70",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-08-02T22:15:00.923022Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "c61de253-d197-400b-9bb8-fbf8cdd1c81a",
+            "TransactionReference": "17857089009239",
+            "ValueDateTime": "2026-08-02T22:15:00.923022Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-31T22:15:00.729671Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "67.88",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-07-31T22:15:00.729671Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "2301fea1-4951-45d3-b662-981d722fc457",
+            "TransactionReference": "17855361007294",
+            "ValueDateTime": "2026-07-31T22:15:00.729671Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-27T22:15:02.520628Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.71",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-07-27T22:15:02.520628Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "dea0fd9b-e6d2-4f15-a2b7-fc5d0b5ba983",
+            "TransactionReference": "17851905025209",
+            "ValueDateTime": "2026-07-27T22:15:02.520628Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-21T22:15:00.890206Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.43",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-07-21T22:15:00.890206Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "b08b0a62-d526-43ee-8ceb-b4878ae96c73",
+            "TransactionReference": "17846721008907",
+            "ValueDateTime": "2026-07-21T22:15:00.890206Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-13T22:15:02.672949Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-07-13T22:15:02.672949Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "2959f6eb-086a-4dcb-a526-3b866a5590d6",
+            "TransactionReference": "17839809026724",
+            "ValueDateTime": "2026-07-13T22:15:02.672949Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-07T22:15:02.113225Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.69",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-07-07T22:15:02.113225Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "eef8fd51-31a0-410d-bbc8-4da8d12c46da",
+            "TransactionReference": "17834625021131",
+            "ValueDateTime": "2026-07-07T22:15:02.113225Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-01T22:15:01.617389Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-07-01T22:15:01.617389Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "f325d4df-f2ff-4981-a058-16c7a2b2966b",
+            "TransactionReference": "17829441016173",
+            "ValueDateTime": "2026-07-01T22:15:01.617389Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-30T22:15:02.538688Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "64.93",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-06-30T22:15:02.538688Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "61ddfc01-fe6d-42b8-97eb-8cbe8b47f45f",
+            "TransactionReference": "17828577025385",
+            "ValueDateTime": "2026-06-30T22:15:02.538688Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-30T22:15:01.467126Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "91.34",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-06-30T22:15:01.467126Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "3cc7f345-4cfb-4b63-a874-7b8b012c239f",
+            "TransactionReference": "17828577014671",
+            "ValueDateTime": "2026-06-30T22:15:01.467126Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-22T22:15:02.033868Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-06-22T22:15:02.033868Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "cca7b7fc-0b31-4f17-b13f-d70739679bff",
+            "TransactionReference": "17821665020338",
+            "ValueDateTime": "2026-06-22T22:15:02.033868Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-15T22:15:01.794408Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.94",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-06-15T22:15:01.794408Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "f9eba6ad-3ff8-41a6-a869-28cd1aed4a75",
+            "TransactionReference": "17815617017949",
+            "ValueDateTime": "2026-06-15T22:15:01.794408Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-08T22:15:02.908129Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-06-08T22:15:02.908129Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "7a7b262c-bbcb-48ee-9a6e-d3bfdecf674f",
+            "TransactionReference": "17809569029088",
+            "ValueDateTime": "2026-06-08T22:15:02.908129Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-02T22:15:01.774423Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "60.15",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-06-02T22:15:01.774423Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "ea1e7c29-56e6-423f-8190-45b92d643e9d",
+            "TransactionReference": "17804385017745",
+            "ValueDateTime": "2026-06-02T22:15:01.774423Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-01T22:15:03.250853Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.44",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-06-01T22:15:03.250853Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "6f0e68c6-c10e-488e-be87-bdd5a1320fbb",
+            "TransactionReference": "17803521032501",
+            "ValueDateTime": "2026-06-01T22:15:03.250853Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-31T22:15:01.688493Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "81.42",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-05-31T22:15:01.688493Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "7fc39afd-fa77-4104-a1fd-e88d11dcc817",
+            "TransactionReference": "17802657016887",
+            "ValueDateTime": "2026-05-31T22:15:01.688493Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-29T22:15:02.42665Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.45",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-05-29T22:15:02.42665Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "cf54ae46-54cb-4a58-81ef-ca8e08cdc00a",
+            "TransactionReference": "17800929024266",
+            "ValueDateTime": "2026-05-29T22:15:02.42665Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-29T22:15:01.391153Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "101.78",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-05-29T22:15:01.391153Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "30e6798e-21ee-42aa-a43e-af4bc4808932",
+            "TransactionReference": "17800929013918",
+            "ValueDateTime": "2026-05-29T22:15:01.391153Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-24T22:15:00.815204Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "86.37",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-05-24T22:15:00.815204Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "0078e09b-a0b7-4919-8c4e-d8fd1c78d405",
+            "TransactionReference": "17796609008153",
+            "ValueDateTime": "2026-05-24T22:15:00.815204Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-20T22:15:01.401381Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.36",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-05-20T22:15:01.401381Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "eac20127-2ae8-4f2e-8681-cd1f05417e0f",
+            "TransactionReference": "17793153014010",
+            "ValueDateTime": "2026-05-20T22:15:01.401381Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-11T22:15:02.087214Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-05-11T22:15:02.087214Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "6f142e40-3eed-4276-9265-d2c5bc2467ca",
+            "TransactionReference": "17785377020872",
+            "ValueDateTime": "2026-05-11T22:15:02.087214Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-11T22:15:01.304315Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "81.97",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-05-11T22:15:01.304315Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "4ed4d2aa-fe6e-49b0-a9a5-88b6bb744238",
+            "TransactionReference": "17785377013041",
+            "ValueDateTime": "2026-05-11T22:15:01.304315Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-04T22:15:01.987728Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-05-04T22:15:01.987728Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "6a87ac52-2228-4257-b985-8221e59cfe18",
+            "TransactionReference": "17779329019876",
+            "ValueDateTime": "2026-05-04T22:15:01.987728Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-04T22:15:01.342966Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "67.56",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-05-04T22:15:01.342966Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "2c4f56ce-1986-49ca-9c11-9920c35156e9",
+            "TransactionReference": "17779329013429",
+            "ValueDateTime": "2026-05-04T22:15:01.342966Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-30T22:15:00.818202Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "57.40",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-04-30T22:15:00.818202Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "7c437540-3321-47aa-8989-13e7fbb1c472",
+            "TransactionReference": "17775873008188",
+            "ValueDateTime": "2026-04-30T22:15:00.818202Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-28T22:15:00.940575Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "70.75",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-04-28T22:15:00.940575Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "44772fee-cfbf-4f60-872f-de0ba7045d85",
+            "TransactionReference": "17774145009405",
+            "ValueDateTime": "2026-04-28T22:15:00.940575Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-27T22:15:01.949799Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-04-27T22:15:01.949799Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "45953996-51f3-465f-a34b-06dd02ef7a00",
+            "TransactionReference": "17773281019499",
+            "ValueDateTime": "2026-04-27T22:15:01.949799Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-20T22:15:02.185384Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.56",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-04-20T22:15:02.185384Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "58648711-da99-4680-b3b6-0f325eeed3d3",
+            "TransactionReference": "17767233021852",
+            "ValueDateTime": "2026-04-20T22:15:02.185384Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-20T22:15:01.279512Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "76.41",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-04-20T22:15:01.279512Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "321f55ce-db45-4fa8-ae42-e2fd47cfdd96",
+            "TransactionReference": "17767233012793",
+            "ValueDateTime": "2026-04-20T22:15:01.279512Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-17T22:15:00.914314Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-04-17T22:15:00.914314Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "86c5f9e5-099e-46c5-8f66-9fdf5cf89e76",
+            "TransactionReference": "17764641009142",
+            "ValueDateTime": "2026-04-17T22:15:00.914314Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-13T22:15:01.249341Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "67.74",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-04-13T22:15:01.249341Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "4d32324a-253d-4f78-ae29-09148d6dc1a0",
+            "TransactionReference": "17761185012494",
+            "ValueDateTime": "2026-04-13T22:15:01.249341Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-11T22:15:00.793769Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.91",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-04-11T22:15:00.793769Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "04324476-2dac-4c66-bfee-aea6890515ac",
+            "TransactionReference": "17759457007932",
+            "ValueDateTime": "2026-04-11T22:15:00.793769Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-06T22:15:00.996138Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "57.82",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-04-06T22:15:00.996138Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "7507a4c2-8a18-4dfb-80c2-fe89f718bebb",
+            "TransactionReference": "17755137009966",
+            "ValueDateTime": "2026-04-06T22:15:00.996138Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-31T22:15:01.137377Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "55.23",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-03-31T22:15:01.137377Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "ed1977c2-8057-4638-afc2-370e79eb7e0e",
+            "TransactionReference": "17749953011377",
+            "ValueDateTime": "2026-03-31T22:15:01.137377Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-30T22:15:01.295811Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.30",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-30T22:15:01.295811Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "4d5a14bc-e6ff-44f3-8ea4-db19a6c64bfa",
+            "TransactionReference": "17749089012952",
+            "ValueDateTime": "2026-03-30T22:15:01.295811Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-30T22:15:00.615755Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "60.67",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-30T22:15:00.615755Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "9b0f88e3-36c5-4574-a56d-91585947c83f",
+            "TransactionReference": "17749089006159",
+            "ValueDateTime": "2026-03-30T22:15:00.615755Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-27T22:15:00.632976Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-27T22:15:00.632976Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "ee675693-55d9-4632-b332-96191674815a",
+            "TransactionReference": "17746497006333",
+            "ValueDateTime": "2026-03-27T22:15:00.632976Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-25T22:15:01.000225Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-25T22:15:01.000225Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "64b74429-33f4-4376-b8af-a232521ef07e",
+            "TransactionReference": "17744769010004",
+            "ValueDateTime": "2026-03-25T22:15:01.000225Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-17T22:15:00.982467Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.24",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-17T22:15:00.982467Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "fc0bdb19-7b41-48af-a26f-36600b119fef",
+            "TransactionReference": "17737857009824",
+            "ValueDateTime": "2026-03-17T22:15:00.982467Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-16T22:15:00.769977Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "52.34",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-16T22:15:00.769977Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "eaaca80c-804f-43de-83c3-e52530982466",
+            "TransactionReference": "17736993007697",
+            "ValueDateTime": "2026-03-16T22:15:00.769977Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-10T22:15:01.032116Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.25",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-10T22:15:01.032116Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "ac08a2a5-b986-42ad-919d-c2b699cabe8d",
+            "TransactionReference": "17731809010320",
+            "ValueDateTime": "2026-03-10T22:15:01.032116Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-10T22:15:00.737Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "52.50",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-10T22:15:00.737Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "9f90b139-8fff-4c73-a8b8-067e3c3c75db",
+            "TransactionReference": "17731809007375",
+            "ValueDateTime": "2026-03-10T22:15:00.737Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-04T22:15:00.612033Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "65.80",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-04T22:15:00.612033Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "d00de3d7-6378-434c-9bbc-990ca59631a1",
+            "TransactionReference": "17726625006125",
+            "ValueDateTime": "2026-03-04T22:15:00.612033Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-03T22:15:00.887876Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-03-03T22:15:00.887876Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "415b8555-0f61-4ef7-b13f-9fa44dfb2476",
+            "TransactionReference": "17725761008871",
+            "ValueDateTime": "2026-03-03T22:15:00.887876Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-27T22:15:00.65187Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "95.41",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-02-27T22:15:00.65187Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "fe6f6cac-937f-42c6-803c-e47f53bc048e",
+            "TransactionReference": "17722305006517",
+            "ValueDateTime": "2026-02-27T22:15:00.65187Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-24T22:15:00.461721Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "77.78",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-24T22:15:00.461721Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "1c360c4e-c8c7-4038-8b98-f76a7dc6b30e",
+            "TransactionReference": "17719713004619",
+            "ValueDateTime": "2026-02-24T22:15:00.461721Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-23T22:15:01.493127Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.35",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-23T22:15:01.493127Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "c6ce08f4-4861-4bed-8e13-36aa565e65eb",
+            "TransactionReference": "17718849014930",
+            "ValueDateTime": "2026-02-23T22:15:01.493127Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-22T22:15:00.56356Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-22T22:15:00.56356Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "11fa035c-dc03-44a0-8d34-ef7b5c256e6f",
+            "TransactionReference": "17717985005639",
+            "ValueDateTime": "2026-02-22T22:15:00.56356Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-16T22:15:00.917638Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "55.22",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-16T22:15:00.917638Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "92a59275-8248-496e-8b2b-df5497f39cc6",
+            "TransactionReference": "17712801009170",
+            "ValueDateTime": "2026-02-16T22:15:00.917638Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-10T22:15:00.751185Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "68.27",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-10T22:15:00.751185Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "8455e3fd-6059-490b-9251-77e15df8b7bb",
+            "TransactionReference": "17707617007517",
+            "ValueDateTime": "2026-02-10T22:15:00.751185Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-09T22:15:01.064787Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.60",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-09T22:15:01.064787Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "ab47ddac-97a2-4015-9dcb-7eeab4fcfea8",
+            "TransactionReference": "17706753010647",
+            "ValueDateTime": "2026-02-09T22:15:01.064787Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-03T22:15:00.513988Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "85.75",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-03T22:15:00.513988Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "8ad2d4c5-9016-400d-9027-2e9c4fac194a",
+            "TransactionReference": "17701569005142",
+            "ValueDateTime": "2026-02-03T22:15:00.513988Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-02T22:15:01.227537Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-02T22:15:01.227537Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "978dfea6-a754-477e-b39f-a6346a2fe724",
+            "TransactionReference": "17700705012275",
+            "ValueDateTime": "2026-02-02T22:15:01.227537Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-01T22:15:00.72579Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-02-01T22:15:00.72579Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "8d55340b-e319-42a9-a032-398c564c3d49",
+            "TransactionReference": "17699841007255",
+            "ValueDateTime": "2026-02-01T22:15:00.72579Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-31T22:15:00.678055Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "53.46",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-01-31T22:15:00.678055Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1ec014"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "a0f20164-84f1-44aa-b4f4-83e9d5fb8541",
+            "TransactionReference": "17698977006781",
+            "ValueDateTime": "2026-01-31T22:15:00.678055Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-30T22:15:00.423102Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "75.79",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-01-30T22:15:00.423102Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "6a222724-45b7-4a99-bb2a-bfb27bfdaac8",
+            "TransactionReference": "17698113004233",
+            "ValueDateTime": "2026-01-30T22:15:00.423102Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-20T22:15:00.662651Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-01-20T22:15:00.662651Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "5bb0c99c-7d16-41ba-bc33-8f1e802e5313",
+            "TransactionReference": "17689473006621",
+            "ValueDateTime": "2026-01-20T22:15:00.662651Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-12T22:15:01.664109Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.72",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-01-12T22:15:01.664109Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "9bfac318-aedf-40f4-af47-fc43663ae742",
+            "TransactionReference": "17682561016643",
+            "ValueDateTime": "2026-01-12T22:15:01.664109Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-08T22:15:00.766437Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "3.73",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-01-08T22:15:00.766437Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "c3cf8bbd-e6a4-4d54-8235-591e271e2823",
+            "TransactionReference": "17679105007665",
+            "ValueDateTime": "2026-01-08T22:15:00.766437Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-02T22:15:01.364755Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-01-02T22:15:01.364755Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-bda5b0"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Card purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "279fb46c-6fde-4148-8fff-842675721319",
+            "TransactionReference": "17673921013648",
+            "ValueDateTime": "2026-01-02T22:15:01.364755Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-30T22:15:03.131014Z",
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "Amount": {
+              "Amount": "960.17",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-30T22:15:03.131014Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-dec1f3"
+            },
+            "Status": "Booked",
+            "TransactionId": "d489df28-00e2-11f1-b87e-935fcbd0ab5f",
+            "TransactionReference": "17513217031313",
+            "ValueDateTime": "2025-06-30T22:15:03.131014Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://aktia-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/1efce6a4-58b4-11f0-9f3d-5fb180922b28/transactions?fromBookingDateTime=2020-01-01T00:00Z\u0026toBookingDateTime=2026-10-18T10:58:21Z"
+      },
+      "Meta": {}
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.7/pisp/international-payment-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:3101e9",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "464f1e1f-40bb-408d-bb3c-7b9efd1e456a",
+      "X-Idempotency-Key": "0a9adbed45064cea835a35f17a0cf23c",
+      "X-Jws-Signature": "REDACTED:x-jws-signature:1b00b2"
+    },
+    "body": {
+      "Data": {
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-97566b",
+            "Name": "name-95a6c2",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "CurrencyOfTransfer": "EUR",
+          "DebtorAccount": {
+            "Identification": "identification-e834df",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "3f334c3dd81f441994fb092837bfe5bc",
+          "InstructedAmount": {
+            "Amount": "1.75",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "5f3a383a8a6842b2800ee0342f31c2dd",
+          "LocalInstrument": "UK.OBIE.SEPACreditTransfer",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-57f37b"
+          }
+        }
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "74bfc7e5-3d03-4d13-bdb5-bee0cb6a5e1c",
+        "CreationDateTime": "2026-10-18T11:29:49.448554581Z",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-97566b",
+            "Name": "name-95a6c2",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "CurrencyOfTransfer": "EUR",
+          "DebtorAccount": {
+            "Identification": "identification-e834df",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "3f334c3dd81f441994fb092837bfe5bc",
+          "InstructedAmount": {
+            "Amount": "1.75",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "5f3a383a8a6842b2800ee0342f31c2dd",
+          "LocalInstrument": "UK.OBIE.SEPACreditTransfer",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-57f37b"
+          }
+        },
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-18T11:29:49.448554581Z"
+      },
+      "Links": {
+        "Self": "https://pop-api-sandbox.crosskey.io/open-banking/v3.1.7/pisp/international-payment-consents/74bfc7e5-3d03-4d13-bdb5-bee0cb6a5e1c"
+      },
+      "Risk": {}
+    }
+  }
+}

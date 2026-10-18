@@ -1,0 +1,114 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/430d9df6-7047-11ee-86a5-bfaebd4459ef/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:40:36"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a80ace",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "bf845b26-4d76-451d-a9e6-7d485497eda5"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-04T00:00:00Z",
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "Amount": {
+              "Amount": "65.50",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-10-04T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-68f023"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Debit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ac810559-da85-49c8-97ef-3e7261af13eb",
+            "ValueDateTime": "2026-10-04T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-04T00:00:00Z",
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "Amount": {
+              "Amount": "39.21",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-10-04T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "606e29aa-85ef-49f0-9f30-3b2e3359368a",
+            "ValueDateTime": "2026-10-04T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "Amount": {
+              "Amount": "29.98",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "e75aff12-ed61-48e2-a075-2bec70fb53c3",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "Amount": {
+              "Amount": "29.84",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-68f023"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Debit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ec98e057-5427-4fca-b73c-83d07af6ab9e",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/430d9df6-7047-11ee-86a5-bfaebd4459ef/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:40:36Z"
+      },
+      "Meta": {}
+    }
+  }
+}

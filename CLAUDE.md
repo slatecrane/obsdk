@@ -55,6 +55,10 @@ defined in [obsdktest/live.go](obsdktest/live.go).
   Berlin Group bank is a package with a `berlingroup.Profile` passed to `berlingroup.Register`. Its dev target,
   adorsys' ModelBank run locally, is `internal/berlingroup/modelbank` (bank `modelbank`, imported only by obdev
   and tests). See [docs/berlin-group.md](docs/berlin-group.md).
+- **UK OBIE adapter:** [internal/obie](internal/obie) implements OBIE v3.1 once (consents, hybrid-flow
+  request object, AIS, payment consent/submit/status/cancel), configured by an `obie.Profile`. Used by
+  `banks/crosskey` (one profile per store); `revolut` and `hsbc` still have their own copies. See
+  [docs/crosskey.md](docs/crosskey.md).
 - **Bank package layout:** `<bank>.go` (registration, `Info`, client construction), `flow.go`, `ais.go`,
   `payment.go`, `http.go` (request helper + error mapping), tests, `testdata/` scenarios,
   `sandbox.env.example`. Swedbank also splits out `consent.go`, `sca.go`, `token.go`, `statement.go`.

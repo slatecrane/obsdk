@@ -1,0 +1,815 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/d1fdee72-4571-11e9-9d38-03ba485e880b/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-08-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T10:35:57"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:0ae382",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "445119b4-4a54-4362-816c-aadfb99eb33e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-16T00:00:00Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-10-16T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "33931fe8-534f-41a0-a41e-62a91d43fd89",
+            "TransactionReference": "17921889011146",
+            "ValueDateTime": "2026-10-16T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-13T00:00:00Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-10-13T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "2092a8c9-a0b0-444d-aebd-048dcc49f03d",
+            "TransactionReference": "17919297027462",
+            "ValueDateTime": "2026-10-13T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "9e24ee4b-889b-4c6d-b32f-641a05a560af",
+            "TransactionReference": "17918433016128",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-06T00:00:00Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-10-06T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "a0f94535-987a-4297-9da6-c3c54c3d661d",
+            "TransactionReference": "17913249022107",
+            "ValueDateTime": "2026-10-06T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "be272d18-35dd-4bf5-9c5b-5a099b8e7d67",
+            "TransactionReference": "17912385021869",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "611d2c88-d3d1-48ac-8873-0abbf81e6f86",
+            "TransactionReference": "17912385043436",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "17.99",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-c321fa"
+            },
+            "Status": "Booked",
+            "TransactionId": "26c678a0-d7b6-4f1e-8a09-367711ed1dd3",
+            "TransactionInformation": "transactioninformation-4d33b7",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "700.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "SALA"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-c95829"
+            },
+            "Status": "Booked",
+            "TransactionId": "b3d72674-f2a9-48ca-bb89-7b0d2b1d880d",
+            "TransactionInformation": "transactioninformation-2713f7",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:03.609952Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-28T22:15:03.609952Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "6d16e3e2-fa15-4767-95fb-3e3b5b914ffb",
+            "TransactionReference": "17906337036106",
+            "ValueDateTime": "2026-09-28T22:15:03.609952Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:02.809561Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-28T22:15:02.809561Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "fe33119a-8917-4d56-b2e9-380706ff3ebf",
+            "TransactionReference": "17906337028091",
+            "ValueDateTime": "2026-09-28T22:15:02.809561Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:01.536317Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-28T22:15:01.536317Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "dadb7f12-6e8c-4beb-ab79-5523e751345c",
+            "TransactionReference": "17906337015363",
+            "ValueDateTime": "2026-09-28T22:15:01.536317Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:04.195041Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-21T22:15:04.195041Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "7b27bc7d-9189-4dbf-b8c9-a3625f377437",
+            "TransactionReference": "17900289041957",
+            "ValueDateTime": "2026-09-21T22:15:04.195041Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:03.382906Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-21T22:15:03.382906Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "ded0955f-7990-4298-976e-54bf29727b9a",
+            "TransactionReference": "17900289033826",
+            "ValueDateTime": "2026-09-21T22:15:03.382906Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:01.476112Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-21T22:15:01.476112Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "40378af8-cc92-4a98-a75f-7e73320a651b",
+            "TransactionReference": "17900289014764",
+            "ValueDateTime": "2026-09-21T22:15:01.476112Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-15T22:15:02.83797Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-15T22:15:02.83797Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "837173a7-55d5-4de2-897e-c14024cb3c49",
+            "TransactionReference": "17895105028389",
+            "ValueDateTime": "2026-09-15T22:15:02.83797Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-15T22:15:01.376322Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-15T22:15:01.376322Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "6cb0dfdc-3757-4b5a-be22-0bbddf815c26",
+            "TransactionReference": "17895105013763",
+            "ValueDateTime": "2026-09-15T22:15:01.376322Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-14T22:15:03.680337Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-14T22:15:03.680337Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "095bf784-7b22-4d57-b705-fd55f175cc33",
+            "TransactionReference": "17894241036809",
+            "ValueDateTime": "2026-09-14T22:15:03.680337Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-12T22:15:01.268405Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-12T22:15:01.268405Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "b061a9fa-9463-4c92-a268-eece018996aa",
+            "TransactionReference": "17892513012689",
+            "ValueDateTime": "2026-09-12T22:15:01.268405Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-07T22:15:03.624828Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-07T22:15:03.624828Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "726bf1f8-f1f8-412e-bf11-11d6d0f71bbb",
+            "TransactionReference": "17888193036248",
+            "ValueDateTime": "2026-09-07T22:15:03.624828Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-07T22:15:01.104136Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-07T22:15:01.104136Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "b37d03ea-e19f-49b4-89a6-b9634527c007",
+            "TransactionReference": "17888193011043",
+            "ValueDateTime": "2026-09-07T22:15:01.104136Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-02T22:15:01.805234Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-02T22:15:01.805234Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "e72cffa9-667c-46bf-9f91-f65abbeab007",
+            "TransactionReference": "17883873018057",
+            "ValueDateTime": "2026-09-02T22:15:01.805234Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-01T22:15:00.804607Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-01T22:15:00.804607Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "5708352b-2526-4a84-814d-7a4d7aac62f4",
+            "TransactionReference": "17883009008048",
+            "ValueDateTime": "2026-09-01T22:15:00.804607Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:06.242708Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-31T22:15:06.242708Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "31516551-3a5c-42f1-b2d9-efae8f254a6f",
+            "TransactionReference": "17882145062428",
+            "ValueDateTime": "2026-08-31T22:15:06.242708Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:04.335246Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "700.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "SALA"
+            },
+            "BookingDateTime": "2026-08-31T22:15:04.335246Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-c95829"
+            },
+            "Status": "Booked",
+            "TransactionId": "fb37c09c-cf7e-47e3-90ac-8385309efa34",
+            "TransactionInformation": "transactioninformation-2713f7",
+            "ValueDateTime": "2026-08-31T22:15:04.335246Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:00.880223Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "17.99",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-31T22:15:00.880223Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-c321fa"
+            },
+            "Status": "Booked",
+            "TransactionId": "4755f434-a103-4677-ace2-e5e1f62a23fe",
+            "TransactionInformation": "transactioninformation-4d33b7",
+            "ValueDateTime": "2026-08-31T22:15:00.880223Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-24T22:15:04.349927Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-24T22:15:04.349927Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "e8dd2380-72b2-4533-bf66-25af555f7cdb",
+            "TransactionReference": "17876097043491",
+            "ValueDateTime": "2026-08-24T22:15:04.349927Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-24T22:15:03.487573Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-24T22:15:03.487573Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "cd8d6a11-0915-488b-9823-0d29bb9d0b62",
+            "TransactionReference": "17876097034879",
+            "ValueDateTime": "2026-08-24T22:15:03.487573Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-24T22:15:01.530211Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-24T22:15:01.530211Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "a7c1ac2b-0298-4f24-88bb-65d8d103b55c",
+            "TransactionReference": "17876097015306",
+            "ValueDateTime": "2026-08-24T22:15:01.530211Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-18T22:15:02.719825Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-18T22:15:02.719825Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "2d5ddeb6-f916-4fdd-888d-71ae0a8b494c",
+            "TransactionReference": "17870913027199",
+            "ValueDateTime": "2026-08-18T22:15:02.719825Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-17T22:15:03.016623Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-17T22:15:03.016623Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "f7b8ebe2-94ac-48e0-b05b-4aac1b2bc849",
+            "TransactionReference": "17870049030160",
+            "ValueDateTime": "2026-08-17T22:15:03.016623Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-17T22:15:01.236099Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-17T22:15:01.236099Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "86c27734-64ba-4cee-9187-c5863ef8aee8",
+            "TransactionReference": "17870049012366",
+            "ValueDateTime": "2026-08-17T22:15:01.236099Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-12T22:15:00.938393Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-12T22:15:00.938393Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "1864f92b-40f8-4cee-badc-5c30d2330114",
+            "TransactionReference": "17865729009387",
+            "ValueDateTime": "2026-08-12T22:15:00.938393Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-11T22:15:02.423747Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-11T22:15:02.423747Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "6ef5c5a7-67d3-43eb-9658-906c6b94d201",
+            "TransactionReference": "17864865024230",
+            "ValueDateTime": "2026-08-11T22:15:02.423747Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-10T22:15:03.31402Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-10T22:15:03.31402Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "51e9eafd-0020-4958-8a45-117c2f035e97",
+            "TransactionReference": "17864001033140",
+            "ValueDateTime": "2026-08-10T22:15:03.31402Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-05T22:15:01.464329Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-05T22:15:01.464329Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-047a81"
+            },
+            "Status": "Booked",
+            "TransactionId": "71e59366-8057-462e-9202-d3baf13a1838",
+            "TransactionReference": "17859681014646",
+            "ValueDateTime": "2026-08-05T22:15:01.464329Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-05T22:15:00.542507Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "40.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-05T22:15:00.542507Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-590476"
+            },
+            "Status": "Booked",
+            "TransactionId": "c8cd2755-fbb7-44d1-ad06-2c39be6211e7",
+            "TransactionReference": "17859681005422",
+            "ValueDateTime": "2026-08-05T22:15:00.542507Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-03T22:15:03.58589Z",
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "70.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-08-03T22:15:03.58589Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-fa2fe2"
+            },
+            "Status": "Booked",
+            "TransactionId": "42efb539-7c62-4e1b-952a-c1360efc4487",
+            "TransactionReference": "17857953035850",
+            "ValueDateTime": "2026-08-03T22:15:03.58589Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://s-pankki-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/d1fdee72-4571-11e9-9d38-03ba485e880b/transactions?fromBookingDateTime=2026-08-01T00:00Z\u0026toBookingDateTime=2026-10-18T10:35:57Z"
+      },
+      "Meta": {}
+    }
+  }
+}

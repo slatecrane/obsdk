@@ -1,0 +1,35 @@
+{
+  "config": {
+    "bank": "alandsbanken",
+    "country": "SE",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:32:41Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "5fca4bc0-2a00-4367-b831-9a495c9b7a04",
+        "143c1a0b-391e-4d48-b04c-664ceafa5c79",
+        "b9fb3ccd-43cf-4a04-905b-ebfc97216153"
+      ],
+      "state": [
+        "630c14d2-59b3-460a-bdb8-66032ca46c5d",
+        "9a58f263-26d0-483b-bb08-88a4b0d649ca"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3Aff4d86\u0026id_token=REDACTED%3Aid_token%3A3cc813\u0026state=630c14d2-59b3-460a-bdb8-66032ca46c5d"
+    }
+  ]
+}

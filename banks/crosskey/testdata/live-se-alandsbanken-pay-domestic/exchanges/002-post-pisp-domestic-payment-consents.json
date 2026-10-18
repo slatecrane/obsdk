@@ -1,0 +1,74 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.6/pisp/domestic-payment-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:d7a4ed",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "90ec06c3-49a5-4566-86d5-a917d691c785",
+      "X-Idempotency-Key": "f46c722596644cdb9a3e439dc4743961",
+      "X-Jws-Signature": "REDACTED:x-jws-signature:e2d213"
+    },
+    "body": {
+      "Data": {
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-3a745e",
+            "Name": "name-66157b",
+            "SchemeName": "UK.OBIE.BBAN"
+          },
+          "EndToEndIdentification": "7b5373c19b684da6af0055ef83a0a94b",
+          "InstructedAmount": {
+            "Amount": "1.00",
+            "Currency": "SEK"
+          },
+          "InstructionIdentification": "cd68cb4b40a54fd3ba964362c8ea60cf",
+          "LocalInstrument": "SE.Dataclearing",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        }
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "4c54dc34-e4fc-4d9f-8aa0-ebc530560d31",
+        "CreationDateTime": "2026-10-18T11:33:51.841007353Z",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-3a745e",
+            "Name": "name-66157b",
+            "SchemeName": "UK.OBIE.BBAN"
+          },
+          "EndToEndIdentification": "7b5373c19b684da6af0055ef83a0a94b",
+          "InstructedAmount": {
+            "Amount": "1.00",
+            "Currency": "SEK"
+          },
+          "InstructionIdentification": "cd68cb4b40a54fd3ba964362c8ea60cf",
+          "LocalInstrument": "SE.Dataclearing",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        },
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-18T11:33:51.841007353Z"
+      },
+      "Links": {
+        "Self": "https://alandsbanken-se-api-sandbox.crosskey.io/open-banking/v3.1.6/pisp/domestic-payment-consents/4c54dc34-e4fc-4d9f-8aa0-ebc530560d31"
+      },
+      "Risk": {}
+    }
+  }
+}

@@ -1,0 +1,1635 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/d771e8e0-df78-11ed-a430-fbc9f81a242c/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-01-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T17:20:26"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a2def6",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Financial-Id": "resursbank/no",
+      "X-Fapi-Interaction-Id": "9cdbfd70-83f7-4c1c-adb5-a650af6ddd82"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "156.30",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "7ab7615c-94e9-47c7-afd3-edb0e1415813",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "16.54",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "2f6d343c-c993-4df5-9080-c8d0517b911a",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-07T00:00:00Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "156.29",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-07T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "71dfabb5-a1d7-4377-af7f-66024df097c5",
+            "ValueDateTime": "2026-10-07T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-07T00:00:00Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "19.86",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-07T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "a2f1ffbf-f0fc-4a84-a590-ebd160b5f1d1",
+            "ValueDateTime": "2026-10-07T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-02T00:00:00Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "189.70",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-02T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "d5dd620d-2927-4447-9c76-5b7eb15acf6e",
+            "ValueDateTime": "2026-10-02T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:00.872482Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "16.86",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-28T22:15:00.872482Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "fbb89223-3590-4981-8f9c-238e2b3466a3",
+            "ValueDateTime": "2026-09-28T22:15:00.872482Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:02.520903Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "180.64",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-21T22:15:02.520903Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "b8df76a7-e959-4117-a9e4-d880a30a0f7e",
+            "ValueDateTime": "2026-09-21T22:15:02.520903Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:00.864055Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "19.10",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-21T22:15:00.864055Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "2e36f910-56a3-4dc2-b054-ea0acd100f44",
+            "ValueDateTime": "2026-09-21T22:15:00.864055Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-15T22:15:02.075413Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "20.70",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-15T22:15:02.075413Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "1a1399b7-151d-4efb-8a29-4a8e4aa3da33",
+            "ValueDateTime": "2026-09-15T22:15:02.075413Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-14T22:15:02.369183Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "159.22",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-14T22:15:02.369183Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "3d88e4b4-5777-4c10-b491-b453245cc752",
+            "ValueDateTime": "2026-09-14T22:15:02.369183Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-08T22:15:02.307883Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "199.82",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-08T22:15:02.307883Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "15b28b97-060f-4f5d-9028-5b26a6e71e54",
+            "ValueDateTime": "2026-09-08T22:15:02.307883Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-08T22:15:01.81507Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "19.62",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-08T22:15:01.81507Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "a220cb84-c5d2-4582-a047-ace2fe54eadb",
+            "ValueDateTime": "2026-09-08T22:15:01.81507Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-02T22:15:01.412357Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "17.58",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-02T22:15:01.412357Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "ee9bf15c-7427-480c-81ae-9a1245d93f8f",
+            "ValueDateTime": "2026-09-02T22:15:01.412357Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:03.645812Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "168.54",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-31T22:15:03.645812Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "4288e516-2553-4738-96ac-91d61640202b",
+            "ValueDateTime": "2026-08-31T22:15:03.645812Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-25T22:15:01.614288Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "19.64",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-25T22:15:01.614288Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "13c86543-2e64-4724-b124-dfb0f92dbb19",
+            "ValueDateTime": "2026-08-25T22:15:01.614288Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-24T22:15:02.670148Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "180.79",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-24T22:15:02.670148Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "4e59efa6-1d62-4dcb-be4f-f8c0d25cf9b1",
+            "ValueDateTime": "2026-08-24T22:15:02.670148Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-18T22:15:01.785731Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "183.78",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-18T22:15:01.785731Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "93fabef2-babf-4096-b9a3-5e27f08d7d9b",
+            "ValueDateTime": "2026-08-18T22:15:01.785731Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-17T22:15:01.820039Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "19.25",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-17T22:15:01.820039Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "fb21bd36-22b7-4189-ad76-53df4776e6e9",
+            "ValueDateTime": "2026-08-17T22:15:01.820039Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-16T22:15:00.740438Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "17.80",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-16T22:15:00.740438Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "dff31bc4-3c30-445d-81d8-0544983f1234",
+            "ValueDateTime": "2026-08-16T22:15:00.740438Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-11T22:15:01.404002Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "156.40",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-11T22:15:01.404002Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "50979e79-1032-44e3-9bb9-260b1ce73a84",
+            "ValueDateTime": "2026-08-11T22:15:01.404002Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-04T22:15:01.280241Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "18.70",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-04T22:15:01.280241Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "91666831-805f-4b6a-b552-c0d593f9aeae",
+            "ValueDateTime": "2026-08-04T22:15:01.280241Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-03T22:15:02.094501Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "196.97",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-08-03T22:15:02.094501Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "5075c918-4f42-41f0-a8a8-67cd1235c632",
+            "ValueDateTime": "2026-08-03T22:15:02.094501Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-29T22:15:01.10677Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "169.21",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-29T22:15:01.10677Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "24f176f8-5740-423c-9b56-e019ed18c2c2",
+            "ValueDateTime": "2026-07-29T22:15:01.10677Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-29T22:15:00.716618Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-29T22:15:00.716618Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "efc49c03-da7d-41ad-9c27-b584b867f7e2",
+            "ValueDateTime": "2026-07-29T22:15:00.716618Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-26T22:15:00.475699Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "16.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-26T22:15:00.475699Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "7a6172db-92f7-4d6f-8c2e-2175c1183372",
+            "ValueDateTime": "2026-07-26T22:15:00.475699Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-20T22:15:02.31538Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "169.18",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-20T22:15:02.31538Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "c1900d0c-921d-42f9-b6c3-a1217f5b18f3",
+            "ValueDateTime": "2026-07-20T22:15:02.31538Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-17T22:15:00.591146Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "16.77",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-17T22:15:00.591146Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "c7c23ff9-4bf9-4344-b7d0-6bf7f212cd4e",
+            "ValueDateTime": "2026-07-17T22:15:00.591146Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-13T22:15:02.367176Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "186.70",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-13T22:15:02.367176Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "2084d39d-f33a-404a-8269-bde2cd8fbf64",
+            "ValueDateTime": "2026-07-13T22:15:02.367176Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-08T22:15:00.772746Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "156.20",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-08T22:15:00.772746Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "9500e800-3213-4e4b-9393-cd6644e7f982",
+            "ValueDateTime": "2026-07-08T22:15:00.772746Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-07T22:15:01.160788Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "17.35",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-07T22:15:01.160788Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "29a1f8c2-0f36-4533-8820-839eeb78f6a5",
+            "ValueDateTime": "2026-07-07T22:15:01.160788Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-04T22:15:00.755267Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "160.86",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-07-04T22:15:00.755267Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "34d9c85a-309c-4cf3-a562-7bdcb5eeddf1",
+            "ValueDateTime": "2026-07-04T22:15:00.755267Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-30T22:15:01.257922Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "20.25",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-30T22:15:01.257922Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "43763dee-bae0-4a78-8781-4cf6b1ff6adf",
+            "ValueDateTime": "2026-06-30T22:15:01.257922Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-24T22:15:00.916801Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "179.68",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-24T22:15:00.916801Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "af58a3b1-d06b-4d7c-8ca0-ec320f7f2b2f",
+            "ValueDateTime": "2026-06-24T22:15:00.916801Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-24T22:15:00.582741Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "17.19",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-24T22:15:00.582741Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "b584b09e-9ba1-4d15-beff-1a9ae0ad1201",
+            "ValueDateTime": "2026-06-24T22:15:00.582741Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-16T22:15:00.742649Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "195.27",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-16T22:15:00.742649Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "5bbf4137-9317-496c-a45d-db98ebce32c8",
+            "ValueDateTime": "2026-06-16T22:15:00.742649Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-16T22:15:00.444644Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "19.36",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-16T22:15:00.444644Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "eaf0cb34-f2f8-4b89-90ff-cec7d69a6e2b",
+            "ValueDateTime": "2026-06-16T22:15:00.444644Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-11T22:15:01.115405Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "165.39",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-11T22:15:01.115405Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "83c11ba4-0c28-435f-97fe-9c1fc55b73ad",
+            "ValueDateTime": "2026-06-11T22:15:01.115405Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-10T22:15:00.412234Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-10T22:15:00.412234Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "a7bbcf30-9a0a-45af-b8fb-bc0d04fb323d",
+            "ValueDateTime": "2026-06-10T22:15:00.412234Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-02T22:15:01.829571Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "152.45",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-02T22:15:01.829571Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "dff4b77c-d608-4f6e-a8dd-529a93b4b8b6",
+            "ValueDateTime": "2026-06-02T22:15:01.829571Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-01T22:15:01.401631Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "20.78",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-06-01T22:15:01.401631Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "96f01160-c110-4e6a-9cfc-31509f5873fa",
+            "ValueDateTime": "2026-06-01T22:15:01.401631Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-25T22:15:01.813643Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "190.36",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-05-25T22:15:01.813643Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "05ec89c5-50a4-4036-93e5-2276a659477a",
+            "ValueDateTime": "2026-05-25T22:15:01.813643Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-25T22:15:00.633571Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "20.25",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-05-25T22:15:00.633571Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "68c80ca4-ab01-407b-bf94-180683a6e7ec",
+            "ValueDateTime": "2026-05-25T22:15:00.633571Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-18T22:15:01.316466Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "194.24",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-05-18T22:15:01.316466Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "c9465cb2-3ad2-4daf-9d71-aace950a4756",
+            "ValueDateTime": "2026-05-18T22:15:01.316466Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-18T22:15:00.66763Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-05-18T22:15:00.66763Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "08ac50b2-763e-434e-b9ea-1a4943409cc6",
+            "ValueDateTime": "2026-05-18T22:15:00.66763Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-15T22:15:00.564491Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "165.50",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-05-15T22:15:00.564491Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ddf2dc2d-abb6-4722-aa24-e1a8a0e14f7a",
+            "ValueDateTime": "2026-05-15T22:15:00.564491Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-13T22:15:00.846187Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "19.76",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-05-13T22:15:00.846187Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "5849ce4f-64cb-445a-9ad9-9b9b891eb764",
+            "ValueDateTime": "2026-05-13T22:15:00.846187Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-04T22:15:01.090589Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "186.12",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-05-04T22:15:01.090589Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "c17f7d16-4b1b-4dc4-8734-087cbfe7a2ae",
+            "ValueDateTime": "2026-05-04T22:15:01.090589Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-04T22:15:00.727893Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "16.47",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-05-04T22:15:00.727893Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "fef23089-c215-4d26-b99e-c1439c321e55",
+            "ValueDateTime": "2026-05-04T22:15:00.727893Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-27T22:15:00.819052Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "169.22",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-27T22:15:00.819052Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "f625cdb6-21cd-4e94-802c-132b8106e55a",
+            "ValueDateTime": "2026-04-27T22:15:00.819052Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-27T22:15:00.492385Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "18.40",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-27T22:15:00.492385Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "b44c04f6-37c4-4ee5-895d-18f7cf12915b",
+            "ValueDateTime": "2026-04-27T22:15:00.492385Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-20T22:15:00.897901Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "196.15",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-20T22:15:00.897901Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "c1a38bc6-1f69-4ed6-a483-7baddea9bc25",
+            "ValueDateTime": "2026-04-20T22:15:00.897901Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-20T22:15:00.578939Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "20.93",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-20T22:15:00.578939Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "76529084-4519-47ec-b409-6966b2bb9426",
+            "ValueDateTime": "2026-04-20T22:15:00.578939Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-14T22:15:00.495325Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-14T22:15:00.495325Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "392eb4d6-a8d1-4d03-86f7-93697a87a52d",
+            "ValueDateTime": "2026-04-14T22:15:00.495325Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-13T22:15:00.488175Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "161.90",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-13T22:15:00.488175Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "8d4155d1-7284-4017-b896-243c7ae855f3",
+            "ValueDateTime": "2026-04-13T22:15:00.488175Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-09T22:15:00.059152Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "170.93",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-09T22:15:00.059152Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "f0b69959-8395-4cc5-9405-5ed894afcc9a",
+            "ValueDateTime": "2026-04-09T22:15:00.059152Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-06T22:15:00.43349Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "20.50",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-06T22:15:00.43349Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "5dacaf3f-fc1d-4ee3-8030-b24dfd73eed2",
+            "ValueDateTime": "2026-04-06T22:15:00.43349Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-01T22:15:00.527538Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "18.58",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-04-01T22:15:00.527538Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "bdbc76e8-2972-49bf-9a70-25ea0aa39f88",
+            "ValueDateTime": "2026-04-01T22:15:00.527538Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-30T22:15:01.968713Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "177.78",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-30T22:15:01.968713Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "7fab7fd7-6346-440d-8967-0a7f3585ed35",
+            "ValueDateTime": "2026-03-30T22:15:01.968713Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-24T22:15:01.618068Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "191.59",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-24T22:15:01.618068Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "e99bc932-704a-4785-ae1b-d875cbc769a7",
+            "ValueDateTime": "2026-03-24T22:15:01.618068Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-24T22:15:00.370484Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-24T22:15:00.370484Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "528b07a8-3ab6-4960-bf8b-6f3779cb4f8f",
+            "ValueDateTime": "2026-03-24T22:15:00.370484Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-22T22:15:01.333199Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "172.60",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-22T22:15:01.333199Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "b8ba26ae-cecf-4d61-9121-5108eeb6709f",
+            "ValueDateTime": "2026-03-22T22:15:01.333199Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-16T22:15:00.910342Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "18.31",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-16T22:15:00.910342Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "c1c45dd8-9882-4b36-849b-00539be43cae",
+            "ValueDateTime": "2026-03-16T22:15:00.910342Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-15T22:15:01.00342Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "182.96",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-15T22:15:01.00342Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6565f96b-cc07-42d1-83eb-e013aee42277",
+            "ValueDateTime": "2026-03-15T22:15:01.00342Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-09T22:15:00.787487Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "18.63",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-09T22:15:00.787487Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "f1abdfdc-a430-443d-bc88-42eb5c9083eb",
+            "ValueDateTime": "2026-03-09T22:15:00.787487Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-03T22:15:01.39704Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "161.30",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-03T22:15:01.39704Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "5ccf55cf-054c-4af0-bed4-212b9804d611",
+            "ValueDateTime": "2026-03-03T22:15:01.39704Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-03T22:15:00.524802Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "20.65",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-03-03T22:15:00.524802Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "f58028cc-7b6b-47c0-9bb4-da31b6e4ec57",
+            "ValueDateTime": "2026-03-03T22:15:00.524802Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-24T22:15:01.196309Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "152.92",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-02-24T22:15:01.196309Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "d2bc8e8b-f538-4e22-8776-91fd74531263",
+            "ValueDateTime": "2026-02-24T22:15:01.196309Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-24T22:15:00.5627Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "18.15",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-02-24T22:15:00.5627Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "f3d50b32-6d81-414b-903c-8ef0294109e7",
+            "ValueDateTime": "2026-02-24T22:15:00.5627Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-16T22:15:02.184816Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "158.69",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-02-16T22:15:02.184816Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "cd1d36e6-8fe7-492b-8481-bd815dbe1bd2",
+            "ValueDateTime": "2026-02-16T22:15:02.184816Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-16T22:15:00.858779Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "16.41",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-02-16T22:15:00.858779Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "6e5875c3-6877-4c84-adc5-d886f999f9c4",
+            "ValueDateTime": "2026-02-16T22:15:00.858779Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-09T22:15:01.784132Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "163.52",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-02-09T22:15:01.784132Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "e1f22321-e90c-49af-a0d9-e1c2e73c24f1",
+            "ValueDateTime": "2026-02-09T22:15:01.784132Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-09T22:15:00.593455Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "16.19",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-02-09T22:15:00.593455Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "230d1336-af18-47bf-99e2-1a3dec0ae407",
+            "ValueDateTime": "2026-02-09T22:15:00.593455Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-02T22:15:02.315729Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "164.48",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-02-02T22:15:02.315729Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "cad45485-0838-477f-87cd-bcd72e0e9a64",
+            "ValueDateTime": "2026-02-02T22:15:02.315729Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-02T22:15:00.788758Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-02-02T22:15:00.788758Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "4ebbed2b-58da-433a-ab6b-5b1055bd56a7",
+            "ValueDateTime": "2026-02-02T22:15:00.788758Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-30T22:15:00.708442Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "19.72",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-30T22:15:00.708442Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "4150d5eb-a724-4a88-8b56-d2be9eaae0fe",
+            "ValueDateTime": "2026-01-30T22:15:00.708442Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-28T22:15:01.196555Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "176.92",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-28T22:15:01.196555Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "299ea8f6-e7c7-46b4-b776-401c1b3ef6fb",
+            "ValueDateTime": "2026-01-28T22:15:01.196555Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-21T22:15:00.542361Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "17.42",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-21T22:15:00.542361Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "26162057-6246-470f-87e4-251654c04a0d",
+            "ValueDateTime": "2026-01-21T22:15:00.542361Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-19T22:15:02.281343Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "177.86",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-19T22:15:02.281343Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "36d1c24b-a2e1-438c-90f7-5ec8ccd3d210",
+            "ValueDateTime": "2026-01-19T22:15:02.281343Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-17T22:15:00.429627Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "16.24",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-17T22:15:00.429627Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "9ca882ca-6cba-44be-8e69-245725a07540",
+            "ValueDateTime": "2026-01-17T22:15:00.429627Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-12T22:15:01.950021Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "181.70",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-12T22:15:01.950021Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "0bab25a2-5662-411d-b8ac-8c38719360c8",
+            "ValueDateTime": "2026-01-12T22:15:01.950021Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-05T22:15:02.195809Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "190.98",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-05T22:15:02.195809Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "d221a669-f2fb-4fcf-a02f-ec89129eee4b",
+            "ValueDateTime": "2026-01-05T22:15:02.195809Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-05T22:15:00.618874Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "15.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-05T22:15:00.618874Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "2410968e-6af2-406f-afc1-250df70b4199",
+            "ValueDateTime": "2026-01-05T22:15:00.618874Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-02T22:15:01.725512Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "165.32",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-02T22:15:01.725512Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "b67378ce-939a-4abb-9412-61d3fe16bcc4",
+            "ValueDateTime": "2026-01-02T22:15:01.725512Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-02T22:15:00.706969Z",
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "Amount": {
+              "Amount": "17.13",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-01-02T22:15:00.706969Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-1bf551"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Purchase"
+            },
+            "Status": "Booked",
+            "TransactionId": "91744515-876b-4fa2-9165-8adea7490f67",
+            "ValueDateTime": "2026-01-02T22:15:00.706969Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://resursbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/d771e8e0-df78-11ed-a430-fbc9f81a242c/transactions?fromBookingDateTime=2026-01-01T00:00Z\u0026toBookingDateTime=2026-10-18T17:20:26Z"
+      },
+      "Meta": {}
+    }
+  }
+}

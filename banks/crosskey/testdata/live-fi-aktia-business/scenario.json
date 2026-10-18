@@ -1,0 +1,99 @@
+{
+  "config": {
+    "bank": "aktia",
+    "country": "FI",
+    "segment": "business",
+    "env": "sandbox",
+    "now": "2026-10-18T10:58:50Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "647b759d-75b8-4b52-9d48-9cc9c5075e29",
+        "7bd43dc7-4617-4879-b3df-062a0f0156ca",
+        "402f60b4-0ccf-45a8-bc7b-e6eb9c428f90",
+        "eb54e563-4bc3-4e96-9993-976abdb7292b",
+        "0e2252f6-f466-489e-9a98-b74b16633135",
+        "4c2077d3-8313-4334-afff-cf68e14e1745",
+        "2ce2198b-e66c-478d-aaeb-af8acba1d9e7",
+        "73f2e39d-53ed-42e1-a6d7-2f5abda18f7e",
+        "36d63848-aaf0-4e50-8595-5e7c13e4665d",
+        "1d8b0650-e39c-4d1a-aee6-4617822f78fb",
+        "14445e94-1d2f-483c-89fb-b53da9dd4467"
+      ],
+      "state": [
+        "bb0ad894-e2d3-4dbf-bdd1-34f8726146a5",
+        "90513f8c-0f8c-448b-9734-5e88539f6e8d"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A140377\u0026id_token=REDACTED%3Aid_token%3A467af2\u0026state=bb0ad894-e2d3-4dbf-bdd1-34f8726146a5"
+    },
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "0bc88050-cae3-11f1-9412-afba18089a65",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "0bc88050-cae3-11f1-9412-afba18089a65",
+      "from": "2020-01-01T00:00:00Z",
+      "to": "2026-10-18T11:00:17Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "5cc6b26c-58af-11f0-a02b-034681507675",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "5cc6b26c-58af-11f0-a02b-034681507675",
+      "from": "2020-01-01T00:00:00Z",
+      "to": "2026-10-18T11:00:18Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+      "from": "2020-01-01T00:00:00Z",
+      "to": "2026-10-18T11:00:19Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+      "from": "2020-01-01T00:00:00Z",
+      "to": "2026-10-18T11:00:20Z",
+      "cursor": "https://aktia-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/5cc775a8-58af-11f0-a02b-ff29de93748e/transactions?fromBookingDateTime=2020-01-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:00:19Z\u0026paginationKey=1",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

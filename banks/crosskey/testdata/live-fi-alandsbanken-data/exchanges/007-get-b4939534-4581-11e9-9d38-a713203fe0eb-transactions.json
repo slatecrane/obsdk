@@ -1,0 +1,199 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/b4939534-4581-11e9-9d38-a713203fe0eb/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:31:35"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:380f6e",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "16006b30-7438-48ec-8317-0678c0e665a2"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "b4939534-4581-11e9-9d38-a713203fe0eb",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "b0d5757e-0ae7-4898-9814-d9c546062369",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-08T00:00:00Z",
+            "AccountId": "b4939534-4581-11e9-9d38-a713203fe0eb",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-08T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "10d32b3f-ccf1-499f-8b89-99e2fb99e36e",
+            "ValueDateTime": "2026-10-08T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "b4939534-4581-11e9-9d38-a713203fe0eb",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-a35b3e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "0a13988c-b3ce-4b76-95b7-e8503fca1f1d",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:02.111169Z",
+            "AccountId": "b4939534-4581-11e9-9d38-a713203fe0eb",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-28T22:15:02.111169Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "8d916529-a7c3-4afe-8ef5-a45bd06f217f",
+            "ValueDateTime": "2026-09-28T22:15:02.111169Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-22T22:15:01.640022Z",
+            "AccountId": "b4939534-4581-11e9-9d38-a713203fe0eb",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-22T22:15:01.640022Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "3061bac2-bcef-41f2-8064-23434041f3b7",
+            "ValueDateTime": "2026-09-22T22:15:01.640022Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-15T22:15:01.920668Z",
+            "AccountId": "b4939534-4581-11e9-9d38-a713203fe0eb",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-15T22:15:01.920668Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "66b42327-c209-41b6-beae-9d0bb2ba301e",
+            "ValueDateTime": "2026-09-15T22:15:01.920668Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-08T22:15:01.742277Z",
+            "AccountId": "b4939534-4581-11e9-9d38-a713203fe0eb",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-08T22:15:01.742277Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "d505acc4-63ef-465e-98db-d4c97219d960",
+            "ValueDateTime": "2026-09-08T22:15:01.742277Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://alandsbanken-fi-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/b4939534-4581-11e9-9d38-a713203fe0eb/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:31:35Z"
+      },
+      "Meta": {}
+    }
+  }
+}

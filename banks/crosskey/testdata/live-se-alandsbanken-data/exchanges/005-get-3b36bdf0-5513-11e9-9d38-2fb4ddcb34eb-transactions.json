@@ -1,0 +1,222 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:33:32"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:f1b529",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "cd0f2a97-6867-4b1d-b1e3-12055797ca8b"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "Amount": {
+              "Amount": "500.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "39"
+            },
+            "Status": "Booked",
+            "TransactionId": "6a3abb15-51cc-454d-811b-a1b6ec6d6190",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "Amount": {
+              "Amount": "500.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "39"
+            },
+            "Status": "Booked",
+            "TransactionId": "73ce99c9-a444-4a33-93d4-583191094d1d",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "Amount": {
+              "Amount": "2000.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ed35cb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "EFA"
+            },
+            "Status": "Booked",
+            "TransactionId": "ead6d9b6-3cdf-4657-80d7-eed02cb4c827",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:01.412927Z",
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "Amount": {
+              "Amount": "500.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-28T22:15:01.412927Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "39"
+            },
+            "Status": "Booked",
+            "TransactionId": "ddc4eb83-b2dc-4452-a38d-2eb51e1356d8",
+            "ValueDateTime": "2026-09-28T22:15:01.412927Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-22T22:15:01.04375Z",
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "Amount": {
+              "Amount": "500.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-22T22:15:01.04375Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "39"
+            },
+            "Status": "Booked",
+            "TransactionId": "8ce241ce-2cc0-466d-b578-77a3c073cdbe",
+            "ValueDateTime": "2026-09-22T22:15:01.04375Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-16T22:15:01.021728Z",
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "Amount": {
+              "Amount": "500.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-16T22:15:01.021728Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "39"
+            },
+            "Status": "Booked",
+            "TransactionId": "34301a15-3809-4d94-a3c4-ed6b1aabb999",
+            "ValueDateTime": "2026-09-16T22:15:01.021728Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-07T22:15:01.507609Z",
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "Amount": {
+              "Amount": "500.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-07T22:15:01.507609Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "39"
+            },
+            "Status": "Booked",
+            "TransactionId": "ed1bc84e-96d3-4458-82b1-313295a0c8de",
+            "ValueDateTime": "2026-09-07T22:15:01.507609Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-02T22:15:00.742216Z",
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "Amount": {
+              "Amount": "500.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-02T22:15:00.742216Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "39"
+            },
+            "Status": "Booked",
+            "TransactionId": "62e9ca52-fd35-4bdd-976d-4ec0d5699b06",
+            "ValueDateTime": "2026-09-02T22:15:00.742216Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://alandsbanken-se-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:33:32Z"
+      },
+      "Meta": {}
+    }
+  }
+}

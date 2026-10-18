@@ -1,0 +1,67 @@
+{
+  "config": {
+    "bank": "alandsbanken",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:31:44Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "cb921aaa-9aaf-4f0d-b18d-5db21508df9f",
+        "0670d2de-36ac-4fe7-bc93-8b78de6babfe",
+        "e2343d58-8128-4517-96f0-423ba3743ffb",
+        "72dd8060-80e8-48d8-856d-7853b284afe6",
+        "4ac33798-68b4-44a0-b151-1d707fbd8419",
+        "133d8711-c2af-42a4-aea4-d36267abf835",
+        "98c86b1f-a5d6-4e04-80ba-e157a17f5b80",
+        "6420bca6-08ac-4c0f-8b3e-f01a8ab58dff"
+      ],
+      "state": [
+        "5a1f7ca8-5714-42f9-bab8-999fa76b4380",
+        "289c70f5-c68a-40b9-87c8-80500ef0f869"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.10",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-dec1f3",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI90PSEUDO525F4CDCC9"
+              }
+            },
+            "remittance": [
+              "obsdk sepa test"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A724e64\u0026id_token=REDACTED%3Aid_token%3A7aa5b4\u0026state=5a1f7ca8-5714-42f9-bab8-999fa76b4380"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWxhbmRzYmFua2VuLWZpIiwiZiI6ImludGVybmF0aW9uYWwiLCJpZCI6Ijc4NWZjZmVmLTg3YWYtNDdmZC1iY2M2LTE3ODg5OTBjYTFiNCIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

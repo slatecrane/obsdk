@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:9ff9dd",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "9a5599d1-00e6-4c33-838d-63a8caf19fb6"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-e834df",
+                "Name": "name-95a6c1",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "AccountSubType": "Savings",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-cd99ed"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-c38570",
+                "Name": "name-95a6c1",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountId": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-1f4cef"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://pop-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts"
+      },
+      "Meta": {}
+    }
+  }
+}

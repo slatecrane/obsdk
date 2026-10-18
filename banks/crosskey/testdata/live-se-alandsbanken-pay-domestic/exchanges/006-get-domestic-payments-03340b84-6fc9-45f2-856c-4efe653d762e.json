@@ -1,0 +1,49 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/pisp/domestic-payments/03340b84-6fc9-45f2-856c-4efe653d762e",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:0187d9",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "04a1c60a-8ecd-4d09-8d40-909f60a96451"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "4c54dc34-e4fc-4d9f-8aa0-ebc530560d31",
+        "CreationDateTime": "2026-10-18T11:34:35.249628422Z",
+        "DomesticPaymentId": "03340b84-6fc9-45f2-856c-4efe653d762e",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-3a745e",
+            "Name": "name-66157b",
+            "SchemeName": "UK.OBIE.BBAN"
+          },
+          "EndToEndIdentification": "7b5373c19b684da6af0055ef83a0a94b",
+          "InstructedAmount": {
+            "Amount": "1.00",
+            "Currency": "SEK"
+          },
+          "InstructionIdentification": "cd68cb4b40a54fd3ba964362c8ea60cf",
+          "LocalInstrument": "SE.Dataclearing",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        },
+        "Status": "AcceptedSettlementInProcess",
+        "StatusUpdateDateTime": "2026-10-18T11:34:35.252133918Z"
+      },
+      "Links": {
+        "Self": "https://alandsbanken-se-api-sandbox.crosskey.io/open-banking/v3.1.6/pisp/domestic-payments/03340b84-6fc9-45f2-856c-4efe653d762e"
+      }
+    }
+  }
+}

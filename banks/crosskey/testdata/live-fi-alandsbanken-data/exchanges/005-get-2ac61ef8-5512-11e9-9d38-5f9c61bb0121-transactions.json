@@ -1,0 +1,222 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/2ac61ef8-5512-11e9-9d38-5f9c61bb0121/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:31:34"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:380f6e",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "5e3cd895-fae6-4286-ae3a-44edc28c82ab"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "MTR"
+            },
+            "Status": "Booked",
+            "TransactionId": "72a5c377-7f17-42f1-a6fb-3ca426047ba6",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "MTR"
+            },
+            "Status": "Booked",
+            "TransactionId": "ff9bd4d7-631b-487f-94d0-2d31ba1c641b",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "Amount": {
+              "Amount": "200.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "POSD"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ed35cb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "FAK"
+            },
+            "Status": "Booked",
+            "TransactionId": "b63c63d7-5d75-4876-8088-6afb3ee6e071",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:01.860041Z",
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-28T22:15:01.860041Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "MTR"
+            },
+            "Status": "Booked",
+            "TransactionId": "718bb3c5-7ea7-41b5-bc35-d86318f1aff7",
+            "ValueDateTime": "2026-09-28T22:15:01.860041Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:01.781795Z",
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-21T22:15:01.781795Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "MTR"
+            },
+            "Status": "Booked",
+            "TransactionId": "1294860b-27bf-4cda-8f90-9678704ef0e2",
+            "ValueDateTime": "2026-09-21T22:15:01.781795Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-14T22:15:01.784446Z",
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-14T22:15:01.784446Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "MTR"
+            },
+            "Status": "Booked",
+            "TransactionId": "1bd0a834-c896-4a90-9823-393be49484f7",
+            "ValueDateTime": "2026-09-14T22:15:01.784446Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-07T22:15:01.770155Z",
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-07T22:15:01.770155Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "MTR"
+            },
+            "Status": "Booked",
+            "TransactionId": "b823bf68-af83-4e45-8dc7-cbe2cbfbca8c",
+            "ValueDateTime": "2026-09-07T22:15:01.770155Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-01T22:15:01.465556Z",
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "CCRD",
+              "SubCode": "CWDL"
+            },
+            "BookingDateTime": "2026-09-01T22:15:01.465556Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-0f28bb"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "MTR"
+            },
+            "Status": "Booked",
+            "TransactionId": "c97fba90-b98a-4d1c-900c-f0bf6f71a28f",
+            "ValueDateTime": "2026-09-01T22:15:01.465556Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://alandsbanken-fi-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/2ac61ef8-5512-11e9-9d38-5f9c61bb0121/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:31:34Z"
+      },
+      "Meta": {}
+    }
+  }
+}

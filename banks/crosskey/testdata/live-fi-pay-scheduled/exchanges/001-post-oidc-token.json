@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v2.0/oidc/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026grant_type=client_credentials\u0026scope=payments"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:4742cb",
+      "expires_in": 180,
+      "scope": "payments",
+      "token_type": "Bearer"
+    }
+  }
+}

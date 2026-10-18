@@ -1,0 +1,2294 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/5cc6b26c-58af-11f0-a02b-034681507675/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2020-01-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:00:18"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:496245",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "73f2e39d-53ed-42e1-a6d7-2f5abda18f7e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-13T00:00:00Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "110.88",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-10-13T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "bfc3bdcb-c9ef-4f0a-b3b3-1facc17c5dbf",
+            "TransactionReference": "17919297003279",
+            "ValueDateTime": "2026-10-13T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "427.49",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "8141ab86-17cb-43d2-887f-2cafee0647cd",
+            "TransactionReference": "17918433022329",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-07T00:00:00Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "129.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-10-07T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "37f702b0-902b-409c-9c18-dade62a0311c",
+            "TransactionReference": "17914113005725",
+            "ValueDateTime": "2026-10-07T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "445.34",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "a0b9fa50-03b5-4e9f-8aea-07a1685bd969",
+            "TransactionReference": "17912385028477",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-01T00:00:00Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "460.35",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-10-01T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "e4327259-f513-4c44-a382-b1eb0eb41d2d",
+            "TransactionReference": "17908929012413",
+            "ValueDateTime": "2026-10-01T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "8ab1bf3d-c117-46ff-972e-243214769c0f",
+            "TransactionReference": "17908065021708",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:00.504449Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "184.13",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-28T22:15:00.504449Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "3782b30a-b5ba-4615-a36e-3131fcf17369",
+            "TransactionReference": "17906337005043",
+            "ValueDateTime": "2026-09-28T22:15:00.504449Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-24T22:15:01.458926Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "483.35",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-24T22:15:01.458926Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "358eb2e8-7a25-419e-84a8-c6f97ee6e17a",
+            "TransactionReference": "17902881014584",
+            "ValueDateTime": "2026-09-24T22:15:01.458926Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:00.311962Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "161.17",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-21T22:15:00.311962Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "273523f7-58c0-41f8-b35c-f6d0bdaf7848",
+            "TransactionReference": "17900289003128",
+            "ValueDateTime": "2026-09-21T22:15:00.311962Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-17T22:15:00.341233Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "118.17",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-17T22:15:00.341233Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "0975968f-c2fa-4c1f-80ce-cd3628f52db5",
+            "TransactionReference": "17896833003413",
+            "ValueDateTime": "2026-09-17T22:15:00.341233Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-15T22:15:02.203301Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "410.69",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-15T22:15:02.203301Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "b9abd681-d714-48ff-8e78-74744c8c1d3e",
+            "TransactionReference": "17895105022039",
+            "ValueDateTime": "2026-09-15T22:15:02.203301Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-09T22:15:01.225193Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "461.39",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-09T22:15:01.225193Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "aac4ec8b-f048-433a-98db-6d31450db1a6",
+            "TransactionReference": "17889921012255",
+            "ValueDateTime": "2026-09-09T22:15:01.225193Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-07T22:15:00.061279Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "107.66",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-07T22:15:00.061279Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "2da8dba8-bda6-4b78-84db-ae105deaf375",
+            "TransactionReference": "17888193000614",
+            "ValueDateTime": "2026-09-07T22:15:00.061279Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-02T22:15:01.509636Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "406.24",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-02T22:15:01.509636Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "0249eef0-0b14-4ad3-bce6-2e28d31812c7",
+            "TransactionReference": "17883873015092",
+            "ValueDateTime": "2026-09-02T22:15:01.509636Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-01T22:15:01.655341Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "123.20",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-09-01T22:15:01.655341Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "70ac5251-31b0-48d2-b46b-b35ec89bf0e2",
+            "TransactionReference": "17883009016551",
+            "ValueDateTime": "2026-09-01T22:15:01.655341Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-31T22:15:02.93438Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "5.26",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-08-31T22:15:02.93438Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "98aca6bb-a6e3-46fa-9761-9ec943076889",
+            "TransactionReference": "17882145029348",
+            "ValueDateTime": "2026-08-31T22:15:02.93438Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-25T22:15:01.1649Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "103.14",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-08-25T22:15:01.1649Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "52283013-d19e-4f0f-9f41-76fbb92d7457",
+            "TransactionReference": "17876961011643",
+            "ValueDateTime": "2026-08-25T22:15:01.1649Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-24T22:15:02.803487Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "451.11",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-08-24T22:15:02.803487Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "921e195a-6322-44f2-970a-972c9c7db924",
+            "TransactionReference": "17876097028034",
+            "ValueDateTime": "2026-08-24T22:15:02.803487Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-21T22:15:01.806554Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "431.97",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-08-21T22:15:01.806554Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "4b63d91b-f618-4f8d-b2c3-ad6a2f62c54f",
+            "TransactionReference": "17873505018063",
+            "ValueDateTime": "2026-08-21T22:15:01.806554Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-19T22:15:01.383183Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "170.57",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-08-19T22:15:01.383183Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "814a5074-fcf7-4a87-aa04-45830e1dab47",
+            "TransactionReference": "17871777013830",
+            "ValueDateTime": "2026-08-19T22:15:01.383183Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-11T22:15:01.112889Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "123.23",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-08-11T22:15:01.112889Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "83c18030-a372-4d7f-a955-e8e9b0dd1d85",
+            "TransactionReference": "17864865011120",
+            "ValueDateTime": "2026-08-11T22:15:01.112889Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-10T22:15:01.994291Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "441.56",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-08-10T22:15:01.994291Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "1dbd30dc-f317-46e0-96b4-2f9fc1540288",
+            "TransactionReference": "17864001019944",
+            "ValueDateTime": "2026-08-10T22:15:01.994291Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-06T22:15:00.633459Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "110.35",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-08-06T22:15:00.633459Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "1fb84d39-d22e-4bac-b672-e4a9490ae0a3",
+            "TransactionReference": "17860545006336",
+            "ValueDateTime": "2026-08-06T22:15:00.633459Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-08-03T22:15:01.768954Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "496.35",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-08-03T22:15:01.768954Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "fdf606ac-8003-4d2a-8164-44f1980e02cf",
+            "TransactionReference": "17857953017690",
+            "ValueDateTime": "2026-08-03T22:15:01.768954Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-31T22:15:01.846375Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "4.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-07-31T22:15:01.846375Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "825c81c5-ab78-4244-a325-19bb15f45c73",
+            "TransactionReference": "17855361018461",
+            "ValueDateTime": "2026-07-31T22:15:01.846375Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-30T22:15:00.654066Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "109.28",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-30T22:15:00.654066Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "cfe40afa-337c-41a9-ae4e-a0b6a6a6c032",
+            "TransactionReference": "17854497006542",
+            "ValueDateTime": "2026-07-30T22:15:00.654066Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-27T22:15:01.864343Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "443.23",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-27T22:15:01.864343Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "ca07adc1-6ea3-48ab-8495-145555f46d6d",
+            "TransactionReference": "17851905018643",
+            "ValueDateTime": "2026-07-27T22:15:01.864343Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-22T22:15:00.840986Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "136.49",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-22T22:15:00.840986Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "6500ab5c-6607-4ce9-80dd-44b0fe9d5f91",
+            "TransactionReference": "17847585008414",
+            "ValueDateTime": "2026-07-22T22:15:00.840986Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-20T22:15:02.02276Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "450.19",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-20T22:15:02.02276Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "021d3590-c148-448a-a5e5-de9dc3a43b86",
+            "TransactionReference": "17845857020229",
+            "ValueDateTime": "2026-07-20T22:15:02.02276Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-14T22:15:00.971153Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "428.64",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-14T22:15:00.971153Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "f4ab85ad-86ca-4fef-b4c0-77de7fc752c6",
+            "TransactionReference": "17840673009717",
+            "ValueDateTime": "2026-07-14T22:15:00.971153Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-13T22:15:02.144486Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "164.33",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-13T22:15:02.144486Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "276bea90-2cb0-4aea-9029-c36e68214e78",
+            "TransactionReference": "17839809021444",
+            "ValueDateTime": "2026-07-13T22:15:02.144486Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-08T22:15:00.701823Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "129.13",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-08T22:15:00.701823Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "bfd855ac-beff-479c-a11a-50beb3719968",
+            "TransactionReference": "17835489007015",
+            "ValueDateTime": "2026-07-08T22:15:00.701823Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-06T22:15:01.528699Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "408.20",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-06T22:15:01.528699Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "7c64a3a8-7de7-4e50-8ecb-1cea6f71e498",
+            "TransactionReference": "17833761015280",
+            "ValueDateTime": "2026-07-06T22:15:01.528699Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-07-01T22:15:01.198532Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "491.95",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-07-01T22:15:01.198532Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "01263479-8316-475c-89be-a055cd7f4a10",
+            "TransactionReference": "17829441011987",
+            "ValueDateTime": "2026-07-01T22:15:01.198532Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-30T22:15:02.551154Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "181.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-30T22:15:02.551154Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "3a636601-22cc-44ba-bfca-878dbc82a659",
+            "TransactionReference": "17828577025518",
+            "ValueDateTime": "2026-06-30T22:15:02.551154Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-30T22:15:02.345604Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-06-30T22:15:02.345604Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "8f74751a-4e23-436d-bc40-7e72fe4937c3",
+            "TransactionReference": "17828577023455",
+            "ValueDateTime": "2026-06-30T22:15:02.345604Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-22T22:15:01.374089Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "106.11",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-22T22:15:01.374089Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "49920917-335d-4713-a25e-14e1d3f966cf",
+            "TransactionReference": "17821665013743",
+            "ValueDateTime": "2026-06-22T22:15:01.374089Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-22T22:15:00.876913Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "486.36",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-22T22:15:00.876913Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "531bec8b-af09-44c0-aa4b-0f56b7b48833",
+            "TransactionReference": "17821665008761",
+            "ValueDateTime": "2026-06-22T22:15:00.876913Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-18T22:15:00.568728Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "447.66",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-18T22:15:00.568728Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "4565d36d-740a-4dee-bdfb-6b18ee86de8a",
+            "TransactionReference": "17818209005683",
+            "ValueDateTime": "2026-06-18T22:15:00.568728Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-15T22:15:01.102488Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "140.57",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-15T22:15:01.102488Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "bac7bdcb-bb8f-43d0-9fc1-3b677198f881",
+            "TransactionReference": "17815617011026",
+            "ValueDateTime": "2026-06-15T22:15:01.102488Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-12T22:15:00.514513Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "455.78",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-12T22:15:00.514513Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "e1fa0baa-1560-431f-bb96-8070fcb42be5",
+            "TransactionReference": "17813025005147",
+            "ValueDateTime": "2026-06-12T22:15:00.514513Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-08T22:15:02.089385Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "150.74",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-08T22:15:02.089385Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "c6ae05b4-23af-4494-9679-c6dce99460cc",
+            "TransactionReference": "17809569020896",
+            "ValueDateTime": "2026-06-08T22:15:02.089385Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-01T22:15:02.015019Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "191.27",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-01T22:15:02.015019Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "8e921e03-e8b1-47c2-b10a-ea9b4e582460",
+            "TransactionReference": "17803521020157",
+            "ValueDateTime": "2026-06-01T22:15:02.015019Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-06-01T22:15:01.800363Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "442.74",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-06-01T22:15:01.800363Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "35ebdf1c-21f2-4fc7-89fa-d67bad8a296b",
+            "TransactionReference": "17803521018004",
+            "ValueDateTime": "2026-06-01T22:15:01.800363Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-29T22:15:01.809076Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "5.45",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-05-29T22:15:01.809076Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "97f34f91-4ece-4e82-8e84-196d331e700a",
+            "TransactionReference": "17800929018094",
+            "ValueDateTime": "2026-05-29T22:15:01.809076Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-26T22:15:02.04208Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "144.71",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-05-26T22:15:02.04208Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "33f6886e-82b8-4aea-abf0-ed34571079be",
+            "TransactionReference": "17798337020427",
+            "ValueDateTime": "2026-05-26T22:15:02.04208Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-26T22:15:00.997861Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "449.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-05-26T22:15:00.997861Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "5a21b0ae-d9a6-47ae-80b0-85e88f58a351",
+            "TransactionReference": "17798337009972",
+            "ValueDateTime": "2026-05-26T22:15:00.997861Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-20T22:15:01.239232Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "151.16",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-05-20T22:15:01.239232Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "8b5be10d-3a1c-4981-990e-696f31106ef4",
+            "TransactionReference": "17793153012397",
+            "ValueDateTime": "2026-05-20T22:15:01.239232Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-18T22:15:00.908999Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "409.40",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-05-18T22:15:00.908999Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "c9ba3d17-5e93-4159-85fa-0689a6d3aa87",
+            "TransactionReference": "17791425009098",
+            "ValueDateTime": "2026-05-18T22:15:00.908999Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-14T22:15:00.853631Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "144.30",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-05-14T22:15:00.853631Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "f265078c-fcb1-4210-8793-bfb31f5c1f21",
+            "TransactionReference": "17787969008530",
+            "ValueDateTime": "2026-05-14T22:15:00.853631Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-12T22:15:00.531783Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "485.27",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-05-12T22:15:00.531783Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "557fb31a-c676-4b00-835d-2174e6f79ad4",
+            "TransactionReference": "17786241005317",
+            "ValueDateTime": "2026-05-12T22:15:00.531783Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-06T22:15:00.970884Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "149.80",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-05-06T22:15:00.970884Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "71d66fa1-c866-49db-a7e0-9ac47cb5daa4",
+            "TransactionReference": "17781057009706",
+            "ValueDateTime": "2026-05-06T22:15:00.970884Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-05-05T22:15:00.987687Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "463.54",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-05-05T22:15:00.987687Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "0bfd55e0-fe4f-4711-839d-2225b321968d",
+            "TransactionReference": "17780193009878",
+            "ValueDateTime": "2026-05-05T22:15:00.987687Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-30T22:15:01.137978Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "4.89",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-04-30T22:15:01.137978Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "9f55ec0f-0860-4895-bbc6-1aced132587d",
+            "TransactionReference": "17775873011382",
+            "ValueDateTime": "2026-04-30T22:15:01.137978Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-28T22:15:01.190833Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "443.89",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-04-28T22:15:01.190833Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "8fb24a06-1dfb-4d0e-a037-b396d664dda7",
+            "TransactionReference": "17774145011901",
+            "ValueDateTime": "2026-04-28T22:15:01.190833Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-27T22:15:01.610649Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "168.56",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-04-27T22:15:01.610649Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "b80fe0f9-4ed8-4171-a601-5915e0073791",
+            "TransactionReference": "17773281016104",
+            "ValueDateTime": "2026-04-27T22:15:01.610649Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-21T22:15:00.969683Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "498.10",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-04-21T22:15:00.969683Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "5302bd6e-71be-4ba3-b758-1f3deeeafa43",
+            "TransactionReference": "17768097009695",
+            "ValueDateTime": "2026-04-21T22:15:00.969683Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-20T22:15:01.911164Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "122.70",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-04-20T22:15:01.911164Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "7fab089b-ee13-4f4c-9a79-62bc3231fffe",
+            "TransactionReference": "17767233019110",
+            "ValueDateTime": "2026-04-20T22:15:01.911164Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-14T22:15:01.292507Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "146.19",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-04-14T22:15:01.292507Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "a9bf6188-3418-474a-afdb-d5d78b6e351e",
+            "TransactionReference": "17762049012924",
+            "ValueDateTime": "2026-04-14T22:15:01.292507Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-13T22:15:01.528703Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "441.81",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-04-13T22:15:01.528703Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "f7298efb-0b89-4909-a9c6-bb1ffef93a24",
+            "TransactionReference": "17761185015284",
+            "ValueDateTime": "2026-04-13T22:15:01.528703Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-07T22:15:01.566841Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "183.19",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-04-07T22:15:01.566841Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "4925f8e4-5bcb-435f-a140-9ac6f9bf1ffd",
+            "TransactionReference": "17756001015661",
+            "ValueDateTime": "2026-04-07T22:15:01.566841Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-04-06T22:15:01.181075Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "444.10",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-04-06T22:15:01.181075Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "3531de6a-ab6d-4d58-afe0-afd6277b7e17",
+            "TransactionReference": "17755137011815",
+            "ValueDateTime": "2026-04-06T22:15:01.181075Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-31T22:15:01.603612Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "3.14",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-03-31T22:15:01.603612Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "c919799a-e98d-4982-99ac-f10f1464142f",
+            "TransactionReference": "17749953016039",
+            "ValueDateTime": "2026-03-31T22:15:01.603612Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-31T22:15:01.480552Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "464.84",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-31T22:15:01.480552Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "f846205e-cc86-4233-9d45-7e90420aa34f",
+            "TransactionReference": "17749953014808",
+            "ValueDateTime": "2026-03-31T22:15:01.480552Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-30T22:15:01.075887Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "164.42",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-30T22:15:01.075887Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "fe28fa64-704a-4fc6-84c9-b4f7829b5cf7",
+            "TransactionReference": "17749089010750",
+            "ValueDateTime": "2026-03-30T22:15:01.075887Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-27T22:15:00.742155Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "108.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-27T22:15:00.742155Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "d219e554-73fc-439b-b44d-231d93d767a1",
+            "TransactionReference": "17746497007426",
+            "ValueDateTime": "2026-03-27T22:15:00.742155Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-23T22:15:00.760985Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "418.84",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-23T22:15:00.760985Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "120fba0d-6dc8-4897-be57-0449dea29270",
+            "TransactionReference": "17743041007613",
+            "ValueDateTime": "2026-03-23T22:15:00.760985Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-19T22:15:00.426396Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "419.77",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-19T22:15:00.426396Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "37f4384e-45a7-4aae-ac46-7f9f89f996c9",
+            "TransactionReference": "17739585004267",
+            "ValueDateTime": "2026-03-19T22:15:00.426396Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-16T22:15:01.407809Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "144.73",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-16T22:15:01.407809Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "6e47d570-9d17-4a57-aa9e-b8f055b64118",
+            "TransactionReference": "17736993014075",
+            "ValueDateTime": "2026-03-16T22:15:01.407809Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-09T22:15:01.458571Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "147.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-09T22:15:01.458571Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "91781eb8-15cb-424c-94ad-41eb875fe15b",
+            "TransactionReference": "17730945014582",
+            "ValueDateTime": "2026-03-09T22:15:01.458571Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-09T22:15:00.688283Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "422.55",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-09T22:15:00.688283Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "716a0931-50c5-43ce-ae92-01798d685b1b",
+            "TransactionReference": "17730945006888",
+            "ValueDateTime": "2026-03-09T22:15:00.688283Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-04T22:15:00.85885Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "133.93",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-04T22:15:00.85885Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "adbd36a1-84ae-4ada-8d61-8af11db63d8b",
+            "TransactionReference": "17726625008589",
+            "ValueDateTime": "2026-03-04T22:15:00.85885Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-03-04T22:15:00.519708Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "481.46",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-03-04T22:15:00.519708Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "deb2977c-5413-4c01-9f2d-9c6aef17fe1c",
+            "TransactionReference": "17726625005197",
+            "ValueDateTime": "2026-03-04T22:15:00.519708Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-27T22:15:00.897092Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "5.69",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-02-27T22:15:00.897092Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "e774d4e6-bf60-434f-8e41-110f22988ed3",
+            "TransactionReference": "17722305008971",
+            "ValueDateTime": "2026-02-27T22:15:00.897092Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-25T22:15:00.464854Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "403.59",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-02-25T22:15:00.464854Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "43b4a74e-d4b7-4911-b738-d51694b95ebd",
+            "TransactionReference": "17720577004640",
+            "ValueDateTime": "2026-02-25T22:15:00.464854Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-24T22:15:00.94816Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "182.14",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-02-24T22:15:00.94816Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "734fb75a-2f46-4666-911f-4282f62ead9e",
+            "TransactionReference": "17719713009481",
+            "ValueDateTime": "2026-02-24T22:15:00.94816Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-21T22:15:00.366738Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "421.35",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-02-21T22:15:00.366738Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "fcbee2f8-2acb-4ef7-977a-260b4483c0e7",
+            "TransactionReference": "17717121003660",
+            "ValueDateTime": "2026-02-21T22:15:00.366738Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-16T22:15:01.441547Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "194.84",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-02-16T22:15:01.441547Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "65829e20-4280-4912-99e8-d40b830dfa3e",
+            "TransactionReference": "17712801014411",
+            "ValueDateTime": "2026-02-16T22:15:01.441547Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-09T22:15:00.868787Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "179.93",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-02-09T22:15:00.868787Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "4772d5be-483d-48eb-8bb4-e844f5ef44c3",
+            "TransactionReference": "17706753008688",
+            "ValueDateTime": "2026-02-09T22:15:00.868787Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-09T22:15:00.412659Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "492.20",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-02-09T22:15:00.412659Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "02f9bc9c-8943-4234-b22c-561ec2252830",
+            "TransactionReference": "17706753004129",
+            "ValueDateTime": "2026-02-09T22:15:00.412659Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-05T22:15:00.499961Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "110.33",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-02-05T22:15:00.499961Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "3147cb75-3881-48b6-96b2-3739308e74a1",
+            "TransactionReference": "17703297004992",
+            "ValueDateTime": "2026-02-05T22:15:00.499961Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-02-02T22:15:00.684481Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "468.48",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-02-02T22:15:00.684481Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "09e1f5a8-1292-4ef5-918d-3bf16a4ef211",
+            "TransactionReference": "17700705006841",
+            "ValueDateTime": "2026-02-02T22:15:00.684481Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-30T22:15:00.946537Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "2.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "MCOP",
+              "SubCode": "CHRG"
+            },
+            "BookingDateTime": "2026-01-30T22:15:00.946537Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-c13606"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Service charge"
+            },
+            "Status": "Booked",
+            "TransactionId": "43436e90-98af-4574-8961-d6f73e93ccaa",
+            "TransactionReference": "17698113009461",
+            "ValueDateTime": "2026-01-30T22:15:00.946537Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-27T22:15:00.407354Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "478.80",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-27T22:15:00.407354Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "d5e38f1f-dcde-49b8-af07-f15887b587a8",
+            "TransactionReference": "17695521004077",
+            "ValueDateTime": "2026-01-27T22:15:00.407354Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-26T22:15:00.868036Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "158.51",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-26T22:15:00.868036Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "45eff3ba-2432-47b8-916f-aeba1bf4ef78",
+            "TransactionReference": "17694657008689",
+            "ValueDateTime": "2026-01-26T22:15:00.868036Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-21T22:15:00.410204Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "459.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-21T22:15:00.410204Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "ba0aee44-f1d0-46f8-bd9e-740ef8736833",
+            "TransactionReference": "17690337004101",
+            "ValueDateTime": "2026-01-21T22:15:00.410204Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-19T22:15:00.882339Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "200.78",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-19T22:15:00.882339Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "d9c41d47-411e-4438-9a5e-60da921b1ecf",
+            "TransactionReference": "17688609008821",
+            "ValueDateTime": "2026-01-19T22:15:00.882339Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-13T22:15:01.248544Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "421.92",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-13T22:15:01.248544Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "c1d44a74-3d46-4ae3-ad1e-b25a1c70a1bb",
+            "TransactionReference": "17683425012481",
+            "ValueDateTime": "2026-01-13T22:15:01.248544Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-12T22:15:00.834359Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "147.66",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-12T22:15:00.834359Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "33848463-c5f1-4b81-adfe-91cd8578f505",
+            "TransactionReference": "17682561008347",
+            "ValueDateTime": "2026-01-12T22:15:00.834359Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-09T22:15:00.904905Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "497.10",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-09T22:15:00.904905Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "e636096b-d1a2-4130-94d0-5f783cfca87d",
+            "TransactionReference": "17679969009045",
+            "ValueDateTime": "2026-01-09T22:15:00.904905Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-05T22:15:00.812044Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "134.86",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-05T22:15:00.812044Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "60b47d8a-ea13-4bcc-b076-6358f504f7c5",
+            "TransactionReference": "17676513008123",
+            "ValueDateTime": "2026-01-05T22:15:00.812044Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-01T22:15:00.855381Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "435.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-01T22:15:00.855381Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "7e81eefd-05bd-4d51-994e-269d595caa73",
+            "TransactionReference": "17673057008556",
+            "ValueDateTime": "2026-01-01T22:15:00.855381Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-01-01T22:15:00.67689Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "115.19",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2026-01-01T22:15:00.67689Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-7f4955"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "c459526f-dbda-4b26-8f7d-de166d2a9c4b",
+            "TransactionReference": "17673057006765",
+            "ValueDateTime": "2026-01-01T22:15:00.67689Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-11-06T22:15:01.311402Z",
+            "AccountId": "5cc6b26c-58af-11f0-a02b-034681507675",
+            "Amount": {
+              "Amount": "495.69",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "XBCT"
+            },
+            "BookingDateTime": "2025-11-06T22:15:01.311402Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ad3c18"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Foreign payment"
+            },
+            "Status": "Booked",
+            "TransactionId": "d7ffe080-00e2-11f1-b87e-abf253ed5b9d",
+            "TransactionReference": "17624673013110",
+            "ValueDateTime": "2025-11-06T22:15:01.311402Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://aktia-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/5cc6b26c-58af-11f0-a02b-034681507675/transactions?fromBookingDateTime=2020-01-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:00:18Z"
+      },
+      "Meta": {}
+    }
+  }
+}

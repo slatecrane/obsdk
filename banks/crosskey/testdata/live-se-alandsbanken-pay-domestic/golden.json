@@ -1,0 +1,40 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the payment, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://alandsbanken-se-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=8720ecf9-a929-4db6-a933-a9287d42dde6&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2FsYW5kc2Jhbmtlbi1zZS1hcGktc2FuZGJveC5jcm9zc2tleS5pbyIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJ1cm46YWxhbmRzYmFua2VuLXNlOnBheW1lbnQ6NGM1NGRjMzQtZTRmYy00ZDlmLThhYTAtZWJjNTMwNTYwZDMxIiwiZXNzZW50aWFsIjp0cnVlfX0sInVzZXJpbmZvIjp7Im9wZW5iYW5raW5nX2ludGVudF9pZCI6eyJ2YWx1ZSI6InVybjphbGFuZHNiYW5rZW4tc2U6cGF5bWVudDo0YzU0ZGMzNC1lNGZjLTRkOWYtOGFhMC1lYmM1MzA1NjBkMzEiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNTAzMSwiaWF0IjoxNzkyMzIzMjMxLCJpc3MiOiIiLCJqdGkiOiIzZDNkNWM0NS03NzNjLTRlYTQtYWUxMS1mNzA2ZjliMzBkYTkiLCJuYmYiOjE3OTIzMjMyMzEsIm5vbmNlIjoiODcyMGVjZjktYTkyOS00ZGI2LWE5MzMtYTkyODdkNDJkZGU2IiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgcGF5bWVudHMiLCJzdGF0ZSI6IjA3YzAyYzI1LWM3ZjYtNDZhOC05ODk0LTczNDEzMGFlOGFkNiJ9.dGVzdC1zaWduYXR1cmU6LJiYkBZxb0g&response_type=code+id_token&scope=openid+payments&state=07c02c25-c7f6-46a8-9894-734130ae8ad6"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "03340b84-6fc9-45f2-856c-4efe653d762e",
+        "type": "domestic",
+        "status": "in_progress",
+        "bank_status": "AcceptedSettlementInProcess",
+        "final": false,
+        "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWxhbmRzYmFua2VuLXNlIiwiZiI6ImRvbWVzdGljIiwiaWQiOiIwMzM0MGI4NC02ZmM5LTQ1ZjItODU2Yy00ZWZlNjUzZDc2MmUiLCJ0IjoiZG9tZXN0aWMifQ"
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "03340b84-6fc9-45f2-856c-4efe653d762e",
+      "type": "domestic",
+      "status": "in_progress",
+      "bank_status": "AcceptedSettlementInProcess",
+      "final": false,
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWxhbmRzYmFua2VuLXNlIiwiZiI6ImRvbWVzdGljIiwiaWQiOiIwMzM0MGI4NC02ZmM5LTQ1ZjItODU2Yy00ZWZlNjUzZDc2MmUiLCJ0IjoiZG9tZXN0aWMifQ"
+    }
+  }
+]

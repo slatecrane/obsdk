@@ -1,0 +1,72 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://resursbank-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=26335254-0e13-444b-aedc-0267416f0e28&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL3Jlc3Vyc2JhbmstYXBpLXNhbmRib3guY3Jvc3NrZXkuaW8iLCJjbGFpbXMiOnsiaWRfdG9rZW4iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOnJlc3Vyc2Jhbms6YWNjb3VudDpmYjQ4ODdiNC04ZDFmLTRiMjAtOTdjZi1lNDYxMDJmZTFkNjEiLCJlc3NlbnRpYWwiOnRydWV9fSwidXNlcmluZm8iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOnJlc3Vyc2Jhbms6YWNjb3VudDpmYjQ4ODdiNC04ZDFmLTRiMjAtOTdjZi1lNDYxMDJmZTFkNjEiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjM0NTczMSwiaWF0IjoxNzkyMzQzOTMxLCJpc3MiOiIiLCJqdGkiOiI5NjllMjQyNC04NTViLTQyNzItYTU0MS03YzdmYTRhNmRhMWEiLCJuYmYiOjE3OTIzNDM5MzEsIm5vbmNlIjoiMjYzMzUyNTQtMGUxMy00NDRiLWFlZGMtMDI2NzQxNmYwZTI4IiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgYWNjb3VudHMiLCJzdGF0ZSI6IjlhMTk2MmM4LTlhZmYtNDc1Ni05YTFhLTllMDk5MGFiNWNlNCJ9.dGVzdC1zaWduYXR1cmU6si5hXvI3Bso&response_type=code+id_token&scope=openid+accounts&state=9a1962c8-9aff-4756-9a1a-9e0990ab5ce4"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "resursbank",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "crosskey-resursbank",
+        "generation": 1,
+        "updated_at": "2026-10-18T17:18:51Z",
+        "access_token": "REDACTED:access_token:5935a5",
+        "refresh_token": "REDACTED:refresh_token:669b71",
+        "token_type": "Bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-18T17:21:51Z",
+        "consents": {
+          "accounts": {
+            "id": "fb4887b4-8d1f-4b20-97cf-e46102fe1d61",
+            "kind": "accounts",
+            "status": "Authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+          "stable_id": "da41afd99e4cb99485b0371ff8ffe2cc",
+          "identifiers": [
+            {
+              "scheme": "PAN",
+              "value": "identification-a94182"
+            }
+          ],
+          "currency": "EUR",
+          "product": "description-5f96ff",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-a94182",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-5f96ff"
+          }
+        }
+      ]
+    }
+  }
+]

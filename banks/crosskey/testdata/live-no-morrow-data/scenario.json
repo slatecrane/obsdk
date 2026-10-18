@@ -1,0 +1,73 @@
+{
+  "config": {
+    "bank": "morrowbank",
+    "country": "NO",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:37:37Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "4d97f6d9-b80a-4ce8-8050-7b61e4d2747f",
+        "f5025adf-823f-44d3-8ce6-69127a35c789",
+        "75f500cd-38b6-407a-abcd-8841ca9b5517",
+        "0c94befe-cf10-4279-b53a-3504f7a38f0f",
+        "972af2da-4e82-4013-92a6-18fb176b72aa",
+        "834be5f5-1437-44c4-90d2-65875f0afe39",
+        "382a603a-fed8-4877-b66f-5bad6208d1cd"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "73de039a-9959-11ee-826a-f79912592e65",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "73de039a-9959-11ee-826a-f79912592e65",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-18T11:37:38Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "73e09d94-9959-11ee-826a-5318083a1fef",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "73e09d94-9959-11ee-826a-5318083a1fef",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-18T11:37:38Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "73e19014-9959-11ee-826a-3b61c615e95e",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "73e19014-9959-11ee-826a-3b61c615e95e",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-18T11:37:39Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

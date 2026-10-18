@@ -1,0 +1,103 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://pop-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=951f5086-15f0-4b23-b193-987018c15927&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL3BvcC1hcGktc2FuZGJveC5jcm9zc2tleS5pbyIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJ1cm46cG9wOmFjY291bnQ6NTljNjIwNmItMzkxMi00OWY3LWExZGMtZmE5YjJiMzAyOWRmIiwiZXNzZW50aWFsIjp0cnVlfX0sInVzZXJpbmZvIjp7Im9wZW5iYW5raW5nX2ludGVudF9pZCI6eyJ2YWx1ZSI6InVybjpwb3A6YWNjb3VudDo1OWM2MjA2Yi0zOTEyLTQ5ZjctYTFkYy1mYTliMmIzMDI5ZGYiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNDcxMCwiaWF0IjoxNzkyMzIyOTEwLCJpc3MiOiIiLCJqdGkiOiIzN2UxYjM0Mi03OWI4LTQzNGMtYWM0ZS01ZTg0MmRiYTMzNDQiLCJuYmYiOjE3OTIzMjI5MTAsIm5vbmNlIjoiOTUxZjUwODYtMTVmMC00YjIzLWIxOTMtOTg3MDE4YzE1OTI3IiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgYWNjb3VudHMiLCJzdGF0ZSI6ImEwYzNiMTE4LTZlMGQtNDVjMC1iOTQ5LTc4MjBmMDdiMzQwZSJ9.dGVzdC1zaWduYXR1cmU6mCROW12B6SA&response_type=code+id_token&scope=openid+accounts&state=a0c3b118-6e0d-45c0-b949-7820f07b340e"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "poppankki",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "crosskey-pop",
+        "generation": 1,
+        "updated_at": "2026-10-18T11:28:30Z",
+        "access_token": "REDACTED:access_token:d71416",
+        "refresh_token": "REDACTED:refresh_token:d09924",
+        "token_type": "Bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-18T11:31:30Z",
+        "consents": {
+          "accounts": {
+            "id": "59c6206b-3912-49f7-a1dc-fa9b2b3029df",
+            "kind": "accounts",
+            "status": "Authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+          "stable_id": "cee7490eb89e74a5bd276da0abc75a72",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "identification-e834df"
+            }
+          ],
+          "owner_name": "name-95a6c1",
+          "currency": "EUR",
+          "product": "description-cd99ed",
+          "type": "SVGS",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-e834df",
+                "Name": "name-95a6c1",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "AccountSubType": "Savings",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-cd99ed"
+          }
+        },
+        {
+          "id": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+          "stable_id": "15935a38249162a8dc9076131868f56b",
+          "identifiers": [
+            {
+              "scheme": "PAN",
+              "value": "identification-c38570"
+            }
+          ],
+          "owner_name": "name-95a6c1",
+          "currency": "EUR",
+          "product": "description-1f4cef",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-c38570",
+                "Name": "name-95a6c1",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountId": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-1f4cef"
+          }
+        }
+      ]
+    }
+  }
+]

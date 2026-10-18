@@ -1,0 +1,72 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:c81e7b",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "a80aa0b3-50c5-41cb-82f7-9f0303e0e18e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-525f4c",
+                "Name": "name-a89946",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-de56a2"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-811184",
+                "Name": "name-a89946",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "1efc7638-58b4-11f0-9f3d-3b92bf1020d0",
+            "AccountSubType": "Savings",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-cd99ed"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-1153c5",
+                "Name": "name-a89946",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-8862b1"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://aktia-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts"
+      },
+      "Meta": {}
+    }
+  }
+}

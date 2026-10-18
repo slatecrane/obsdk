@@ -1,0 +1,88 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:380f6e",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "8b6a62ce-41a1-4c66-9a55-68402ce0bef2"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-d212be",
+                "Name": "name-5510ef",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "2ac59366-5512-11e9-9d38-8f6d1aa12f2f",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "SEK",
+            "Description": "description-0dd4e2",
+            "Nickname": "nickname-e05a42"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-fca2e9",
+                "Name": "name-5510ef",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountId": "2ac61ef8-5512-11e9-9d38-5f9c61bb0121",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-1e6eba"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-d20c38",
+                "Name": "name-5510ef",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "b4939534-4581-11e9-9d38-a713203fe0eb",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-a16629"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-d20fb9",
+                "Name": "name-5510ef",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-eed15a",
+            "Nickname": "nickname-e05a42"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://alandsbanken-fi-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts"
+      },
+      "Meta": {}
+    }
+  }
+}

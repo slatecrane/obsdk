@@ -1,0 +1,60 @@
+{
+  "config": {
+    "bank": "morrowbank",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:35:49Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "625cfa05-4967-41d1-8681-cf68337b7759",
+        "d04ba6df-be8c-4616-86fe-0de4af319f43",
+        "d50e0e99-4d80-47c2-8faf-ed448338253d",
+        "0bc1c4ef-c196-4f48-8f7e-98837b95b0b0",
+        "7da3e898-fc72-47b4-ac33-6179dbb48a3a",
+        "e33ece4d-4033-461b-8372-927c41409c16",
+        "67c1999b-70d2-47e3-9dcf-15dad1c532bc"
+      ],
+      "state": [
+        "8367d6a2-ba2c-41eb-b015-048948ad5f7b",
+        "ffc96549-5ea1-449d-bd72-e0491553176f"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "domestic",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-dec1f3",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI90PSEUDO525F4CDCC9"
+              }
+            },
+            "remittance": [
+              "obsdk test"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3Af4aa99\u0026id_token=REDACTED%3Aid_token%3Abce684\u0026state=8367d6a2-ba2c-41eb-b015-048948ad5f7b"
+    }
+  ]
+}

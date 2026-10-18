@@ -1,0 +1,499 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+        "stable_id": "4a0afd6aa7ca2280a26154585cb966d3",
+        "identifiers": [
+          {
+            "scheme": "BBAN",
+            "value": "identification-34d813"
+          }
+        ],
+        "owner_name": "name-13cb3f",
+        "currency": "SEK",
+        "product": "description-07c0e0",
+        "type": "CARD",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-34d813",
+              "Name": "name-13cb3f",
+              "SchemeName": "UK.OBIE.BBAN"
+            }
+          ],
+          "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+          "AccountSubType": "CreditCard",
+          "AccountType": "Personal",
+          "Currency": "SEK",
+          "Description": "description-07c0e0"
+        }
+      },
+      {
+        "id": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+        "stable_id": "a672750a4e920f515849894698951367",
+        "identifiers": [
+          {
+            "scheme": "BBAN",
+            "value": "identification-d9defb"
+          }
+        ],
+        "owner_name": "name-13cb3f",
+        "currency": "SEK",
+        "product": "description-0157c0",
+        "type": "LOAN",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-d9defb",
+              "Name": "name-13cb3f",
+              "SchemeName": "UK.OBIE.BBAN"
+            }
+          ],
+          "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+          "AccountSubType": "Loan",
+          "AccountType": "Personal",
+          "Currency": "SEK",
+          "Description": "description-0157c0"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "InterimBooked",
+        "amount": {
+          "amount": "10150.85",
+          "currency": "SEK"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "35150.85",
+          "currency": "SEK"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "ac810559-da85-49c8-97ef-3e7261af13eb",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-65.50",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-04",
+          "value_date": "2026-10-04",
+          "counterparty": {
+            "name": "name-68f023"
+          },
+          "bank_code": "Debit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-04T00:00:00Z",
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "Amount": {
+              "Amount": "65.50",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-10-04T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-68f023"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Debit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ac810559-da85-49c8-97ef-3e7261af13eb",
+            "ValueDateTime": "2026-10-04T00:00:00Z"
+          }
+        },
+        {
+          "id": "606e29aa-85ef-49f0-9f30-3b2e3359368a",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "39.21",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-04",
+          "value_date": "2026-10-04",
+          "counterparty": {
+            "name": "name-ef8e7a"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-04T00:00:00Z",
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "Amount": {
+              "Amount": "39.21",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-10-04T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "606e29aa-85ef-49f0-9f30-3b2e3359368a",
+            "ValueDateTime": "2026-10-04T00:00:00Z"
+          }
+        },
+        {
+          "id": "e75aff12-ed61-48e2-a075-2bec70fb53c3",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "29.98",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-09-30",
+          "value_date": "2026-09-30",
+          "counterparty": {
+            "name": "name-ef8e7a"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "Amount": {
+              "Amount": "29.98",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "e75aff12-ed61-48e2-a075-2bec70fb53c3",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          }
+        },
+        {
+          "id": "ec98e057-5427-4fca-b73c-83d07af6ab9e",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-29.84",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-09-30",
+          "value_date": "2026-09-30",
+          "counterparty": {
+            "name": "name-68f023"
+          },
+          "bank_code": "Debit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "Amount": {
+              "Amount": "29.84",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-68f023"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Debit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ec98e057-5427-4fca-b73c-83d07af6ab9e",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "InterimBooked",
+        "amount": {
+          "amount": "2363.82",
+          "currency": "SEK"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "2363.82",
+          "currency": "SEK"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "98f31251-5097-4fbc-9dbd-623b4d3a8f0c",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "86.85",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-13",
+          "value_date": "2026-10-13",
+          "counterparty": {
+            "name": "name-5635b5"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-13T00:00:00Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "86.85",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-10-13T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "98f31251-5097-4fbc-9dbd-623b4d3a8f0c",
+            "ValueDateTime": "2026-10-13T00:00:00Z"
+          }
+        },
+        {
+          "id": "35b80b51-f575-4325-96f1-7b9e47821973",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "60.72",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "counterparty": {
+            "name": "name-5635b5"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "60.72",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "35b80b51-f575-4325-96f1-7b9e47821973",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          }
+        },
+        {
+          "id": "6e9148f0-8da3-4136-9aa3-1b07bc2d2fdf",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "11.15",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-09-28",
+          "value_date": "2026-09-28",
+          "counterparty": {
+            "name": "name-5635b5"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-28T22:15:00.859157Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "11.15",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-28T22:15:00.859157Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6e9148f0-8da3-4136-9aa3-1b07bc2d2fdf",
+            "ValueDateTime": "2026-09-28T22:15:00.859157Z"
+          }
+        },
+        {
+          "id": "f29847a0-3227-439b-8084-3579a16416f4",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "77.59",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-09-23",
+          "value_date": "2026-09-23",
+          "counterparty": {
+            "name": "name-5635b5"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-23T22:15:01.414353Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "77.59",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-23T22:15:01.414353Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "f29847a0-3227-439b-8084-3579a16416f4",
+            "ValueDateTime": "2026-09-23T22:15:01.414353Z"
+          }
+        },
+        {
+          "id": "67b2bb23-db1c-4cc4-ae05-499dc2325e3a",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "20.37",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-09-14",
+          "value_date": "2026-09-14",
+          "counterparty": {
+            "name": "name-5635b5"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-14T22:15:01.632655Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "20.37",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-14T22:15:01.632655Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "67b2bb23-db1c-4cc4-ae05-499dc2325e3a",
+            "ValueDateTime": "2026-09-14T22:15:01.632655Z"
+          }
+        },
+        {
+          "id": "9afa2397-362c-4bf5-8859-41b4e19626ad",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "81.15",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-09-09",
+          "value_date": "2026-09-09",
+          "counterparty": {
+            "name": "name-5635b5"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-09T22:15:00.862862Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "81.15",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-09T22:15:00.862862Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "9afa2397-362c-4bf5-8859-41b4e19626ad",
+            "ValueDateTime": "2026-09-09T22:15:00.862862Z"
+          }
+        },
+        {
+          "id": "4715b38c-95d0-49ef-a626-372a035eff38",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "73.94",
+            "currency": "SEK"
+          },
+          "booking_date": "2026-09-01",
+          "value_date": "2026-09-01",
+          "counterparty": {
+            "name": "name-5635b5"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-01T22:15:01.605397Z",
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "73.94",
+              "Currency": "SEK"
+            },
+            "BookingDateTime": "2026-09-01T22:15:01.605397Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-5635b5"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "4715b38c-95d0-49ef-a626-372a035eff38",
+            "ValueDateTime": "2026-09-01T22:15:01.605397Z"
+          }
+        }
+      ]
+    }
+  }
+]

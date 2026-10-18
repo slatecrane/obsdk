@@ -1,0 +1,1137 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/5cc775a8-58af-11f0-a02b-ff29de93748e/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2020-01-01T00:00Z"
+      ],
+      "paginationKey": [
+        "1"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:00:19Z"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:496245",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "14445e94-1d2f-483c-89fb-b53da9dd4467"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2025-11-04T22:15:01.065413Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "474.31",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-11-04T22:15:01.065413Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "93870726-9ce2-4510-a621-2937f4397763",
+            "TransactionReference": "17622945010652",
+            "ValueDateTime": "2025-11-04T22:15:01.065413Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-10-28T22:15:00.93168Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "247.91",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-10-28T22:15:00.93168Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Outgoing payments"
+            },
+            "Status": "Booked",
+            "TransactionId": "646c8402-9876-4f55-9ec0-8dda85c8fff8",
+            "TransactionReference": "17616897009316",
+            "ValueDateTime": "2025-10-28T22:15:00.93168Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-10-27T22:15:01.76923Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "417.26",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-10-27T22:15:01.76923Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "9fc94d99-01b2-4639-a746-af9f31d57458",
+            "TransactionReference": "17616033017696",
+            "ValueDateTime": "2025-10-27T22:15:01.76923Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-10-21T22:15:01.122023Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "430.85",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-10-21T22:15:01.122023Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "7f43cf5b-75ab-403a-9e77-b52a96dd8237",
+            "TransactionReference": "17610849011222",
+            "ValueDateTime": "2025-10-21T22:15:01.122023Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-10-21T22:15:00.974499Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "268.35",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-10-21T22:15:00.974499Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Outgoing payments"
+            },
+            "Status": "Booked",
+            "TransactionId": "7d63c758-45a5-436a-9f38-3d0c9a9f1f20",
+            "TransactionReference": "17610849009742",
+            "ValueDateTime": "2025-10-21T22:15:00.974499Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-10-13T22:15:01.203905Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "449.30",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-10-13T22:15:01.203905Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "056432a8-dace-4cbd-a0ea-c8e1adb2376c",
+            "TransactionReference": "17603937012030",
+            "ValueDateTime": "2025-10-13T22:15:01.203905Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-10-13T22:15:00.997393Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "205.95",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-10-13T22:15:00.997393Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Outgoing payments"
+            },
+            "Status": "Booked",
+            "TransactionId": "285eeafb-f7fb-4397-9ec5-d58eecaaf895",
+            "TransactionReference": "17603937009975",
+            "ValueDateTime": "2025-10-13T22:15:00.997393Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-10-08T22:15:01.380298Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "212.43",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-10-08T22:15:01.380298Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Outgoing payments"
+            },
+            "Status": "Booked",
+            "TransactionId": "af572baa-5add-46d3-804b-8f597528f8d8",
+            "TransactionReference": "17599617013803",
+            "ValueDateTime": "2025-10-08T22:15:01.380298Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-10-06T22:15:01.881247Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "437.95",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-10-06T22:15:01.881247Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "bc52d93c-855b-4116-b1b4-1384f5d4a23d",
+            "TransactionReference": "17597889018816",
+            "ValueDateTime": "2025-10-06T22:15:01.881247Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-30T22:15:02.160689Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "284.44",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-30T22:15:02.160689Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Outgoing payments"
+            },
+            "Status": "Booked",
+            "TransactionId": "8b28c81e-2049-4b8a-9b4f-06646040243d",
+            "TransactionReference": "17592705021607",
+            "ValueDateTime": "2025-09-30T22:15:02.160689Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-29T22:15:01.971603Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "498.46",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-29T22:15:01.971603Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Account transfer"
+            },
+            "Status": "Booked",
+            "TransactionId": "58086428-6141-4afc-83fb-ba08b2192a98",
+            "TransactionReference": "17591841019710",
+            "ValueDateTime": "2025-09-29T22:15:01.971603Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-25T22:15:01.335463Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "273.92",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-25T22:15:01.335463Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "bd5518de-c463-465d-be04-f2ed03b25028",
+            "TransactionReference": "17588385013353",
+            "ValueDateTime": "2025-09-25T22:15:01.335463Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-23T22:15:01.552689Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "416.17",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-23T22:15:01.552689Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "a1496edd-6472-4b2e-937c-5ac08a36488f",
+            "TransactionReference": "17586657015528",
+            "ValueDateTime": "2025-09-23T22:15:01.552689Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-16T22:15:01.802322Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "456.17",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-16T22:15:01.802322Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "5ba6bbc1-37d7-43d0-8975-969795b594f4",
+            "TransactionReference": "17580609018029",
+            "ValueDateTime": "2025-09-16T22:15:01.802322Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-15T22:15:02.100529Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "209.64",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-15T22:15:02.100529Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "ad4c09c5-d271-40ca-bd05-2eed94a7ef11",
+            "TransactionReference": "17579745021004",
+            "ValueDateTime": "2025-09-15T22:15:02.100529Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-10T22:15:01.21839Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "299.43",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-10T22:15:01.21839Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "969b3df8-86a0-49b6-a1a3-2a4e8696149e",
+            "TransactionReference": "17575425012188",
+            "ValueDateTime": "2025-09-10T22:15:01.21839Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-09T22:15:01.797591Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "418.72",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-09T22:15:01.797591Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "dc8afa99-1e04-4ea5-9f2b-c6ef2fd7c025",
+            "TransactionReference": "17574561017970",
+            "ValueDateTime": "2025-09-09T22:15:01.797591Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-02T22:15:01.380509Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "238.72",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-02T22:15:01.380509Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "296931bf-a658-4d5b-82f2-6c31bd477a2d",
+            "TransactionReference": "17568513013802",
+            "ValueDateTime": "2025-09-02T22:15:01.380509Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-09-01T22:15:02.590084Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "493.12",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-09-01T22:15:02.590084Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "5f14b445-3c67-4f4a-bf24-a94245098a34",
+            "TransactionReference": "17567649025901",
+            "ValueDateTime": "2025-09-01T22:15:02.590084Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-29T22:15:01.697107Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "263.61",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-29T22:15:01.697107Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "9909f7ee-066c-46fb-8be8-a7583a57b5c1",
+            "TransactionReference": "17565057016973",
+            "ValueDateTime": "2025-08-29T22:15:01.697107Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-26T22:15:01.987426Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "412.88",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-26T22:15:01.987426Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "2bcfe986-0b45-41d0-aecc-c74f922b90c6",
+            "TransactionReference": "17562465019879",
+            "ValueDateTime": "2025-08-26T22:15:01.987426Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-18T22:15:02.787403Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "477.30",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-18T22:15:02.787403Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "2d472701-df21-4b06-90bb-98b1d4007329",
+            "TransactionReference": "17555553027874",
+            "ValueDateTime": "2025-08-18T22:15:02.787403Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-18T22:15:02.250948Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "246.21",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-18T22:15:02.250948Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "d85cb538-2d10-4faa-ae0f-0d4ee344a417",
+            "TransactionReference": "17555553022507",
+            "ValueDateTime": "2025-08-18T22:15:02.250948Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-12T22:15:01.887894Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "404.88",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-12T22:15:01.887894Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "62955bdc-5291-41ea-8dfb-c82c186c0d27",
+            "TransactionReference": "17550369018878",
+            "ValueDateTime": "2025-08-12T22:15:01.887894Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-11T22:15:01.991462Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "277.92",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-11T22:15:01.991462Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "0119c3e5-e2c9-4320-8082-34bf1fbb2dd9",
+            "TransactionReference": "17549505019914",
+            "ValueDateTime": "2025-08-11T22:15:01.991462Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-04T22:15:02.300381Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "472.19",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-04T22:15:02.300381Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "91f73b0c-a1ba-49a3-beee-402ca112865c",
+            "TransactionReference": "17543457023009",
+            "ValueDateTime": "2025-08-04T22:15:02.300381Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-04T22:15:01.972587Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "210.93",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-04T22:15:01.972587Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "756a8ec6-926b-43e1-8058-2fa47dba334e",
+            "TransactionReference": "17543457019725",
+            "ValueDateTime": "2025-08-04T22:15:01.972587Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-08-03T22:15:01.559676Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "446.30",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-08-03T22:15:01.559676Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "89cca332-a64d-4df9-98bf-58c9e4e5b61a",
+            "TransactionReference": "17542593015590",
+            "ValueDateTime": "2025-08-03T22:15:01.559676Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-07-30T22:15:01.426761Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "264.20",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-07-30T22:15:01.426761Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "08a03a6a-1da4-49a1-af4d-653fe55c6f36",
+            "TransactionReference": "17539137014261",
+            "ValueDateTime": "2025-07-30T22:15:01.426761Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-07-22T22:15:01.896302Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "401.87",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-07-22T22:15:01.896302Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "3ac52800-06b3-4a0c-875e-46a46f59e88a",
+            "TransactionReference": "17532225018969",
+            "ValueDateTime": "2025-07-22T22:15:01.896302Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-07-22T22:15:01.432336Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "227.36",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-07-22T22:15:01.432336Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "cd0a8e5e-6f03-49f6-be99-4f57e023a5bc",
+            "TransactionReference": "17532225014329",
+            "ValueDateTime": "2025-07-22T22:15:01.432336Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-07-16T22:15:01.219004Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "483.88",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-07-16T22:15:01.219004Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "02eb4443-afa3-4c69-bbd7-50e3425e6454",
+            "TransactionReference": "17527041012196",
+            "ValueDateTime": "2025-07-16T22:15:01.219004Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-07-14T22:15:01.41566Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "220.67",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-07-14T22:15:01.41566Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "75941e13-cf0d-43fb-b1e6-c63e39b3c817",
+            "TransactionReference": "17525313014154",
+            "ValueDateTime": "2025-07-14T22:15:01.41566Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-07-08T22:15:01.952041Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "463.66",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-07-08T22:15:01.952041Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "13cba971-6f37-46c3-bdbe-2b08602e6cf4",
+            "TransactionReference": "17520129019526",
+            "ValueDateTime": "2025-07-08T22:15:01.952041Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-07-07T22:15:01.690544Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "202.84",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-07-07T22:15:01.690544Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "a01bb46a-c9fb-4e9a-8dd0-5189c33255e4",
+            "TransactionReference": "17519265016902",
+            "ValueDateTime": "2025-07-07T22:15:01.690544Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-07-01T22:15:01.305039Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "287.19",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-07-01T22:15:01.305039Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "608196f5-8822-42a7-9528-17463da85698",
+            "TransactionReference": "17514081013058",
+            "ValueDateTime": "2025-07-01T22:15:01.305039Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-30T22:15:02.577777Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "477.72",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-30T22:15:02.577777Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "0f10b002-98ca-4b42-90d0-e01a20cbdfac",
+            "TransactionReference": "17513217025772",
+            "ValueDateTime": "2025-06-30T22:15:02.577777Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-24T22:15:01.682282Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "469.20",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-24T22:15:01.682282Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "176ba470-d0e4-469e-ba63-8400b1c87b1e",
+            "TransactionReference": "17508033016828",
+            "ValueDateTime": "2025-06-24T22:15:01.682282Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-24T22:15:01.39068Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "263.17",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-24T22:15:01.39068Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "4176c365-e43f-465b-bdb0-c833efa92842",
+            "TransactionReference": "17508033013902",
+            "ValueDateTime": "2025-06-24T22:15:01.39068Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-16T22:15:01.861965Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "409.67",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-16T22:15:01.861965Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "fae8874e-0dc6-4690-8e46-23f21054f205",
+            "TransactionReference": "17501121018612",
+            "ValueDateTime": "2025-06-16T22:15:01.861965Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-16T22:15:01.546076Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "223.83",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-16T22:15:01.546076Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "48cbd18f-e5e4-4632-810f-95c677d6b524",
+            "TransactionReference": "17501121015466",
+            "ValueDateTime": "2025-06-16T22:15:01.546076Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-10T22:15:01.200439Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "201.99",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-10T22:15:01.200439Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "ce6dca54-7a46-46e6-b0fb-a44b6c7f9d5a",
+            "TransactionReference": "17495937012002",
+            "ValueDateTime": "2025-06-10T22:15:01.200439Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-09T22:15:01.93969Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "402.39",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-09T22:15:01.93969Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "d9fba2d6-4b34-4803-93c1-547cba23045b",
+            "ValueDateTime": "2025-06-09T22:15:01.93969Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-03T22:15:01.111636Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "430.27",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-03T22:15:01.111636Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "ee7b3323-0794-4796-b692-c0193e777f8b",
+            "ValueDateTime": "2025-06-03T22:15:01.111636Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-06-02T22:15:01.806997Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "201.50",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-06-02T22:15:01.806997Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "3d134fb7-cd91-467e-9254-eb3156d6cce4",
+            "ValueDateTime": "2025-06-02T22:15:01.806997Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-05-26T22:15:01.149626Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "280.92",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-05-26T22:15:01.149626Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "1f08dc81-260f-4f9e-8a94-06b251ea70b6",
+            "ValueDateTime": "2025-05-26T22:15:01.149626Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-05-26T22:15:01.114101Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "488.15",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-05-26T22:15:01.114101Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "1ee12c97-36f8-4175-9755-c39afff1db39",
+            "ValueDateTime": "2025-05-26T22:15:01.114101Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-05-22T22:15:01.164259Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "214.65",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-05-22T22:15:01.164259Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "12e185c7-7df9-43f8-a7c0-8cbfe838a048",
+            "ValueDateTime": "2025-05-22T22:15:01.164259Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-05-20T22:15:01.248505Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "483.50",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-05-20T22:15:01.248505Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "c7bcd800-545f-4272-b21c-46a7663d0b5c",
+            "ValueDateTime": "2025-05-20T22:15:01.248505Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-05-18T22:15:01.052007Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "271.23",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-05-18T22:15:01.052007Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-cd2f7f"
+            },
+            "Status": "Booked",
+            "TransactionId": "a50edf31-d8b5-4022-ba9f-2757d388ea1a",
+            "ValueDateTime": "2025-05-18T22:15:01.052007Z"
+          },
+          {
+            "AcceptanceDateTime": "2025-05-14T22:15:01.319908Z",
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "428.98",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2025-05-14T22:15:01.319908Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-895aca"
+            },
+            "Status": "Booked",
+            "TransactionId": "4c9c24e3-4092-45cd-b6c1-443d453443ce",
+            "ValueDateTime": "2025-05-14T22:15:01.319908Z"
+          }
+        ]
+      },
+      "Links": {
+        "Prev": "https://aktia-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/5cc775a8-58af-11f0-a02b-ff29de93748e/transactions?fromBookingDateTime=2020-01-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:00:19Z\u0026paginationKey=0",
+        "Self": "https://aktia-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/5cc775a8-58af-11f0-a02b-ff29de93748e/transactions?fromBookingDateTime=2020-01-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:00:19Z\u0026paginationKey=1"
+      },
+      "Meta": {}
+    }
+  }
+}

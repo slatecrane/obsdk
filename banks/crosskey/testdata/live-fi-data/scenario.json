@@ -1,0 +1,70 @@
+{
+  "config": {
+    "bank": "spankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-18T10:35:42Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "202d20f2-8988-4b37-9b84-fda667d7e6b7",
+        "61305929-a414-4157-b06a-e03e3a7781e1",
+        "0cdae383-cb96-4fba-b007-d8f5274e349f",
+        "bccde2ef-1504-4b53-8914-17ddf74caa7e",
+        "445119b4-4a54-4362-816c-aadfb99eb33e",
+        "eaa0e4e0-7da7-4db8-ad0f-a5b1f99a9770"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+      "from": "2026-07-01T00:00:00Z",
+      "to": "2026-10-18T10:35:43Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "d1fe92b4-4571-11e9-9d38-537dc9438d1e",
+      "from": "2026-07-01T00:00:00Z",
+      "to": "2026-10-18T10:35:51Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "refresh"
+    },
+    {
+      "op": "transactions",
+      "account": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+      "from": "2026-08-01T00:00:00Z",
+      "to": "2026-10-18T10:35:57Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+      "from": "2025-01-01T00:00:00Z",
+      "to": "2026-10-18T10:35:58Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

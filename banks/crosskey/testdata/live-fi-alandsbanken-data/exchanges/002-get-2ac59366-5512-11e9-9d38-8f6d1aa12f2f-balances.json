@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/2ac59366-5512-11e9-9d38-8f6d1aa12f2f/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:380f6e",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "5f9a52eb-49ab-4a57-899d-1cc24e524235"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "2ac59366-5512-11e9-9d38-8f6d1aa12f2f",
+            "Amount": {
+              "Amount": "0.00",
+              "Currency": "SEK"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:31:33.768326014Z",
+            "Type": "InterimBooked"
+          },
+          {
+            "AccountId": "2ac59366-5512-11e9-9d38-8f6d1aa12f2f",
+            "Amount": {
+              "Amount": "0.00",
+              "Currency": "SEK"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:31:33.768325024Z",
+            "Type": "InterimAvailable"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://alandsbanken-fi-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/2ac59366-5512-11e9-9d38-8f6d1aa12f2f/balances"
+      },
+      "Meta": {}
+    }
+  }
+}
