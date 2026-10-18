@@ -1,0 +1,143 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/pTAOw3fRTQ4v8-8X0hYDcE/transactions",
+    "query": {
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2025-01-01"
+      ],
+      "dateTo": [
+        "2026-10-18"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Consent-Id": "V3JG83rIAG8rgMtrzBZgAQTSu-sKmiqhOSi14FYztrlqcrrsBUdqOBdudFePGsVZMVfuxCAlZeQD5TEK3FZAN8z9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "33ab37ff-6fe5-4df2-a85a-a46b9c63bbc0"
+    },
+    "body": {
+      "_links": {
+        "download": {
+          "href": "http://localhost:8089/v1/accounts/pTAOw3fRTQ4v8-8X0hYDcE/transactions/download/ZG93bmxvYWRJZA=="
+        }
+      },
+      "account": {
+        "currency": "EUR",
+        "iban": "DE22PSEUDOE1F211BC89"
+      },
+      "transactions": {
+        "_links": {
+          "account": {
+            "href": "http://localhost:8089/v1/accounts/pTAOw3fRTQ4v8-8X0hYDcE"
+          }
+        },
+        "booked": [
+          {
+            "additionalInformation": "mock additional information",
+            "balanceAfterTransaction": {
+              "balanceAmount": {
+                "amount": "190.55",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.623425+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            "bankTransactionCode": "PMNT-MCOP-OTHR",
+            "batchIndicator": false,
+            "batchNumberOfTransactions": 14,
+            "bookingDate": "2026-10-18",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "DE22PSEUDOE1F211BC89"
+            },
+            "creditorName": "creditorname-d264d4",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "DE22PSEUDOE1F211BC89"
+            },
+            "debtorName": "debtorname-d264d4",
+            "endToEndId": "4YrUqA_RSPIv4wGhfo3DCA",
+            "entryDetails": [
+              {
+                "checkId": "checkId",
+                "creditorAccount": {
+                  "bban": "00PSEUDO5BCD36E6",
+                  "currency": "EUR",
+                  "iban": "DE54PSEUDO573B134DF2",
+                  "maskedPan": "maskedpan-5d1f45",
+                  "msisdn": "0172/1111111",
+                  "pan": "1111"
+                },
+                "creditorAgent": "creditorAgent",
+                "creditorId": "creditorid-799b2a",
+                "creditorName": "creditorname-9c50af",
+                "currencyExchange": [
+                  {
+                    "contractIdentification": "contractIdentification",
+                    "exchangeRate": "23",
+                    "quotationDate": "2018-02-02",
+                    "sourceCurrency": "USD",
+                    "targetCurrency": "EUR",
+                    "unitCurrency": "EUR"
+                  }
+                ],
+                "debtorAccount": {
+                  "bban": "00PSEUDO5BCD36E6",
+                  "currency": "USD",
+                  "iban": "DE54PSEUDO573B134DF2",
+                  "maskedPan": "maskedpan-5d1f45",
+                  "msisdn": "0172/1111111",
+                  "pan": "2222"
+                },
+                "debtorAgent": "debtorAgent",
+                "debtorName": "debtorname-d7702d",
+                "endToEndId": "endToEndId",
+                "mandateId": "mandateId",
+                "purposeCode": "CDCB",
+                "remittanceInformationStructured": "remittanceinformationstructured-83894e",
+                "remittanceInformationStructuredArray": [
+                  "remittanceInformationStructuredArray"
+                ],
+                "remittanceInformationUnstructured": "remittanceinformationunstructured-8dd802",
+                "remittanceInformationUnstructuredArray": [
+                  "remittanceinformationunstructuredarray-083e1f"
+                ],
+                "transactionAmount": {
+                  "amount": "123",
+                  "currency": "EUR"
+                },
+                "ultimateCreditor": "ultimatecreditor-5e0f26",
+                "ultimateDebtor": "ultimatedebtor-83738a"
+              }
+            ],
+            "proprietaryBankTransactionCode": "PMNT-MCOP-OTHR",
+            "remittanceInformationStructuredArray": [
+              "mock remittance reference"
+            ],
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-d34414",
+            "remittanceInformationUnstructuredArray": [
+              "remittanceinformationunstructuredarray-48aba1"
+            ],
+            "transactionAmount": {
+              "amount": "190.55",
+              "currency": "EUR"
+            },
+            "transactionId": "4YrUqA_RSPIv4wGhfo3DCA",
+            "valueDate": "2026-10-18"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/consents/7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q/status",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "693316b9-e932-4821-bbb2-e9fee6319c8e"
+    },
+    "body": {
+      "consentStatus": "valid",
+      "psuMessage": "Mocked PSU message from SPI for this consent"
+    }
+  }
+}

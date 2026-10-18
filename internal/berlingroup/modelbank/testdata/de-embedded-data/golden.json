@@ -1,0 +1,466 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the adorsys ModelBank online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Choose how to confirm.",
+      "fields": [
+        {
+          "key": "sca_method",
+          "label": "Authentication method",
+          "kind": "select",
+          "required": true,
+          "options": [
+            {
+              "value": "HAf6R1kBRSorcT2Ka9bgR8",
+              "label": "name-9bf9d8"
+            },
+            {
+              "value": "IQH7dZXxSsQrJXKleVIeeg",
+              "label": "name-4461b3"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "mocked PSU message",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (name-9bf9d8)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "SCA method EMAIL: tan is gcH25S . sent email to DE_36686519_embeddedSca.2@mail.de."
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "modelbank",
+        "country": "DE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "modelbank-bg",
+        "generation": 1,
+        "updated_at": "2026-10-18T05:50:47Z",
+        "consents": {
+          "ais": {
+            "id": "S7vfnth-au-_gch8IdpOVzVaobIl6etrMIpb0424_XziMbia4MM4IxFjHA_-vGVI4-q7aLn-mIvkbzalVeFGoMz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-01-15T00:00:00Z",
+            "accounts": [
+              "DE10PSEUDO1B2D0BE4A1"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "embedded"
+        }
+      },
+      "accounts": [
+        {
+          "id": "7DteS0f6RW0kXyoQhihkdw",
+          "stable_id": "7b9b9cdc18ece51dc097d59692325356",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE10PSEUDO1B2D0BE4A1"
+            }
+          ],
+          "name": "name-7cf21b",
+          "currency": "EUR",
+          "product": "Cash24",
+          "type": "CASH",
+          "usage": "PRIV",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "interimAvailable",
+              "amount": {
+                "amount": "55.21",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            },
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "55.21",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "http://localhost:8089/v1/accounts/7DteS0f6RW0kXyoQhihkdw/balances"
+              },
+              "transactions": {
+                "href": "http://localhost:8089/v1/accounts/7DteS0f6RW0kXyoQhihkdw/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "55.21",
+                  "currency": "EUR"
+                },
+                "balanceType": "interimAvailable",
+                "lastChangeDateTime": "2026-10-18T06:57:17.243+02:00",
+                "referenceDate": "2026-10-18"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "55.21",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked",
+                "lastChangeDateTime": "2026-10-18T06:57:17.243+02:00",
+                "referenceDate": "2026-10-18"
+              }
+            ],
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "details": "PSU for Embedded Approach. No multilevel SCA required. Two SCA methods that need an indication whether challenge data is required available",
+            "displayName": "mock display name",
+            "iban": "DE10PSEUDO1B2D0BE4A1",
+            "linkedAccounts": "9llo-NedRyEku-dNi0995w",
+            "name": "name-7cf21b",
+            "product": "Cash24",
+            "resourceId": "7DteS0f6RW0kXyoQhihkdw",
+            "status": "enabled",
+            "usage": "PRIV"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "7DteS0f6RW0kXyoQhihkdw",
+        "stable_id": "7b9b9cdc18ece51dc097d59692325356",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "DE10PSEUDO1B2D0BE4A1"
+          }
+        ],
+        "name": "name-7cf21b",
+        "currency": "EUR",
+        "product": "Cash24",
+        "type": "CASH",
+        "usage": "PRIV",
+        "balances": [
+          {
+            "kind": "interim_available",
+            "bank_type": "interimAvailable",
+            "amount": {
+              "amount": "55.21",
+              "currency": "EUR"
+            },
+            "reference_date": "2026-10-18"
+          },
+          {
+            "kind": "closing_booked",
+            "bank_type": "closingBooked",
+            "amount": {
+              "amount": "55.21",
+              "currency": "EUR"
+            },
+            "reference_date": "2026-10-18"
+          }
+        ],
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "http://localhost:8089/v1/accounts/7DteS0f6RW0kXyoQhihkdw/balances"
+            },
+            "transactions": {
+              "href": "http://localhost:8089/v1/accounts/7DteS0f6RW0kXyoQhihkdw/transactions"
+            }
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "55.21",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.243+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            {
+              "balanceAmount": {
+                "amount": "55.21",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked",
+              "lastChangeDateTime": "2026-10-18T06:57:17.243+02:00",
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "details": "PSU for Embedded Approach. No multilevel SCA required. Two SCA methods that need an indication whether challenge data is required available",
+          "displayName": "mock display name",
+          "iban": "DE10PSEUDO1B2D0BE4A1",
+          "linkedAccounts": "9llo-NedRyEku-dNi0995w",
+          "name": "name-7cf21b",
+          "product": "Cash24",
+          "resourceId": "7DteS0f6RW0kXyoQhihkdw",
+          "status": "enabled",
+          "usage": "PRIV"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "interimAvailable",
+        "amount": {
+          "amount": "55.21",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "closing_booked",
+        "bank_type": "closingBooked",
+        "amount": {
+          "amount": "55.21",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "vxE3CHJaS-0osMsrmdMxMY",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "55.21",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-18",
+          "value_date": "2026-10-18",
+          "counterparty": {
+            "name": "debtorname-7cf21b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE10PSEUDO1B2D0BE4A1"
+              }
+            ]
+          },
+          "remittance": [
+            "remittanceinformationunstructured-d34414",
+            "remittanceinformationunstructuredarray-48aba1"
+          ],
+          "reference_number": "mock remittance reference",
+          "end_to_end_id": "vxE3CHJaS-0osMsrmdMxMY",
+          "bank_code": "PMNT-MCOP-OTHR",
+          "balance_after": {
+            "amount": "55.21",
+            "currency": "EUR"
+          },
+          "raw": {
+            "additionalInformation": "mock additional information",
+            "balanceAfterTransaction": {
+              "balanceAmount": {
+                "amount": "55.21",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.239955+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            "bankTransactionCode": "PMNT-MCOP-OTHR",
+            "batchIndicator": false,
+            "batchNumberOfTransactions": 14,
+            "bookingDate": "2026-10-18",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "DE10PSEUDO1B2D0BE4A1"
+            },
+            "creditorName": "creditorname-7cf21b",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "DE10PSEUDO1B2D0BE4A1"
+            },
+            "debtorName": "debtorname-7cf21b",
+            "endToEndId": "vxE3CHJaS-0osMsrmdMxMY",
+            "entryDetails": [
+              {
+                "checkId": "checkId",
+                "creditorAccount": {
+                  "bban": "00PSEUDO5BCD36E6",
+                  "currency": "EUR",
+                  "iban": "DE54PSEUDO573B134DF2",
+                  "maskedPan": "maskedpan-5d1f45",
+                  "msisdn": "0172/1111111",
+                  "pan": "1111"
+                },
+                "creditorAgent": "creditorAgent",
+                "creditorId": "creditorid-799b2a",
+                "creditorName": "creditorname-9c50af",
+                "currencyExchange": [
+                  {
+                    "contractIdentification": "contractIdentification",
+                    "exchangeRate": "23",
+                    "quotationDate": "2018-02-02",
+                    "sourceCurrency": "USD",
+                    "targetCurrency": "EUR",
+                    "unitCurrency": "EUR"
+                  }
+                ],
+                "debtorAccount": {
+                  "bban": "00PSEUDO5BCD36E6",
+                  "currency": "USD",
+                  "iban": "DE54PSEUDO573B134DF2",
+                  "maskedPan": "maskedpan-5d1f45",
+                  "msisdn": "0172/1111111",
+                  "pan": "2222"
+                },
+                "debtorAgent": "debtorAgent",
+                "debtorName": "debtorname-d7702d",
+                "endToEndId": "endToEndId",
+                "mandateId": "mandateId",
+                "purposeCode": "CDCB",
+                "remittanceInformationStructured": "remittanceinformationstructured-83894e",
+                "remittanceInformationStructuredArray": [
+                  "remittanceInformationStructuredArray"
+                ],
+                "remittanceInformationUnstructured": "remittanceinformationunstructured-8dd802",
+                "remittanceInformationUnstructuredArray": [
+                  "remittanceinformationunstructuredarray-083e1f"
+                ],
+                "transactionAmount": {
+                  "amount": "123",
+                  "currency": "EUR"
+                },
+                "ultimateCreditor": "ultimatecreditor-5e0f26",
+                "ultimateDebtor": "ultimatedebtor-83738a"
+              }
+            ],
+            "proprietaryBankTransactionCode": "PMNT-MCOP-OTHR",
+            "remittanceInformationStructuredArray": [
+              "mock remittance reference"
+            ],
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-d34414",
+            "remittanceInformationUnstructuredArray": [
+              "remittanceinformationunstructuredarray-48aba1"
+            ],
+            "transactionAmount": {
+              "amount": "55.21",
+              "currency": "EUR"
+            },
+            "transactionId": "vxE3CHJaS-0osMsrmdMxMY",
+            "valueDate": "2026-10-18"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "modelbank",
+      "country": "DE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "modelbank-bg",
+      "generation": 1,
+      "updated_at": "2026-10-18T05:50:47Z",
+      "consents": {
+        "ais": {
+          "id": "S7vfnth-au-_gch8IdpOVzVaobIl6etrMIpb0424_XziMbia4MM4IxFjHA_-vGVI4-q7aLn-mIvkbzalVeFGoMz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+          "kind": "ais",
+          "status": "valid",
+          "valid_until": "2027-01-15T00:00:00Z",
+          "accounts": [
+            "DE10PSEUDO1B2D0BE4A1"
+          ]
+        }
+      },
+      "meta": {
+        "approach": "embedded"
+      }
+    }
+  },
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "modelbank",
+      "country": "DE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "modelbank-bg",
+      "generation": 2,
+      "updated_at": "2026-10-18T05:50:47Z",
+      "meta": {
+        "approach": "embedded"
+      }
+    },
+    "disconnect": {
+      "closed": [
+        "ais"
+      ]
+    }
+  }
+]

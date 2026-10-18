@@ -1,0 +1,75 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the adorsys ModelBank online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa_instant",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6Imluc3RhbnQtc2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJkdmFBOWFVMFQ4Q2pEcERVTXJVazNsWGtPTWNIb0h1dWdpVWt3NVBNS0VGWFY3Z3Rwb3BfNXRvLWVDRTJ5TXdMY2dmdEpiRVRrenZOdnU1bVpRcVdjQT09Xz1fcHNHTHZRcHQ5USIsInQiOiJzZXBhX2luc3RhbnQifQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "mocked PSU message",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (name-c3cf0b)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "SCA method EMAIL: tan is pM4t54 . sent email to DE_36686519_embeddedSca.1c@mail.de."
+      },
+      "payment": {
+        "id": "dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa_instant",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6Imluc3RhbnQtc2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJkdmFBOWFVMFQ4Q2pEcERVTXJVazNsWGtPTWNIb0h1dWdpVWt3NVBNS0VGWFY3Z3Rwb3BfNXRvLWVDRTJ5TXdMY2dmdEpiRVRrenZOdnU1bVpRcVdjQT09Xz1fcHNHTHZRcHQ5USIsInQiOiJzZXBhX2luc3RhbnQifQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "dvaA9aU0T8CjDpDUMrUk3lXkOMcHoHuugiUkw5PMKEFXV7gtpop_5to-eCE2yMwLcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa_instant",
+        "status": "completed",
+        "bank_status": "ACCC",
+        "final": true,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6Imluc3RhbnQtc2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJkdmFBOWFVMFQ4Q2pEcERVTXJVazNsWGtPTWNIb0h1dWdpVWt3NVBNS0VGWFY3Z3Rwb3BfNXRvLWVDRTJ5TXdMY2dmdEpiRVRrenZOdnU1bVpRcVdjQT09Xz1fcHNHTHZRcHQ5USIsInQiOiJzZXBhX2luc3RhbnQifQ"
+      }
+    }
+  }
+]

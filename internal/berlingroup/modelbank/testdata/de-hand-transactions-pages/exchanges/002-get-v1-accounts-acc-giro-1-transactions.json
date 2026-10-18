@@ -1,0 +1,60 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/acc-giro-1/transactions",
+    "query": {
+      "dateFrom": [
+        "2026-09-01"
+      ],
+      "bookingStatus": [
+        "booked"
+      ],
+      "page": [
+        "2"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "iban": "DE89370400440532013000"
+      },
+      "transactions": {
+        "booked": [
+          {
+            "transactionId": "t-3",
+            "bookingDate": "2026-09-15",
+            "valueDate": "2026-09-15",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "9.99"
+            },
+            "creditDebitIndicator": "DBIT",
+            "creditorName": "Streaming Ltd",
+            "remittanceInformationUnstructuredArray": [
+              "Subscription",
+              "September"
+            ],
+            "endToEndId": "NOTPROVIDED",
+            "balanceAfterTransaction": {
+              "balanceType": "closingBooked",
+              "balanceAmount": {
+                "currency": "EUR",
+                "amount": "1474.11"
+              }
+            }
+          }
+        ],
+        "_links": {
+          "account": {
+            "href": "http://localhost:8089/v1/accounts/acc-giro-1"
+          }
+        }
+      }
+    }
+  }
+}

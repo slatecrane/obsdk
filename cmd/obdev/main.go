@@ -42,6 +42,7 @@ import (
 
 	obsdk "github.com/slatecrane/obsdk"
 	_ "github.com/slatecrane/obsdk/banks/all"
+	_ "github.com/slatecrane/obsdk/internal/berlingroup/modelbank" // dev target for the Berlin Group adapter
 	"github.com/slatecrane/obsdk/obsdktest"
 )
 
@@ -66,7 +67,7 @@ commands:
   pay -type T -amount A -currency C -to ACCOUNT -name NAME [flags]
                                    initiate a payment and drive its approval (see obdev pay -h)
   payment-status REF               read a payment's status (REF from pay's output)
-  cancel-payment REF
+  cancel-payment REF [-method M]
   replay DIR                       run a recorded scenario offline and print the outcomes
   list                             show registered integrations
   jwks                             print a JWKS for the signing key (OBSDK_SEAL_CERT or OBSDK_TLS_CERT, OBSDK_SEAL_KID)
@@ -136,7 +137,7 @@ func run() error {
 	if rec != nil {
 		// Commands that work without a login (connect, pay, payment-status at
 		// banks that read payments with an app token) record without one.
-		noLogin := map[string]bool{"connect": true, "pay": true, "payment-status": true, "payment-spec": true, "auth-methods": true}
+		noLogin := map[string]bool{"connect": true, "pay": true, "payment-status": true, "cancel-payment": true, "payment-spec": true, "auth-methods": true}
 		switch {
 		case args[0] == "connect":
 		case session != nil:
@@ -319,10 +320,13 @@ func dispatch(ctx context.Context, l *obsdktest.Live, c obsdk.Client, s *obsdk.S
 		}
 		return printJSON(done.Payment)
 	case "payment-status", "cancel-payment":
+		fs := flag.NewFlagSet(args[0], flag.ExitOnError)
+		method := fs.String("method", "", "approval method for a cancellation the bank wants approved: redirect, decoupled or embedded")
 		if len(args) < 2 {
-			return fmt.Errorf("usage: obdev %s REF", args[0])
+			return fmt.Errorf("usage: obdev %s REF [-method M]", args[0])
 		}
-		po := obsdk.PaymentCallOptions{Session: s, PSU: opts.PSU}
+		_ = fs.Parse(args[2:])
+		po := obsdk.PaymentCallOptions{Session: s, PSU: opts.PSU, Method: *method}
 		if args[0] == "payment-status" {
 			res, err := c.PaymentStatus(ctx, args[1], po)
 			if err != nil {

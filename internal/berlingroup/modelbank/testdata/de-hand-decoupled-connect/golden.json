@@ -1,0 +1,104 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Please confirm the access in your banking app.",
+      "wait_for": 3000000000
+    }
+  },
+  {
+    "op": "resume",
+    "note": "still waiting in the app",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Please confirm the access in your banking app.",
+      "wait_for": 3000000000
+    }
+  },
+  {
+    "op": "resume",
+    "note": "approved",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "modelbank",
+        "country": "DE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "modelbank-bg",
+        "generation": 1,
+        "updated_at": "2026-10-18T09:00:00Z",
+        "consents": {
+          "ais": {
+            "id": "hand-consent-2",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-01-16T00:00:00Z",
+            "accounts": [
+              "DE89370400440532013000"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "decoupled"
+        }
+      },
+      "accounts": [
+        {
+          "id": "acc-giro-1",
+          "stable_id": "2ae8906325ce3c457d2a0b05cfa79b5b",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE89370400440532013000"
+            }
+          ],
+          "name": "Girokonto",
+          "owner_name": "Erika Mustermann",
+          "currency": "EUR",
+          "product": "Girokonto",
+          "type": "CACC",
+          "usage": "PRIV",
+          "balances": [
+            {
+              "kind": "other",
+              "bank_type": "expected",
+              "amount": {
+                "amount": "1474.11",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            }
+          ],
+          "raw": {
+            "resourceId": "acc-giro-1",
+            "iban": "DE89370400440532013000",
+            "currency": "EUR",
+            "name": "Girokonto",
+            "product": "Girokonto",
+            "cashAccountType": "CACC",
+            "usage": "PRIV",
+            "ownerName": "Erika Mustermann",
+            "balances": [
+              {
+                "balanceType": "expected",
+                "balanceAmount": {
+                  "currency": "EUR",
+                  "amount": "1474.11"
+                },
+                "referenceDate": "2026-10-18"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

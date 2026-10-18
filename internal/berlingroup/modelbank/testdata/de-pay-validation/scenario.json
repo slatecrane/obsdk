@@ -1,0 +1,40 @@
+{
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T05:44:08Z",
+    "redirect_url": "https://app.example/callback"
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "embedded",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "DE95PSEUDO0B0702EBA1"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-0c264c",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE22PSEUDOA4578B542C"
+              }
+            }
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7"
+    }
+  ]
+}

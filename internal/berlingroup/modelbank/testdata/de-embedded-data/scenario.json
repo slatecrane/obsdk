@@ -1,0 +1,73 @@
+{
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T05:50:47Z",
+    "redirect_url": "https://app.example/callback",
+    "ids": {
+      "request": [
+        "d01f8e5b-f428-4d68-81ef-03201f690570",
+        "2532b866-1dfc-4942-bd17-688fb42f130e",
+        "8702dc41-d7bc-4864-a192-eebb6ba14766",
+        "37e89459-ccbe-4f61-ad5f-e49e88afc822",
+        "ace8797d-eebd-4604-b097-2da21bf15423",
+        "4e81b162-fc09-4020-ae00-4d3346ab0322",
+        "8f1cbeff-7bdb-47f7-9c61-0b9b06c0ec9c",
+        "79cecc58-1aca-4921-a9d7-45e298d18dbb",
+        "70ee657a-bc70-4419-b212-373b34197194",
+        "8ec32df7-b9e3-4425-893a-01a348b843a0",
+        "7888ec98-d992-4353-9f73-20f9411eb79e",
+        "f9faf57b-bd19-457f-b2af-4117fcd8d270"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "embedded",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "password": "REDACTED:password:c2c0d8",
+        "psu_id": "REDACTED:psu_id:27e030"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "sca_method": "HAf6R1kBRSorcT2Ka9bgR8"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "otp": "REDACTED:otp:5c9c99"
+      }
+    },
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "balances",
+      "account": "7DteS0f6RW0kXyoQhihkdw",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "7DteS0f6RW0kXyoQhihkdw",
+      "from": "2026-01-01T00:00:00Z",
+      "to": "2026-10-18T05:50:49Z",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "refresh"
+    },
+    {
+      "op": "disconnect"
+    }
+  ]
+}

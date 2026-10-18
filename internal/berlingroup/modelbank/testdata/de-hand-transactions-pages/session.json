@@ -1,0 +1,24 @@
+{
+  "v": 1,
+  "bank": "modelbank",
+  "country": "DE",
+  "segment": "personal",
+  "env": "sandbox",
+  "integration": "modelbank-bg",
+  "generation": 1,
+  "updated_at": "2026-10-18T08:00:00Z",
+  "consents": {
+    "ais": {
+      "id": "hand-consent-1",
+      "kind": "ais",
+      "status": "valid",
+      "valid_until": "2027-01-16T00:00:00Z",
+      "accounts": [
+        "DE89370400440532013000"
+      ]
+    }
+  },
+  "meta": {
+    "approach": "embedded"
+  }
+}

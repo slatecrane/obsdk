@@ -1,0 +1,68 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Consent-Id": "S7vfnth-au-_gch8IdpOVzVaobIl6etrMIpb0424_XziMbia4MM4IxFjHA_-vGVI4-q7aLn-mIvkbzalVeFGoMz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "8f1cbeff-7bdb-47f7-9c61-0b9b06c0ec9c"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "http://localhost:8089/v1/accounts/7DteS0f6RW0kXyoQhihkdw/balances"
+            },
+            "transactions": {
+              "href": "http://localhost:8089/v1/accounts/7DteS0f6RW0kXyoQhihkdw/transactions"
+            }
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "55.21",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.243+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            {
+              "balanceAmount": {
+                "amount": "55.21",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked",
+              "lastChangeDateTime": "2026-10-18T06:57:17.243+02:00",
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "details": "PSU for Embedded Approach. No multilevel SCA required. Two SCA methods that need an indication whether challenge data is required available",
+          "displayName": "mock display name",
+          "iban": "DE10PSEUDO1B2D0BE4A1",
+          "linkedAccounts": "9llo-NedRyEku-dNi0995w",
+          "name": "name-7cf21b",
+          "product": "Cash24",
+          "resourceId": "7DteS0f6RW0kXyoQhihkdw",
+          "status": "enabled",
+          "usage": "PRIV"
+        }
+      ]
+    }
+  }
+}

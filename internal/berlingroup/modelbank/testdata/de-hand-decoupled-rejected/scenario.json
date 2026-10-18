@@ -1,0 +1,22 @@
+{
+  "description": "Hand-written: the user refuses the decoupled approval in the app (scaStatus failed).",
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T09:00:00Z"
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "decoupled",
+      "values": {
+        "psu_id": "REDACTED:psu_id:hand"
+      },
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume"
+    }
+  ]
+}

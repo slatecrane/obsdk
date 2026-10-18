@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/payments/sepa-credit-transfers/ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/status",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "9f2df4ec-914d-4842-b64f-a7dfdf081945"
+    },
+    "body": {
+      "_links": {
+        "account": {
+          "href": "Mock spi account link"
+        }
+      },
+      "psuMessage": "Mocked PSU message from SPI for this payment",
+      "tppMessage": [
+        {
+          "category": "WARNING",
+          "code": "WARNING",
+          "text": "Mocked tpp message from the bank"
+        }
+      ],
+      "transactionStatus": "ACSP"
+    }
+  }
+}

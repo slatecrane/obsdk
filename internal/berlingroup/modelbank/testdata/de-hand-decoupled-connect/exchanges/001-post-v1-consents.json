@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/v1/consents"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentStatus": "received",
+      "consentId": "hand-consent-2",
+      "psuMessage": "Please confirm the access in your banking app.",
+      "_links": {
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/consents/hand-consent-2/authorisations/auth-1"
+        },
+        "status": {
+          "href": "http://localhost:8089/v1/consents/hand-consent-2/status"
+        },
+        "self": {
+          "href": "http://localhost:8089/v1/consents/hand-consent-2"
+        }
+      }
+    }
+  }
+}

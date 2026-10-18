@@ -1,0 +1,11 @@
+[
+  {
+    "op": "balances",
+    "error": {
+      "is": [
+        "rate_limited"
+      ],
+      "message": "obsdk: rate limited, retry after 1h0m0s"
+    }
+  }
+]

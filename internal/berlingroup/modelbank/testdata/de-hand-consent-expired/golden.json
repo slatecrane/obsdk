@@ -1,0 +1,21 @@
+[
+  {
+    "op": "accounts",
+    "error": {
+      "is": [
+        "reauth_required"
+      ],
+      "message": "obsdk: user must re-authorize: consent_expired: obsdk: accounts: HTTP 401 CONSENT_EXPIRED: The consent was created by this TPP but has expired and needs to be renewed"
+    }
+  },
+  {
+    "op": "refresh",
+    "error": {
+      "is": [
+        "reauth_required",
+        "refresh_failed"
+      ],
+      "message": "obsdk: token refresh failed (temporary=false): obsdk: user must re-authorize: consent_expired"
+    }
+  }
+]

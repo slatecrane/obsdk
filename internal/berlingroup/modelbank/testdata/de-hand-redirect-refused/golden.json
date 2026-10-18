@@ -1,0 +1,23 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to adorsys ModelBank to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "http://localhost:4400/account-information/login?encryptedConsentId=x&redirectId=r-1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "auth_failed"
+      ],
+      "message": "obsdk: authorization failed: access was not approved at the bank (access_denied)"
+    }
+  }
+]

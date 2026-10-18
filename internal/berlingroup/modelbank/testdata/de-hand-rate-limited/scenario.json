@@ -1,0 +1,15 @@
+{
+  "description": "Hand-written: the consent's daily frequency is used up (ACCESS_EXCEEDED) with a Retry-After hint.",
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T09:00:00Z"
+  },
+  "calls": [
+    {
+      "op": "balances",
+      "account": "acc-giro-1"
+    }
+  ]
+}

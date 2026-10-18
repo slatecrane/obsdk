@@ -14,6 +14,11 @@ bank's notes).
 
 ## 1. Before writing code
 
+**Berlin Group bank?** If the bank runs NextGenPSD2 (most German, Austrian and Italian banks), don't
+write a client: describe it with a `berlingroup.Profile` and build on the shared adapter
+([berlin-group.md](berlin-group.md)). The rest of this guide (portal, credentials, obdev, scenarios, docs)
+still applies.
+
 **Read and check off.** Get the bank's API specs and developer docs. Walk through [gotchas.md](gotchas.md) as a
 checklist and note which behaviors the bank has: auth approaches, extra approvals, PSU headers, odd
 callbacks, archives, error codes.

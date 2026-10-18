@@ -1,0 +1,650 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the adorsys ModelBank online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "mocked PSU message",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (name-dd4045)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "SCA method EMAIL: tan is 8iIvZN . sent email to DE_36686519_defaultPsu.private@mail.de."
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "modelbank",
+        "country": "DE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "modelbank-bg",
+        "generation": 1,
+        "updated_at": "2026-10-18T05:43:41Z",
+        "consents": {
+          "ais": {
+            "id": "V3JG83rIAG8rgMtrzBZgAQTSu-sKmiqhOSi14FYztrlqcrrsBUdqOBdudFePGsVZMVfuxCAlZeQD5TEK3FZAN8z9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-01-15T00:00:00Z",
+            "accounts": [
+              "DE48PSEUDO59B5217A40",
+              "DE22PSEUDOE1F211BC89",
+              "DE53PSEUDO339393041F",
+              "DE87PSEUDO241E5A9289"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "embedded"
+        }
+      },
+      "accounts": [
+        {
+          "id": "cUUztKFISgkrwG-aWQ8LV4",
+          "stable_id": "a984805be57e3f64fae72eb447a7894e",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE48PSEUDO59B5217A40"
+            }
+          ],
+          "name": "name-d264d4",
+          "currency": "EUR",
+          "product": "Cash24",
+          "type": "CASH",
+          "usage": "PRIV",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "interimAvailable",
+              "amount": {
+                "amount": "231.67",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            },
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "231.67",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "http://localhost:8089/v1/accounts/cUUztKFISgkrwG-aWQ8LV4/balances"
+              },
+              "transactions": {
+                "href": "http://localhost:8089/v1/accounts/cUUztKFISgkrwG-aWQ8LV4/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "231.67",
+                  "currency": "EUR"
+                },
+                "balanceType": "interimAvailable",
+                "lastChangeDateTime": "2026-10-18T06:57:17.588+02:00",
+                "referenceDate": "2026-10-18"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "231.67",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked",
+                "lastChangeDateTime": "2026-10-18T06:57:17.588+02:00",
+                "referenceDate": "2026-10-18"
+              }
+            ],
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "details": "Private PSU that is used to trigger default behaviour of the ASPSP",
+            "displayName": "mock display name",
+            "iban": "DE48PSEUDO59B5217A40",
+            "linkedAccounts": "uzkNGiFQRloiVupG1ncLQY",
+            "name": "name-d264d4",
+            "product": "Cash24",
+            "resourceId": "cUUztKFISgkrwG-aWQ8LV4",
+            "status": "enabled",
+            "usage": "PRIV"
+          }
+        },
+        {
+          "id": "pTAOw3fRTQ4v8-8X0hYDcE",
+          "stable_id": "78e3f1181e807df9f00dfc89f3815d9f",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE22PSEUDOE1F211BC89"
+            }
+          ],
+          "name": "name-d264d4",
+          "currency": "EUR",
+          "product": "Cash24",
+          "type": "CASH",
+          "usage": "PRIV",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "interimAvailable",
+              "amount": {
+                "amount": "190.55",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            },
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "190.55",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "http://localhost:8089/v1/accounts/pTAOw3fRTQ4v8-8X0hYDcE/balances"
+              },
+              "transactions": {
+                "href": "http://localhost:8089/v1/accounts/pTAOw3fRTQ4v8-8X0hYDcE/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "190.55",
+                  "currency": "EUR"
+                },
+                "balanceType": "interimAvailable",
+                "lastChangeDateTime": "2026-10-18T06:57:17.626+02:00",
+                "referenceDate": "2026-10-18"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "190.55",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked",
+                "lastChangeDateTime": "2026-10-18T06:57:17.626+02:00",
+                "referenceDate": "2026-10-18"
+              }
+            ],
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "details": "Private PSU that is used to trigger default behaviour of the ASPSP",
+            "displayName": "mock display name",
+            "iban": "DE22PSEUDOE1F211BC89",
+            "linkedAccounts": "I1OVvYtHQGApRTCQg6m07M",
+            "name": "name-d264d4",
+            "product": "Cash24",
+            "resourceId": "pTAOw3fRTQ4v8-8X0hYDcE",
+            "status": "enabled",
+            "usage": "PRIV"
+          }
+        },
+        {
+          "id": "7wVZKoIpR5UiaEPpBLH4eI",
+          "stable_id": "56a7715d6a23290018894008fa0a2df8",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE53PSEUDO339393041F"
+            }
+          ],
+          "name": "name-d264d4",
+          "currency": "EUR",
+          "product": "Cash24",
+          "type": "CASH",
+          "usage": "PRIV",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "interimAvailable",
+              "amount": {
+                "amount": "382.64",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            },
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "382.64",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "http://localhost:8089/v1/accounts/7wVZKoIpR5UiaEPpBLH4eI/balances"
+              },
+              "transactions": {
+                "href": "http://localhost:8089/v1/accounts/7wVZKoIpR5UiaEPpBLH4eI/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "382.64",
+                  "currency": "EUR"
+                },
+                "balanceType": "interimAvailable",
+                "lastChangeDateTime": "2026-10-18T06:57:17.6+02:00",
+                "referenceDate": "2026-10-18"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "382.64",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked",
+                "lastChangeDateTime": "2026-10-18T06:57:17.6+02:00",
+                "referenceDate": "2026-10-18"
+              }
+            ],
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "details": "Private PSU that is used to trigger default behaviour of the ASPSP",
+            "displayName": "mock display name",
+            "iban": "DE53PSEUDO339393041F",
+            "linkedAccounts": "ZPF7xudnRXgsh0kT66CKzc",
+            "name": "name-d264d4",
+            "product": "Cash24",
+            "resourceId": "7wVZKoIpR5UiaEPpBLH4eI",
+            "status": "enabled",
+            "usage": "PRIV"
+          }
+        },
+        {
+          "id": "SOTqTC5STnkv16T7uBvU2Q",
+          "stable_id": "067a3e4d014dff67d7a0aaeae92e8b39",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE87PSEUDO241E5A9289"
+            }
+          ],
+          "name": "name-d264d4",
+          "currency": "EUR",
+          "product": "Cash24",
+          "type": "CASH",
+          "usage": "PRIV",
+          "balances": [
+            {
+              "kind": "interim_available",
+              "bank_type": "interimAvailable",
+              "amount": {
+                "amount": "650.88",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            },
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "650.88",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "http://localhost:8089/v1/accounts/SOTqTC5STnkv16T7uBvU2Q/balances"
+              },
+              "transactions": {
+                "href": "http://localhost:8089/v1/accounts/SOTqTC5STnkv16T7uBvU2Q/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "650.88",
+                  "currency": "EUR"
+                },
+                "balanceType": "interimAvailable",
+                "lastChangeDateTime": "2026-10-18T06:57:17.574+02:00",
+                "referenceDate": "2026-10-18"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "650.88",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked",
+                "lastChangeDateTime": "2026-10-18T06:57:17.574+02:00",
+                "referenceDate": "2026-10-18"
+              }
+            ],
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "details": "Private PSU that is used to trigger default behaviour of the ASPSP",
+            "displayName": "mock display name",
+            "iban": "DE87PSEUDO241E5A9289",
+            "linkedAccounts": "5DgdpfFHSL4s1kL2Rr7q0k",
+            "name": "name-d264d4",
+            "product": "Cash24",
+            "resourceId": "SOTqTC5STnkv16T7uBvU2Q",
+            "status": "enabled",
+            "usage": "PRIV"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "Grka0mdcTpUhd57UPdIO_Q",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "231.67",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-18",
+          "value_date": "2026-10-18",
+          "counterparty": {
+            "name": "debtorname-d264d4",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE48PSEUDO59B5217A40"
+              }
+            ]
+          },
+          "remittance": [
+            "remittanceinformationunstructured-d34414",
+            "remittanceinformationunstructuredarray-48aba1"
+          ],
+          "reference_number": "mock remittance reference",
+          "end_to_end_id": "Grka0mdcTpUhd57UPdIO_Q",
+          "bank_code": "PMNT-MCOP-OTHR",
+          "balance_after": {
+            "amount": "231.67",
+            "currency": "EUR"
+          },
+          "raw": {
+            "additionalInformation": "mock additional information",
+            "balanceAfterTransaction": {
+              "balanceAmount": {
+                "amount": "231.67",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.586901+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            "bankTransactionCode": "PMNT-MCOP-OTHR",
+            "batchIndicator": false,
+            "batchNumberOfTransactions": 14,
+            "bookingDate": "2026-10-18",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "DE48PSEUDO59B5217A40"
+            },
+            "creditorName": "creditorname-d264d4",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "DE48PSEUDO59B5217A40"
+            },
+            "debtorName": "debtorname-d264d4",
+            "endToEndId": "Grka0mdcTpUhd57UPdIO_Q",
+            "entryDetails": [
+              {
+                "checkId": "checkId",
+                "creditorAccount": {
+                  "bban": "00PSEUDO5BCD36E6",
+                  "currency": "EUR",
+                  "iban": "DE54PSEUDO573B134DF2",
+                  "maskedPan": "maskedpan-5d1f45",
+                  "msisdn": "0172/1111111",
+                  "pan": "1111"
+                },
+                "creditorAgent": "creditorAgent",
+                "creditorId": "creditorid-799b2a",
+                "creditorName": "creditorname-9c50af",
+                "currencyExchange": [
+                  {
+                    "contractIdentification": "contractIdentification",
+                    "exchangeRate": "23",
+                    "quotationDate": "2018-02-02",
+                    "sourceCurrency": "USD",
+                    "targetCurrency": "EUR",
+                    "unitCurrency": "EUR"
+                  }
+                ],
+                "debtorAccount": {
+                  "bban": "00PSEUDO5BCD36E6",
+                  "currency": "USD",
+                  "iban": "DE54PSEUDO573B134DF2",
+                  "maskedPan": "maskedpan-5d1f45",
+                  "msisdn": "0172/1111111",
+                  "pan": "2222"
+                },
+                "debtorAgent": "debtorAgent",
+                "debtorName": "debtorname-d7702d",
+                "endToEndId": "endToEndId",
+                "mandateId": "mandateId",
+                "purposeCode": "CDCB",
+                "remittanceInformationStructured": "remittanceinformationstructured-83894e",
+                "remittanceInformationStructuredArray": [
+                  "remittanceInformationStructuredArray"
+                ],
+                "remittanceInformationUnstructured": "remittanceinformationunstructured-8dd802",
+                "remittanceInformationUnstructuredArray": [
+                  "remittanceinformationunstructuredarray-083e1f"
+                ],
+                "transactionAmount": {
+                  "amount": "123",
+                  "currency": "EUR"
+                },
+                "ultimateCreditor": "ultimatecreditor-5e0f26",
+                "ultimateDebtor": "ultimatedebtor-83738a"
+              }
+            ],
+            "proprietaryBankTransactionCode": "PMNT-MCOP-OTHR",
+            "remittanceInformationStructuredArray": [
+              "mock remittance reference"
+            ],
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-d34414",
+            "remittanceInformationUnstructuredArray": [
+              "remittanceinformationunstructuredarray-48aba1"
+            ],
+            "transactionAmount": {
+              "amount": "231.67",
+              "currency": "EUR"
+            },
+            "transactionId": "Grka0mdcTpUhd57UPdIO_Q",
+            "valueDate": "2026-10-18"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "4YrUqA_RSPIv4wGhfo3DCA",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "190.55",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-18",
+          "value_date": "2026-10-18",
+          "counterparty": {
+            "name": "debtorname-d264d4",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE22PSEUDOE1F211BC89"
+              }
+            ]
+          },
+          "remittance": [
+            "remittanceinformationunstructured-d34414",
+            "remittanceinformationunstructuredarray-48aba1"
+          ],
+          "reference_number": "mock remittance reference",
+          "end_to_end_id": "4YrUqA_RSPIv4wGhfo3DCA",
+          "bank_code": "PMNT-MCOP-OTHR",
+          "balance_after": {
+            "amount": "190.55",
+            "currency": "EUR"
+          },
+          "raw": {
+            "additionalInformation": "mock additional information",
+            "balanceAfterTransaction": {
+              "balanceAmount": {
+                "amount": "190.55",
+                "currency": "EUR"
+              },
+              "balanceType": "interimAvailable",
+              "lastChangeDateTime": "2026-10-18T06:57:17.623425+02:00",
+              "referenceDate": "2026-10-18"
+            },
+            "bankTransactionCode": "PMNT-MCOP-OTHR",
+            "batchIndicator": false,
+            "batchNumberOfTransactions": 14,
+            "bookingDate": "2026-10-18",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "DE22PSEUDOE1F211BC89"
+            },
+            "creditorName": "creditorname-d264d4",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "DE22PSEUDOE1F211BC89"
+            },
+            "debtorName": "debtorname-d264d4",
+            "endToEndId": "4YrUqA_RSPIv4wGhfo3DCA",
+            "entryDetails": [
+              {
+                "checkId": "checkId",
+                "creditorAccount": {
+                  "bban": "00PSEUDO5BCD36E6",
+                  "currency": "EUR",
+                  "iban": "DE54PSEUDO573B134DF2",
+                  "maskedPan": "maskedpan-5d1f45",
+                  "msisdn": "0172/1111111",
+                  "pan": "1111"
+                },
+                "creditorAgent": "creditorAgent",
+                "creditorId": "creditorid-799b2a",
+                "creditorName": "creditorname-9c50af",
+                "currencyExchange": [
+                  {
+                    "contractIdentification": "contractIdentification",
+                    "exchangeRate": "23",
+                    "quotationDate": "2018-02-02",
+                    "sourceCurrency": "USD",
+                    "targetCurrency": "EUR",
+                    "unitCurrency": "EUR"
+                  }
+                ],
+                "debtorAccount": {
+                  "bban": "00PSEUDO5BCD36E6",
+                  "currency": "USD",
+                  "iban": "DE54PSEUDO573B134DF2",
+                  "maskedPan": "maskedpan-5d1f45",
+                  "msisdn": "0172/1111111",
+                  "pan": "2222"
+                },
+                "debtorAgent": "debtorAgent",
+                "debtorName": "debtorname-d7702d",
+                "endToEndId": "endToEndId",
+                "mandateId": "mandateId",
+                "purposeCode": "CDCB",
+                "remittanceInformationStructured": "remittanceinformationstructured-83894e",
+                "remittanceInformationStructuredArray": [
+                  "remittanceInformationStructuredArray"
+                ],
+                "remittanceInformationUnstructured": "remittanceinformationunstructured-8dd802",
+                "remittanceInformationUnstructuredArray": [
+                  "remittanceinformationunstructuredarray-083e1f"
+                ],
+                "transactionAmount": {
+                  "amount": "123",
+                  "currency": "EUR"
+                },
+                "ultimateCreditor": "ultimatecreditor-5e0f26",
+                "ultimateDebtor": "ultimatedebtor-83738a"
+              }
+            ],
+            "proprietaryBankTransactionCode": "PMNT-MCOP-OTHR",
+            "remittanceInformationStructuredArray": [
+              "mock remittance reference"
+            ],
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-d34414",
+            "remittanceInformationUnstructuredArray": [
+              "remittanceinformationunstructuredarray-48aba1"
+            ],
+            "transactionAmount": {
+              "amount": "190.55",
+              "currency": "EUR"
+            },
+            "transactionId": "4YrUqA_RSPIv4wGhfo3DCA",
+            "valueDate": "2026-10-18"
+          }
+        }
+      ]
+    }
+  }
+]

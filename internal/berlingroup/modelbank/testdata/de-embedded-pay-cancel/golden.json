@@ -1,0 +1,159 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the adorsys ModelBank online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiYW5ra3hvaVlxWGF3RGRleHh2Z1F3TmVoNXVFN0NiMGUwZ2VKUmZraElNelNQZ1RLN1NjdkV5eHp5ZHlkcTc4aGNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "mocked PSU message",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (name-92dccb)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "SCA method EMAIL: tan is Ma4rJW . sent email to DE_36686519_embeddedSca.1@mail.de."
+      },
+      "payment": {
+        "id": "ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiYW5ra3hvaVlxWGF3RGRleHh2Z1F3TmVoNXVFN0NiMGUwZ2VKUmZraElNelNQZ1RLN1NjdkV5eHp5ZHlkcTc4aGNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiYW5ra3hvaVlxWGF3RGRleHh2Z1F3TmVoNXVFN0NiMGUwZ2VKUmZraElNelNQZ1RLN1NjdkV5eHp5ZHlkcTc4aGNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+      "type": "sepa",
+      "status": "in_progress",
+      "bank_status": "ACSP",
+      "final": false,
+      "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiYW5ra3hvaVlxWGF3RGRleHh2Z1F3TmVoNXVFN0NiMGUwZ2VKUmZraElNelNQZ1RLN1NjdkV5eHp5ZHlkcTc4aGNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSJ9"
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the adorsys ModelBank online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiYW5ra3hvaVlxWGF3RGRleHh2Z1F3TmVoNXVFN0NiMGUwZ2VKUmZraElNelNQZ1RLN1NjdkV5eHp5ZHlkcTc4aGNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the confirmation code (TAN).",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (name-92dccb)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "SCA method EMAIL: tan is OwLfZ9 . sent email to DE_36686519_embeddedSca.1@mail.de."
+      },
+      "payment": {
+        "id": "ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiYW5ra3hvaVlxWGF3RGRleHh2Z1F3TmVoNXVFN0NiMGUwZ2VKUmZraElNelNQZ1RLN1NjdkV5eHp5ZHlkcTc4aGNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "ankkxoiYqXawDdexxvgQwNeh5uE7Cb0e0geJRfkhIMzSPgTK7ScvEyxzydydq78hcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "CANC",
+        "final": true,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiYW5ra3hvaVlxWGF3RGRleHh2Z1F3TmVoNXVFN0NiMGUwZ2VKUmZraElNelNQZ1RLN1NjdkV5eHp5ZHlkcTc4aGNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/acc-giro-1/transactions",
+    "query": {
+      "dateFrom": [
+        "2026-09-01"
+      ],
+      "bookingStatus": [
+        "booked"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "iban": "DE89370400440532013000"
+      },
+      "transactions": {
+        "booked": [
+          {
+            "transactionId": "t-1",
+            "bookingDate": "2026-10-01",
+            "valueDate": "2026-10-01",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-25.90"
+            },
+            "creditorName": "Grocer",
+            "creditorAccount": {
+              "iban": "DE02120300000000202051"
+            },
+            "remittanceInformationUnstructured": "Card payment",
+            "merchantCategoryCode": "5411",
+            "entryReference": "E1",
+            "bankTransactionCode": "PMNT-CCRD-POSD",
+            "proprietaryBankTransactionCode": "105"
+          },
+          {
+            "transactionId": "t-2",
+            "bookingDate": "2026-10-01",
+            "valueDate": "2026-10-01",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "1500.00"
+            },
+            "debtorName": "Employer GmbH",
+            "debtorAccount": {
+              "iban": "DE75512108001245126199"
+            },
+            "remittanceInformationStructured": {
+              "reference": "RF18539007547034",
+              "referenceType": "SCOR"
+            },
+            "endToEndId": "SAL-2026-10"
+          }
+        ],
+        "_links": {
+          "next": {
+            "href": "/v1/accounts/acc-giro-1/transactions?dateFrom=2026-09-01&bookingStatus=booked&page=2"
+          }
+        }
+      }
+    }
+  }
+}

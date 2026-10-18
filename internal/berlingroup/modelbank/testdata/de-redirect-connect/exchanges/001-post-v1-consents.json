@@ -1,0 +1,66 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/v1/consents",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Nok-Redirect-Uri": "https://app.example/callback?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://app.example/callback"
+    },
+    "body": {
+      "access": {
+        "allPsd2": "allAccounts"
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 4,
+      "recurringIndicator": true,
+      "validUntil": "2027-01-16"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "REDIRECT",
+      "Content-Type": "application/json",
+      "Location": "http://localhost:8089/v1/consents/7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+      "X-Request-Id": "e2820def-2431-4abc-87a7-c74261085472"
+    },
+    "body": {
+      "_links": {
+        "scaRedirect": {
+          "href": "http://localhost:4400/account-information/login?encryptedConsentId=7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q\u0026redirectId=46e2a58c-2a98-4deb-9164-79033a3c1e29"
+        },
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/consents/7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q/authorisations/46e2a58c-2a98-4deb-9164-79033a3c1e29"
+        },
+        "self": {
+          "href": "http://localhost:8089/v1/consents/7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q"
+        },
+        "status": {
+          "href": "http://localhost:8089/v1/consents/7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q/status"
+        }
+      },
+      "consentId": "7zMJXAgzTs8nBIzwVM7YAYlUy_I-kJW2LeObTheRptkwpOUT2LV9rDaa37XndXZWu-O6OmexjMYx3lMzCndjEcz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q",
+      "consentStatus": "received",
+      "psuMessage": "mocked PSU message",
+      "scaMethods": [
+        {
+          "authenticationMethodId": "Mocked Authentication id",
+          "authenticationType": "Mocked Authentication type",
+          "authenticationVersion": "Mocked Authentication version",
+          "name": "name-3b6fc7"
+        }
+      ],
+      "tppMessages": [
+        {
+          "category": "WARNING",
+          "code": "WARNING",
+          "text": "Mocked tpp message from the bank"
+        }
+      ]
+    }
+  }
+}

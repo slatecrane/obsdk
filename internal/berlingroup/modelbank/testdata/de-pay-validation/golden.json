@@ -1,0 +1,11 @@
+[
+  {
+    "op": "initiate_payment",
+    "error": {
+      "is": [
+        "invalid_request"
+      ],
+      "message": "obsdk: invalid payment: transfers[0].end_to_end_id: is required"
+    }
+  }
+]

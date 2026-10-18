@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/v1/consents"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentStatus": "received",
+      "consentId": "hand-consent-3",
+      "_links": {
+        "scaRedirect": {
+          "href": "http://localhost:4400/account-information/login?encryptedConsentId=x&redirectId=r-1"
+        },
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/consents/hand-consent-3/authorisations/r-1"
+        },
+        "status": {
+          "href": "http://localhost:8089/v1/consents/hand-consent-3/status"
+        }
+      }
+    }
+  }
+}

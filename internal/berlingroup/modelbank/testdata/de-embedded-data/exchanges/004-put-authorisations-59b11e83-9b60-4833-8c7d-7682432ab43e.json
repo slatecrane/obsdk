@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/v1/consents/S7vfnth-au-_gch8IdpOVzVaobIl6etrMIpb0424_XziMbia4MM4IxFjHA_-vGVI4-q7aLn-mIvkbzalVeFGoMz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q/authorisations/59b11e83-9b60-4833-8c7d-7682432ab43e",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Id": "REDACTED:psu-id:27e030",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    },
+    "body": {
+      "scaAuthenticationData": "REDACTED:scaauthenticationdata:5c9c99"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "EMBEDDED",
+      "Content-Type": "application/json",
+      "X-Request-Id": "37e89459-ccbe-4f61-ad5f-e49e88afc822"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/consents/S7vfnth-au-_gch8IdpOVzVaobIl6etrMIpb0424_XziMbia4MM4IxFjHA_-vGVI4-q7aLn-mIvkbzalVeFGoMz9MpaJIQIH3NJX8IHgetw=_=_psGLvQpt9Q/authorisations/59b11e83-9b60-4833-8c7d-7682432ab43e"
+        }
+      },
+      "scaStatus": "finalised"
+    }
+  }
+}

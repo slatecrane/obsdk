@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/consents/hand-consent-2"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access": {
+        "allPsd2": "allAccounts"
+      },
+      "recurringIndicator": true,
+      "validUntil": "2027-01-16",
+      "frequencyPerDay": 4,
+      "consentStatus": "valid"
+    }
+  }
+}
