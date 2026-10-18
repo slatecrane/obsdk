@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/v2/payments/sepa-credit-transfers",
+    "body": {
+      "endToEndIdentification": "E2E-42",
+      "instructedAmount": {
+        "currency": "EUR",
+        "amount": "12.50"
+      },
+      "creditorAccount": {
+        "iban": "BE63380242772874"
+      },
+      "creditorName": "Jan Peeters",
+      "remittanceInformationUnstructured": "Invoice 42",
+      "requestedExecutionDate": "2026-10-17"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactionStatus": "RCVD",
+      "paymentId": "nqItDdrASV",
+      "_links": {
+        "scaRedirect": "https://be.psd2.sandbox.kbc-group.com/ASK/psd2/sca?paymentId=nqItDdrASV",
+        "status": "/v2/payments/sepa-credit-transfers/nqItDdrASV/status"
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to KBC to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://be.psd2.sandbox.kbc-group.com/ASK/oauth/authorize/1?client_id=REDACTED%3Aclient_id&code_challenge=RmBQ8QkLfUzCCrmWEOwDB3acgaOjz0Gu-URUa-_iS7g&code_challenge_method=S256&mainCompany=0001&redirect_uri=https%3A%2F%2Fexample.com%2Fcb&response_type=code&scope=AIS%3AlUGicdMakm&state=state-1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "kbc",
+        "country": "BE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "kbc-psd2-kbc",
+        "generation": 1,
+        "updated_at": "2026-10-17T12:00:00Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "bearer",
+        "scope": "AIS",
+        "access_expires_at": "2026-10-17T12:30:00Z",
+        "consents": {
+          "ais": {
+            "id": "lUGicdMakm",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-01-15T00:00:00Z",
+            "accounts": [
+              "BE16690375703426"
+            ]
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "test-account-001",
+          "stable_id": "b24cc660e7570f4cb14eccbaec8ea2f1",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "BE16690375703426"
+            }
+          ],
+          "name": "KBC-BE-USER-01",
+          "currency": "EUR",
+          "type": "CACC",
+          "bic": "KREDBEBB",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "1000.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "resourceId": "test-account-001",
+            "iban": "BE16690375703426",
+            "currency": "EUR",
+            "name": "KBC-BE-USER-01",
+            "product": "",
+            "cashAccountType": "CACC",
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "1000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

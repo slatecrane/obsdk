@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/accounts/test-account-001/balances"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "iban": "BE16690375703426",
+        "currency": "EUR"
+      },
+      "balances": [
+        {
+          "balanceAmount": {
+            "currency": "EUR",
+            "amount": "987.50"
+          },
+          "balanceType": "closingBooked"
+        }
+      ]
+    }
+  }
+}

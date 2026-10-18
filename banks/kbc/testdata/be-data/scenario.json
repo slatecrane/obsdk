@@ -1,0 +1,36 @@
+{
+  "description": "Synthetic: built from KBC's AIS/PIS specifications and sandbox Postman collection, not recorded. Replace with a live recording once the sandbox QWAC is available. Accounts, balances, two pages of booked transactions, then a refresh that rotates the refresh token.",
+  "config": {
+    "bank": "kbc",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-17T12:00:00Z"
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "balances",
+      "account": "test-account-001",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "test-account-001",
+      "from": "2026-09-01",
+      "to": "2026-10-17",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "test-account-001",
+      "cursor": "/psd2/v2/accounts/test-account-001/transactions?bookingStatus=booked&dateFrom=2026-09-01&dateTo=2026-10-17&page=2",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "refresh"
+    }
+  ]
+}

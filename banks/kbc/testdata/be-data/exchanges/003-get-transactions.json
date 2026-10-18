@@ -1,0 +1,59 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/accounts/test-account-001/transactions",
+    "query": {
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-09-01"
+      ],
+      "dateTo": [
+        "2026-10-17"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "iban": "BE16690375703426",
+        "currency": "EUR"
+      },
+      "transactions": {
+        "booked": [
+          {
+            "transactionId": "2026101500001",
+            "bookingDate": "2026-10-15",
+            "valueDate": "2026-10-15",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-12.50"
+            },
+            "creditorName": "Jan Peeters",
+            "creditorAccount": {
+              "iban": "BE63380242772874",
+              "currency": "EUR"
+            },
+            "debtorName": "KBC-BE-USER-01",
+            "debtorAccount": {
+              "iban": "BE16690375703426",
+              "currency": "EUR"
+            },
+            "remittanceInformationUnstructured": "Invoice 42",
+            "bankTransactionCode": "PMNT-ICDT-ESCT",
+            "proprietaryBankTransactionCode": "0150"
+          }
+        ],
+        "_links": {
+          "account": "/accounts/test-account-001",
+          "next": "/psd2/v2/accounts/test-account-001/transactions?bookingStatus=booked&dateFrom=2026-09-01&dateTo=2026-10-17&page=2"
+        }
+      }
+    }
+  }
+}

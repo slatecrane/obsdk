@@ -1,0 +1,189 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "test-account-001",
+        "stable_id": "b24cc660e7570f4cb14eccbaec8ea2f1",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "BE16690375703426"
+          }
+        ],
+        "name": "KBC-BE-USER-01",
+        "currency": "EUR",
+        "type": "CACC",
+        "bic": "KREDBEBB",
+        "balances": [
+          {
+            "kind": "closing_booked",
+            "bank_type": "closingBooked",
+            "amount": {
+              "amount": "1000.00",
+              "currency": "EUR"
+            }
+          }
+        ],
+        "raw": {
+          "resourceId": "test-account-001",
+          "iban": "BE16690375703426",
+          "currency": "EUR",
+          "name": "KBC-BE-USER-01",
+          "product": "",
+          "cashAccountType": "CACC",
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "1000.00",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "closing_booked",
+        "bank_type": "closingBooked",
+        "amount": {
+          "amount": "987.50",
+          "currency": "EUR"
+        }
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "2026101500001",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-12.50",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "value_date": "2026-10-15",
+          "counterparty": {
+            "name": "Jan Peeters",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "BE63380242772874"
+              }
+            ]
+          },
+          "remittance": [
+            "Invoice 42"
+          ],
+          "bank_code": "PMNT-ICDT-ESCT",
+          "raw": {
+            "transactionId": "2026101500001",
+            "bookingDate": "2026-10-15",
+            "valueDate": "2026-10-15",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-12.50"
+            },
+            "creditorName": "Jan Peeters",
+            "creditorAccount": {
+              "iban": "BE63380242772874",
+              "currency": "EUR"
+            },
+            "debtorName": "KBC-BE-USER-01",
+            "debtorAccount": {
+              "iban": "BE16690375703426",
+              "currency": "EUR"
+            },
+            "remittanceInformationUnstructured": "Invoice 42",
+            "bankTransactionCode": "PMNT-ICDT-ESCT",
+            "proprietaryBankTransactionCode": "0150"
+          }
+        }
+      ],
+      "next_cursor": "/psd2/v2/accounts/test-account-001/transactions?bookingStatus=booked&dateFrom=2026-09-01&dateTo=2026-10-17&page=2"
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "2026092800007",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2500.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "value_date": "2026-09-28",
+          "counterparty": {
+            "name": "Employer NV",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "BE63380242772874"
+              }
+            ]
+          },
+          "reference_number": "+++090/9337/55493+++",
+          "bank_code": "PMNT-RCDT-ESCT",
+          "raw": {
+            "transactionId": "2026092800007",
+            "bookingDate": "2026-09-28",
+            "valueDate": "2026-09-28",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "2500.00"
+            },
+            "debtorName": "Employer NV",
+            "debtorAccount": {
+              "iban": "BE63380242772874",
+              "currency": "EUR"
+            },
+            "remittanceInformationStructured": "+++090/9337/55493+++",
+            "bankTransactionCode": "PMNT-RCDT-ESCT"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "kbc",
+      "country": "BE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "kbc-psd2-kbc",
+      "generation": 2,
+      "updated_at": "2026-10-17T12:00:00Z",
+      "access_token": "REDACTED:access_token:2",
+      "refresh_token": "REDACTED:refresh_token:2",
+      "token_type": "bearer",
+      "scope": "AIS",
+      "access_expires_at": "2026-10-17T12:30:00Z",
+      "consents": {
+        "ais": {
+          "id": "lUGicdMakm",
+          "kind": "ais",
+          "status": "valid",
+          "valid_until": "2027-01-15T00:00:00Z",
+          "accounts": [
+            "BE16690375703426"
+          ]
+        }
+      }
+    }
+  }
+]

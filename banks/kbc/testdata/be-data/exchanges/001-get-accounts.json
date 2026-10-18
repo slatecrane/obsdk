@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/accounts",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "resourceId": "test-account-001",
+          "iban": "BE16690375703426",
+          "currency": "EUR",
+          "name": "KBC-BE-USER-01",
+          "product": "",
+          "cashAccountType": "CACC",
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "1000.00",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
