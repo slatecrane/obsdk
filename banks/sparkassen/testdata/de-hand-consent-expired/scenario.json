@@ -1,0 +1,19 @@
+{
+  "description": "Synthetic: built from Finanz Informatik's XS2A documentation package (2026-10-18), not recorded. Replace with a live recording once a test QWAC is available. Accounts under the sandbox's expired consent (consentId_expired): CONSENT_EXPIRED becomes a ReauthError.",
+  "config": {
+    "bank": "sparkassen",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T10:00:00Z",
+    "redirect_url": "https://app.example/callback",
+    "extra": {
+      "bank_code": "99999999"
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7"
+    }
+  ]
+}

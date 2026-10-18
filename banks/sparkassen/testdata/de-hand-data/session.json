@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "bank": "sparkassen",
+  "country": "DE",
+  "segment": "personal",
+  "env": "sandbox",
+  "integration": "sparkassen-bg",
+  "generation": 1,
+  "updated_at": "2026-10-18T09:00:00Z",
+  "access_token": "REDACTED:access_token",
+  "refresh_token": "REDACTED:refresh_token",
+  "token_type": "Bearer",
+  "access_expires_at": "2026-10-18T10:30:00Z",
+  "consents": {
+    "ais": {
+      "id": "8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b",
+      "kind": "ais",
+      "status": "valid",
+      "valid_until": "2027-01-16T00:00:00Z",
+      "accounts": [
+        "DE86999999990000001000"
+      ]
+    }
+  },
+  "meta": {
+    "approach": "oauth",
+    "institution": "99999999",
+    "token_url": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/oauth/99999999/token"
+  }
+}

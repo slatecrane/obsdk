@@ -1,0 +1,69 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the Sparkasse online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3Bhcmthc3Nlbi1iZyIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6ImE2YjFjMmQzLWU0ZjUtNGE2Yi04YzdkLTllMGYxYTJiM2M0ZCIsInQiOiJzZXBhIiwiYiI6Ijk5OTk5OTk5In0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the confirmation code (TAN).",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (smsTAN | Mobil (******1234))",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "Bitte geben Sie die per SMS erhaltene TAN ein."
+      },
+      "payment": {
+        "id": "a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoic3Bhcmthc3Nlbi1iZyIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6ImE2YjFjMmQzLWU0ZjUtNGE2Yi04YzdkLTllMGYxYTJiM2M0ZCIsInQiOiJzZXBhIiwiYiI6Ijk5OTk5OTk5In0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "payment_rejected"
+      ],
+      "message": "obsdk: payment rejected: rjct"
+    }
+  }
+]

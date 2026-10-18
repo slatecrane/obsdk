@@ -5,17 +5,18 @@
 adapter is not a bank: users only ever see the banks built on it, under their own keys.
 
 Built and verified on 2026-10-18 against adorsys' open-source ModelBank (XS2A-Sandbox 5.14), run
-locally in Docker. No bank is registered on it yet; the first are planned in
-[research/next-banks.md](../research/next-banks.md).
+locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)).
 
 ## What it covers
 
 | Area | Covered |
 |---|---|
 | AIS consent | global (`allPsd2: allAccounts`), bank-offered (empty lists, the user picks at the bank), or dedicated to the IBANs in `ConnectRequest.Values["iban"]` (comma separated); `validUntil` clamped per profile, the granted one read back |
-| SCA | redirect, decoupled and embedded, following the steering links the bank returns (`scaRedirect`, `startAuthorisation*`, `updatePsuIdentification`, `updatePsuAuthentication`, `selectAuthenticationMethod`, `authoriseTransaction`, `scaStatus`) for consents, payments and cancellations alike. Explicit and implicit authorisation start both work. The bank's choice wins over the preference sent |
-| Not yet | OAuth SCA (`scaOAuth`, needed for Deutsche Bank-style banks), encrypted PSU authentication, signing baskets, multilevel SCA, periodic and bulk payments, card accounts |
-| Data | accounts (`withBalance`), balances, transactions (booked, pending or both per profile); `next` links passed through as the cursor; signed amounts, `creditDebitIndicator` on unsigned ones; 1.3.8 and older field shapes |
+| SCA | redirect, decoupled and embedded, following the steering links the bank returns (`scaRedirect`, `startAuthorisation*`, `updatePsuIdentification`, `updatePsuAuthentication`, `selectAuthenticationMethod`, `authoriseTransaction`, `scaStatus`) for consents, payments and cancellations alike. Explicit and implicit authorisation start both work. The bank's choice wins over the preference sent, including an embedded flow that turns decoupled after the method choice (Sparkassen' pushTAN 2.0) |
+| OAuth SCA | a `scaOAuth` (or `scaOAuth2`) link: RFC 8414 metadata, then an authorisation-code redirect with PKCE, scope `AIS:<consentId>` / `PIS:<paymentId>`. For consents the code is exchanged for tokens: account calls carry the bearer token, `Refresh` uses the refresh token, the token endpoint is kept in `Session.Meta`. For payments the status decides (no exchange) |
+| Hubs | `Profile.Institution`: a `Config.Extra` parameter (e.g. the BLZ) picks one bank of a hub; it is stored in the session, the flow state and the payment reference, so later calls reach the same bank |
+| Not yet | OAuth as a pre-step (Deutsche Bank-style), encrypted PSU authentication, signing baskets, multilevel SCA, periodic and bulk payments, card accounts |
+| Data | accounts (`withBalance`), balances, transactions (booked, pending or both per profile) as JSON or camt.052/053/054 XML (`Profile.XMLTransactions`; parsed by content); `next` links passed through as the cursor; signed amounts, `creditDebitIndicator` on unsigned ones; 1.3.8 and older field shapes |
 | Payments | single payments per payment product, status, cancellation (immediate 204, or approved through cancellation authorisations) |
 | Refresh | there is no token: `Refresh` checks the consent status and asks for re-authorisation when it is not `valid` |
 | Signing | Digest + draft-cavage `Signature` + `TPP-Signature-Certificate` with `Config.Seal` (RSA), SHA-256 or SHA-512, configurable `keyId` and `algorithm` |
@@ -36,7 +37,7 @@ func init() {
 		ID:   "examplebank-bg",
 		Info: obsdk.Info{Bank: "examplebank", Name: "Example Bank", Variants: ..., Capabilities: ...,
 			Payments: []obsdk.PaymentSpec{berlingroup.CreditTransferSpec(obsdk.PaymentSEPA, berlingroup.SpecOptions{...})}},
-		BaseURL:    func(env obsdk.Env, t obsdk.Target) string { ... }, // without /v1
+		BaseURL:    func(env obsdk.Env, t obsdk.Target, institution string) string { ... }, // without /v1
 		Approaches: []string{berlingroup.Redirect, berlingroup.Decoupled},
 		Products:   map[obsdk.PaymentType]string{obsdk.PaymentSEPA: "sepa-credit-transfers"},
 	})
@@ -46,7 +47,8 @@ func init() {
 The profile carries everything that differs between banks: hosts, approaches, consent model, consent
 limits, booking statuses, payment products and specs, whether PSU-ID is needed up front
 (`PSUIDRequired`), field-shape versions (`LegacyAddress`, `StructuredRemittanceString`, which banks mix),
-`NoWithBalance`, signing, and extra headers. If a bank needs more than a profile can say, add a field
+`NoWithBalance`, XML transactions, OAuth details (`OAuthNoRedirectURI`), hubs (`Institution`), signing,
+and extra headers. If a bank needs more than a profile can say, add a field
 or hook to the profile instead of copying the adapter. Then follow [new-integration.md](new-integration.md)
 as for any bank: own docs page, row in [banks.md](banks.md), scenarios recorded against its sandbox.
 
@@ -155,4 +157,7 @@ structured reference object, foreign cursor refused), `de-hand-consent-expired`,
 `de-hand-decoupled-connect`, `de-hand-decoupled-rejected`, `de-hand-redirect-refused`.
 
 Not verified anywhere: decoupled against a real server, request signing against a server that checks it
-(unit-tested only), bank-offered and dedicated consents, OAuth SCA (not implemented).
+(unit-tested only), bank-offered and dedicated consents, the OAuth SCA approach and camt parsing (fake
+bank, unit tests and Sparkassen's hand-written scenarios only). ModelBank 5.14 has an OAuth mode
+(`scaRedirectFlow: OAUTH`), but it is not the standard one: the metadata link is called `scaRedirect`,
+the callback has no `state` and there is no PKCE, so it was not used to verify the adapter.

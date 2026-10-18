@@ -222,6 +222,6 @@ func TestIntegrationChecksProducts(t *testing.T) {
 			t.Error("a payment spec without a payment product was accepted")
 		}
 	}()
-	Integration(Profile{ID: "x", BaseURL: func(obsdk.Env, obsdk.Target) string { return "https://x" },
+	Integration(Profile{ID: "x", BaseURL: func(obsdk.Env, obsdk.Target, string) string { return "https://x" },
 		Info: obsdk.Info{Bank: "x", Payments: []obsdk.PaymentSpec{{Type: obsdk.PaymentSEPA}}}})
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Sparkasse to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sandbox.sparkasse.example/de/home/xs2a/authorize?client_id=REDACTED%3Aclient_id&code_challenge=RmBQ8QkLfUzCCrmWEOwDB3acgaOjz0Gu-URUa-_iS7g&code_challenge_method=S256&response_type=code&scope=AIS%3A8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b&state=state-1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "auth_failed"
+      ],
+      "message": "obsdk: authorization failed: access was not approved at the bank (access_denied)"
+    }
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "description": "Synthetic: built from Finanz Informatik's XS2A documentation package (2026-10-18), not recorded. Replace with a live recording once a test QWAC is available. Embedded SEPA payment of the sandbox user chipTAN (PIN okok1, TAN 111111) to the sandbox's receiving IBAN: login, chipTAN optical picked from three methods, the flicker code as challenge data, the TAN, then the status (ACSC).",
+  "config": {
+    "bank": "sparkassen",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T10:00:00Z",
+    "redirect_url": "https://app.example/callback",
+    "extra": {
+      "bank_code": "99999999"
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "embedded",
+      "psu_ip": "203.0.113.7",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "DE86999999990000001000"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "Erika Mustermann",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE98999999990000009999"
+              }
+            },
+            "remittance": [
+              "Rechnung 2026-117"
+            ],
+            "end_to_end_id": "obsdk-e2e-1"
+          }
+        ]
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "psu_id": "chipTAN",
+        "password": "okok1"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "sca_method": "OPTICAL"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "otp": "111111"
+      }
+    }
+  ]
+}

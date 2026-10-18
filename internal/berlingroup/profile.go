@@ -55,9 +55,17 @@ type Profile struct {
 	Info obsdk.Info
 
 	// BaseURL returns the API root for a target, without the "/v1" that every
-	// path starts with, e.g. https://api.bank.example/xs2a. Config.Extra
+	// path starts with, e.g. https://api.bank.example/xs2a. institution is
+	// the value of Institution.Param (empty for banks without one). Config.Extra
 	// "base_url" overrides it (tests, proxies, local sandboxes).
-	BaseURL func(env obsdk.Env, t obsdk.Target) string
+	BaseURL func(env obsdk.Env, t obsdk.Target, institution string) string
+
+	// Institution is set for hubs that serve many banks under one API
+	// (Sparkassen, Volksbanken), where a parameter such as the bank code picks
+	// the bank. It is read from Config.Extra when a consent or payment is
+	// created and then kept in the session, the flow state and the payment
+	// reference, so later calls reach the same bank.
+	Institution *Institution
 
 	// Approaches the bank offers, in order of preference; the first is the
 	// default. Empty means redirect only.
@@ -108,8 +116,29 @@ type Profile struct {
 	// banks that refuse it.
 	NoWithBalance bool
 
+	// XMLTransactions asks for transactions with Accept: application/xml, for
+	// banks that report them only as camt.052 (camt.053 and camt.054 are read
+	// the same way). The response is parsed by its content, so a bank that
+	// answers JSON anyway still works.
+	XMLTransactions bool
+
+	// OAuthNoRedirectURI leaves redirect_uri out of the OAuth authorisation
+	// and token requests of the OAuth SCA approach, for banks that take the
+	// redirect URI from TPP-Redirect-URI and document no such parameter.
+	OAuthNoRedirectURI bool
+
 	// Headers adds bank-specific headers to every request (e.g. an API key).
 	Headers func(cfg obsdk.Config, h http.Header)
+}
+
+// Institution describes the parameter that picks one bank of a hub.
+type Institution struct {
+	// Param is the Config.Extra key, e.g. "bank_code".
+	Param string
+	// Label names it in messages, e.g. "bank code (BLZ)".
+	Label string
+	// Normalize cleans and checks a value; nil accepts any non-empty value.
+	Normalize func(string) (string, error)
 }
 
 func (p *Profile) approaches() []string {
@@ -175,6 +204,9 @@ func Register(p Profile) {
 func Integration(p Profile) obsdk.Integration {
 	if p.ID == "" || p.BaseURL == nil {
 		panic(fmt.Sprintf("berlingroup: profile %q needs an ID and a BaseURL", p.Info.Bank))
+	}
+	if p.Institution != nil && p.Institution.Param == "" {
+		panic(fmt.Sprintf("berlingroup: profile %q: Institution needs a Param", p.ID))
 	}
 	for _, a := range p.approaches() {
 		if a != Redirect && a != Decoupled && a != Embedded {

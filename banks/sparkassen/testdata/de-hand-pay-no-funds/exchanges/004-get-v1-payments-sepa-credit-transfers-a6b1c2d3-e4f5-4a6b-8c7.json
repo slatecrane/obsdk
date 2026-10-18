@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/fixs2a-env/xs2a-api/99999999/v1/payments/sepa-credit-transfers/a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d/status"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "transactionStatus": "RJCT",
+      "psuMessage": "9120 - Kontodeckung nicht ausreichend."
+    }
+  }
+}

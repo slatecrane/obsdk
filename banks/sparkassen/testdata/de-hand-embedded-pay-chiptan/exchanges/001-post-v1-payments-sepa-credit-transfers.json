@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/fixs2a-env/xs2a-api/99999999/v1/payments/sepa-credit-transfers"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8",
+      "ASPSP-SCA-Approach": "EMBEDDED"
+    },
+    "body": {
+      "transactionStatus": "RCVD",
+      "paymentId": "a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d",
+      "_links": {
+        "startAuthorisationWithPsuAuthentication": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/payments/sepa-credit-transfers/a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d/authorisations"
+        },
+        "self": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/payments/sepa-credit-transfers/a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d"
+        },
+        "status": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/payments/sepa-credit-transfers/a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d/status"
+        }
+      }
+    }
+  }
+}
