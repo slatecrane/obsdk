@@ -1,0 +1,44 @@
+{
+  "description": "Synthetic: built from Finanz Informatik's XS2A documentation package (2026-10-18), not recorded. Replace with a live recording once a test QWAC is available. Embedded connect of the sandbox user pushDecTAN (PIN okok1): a dedicated consent for the IBAN given in values, login, the pushTAN 2.0 method choice (PUSH_OTP and PUSH_DEC, as in the pushTAN 2.0 handbook), PUSH_DEC picked, the bank switches to DECOUPLED, polled through scaStatus until finalised.",
+  "config": {
+    "bank": "sparkassen",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T10:00:00Z",
+    "redirect_url": "https://app.example/callback",
+    "extra": {
+      "bank_code": "99999999"
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "embedded",
+      "values": {
+        "iban": "DE86999999990000001000"
+      },
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "psu_id": "pushDecTAN",
+        "password": "okok1"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "sca_method": "Privat"
+      }
+    },
+    {
+      "op": "resume",
+      "note": "not yet approved in the S-pushTAN app"
+    },
+    {
+      "op": "resume",
+      "note": "approved"
+    }
+  ]
+}

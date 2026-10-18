@@ -1,0 +1,11 @@
+[
+  {
+    "op": "accounts",
+    "error": {
+      "is": [
+        "reauth_required"
+      ],
+      "message": "obsdk: user must re-authorize: consent_expired: obsdk: accounts: HTTP 401 CONSENT_EXPIRED: Consent abgelaufen"
+    }
+  }
+]

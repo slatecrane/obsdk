@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/fixs2a-env/xs2a-api/99999999/v1/accounts/3217d050-f5b5-4318-a799-413bce784ef6/transactions",
+    "query": {
+      "bookingStatus": [
+        "both"
+      ],
+      "dateFrom": [
+        "2026-10-18"
+      ]
+    },
+    "headers": {
+      "Accept": "application/xml"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/xml;charset=UTF-8"
+    },
+    "body_text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:camt.052.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"urn:iso:std:iso:20022:tech:xsd:camt.052.001.02 camt.052.001.02.xsd\">\n<BkToCstmrAcctRpt><GrpHdr><MsgId>052D2026-10-18T10:00:05</MsgId><CreDtTm>2026-10-18T10:00:00.0+02:00</CreDtTm></GrpHdr>\n<Rpt><Id>052D2026-10-18T10:00:05</Id><CreDtTm>2026-10-18T10:00:00.0+02:00</CreDtTm>\n<Acct><Id><IBAN>DE86999999990000001000</IBAN></Id><Ccy>EUR</Ccy><Ownr><Nm>Max Mustermann</Nm></Ownr><Svcr><FinInstnId><BIC>TESTDETT421</BIC></FinInstnId></Svcr></Acct>\n<Ntry><Amt Ccy=\"EUR\">25.00</Amt><CdtDbtInd>DBIT</CdtDbtInd><Sts>PDNG</Sts><BookgDt><Dt>2026-10-18</Dt></BookgDt><ValDt><Dt>2026-10-18</Dt></ValDt><NtryDtls><TxDtls><RltdPties><Cdtr><Nm>Tankstelle Muster</Nm></Cdtr></RltdPties><RmtInf><Ustrd>Kartenzahlung girocard</Ustrd></RmtInf></TxDtls></NtryDtls><AddtlNtryInf>KARTENZAHLUNG</AddtlNtryInf></Ntry>\n</Rpt></BkToCstmrAcctRpt></Document>\n"
+  }
+}

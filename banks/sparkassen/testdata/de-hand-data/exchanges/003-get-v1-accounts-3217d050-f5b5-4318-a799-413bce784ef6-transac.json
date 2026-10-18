@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/fixs2a-env/xs2a-api/99999999/v1/accounts/3217d050-f5b5-4318-a799-413bce784ef6/transactions",
+    "query": {
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-10-01"
+      ],
+      "dateTo": [
+        "2026-10-18"
+      ]
+    },
+    "headers": {
+      "Accept": "application/xml"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/xml;charset=UTF-8"
+    },
+    "body_text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:camt.052.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"urn:iso:std:iso:20022:tech:xsd:camt.052.001.02 camt.052.001.02.xsd\">\n<BkToCstmrAcctRpt><GrpHdr><MsgId>052D2026-10-18T10:00:00</MsgId><CreDtTm>2026-10-18T10:00:00.0+02:00</CreDtTm></GrpHdr>\n<Rpt><Id>052D2026-10-18T10:00:00</Id><CreDtTm>2026-10-18T10:00:00.0+02:00</CreDtTm>\n<Acct><Id><IBAN>DE86999999990000001000</IBAN></Id><Ccy>EUR</Ccy><Ownr><Nm>Max Mustermann</Nm></Ownr><Svcr><FinInstnId><BIC>TESTDETT421</BIC></FinInstnId></Svcr></Acct>\n<Ntry><Amt Ccy=\"EUR\">2350.00</Amt><CdtDbtInd>CRDT</CdtDbtInd><Sts>BOOK</Sts><BookgDt><Dt>2026-10-15</Dt></BookgDt><ValDt><Dt>2026-10-15</Dt></ValDt><AcctSvcrRef>2026101500001</AcctSvcrRef><BkTxCd><Domn><Cd>PMNT</Cd><Fmly><Cd>RCDT</Cd><SubFmlyCd>ESCT</SubFmlyCd></Fmly></Domn><Prtry><Cd>NTRF+166+9310</Cd><Issr>DK</Issr></Prtry></BkTxCd><NtryDtls><TxDtls><Refs><EndToEndId>LOHN-2026-10</EndToEndId></Refs><RltdPties><Dbtr><Nm>Muster GmbH</Nm></Dbtr><DbtrAcct><Id><IBAN>DE02120300000000202051</IBAN></Id></DbtrAcct><Cdtr><Nm>Max Mustermann</Nm></Cdtr></RltdPties><RltdAgts><DbtrAgt><FinInstnId><BIC>BYLADEM1001</BIC></FinInstnId></DbtrAgt></RltdAgts><RmtInf><Ustrd>Lohn/Gehalt 10/2026</Ustrd></RmtInf></TxDtls></NtryDtls><AddtlNtryInf>LOHN  GEHALT</AddtlNtryInf></Ntry>\n<Ntry><Amt Ccy=\"EUR\">89.90</Amt><CdtDbtInd>DBIT</CdtDbtInd><Sts>BOOK</Sts><BookgDt><Dt>2026-10-16</Dt></BookgDt><ValDt><Dt>2026-10-16</Dt></ValDt><AcctSvcrRef>2026101600007</AcctSvcrRef><BkTxCd><Domn><Cd>PMNT</Cd><Fmly><Cd>IDDT</Cd><SubFmlyCd>ESDD</SubFmlyCd></Fmly></Domn><Prtry><Cd>NDDT+105+9932</Cd><Issr>DK</Issr></Prtry></BkTxCd><NtryDtls><TxDtls><Refs><EndToEndId>NOTPROVIDED</EndToEndId><MndtId>M-0815</MndtId></Refs><RltdPties><Dbtr><Nm>Max Mustermann</Nm></Dbtr><Cdtr><Nm>Stadtwerke Musterstadt</Nm></Cdtr><CdtrAcct><Id><IBAN>DE89370400440532013000</IBAN></Id></CdtrAcct></RltdPties><RmtInf><Ustrd>Abschlag Strom Oktober</Ustrd><Ustrd>Vertragskonto 4711</Ustrd></RmtInf></TxDtls></NtryDtls><AddtlNtryInf>FOLGELASTSCHRIFT</AddtlNtryInf></Ntry>\n</Rpt></BkToCstmrAcctRpt></Document>\n"
+  }
+}

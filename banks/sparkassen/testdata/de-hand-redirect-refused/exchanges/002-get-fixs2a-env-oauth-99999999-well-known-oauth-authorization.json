@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/fixs2a-env/oauth/99999999/.well-known/oauth-authorization-server"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "authorization_endpoint": "https://sandbox.sparkasse.example/de/home/xs2a/authorize",
+      "token_endpoint": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/oauth/99999999/token"
+    }
+  }
+}

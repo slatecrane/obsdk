@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/fixs2a-env/xs2a-api/99999999/v1/consents/5d2b8e41-7c3a-4f9e-b1d6-2a4c6e8f0b13/authorisations/1e3c5a7b-9d2f-4b6a-8c0e-f1a3b5c7d9e2"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "scaStatus": "started",
+      "psuMessage": "Bitte bestätigen Sie die Transaktion mit ihrer PushTAN-APP."
+    }
+  }
+}

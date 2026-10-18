@@ -17,9 +17,10 @@ import (
 const defaultHistoryDays = 90
 
 // aisCall performs an account-information request under the session's
-// consent.
+// consent, at the session's institution.
 func (c *client) aisCall(ctx context.Context, s *obsdk.Session, psu *obsdk.PSUContext, r req) (*resp, error) {
-	if err := c.checkSession(s); err != nil {
+	c, err := c.forSession(s)
+	if err != nil {
 		return nil, err
 	}
 	cons, ok := s.Consents[consentKind]
@@ -34,6 +35,9 @@ func (c *client) aisCall(ctx context.Context, s *obsdk.Session, psu *obsdk.PSUCo
 	h["Consent-ID"] = cons.ID
 	if s.AccessToken != "" {
 		h["Authorization"] = "Bearer " + s.AccessToken
+	}
+	for k, v := range r.header {
+		h[k] = v
 	}
 	r.method, r.header = http.MethodGet, h
 	res, err := c.do(ctx, r)
@@ -408,11 +412,19 @@ func (c *client) Transactions(ctx context.Context, s *obsdk.Session, q obsdk.TxQ
 			r.query.Set("dateTo", q.To.Format("2006-01-02"))
 		}
 	}
+	if c.p.XMLTransactions {
+		r.header = map[string]string{"Accept": "application/xml"}
+	}
 	res, err := c.aisCall(ctx, s, q.Options.PSU, r)
 	if err != nil {
 		return nil, err
 	}
-	page, err := parseTransactions(res.body)
+	var page obsdk.TxPage
+	if isXML(res) {
+		page, err = parseCamt(res.body)
+	} else {
+		page, err = parseTransactions(res.body)
+	}
 	if err != nil {
 		return nil, err
 	}

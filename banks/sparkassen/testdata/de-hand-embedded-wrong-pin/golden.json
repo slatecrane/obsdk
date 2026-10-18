@@ -1,0 +1,11 @@
+[
+  {
+    "op": "connect",
+    "error": {
+      "is": [
+        "auth_failed"
+      ],
+      "message": "obsdk: authorisation: HTTP 401 PSU_CREDENTIALS_INVALID: Die Anmeldung ist fehlgeschlagen."
+    }
+  }
+]

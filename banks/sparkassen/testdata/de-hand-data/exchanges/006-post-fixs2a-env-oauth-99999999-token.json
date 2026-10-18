@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/fixs2a-env/oauth/99999999/token"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token",
+      "token_type": "Bearer",
+      "expires_in": "3600",
+      "refresh_token": "REDACTED:refresh_token"
+    }
+  }
+}

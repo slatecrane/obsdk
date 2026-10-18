@@ -3,6 +3,7 @@ package berlingroup
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -80,7 +81,10 @@ func (c *client) Connect(ctx context.Context, r obsdk.ConnectRequest) (*obsdk.St
 	if err != nil {
 		return nil, err
 	}
-	f := &flow{Op: flowConnect, Approach: approach, PSU: r.PSU, Language: r.Language, Caps: r.Capabilities}
+	if c, err = c.forNew(); err != nil {
+		return nil, err
+	}
+	f := &flow{Op: flowConnect, Approach: approach, PSU: r.PSU, Language: r.Language, Caps: r.Capabilities, Institution: c.inst}
 	if approach == Redirect {
 		if f.RedirectURL, err = c.redirectURL(r.RedirectURL); err != nil {
 			return nil, err
@@ -165,6 +169,13 @@ func (c *client) finishConnect(ctx context.Context, f *flow) (*obsdk.Step, error
 		Bank: c.bank(), Country: c.target.Country, Segment: c.target.Segment, Env: c.cfg.Env, Integration: c.p.ID,
 		Consents: map[string]obsdk.Consent{}, Meta: map[string]string{metaApproach: f.Approach},
 	}
+	if c.inst != "" {
+		s.Meta[metaInstitution] = c.inst
+	}
+	if f.token != nil {
+		applyToken(s, f.token, f.TokenURL)
+		s.Meta[metaApproach] = "oauth"
+	}
 	cons := obsdk.Consent{ID: f.ConsentID, Kind: consentKind, Status: status}
 	if t, err := time.Parse("2006-01-02", c.consentValidUntil(ctx, f)); err == nil {
 		cons.ValidUntil = &t
@@ -210,7 +221,8 @@ func (c *client) consentValidUntil(ctx context.Context, f *flow) string {
 // that the consent is still valid and returns the session unchanged, or a
 // ReauthError inside a RefreshError when the user must connect again.
 func (c *client) Refresh(ctx context.Context, s *obsdk.Session) (*obsdk.Session, error) {
-	if err := c.checkSession(s); err != nil {
+	c, err := c.forSession(s)
+	if err != nil {
 		return nil, err
 	}
 	cons, ok := s.Consents[consentKind]
@@ -232,12 +244,22 @@ func (c *client) Refresh(ctx context.Context, s *obsdk.Session) (*obsdk.Session,
 	if status != "valid" {
 		return nil, &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: "consent_" + strings.ToLower(status), Consent: consentKind}}
 	}
-	return s.Clone(), nil
+	ns := s.Clone()
+	if ns.RefreshToken != "" {
+		// OAuth SCA approach: the account calls need a fresh access token.
+		if err := c.refreshToken(ctx, ns); err != nil {
+			var re *obsdk.ReauthError
+			return nil, &obsdk.RefreshError{Temporary: !errors.As(err, &re), Err: err}
+		}
+		ns.Touch(c.now())
+	}
+	return ns, nil
 }
 
 // Disconnect deletes the consent at the bank.
 func (c *client) Disconnect(ctx context.Context, s *obsdk.Session) (*obsdk.DisconnectResult, error) {
-	if err := c.checkSession(s); err != nil {
+	c, err := c.forSession(s)
+	if err != nil {
 		return nil, err
 	}
 	ns := s.Clone()
@@ -246,7 +268,11 @@ func (c *client) Disconnect(ctx context.Context, s *obsdk.Session) (*obsdk.Disco
 	if !ok || cons.ID == "" {
 		return res, nil
 	}
-	r, err := c.do(ctx, req{op: opRevoke, method: http.MethodDelete, path: "/v1/consents/" + url.PathEscape(cons.ID)})
+	h := map[string]string{}
+	if s.AccessToken != "" && !s.AccessExpired(c.now()) {
+		h["Authorization"] = "Bearer " + s.AccessToken
+	}
+	r, err := c.do(ctx, req{op: opRevoke, method: http.MethodDelete, path: "/v1/consents/" + url.PathEscape(cons.ID), header: h})
 	if err != nil {
 		res.Failed[consentKind] = err.Error()
 		return res, nil

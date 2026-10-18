@@ -1,0 +1,221 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "3217d050-f5b5-4318-a799-413bce784ef6",
+        "stable_id": "5acf338ae0f8833d3bd14bf2ea381635",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "DE86999999990000001000"
+          }
+        ],
+        "name": "Girokonto",
+        "owner_name": "Max Mustermann",
+        "currency": "EUR",
+        "product": "Giro Comfort",
+        "type": "CACC",
+        "bic": "TESTDETT421",
+        "balances": [
+          {
+            "kind": "closing_booked",
+            "bank_type": "closingBooked",
+            "amount": {
+              "amount": "1523.45",
+              "currency": "EUR"
+            },
+            "reference_date": "2026-10-17"
+          },
+          {
+            "kind": "interim_available",
+            "bank_type": "interimAvailable",
+            "amount": {
+              "amount": "1498.45",
+              "currency": "EUR"
+            },
+            "reference_date": "2026-10-18"
+          }
+        ],
+        "raw": {
+          "resourceId": "3217d050-f5b5-4318-a799-413bce784ef6",
+          "iban": "DE86999999990000001000",
+          "currency": "EUR",
+          "ownerName": "Max Mustermann",
+          "name": "Girokonto",
+          "product": "Giro Comfort",
+          "cashAccountType": "CACC",
+          "bic": "TESTDETT421",
+          "balances": [
+            {
+              "balanceAmount": {
+                "currency": "EUR",
+                "amount": "1523.45"
+              },
+              "balanceType": "closingBooked",
+              "referenceDate": "2026-10-17"
+            },
+            {
+              "balanceAmount": {
+                "currency": "EUR",
+                "amount": "1498.45"
+              },
+              "balanceType": "interimAvailable",
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "_links": {
+            "balances": {
+              "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/accounts/3217d050-f5b5-4318-a799-413bce784ef6/balances"
+            },
+            "transactions": {
+              "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/accounts/3217d050-f5b5-4318-a799-413bce784ef6/transactions"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "closing_booked",
+        "bank_type": "closingBooked",
+        "amount": {
+          "amount": "1523.45",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-17"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "interimAvailable",
+        "amount": {
+          "amount": "1498.45",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "2026101500001",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2350.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "value_date": "2026-10-15",
+          "counterparty": {
+            "name": "Muster GmbH",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE02120300000000202051"
+              }
+            ]
+          },
+          "remittance": [
+            "Lohn/Gehalt 10/2026"
+          ],
+          "end_to_end_id": "LOHN-2026-10",
+          "bank_code": "PMNT-RCDT-ESCT",
+          "bank_code_text": "LOHN  GEHALT",
+          "raw": "\u003cNtry\u003e\u003cAmt Ccy=\"EUR\"\u003e2350.00\u003c/Amt\u003e\u003cCdtDbtInd\u003eCRDT\u003c/CdtDbtInd\u003e\u003cSts\u003eBOOK\u003c/Sts\u003e\u003cBookgDt\u003e\u003cDt\u003e2026-10-15\u003c/Dt\u003e\u003c/BookgDt\u003e\u003cValDt\u003e\u003cDt\u003e2026-10-15\u003c/Dt\u003e\u003c/ValDt\u003e\u003cAcctSvcrRef\u003e2026101500001\u003c/AcctSvcrRef\u003e\u003cBkTxCd\u003e\u003cDomn\u003e\u003cCd\u003ePMNT\u003c/Cd\u003e\u003cFmly\u003e\u003cCd\u003eRCDT\u003c/Cd\u003e\u003cSubFmlyCd\u003eESCT\u003c/SubFmlyCd\u003e\u003c/Fmly\u003e\u003c/Domn\u003e\u003cPrtry\u003e\u003cCd\u003eNTRF+166+9310\u003c/Cd\u003e\u003cIssr\u003eDK\u003c/Issr\u003e\u003c/Prtry\u003e\u003c/BkTxCd\u003e\u003cNtryDtls\u003e\u003cTxDtls\u003e\u003cRefs\u003e\u003cEndToEndId\u003eLOHN-2026-10\u003c/EndToEndId\u003e\u003c/Refs\u003e\u003cRltdPties\u003e\u003cDbtr\u003e\u003cNm\u003eMuster GmbH\u003c/Nm\u003e\u003c/Dbtr\u003e\u003cDbtrAcct\u003e\u003cId\u003e\u003cIBAN\u003eDE02120300000000202051\u003c/IBAN\u003e\u003c/Id\u003e\u003c/DbtrAcct\u003e\u003cCdtr\u003e\u003cNm\u003eMax Mustermann\u003c/Nm\u003e\u003c/Cdtr\u003e\u003c/RltdPties\u003e\u003cRltdAgts\u003e\u003cDbtrAgt\u003e\u003cFinInstnId\u003e\u003cBIC\u003eBYLADEM1001\u003c/BIC\u003e\u003c/FinInstnId\u003e\u003c/DbtrAgt\u003e\u003c/RltdAgts\u003e\u003cRmtInf\u003e\u003cUstrd\u003eLohn/Gehalt 10/2026\u003c/Ustrd\u003e\u003c/RmtInf\u003e\u003c/TxDtls\u003e\u003c/NtryDtls\u003e\u003cAddtlNtryInf\u003eLOHN  GEHALT\u003c/AddtlNtryInf\u003e\u003c/Ntry\u003e"
+        },
+        {
+          "id": "2026101600007",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-89.90",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-16",
+          "value_date": "2026-10-16",
+          "counterparty": {
+            "name": "Stadtwerke Musterstadt",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE89370400440532013000"
+              }
+            ]
+          },
+          "remittance": [
+            "Abschlag Strom Oktober",
+            "Vertragskonto 4711"
+          ],
+          "bank_code": "PMNT-IDDT-ESDD",
+          "bank_code_text": "FOLGELASTSCHRIFT",
+          "raw": "\u003cNtry\u003e\u003cAmt Ccy=\"EUR\"\u003e89.90\u003c/Amt\u003e\u003cCdtDbtInd\u003eDBIT\u003c/CdtDbtInd\u003e\u003cSts\u003eBOOK\u003c/Sts\u003e\u003cBookgDt\u003e\u003cDt\u003e2026-10-16\u003c/Dt\u003e\u003c/BookgDt\u003e\u003cValDt\u003e\u003cDt\u003e2026-10-16\u003c/Dt\u003e\u003c/ValDt\u003e\u003cAcctSvcrRef\u003e2026101600007\u003c/AcctSvcrRef\u003e\u003cBkTxCd\u003e\u003cDomn\u003e\u003cCd\u003ePMNT\u003c/Cd\u003e\u003cFmly\u003e\u003cCd\u003eIDDT\u003c/Cd\u003e\u003cSubFmlyCd\u003eESDD\u003c/SubFmlyCd\u003e\u003c/Fmly\u003e\u003c/Domn\u003e\u003cPrtry\u003e\u003cCd\u003eNDDT+105+9932\u003c/Cd\u003e\u003cIssr\u003eDK\u003c/Issr\u003e\u003c/Prtry\u003e\u003c/BkTxCd\u003e\u003cNtryDtls\u003e\u003cTxDtls\u003e\u003cRefs\u003e\u003cEndToEndId\u003eNOTPROVIDED\u003c/EndToEndId\u003e\u003cMndtId\u003eM-0815\u003c/MndtId\u003e\u003c/Refs\u003e\u003cRltdPties\u003e\u003cDbtr\u003e\u003cNm\u003eMax Mustermann\u003c/Nm\u003e\u003c/Dbtr\u003e\u003cCdtr\u003e\u003cNm\u003eStadtwerke Musterstadt\u003c/Nm\u003e\u003c/Cdtr\u003e\u003cCdtrAcct\u003e\u003cId\u003e\u003cIBAN\u003eDE89370400440532013000\u003c/IBAN\u003e\u003c/Id\u003e\u003c/CdtrAcct\u003e\u003c/RltdPties\u003e\u003cRmtInf\u003e\u003cUstrd\u003eAbschlag Strom Oktober\u003c/Ustrd\u003e\u003cUstrd\u003eVertragskonto 4711\u003c/Ustrd\u003e\u003c/RmtInf\u003e\u003c/TxDtls\u003e\u003c/NtryDtls\u003e\u003cAddtlNtryInf\u003eFOLGELASTSCHRIFT\u003c/AddtlNtryInf\u003e\u003c/Ntry\u003e"
+        }
+      ]
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "status": "pending",
+          "direction": "debit",
+          "amount": {
+            "amount": "-25.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-18",
+          "value_date": "2026-10-18",
+          "counterparty": {
+            "name": "Tankstelle Muster"
+          },
+          "remittance": [
+            "Kartenzahlung girocard"
+          ],
+          "bank_code_text": "KARTENZAHLUNG",
+          "raw": "\u003cNtry\u003e\u003cAmt Ccy=\"EUR\"\u003e25.00\u003c/Amt\u003e\u003cCdtDbtInd\u003eDBIT\u003c/CdtDbtInd\u003e\u003cSts\u003ePDNG\u003c/Sts\u003e\u003cBookgDt\u003e\u003cDt\u003e2026-10-18\u003c/Dt\u003e\u003c/BookgDt\u003e\u003cValDt\u003e\u003cDt\u003e2026-10-18\u003c/Dt\u003e\u003c/ValDt\u003e\u003cNtryDtls\u003e\u003cTxDtls\u003e\u003cRltdPties\u003e\u003cCdtr\u003e\u003cNm\u003eTankstelle Muster\u003c/Nm\u003e\u003c/Cdtr\u003e\u003c/RltdPties\u003e\u003cRmtInf\u003e\u003cUstrd\u003eKartenzahlung girocard\u003c/Ustrd\u003e\u003c/RmtInf\u003e\u003c/TxDtls\u003e\u003c/NtryDtls\u003e\u003cAddtlNtryInf\u003eKARTENZAHLUNG\u003c/AddtlNtryInf\u003e\u003c/Ntry\u003e"
+        }
+      ]
+    }
+  },
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "sparkassen",
+      "country": "DE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "sparkassen-bg",
+      "generation": 2,
+      "updated_at": "2026-10-18T10:00:00Z",
+      "access_token": "REDACTED:access_token",
+      "refresh_token": "REDACTED:refresh_token",
+      "token_type": "Bearer",
+      "access_expires_at": "2026-10-18T11:00:00Z",
+      "consents": {
+        "ais": {
+          "id": "8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b",
+          "kind": "ais",
+          "status": "valid",
+          "valid_until": "2027-01-16T00:00:00Z",
+          "accounts": [
+            "DE86999999990000001000"
+          ]
+        }
+      },
+      "meta": {
+        "approach": "oauth",
+        "institution": "99999999",
+        "token_url": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/oauth/99999999/token"
+      }
+    }
+  }
+]

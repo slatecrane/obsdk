@@ -30,6 +30,7 @@ type paymentRef struct {
 	Product     string            `json:"p"`
 	ID          string            `json:"id"`
 	Type        obsdk.PaymentType `json:"t"`
+	Institution string            `json:"b,omitempty"`
 }
 
 // ---- request body ----
@@ -167,6 +168,9 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 	if err != nil {
 		return nil, err
 	}
+	if c, err = c.forNew(); err != nil {
+		return nil, err
+	}
 	b, err := c.buildBody(r)
 	if err != nil {
 		return nil, err
@@ -175,7 +179,7 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 	if err != nil {
 		return nil, err
 	}
-	f := &flow{Op: flowPayment, Approach: approach, PSU: r.PSU, Language: r.Language, PayBody: raw,
+	f := &flow{Op: flowPayment, Approach: approach, PSU: r.PSU, Language: r.Language, PayBody: raw, Institution: c.inst,
 		Pay: &payState{Type: r.Type, Product: c.p.Products[r.Type]}}
 	if approach == Redirect {
 		if f.RedirectURL, err = c.redirectURL(r.RedirectURL); err != nil {
@@ -256,15 +260,21 @@ func (c *client) readStatus(ctx context.Context, p *payState, psu *obsdk.PSUCont
 	}
 	var sr struct {
 		TransactionStatus string `json:"transactionStatus"`
+		PSUMessage        string `json:"psuMessage"`
 	}
 	if err := json.Unmarshal(res.body, &sr); err != nil || sr.TransactionStatus == "" {
 		return nil, fmt.Errorf("berlingroup: unreadable payment status (HTTP %d)", res.status)
 	}
-	return c.paymentOf(p, sr.TransactionStatus, res.body)
+	pay, err := c.paymentOf(p, sr.TransactionStatus, res.body)
+	if err == nil && pay.Status == obsdk.PaymentRejected {
+		// Some banks explain a rejection here (Sparkassen: "{No.} - {Text}").
+		pay.Reason = sr.PSUMessage
+	}
+	return pay, err
 }
 
 func (c *client) paymentOf(p *payState, code string, raw []byte) (*obsdk.Payment, error) {
-	ref, err := flowstate.Encode(paymentRef{Integration: c.p.ID, Product: p.Product, ID: p.ID, Type: p.Type})
+	ref, err := flowstate.Encode(paymentRef{Integration: c.p.ID, Product: p.Product, ID: p.ID, Type: p.Type, Institution: c.inst})
 	if err != nil {
 		return nil, err
 	}
@@ -272,18 +282,24 @@ func (c *client) paymentOf(p *payState, code string, raw []byte) (*obsdk.Payment
 	return &obsdk.Payment{ID: p.ID, Type: p.Type, Status: st, BankStatus: code, Final: final, Ref: ref, Raw: raw}, nil
 }
 
-func (c *client) decodeRef(ref string) (*payState, error) {
+// decodeRef reads a payment reference and returns the client for the
+// institution the payment was made at.
+func (c *client) decodeRef(ref string) (*client, *payState, error) {
 	var r paymentRef
 	if err := flowstate.Decode(ref, &r); err != nil || r.Integration != c.p.ID || r.ID == "" || r.Product == "" ||
 		strings.ContainsAny(r.Product, "/?#") {
-		return nil, fmt.Errorf("%w: not a %s payment reference", obsdk.ErrInvalidRequest, c.p.Info.Name)
+		return nil, nil, fmt.Errorf("%w: not a %s payment reference", obsdk.ErrInvalidRequest, c.p.Info.Name)
 	}
-	return &payState{Type: r.Type, Product: r.Product, ID: r.ID}, nil
+	cc, err := c.forInstitution(r.Institution)
+	if err != nil {
+		return nil, nil, err
+	}
+	return cc, &payState{Type: r.Type, Product: r.Product, ID: r.ID}, nil
 }
 
 // PaymentStatus reads a payment's status; no session is needed.
 func (c *client) PaymentStatus(ctx context.Context, ref string, o obsdk.PaymentCallOptions) (*obsdk.Result[obsdk.Payment], error) {
-	p, err := c.decodeRef(ref)
+	c, p, err := c.decodeRef(ref)
 	if err != nil {
 		return nil, err
 	}
@@ -300,7 +316,7 @@ func (c *client) PaymentStatus(ctx context.Context, ref string, o obsdk.PaymentC
 // or asks for the user's approval of the cancellation (202 with steering
 // links), which then runs like a payment approval.
 func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentCallOptions) (*obsdk.Step, error) {
-	p, err := c.decodeRef(ref)
+	c, p, err := c.decodeRef(ref)
 	if err != nil {
 		return nil, err
 	}
@@ -308,7 +324,7 @@ func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentC
 	if err != nil {
 		return nil, err
 	}
-	f := &flow{Op: flowCancel, Approach: approach, Pay: p, StatusPath: c.paymentPath(p) + "/status"}
+	f := &flow{Op: flowCancel, Approach: approach, Pay: p, StatusPath: c.paymentPath(p) + "/status", Institution: c.inst}
 	if o.PSU != nil {
 		f.PSU = *o.PSU
 	}

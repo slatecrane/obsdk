@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/fixs2a-env/xs2a-api/99999999/v1/consents/8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "access": {
+        "accounts": [
+          {
+            "iban": "DE86999999990000001000"
+          }
+        ],
+        "balances": [
+          {
+            "iban": "DE86999999990000001000"
+          }
+        ],
+        "transactions": [
+          {
+            "iban": "DE86999999990000001000"
+          }
+        ]
+      },
+      "recurringIndicator": true,
+      "validUntil": "2027-01-16",
+      "frequencyPerDay": 4,
+      "lastActionDate": "2026-10-18",
+      "consentStatus": "valid"
+    }
+  }
+}

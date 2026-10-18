@@ -1,0 +1,44 @@
+{
+  "description": "Synthetic: built from Finanz Informatik's XS2A documentation package (2026-10-18), not recorded. Replace with a live recording once a test QWAC is available. Accounts, balances, booked transactions and booked plus pending ones (camt.052.001.02, the only transactions format), then a refresh: consent status and a refresh-token grant. Account ids are the sandbox's documented ones.",
+  "config": {
+    "bank": "sparkassen",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T10:00:00Z",
+    "redirect_url": "https://app.example/callback",
+    "extra": {
+      "bank_code": "99999999"
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "balances",
+      "account": "3217d050-f5b5-4318-a799-413bce784ef6",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "3217d050-f5b5-4318-a799-413bce784ef6",
+      "from": "2026-10-01",
+      "to": "2026-10-18",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "3217d050-f5b5-4318-a799-413bce784ef6",
+      "from": "2026-10-18",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "refresh"
+    }
+  ]
+}

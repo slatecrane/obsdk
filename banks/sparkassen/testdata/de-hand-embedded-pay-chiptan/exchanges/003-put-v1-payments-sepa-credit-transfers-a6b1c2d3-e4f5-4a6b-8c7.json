@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/fixs2a-env/xs2a-api/99999999/v1/payments/sepa-credit-transfers/a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d/authorisations/b7c8d9e0-f1a2-4b3c-9d4e-5f6a7b8c9d0e"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "scaStatus": "scaMethodSelected",
+      "chosenScaMethod": {
+        "authenticationType": "CHIP_OTP",
+        "authenticationVersion": "HHD1.3.2OPT",
+        "authenticationMethodId": "OPTICAL",
+        "name": "chipTAN optisch"
+      },
+      "challengeData": {
+        "data": [
+          "0388A01239230520422720012345678904129999999990000009999051234"
+        ],
+        "otpMaxLength": 6,
+        "otpFormat": "integer",
+        "additionalInformation": "Bitte halten Sie Ihren TAN-Generator an die Grafik und bestätigen Sie die Daten."
+      },
+      "_links": {
+        "scaStatus": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/payments/sepa-credit-transfers/a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d/authorisations/b7c8d9e0-f1a2-4b3c-9d4e-5f6a7b8c9d0e"
+        },
+        "authoriseTransaction": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/payments/sepa-credit-transfers/a6b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d/authorisations/b7c8d9e0-f1a2-4b3c-9d4e-5f6a7b8c9d0e"
+        }
+      },
+      "psuMessage": "Bitte geben Sie die TAN von Ihrem TAN-Generator ein."
+    }
+  }
+}

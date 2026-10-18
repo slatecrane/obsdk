@@ -1,0 +1,24 @@
+{
+  "description": "Synthetic: built from Finanz Informatik's XS2A documentation package (2026-10-18), not recorded. Replace with a live recording once a test QWAC is available. Redirect connect, which Finanz Informatik runs as the OAuth SCA approach: a bank-offered consent, the scaOAuth link to the authorisation server metadata, the user at the Sparkasse's online banking (the sandbox picks DE86999999990000001000), the callback with code and state, the code exchanged for tokens (expires_in as a string, as in the handbook), then the consent and its accounts with the bearer token.",
+  "config": {
+    "bank": "sparkassen",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-18T10:00:00Z",
+    "redirect_url": "https://app.example/callback",
+    "extra": {
+      "bank_code": "99999999"
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback?state=state-1&code=XJAy0ajuvQfv5FwqAi9lmP_LjllXDVtwbtUECAuTlIA"
+    }
+  ]
+}

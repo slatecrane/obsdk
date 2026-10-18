@@ -50,7 +50,7 @@ var Profile = berlingroup.Profile{
 			"A structured reference is accepted on creation but makes the authorisation fail with FORMAT_ERROR, so the spec leaves it out.",
 		},
 	},
-	BaseURL:    func(obsdk.Env, obsdk.Target) string { return DefaultBaseURL },
+	BaseURL:    func(obsdk.Env, obsdk.Target, string) string { return DefaultBaseURL },
 	Approaches: []string{berlingroup.Redirect, berlingroup.Embedded, berlingroup.Decoupled},
 	Consent:    berlingroup.ConsentGlobal,
 	Products: map[obsdk.PaymentType]string{

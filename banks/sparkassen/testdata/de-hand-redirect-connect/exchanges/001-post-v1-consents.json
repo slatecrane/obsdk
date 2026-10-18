@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/fixs2a-env/xs2a-api/99999999/v1/consents"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8",
+      "ASPSP-SCA-Approach": "REDIRECT",
+      "Location": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/consents/8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b"
+    },
+    "body": {
+      "consentStatus": "received",
+      "consentId": "8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b",
+      "_links": {
+        "scaOAuth": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/oauth/99999999/.well-known/oauth-authorization-server"
+        },
+        "self": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/consents/8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b"
+        },
+        "status": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/consents/8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b/status"
+        },
+        "scaStatus": {
+          "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/consents/8f4c2a6e-1b3d-4e5f-9a7b-0c1d2e3f4a5b/authorisations/c7e1a9d0-0f6b-4c55-8d37-0e8a3f1b2c4d"
+        }
+      }
+    }
+  }
+}

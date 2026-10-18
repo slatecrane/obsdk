@@ -1,0 +1,180 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the Sparkasse online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Choose how to confirm.",
+      "fields": [
+        {
+          "key": "sca_method",
+          "label": "Authentication method",
+          "kind": "select",
+          "required": true,
+          "options": [
+            {
+              "value": "Classic - Privat",
+              "label": "pushTAN | Privat (******9387)"
+            },
+            {
+              "value": "Privat",
+              "label": "pushTAN 2.0 | Privat (******9387)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Bitte bestätigen Sie die Transaktion mit ihrer PushTAN-APP.",
+      "wait_for": 3000000000
+    }
+  },
+  {
+    "op": "resume",
+    "note": "not yet approved in the S-pushTAN app",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Bitte bestätigen Sie die Transaktion mit ihrer PushTAN-APP.",
+      "wait_for": 3000000000
+    }
+  },
+  {
+    "op": "resume",
+    "note": "approved",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "sparkassen",
+        "country": "DE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "sparkassen-bg",
+        "generation": 1,
+        "updated_at": "2026-10-18T10:00:00Z",
+        "consents": {
+          "ais": {
+            "id": "5d2b8e41-7c3a-4f9e-b1d6-2a4c6e8f0b13",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-01-16T00:00:00Z",
+            "accounts": [
+              "DE86999999990000001000"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "embedded",
+          "institution": "99999999"
+        }
+      },
+      "accounts": [
+        {
+          "id": "3217d050-f5b5-4318-a799-413bce784ef6",
+          "stable_id": "5acf338ae0f8833d3bd14bf2ea381635",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE86999999990000001000"
+            }
+          ],
+          "name": "Girokonto",
+          "owner_name": "Max Mustermann",
+          "currency": "EUR",
+          "product": "Giro Comfort",
+          "type": "CACC",
+          "bic": "TESTDETT421",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "1523.45",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-17"
+            },
+            {
+              "kind": "interim_available",
+              "bank_type": "interimAvailable",
+              "amount": {
+                "amount": "1498.45",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            }
+          ],
+          "raw": {
+            "resourceId": "3217d050-f5b5-4318-a799-413bce784ef6",
+            "iban": "DE86999999990000001000",
+            "currency": "EUR",
+            "ownerName": "Max Mustermann",
+            "name": "Girokonto",
+            "product": "Giro Comfort",
+            "cashAccountType": "CACC",
+            "bic": "TESTDETT421",
+            "balances": [
+              {
+                "balanceAmount": {
+                  "currency": "EUR",
+                  "amount": "1523.45"
+                },
+                "balanceType": "closingBooked",
+                "referenceDate": "2026-10-17"
+              },
+              {
+                "balanceAmount": {
+                  "currency": "EUR",
+                  "amount": "1498.45"
+                },
+                "balanceType": "interimAvailable",
+                "referenceDate": "2026-10-18"
+              }
+            ],
+            "_links": {
+              "balances": {
+                "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/accounts/3217d050-f5b5-4318-a799-413bce784ef6/balances"
+              },
+              "transactions": {
+                "href": "https://xs2a-sandbox.f-i-apim.de:8444/fixs2a-env/xs2a-api/99999999/v1/accounts/3217d050-f5b5-4318-a799-413bce784ef6/transactions"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+]

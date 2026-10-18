@@ -53,6 +53,7 @@ type flow struct {
 	RedirectURL string           `json:"redirect_url"`
 	PSU         obsdk.PSUContext `json:"psu"` // PSU.ID is the PSU-ID header once known
 	Language    string           `json:"language,omitempty"`
+	Institution string           `json:"institution,omitempty"` // Profile.Institution value the resource lives at
 
 	// The bank's steering links (API paths from /v1/ on), its redirect URL,
 	// and where the authorisation stands.
@@ -63,6 +64,14 @@ type flow struct {
 	Methods     []scaMethod       `json:"methods,omitempty"`
 	Challenge   *challengeData    `json:"challenge,omitempty"`
 	PSUMessage  string            `json:"psu_message,omitempty"`
+
+	// OAuth SCA approach: SCARedirect is then the authorisation URL, and the
+	// callback carries a code. Verifier is the PKCE code verifier (secret).
+	OAuth      bool           `json:"oauth,omitempty"`
+	OAuthState string         `json:"oauth_state,omitempty"`
+	Verifier   string         `json:"verifier,omitempty"`
+	TokenURL   string         `json:"token_url,omitempty"`
+	token      *tokenResponse // the exchanged code, only within the Resume that got it
 
 	// Connect.
 	Caps       []obsdk.Capability `json:"caps,omitempty"`
@@ -119,7 +128,7 @@ var (
 	linksOTP     = []string{"startAuthorisationWithTransactionAuthorisation", "authoriseTransaction"}
 	linksStart   = []string{"startAuthorisation"}
 	linksEncrypt = []string{"startAuthorisationWithEncryptedPsuAuthentication", "updateEncryptedPsuAuthentication"}
-	actionLinks  = concat(linksPSUAuth, linksPSUID, linksMethod, linksOTP, linksStart, linksEncrypt, []string{"scaRedirect", "scaOAuth"})
+	actionLinks  = concat(linksPSUAuth, linksPSUID, linksMethod, linksOTP, linksStart, linksEncrypt, linksOAuth, []string{"scaRedirect"})
 )
 
 func concat(ls ...[]string) []string {
@@ -150,19 +159,20 @@ func (f *flow) absorb(r *scaResponse) error {
 		for _, n := range actionLinks {
 			delete(f.Links, n)
 		}
-		f.SCARedirect = ""
+		f.SCARedirect, f.OAuth = "", false
 		for n, l := range r.Links {
 			if l == "" {
 				continue
 			}
-			switch n {
-			case "scaRedirect", "scaOAuth":
+			switch {
+			case n == "scaRedirect" || isOAuthLink(n):
+				// Outside the XS2A API: kept as sent.
 				if n == "scaRedirect" {
 					f.SCARedirect = string(l)
 				}
 				f.Links[n] = string(l)
 				continue
-			case "self", "account", "download", "confirmation":
+			case n == "self" || n == "account" || n == "download" || n == "confirmation":
 				continue
 			}
 			p, err := apiPath(string(l))
@@ -223,6 +233,10 @@ func (c *client) Resume(ctx context.Context, state string, in obsdk.StepInput) (
 	if f.V != flowVersion {
 		return nil, fmt.Errorf("%w: unsupported flow state version %d", obsdk.ErrInvalidRequest, f.V)
 	}
+	c, err := c.forInstitution(f.Institution)
+	if err != nil {
+		return nil, err
+	}
 	st, err := c.resume(ctx, &f, in)
 	return st, c.wrapFlowErr(&f, err)
 }
@@ -254,6 +268,9 @@ func (c *client) resume(ctx context.Context, f *flow, in obsdk.StepInput) (*obsd
 	case needRedirect:
 		if in.Callback == "" {
 			return c.pause(f, c.redirectStep(f))
+		}
+		if f.OAuth {
+			return c.afterOAuth(ctx, f, in.Callback)
 		}
 		if p, err := callback.Parse(in.Callback); err == nil {
 			if code, desc, failed := p.Error(); failed {
@@ -307,13 +324,18 @@ func (c *client) advance(ctx context.Context, f *flow, in obsdk.StepInput) (*obs
 		case "failed":
 			return nil, authFailed("%s was not approved (scaStatus failed)", f.subject())
 		}
+		if _, l := f.link(linksOAuth...); l != "" && f.SCARedirect == "" {
+			if f.RedirectURL == "" {
+				return nil, fmt.Errorf("%w: %s asked for an OAuth approval, which needs a redirect URL; use the redirect method", obsdk.ErrUnsupported, c.p.Info.Name)
+			}
+			if err := c.startOAuth(ctx, f, l); err != nil {
+				return nil, err
+			}
+		}
 		if f.SCARedirect != "" {
 			// Whatever was preferred, a redirect link means the bank chose it.
 			f.Need = needRedirect
 			return c.pause(f, c.redirectStep(f))
-		}
-		if n, _ := f.link("scaOAuth"); n != "" {
-			return nil, fmt.Errorf("%w: %s asked for the OAuth SCA approach, which this integration does not support yet", obsdk.ErrUnsupported, c.p.Info.Name)
 		}
 		if n, _ := f.link(linksEncrypt...); n != "" {
 			return nil, fmt.Errorf("%w: %s asked for encrypted PSU authentication, which is not supported", obsdk.ErrUnsupported, c.p.Info.Name)
@@ -505,7 +527,9 @@ func (c *client) otpStep(f *flow) *obsdk.Step {
 				fl.Pattern = fmt.Sprintf(`^[0-9]{1,%d}$`, ch.OTPMaxLength)
 			}
 		}
-		st.Challenge = &obsdk.Challenge{Text: firstNonEmpty(ch.AdditionalInfo, strings.Join(ch.Data, "\n")), ImageURL: ch.ImageLink}
+		// data carries what a TAN generator reads: the chipTAN flicker code
+		// or HHD start code.
+		st.Challenge = &obsdk.Challenge{Text: ch.AdditionalInfo, Code: strings.Join(ch.Data, "\n"), ImageURL: ch.ImageLink}
 		if ch.ImageLink == "" && ch.Image != "" {
 			st.Challenge.ImageURL = "data:image/png;base64," + ch.Image
 		}
