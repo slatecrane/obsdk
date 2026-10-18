@@ -1,0 +1,45 @@
+{
+  "description": "Synthetic: built from KBC's AIS/PIS specifications and sandbox Postman collection, not recorded. Replace with a live recording once the sandbox QWAC is available. SEPA payment: creation (RCVD, scaRedirect), the user signs on KBC's page (ACSP), status read later (ACSC).",
+  "config": {
+    "bank": "kbc",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-17T12:00:00Z",
+    "redirect_url": "https://example.com/cb"
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "psu_ip": "203.0.113.7",
+      "payment": {
+        "type": "sepa",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.50",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "Jan Peeters",
+              "account": {
+                "scheme": "IBAN",
+                "value": "BE63380242772874"
+              }
+            },
+            "remittance": [
+              "Invoice 42"
+            ],
+            "end_to_end_id": "E2E-42"
+          }
+        ]
+      }
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/cb"
+    },
+    {
+      "op": "payment_status"
+    }
+  ]
+}

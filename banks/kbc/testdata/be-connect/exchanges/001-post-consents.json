@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/v2/consents",
+    "body": {
+      "access": {
+        "balances": [],
+        "transactions": []
+      },
+      "recurringIndicator": true,
+      "validUntil": "2027-01-15",
+      "frequencyPerDay": 4,
+      "combinedServiceIndicator": false
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentStatus": "received",
+      "consentId": "lUGicdMakm",
+      "_links": {}
+    }
+  }
+}

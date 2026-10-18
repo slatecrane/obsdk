@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/ASK/oauth/token/1",
+    "body_text": "client_id=REDACTED%3Aclient_id&grant_type=refresh_token&refresh_token=REDACTED%3Arefresh_token"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:2",
+      "expires_in": 1800,
+      "token_type": "bearer",
+      "refresh_token": "REDACTED:refresh_token:2",
+      "scope": "AIS"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to KBC to sign the payment, then call Resume when they come back.",
+      "redirect": {
+        "url": "https://be.psd2.sandbox.kbc-group.com/ASK/psd2/sca?paymentId=nqItDdrASV"
+      },
+      "payment": {
+        "id": "nqItDdrASV",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoia2JjLXBzZDIta2JjIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoibnFJdERkckFTViIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "nqItDdrASV",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoia2JjLXBzZDIta2JjIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoibnFJdERkckFTViIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "nqItDdrASV",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "ACSC",
+      "final": true,
+      "ref": "obs1.eyJpIjoia2JjLXBzZDIta2JjIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoibnFJdERkckFTViIsInQiOiJzZXBhIn0"
+    }
+  }
+]

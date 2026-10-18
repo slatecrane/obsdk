@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/payments/sepa-credit-transfers/nqItDdrASV/status"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactionStatus": "ACSP"
+    }
+  }
+}
