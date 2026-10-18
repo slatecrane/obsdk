@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:0ae382",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "5d82ae7d-fcda-48e1-900e-0d42e484ea9c"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Code": "400 Bad Request",
+      "Errors": [
+        {
+          "ErrorCode": "UK.OBIE.Resource.InvalidConsentStatus",
+          "Message": "The consent 79b0fb6e-08c3-4a27-b668-4b73cff7b06c is not authorized"
+        }
+      ],
+      "Id": "5d82ae7d-fcda-48e1-900e-0d42e484ea9c",
+      "Message": "The consent 79b0fb6e-08c3-4a27-b668-4b73cff7b06c is not authorized"
+    }
+  }
+}

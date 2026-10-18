@@ -1,0 +1,132 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://morrowbank-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=7bb61093-cf63-4a7d-b034-f4f03d978d02&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL21vcnJvd2JhbmstYXBpLXNhbmRib3guY3Jvc3NrZXkuaW8iLCJjbGFpbXMiOnsiaWRfdG9rZW4iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOm1vcnJvd2Jhbms6YWNjb3VudDozNTIzMmJlNC0zMTVjLTRjYTktYjdkNS01ZTg2MmY0M2M4N2IiLCJlc3NlbnRpYWwiOnRydWV9fSwidXNlcmluZm8iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOm1vcnJvd2Jhbms6YWNjb3VudDozNTIzMmJlNC0zMTVjLTRjYTktYjdkNS01ZTg2MmY0M2M4N2IiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNTIwMCwiaWF0IjoxNzkyMzIzNDAwLCJpc3MiOiIiLCJqdGkiOiJkMTRhMWExNC1iMTYxLTQ4M2ItODllOC04MDE3ZDY1YTRjOWUiLCJuYmYiOjE3OTIzMjM0MDAsIm5vbmNlIjoiN2JiNjEwOTMtY2Y2My00YTdkLWIwMzQtZjRmMDNkOTc4ZDAyIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgYWNjb3VudHMiLCJzdGF0ZSI6IjMzNjgyZTkwLWQxOGItNGZiNS1hMzA0LTRiZjRkZDY5ODg3YyJ9.dGVzdC1zaWduYXR1cmU6pezREDPOuwo&response_type=code+id_token&scope=openid+accounts&state=33682e90-d18b-4fb5-a304-4bf4dd69887c"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "morrowbank",
+        "country": "NO",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "crosskey-morrowbank",
+        "generation": 1,
+        "updated_at": "2026-10-18T11:36:40Z",
+        "access_token": "REDACTED:access_token:52a618",
+        "refresh_token": "REDACTED:refresh_token:4c2525",
+        "token_type": "Bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-18T11:39:40Z",
+        "consents": {
+          "accounts": {
+            "id": "35232be4-315c-4ca9-b7d5-5e862f43c87b",
+            "kind": "accounts",
+            "status": "Authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "73de039a-9959-11ee-826a-f79912592e65",
+          "stable_id": "99a09f500227da24e13a176f30887264",
+          "identifiers": [
+            {
+              "scheme": "BBAN",
+              "value": "identification-4739c2"
+            }
+          ],
+          "owner_name": "name-d3e793",
+          "currency": "NOK",
+          "product": "description-a39976",
+          "type": "SVGS",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-4739c2",
+                "Name": "name-d3e793",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+            "AccountSubType": "Savings",
+            "AccountType": "Personal",
+            "Currency": "NOK",
+            "Description": "description-a39976"
+          }
+        },
+        {
+          "id": "73e09d94-9959-11ee-826a-5318083a1fef",
+          "stable_id": "981224110a4373f0e9cb7b024d7dd8cb",
+          "identifiers": [
+            {
+              "scheme": "BBAN",
+              "value": "identification-16af92"
+            }
+          ],
+          "owner_name": "name-d3e793",
+          "currency": "NOK",
+          "product": "description-0157c0",
+          "type": "LOAN",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-16af92",
+                "Name": "name-d3e793",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "73e09d94-9959-11ee-826a-5318083a1fef",
+            "AccountSubType": "Loan",
+            "AccountType": "Personal",
+            "Currency": "NOK",
+            "Description": "description-0157c0"
+          }
+        },
+        {
+          "id": "73e19014-9959-11ee-826a-3b61c615e95e",
+          "stable_id": "88af557bd558eaef7be6826b55266a3b",
+          "identifiers": [
+            {
+              "scheme": "BBAN",
+              "value": "identification-c76e50"
+            }
+          ],
+          "owner_name": "name-d3e793",
+          "currency": "NOK",
+          "product": "description-07c0e0",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-c76e50",
+                "Name": "name-d3e793",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "NOK",
+            "Description": "description-07c0e0"
+          }
+        }
+      ]
+    }
+  }
+]

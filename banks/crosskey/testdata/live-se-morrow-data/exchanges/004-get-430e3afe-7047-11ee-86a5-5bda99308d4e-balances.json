@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/430e3afe-7047-11ee-86a5-5bda99308d4e/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a80ace",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "596a7973-942b-4e5c-b4bd-89e24e00353e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "2363.82",
+              "Currency": "SEK"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:40:37.298450105Z",
+            "Type": "InterimBooked"
+          },
+          {
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "Amount": {
+              "Amount": "2363.82",
+              "Currency": "SEK"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:40:37.298448695Z",
+            "Type": "InterimAvailable"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/430e3afe-7047-11ee-86a5-5bda99308d4e/balances"
+      },
+      "Meta": {}
+    }
+  }
+}

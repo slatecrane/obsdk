@@ -1,0 +1,57 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a2def6",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Financial-Id": "resursbank/no",
+      "X-Fapi-Interaction-Id": "732ef816-db5b-427e-a0f6-eab0799ce8e2"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-143b48",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "d76f4040-df78-11ed-a430-171df4523be5",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "NOK",
+            "Description": "description-3fffe2"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-87d4c2",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "d771e8e0-df78-11ed-a430-fbc9f81a242c",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "NOK",
+            "Description": "description-3fffe2"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://resursbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts"
+      },
+      "Meta": {}
+    }
+  }
+}

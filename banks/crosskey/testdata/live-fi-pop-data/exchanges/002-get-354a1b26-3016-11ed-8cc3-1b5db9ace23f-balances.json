@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/354a1b26-3016-11ed-8cc3-1b5db9ace23f/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:9ff9dd",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "8444c33a-86b9-4227-8662-71232aee76f5"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "Amount": {
+              "Amount": "101963.00",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:29:38.764507367Z",
+            "Type": "InterimBooked"
+          },
+          {
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "Amount": {
+              "Amount": "101963.00",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:29:38.764506277Z",
+            "Type": "InterimAvailable"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://pop-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/354a1b26-3016-11ed-8cc3-1b5db9ace23f/balances"
+      },
+      "Meta": {}
+    }
+  }
+}

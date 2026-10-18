@@ -1,0 +1,76 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.7/pisp/international-payment-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:e67ae7",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "4ac33798-68b4-44a0-b151-1d707fbd8419",
+      "X-Idempotency-Key": "72dd806080e848d8856d7853b284afe6",
+      "X-Jws-Signature": "REDACTED:x-jws-signature:5977ca"
+    },
+    "body": {
+      "Data": {
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-525f4c",
+            "Name": "name-dec1f3",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "CurrencyOfTransfer": "EUR",
+          "EndToEndIdentification": "0670d2de36ac4fe7bc938b78de6babfe",
+          "InstructedAmount": {
+            "Amount": "1.10",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "cb921aaa9aaf4f0db18d5db21508df9f",
+          "LocalInstrument": "UK.OBIE.SEPACreditTransfer",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-57f37b"
+          }
+        }
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "663f43f3-825a-41d7-a1f3-2a141222d0c3",
+        "CreationDateTime": "2026-10-18T11:31:45.298282059Z",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-525f4c",
+            "Name": "name-dec1f3",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "CurrencyOfTransfer": "EUR",
+          "EndToEndIdentification": "0670d2de36ac4fe7bc938b78de6babfe",
+          "InstructedAmount": {
+            "Amount": "1.10",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "cb921aaa9aaf4f0db18d5db21508df9f",
+          "LocalInstrument": "UK.OBIE.SEPACreditTransfer",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-57f37b"
+          }
+        },
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-18T11:31:45.298282059Z"
+      },
+      "Links": {
+        "Self": "https://alandsbanken-fi-api-sandbox.crosskey.io/open-banking/v3.1.7/pisp/international-payment-consents/663f43f3-825a-41d7-a1f3-2a141222d0c3"
+      },
+      "Risk": {}
+    }
+  }
+}

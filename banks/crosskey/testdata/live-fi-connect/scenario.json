@@ -1,0 +1,34 @@
+{
+  "config": {
+    "bank": "spankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-18T10:33:47Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "47fb60f2-dd3a-48d2-8d23-6a440cbd867d",
+        "dc1e6010-9c27-4c0f-a86a-c44804ccb258",
+        "aebca08a-9356-4b93-b90b-c02b0d92e010"
+      ],
+      "state": [
+        "ada7e382-9d8f-433a-8b2a-052c56dc0f52",
+        "88bed468-aa03-4dca-a452-06e3bb59249e"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A5d09fd\u0026id_token=REDACTED%3Aid_token%3A3cd1bd\u0026state=ada7e382-9d8f-433a-8b2a-052c56dc0f52"
+    }
+  ]
+}

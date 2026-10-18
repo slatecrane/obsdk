@@ -1,0 +1,103 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://resursbank-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=7010d68f-2219-44f3-ab5d-5ffb480ac46f&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL3Jlc3Vyc2JhbmstYXBpLXNhbmRib3guY3Jvc3NrZXkuaW8iLCJjbGFpbXMiOnsiaWRfdG9rZW4iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOnJlc3Vyc2Jhbms6YWNjb3VudDozZjY4M2U0YS0wMTIxLTQyOWEtYTU2OS0yOTkzOWI4ZTkzOTMiLCJlc3NlbnRpYWwiOnRydWV9fSwidXNlcmluZm8iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOnJlc3Vyc2Jhbms6YWNjb3VudDozZjY4M2U0YS0wMTIxLTQyOWEtYTU2OS0yOTkzOWI4ZTkzOTMiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjM0NTgyNywiaWF0IjoxNzkyMzQ0MDI3LCJpc3MiOiIiLCJqdGkiOiIxYTg2YWU4YS00YTYwLTRjZWUtODgxOC0yYzFlZTA5ZjI4M2EiLCJuYmYiOjE3OTIzNDQwMjcsIm5vbmNlIjoiNzAxMGQ2OGYtMjIxOS00NGYzLWFiNWQtNWZmYjQ4MGFjNDZmIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgYWNjb3VudHMiLCJzdGF0ZSI6ImIzNDVjZmJlLTZjNGMtNDQ0Zi04NGM5LTdlOGUxZTdlNzQwOCJ9.dGVzdC1zaWduYXR1cmU6f32UXGuDT9k&response_type=code+id_token&scope=openid+accounts&state=b345cfbe-6c4c-444f-84c9-7e8e1e7e7408"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "resursbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "crosskey-resursbank",
+        "generation": 1,
+        "updated_at": "2026-10-18T17:20:27Z",
+        "access_token": "REDACTED:access_token:7cd3ca",
+        "refresh_token": "REDACTED:refresh_token:1168d5",
+        "token_type": "Bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-18T17:23:27Z",
+        "consents": {
+          "accounts": {
+            "id": "3f683e4a-0121-429a-a569-29939b8e9393",
+            "kind": "accounts",
+            "status": "Authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "cf6f1c12-f3aa-11ed-821d-1b7672115659",
+          "stable_id": "f611283b19d03127dbec140fe1b11ae3",
+          "identifiers": [
+            {
+              "scheme": "PAN",
+              "value": "identification-dab94b"
+            }
+          ],
+          "owner_name": "name-722234",
+          "currency": "SEK",
+          "product": "description-b5b65d",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-dab94b",
+                "Name": "name-722234",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountId": "cf6f1c12-f3aa-11ed-821d-1b7672115659",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "SEK",
+            "Description": "description-b5b65d"
+          }
+        },
+        {
+          "id": "cf6ffd1c-f3aa-11ed-821d-33915f99256b",
+          "stable_id": "8de69bdc5e2ac7ca463116b7a57fbcdd",
+          "identifiers": [
+            {
+              "scheme": "PAN",
+              "value": "identification-dab5ce"
+            }
+          ],
+          "owner_name": "name-722234",
+          "currency": "SEK",
+          "product": "description-b5b65d",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-dab5ce",
+                "Name": "name-722234",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountId": "cf6ffd1c-f3aa-11ed-821d-33915f99256b",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "SEK",
+            "Description": "description-b5b65d"
+          }
+        }
+      ]
+    }
+  }
+]

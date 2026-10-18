@@ -1,0 +1,498 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/b49414aa-4581-11e9-9d38-1b1e33545169/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:31:37"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:380f6e",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "cb8ac065-e6e9-40cc-a94a-23ced57ff2a5"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-16T00:00:00Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "13.53",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-16T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "83f12c62-340d-4120-85eb-12b9fa896fd5",
+            "ValueDateTime": "2026-10-16T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-14T00:00:00Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "13.30",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-14T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "019dd815-9571-4368-85c3-f199728bd1b1",
+            "ValueDateTime": "2026-10-14T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-13T00:00:00Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "29.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-13T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "440bf2bd-7d57-41a4-b9b6-c3c51bc019ba",
+            "ValueDateTime": "2026-10-13T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-06T00:00:00Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "10.34",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-06T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "8daf30f6-cc2a-49af-9b4a-310c5f236e80",
+            "ValueDateTime": "2026-10-06T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "1b48030b-5555-45f3-bc35-6ee4015dec1d",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "29.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "7956ba17-2a19-4bd7-ab84-a2ff966aa5a8",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:03.864138Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "11.22",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-28T22:15:03.864138Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "e83f3039-1b7b-42ad-90bb-5b522793563f",
+            "ValueDateTime": "2026-09-28T22:15:03.864138Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:02.769519Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "14.23",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-28T22:15:02.769519Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "0d79c9c2-6d88-4ef0-b234-ff58ac5495cf",
+            "ValueDateTime": "2026-09-28T22:15:02.769519Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-28T22:15:01.70275Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "29.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-28T22:15:01.70275Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "750f9c07-5e80-4c6c-b511-55f31fbf1b6f",
+            "ValueDateTime": "2026-09-28T22:15:01.70275Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-23T22:15:02.27945Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "10.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-23T22:15:02.27945Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "f6ea07de-2570-4c55-8ed7-16171201f02b",
+            "ValueDateTime": "2026-09-23T22:15:02.27945Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-23T22:15:01.120138Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "29.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-23T22:15:01.120138Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "784f988c-b261-457d-9488-64a1b6141517",
+            "ValueDateTime": "2026-09-23T22:15:01.120138Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-21T22:15:03.351067Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "7.47",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-21T22:15:03.351067Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "8c93c555-168b-4f9e-b294-7d7e97ea1f5f",
+            "ValueDateTime": "2026-09-21T22:15:03.351067Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-14T22:15:03.784283Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "15.70",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-14T22:15:03.784283Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "f25d7917-ae96-40ce-a12f-4bd16e64d3e2",
+            "ValueDateTime": "2026-09-14T22:15:03.784283Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-14T22:15:02.9354Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "9.64",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-14T22:15:02.9354Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "64726815-68a3-453a-b502-893a6d68b60a",
+            "ValueDateTime": "2026-09-14T22:15:02.9354Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-14T22:15:01.397013Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "29.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-14T22:15:01.397013Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "b0ac7287-ca54-4459-a990-f70989f927ad",
+            "ValueDateTime": "2026-09-14T22:15:01.397013Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-08T22:15:03.204162Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "14.46",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-08T22:15:03.204162Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "59dee39b-6866-4100-8897-8aab56966df9",
+            "ValueDateTime": "2026-09-08T22:15:03.204162Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-08T22:15:02.797808Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "6.99",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-08T22:15:02.797808Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "1a220717-6ab1-4720-b106-3f724daffbe9",
+            "ValueDateTime": "2026-09-08T22:15:02.797808Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-07T22:15:01.193127Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "29.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-07T22:15:01.193127Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "f943c283-e1b6-47ee-82b5-282c46d783ad",
+            "ValueDateTime": "2026-09-07T22:15:01.193127Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-04T22:15:01.763134Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "14.72",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-04T22:15:01.763134Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-ef8e7a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "4aa90634-a5ae-4d97-a6ca-5d1dd707a65c",
+            "ValueDateTime": "2026-09-04T22:15:01.763134Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-01T22:15:01.205679Z",
+            "AccountId": "b49414aa-4581-11e9-9d38-1b1e33545169",
+            "Amount": {
+              "Amount": "29.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-09-01T22:15:01.205679Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PRI"
+            },
+            "Status": "Booked",
+            "TransactionId": "e76acf78-1719-4a5d-a0fa-b3a1f06f217a",
+            "ValueDateTime": "2026-09-01T22:15:01.205679Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://alandsbanken-fi-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/b49414aa-4581-11e9-9d38-1b1e33545169/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:31:37Z"
+      },
+      "Meta": {}
+    }
+  }
+}

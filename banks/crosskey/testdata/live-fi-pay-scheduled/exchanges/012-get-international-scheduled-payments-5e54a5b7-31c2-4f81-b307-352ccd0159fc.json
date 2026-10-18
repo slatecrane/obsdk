@@ -1,0 +1,55 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.7/pisp/international-scheduled-payments/5e54a5b7-31c2-4f81-b307-352ccd0159fc",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:724c11",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "3c0428d4-2be9-4e90-819e-e1dac889b87a"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "183eff1d-0063-44c6-ad12-1b38dddb34f7",
+        "CreationDateTime": "2026-10-18T11:27:40.43287719Z",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-2ba473",
+            "Name": "name-8b7502",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "CurrencyOfTransfer": "EUR",
+          "DebtorAccount": {
+            "Identification": "identification-de26b0",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "7bb55b72a36f44d6bd63d072c4b1e7ca",
+          "InstructedAmount": {
+            "Amount": "2.00",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "b9676617a9f04ecc8bddec64f38586fa",
+          "LocalInstrument": "UK.OBIE.SEPACreditTransfer",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-1cb5c4"
+          },
+          "RequestedExecutionDateTime": "2026-10-30T12:00:00Z"
+        },
+        "InternationalScheduledPaymentId": "5e54a5b7-31c2-4f81-b307-352ccd0159fc",
+        "Status": "InitiationCompleted",
+        "StatusUpdateDateTime": "2026-10-18T11:27:40.586393691Z"
+      },
+      "Links": {
+        "Self": "https://s-pankki-api-sandbox.crosskey.io/open-banking/v3.1.7/pisp/international-scheduled-payments/5e54a5b7-31c2-4f81-b307-352ccd0159fc"
+      }
+    }
+  }
+}

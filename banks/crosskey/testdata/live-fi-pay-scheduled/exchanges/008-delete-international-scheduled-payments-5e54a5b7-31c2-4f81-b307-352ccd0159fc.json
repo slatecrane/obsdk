@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/open-banking/v3.1.7/pisp/international-scheduled-payments/5e54a5b7-31c2-4f81-b307-352ccd0159fc",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:e625e8",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "0963c162-027c-401b-b3f6-e9e000639eee"
+    }
+  },
+  "response": {
+    "status": 204,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

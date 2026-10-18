@@ -1,0 +1,84 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/3b3630d8-5513-11e9-9d38-93b4c87cbbc5/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:33:31"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:f1b529",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "4c74c839-675c-462e-aeff-2174905df561"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "3b3630d8-5513-11e9-9d38-93b4c87cbbc5",
+            "Amount": {
+              "Amount": "80.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50f129"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "EPB"
+            },
+            "Status": "Booked",
+            "TransactionId": "5ae12330-f577-49ac-b06d-ca5781433dbb",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "3b3630d8-5513-11e9-9d38-93b4c87cbbc5",
+            "Amount": {
+              "Amount": "11.00",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-f58cd2"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "EPB"
+            },
+            "Status": "Booked",
+            "TransactionId": "f3ca8eeb-4031-413d-afcf-b484c35debda",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://alandsbanken-se-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/3b3630d8-5513-11e9-9d38-93b4c87cbbc5/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:33:31Z"
+      },
+      "Meta": {}
+    }
+  }
+}

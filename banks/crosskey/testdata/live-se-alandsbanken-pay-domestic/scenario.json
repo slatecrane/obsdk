@@ -1,0 +1,67 @@
+{
+  "config": {
+    "bank": "alandsbanken",
+    "country": "SE",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:33:51Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "cd68cb4b-40a5-4fd3-ba96-4362c8ea60cf",
+        "7b5373c1-9b68-4da6-af00-55ef83a0a94b",
+        "2333bb32-c12a-488e-a371-90d9d81672fd",
+        "f46c7225-9664-4cdb-9a3e-439dc4743961",
+        "90ec06c3-49a5-4566-86d5-a917d691c785",
+        "3d3d5c45-773c-4ea4-ae11-f706f9b30da9",
+        "f441d1b9-6c0a-4364-9620-ba576a8aed85",
+        "04a1c60a-8ecd-4d09-8d40-909f60a96451"
+      ],
+      "state": [
+        "07c02c25-c7f6-46a8-9894-734130ae8ad6",
+        "8720ecf9-a929-4db6-a933-a9287d42dde6"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "domestic",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "SEK"
+            },
+            "creditor": {
+              "name": "name-66157b",
+              "account": {
+                "scheme": "BBAN",
+                "value": "295782825761642"
+              }
+            },
+            "remittance": [
+              "obsdk test"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3Ae0f04b\u0026id_token=REDACTED%3Aid_token%3A1c5fa4\u0026state=07c02c25-c7f6-46a8-9894-734130ae8ad6"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWxhbmRzYmFua2VuLXNlIiwiZiI6ImRvbWVzdGljIiwiaWQiOiIwMzM0MGI4NC02ZmM5LTQ1ZjItODU2Yy00ZWZlNjUzZDc2MmUiLCJ0IjoiZG9tZXN0aWMifQ",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

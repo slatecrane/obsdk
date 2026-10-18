@@ -1,0 +1,132 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://aktia-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=943f9c21-a54f-41c4-a531-5cd185a3def0&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2FrdGlhLWFwaS1zYW5kYm94LmNyb3Nza2V5LmlvIiwiY2xhaW1zIjp7ImlkX3Rva2VuIjp7Im9wZW5iYW5raW5nX2ludGVudF9pZCI6eyJ2YWx1ZSI6InVybjpha3RpYTphY2NvdW50OmU3N2RmYzdhLTZkYWItNGU3ZS1hNTU0LWFjOWU1MjcxNGQ3YyIsImVzc2VudGlhbCI6dHJ1ZX19LCJ1c2VyaW5mbyI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJ1cm46YWt0aWE6YWNjb3VudDplNzdkZmM3YS02ZGFiLTRlN2UtYTU1NC1hYzllNTI3MTRkN2MiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyMjc4NSwiaWF0IjoxNzkyMzIwOTg1LCJpc3MiOiIiLCJqdGkiOiIyZGMyMzg0Ni1jZTI5LTRjOWUtYTJhNi0zNWU1NjVlZDU3NjEiLCJuYmYiOjE3OTIzMjA5ODUsIm5vbmNlIjoiOTQzZjljMjEtYTU0Zi00MWM0LWE1MzEtNWNkMTg1YTNkZWYwIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgYWNjb3VudHMiLCJzdGF0ZSI6IjM1YTNiZmEzLWNmYzQtNGRiYS1iNGQwLWE0ZmE4ZmM4OGM4NiJ9.dGVzdC1zaWduYXR1cmU6xlFGGFyKp5U&response_type=code+id_token&scope=openid+accounts&state=35a3bfa3-cfc4-4dba-b4d0-a4fa8fc88c86"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "aktia",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "crosskey-aktia",
+        "generation": 1,
+        "updated_at": "2026-10-18T10:56:25Z",
+        "access_token": "REDACTED:access_token:7823c0",
+        "refresh_token": "REDACTED:refresh_token:eda0f4",
+        "token_type": "Bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-18T10:59:25Z",
+        "consents": {
+          "accounts": {
+            "id": "e77dfc7a-6dab-4e7e-a554-ac9e52714d7c",
+            "kind": "accounts",
+            "status": "Authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+          "stable_id": "eef5f76f5a766b4de7cfd2ff154957af",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "identification-525f4c"
+            }
+          ],
+          "owner_name": "name-a89946",
+          "currency": "EUR",
+          "product": "description-de56a2",
+          "type": "CACC",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-525f4c",
+                "Name": "name-a89946",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "1efbf942-58b4-11f0-9f3d-8b14d24fe6b8",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-de56a2"
+          }
+        },
+        {
+          "id": "1efc7638-58b4-11f0-9f3d-3b92bf1020d0",
+          "stable_id": "491f502966626a545793deb9817ed0e2",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "identification-811184"
+            }
+          ],
+          "owner_name": "name-a89946",
+          "currency": "EUR",
+          "product": "description-cd99ed",
+          "type": "SVGS",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-811184",
+                "Name": "name-a89946",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "1efc7638-58b4-11f0-9f3d-3b92bf1020d0",
+            "AccountSubType": "Savings",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-cd99ed"
+          }
+        },
+        {
+          "id": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+          "stable_id": "33de3e0c64ee76596a2719f9c52617c0",
+          "identifiers": [
+            {
+              "scheme": "BBAN",
+              "value": "identification-1153c5"
+            }
+          ],
+          "owner_name": "name-a89946",
+          "currency": "EUR",
+          "product": "description-8862b1",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-1153c5",
+                "Name": "name-a89946",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "1efce6a4-58b4-11f0-9f3d-5fb180922b28",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-8862b1"
+          }
+        }
+      ]
+    }
+  }
+]

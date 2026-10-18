@@ -1,0 +1,57 @@
+{
+  "config": {
+    "bank": "poppankki",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:29:38Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "9a5599d1-00e6-4c33-838d-63a8caf19fb6",
+        "8444c33a-86b9-4227-8662-71232aee76f5",
+        "2a210c10-7d5a-4400-9a28-a44e4db23274",
+        "95fbd950-1084-43ea-9a32-57b3ecb1c3df",
+        "65ce9834-e6f3-4b9f-b990-e9dc4da2d982"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+      "from": "2026-10-01T00:00:00Z",
+      "to": "2026-10-18T11:29:38Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+      "from": "2026-10-01T00:00:00Z",
+      "to": "2026-10-18T11:29:39Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

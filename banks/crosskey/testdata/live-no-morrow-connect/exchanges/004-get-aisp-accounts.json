@@ -1,0 +1,72 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:8700fb",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "cb6cfb08-fb5e-4713-a209-120f1d0334a8"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-4739c2",
+                "Name": "name-d3e793",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+            "AccountSubType": "Savings",
+            "AccountType": "Personal",
+            "Currency": "NOK",
+            "Description": "description-a39976"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-16af92",
+                "Name": "name-d3e793",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "73e09d94-9959-11ee-826a-5318083a1fef",
+            "AccountSubType": "Loan",
+            "AccountType": "Personal",
+            "Currency": "NOK",
+            "Description": "description-0157c0"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-c76e50",
+                "Name": "name-d3e793",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "NOK",
+            "Description": "description-07c0e0"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts"
+      },
+      "Meta": {}
+    }
+  }
+}

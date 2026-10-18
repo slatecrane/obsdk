@@ -1,0 +1,694 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "73de039a-9959-11ee-826a-f79912592e65",
+        "stable_id": "99a09f500227da24e13a176f30887264",
+        "identifiers": [
+          {
+            "scheme": "BBAN",
+            "value": "identification-4739c2"
+          }
+        ],
+        "owner_name": "name-d3e793",
+        "currency": "NOK",
+        "product": "description-a39976",
+        "type": "SVGS",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-4739c2",
+              "Name": "name-d3e793",
+              "SchemeName": "UK.OBIE.BBAN"
+            }
+          ],
+          "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+          "AccountSubType": "Savings",
+          "AccountType": "Personal",
+          "Currency": "NOK",
+          "Description": "description-a39976"
+        }
+      },
+      {
+        "id": "73e09d94-9959-11ee-826a-5318083a1fef",
+        "stable_id": "981224110a4373f0e9cb7b024d7dd8cb",
+        "identifiers": [
+          {
+            "scheme": "BBAN",
+            "value": "identification-16af92"
+          }
+        ],
+        "owner_name": "name-d3e793",
+        "currency": "NOK",
+        "product": "description-0157c0",
+        "type": "LOAN",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-16af92",
+              "Name": "name-d3e793",
+              "SchemeName": "UK.OBIE.BBAN"
+            }
+          ],
+          "AccountId": "73e09d94-9959-11ee-826a-5318083a1fef",
+          "AccountSubType": "Loan",
+          "AccountType": "Personal",
+          "Currency": "NOK",
+          "Description": "description-0157c0"
+        }
+      },
+      {
+        "id": "73e19014-9959-11ee-826a-3b61c615e95e",
+        "stable_id": "88af557bd558eaef7be6826b55266a3b",
+        "identifiers": [
+          {
+            "scheme": "BBAN",
+            "value": "identification-c76e50"
+          }
+        ],
+        "owner_name": "name-d3e793",
+        "currency": "NOK",
+        "product": "description-07c0e0",
+        "type": "CARD",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-c76e50",
+              "Name": "name-d3e793",
+              "SchemeName": "UK.OBIE.BBAN"
+            }
+          ],
+          "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+          "AccountSubType": "CreditCard",
+          "AccountType": "Personal",
+          "Currency": "NOK",
+          "Description": "description-07c0e0"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "InterimBooked",
+        "amount": {
+          "amount": "3605.42",
+          "currency": "NOK"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "3605.42",
+          "currency": "NOK"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "d2b9b41a-939f-42e4-ad99-e0b031787bae",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "20.10",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-10-13",
+          "value_date": "2026-10-13",
+          "counterparty": {
+            "name": "name-41f274"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-13T00:00:00Z",
+            "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+            "Amount": {
+              "Amount": "20.10",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-13T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-41f274"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "d2b9b41a-939f-42e4-ad99-e0b031787bae",
+            "ValueDateTime": "2026-10-13T00:00:00Z"
+          }
+        },
+        {
+          "id": "703444c7-8e59-40c7-9060-b2a610327456",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "46.49",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "counterparty": {
+            "name": "name-41f274"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+            "Amount": {
+              "Amount": "46.49",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-41f274"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "703444c7-8e59-40c7-9060-b2a610327456",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          }
+        },
+        {
+          "id": "875b9799-da53-4d61-b83a-11ed0f6665ab",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "100.00",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-29",
+          "value_date": "2026-09-29",
+          "counterparty": {
+            "name": "name-41f274"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-29T00:00:00Z",
+            "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+            "Amount": {
+              "Amount": "100.00",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-29T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-41f274"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "875b9799-da53-4d61-b83a-11ed0f6665ab",
+            "ValueDateTime": "2026-09-29T00:00:00Z"
+          }
+        },
+        {
+          "id": "596991c2-c91e-469b-a411-4f9577d005ac",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "67.11",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-24",
+          "value_date": "2026-09-24",
+          "counterparty": {
+            "name": "name-41f274"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-24T22:15:01.575201Z",
+            "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+            "Amount": {
+              "Amount": "67.11",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-24T22:15:01.575201Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-41f274"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "596991c2-c91e-469b-a411-4f9577d005ac",
+            "ValueDateTime": "2026-09-24T22:15:01.575201Z"
+          }
+        },
+        {
+          "id": "5865464a-8863-43bd-bfd0-6e983c80607a",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "7.69",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-14",
+          "value_date": "2026-09-14",
+          "counterparty": {
+            "name": "name-41f274"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-14T22:15:02.344729Z",
+            "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+            "Amount": {
+              "Amount": "7.69",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-14T22:15:02.344729Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-41f274"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "5865464a-8863-43bd-bfd0-6e983c80607a",
+            "ValueDateTime": "2026-09-14T22:15:02.344729Z"
+          }
+        },
+        {
+          "id": "56a75cd7-55d6-4edb-8abb-3b9bce3df323",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "29.10",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-11",
+          "value_date": "2026-09-11",
+          "counterparty": {
+            "name": "name-41f274"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-11T22:15:01.284873Z",
+            "AccountId": "73de039a-9959-11ee-826a-f79912592e65",
+            "Amount": {
+              "Amount": "29.10",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-11T22:15:01.284873Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-41f274"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "56a75cd7-55d6-4edb-8abb-3b9bce3df323",
+            "ValueDateTime": "2026-09-11T22:15:01.284873Z"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "InterimBooked",
+        "amount": {
+          "amount": "9137.13",
+          "currency": "NOK"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "9137.13",
+          "currency": "NOK"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "0eac7542-b96c-4f94-a5e8-88fe0667c625",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-72.16",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-10-09",
+          "value_date": "2026-10-09",
+          "counterparty": {
+            "name": "name-66c082"
+          },
+          "bank_code": "DirectDebitPayment",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-09T00:00:00Z",
+            "AccountId": "73e09d94-9959-11ee-826a-5318083a1fef",
+            "Amount": {
+              "Amount": "72.16",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-09T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-66c082"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "DirectDebitPayment"
+            },
+            "Status": "Booked",
+            "TransactionId": "0eac7542-b96c-4f94-a5e8-88fe0667c625",
+            "ValueDateTime": "2026-10-09T00:00:00Z"
+          }
+        },
+        {
+          "id": "cbc3e04e-97a9-4b39-b69f-6812c86520be",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-3.26",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-30",
+          "value_date": "2026-09-30",
+          "counterparty": {
+            "name": "name-66c082"
+          },
+          "bank_code": "DirectDebitPayment",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "73e09d94-9959-11ee-826a-5318083a1fef",
+            "Amount": {
+              "Amount": "3.26",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-66c082"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "DirectDebitPayment"
+            },
+            "Status": "Booked",
+            "TransactionId": "cbc3e04e-97a9-4b39-b69f-6812c86520be",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          }
+        },
+        {
+          "id": "7de78120-7992-4962-ad43-189972497e9b",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "85.40",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-02",
+          "value_date": "2026-09-02",
+          "counterparty": {
+            "name": "name-1bce45"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-02T22:15:00.494963Z",
+            "AccountId": "73e09d94-9959-11ee-826a-5318083a1fef",
+            "Amount": {
+              "Amount": "85.40",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-02T22:15:00.494963Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-1bce45"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "7de78120-7992-4962-ad43-189972497e9b",
+            "ValueDateTime": "2026-09-02T22:15:00.494963Z"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "InterimBooked",
+        "amount": {
+          "amount": "2334.92",
+          "currency": "NOK"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "2334.92",
+          "currency": "NOK"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "b9686222-cb79-4502-8ac9-f19b0058b82d",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "53.12",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-10-12",
+          "value_date": "2026-10-12",
+          "counterparty": {
+            "name": "name-3d5b79"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "53.12",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "b9686222-cb79-4502-8ac9-f19b0058b82d",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          }
+        },
+        {
+          "id": "128502f2-08cb-45d7-a2b8-ffbef7a14914",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "80.60",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-10-06",
+          "value_date": "2026-10-06",
+          "counterparty": {
+            "name": "name-3d5b79"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-06T00:00:00Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "80.60",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-06T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "128502f2-08cb-45d7-a2b8-ffbef7a14914",
+            "ValueDateTime": "2026-10-06T00:00:00Z"
+          }
+        },
+        {
+          "id": "57729b70-73c9-43df-a52f-d2649849b306",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "23.32",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-30",
+          "value_date": "2026-09-30",
+          "counterparty": {
+            "name": "name-3d5b79"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "23.32",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "57729b70-73c9-43df-a52f-d2649849b306",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          }
+        },
+        {
+          "id": "bd38db89-417e-4bf4-a0ca-fe545966f521",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "62.69",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-23",
+          "value_date": "2026-09-23",
+          "counterparty": {
+            "name": "name-3d5b79"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-23T22:15:01.974924Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "62.69",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-23T22:15:01.974924Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "bd38db89-417e-4bf4-a0ca-fe545966f521",
+            "ValueDateTime": "2026-09-23T22:15:01.974924Z"
+          }
+        },
+        {
+          "id": "38cd2586-c7bc-44db-b1fb-34ba35abf67c",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "58.88",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-16",
+          "value_date": "2026-09-16",
+          "counterparty": {
+            "name": "name-3d5b79"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-16T22:15:01.680775Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "58.88",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-16T22:15:01.680775Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "38cd2586-c7bc-44db-b1fb-34ba35abf67c",
+            "ValueDateTime": "2026-09-16T22:15:01.680775Z"
+          }
+        },
+        {
+          "id": "d2610ab1-79cf-40b3-a8d9-b3132014fb8c",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "10.30",
+            "currency": "NOK"
+          },
+          "booking_date": "2026-09-10",
+          "value_date": "2026-09-10",
+          "counterparty": {
+            "name": "name-3d5b79"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-10T22:15:01.361683Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "10.30",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-10T22:15:01.361683Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "d2610ab1-79cf-40b3-a8d9-b3132014fb8c",
+            "ValueDateTime": "2026-09-10T22:15:01.361683Z"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "config": {
+    "bank": "morrowbank",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:35:30Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "642cc970-a2cd-4347-ada7-269ae3a9c7da",
+        "b81fe1b4-4f04-4148-89ca-85ca5e1dcc92",
+        "d38fdb2f-1d9a-4ae9-98f7-e1ba1e0f747e",
+        "a87e16ac-e5ff-4991-900a-eebbb160a4d1",
+        "6f45b77e-3d18-4bf6-817d-22f5bc17d642"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "7bd33132-700b-11ee-9532-7b7f2c95874a",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "7bd33132-700b-11ee-9532-7b7f2c95874a",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-18T11:35:31Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "7bd3d0b0-700b-11ee-9532-2f7db641ac9d",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "7bd3d0b0-700b-11ee-9532-2f7db641ac9d",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-18T11:35:32Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

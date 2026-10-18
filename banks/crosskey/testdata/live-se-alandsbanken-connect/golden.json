@@ -1,0 +1,165 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://alandsbanken-se-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=9a58f263-26d0-483b-bb08-88a4b0d649ca&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2FsYW5kc2Jhbmtlbi1zZS1hcGktc2FuZGJveC5jcm9zc2tleS5pbyIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJ1cm46YWxhbmRzYmFua2VuLXNlOmFjY291bnQ6MjBjZWQ3NmMtMGM0Yy00MWQ3LWJjNjEtNzlmNDA0MzZmZGE5IiwiZXNzZW50aWFsIjp0cnVlfX0sInVzZXJpbmZvIjp7Im9wZW5iYW5raW5nX2ludGVudF9pZCI6eyJ2YWx1ZSI6InVybjphbGFuZHNiYW5rZW4tc2U6YWNjb3VudDoyMGNlZDc2Yy0wYzRjLTQxZDctYmM2MS03OWY0MDQzNmZkYTkiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNDk2MSwiaWF0IjoxNzkyMzIzMTYxLCJpc3MiOiIiLCJqdGkiOiIxNDNjMWEwYi0zOTFlLTRkNDgtYjA0Yy02NjRjZWFmYTVjNzkiLCJuYmYiOjE3OTIzMjMxNjEsIm5vbmNlIjoiOWE1OGYyNjMtMjZkMC00ODNiLWJiMDgtODhhNGIwZDY0OWNhIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgYWNjb3VudHMiLCJzdGF0ZSI6IjYzMGMxNGQyLTU5YjMtNDYwYS1iZGI4LTY2MDMyY2E0NmM1ZCJ9.dGVzdC1zaWduYXR1cmU68Q6FbGvlBUk&response_type=code+id_token&scope=openid+accounts&state=630c14d2-59b3-460a-bdb8-66032ca46c5d"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "alandsbanken",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "crosskey-alandsbanken-se",
+        "generation": 1,
+        "updated_at": "2026-10-18T11:32:41Z",
+        "access_token": "REDACTED:access_token:75453a",
+        "refresh_token": "REDACTED:refresh_token:552e3a",
+        "token_type": "Bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-18T11:35:41Z",
+        "consents": {
+          "accounts": {
+            "id": "20ced76c-0c4c-41d7-bc61-79f40436fda9",
+            "kind": "accounts",
+            "status": "Authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "3b3630d8-5513-11e9-9d38-93b4c87cbbc5",
+          "stable_id": "d150a7a99abad70e31ffe5d573aace9e",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "identification-760bfe"
+            }
+          ],
+          "name": "nickname-e05a42",
+          "owner_name": "name-66157b",
+          "currency": "EUR",
+          "product": "description-f5929e",
+          "type": "CACC",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-760bfe",
+                "Name": "name-66157b",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "3b3630d8-5513-11e9-9d38-93b4c87cbbc5",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-f5929e",
+            "Nickname": "nickname-e05a42"
+          }
+        },
+        {
+          "id": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+          "stable_id": "6723e752e3b7cfa2e16ecdb1de6a6e32",
+          "identifiers": [
+            {
+              "scheme": "PAN",
+              "value": "identification-ea04d2"
+            }
+          ],
+          "owner_name": "name-66157b",
+          "currency": "SEK",
+          "product": "description-1e6eba",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-ea04d2",
+                "Name": "name-66157b",
+                "SchemeName": "UK.OBIE.PAN"
+              }
+            ],
+            "AccountId": "3b36bdf0-5513-11e9-9d38-2fb4ddcb34eb",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "SEK",
+            "Description": "description-1e6eba"
+          }
+        },
+        {
+          "id": "e6a316d0-4581-11e9-9d38-9f38a9de5bfa",
+          "stable_id": "efe766f103949d4372edb246bfa13259",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "identification-069925"
+            }
+          ],
+          "name": "nickname-e05a42",
+          "owner_name": "name-66157b",
+          "currency": "SEK",
+          "product": "description-daebf1",
+          "type": "CACC",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-069925",
+                "Name": "name-66157b",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "e6a316d0-4581-11e9-9d38-9f38a9de5bfa",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "SEK",
+            "Description": "description-daebf1",
+            "Nickname": "nickname-e05a42"
+          }
+        },
+        {
+          "id": "e6a397ea-4581-11e9-9d38-e798fd829051",
+          "stable_id": "68d8cb6260ac02c31081669d7ddac96d",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "identification-639168"
+            }
+          ],
+          "owner_name": "name-66157b",
+          "currency": "SEK",
+          "product": "description-a16629",
+          "type": "CACC",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-639168",
+                "Name": "name-66157b",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "e6a397ea-4581-11e9-9d38-e798fd829051",
+            "AccountSubType": "CurrentAccount",
+            "AccountType": "Personal",
+            "Currency": "SEK",
+            "Description": "description-a16629"
+          }
+        }
+      ]
+    }
+  }
+]

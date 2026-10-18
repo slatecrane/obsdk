@@ -1,0 +1,103 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://morrowbank-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=b2328170-dfeb-4f39-bd92-a93f9672f618&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL21vcnJvd2JhbmstYXBpLXNhbmRib3guY3Jvc3NrZXkuaW8iLCJjbGFpbXMiOnsiaWRfdG9rZW4iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOm1vcnJvd2Jhbms6YWNjb3VudDo5ZmU3MzYzNy1iNTVlLTQwN2EtYjZlZi03MTg2Yzg5Nzc2NGUiLCJlc3NlbnRpYWwiOnRydWV9fSwidXNlcmluZm8iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOm1vcnJvd2Jhbms6YWNjb3VudDo5ZmU3MzYzNy1iNTVlLTQwN2EtYjZlZi03MTg2Yzg5Nzc2NGUiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNTI2NSwiaWF0IjoxNzkyMzIzNDY1LCJpc3MiOiIiLCJqdGkiOiJlZTBmNTk2NS00Y2Y0LTQ5MmQtYTcyMi0yMGEzMjczNDBlZGYiLCJuYmYiOjE3OTIzMjM0NjUsIm5vbmNlIjoiYjIzMjgxNzAtZGZlYi00ZjM5LWJkOTItYTkzZjk2NzJmNjE4IiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgYWNjb3VudHMiLCJzdGF0ZSI6IjZhNTUzYmJiLTI3MjAtNDZmYS1hZTgxLWNjOGNjY2U1OWUzNyJ9.dGVzdC1zaWduYXR1cmU67AV6lrrzLI8&response_type=code+id_token&scope=openid+accounts&state=6a553bbb-2720-46fa-ae81-cc8ccce59e37"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "morrowbank",
+        "country": "SE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "crosskey-morrowbank",
+        "generation": 1,
+        "updated_at": "2026-10-18T11:37:45Z",
+        "access_token": "REDACTED:access_token:36a463",
+        "refresh_token": "REDACTED:refresh_token:8d90e5",
+        "token_type": "Bearer",
+        "scope": "openid accounts",
+        "access_expires_at": "2026-10-18T11:40:45Z",
+        "consents": {
+          "accounts": {
+            "id": "9fe73637-b55e-407a-b6ef-7186c897764e",
+            "kind": "accounts",
+            "status": "Authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+          "stable_id": "4a0afd6aa7ca2280a26154585cb966d3",
+          "identifiers": [
+            {
+              "scheme": "BBAN",
+              "value": "identification-34d813"
+            }
+          ],
+          "owner_name": "name-13cb3f",
+          "currency": "SEK",
+          "product": "description-07c0e0",
+          "type": "CARD",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-34d813",
+                "Name": "name-13cb3f",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "430d9df6-7047-11ee-86a5-bfaebd4459ef",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "SEK",
+            "Description": "description-07c0e0"
+          }
+        },
+        {
+          "id": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+          "stable_id": "a672750a4e920f515849894698951367",
+          "identifiers": [
+            {
+              "scheme": "BBAN",
+              "value": "identification-d9defb"
+            }
+          ],
+          "owner_name": "name-13cb3f",
+          "currency": "SEK",
+          "product": "description-0157c0",
+          "type": "LOAN",
+          "usage": "PRIV",
+          "raw": {
+            "Account": [
+              {
+                "Identification": "identification-d9defb",
+                "Name": "name-13cb3f",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "430e3afe-7047-11ee-86a5-5bda99308d4e",
+            "AccountSubType": "Loan",
+            "AccountType": "Personal",
+            "Currency": "SEK",
+            "Description": "description-0157c0"
+          }
+        }
+      ]
+    }
+  }
+]

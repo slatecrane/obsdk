@@ -1,0 +1,72 @@
+{
+  "config": {
+    "bank": "spankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-18T10:36:51Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "a532b790-c7f4-4e7c-8262-f074a6938f05",
+        "9ffc955b-9693-4b29-bd1f-5a71a22305eb",
+        "7e84628f-d531-49ec-8364-22288e0b0d16",
+        "036bc757-ed5d-4cd2-9e7a-36b540001f25",
+        "bebf9666-f07d-4fcf-ba09-e7f23b1259d0",
+        "5248b735-a4ee-4699-a424-c0a6dc7ce7bf",
+        "92de62ed-bedf-4cb5-88a7-5477ab6e032c",
+        "9212eeb9-f56d-4dd5-95da-0de51ad139c9"
+      ],
+      "state": [
+        "3e83e4a2-85bb-4465-b1f4-c3ea145558f7",
+        "692500f7-4f8f-4e40-883b-17bd4e22eba5"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI26PSEUDODE26B0F492"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.50",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-8b7502",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI43PSEUDO2BA47323A8"
+              }
+            },
+            "remittance": [
+              "obsdk test"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A5dd7c2\u0026state=3e83e4a2-85bb-4465-b1f4-c3ea145558f7"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcy1wYW5ra2kiLCJmIjoiaW50ZXJuYXRpb25hbCIsImlkIjoiY2NjNzMzMGMtYTRmNi00MjllLWJiNWMtZDYwZDUxNTMxYzBjIiwidCI6InNlcGEifQ",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

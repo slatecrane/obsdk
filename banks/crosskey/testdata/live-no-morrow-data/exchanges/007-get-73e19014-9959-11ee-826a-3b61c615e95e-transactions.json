@@ -1,0 +1,152 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/73e19014-9959-11ee-826a-3b61c615e95e/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:37:39"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:8700fb",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "382a603a-fed8-4877-b66f-5bad6208d1cd"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "53.12",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "b9686222-cb79-4502-8ac9-f19b0058b82d",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-10-06T00:00:00Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "80.60",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-10-06T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "128502f2-08cb-45d7-a2b8-ffbef7a14914",
+            "ValueDateTime": "2026-10-06T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "23.32",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "57729b70-73c9-43df-a52f-d2649849b306",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-23T22:15:01.974924Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "62.69",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-23T22:15:01.974924Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "bd38db89-417e-4bf4-a0ca-fe545966f521",
+            "ValueDateTime": "2026-09-23T22:15:01.974924Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-16T22:15:01.680775Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "58.88",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-16T22:15:01.680775Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "38cd2586-c7bc-44db-b1fb-34ba35abf67c",
+            "ValueDateTime": "2026-09-16T22:15:01.680775Z"
+          },
+          {
+            "AcceptanceDateTime": "2026-09-10T22:15:01.361683Z",
+            "AccountId": "73e19014-9959-11ee-826a-3b61c615e95e",
+            "Amount": {
+              "Amount": "10.30",
+              "Currency": "NOK"
+            },
+            "BookingDateTime": "2026-09-10T22:15:01.361683Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3d5b79"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "d2610ab1-79cf-40b3-a8d9-b3132014fb8c",
+            "ValueDateTime": "2026-09-10T22:15:01.361683Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/73e19014-9959-11ee-826a-3b61c615e95e/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:37:39Z"
+      },
+      "Meta": {}
+    }
+  }
+}

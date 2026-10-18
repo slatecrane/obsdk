@@ -1,0 +1,543 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+        "stable_id": "cee7490eb89e74a5bd276da0abc75a72",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "identification-e834df"
+          }
+        ],
+        "owner_name": "name-95a6c1",
+        "currency": "EUR",
+        "product": "description-cd99ed",
+        "type": "SVGS",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-e834df",
+              "Name": "name-95a6c1",
+              "SchemeName": "UK.OBIE.IBAN"
+            }
+          ],
+          "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+          "AccountSubType": "Savings",
+          "AccountType": "Personal",
+          "Currency": "EUR",
+          "Description": "description-cd99ed"
+        }
+      },
+      {
+        "id": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+        "stable_id": "15935a38249162a8dc9076131868f56b",
+        "identifiers": [
+          {
+            "scheme": "PAN",
+            "value": "identification-c38570"
+          }
+        ],
+        "owner_name": "name-95a6c1",
+        "currency": "EUR",
+        "product": "description-1f4cef",
+        "type": "CARD",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-c38570",
+              "Name": "name-95a6c1",
+              "SchemeName": "UK.OBIE.PAN"
+            }
+          ],
+          "AccountId": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+          "AccountSubType": "CreditCard",
+          "AccountType": "Personal",
+          "Currency": "EUR",
+          "Description": "description-1f4cef"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "InterimBooked",
+        "amount": {
+          "amount": "101963.00",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "101963.00",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "d1704cea-9d11-4e49-83e7-4c25c7cfc07a",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "82.10",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "value_date": "2026-10-15",
+          "counterparty": {
+            "name": "name-3cf21b"
+          },
+          "bank_code": "RCDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-15T00:00:00Z",
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "Amount": {
+              "Amount": "82.10",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-15T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3cf21b"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "SEP"
+            },
+            "Status": "Booked",
+            "TransactionId": "d1704cea-9d11-4e49-83e7-4c25c7cfc07a",
+            "ValueDateTime": "2026-10-15T00:00:00Z"
+          }
+        },
+        {
+          "id": "283d8f18-3576-436c-95e7-0ed0496c227b",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "488.49",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "value_date": "2026-10-12",
+          "counterparty": {
+            "name": "name-c19f87"
+          },
+          "bank_code": "RCDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "Amount": {
+              "Amount": "488.49",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-c19f87"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "SEP"
+            },
+            "Status": "Booked",
+            "TransactionId": "283d8f18-3576-436c-95e7-0ed0496c227b",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          }
+        },
+        {
+          "id": "a17f69b8-548d-4ed7-8cba-c441e6ccbd4f",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-217.27",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "value_date": "2026-10-12",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "ICDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "Amount": {
+              "Amount": "217.27",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "GIR"
+            },
+            "Status": "Booked",
+            "TransactionId": "a17f69b8-548d-4ed7-8cba-c441e6ccbd4f",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          }
+        },
+        {
+          "id": "5096f7d9-6351-4263-ad0e-73bec26494a7",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "59.86",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "value_date": "2026-10-06",
+          "counterparty": {
+            "name": "name-3cf21b"
+          },
+          "bank_code": "RCDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-06T00:00:00Z",
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "Amount": {
+              "Amount": "59.86",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-06T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-3cf21b"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "SEP"
+            },
+            "Status": "Booked",
+            "TransactionId": "5096f7d9-6351-4263-ad0e-73bec26494a7",
+            "ValueDateTime": "2026-10-06T00:00:00Z"
+          }
+        },
+        {
+          "id": "2d451f29-09be-4f07-8ad7-face692990ae",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-220.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "ICDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "Amount": {
+              "Amount": "220.85",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "GIR"
+            },
+            "Status": "Booked",
+            "TransactionId": "2d451f29-09be-4f07-8ad7-face692990ae",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          }
+        },
+        {
+          "id": "041c01df-409a-4479-a9fe-5790b4d3b382",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "371.90",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "counterparty": {
+            "name": "name-c19f87"
+          },
+          "bank_code": "RCDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "354a1b26-3016-11ed-8cc3-1b5db9ace23f",
+            "Amount": {
+              "Amount": "371.90",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-c19f87"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "SEP"
+            },
+            "Status": "Booked",
+            "TransactionId": "041c01df-409a-4479-a9fe-5790b4d3b382",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "InterimBooked",
+        "amount": {
+          "amount": "31.26",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "InterimAvailable",
+        "amount": {
+          "amount": "30031.26",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "25e766da-93b8-41d5-b392-399785bf9514",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "10.66",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "value_date": "2026-10-15",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "RCDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-15T00:00:00Z",
+            "AccountId": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+            "Amount": {
+              "Amount": "10.66",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-15T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "K1"
+            },
+            "Status": "Booked",
+            "TransactionId": "25e766da-93b8-41d5-b392-399785bf9514",
+            "ValueDateTime": "2026-10-15T00:00:00Z"
+          }
+        },
+        {
+          "id": "dc8f49df-1ce3-4c78-88f9-7f883228c77a",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-64.47",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "value_date": "2026-10-12",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "ICDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+            "Amount": {
+              "Amount": "64.47",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PT"
+            },
+            "Status": "Booked",
+            "TransactionId": "dc8f49df-1ce3-4c78-88f9-7f883228c77a",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          }
+        },
+        {
+          "id": "2f06cd4b-df08-4ab3-8de4-9d3790ec895c",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "6.74",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-09",
+          "value_date": "2026-10-09",
+          "counterparty": {
+            "name": "name-047a81"
+          },
+          "bank_code": "RCDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-09T00:00:00Z",
+            "AccountId": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+            "Amount": {
+              "Amount": "6.74",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-09T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-047a81"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "K1"
+            },
+            "Status": "Booked",
+            "TransactionId": "2f06cd4b-df08-4ab3-8de4-9d3790ec895c",
+            "ValueDateTime": "2026-10-09T00:00:00Z"
+          }
+        },
+        {
+          "id": "43545250-07c2-4cf9-8f72-3683668a8540",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-4.51",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-07",
+          "value_date": "2026-10-07",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "ICDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-07T00:00:00Z",
+            "AccountId": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+            "Amount": {
+              "Amount": "4.51",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "ICDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-07T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PT"
+            },
+            "Status": "Booked",
+            "TransactionId": "43545250-07c2-4cf9-8f72-3683668a8540",
+            "ValueDateTime": "2026-10-07T00:00:00Z"
+          }
+        },
+        {
+          "id": "de17fa7f-059b-4709-a404-08aff785b4e4",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "64.99",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "RCDT-DMCT",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "354a948e-3016-11ed-8cc3-bff8216a9b01",
+            "Amount": {
+              "Amount": "64.99",
+              "Currency": "EUR"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "DMCT"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "K1"
+            },
+            "Status": "Booked",
+            "TransactionId": "de17fa7f-059b-4709-a404-08aff785b4e4",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.6/pisp/domestic-payments",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:168c28",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "67c1999b-70d2-47e3-9dcf-15dad1c532bc",
+      "X-Idempotency-Key": "d50e0e994d8047c28fafed448338253d",
+      "X-Jws-Signature": "REDACTED:x-jws-signature:2f784c"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "15fd7996-ae09-4811-aa0c-ae279f601eba",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-525f4c",
+            "Name": "name-dec1f3",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "d04ba6dfbe8c461686fe0de4af319f43",
+          "InstructedAmount": {
+            "Amount": "1.00",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "625cfa05496741d18681cf68337b7759",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        }
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "15fd7996-ae09-4811-aa0c-ae279f601eba",
+        "CreationDateTime": "2026-10-18T11:36:35.842311067Z",
+        "DomesticPaymentId": "6ad05856-4784-4625-9d35-8f7f8a23ebaf",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-525f4c",
+            "Name": "name-dec1f3",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "d04ba6dfbe8c461686fe0de4af319f43",
+          "InstructedAmount": {
+            "Amount": "1.00",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "625cfa05496741d18681cf68337b7759",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        },
+        "Status": "AcceptedSettlementCompleted",
+        "StatusUpdateDateTime": "2026-10-18T11:36:35.845117243Z"
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/pisp/domestic-payments/6ad05856-4784-4625-9d35-8f7f8a23ebaf"
+      }
+    }
+  }
+}

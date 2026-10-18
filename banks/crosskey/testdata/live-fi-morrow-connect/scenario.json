@@ -1,0 +1,35 @@
+{
+  "config": {
+    "bank": "morrowbank",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:34:42Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "b09ac814-86ae-4b41-b696-4fe2b74e9c57",
+        "adb1bc20-1c7f-4c7f-9498-561d82e33407",
+        "3c466263-2b47-49e0-959e-3b25d12e8e4c"
+      ],
+      "state": [
+        "1ed0d777-d481-4f28-a575-ab5a94a0ea5d",
+        "d8ffe86b-18a8-4b0b-afef-b76ff3dc697e"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A7458c2\u0026id_token=REDACTED%3Aid_token%3A5d32ae\u0026state=1ed0d777-d481-4f28-a575-ab5a94a0ea5d"
+    }
+  ]
+}

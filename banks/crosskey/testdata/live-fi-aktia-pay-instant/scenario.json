@@ -1,0 +1,73 @@
+{
+  "config": {
+    "bank": "aktia",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:00:44Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "1df05e67-214e-4e9f-9d46-c514aeaf1174",
+        "efba74f4-9844-4fb2-b437-3b633c17ba97",
+        "fc6137f5-f0c9-406b-a9f4-0515af90ea0b",
+        "2798c5f7-4e76-4aac-a2ee-06901bacc79a",
+        "2f4e7de3-27b2-4fcd-8a86-6fdd88dd3146",
+        "21e3060f-6644-428d-994a-ce20fa52f3ae",
+        "037c4c87-c17b-4f4a-84df-295395194482",
+        "ce1d4d51-230b-41d5-95c8-70115971db5a"
+      ],
+      "state": [
+        "d03aa787-563e-472b-9331-8d7c39190117",
+        "d7ff27ae-a142-4658-a58b-af82895acbfe"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa_instant",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI90PSEUDO525F4CDCC9"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.25",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-dec1f3",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI90PSEUDO811184A647"
+              }
+            },
+            "remittance": [
+              "obsdk instant test"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A4bdf8a\u0026id_token=REDACTED%3Aid_token%3Ad10d7e\u0026state=d03aa787-563e-472b-9331-8d7c39190117"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWt0aWEiLCJmIjoiaW50ZXJuYXRpb25hbCIsImlkIjoiOThmNzEyYzUtYTIyMi00NmQwLTkxMTMtNDY5M2EyN2RhYzZlIiwidCI6InNlcGFfaW5zdGFudCJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

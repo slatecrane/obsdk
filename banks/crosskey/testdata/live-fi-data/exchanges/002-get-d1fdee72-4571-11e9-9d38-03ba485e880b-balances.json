@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/d1fdee72-4571-11e9-9d38-03ba485e880b/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:81a9aa",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "61305929-a414-4157-b06a-e03e3a7781e1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "2695.18",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T10:35:43.661591106Z",
+            "Type": "InterimBooked"
+          },
+          {
+            "AccountId": "d1fdee72-4571-11e9-9d38-03ba485e880b",
+            "Amount": {
+              "Amount": "2695.18",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T10:35:43.661590246Z",
+            "Type": "InterimAvailable"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://s-pankki-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/d1fdee72-4571-11e9-9d38-03ba485e880b/balances"
+      },
+      "Meta": {}
+    }
+  }
+}

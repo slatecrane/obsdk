@@ -1,0 +1,41 @@
+{
+  "config": {
+    "bank": "resursbank",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T17:19:35Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "a6b87943-64ab-4140-a73b-049f42348601",
+        "c407ff04-b879-43ac-87c8-7da8c059120c",
+        "c52773ff-af52-4e9c-b963-83ca1a58e446"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+      "from": "2026-01-01T00:00:00Z",
+      "to": "2026-10-18T17:19:36Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

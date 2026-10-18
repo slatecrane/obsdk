@@ -1,0 +1,35 @@
+{
+  "config": {
+    "bank": "aktia",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T10:56:25Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "314bc824-9f24-4837-b19a-968bb0e1f868",
+        "2dc23846-ce29-4c9e-a2a6-35e565ed5761",
+        "d66d7e6b-dab9-4159-aeea-6978b10ed4e7"
+      ],
+      "state": [
+        "35a3bfa3-cfc4-4dba-b4d0-a4fa8fc88c86",
+        "943f9c21-a54f-41c4-a531-5cd185a3def0"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3Aa1fbe9\u0026id_token=REDACTED%3Aid_token%3Abdd777\u0026state=35a3bfa3-cfc4-4dba-b4d0-a4fa8fc88c86"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/d1fdee72-4571-11e9-9d38-03ba485e880b/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2025-01-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T10:35:58"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:0ae382",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "eaa0e4e0-7da7-4db8-ad0f-a5b1f99a9770"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "Code": "403 Forbidden",
+      "Errors": [
+        {
+          "ErrorCode": "UK.OBIE.Reauthenticate",
+          "Message": "The request transaction interval [2025-01-01T00:00Z to 2026-10-18T10:35:58Z] is not inside the interval limits [2026-07-20T10:35:58.602858956Z to 2026-10-18T10:35:58.602858956Z] for this level of authentication [SCA: false]"
+        }
+      ],
+      "Id": "eaa0e4e0-7da7-4db8-ad0f-a5b1f99a9770",
+      "Message": "The request transaction interval [2025-01-01T00:00Z to 2026-10-18T10:35:58Z] is not inside the interval limits [2026-07-20T10:35:58.602858956Z to 2026-10-18T10:35:58.602858956Z] for this level of authentication [SCA: false]"
+    }
+  }
+}

@@ -1,0 +1,2911 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+        "stable_id": "da41afd99e4cb99485b0371ff8ffe2cc",
+        "identifiers": [
+          {
+            "scheme": "PAN",
+            "value": "identification-a94182"
+          }
+        ],
+        "currency": "EUR",
+        "product": "description-5f96ff",
+        "type": "CARD",
+        "usage": "PRIV",
+        "raw": {
+          "Account": [
+            {
+              "Identification": "identification-a94182",
+              "SchemeName": "UK.OBIE.PAN"
+            }
+          ],
+          "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+          "AccountSubType": "CreditCard",
+          "AccountType": "Personal",
+          "Currency": "EUR",
+          "Description": "description-5f96ff"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "other",
+        "bank_type": "Expected",
+        "amount": {
+          "amount": "96000.37",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "7b4604ad-0f4e-4824-8c87-b1ef205149af",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-44.43",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "value_date": "2026-10-12",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "44.43",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "7b4604ad-0f4e-4824-8c87-b1ef205149af",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          }
+        },
+        {
+          "id": "da5c28d8-3dd9-4f5e-b2be-911526343a38",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "93.19",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "value_date": "2026-10-12",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-12T00:00:00Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "93.19",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-10-12T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "da5c28d8-3dd9-4f5e-b2be-911526343a38",
+            "ValueDateTime": "2026-10-12T00:00:00Z"
+          }
+        },
+        {
+          "id": "b9935725-beaf-4320-b092-feb18320d065",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "33.42",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "value_date": "2026-10-08",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-08T00:00:00Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "33.42",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-10-08T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "b9935725-beaf-4320-b092-feb18320d065",
+            "ValueDateTime": "2026-10-08T00:00:00Z"
+          }
+        },
+        {
+          "id": "7e79c5d1-6b85-4c38-8c4d-df73cfdc414b",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-49.54",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-10-05T00:00:00Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "49.54",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-10-05T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "7e79c5d1-6b85-4c38-8c4d-df73cfdc414b",
+            "ValueDateTime": "2026-10-05T00:00:00Z"
+          }
+        },
+        {
+          "id": "15600320-88c3-42bc-b0f7-f8f00cf43bb3",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-33.40",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "value_date": "2026-09-30",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "33.40",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "15600320-88c3-42bc-b0f7-f8f00cf43bb3",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          }
+        },
+        {
+          "id": "6ac1cbb3-6473-4389-b7ff-d99914d32cdc",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "86.59",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "value_date": "2026-09-28",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-28T22:15:02.55621Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "86.59",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-28T22:15:02.55621Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6ac1cbb3-6473-4389-b7ff-d99914d32cdc",
+            "ValueDateTime": "2026-09-28T22:15:02.55621Z"
+          }
+        },
+        {
+          "id": "06b65cfa-322c-4924-af59-5843d153e179",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-25.32",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-22",
+          "value_date": "2026-09-22",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-22T22:15:01.375904Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "25.32",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-22T22:15:01.375904Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "06b65cfa-322c-4924-af59-5843d153e179",
+            "ValueDateTime": "2026-09-22T22:15:01.375904Z"
+          }
+        },
+        {
+          "id": "6d579a5a-4b92-4776-8abc-95569c06aff9",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "77.67",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-21",
+          "value_date": "2026-09-21",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-21T22:15:02.77477Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "77.67",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-21T22:15:02.77477Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6d579a5a-4b92-4776-8abc-95569c06aff9",
+            "ValueDateTime": "2026-09-21T22:15:02.77477Z"
+          }
+        },
+        {
+          "id": "078d656a-f64e-4725-8b2b-2815f081a7c7",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "68.39",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-15",
+          "value_date": "2026-09-15",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-15T22:15:02.505097Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "68.39",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-15T22:15:02.505097Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "078d656a-f64e-4725-8b2b-2815f081a7c7",
+            "ValueDateTime": "2026-09-15T22:15:02.505097Z"
+          }
+        },
+        {
+          "id": "697596f0-c735-4500-b26d-c58837abb7a9",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-35.74",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-14",
+          "value_date": "2026-09-14",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-14T22:15:01.669119Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "35.74",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-14T22:15:01.669119Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "697596f0-c735-4500-b26d-c58837abb7a9",
+            "ValueDateTime": "2026-09-14T22:15:01.669119Z"
+          }
+        },
+        {
+          "id": "5604fc4f-fcff-4ad6-8c01-5e7c71a4eb27",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "64.13",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-07",
+          "value_date": "2026-09-07",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-07T22:15:02.358183Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "64.13",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-07T22:15:02.358183Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "5604fc4f-fcff-4ad6-8c01-5e7c71a4eb27",
+            "ValueDateTime": "2026-09-07T22:15:02.358183Z"
+          }
+        },
+        {
+          "id": "30c0ffb7-f04a-4841-8452-1bd4f6011c85",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-15.90",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-07",
+          "value_date": "2026-09-07",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-07T22:15:01.707103Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "15.90",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-07T22:15:01.707103Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "30c0ffb7-f04a-4841-8452-1bd4f6011c85",
+            "ValueDateTime": "2026-09-07T22:15:01.707103Z"
+          }
+        },
+        {
+          "id": "07b84d0a-bcb9-4e58-ab97-873a10521fac",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-17.93",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-02",
+          "value_date": "2026-09-02",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-02T22:15:00.960707Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "17.93",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-02T22:15:00.960707Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "07b84d0a-bcb9-4e58-ab97-873a10521fac",
+            "ValueDateTime": "2026-09-02T22:15:00.960707Z"
+          }
+        },
+        {
+          "id": "623832a5-175c-4061-a08a-6bc3643ebe32",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "46.45",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-01",
+          "value_date": "2026-09-01",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-09-01T22:15:02.16517Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "46.45",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-09-01T22:15:02.16517Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "623832a5-175c-4061-a08a-6bc3643ebe32",
+            "ValueDateTime": "2026-09-01T22:15:02.16517Z"
+          }
+        },
+        {
+          "id": "d047dfb0-fa50-4921-92c4-ed9aaf1bbcd8",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "76.42",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-24",
+          "value_date": "2026-08-24",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-08-24T22:15:03.286321Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "76.42",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-08-24T22:15:03.286321Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "d047dfb0-fa50-4921-92c4-ed9aaf1bbcd8",
+            "ValueDateTime": "2026-08-24T22:15:03.286321Z"
+          }
+        },
+        {
+          "id": "6c25337f-e0ed-4225-8ee0-9f37477e48b6",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-18.51",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-24",
+          "value_date": "2026-08-24",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-08-24T22:15:01.417132Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "18.51",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-08-24T22:15:01.417132Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "6c25337f-e0ed-4225-8ee0-9f37477e48b6",
+            "ValueDateTime": "2026-08-24T22:15:01.417132Z"
+          }
+        },
+        {
+          "id": "9b2c4d0e-497f-47a0-a594-c8ba1378cb74",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "53.50",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-17",
+          "value_date": "2026-08-17",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-08-17T22:15:02.798656Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "53.50",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-08-17T22:15:02.798656Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "9b2c4d0e-497f-47a0-a594-c8ba1378cb74",
+            "ValueDateTime": "2026-08-17T22:15:02.798656Z"
+          }
+        },
+        {
+          "id": "e54d5761-0b41-42fa-ba1c-7753721df303",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-50.10",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-17",
+          "value_date": "2026-08-17",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-08-17T22:15:00.79598Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "50.10",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-08-17T22:15:00.79598Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "e54d5761-0b41-42fa-ba1c-7753721df303",
+            "ValueDateTime": "2026-08-17T22:15:00.79598Z"
+          }
+        },
+        {
+          "id": "bea1bfa4-c92b-492e-986d-fc9677c58d28",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-24.59",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-12",
+          "value_date": "2026-08-12",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-08-12T22:15:00.628989Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "24.59",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-08-12T22:15:00.628989Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "bea1bfa4-c92b-492e-986d-fc9677c58d28",
+            "ValueDateTime": "2026-08-12T22:15:00.628989Z"
+          }
+        },
+        {
+          "id": "12da10f6-80bf-4313-a49d-8576df78e426",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "21.14",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-10",
+          "value_date": "2026-08-10",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-08-10T22:15:02.861005Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "21.14",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-08-10T22:15:02.861005Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "12da10f6-80bf-4313-a49d-8576df78e426",
+            "ValueDateTime": "2026-08-10T22:15:02.861005Z"
+          }
+        },
+        {
+          "id": "ab5c3dc3-7af5-4460-bfa4-8b7680a2291c",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "30.18",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-03",
+          "value_date": "2026-08-03",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-08-03T22:15:02.609847Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "30.18",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-08-03T22:15:02.609847Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ab5c3dc3-7af5-4460-bfa4-8b7680a2291c",
+            "ValueDateTime": "2026-08-03T22:15:02.609847Z"
+          }
+        },
+        {
+          "id": "bc987ef8-78fe-4626-8a96-686b470baab5",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-18.10",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-08-03",
+          "value_date": "2026-08-03",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-08-03T22:15:00.453239Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "18.10",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-08-03T22:15:00.453239Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "bc987ef8-78fe-4626-8a96-686b470baab5",
+            "ValueDateTime": "2026-08-03T22:15:00.453239Z"
+          }
+        },
+        {
+          "id": "dc205057-7ebf-4815-bc91-26b932ef13ae",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "92.62",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-28",
+          "value_date": "2026-07-28",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-07-28T22:15:01.712764Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "92.62",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-07-28T22:15:01.712764Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "dc205057-7ebf-4815-bc91-26b932ef13ae",
+            "ValueDateTime": "2026-07-28T22:15:01.712764Z"
+          }
+        },
+        {
+          "id": "64bae54b-224e-4526-9fc5-95425a8e6e0a",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-49.56",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-27",
+          "value_date": "2026-07-27",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-07-27T22:15:00.948271Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "49.56",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-07-27T22:15:00.948271Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "64bae54b-224e-4526-9fc5-95425a8e6e0a",
+            "ValueDateTime": "2026-07-27T22:15:00.948271Z"
+          }
+        },
+        {
+          "id": "6db96024-50b1-487a-a615-6ec7b83f82e0",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "73.63",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-22",
+          "value_date": "2026-07-22",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-07-22T22:15:01.258891Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "73.63",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-07-22T22:15:01.258891Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6db96024-50b1-487a-a615-6ec7b83f82e0",
+            "ValueDateTime": "2026-07-22T22:15:01.258891Z"
+          }
+        },
+        {
+          "id": "97acfff2-ad36-491c-bd4b-31c8d9649969",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-38.47",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-20",
+          "value_date": "2026-07-20",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-07-20T22:15:00.594888Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "38.47",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-07-20T22:15:00.594888Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "97acfff2-ad36-491c-bd4b-31c8d9649969",
+            "ValueDateTime": "2026-07-20T22:15:00.594888Z"
+          }
+        },
+        {
+          "id": "9b7e83e1-454f-4286-9ecc-ca6c640a0d79",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "38.56",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-13",
+          "value_date": "2026-07-13",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-07-13T22:15:03.01979Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "38.56",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-07-13T22:15:03.01979Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "9b7e83e1-454f-4286-9ecc-ca6c640a0d79",
+            "ValueDateTime": "2026-07-13T22:15:03.01979Z"
+          }
+        },
+        {
+          "id": "9b766c30-74ae-409b-9609-9c1f3d96af81",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-35.82",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-13",
+          "value_date": "2026-07-13",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-07-13T22:15:00.827126Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "35.82",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-07-13T22:15:00.827126Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "9b766c30-74ae-409b-9609-9c1f3d96af81",
+            "ValueDateTime": "2026-07-13T22:15:00.827126Z"
+          }
+        },
+        {
+          "id": "ef1e7f9f-06ee-441e-b365-6d790dcacf1b",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "65.70",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-09",
+          "value_date": "2026-07-09",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-07-09T22:15:01.056463Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "65.70",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-07-09T22:15:01.056463Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ef1e7f9f-06ee-441e-b365-6d790dcacf1b",
+            "ValueDateTime": "2026-07-09T22:15:01.056463Z"
+          }
+        },
+        {
+          "id": "f6f2ac0e-1f07-4735-89ee-33ff4f98f8b0",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-9.86",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-07-06",
+          "value_date": "2026-07-06",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-07-06T22:15:00.616666Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "9.86",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-07-06T22:15:00.616666Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "f6f2ac0e-1f07-4735-89ee-33ff4f98f8b0",
+            "ValueDateTime": "2026-07-06T22:15:00.616666Z"
+          }
+        },
+        {
+          "id": "b9319621-5c27-472a-a3eb-00e6200ad761",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "77.75",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-29",
+          "value_date": "2026-06-29",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-29T22:15:02.36868Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "77.75",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-29T22:15:02.36868Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "b9319621-5c27-472a-a3eb-00e6200ad761",
+            "ValueDateTime": "2026-06-29T22:15:02.36868Z"
+          }
+        },
+        {
+          "id": "2d28aa5e-23fc-4d58-959d-57fdaa158d81",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-20.98",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-29",
+          "value_date": "2026-06-29",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-29T22:15:01.665913Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "20.98",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-29T22:15:01.665913Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "2d28aa5e-23fc-4d58-959d-57fdaa158d81",
+            "ValueDateTime": "2026-06-29T22:15:01.665913Z"
+          }
+        },
+        {
+          "id": "cb460ca9-98ac-4731-b287-5be94956485b",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-29.79",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-23",
+          "value_date": "2026-06-23",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-23T22:15:01.454851Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "29.79",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-23T22:15:01.454851Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "cb460ca9-98ac-4731-b287-5be94956485b",
+            "ValueDateTime": "2026-06-23T22:15:01.454851Z"
+          }
+        },
+        {
+          "id": "90046fe0-9cce-4434-9fc5-a169c16d8c92",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "70.66",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-22",
+          "value_date": "2026-06-22",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-22T22:15:02.164444Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "70.66",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-22T22:15:02.164444Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "90046fe0-9cce-4434-9fc5-a169c16d8c92",
+            "ValueDateTime": "2026-06-22T22:15:02.164444Z"
+          }
+        },
+        {
+          "id": "bd15c252-7bdc-4719-9b64-71002874cd41",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "49.41",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-15",
+          "value_date": "2026-06-15",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-15T22:15:01.911453Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "49.41",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-15T22:15:01.911453Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "bd15c252-7bdc-4719-9b64-71002874cd41",
+            "ValueDateTime": "2026-06-15T22:15:01.911453Z"
+          }
+        },
+        {
+          "id": "171110c8-0e33-499d-a3dc-41c33a33f0e3",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-25.67",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-15",
+          "value_date": "2026-06-15",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-15T22:15:01.576844Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "25.67",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-15T22:15:01.576844Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "171110c8-0e33-499d-a3dc-41c33a33f0e3",
+            "ValueDateTime": "2026-06-15T22:15:01.576844Z"
+          }
+        },
+        {
+          "id": "a5150ee1-6621-44e5-80fd-9b5bd22ff817",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "48.94",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-11",
+          "value_date": "2026-06-11",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-11T22:15:01.494324Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "48.94",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-11T22:15:01.494324Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "a5150ee1-6621-44e5-80fd-9b5bd22ff817",
+            "ValueDateTime": "2026-06-11T22:15:01.494324Z"
+          }
+        },
+        {
+          "id": "6f7e1cdb-6e40-42cb-b371-a8c7cb6618eb",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-15.81",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-08",
+          "value_date": "2026-06-08",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-08T22:15:02.533034Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "15.81",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-08T22:15:02.533034Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "6f7e1cdb-6e40-42cb-b371-a8c7cb6618eb",
+            "ValueDateTime": "2026-06-08T22:15:02.533034Z"
+          }
+        },
+        {
+          "id": "20b53b80-e50f-48d9-a128-7796814c58a7",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "47.50",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-03",
+          "value_date": "2026-06-03",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-03T22:15:01.680243Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "47.50",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-03T22:15:01.680243Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "20b53b80-e50f-48d9-a128-7796814c58a7",
+            "ValueDateTime": "2026-06-03T22:15:01.680243Z"
+          }
+        },
+        {
+          "id": "09ef60a9-73c9-492c-ac25-4131f8b7f971",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-46.10",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-06-02",
+          "value_date": "2026-06-02",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-06-02T22:15:01.91758Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "46.10",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-06-02T22:15:01.91758Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "09ef60a9-73c9-492c-ac25-4131f8b7f971",
+            "ValueDateTime": "2026-06-02T22:15:01.91758Z"
+          }
+        },
+        {
+          "id": "876c52bb-7eb9-45e9-b96e-17ad2bb35f4e",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-47.24",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-05-26",
+          "value_date": "2026-05-26",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-05-26T22:15:01.762263Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "47.24",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-05-26T22:15:01.762263Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "876c52bb-7eb9-45e9-b96e-17ad2bb35f4e",
+            "ValueDateTime": "2026-05-26T22:15:01.762263Z"
+          }
+        },
+        {
+          "id": "424546aa-9a05-419b-aec5-6200b3e56250",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "47.99",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-05-25",
+          "value_date": "2026-05-25",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-05-25T22:15:02.734692Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "47.99",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-05-25T22:15:02.734692Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "424546aa-9a05-419b-aec5-6200b3e56250",
+            "ValueDateTime": "2026-05-25T22:15:02.734692Z"
+          }
+        },
+        {
+          "id": "dd2e838a-aa98-423c-8c97-40f2e7fc5030",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-7.83",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-05-19",
+          "value_date": "2026-05-19",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-05-19T22:15:01.485397Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "7.83",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-05-19T22:15:01.485397Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "dd2e838a-aa98-423c-8c97-40f2e7fc5030",
+            "ValueDateTime": "2026-05-19T22:15:01.485397Z"
+          }
+        },
+        {
+          "id": "6cc9b367-4415-458f-839b-3bd0da171a37",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "47.44",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-05-18",
+          "value_date": "2026-05-18",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-05-18T22:15:02.493813Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "47.44",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-05-18T22:15:02.493813Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6cc9b367-4415-458f-839b-3bd0da171a37",
+            "ValueDateTime": "2026-05-18T22:15:02.493813Z"
+          }
+        },
+        {
+          "id": "e778e45f-5a9b-480b-911a-fedfb34162e4",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "95.11",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-05-13",
+          "value_date": "2026-05-13",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-05-13T22:15:01.738055Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "95.11",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-05-13T22:15:01.738055Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "e778e45f-5a9b-480b-911a-fedfb34162e4",
+            "ValueDateTime": "2026-05-13T22:15:01.738055Z"
+          }
+        },
+        {
+          "id": "23c244fd-68d4-4ea2-9803-d5d1b3e3c779",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-27.92",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-05-11",
+          "value_date": "2026-05-11",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-05-11T22:15:01.7084Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "27.92",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-05-11T22:15:01.7084Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "23c244fd-68d4-4ea2-9803-d5d1b3e3c779",
+            "ValueDateTime": "2026-05-11T22:15:01.7084Z"
+          }
+        },
+        {
+          "id": "e3e2218d-ddb3-42a1-8231-e31cba6f2467",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "73.87",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-05-05",
+          "value_date": "2026-05-05",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-05-05T22:15:01.444425Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "73.87",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-05-05T22:15:01.444425Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "e3e2218d-ddb3-42a1-8231-e31cba6f2467",
+            "ValueDateTime": "2026-05-05T22:15:01.444425Z"
+          }
+        },
+        {
+          "id": "bba3f373-fbaa-4c34-be00-394e38d33da9",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-45.66",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-05-04",
+          "value_date": "2026-05-04",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-05-04T22:15:01.655771Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "45.66",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-05-04T22:15:01.655771Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "bba3f373-fbaa-4c34-be00-394e38d33da9",
+            "ValueDateTime": "2026-05-04T22:15:01.655771Z"
+          }
+        },
+        {
+          "id": "70676f80-cadd-4e95-8390-4fe03da14c4c",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "66.80",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-04-28",
+          "value_date": "2026-04-28",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-04-28T22:15:01.460915Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "66.80",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-04-28T22:15:01.460915Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "70676f80-cadd-4e95-8390-4fe03da14c4c",
+            "ValueDateTime": "2026-04-28T22:15:01.460915Z"
+          }
+        },
+        {
+          "id": "76f89c89-124c-44ff-8428-2bd5da56f070",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-24.49",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-04-28",
+          "value_date": "2026-04-28",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-04-28T22:15:01.268329Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "24.49",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-04-28T22:15:01.268329Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "76f89c89-124c-44ff-8428-2bd5da56f070",
+            "ValueDateTime": "2026-04-28T22:15:01.268329Z"
+          }
+        },
+        {
+          "id": "39671f32-01ca-49fd-b335-7004b9e8b635",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "97.55",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-04-20",
+          "value_date": "2026-04-20",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-04-20T22:15:02.363041Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "97.55",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-04-20T22:15:02.363041Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "39671f32-01ca-49fd-b335-7004b9e8b635",
+            "ValueDateTime": "2026-04-20T22:15:02.363041Z"
+          }
+        },
+        {
+          "id": "b2ab18ba-19c4-4ad4-9ecc-c4c391784449",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-24.27",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-04-20",
+          "value_date": "2026-04-20",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-04-20T22:15:01.7159Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "24.27",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-04-20T22:15:01.7159Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "b2ab18ba-19c4-4ad4-9ecc-c4c391784449",
+            "ValueDateTime": "2026-04-20T22:15:01.7159Z"
+          }
+        },
+        {
+          "id": "b502e06f-534a-4f0c-a07a-f56893acf948",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "61.64",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-04-13",
+          "value_date": "2026-04-13",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-04-13T22:15:02.197535Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "61.64",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-04-13T22:15:02.197535Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "b502e06f-534a-4f0c-a07a-f56893acf948",
+            "ValueDateTime": "2026-04-13T22:15:02.197535Z"
+          }
+        },
+        {
+          "id": "e44c8a1c-f935-47ac-aae3-033734c7af8c",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-48.94",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-04-13",
+          "value_date": "2026-04-13",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-04-13T22:15:01.579238Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "48.94",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-04-13T22:15:01.579238Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "e44c8a1c-f935-47ac-aae3-033734c7af8c",
+            "ValueDateTime": "2026-04-13T22:15:01.579238Z"
+          }
+        },
+        {
+          "id": "ffd470a4-4b9e-448b-822d-9d0bac5a0ba2",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "79.64",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-04-06",
+          "value_date": "2026-04-06",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-04-06T22:15:02.075977Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "79.64",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-04-06T22:15:02.075977Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ffd470a4-4b9e-448b-822d-9d0bac5a0ba2",
+            "ValueDateTime": "2026-04-06T22:15:02.075977Z"
+          }
+        },
+        {
+          "id": "7711232c-14d1-4245-b06c-70250e4168fc",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-20.27",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-04-06",
+          "value_date": "2026-04-06",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-04-06T22:15:01.416294Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "20.27",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-04-06T22:15:01.416294Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "7711232c-14d1-4245-b06c-70250e4168fc",
+            "ValueDateTime": "2026-04-06T22:15:01.416294Z"
+          }
+        },
+        {
+          "id": "5fb968aa-b407-4d72-813e-eb311dafeec3",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-21.21",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-31",
+          "value_date": "2026-03-31",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-31T22:15:02.14162Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "21.21",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-31T22:15:02.14162Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "5fb968aa-b407-4d72-813e-eb311dafeec3",
+            "ValueDateTime": "2026-03-31T22:15:02.14162Z"
+          }
+        },
+        {
+          "id": "c9cf060c-a968-4e86-94a3-2d0693ba2332",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "77.68",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-30",
+          "value_date": "2026-03-30",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-30T22:15:01.467676Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "77.68",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-30T22:15:01.467676Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "c9cf060c-a968-4e86-94a3-2d0693ba2332",
+            "ValueDateTime": "2026-03-30T22:15:01.467676Z"
+          }
+        },
+        {
+          "id": "e61a14f7-0215-4ce8-ba2d-23fd83bd99d4",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "29.30",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-25",
+          "value_date": "2026-03-25",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-25T22:15:01.139033Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "29.30",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-25T22:15:01.139033Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "e61a14f7-0215-4ce8-ba2d-23fd83bd99d4",
+            "ValueDateTime": "2026-03-25T22:15:01.139033Z"
+          }
+        },
+        {
+          "id": "95352185-bfd4-486a-904f-0a5687048a7f",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-22.46",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-23",
+          "value_date": "2026-03-23",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-23T22:15:01.12705Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "22.46",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-23T22:15:01.12705Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "95352185-bfd4-486a-904f-0a5687048a7f",
+            "ValueDateTime": "2026-03-23T22:15:01.12705Z"
+          }
+        },
+        {
+          "id": "65b4597b-cc49-45a0-acf3-f7342fcac64e",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "48.84",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-16",
+          "value_date": "2026-03-16",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-16T22:15:01.663955Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "48.84",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-16T22:15:01.663955Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "65b4597b-cc49-45a0-acf3-f7342fcac64e",
+            "ValueDateTime": "2026-03-16T22:15:01.663955Z"
+          }
+        },
+        {
+          "id": "1e0a5adf-d9d5-4944-8f03-a60e37c33a80",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-37.25",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-16",
+          "value_date": "2026-03-16",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-16T22:15:01.321135Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "37.25",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-16T22:15:01.321135Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "1e0a5adf-d9d5-4944-8f03-a60e37c33a80",
+            "ValueDateTime": "2026-03-16T22:15:01.321135Z"
+          }
+        },
+        {
+          "id": "271e8051-1bec-4849-84d9-8b2fe99dbff1",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-13.95",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-12",
+          "value_date": "2026-03-12",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-12T22:15:00.755428Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "13.95",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-12T22:15:00.755428Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "271e8051-1bec-4849-84d9-8b2fe99dbff1",
+            "ValueDateTime": "2026-03-12T22:15:00.755428Z"
+          }
+        },
+        {
+          "id": "c24b8b7f-35bb-4e48-aeb8-0606b98ccc58",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "33.35",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-10",
+          "value_date": "2026-03-10",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-10T22:15:01.130184Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "33.35",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-10T22:15:01.130184Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "c24b8b7f-35bb-4e48-aeb8-0606b98ccc58",
+            "ValueDateTime": "2026-03-10T22:15:01.130184Z"
+          }
+        },
+        {
+          "id": "009b4b77-cd34-43de-ad79-862303c21b33",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "48.81",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-03",
+          "value_date": "2026-03-03",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-03T22:15:01.062602Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "48.81",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-03T22:15:01.062602Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "009b4b77-cd34-43de-ad79-862303c21b33",
+            "ValueDateTime": "2026-03-03T22:15:01.062602Z"
+          }
+        },
+        {
+          "id": "e9bb44a8-b5d1-4a4b-a370-f007cf5b18f6",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-50.86",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-03-02",
+          "value_date": "2026-03-02",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-03-02T22:15:00.968703Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "50.86",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-03-02T22:15:00.968703Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "e9bb44a8-b5d1-4a4b-a370-f007cf5b18f6",
+            "ValueDateTime": "2026-03-02T22:15:00.968703Z"
+          }
+        },
+        {
+          "id": "6feed754-13da-4cd0-accd-9df9686b6786",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "59.60",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-02-23",
+          "value_date": "2026-02-23",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-02-23T22:15:01.790098Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "59.60",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-02-23T22:15:01.790098Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6feed754-13da-4cd0-accd-9df9686b6786",
+            "ValueDateTime": "2026-02-23T22:15:01.790098Z"
+          }
+        },
+        {
+          "id": "aedbc689-dfe2-48c8-96ee-e6af8c30a6ce",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-34.19",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-02-23",
+          "value_date": "2026-02-23",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-02-23T22:15:01.363245Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "34.19",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-02-23T22:15:01.363245Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "aedbc689-dfe2-48c8-96ee-e6af8c30a6ce",
+            "ValueDateTime": "2026-02-23T22:15:01.363245Z"
+          }
+        },
+        {
+          "id": "dbfa03a1-5c87-44b9-939d-90ee7009ec29",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "26.39",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-02-16",
+          "value_date": "2026-02-16",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-02-16T22:15:01.750963Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "26.39",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-02-16T22:15:01.750963Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "dbfa03a1-5c87-44b9-939d-90ee7009ec29",
+            "ValueDateTime": "2026-02-16T22:15:01.750963Z"
+          }
+        },
+        {
+          "id": "4521285b-36ab-4084-8f2a-8356fe6a0ab2",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-15.36",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-02-16",
+          "value_date": "2026-02-16",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-02-16T22:15:01.073089Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "15.36",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-02-16T22:15:01.073089Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "4521285b-36ab-4084-8f2a-8356fe6a0ab2",
+            "ValueDateTime": "2026-02-16T22:15:01.073089Z"
+          }
+        },
+        {
+          "id": "48a27885-44b3-45d4-b1f7-a5ce635b5821",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "69.33",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-02-09",
+          "value_date": "2026-02-09",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-02-09T22:15:01.41609Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "69.33",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-02-09T22:15:01.41609Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "48a27885-44b3-45d4-b1f7-a5ce635b5821",
+            "ValueDateTime": "2026-02-09T22:15:01.41609Z"
+          }
+        },
+        {
+          "id": "5135c370-b605-4fac-965c-6e3269841346",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-14.18",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-02-09",
+          "value_date": "2026-02-09",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-02-09T22:15:00.777965Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "14.18",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-02-09T22:15:00.777965Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "5135c370-b605-4fac-965c-6e3269841346",
+            "ValueDateTime": "2026-02-09T22:15:00.777965Z"
+          }
+        },
+        {
+          "id": "402eadf0-ad28-4115-aba0-2a37add446b0",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-38.81",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-02-03",
+          "value_date": "2026-02-03",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-02-03T22:15:00.60726Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "38.81",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-02-03T22:15:00.60726Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "402eadf0-ad28-4115-aba0-2a37add446b0",
+            "ValueDateTime": "2026-02-03T22:15:00.60726Z"
+          }
+        },
+        {
+          "id": "15751464-40b8-4eac-a684-98c8f2a67c18",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "85.61",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-02-02",
+          "value_date": "2026-02-02",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-02-02T22:15:01.674896Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "85.61",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-02-02T22:15:01.674896Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "15751464-40b8-4eac-a684-98c8f2a67c18",
+            "ValueDateTime": "2026-02-02T22:15:01.674896Z"
+          }
+        },
+        {
+          "id": "d6d7682d-b187-44bd-a6c0-13f63fe55a51",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-13.45",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-27",
+          "value_date": "2026-01-27",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-27T22:15:00.60932Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "13.45",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-27T22:15:00.60932Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "d6d7682d-b187-44bd-a6c0-13f63fe55a51",
+            "ValueDateTime": "2026-01-27T22:15:00.60932Z"
+          }
+        },
+        {
+          "id": "5ea491c8-f493-4bda-b864-5f6ba6a1bb9b",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "27.64",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-26",
+          "value_date": "2026-01-26",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-26T22:15:01.536734Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "27.64",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-26T22:15:01.536734Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "5ea491c8-f493-4bda-b864-5f6ba6a1bb9b",
+            "ValueDateTime": "2026-01-26T22:15:01.536734Z"
+          }
+        },
+        {
+          "id": "ccc7b8fc-bcc4-4897-b68f-6c97a38d8466",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "77.16",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-21",
+          "value_date": "2026-01-21",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-21T22:15:00.909386Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "77.16",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-21T22:15:00.909386Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "ccc7b8fc-bcc4-4897-b68f-6c97a38d8466",
+            "ValueDateTime": "2026-01-21T22:15:00.909386Z"
+          }
+        },
+        {
+          "id": "bfd23685-722e-415b-ac91-e329ae52ea46",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-10.25",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-20",
+          "value_date": "2026-01-20",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-20T22:15:00.582423Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "10.25",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-20T22:15:00.582423Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "bfd23685-722e-415b-ac91-e329ae52ea46",
+            "ValueDateTime": "2026-01-20T22:15:00.582423Z"
+          }
+        },
+        {
+          "id": "c85a50cf-7810-4511-bc58-c2ba3f142742",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-22.18",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-13",
+          "value_date": "2026-01-13",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-13T22:15:01.086204Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "22.18",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-13T22:15:01.086204Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "c85a50cf-7810-4511-bc58-c2ba3f142742",
+            "ValueDateTime": "2026-01-13T22:15:01.086204Z"
+          }
+        },
+        {
+          "id": "6c2bb606-5649-45f8-87b4-934cfc0c9fd4",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "90.87",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-12",
+          "value_date": "2026-01-12",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-12T22:15:01.34505Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "90.87",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-12T22:15:01.34505Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "6c2bb606-5649-45f8-87b4-934cfc0c9fd4",
+            "ValueDateTime": "2026-01-12T22:15:01.34505Z"
+          }
+        },
+        {
+          "id": "d4d13517-2819-4591-ab8e-ddcd22cf3e67",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "20.62",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-08",
+          "value_date": "2026-01-08",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-08T22:15:00.648012Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "20.62",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-08T22:15:00.648012Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "d4d13517-2819-4591-ab8e-ddcd22cf3e67",
+            "ValueDateTime": "2026-01-08T22:15:00.648012Z"
+          }
+        },
+        {
+          "id": "e048975d-c72f-47c5-93a6-fed9701ab729",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-19.96",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-06",
+          "value_date": "2026-01-06",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-06T22:15:00.618441Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "19.96",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-06T22:15:00.618441Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "e048975d-c72f-47c5-93a6-fed9701ab729",
+            "ValueDateTime": "2026-01-06T22:15:00.618441Z"
+          }
+        },
+        {
+          "id": "dd376a73-8fdf-49bb-89fc-c315efd2cd81",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-10.63",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-03",
+          "value_date": "2026-01-03",
+          "counterparty": {
+            "name": "name-361a78"
+          },
+          "bank_code": "PURCHASE",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-03T22:15:00.56448Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "10.63",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-03T22:15:00.56448Z",
+            "CreditDebitIndicator": "Debit",
+            "CreditorAccount": {
+              "Name": "name-361a78"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "PURCHASE"
+            },
+            "Status": "Booked",
+            "TransactionId": "dd376a73-8fdf-49bb-89fc-c315efd2cd81",
+            "ValueDateTime": "2026-01-03T22:15:00.56448Z"
+          }
+        },
+        {
+          "id": "226561a0-e215-45ea-936a-19d7c47d62ab",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "28.20",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-01-02",
+          "value_date": "2026-01-02",
+          "counterparty": {
+            "name": "name-8a574e"
+          },
+          "bank_code": "Deposit",
+          "raw": {
+            "AcceptanceDateTime": "2026-01-02T22:15:01.261857Z",
+            "AccountId": "0a2bd05a-7caf-11ef-ab59-1ff427f1d7a3",
+            "Amount": {
+              "Amount": "28.20",
+              "Currency": "EUR"
+            },
+            "BookingDateTime": "2026-01-02T22:15:01.261857Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-8a574e"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "Deposit"
+            },
+            "Status": "Booked",
+            "TransactionId": "226561a0-e215-45ea-936a-19d7c47d62ab",
+            "ValueDateTime": "2026-01-02T22:15:01.261857Z"
+          }
+        }
+      ]
+    }
+  }
+]

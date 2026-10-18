@@ -1,0 +1,73 @@
+{
+  "config": {
+    "bank": "poppankki",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:29:48Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "5f3a383a-8a68-42b2-800e-e0342f31c2dd",
+        "3f334c3d-d81f-4419-94fb-092837bfe5bc",
+        "5c140276-720f-4a06-9bd0-fb2b767e38b8",
+        "0a9adbed-4506-4cea-835a-35f17a0cf23c",
+        "464f1e1f-40bb-408d-bb3c-7b9efd1e456a",
+        "20e1cfbe-b233-40b9-9fef-97f61278e08d",
+        "879409fa-54a0-459e-b265-7f1fd361f293",
+        "38e3c11a-bb68-4b15-a0d1-7b2bbb34e790"
+      ],
+      "state": [
+        "a4cc38ec-cfc9-4dfc-93d7-39d00a78632f",
+        "e2515da3-27d7-4bd6-b26f-393adda8b12c"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI08PSEUDOE834DF9832"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.75",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-95a6c2",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI11PSEUDO97566B69A2"
+              }
+            },
+            "remittance": [
+              "obsdk sepa test"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A3ba7ae\u0026id_token=REDACTED%3Aid_token%3Af0eeda\u0026state=a4cc38ec-cfc9-4dfc-93d7-39d00a78632f"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcG9wIiwiZiI6ImludGVybmF0aW9uYWwiLCJpZCI6ImUzZDYxMzU1LTUwMDgtNDBiMi1hYTU3LWU3ODY3YmZjZmQwYiIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v2.0/oidc/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026code=REDACTED%3Acode%3Abf4a08\u0026grant_type=authorization_code\u0026redirect_uri=https%3A%2F%2Fexample.com"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:7cd3ca",
+      "expires_in": 180,
+      "id_token": "REDACTED:id_token:1cafa8",
+      "refresh_token": "REDACTED:refresh_token:1168d5",
+      "scope": "openid accounts",
+      "token_type": "Bearer"
+    }
+  }
+}

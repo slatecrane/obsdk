@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/5cc775a8-58af-11f0-a02b-ff29de93748e/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:496245",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "36d63848-aaf0-4e50-8595-5e7c13e4665d"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "15648.49",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:00:19.625144424Z",
+            "Type": "InterimBooked"
+          },
+          {
+            "AccountId": "5cc775a8-58af-11f0-a02b-ff29de93748e",
+            "Amount": {
+              "Amount": "15648.49",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:00:19.625142924Z",
+            "Type": "InterimAvailable"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://aktia-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/5cc775a8-58af-11f0-a02b-ff29de93748e/balances"
+      },
+      "Meta": {}
+    }
+  }
+}

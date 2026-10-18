@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b6632d",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "642cc970-a2cd-4347-ada7-269ae3a9c7da"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Account": [
+          {
+            "Account": [
+              {
+                "Identification": "identification-521098",
+                "Name": "name-e0c63b",
+                "SchemeName": "UK.OBIE.IBAN"
+              }
+            ],
+            "AccountId": "7bd33132-700b-11ee-9532-7b7f2c95874a",
+            "AccountSubType": "CreditCard",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-07c0e0"
+          },
+          {
+            "Account": [
+              {
+                "Identification": "identification-36df18",
+                "Name": "name-e0c63b",
+                "SchemeName": "UK.OBIE.BBAN"
+              }
+            ],
+            "AccountId": "7bd3d0b0-700b-11ee-9532-2f7db641ac9d",
+            "AccountSubType": "Loan",
+            "AccountType": "Personal",
+            "Currency": "EUR",
+            "Description": "description-0157c0"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts"
+      },
+      "Meta": {}
+    }
+  }
+}

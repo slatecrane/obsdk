@@ -1,0 +1,61 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/e6a397ea-4581-11e9-9d38-e798fd829051/transactions",
+    "query": {
+      "fromBookingDateTime": [
+        "2026-09-01T00:00:00"
+      ],
+      "toBookingDateTime": [
+        "2026-10-18T11:33:35"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:f1b529",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "62aef75d-b3cb-4e5b-aad5-36fc81cbf756"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Transaction": [
+          {
+            "AcceptanceDateTime": "2026-09-30T00:00:00Z",
+            "AccountId": "e6a397ea-4581-11e9-9d38-e798fd829051",
+            "Amount": {
+              "Amount": "50.00",
+              "Currency": "SEK"
+            },
+            "BankTransactionCode": {
+              "Code": "RCDT",
+              "SubCode": "ESCT"
+            },
+            "BookingDateTime": "2026-09-30T00:00:00Z",
+            "CreditDebitIndicator": "Credit",
+            "DebtorAccount": {
+              "Name": "name-50555a"
+            },
+            "ProprietaryBankTransactionCode": {
+              "Code": "39"
+            },
+            "Status": "Booked",
+            "TransactionId": "11e7f354-2e60-4c74-bb1b-b1681faea923",
+            "ValueDateTime": "2026-09-30T00:00:00Z"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://alandsbanken-se-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/e6a397ea-4581-11e9-9d38-e798fd829051/transactions?fromBookingDateTime=2026-09-01T00:00Z\u0026toBookingDateTime=2026-10-18T11:33:35Z"
+      },
+      "Meta": {}
+    }
+  }
+}

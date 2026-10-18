@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/open-banking/v3.1.6/aisp/accounts/7bd33132-700b-11ee-9532-7b7f2c95874a/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b6632d",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "b81fe1b4-4f04-4148-89ca-85ca5e1dcc92"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "Balance": [
+          {
+            "AccountId": "7bd33132-700b-11ee-9532-7b7f2c95874a",
+            "Amount": {
+              "Amount": "645.20",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:35:31.48240798Z",
+            "Type": "InterimBooked"
+          },
+          {
+            "AccountId": "7bd33132-700b-11ee-9532-7b7f2c95874a",
+            "Amount": {
+              "Amount": "3645.20",
+              "Currency": "EUR"
+            },
+            "CreditDebitIndicator": "Credit",
+            "DateTime": "2026-10-18T11:35:31.48240575Z",
+            "Type": "InterimAvailable"
+          }
+        ]
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/aisp/accounts/7bd33132-700b-11ee-9532-7b7f2c95874a/balances"
+      },
+      "Meta": {}
+    }
+  }
+}

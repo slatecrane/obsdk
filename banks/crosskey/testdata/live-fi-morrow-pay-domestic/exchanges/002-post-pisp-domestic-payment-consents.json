@@ -1,0 +1,72 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/open-banking/v3.1.6/pisp/domestic-payment-consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:6dd399",
+      "Content-Type": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:ff6ea4",
+      "X-Customer-User-Agent": "obdev/0.1",
+      "X-Fapi-Customer-Ip-Address": "REDACTED:x-fapi-customer-ip-address:cf70e0",
+      "X-Fapi-Interaction-Id": "7da3e898-fc72-47b4-ac33-6179dbb48a3a",
+      "X-Idempotency-Key": "0bc1c4efc1964f488f7e98837b95b0b0",
+      "X-Jws-Signature": "REDACTED:x-jws-signature:7db82d"
+    },
+    "body": {
+      "Data": {
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-525f4c",
+            "Name": "name-dec1f3",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "d04ba6dfbe8c461686fe0de4af319f43",
+          "InstructedAmount": {
+            "Amount": "1.00",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "625cfa05496741d18681cf68337b7759",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        }
+      },
+      "Risk": {}
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "Data": {
+        "ConsentId": "15fd7996-ae09-4811-aa0c-ae279f601eba",
+        "CreationDateTime": "2026-10-18T11:35:50.385866747Z",
+        "Initiation": {
+          "CreditorAccount": {
+            "Identification": "identification-525f4c",
+            "Name": "name-dec1f3",
+            "SchemeName": "UK.OBIE.IBAN"
+          },
+          "EndToEndIdentification": "d04ba6dfbe8c461686fe0de4af319f43",
+          "InstructedAmount": {
+            "Amount": "1.00",
+            "Currency": "EUR"
+          },
+          "InstructionIdentification": "625cfa05496741d18681cf68337b7759",
+          "RemittanceInformation": {
+            "Unstructured": "unstructured-d2b614"
+          }
+        },
+        "Status": "AwaitingAuthorisation",
+        "StatusUpdateDateTime": "2026-10-18T11:35:50.385866747Z"
+      },
+      "Links": {
+        "Self": "https://morrowbank-api-sandbox.crosskey.io/open-banking/v3.1.6/pisp/domestic-payment-consents/15fd7996-ae09-4811-aa0c-ae279f601eba"
+      },
+      "Risk": {}
+    }
+  }
+}

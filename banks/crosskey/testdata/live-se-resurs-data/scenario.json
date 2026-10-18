@@ -1,0 +1,57 @@
+{
+  "config": {
+    "bank": "resursbank",
+    "country": "SE",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T17:21:11Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "30ff4a1c-d181-4bfc-9e22-eb4623a552ff",
+        "58c5d18f-a769-4e93-88ac-c64e4db12446",
+        "09b45c10-2066-4124-8cf0-60294264110b",
+        "1b3d31b8-14af-4f4a-9a79-11da685d9aea",
+        "57f0a356-6e6d-48d9-bb82-63289d957674"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "cf6f1c12-f3aa-11ed-821d-1b7672115659",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "cf6f1c12-f3aa-11ed-821d-1b7672115659",
+      "from": "2026-01-01T00:00:00Z",
+      "to": "2026-10-18T17:21:12Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "cf6ffd1c-f3aa-11ed-821d-33915f99256b",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "cf6ffd1c-f3aa-11ed-821d-33915f99256b",
+      "from": "2026-01-01T00:00:00Z",
+      "to": "2026-10-18T17:21:13Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

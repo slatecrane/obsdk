@@ -1,0 +1,89 @@
+{
+  "config": {
+    "bank": "spankki",
+    "country": "FI",
+    "segment": "personal",
+    "env": "sandbox",
+    "now": "2026-10-18T11:26:58Z",
+    "redirect_url": "https://example.com",
+    "extra": {
+      "api_key": "REDACTED:api_key:ff6ea4"
+    },
+    "ids": {
+      "request": [
+        "b9676617-a9f0-4ecc-8bdd-ec64f38586fa",
+        "7bb55b72-a36f-44d6-bd63-d072c4b1e7ca",
+        "713329b0-56e4-4d99-aec4-d756dfe70606",
+        "956cd300-d914-47d8-a577-f0771646ea35",
+        "d1d8f197-2bd1-47c4-acf2-05482b330fff",
+        "e7b0ccf6-96fd-4738-9751-c805c4b64f3c",
+        "10563e66-13c8-4dbd-ac39-3d287d0308a6",
+        "566af168-5ea5-4af1-aaee-cf200f8cc180",
+        "0963c162-027c-401b-b3f6-e9e000639eee",
+        "51cd03cf-87a4-4b29-8fd7-158a0321bfbb",
+        "3c0428d4-2be9-4e90-819e-e1dac889b87a"
+      ],
+      "state": [
+        "715f18f6-f612-46b0-a8e3-ac9e9e41270a",
+        "ea59ae3e-e930-4f84-ba57-29c2aae2d34d"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI26PSEUDODE26B0F492"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "2.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-8b7502",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI43PSEUDO2BA47323A8"
+              }
+            },
+            "remittance": [
+              "obsdk scheduled test"
+            ]
+          }
+        ],
+        "execution_date": "2026-10-30"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/#code=REDACTED%3Acode%3A2f060b\u0026id_token=REDACTED%3Aid_token%3A2dd93e\u0026state=715f18f6-f612-46b0-a8e3-ac9e9e41270a"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcy1wYW5ra2kiLCJmIjoiaW50ZXJuYXRpb25hbC1zY2hlZHVsZWQiLCJpZCI6IjVlNTRhNWI3LTMxYzItNGY4MS1iMzA3LTM1MmNjZDAxNTlmYyIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcy1wYW5ra2kiLCJmIjoiaW50ZXJuYXRpb25hbC1zY2hlZHVsZWQiLCJpZCI6IjVlNTRhNWI3LTMxYzItNGY4MS1iMzA3LTM1MmNjZDAxNTlmYyIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktcy1wYW5ra2kiLCJmIjoiaW50ZXJuYXRpb25hbC1zY2hlZHVsZWQiLCJpZCI6IjVlNTRhNWI3LTMxYzItNGY4MS1iMzA3LTM1MmNjZDAxNTlmYyIsInQiOiJzZXBhIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

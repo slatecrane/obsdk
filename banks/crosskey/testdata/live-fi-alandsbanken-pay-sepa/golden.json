@@ -1,0 +1,40 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the payment, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://alandsbanken-fi-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=289c70f5-c68a-40b9-87c8-80500ef0f869&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL2FsYW5kc2Jhbmtlbi1maS1hcGktc2FuZGJveC5jcm9zc2tleS5pbyIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJ1cm46YWxhbmRzYmFua2VuLWZpOnBheW1lbnQ6NjYzZjQzZjMtODI1YS00MWQ3LWExZjMtMmExNDEyMjJkMGMzIiwiZXNzZW50aWFsIjp0cnVlfX0sInVzZXJpbmZvIjp7Im9wZW5iYW5raW5nX2ludGVudF9pZCI6eyJ2YWx1ZSI6InVybjphbGFuZHNiYW5rZW4tZmk6cGF5bWVudDo2NjNmNDNmMy04MjVhLTQxZDctYTFmMy0yYTE0MTIyMmQwYzMiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNDkwNCwiaWF0IjoxNzkyMzIzMTA0LCJpc3MiOiIiLCJqdGkiOiIxMzNkODcxMS1jMmFmLTQyYTQtYWVhNC1kMzYyNjdhYmY4MzUiLCJuYmYiOjE3OTIzMjMxMDQsIm5vbmNlIjoiMjg5YzcwZjUtYzY4YS00MGI5LTg3YzgtODA1MDBlZjBmODY5IiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgcGF5bWVudHMiLCJzdGF0ZSI6IjVhMWY3Y2E4LTU3MTQtNDJmOS1iYWI4LTk5OWZhNzZiNDM4MCJ9.dGVzdC1zaWduYXR1cmU6PS2lobMXlOA&response_type=code+id_token&scope=openid+payments&state=5a1f7ca8-5714-42f9-bab8-999fa76b4380"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "785fcfef-87af-47fd-bcc6-1788990ca1b4",
+        "type": "sepa",
+        "status": "accepted",
+        "bank_status": "Pending",
+        "final": false,
+        "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWxhbmRzYmFua2VuLWZpIiwiZiI6ImludGVybmF0aW9uYWwiLCJpZCI6Ijc4NWZjZmVmLTg3YWYtNDdmZC1iY2M2LTE3ODg5OTBjYTFiNCIsInQiOiJzZXBhIn0"
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "785fcfef-87af-47fd-bcc6-1788990ca1b4",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "AcceptedSettlementCompleted",
+      "final": true,
+      "ref": "obs1.eyJpIjoiY3Jvc3NrZXktYWxhbmRzYmFua2VuLWZpIiwiZiI6ImludGVybmF0aW9uYWwiLCJpZCI6Ijc4NWZjZmVmLTg3YWYtNDdmZC1iY2M2LTE3ODg5OTBjYTFiNCIsInQiOiJzZXBhIn0"
+    }
+  }
+]

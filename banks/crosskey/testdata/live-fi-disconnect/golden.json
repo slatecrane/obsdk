@@ -1,0 +1,34 @@
+[
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "spankki",
+      "country": "FI",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "crosskey-s-pankki",
+      "generation": 3,
+      "updated_at": "2026-10-18T10:38:33Z",
+      "access_token": "REDACTED:access_token",
+      "refresh_token": "REDACTED:refresh_token",
+      "token_type": "Bearer",
+      "scope": "openid accounts",
+      "access_expires_at": "2026-10-18T10:38:57.680906Z"
+    },
+    "disconnect": {
+      "closed": [
+        "accounts"
+      ]
+    }
+  },
+  {
+    "op": "accounts",
+    "error": {
+      "is": [
+        "reauth_required"
+      ],
+      "message": "obsdk: user must re-authorize: consent_not_authorised: obsdk: accounts: HTTP 400 UK.OBIE.Resource.InvalidConsentStatus: The consent 79b0fb6e-08c3-4a27-b668-4b73cff7b06c is not authorized (request 5d82ae7d-fcda-48e1-900e-0d42e484ea9c)"
+    }
+  }
+]

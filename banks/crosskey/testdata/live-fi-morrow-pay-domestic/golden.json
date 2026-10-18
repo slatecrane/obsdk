@@ -1,0 +1,29 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the payment, then pass the callback URL (with its #fragment) to Resume.",
+      "redirect": {
+        "url": "https://morrowbank-sandbox.crosskey.io/open-banking/v4.0/oidc/auth?client_id=REDACTED%3Aclient_id&nonce=ffc96549-5ea1-449d-bd72-e0491553176f&redirect_uri=https%3A%2F%2Fexample.com&request=eyJhbGciOiJQUzI1NiIsImtpZCI6InRlc3Qta2lkIiwidHlwIjoiSldUIn0.eyJhdWQiOiJodHRwczovL21vcnJvd2JhbmstYXBpLXNhbmRib3guY3Jvc3NrZXkuaW8iLCJjbGFpbXMiOnsiaWRfdG9rZW4iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOm1vcnJvd2Jhbms6cGF5bWVudDoxNWZkNzk5Ni1hZTA5LTQ4MTEtYWEwYy1hZTI3OWY2MDFlYmEiLCJlc3NlbnRpYWwiOnRydWV9fSwidXNlcmluZm8iOnsib3BlbmJhbmtpbmdfaW50ZW50X2lkIjp7InZhbHVlIjoidXJuOm1vcnJvd2Jhbms6cGF5bWVudDoxNWZkNzk5Ni1hZTA5LTQ4MTEtYWEwYy1hZTI3OWY2MDFlYmEiLCJlc3NlbnRpYWwiOnRydWV9fX0sImNsaWVudF9pZCI6IlJFREFDVEVEOmNsaWVudF9pZCIsImV4cCI6MTc5MjMyNTE0OSwiaWF0IjoxNzkyMzIzMzQ5LCJpc3MiOiIiLCJqdGkiOiJlMzNlY2U0ZC00MDMzLTQ2MWItODM3Mi05MjdjNDE0MDljMTYiLCJuYmYiOjE3OTIzMjMzNDksIm5vbmNlIjoiZmZjOTY1NDktNWVhMS00NDlkLWJkNzItZTA0OTE1NTMxNzZmIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9leGFtcGxlLmNvbSIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIGlkX3Rva2VuIiwic2NvcGUiOiJvcGVuaWQgcGF5bWVudHMiLCJzdGF0ZSI6IjgzNjdkNmEyLWJhMmMtNDFlYi1iMDE1LTA0ODk0OGFkNWY3YiJ9.dGVzdC1zaWduYXR1cmU6Y6lckayLe6Y&response_type=code+id_token&scope=openid+payments&state=8367d6a2-ba2c-41eb-b015-048948ad5f7b"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "6ad05856-4784-4625-9d35-8f7f8a23ebaf",
+        "type": "domestic",
+        "status": "completed",
+        "bank_status": "AcceptedSettlementCompleted",
+        "final": true,
+        "ref": "obs1.eyJpIjoiY3Jvc3NrZXktbW9ycm93YmFuayIsImYiOiJkb21lc3RpYyIsImlkIjoiNmFkMDU4NTYtNDc4NC00NjI1LTlkMzUtOGY3ZjhhMjNlYmFmIiwidCI6ImRvbWVzdGljIn0"
+      }
+    }
+  }
+]
