@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/psd2/v1/consents"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentStatus": "received",
+      "consentId": "c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d",
+      "_links": {
+        "startAuthorisationWithPsuAuthentication": {
+          "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/consents/c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d/authorisations"
+        }
+      }
+    }
+  }
+}

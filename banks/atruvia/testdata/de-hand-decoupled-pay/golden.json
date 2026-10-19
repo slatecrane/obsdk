@@ -1,0 +1,77 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the Volksbank Raiffeisenbank online banking login.",
+      "fields": [
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Bitte geben Sie den Auftrag in Ihrer SecureGo plus App frei.",
+      "wait_for": 3000000000,
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "note": "not yet approved in SecureGo plus",
+    "step": {
+      "kind": "wait",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Bitte geben Sie den Auftrag in Ihrer SecureGo plus App frei.",
+      "wait_for": 3000000000,
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "note": "approved",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  }
+]

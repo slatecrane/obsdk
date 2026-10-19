@@ -5,7 +5,7 @@
 adapter is not a bank: users only ever see the banks built on it, under their own keys.
 
 Built and verified on 2026-10-18 against adorsys' open-source ModelBank (XS2A-Sandbox 5.14), run
-locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)).
+locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)).
 
 ## What it covers
 
@@ -17,7 +17,7 @@ locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)).
 | Hubs | `Profile.Institution`: a `Config.Extra` parameter (e.g. the BLZ) picks one bank of a hub; it is stored in the session, the flow state and the payment reference, so later calls reach the same bank |
 | Not yet | OAuth as a pre-step (Deutsche Bank-style), encrypted PSU authentication, signing baskets, multilevel SCA, periodic and bulk payments, card accounts |
 | Data | accounts (`withBalance`), balances, transactions (booked, pending or both per profile) as JSON or camt.052/053/054 XML (`Profile.XMLTransactions`; parsed by content); `next` links passed through as the cursor; signed amounts, `creditDebitIndicator` on unsigned ones; 1.3.8 and older field shapes |
-| Payments | single payments per payment product, status, cancellation (immediate 204, or approved through cancellation authorisations) |
+| Payments | single payments per payment product, status, cancellation (immediate 204, or approved through cancellation authorisations). JSON bodies, or pain.001 XML (`Profile.PaymentXML`: pain.001.001.09 in the German GBIC_5 profile, `NOTPROVIDED` for names and ids not given, execution date today in CET when none is asked for) with the status read from pain.002 (most specific of transaction, payment and group status; the reason as `Payment.Reason`). `PSUIDRequired` profiles need `PSU.ID` to cancel |
 | Refresh | there is no token: `Refresh` checks the consent status and asks for re-authorisation when it is not `valid` |
 | Signing | Digest + draft-cavage `Signature` + `TPP-Signature-Certificate` with `Config.Seal` (RSA), SHA-256 or SHA-512, configurable `keyId` and `algorithm` |
 | Errors | `CONSENT_EXPIRED` / `CONSENT_INVALID` / `CONSENT_UNKNOWN` → re-authorise; `ACCESS_EXCEEDED` and 429 → rate limited with `Retry-After`; `TOKEN_EXPIRED` → access expired; wrong login, TAN or method during authorisation → `ErrAuthFailed`; `PAYMENT_FAILED` or `RJCT` → payment rejected |
@@ -158,6 +158,7 @@ structured reference object, foreign cursor refused), `de-hand-consent-expired`,
 
 Not verified anywhere: decoupled against a real server, request signing against a server that checks it
 (unit-tested only), bank-offered and dedicated consents, the OAuth SCA approach and camt parsing (fake
-bank, unit tests and Sparkassen's hand-written scenarios only). ModelBank 5.14 has an OAuth mode
+bank, unit tests and Sparkassen's hand-written scenarios only), pain.001/pain.002 (unit tests and Atruvia's
+hand-written scenarios only; no XSD validation in the tests). ModelBank 5.14 has an OAuth mode
 (`scaRedirectFlow: OAUTH`), but it is not the standard one: the metadata link is called `scaRedirect`,
 the callback has no `state` and there is no PKCE, so it was not used to verify the adapter.

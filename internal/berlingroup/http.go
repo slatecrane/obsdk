@@ -37,8 +37,12 @@ type req struct {
 	method string
 	path   string // "/v1/..." (from apiPath), with or without a query
 	query  url.Values
-	body   any // marshalled as JSON when non-nil
+	body   any    // marshalled as JSON when non-nil
+	raw    []byte // sent as is with contentType when body is nil
 	header map[string]string
+
+	contentType string // of raw
+	accept      string // default application/json
 }
 
 type resp struct {
@@ -89,11 +93,12 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 		}
 		u.RawQuery = q.Encode()
 	}
-	var body []byte
+	body, ctype := r.raw, r.contentType
 	if r.body != nil {
 		if body, err = json.Marshal(r.body); err != nil {
 			return nil, err
 		}
+		ctype = "application/json"
 	}
 	hr, err := http.NewRequestWithContext(ctx, r.method, u.String(), bytes.NewReader(body))
 	if err != nil {
@@ -102,9 +107,9 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	if len(body) == 0 {
 		hr.Body, hr.ContentLength = http.NoBody, 0
 	} else {
-		hr.Header.Set("Content-Type", "application/json")
+		hr.Header.Set("Content-Type", ctype)
 	}
-	hr.Header.Set("Accept", "application/json")
+	hr.Header.Set("Accept", firstNonEmpty(r.accept, "application/json"))
 	hr.Header.Set("X-Request-ID", c.cfg.ID(obsdk.IDRequest))
 	if c.p.Headers != nil {
 		c.p.Headers(c.cfg, hr.Header)

@@ -1,0 +1,57 @@
+{
+  "description": "Synthetic: built from Atruvia's XS2A documentation (OpenAPI 1.3 + errata, sandbox guide 2026-04-27), not recorded. Replace with a live recording once a PSD2 test QSealC is available. A SEPA credit transfer created by VRK1234567890SECPLUS and cancelled before approval: without the PSU-ID the SDK refuses (Atruvia requires it), with it the DELETE cancels at once (204, no SCA for unapproved payments) and the status is CANC.",
+  "config": {
+    "bank": "atruvia",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "bank_code": "49999960"
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "embedded",
+      "psu_ip": "203.0.113.7",
+      "psu_id": "VRK1234567890SECPLUS",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "DE39499999600000005111"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "Erika Mustermann",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE89370400440532013000"
+              }
+            },
+            "remittance": [
+              "Rechnung 2026-117"
+            ],
+            "end_to_end_id": "obsdk-e2e-1"
+          }
+        ]
+      }
+    },
+    {
+      "op": "cancel_payment",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "cancel_payment",
+      "psu_ip": "203.0.113.7",
+      "psu_id": "VRK1234567890SECPLUS"
+    }
+  ]
+}

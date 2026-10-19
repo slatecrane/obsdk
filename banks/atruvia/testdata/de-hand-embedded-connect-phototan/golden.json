@@ -1,0 +1,177 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the online banking login (PSU-ID).",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Choose how to confirm.",
+      "fields": [
+        {
+          "key": "sca_method",
+          "label": "Authentication method",
+          "kind": "select",
+          "required": true,
+          "options": [
+            {
+              "value": "946",
+              "label": "SecureGo plus (Direktfreigabe)"
+            },
+            {
+              "value": "962",
+              "label": "Smart-TAN plus manuell"
+            },
+            {
+              "value": "972",
+              "label": "Smart-TAN plus optisch / USB"
+            },
+            {
+              "value": "982",
+              "label": "Smart-TAN photo"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Bitte scannen Sie die Grafik mit Ihrem Smart-TAN photo Leser und geben Sie die TAN ein.",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (Smart-TAN photo)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "atruvia",
+        "country": "DE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "atruvia-bg",
+        "generation": 1,
+        "updated_at": "2026-10-19T10:00:00Z",
+        "consents": {
+          "ais": {
+            "id": "c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-01-17T00:00:00Z",
+            "accounts": [
+              "DE45499999600000005100",
+              "DE18499999600000005101"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "embedded",
+          "institution": "49999960"
+        }
+      },
+      "accounts": [
+        {
+          "id": "3dc3d5b3-7023-4848-9853-f5400a64e80f",
+          "stable_id": "3922b2f677f1349868638d18950a2e59",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE45499999600000005100"
+            }
+          ],
+          "name": "Girokonto",
+          "owner_name": "Max Mustermann",
+          "currency": "EUR",
+          "product": "VR-GiroKomfort",
+          "type": "CACC",
+          "bic": "GENODEF1M04",
+          "raw": {
+            "resourceId": "3dc3d5b3-7023-4848-9853-f5400a64e80f",
+            "iban": "DE45499999600000005100",
+            "currency": "EUR",
+            "name": "Girokonto",
+            "product": "VR-GiroKomfort",
+            "ownerName": "Max Mustermann",
+            "cashAccountType": "CACC",
+            "status": "enabled",
+            "bic": "GENODEF1M04",
+            "_links": {
+              "balances": {
+                "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/balances"
+              },
+              "transactions": {
+                "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/transactions"
+              }
+            }
+          }
+        },
+        {
+          "id": "3dc3d5b3-7023-4848-9853-f5400a64e811",
+          "stable_id": "b725ed730bd77fabd968e7ccb520a260",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "DE18499999600000005101"
+            }
+          ],
+          "name": "Tagesgeld",
+          "owner_name": "Max Mustermann",
+          "currency": "EUR",
+          "product": "VR-Tagesgeld",
+          "type": "SVGS",
+          "bic": "GENODEF1M04",
+          "raw": {
+            "resourceId": "3dc3d5b3-7023-4848-9853-f5400a64e811",
+            "iban": "DE18499999600000005101",
+            "currency": "EUR",
+            "name": "Tagesgeld",
+            "product": "VR-Tagesgeld",
+            "ownerName": "Max Mustermann",
+            "cashAccountType": "SVGS",
+            "status": "enabled",
+            "bic": "GENODEF1M04",
+            "_links": {
+              "balances": {
+                "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e811/balances"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+]

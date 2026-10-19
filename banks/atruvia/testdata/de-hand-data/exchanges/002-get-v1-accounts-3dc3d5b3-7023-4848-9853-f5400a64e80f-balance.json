@@ -1,0 +1,35 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/balances"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "iban": "DE45499999600000005100"
+      },
+      "balances": [
+        {
+          "balanceType": "closingBooked",
+          "balanceAmount": {
+            "currency": "EUR",
+            "amount": "1523.42"
+          },
+          "referenceDate": "2026-10-18"
+        },
+        {
+          "balanceType": "interimAvailable",
+          "balanceAmount": {
+            "currency": "EUR",
+            "amount": "3523.42"
+          },
+          "referenceDate": "2026-10-19"
+        }
+      ]
+    }
+  }
+}

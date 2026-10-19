@@ -1,0 +1,50 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the Volksbank Raiffeisenbank online banking login.",
+      "fields": [
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "error": {
+      "is": [
+        "invalid_request"
+      ],
+      "message": "obsdk: invalid request: Volksbank Raiffeisenbank needs the user's online banking login (PSU.ID) to cancel a payment"
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "CANC",
+        "final": true,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  }
+]

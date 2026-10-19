@@ -1,0 +1,49 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/transactions",
+    "query": {
+      "scrollRef": [
+        "MjAyNi0xMC0wNXwx"
+      ],
+      "bookingStatus": [
+        "booked"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "iban": "DE45499999600000005100"
+      },
+      "transactions": {
+        "booked": [
+          {
+            "transactionId": "2026100500003",
+            "bookingDate": "2026-10-05",
+            "valueDate": "2026-10-05",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-12.99"
+            },
+            "creditorName": "Musik Streaming AB",
+            "remittanceInformationUnstructured": "Abo Oktober",
+            "remittanceInformationUnstructuredArray": [
+              "Abo Oktober",
+              "Kundennr. 123456"
+            ]
+          }
+        ],
+        "_links": {
+          "account": {
+            "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f"
+          }
+        }
+      }
+    }
+  }
+}

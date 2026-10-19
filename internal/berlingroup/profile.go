@@ -12,6 +12,7 @@ package berlingroup
 import (
 	"fmt"
 	"net/http"
+	"strings"
 
 	obsdk "github.com/slatecrane/obsdk"
 )
@@ -42,7 +43,7 @@ type PSUIDUse string
 
 const (
 	PSUIDNone     PSUIDUse = ""         // sent when the caller has one, never asked for
-	PSUIDRequired PSUIDUse = "required" // asked for (field psu_id) before the consent or payment is created
+	PSUIDRequired PSUIDUse = "required" // asked for (field psu_id) before the consent or payment is created, and needed to cancel
 )
 
 // Profile describes one bank's Berlin Group interface.
@@ -121,6 +122,11 @@ type Profile struct {
 	// the same way). The response is parsed by its content, so a bank that
 	// answers JSON anyway still works.
 	XMLTransactions bool
+
+	// PaymentXML sends payments as pain.001 XML (pain.001.001.09 in the German
+	// GBIC_5 profile) and reads pain.002 status reports, for banks whose
+	// payment products are "pain.001-…" only. Products must then name those.
+	PaymentXML bool
 
 	// OAuthNoRedirectURI leaves redirect_uri out of the OAuth authorisation
 	// and token requests of the OAuth SCA approach, for banks that take the
@@ -216,6 +222,9 @@ func Integration(p Profile) obsdk.Integration {
 	for _, s := range p.Info.Payments {
 		if p.Products[s.Type] == "" {
 			panic(fmt.Sprintf("berlingroup: profile %q has a %s payment spec but no payment product for it", p.ID, s.Type))
+		}
+		if p.PaymentXML && !strings.HasPrefix(p.Products[s.Type], "pain.001-") {
+			panic(fmt.Sprintf("berlingroup: profile %q sends pain.001 bodies, but its %s product %q is not a pain.001 product", p.ID, s.Type, p.Products[s.Type]))
 		}
 	}
 	p.Info.Spec = "berlin-group"

@@ -1,0 +1,18 @@
+{
+  "description": "Synthetic: built from Atruvia's XS2A documentation (OpenAPI 1.3 + errata, sandbox guide 2026-04-27), not recorded. Replace with a live recording once a PSD2 test QSealC is available. Accounts under the sandbox's mocked consent CONSENTEXPIRED: CONSENT_EXPIRED becomes a ReauthError.",
+  "config": {
+    "bank": "atruvia",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "bank_code": "49999960"
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7"
+    }
+  ]
+}

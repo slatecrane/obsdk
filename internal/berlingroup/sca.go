@@ -82,6 +82,7 @@ type flow struct {
 	// Payments and cancellations.
 	Pay     *payState       `json:"pay,omitempty"`
 	PayBody json.RawMessage `json:"pay_body,omitempty"` // built request, kept while the PSU-ID is asked for first
+	PayXML  []byte          `json:"pay_xml,omitempty"`  // the same for pain.001 bodies (Profile.PaymentXML)
 }
 
 type scaMethod struct {

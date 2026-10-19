@@ -1,0 +1,111 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the Volksbank Raiffeisenbank online banking login.",
+      "fields": [
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Choose how to confirm.",
+      "fields": [
+        {
+          "key": "sca_method",
+          "label": "Authentication method",
+          "kind": "select",
+          "required": true,
+          "options": [
+            {
+              "value": "962",
+              "label": "Smart-TAN plus manuell"
+            },
+            {
+              "value": "982",
+              "label": "Smart-TAN photo"
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the confirmation code (TAN).",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (Smart-TAN plus manuell)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "code": "2945117898",
+        "text": "Stecken Sie Ihre Karte in den TAN-Generator und drücken Sie \"TAN\". Geben Sie den Startcode ein."
+      },
+      "payment": {
+        "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "payment_rejected"
+      ],
+      "message": "obsdk: payment rejected: rjct"
+    }
+  },
+  {
+    "op": "payment_status",
+    "note": "the reason from the pain.002 report",
+    "payment": {
+      "id": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+      "type": "sepa",
+      "status": "rejected",
+      "bank_status": "RJCT",
+      "final": true,
+      "reason": "Deckung nicht ausreichend",
+      "ref": "obs1.eyJpIjoiYXRydXZpYS1iZyIsInAiOiJwYWluLjAwMS1zZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6InA5ZThkN2M2LWI1YTQtNDMyMS05ZmVkLWNiYTk4NzY1NDMyMSIsInQiOiJzZXBhIiwiYiI6IjQ5OTk5OTYwIn0"
+    }
+  }
+]

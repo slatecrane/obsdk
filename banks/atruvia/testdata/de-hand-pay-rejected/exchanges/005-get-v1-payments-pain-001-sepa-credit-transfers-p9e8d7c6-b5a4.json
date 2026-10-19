@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/psd2/v1/payments/pain.001-sepa-credit-transfers/p9e8d7c6-b5a4-4321-9fed-cba987654321/status",
+    "headers": {
+      "Accept": "application/xml, application/json;q=0.9"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/xml;charset=UTF-8"
+    },
+    "body_text": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.002.001.03\"><CstmrPmtStsRpt><GrpHdr><MsgId>STS-RJCT</MsgId><CreDtTm>2026-10-19T12:00:01.000+02:00</CreDtTm></GrpHdr><OrgnlGrpInfAndSts><OrgnlMsgId>request1</OrgnlMsgId><OrgnlMsgNmId>pain.001.001.09</OrgnlMsgNmId><OrgnlNbOfTxs>1</OrgnlNbOfTxs><GrpSts>RJCT</GrpSts><StsRsnInf><Rsn><Cd>AM04</Cd></Rsn><AddtlInf>Deckung nicht ausreichend</AddtlInf></StsRsnInf></OrgnlGrpInfAndSts></CstmrPmtStsRpt></Document>\n"
+  }
+}

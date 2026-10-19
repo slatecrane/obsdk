@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/psd2/v1/accounts"
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "CONSENT_EXPIRED",
+          "text": "The consent was created by this TPP but has expired and needs to be renewed."
+        }
+      ]
+    }
+  }
+}

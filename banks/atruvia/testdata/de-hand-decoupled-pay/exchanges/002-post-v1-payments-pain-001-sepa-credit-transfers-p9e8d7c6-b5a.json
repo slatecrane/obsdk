@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/psd2/v1/payments/pain.001-sepa-credit-transfers/p9e8d7c6-b5a4-4321-9fed-cba987654321/authorisations"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "ASPSP-SCA-Approach": "DECOUPLED",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "scaStatus": "scaMethodSelected",
+      "authorisationId": "a1b2c3d4-e5f6-4789-8abc-def012345678",
+      "chosenScaMethod": {
+        "authenticationType": "PUSH_OTP",
+        "authenticationMethodId": "946",
+        "name": "SecureGo plus (Direktfreigabe)"
+      },
+      "psuMessage": "Bitte geben Sie den Auftrag in Ihrer SecureGo plus App frei.",
+      "_links": {
+        "scaStatus": {
+          "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/payments/pain.001-sepa-credit-transfers/p9e8d7c6-b5a4-4321-9fed-cba987654321/authorisations/a1b2c3d4-e5f6-4789-8abc-def012345678"
+        }
+      }
+    }
+  }
+}
