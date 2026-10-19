@@ -1,0 +1,13 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "e741d60fac1763b84c3345d367140a39",
+      "type": "sepa",
+      "status": "accepted",
+      "bank_status": "ACCP",
+      "final": false,
+      "ref": "obs1.eyJpIjoic2licy1iZyIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6ImU3NDFkNjBmYWMxNzYzYjg0YzMzNDVkMzY3MTQwYTM5IiwidCI6InNlcGEiLCJiIjoiQlNUIn0"
+    }
+  }
+]

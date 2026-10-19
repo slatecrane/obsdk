@@ -1,0 +1,45 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sibs/apimarket-sb/BST/v1-0-4/consents",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=i84O1iuNU9UfYHpQV22GlzG3JUJF+piaj2/HWc5GG9o=",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "sandbox",
+      "Tpp-Nok-Redirect-Uri": "https://www.example.com?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://www.example.com",
+      "Tpp-Signature-Certificate": "sandbox",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "access": {
+        "allPsd2": "all-accounts"
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 4,
+      "recurringIndicator": true,
+      "validUntil": "2027-04-17T18:36:48"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "e8db7353-b350-46b5-8b3c-9dfeb84b2d95"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "RESOURCE_UNKNOWN",
+          "text": "Invalid Aspsp-cde"
+        }
+      ],
+      "transactionStatus": "RJCT"
+    }
+  }
+}

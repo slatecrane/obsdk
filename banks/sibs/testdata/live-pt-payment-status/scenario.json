@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "sibs",
+    "country": "PT",
+    "env": "sandbox",
+    "now": "2026-10-19T18:36:34Z",
+    "redirect_url": "https://www.example.com",
+    "extra": {
+      "aspsp": "BST"
+    },
+    "ids": {
+      "request": [
+        "28caacec-bb3b-4319-88ff-c186f7149a27"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoic2licy1iZyIsInAiOiJzZXBhLWNyZWRpdC10cmFuc2ZlcnMiLCJpZCI6ImU3NDFkNjBmYWMxNzYzYjg0YzMzNDVkMzY3MTQwYTM5IiwidCI6InNlcGEiLCJiIjoiQlNUIn0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

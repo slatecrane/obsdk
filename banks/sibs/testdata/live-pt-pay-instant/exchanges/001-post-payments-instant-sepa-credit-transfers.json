@@ -1,0 +1,50 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sibs/apimarket-sb/BST/v1-0-4/payments/instant-sepa-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=SOnuuruXsSlaWzhuOhysNZ8M98Gkb9IKxCy4pTvlVoM=",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "sandbox",
+      "Tpp-Nok-Redirect-Uri": "https://www.example.com?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://www.example.com",
+      "Tpp-Signature-Certificate": "sandbox",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    },
+    "body": {
+      "creditorAccount": {
+        "iban": "PT83PSEUDOE6255F1CF3"
+      },
+      "creditorName": "creditorname-56a4d9",
+      "instructedAmount": {
+        "amount": "2.50",
+        "currency": "EUR"
+      },
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-203eb4"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "8f7ef2d5-d633-45c3-9bad-1d709ad5f3bb"
+    },
+    "body": {
+      "_links": {
+        "redirect": ""
+      },
+      "paymentId": "e741d60fac1763b84c3345d367140a39",
+      "psuMessage": "Bank with bic TOTAPTPL",
+      "transactionFeeIndicator": true,
+      "transactionFees": {
+        "amount": "+0.93",
+        "currency": "USD"
+      },
+      "transactionStatus": "PDNG"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sibs/apimarket-sb/BST/v1-0-4/payments/sepa-credit-transfers/e741d60fac1763b84c3345d367140a39/status",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "sandbox",
+      "Tpp-Signature-Certificate": "sandbox",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "6bd92a10-f190-4a7f-a929-afdaff9141af"
+    },
+    "body": {
+      "transactionStatus": "ACCP"
+    }
+  }
+}

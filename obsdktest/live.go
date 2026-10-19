@@ -30,6 +30,7 @@ import (
 //	OBSDK_PSU_IP, OBSDK_PSU_USER_AGENT
 //	OBSDK_TLS_CERT, OBSDK_TLS_KEY   mTLS client certificate and key (PEM or DER files)
 //	OBSDK_TLS_CA                    extra root CA(s) for the bank's server certificate (PEM)
+//	OBSDK_TLS_RENEGOTIATE=1         allow the server to renegotiate TLS once (SIBS's gateway does)
 //	OBSDK_SEAL_KEY, OBSDK_SEAL_KID  request-signing key (PEM) and its key id
 //	OBSDK_SEAL_CERT                 optional certificate of the signing key (PEM or DER)
 //
@@ -50,6 +51,7 @@ const (
 	EnvTLSCert     = "OBSDK_TLS_CERT"
 	EnvTLSKey      = "OBSDK_TLS_KEY"
 	EnvTLSCA       = "OBSDK_TLS_CA"
+	EnvTLSReneg    = "OBSDK_TLS_RENEGOTIATE"
 	EnvSealKey     = "OBSDK_SEAL_KEY"
 	EnvSealKID     = "OBSDK_SEAL_KID"
 	EnvSealCert    = "OBSDK_SEAL_CERT"
@@ -116,10 +118,14 @@ func LiveFromEnv() (*Live, error) {
 // loadTLS builds an mTLS HTTP client from OBSDK_TLS_* when they are set.
 func (l *Live) loadTLS() error {
 	certPath, keyPath, caPath := repoPath(os.Getenv(EnvTLSCert)), repoPath(os.Getenv(EnvTLSKey)), repoPath(os.Getenv(EnvTLSCA))
-	if certPath == "" && keyPath == "" && caPath == "" {
+	reneg := os.Getenv(EnvTLSReneg) == "1"
+	if certPath == "" && keyPath == "" && caPath == "" && !reneg {
 		return nil
 	}
 	tc := &tls.Config{MinVersion: tls.VersionTLS12}
+	if reneg {
+		tc.Renegotiation = tls.RenegotiateOnceAsClient
+	}
 	if certPath != "" || keyPath != "" {
 		cert, err := readCert(certPath)
 		if err != nil {

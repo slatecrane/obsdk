@@ -38,7 +38,7 @@ type consentRequest struct {
 // all accounts (global) or bank-offered (empty lists, the user picks).
 func (c *client) access(caps []obsdk.Capability, ibans []string) any {
 	if len(ibans) == 0 && c.p.Consent != ConsentBankOffered {
-		return map[string]string{"allPsd2": "allAccounts"}
+		return map[string]string{"allPsd2": firstNonEmpty(c.p.AllAccountsValue, "allAccounts")}
 	}
 	if len(caps) == 0 {
 		caps = obsdk.AISP
@@ -100,7 +100,7 @@ func (c *client) Connect(ctx context.Context, r obsdk.ConnectRequest) (*obsdk.St
 	if v := strings.TrimSpace(r.Values[fieldPSUID]); v != "" {
 		f.PSU.ID = v
 	}
-	f.ValidUntil = c.now().UTC().AddDate(0, 0, c.p.consentDays(r.ConsentValidityDays)).Format("2006-01-02")
+	f.ValidUntil = c.now().UTC().AddDate(0, 0, c.p.consentDays(r.ConsentValidityDays)).Format(firstNonEmpty(c.p.ValidUntilLayout, "2006-01-02"))
 	if f.PSU.ID == "" && (c.p.PSUID == PSUIDRequired || approach == Decoupled) {
 		f.Need = needPSUID
 		return c.pause(f, psuIDStep())
@@ -126,7 +126,7 @@ func (c *client) createConsent(ctx context.Context, f *flow, in obsdk.StepInput)
 	}
 	f.ConsentID = r.ConsentID
 	f.StatusPath = "/v1/consents/" + url.PathEscape(r.ConsentID) + "/status"
-	if err := f.absorb(&r); err != nil {
+	if err := f.absorb(&r, c.p.PathVersion); err != nil {
 		return nil, err
 	}
 	f.Need = ""
@@ -177,7 +177,9 @@ func (c *client) finishConnect(ctx context.Context, f *flow) (*obsdk.Step, error
 		s.Meta[metaApproach] = "oauth"
 	}
 	cons := obsdk.Consent{ID: f.ConsentID, Kind: consentKind, Status: status}
-	if t, err := time.Parse("2006-01-02", c.consentValidUntil(ctx, f)); err == nil {
+	// The consent is valid through the day of validUntil, a date or (at some
+	// banks) a date-time.
+	if t, err := time.Parse("2006-01-02", firstN(c.consentValidUntil(ctx, f), 10)); err == nil {
 		cons.ValidUntil = &t
 	}
 	s.Consents[consentKind] = cons
@@ -287,4 +289,11 @@ func (c *client) Disconnect(ctx context.Context, s *obsdk.Session) (*obsdk.Disco
 	ns.AccessExpiresAt, ns.RefreshExpiresAt = nil, nil
 	ns.Touch(c.now())
 	return res, nil
+}
+
+func firstN(s string, n int) string {
+	if len(s) > n {
+		return s[:n]
+	}
+	return s
 }

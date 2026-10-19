@@ -56,13 +56,19 @@ type resp struct {
 // host, links that repeat the base path, or bare paths; all of them land on
 // the API root the client was configured with (which keeps base_url
 // overrides and replays working). Links that do not point into the API are
-// refused.
-func apiPath(link string) (string, error) {
+// refused. version is the profile's path segment for "v1" (PathVersion); a
+// link using it is rewritten to the canonical "/v1/" form that flows store.
+func apiPath(link, version string) (string, error) {
 	u, err := url.Parse(link)
 	if err != nil {
 		return "", fmt.Errorf("berlingroup: unreadable link %q", link)
 	}
 	p := u.EscapedPath()
+	if version != "" && version != "v1" {
+		if i := strings.Index(p+"/", "/"+version+"/"); i >= 0 {
+			p = "/v1" + p[i+1+len(version):]
+		}
+	}
 	i := strings.Index(p, "/v1/")
 	if i < 0 {
 		if strings.HasSuffix(p, "/v1") {
@@ -82,7 +88,7 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	if !strings.HasPrefix(r.path, "/v1/") {
 		return nil, fmt.Errorf("berlingroup: refusing to call %q: not an XS2A path", r.path)
 	}
-	u, err := url.Parse(c.base + r.path)
+	u, err := url.Parse(c.base + "/" + c.p.pathVersion() + strings.TrimPrefix(r.path, "/v1"))
 	if err != nil {
 		return nil, err
 	}
@@ -118,6 +124,12 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 		if v != "" {
 			hr.Header.Set(k, v)
 		}
+	}
+	if c.p.DateLayout != "" {
+		hr.Header.Set("Date", c.now().UTC().Format(c.p.DateLayout))
+	}
+	if c.p.BodyDigest && len(body) > 0 {
+		hr.Header.Set("Digest", (&Signing{SHA512: c.p.Signing != nil && c.p.Signing.SHA512}).digest(body))
 	}
 	if s := c.p.Signing; s != nil && (s.Required || c.cfg.Seal != nil) {
 		if err := s.sign(hr, body, c.cfg.Seal, c.now().UTC().Format(http.TimeFormat)); err != nil {

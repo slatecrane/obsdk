@@ -377,8 +377,8 @@ func (c *client) bookingStatus(st []obsdk.TxStatus) (string, error) {
 
 // cursorRequest turns a next link back into a request, accepting only links
 // to the queried account's transactions.
-func cursorRequest(accountPath, cursor string) (req, error) {
-	p, err := apiPath(cursor)
+func cursorRequest(accountPath, cursor, version string) (req, error) {
+	p, err := apiPath(cursor, version)
 	if err != nil || !strings.HasPrefix(p, accountPath+"/transactions") {
 		return req{}, fmt.Errorf("%w: cursor is not a next link of this account's transactions", obsdk.ErrInvalidRequest)
 	}
@@ -394,7 +394,7 @@ func (c *client) Transactions(ctx context.Context, s *obsdk.Session, q obsdk.TxQ
 	}
 	var r req
 	if q.Cursor != "" {
-		if r, err = cursorRequest(p, q.Cursor); err != nil {
+		if r, err = cursorRequest(p, q.Cursor, c.p.PathVersion); err != nil {
 			return nil, err
 		}
 	} else {
