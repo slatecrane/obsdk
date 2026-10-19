@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/psd2/v2/consents/gaNSGQhfaD",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:a997ee",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {}
+  }
+}

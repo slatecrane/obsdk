@@ -1,0 +1,77 @@
+[
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "status": "pending",
+          "direction": "debit",
+          "amount": {
+            "amount": "-12.34",
+            "currency": "EUR"
+          },
+          "value_date": "2026-10-19",
+          "counterparty": {
+            "name": "creditorname-e72759",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI48PSEUDO47AC37BAF7"
+              }
+            ]
+          },
+          "raw": {
+            "creditorAccount": {
+              "iban": "FI48PSEUDO47AC37BAF7"
+            },
+            "creditorName": "creditorname-e72759",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "FI91PSEUDO68FC8EA795"
+            },
+            "debtorName": "debtorname-2ddfc8",
+            "transactionAmount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "valueDate": "2026-10-19"
+          }
+        },
+        {
+          "status": "pending",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1.00",
+            "currency": "EUR"
+          },
+          "value_date": "2026-10-19",
+          "counterparty": {
+            "name": "creditorname-e72759",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "FI48PSEUDO47AC37BAF7"
+              }
+            ]
+          },
+          "raw": {
+            "creditorAccount": {
+              "iban": "FI48PSEUDO47AC37BAF7"
+            },
+            "creditorName": "creditorname-e72759",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "FI91PSEUDO68FC8EA795"
+            },
+            "debtorName": "debtorname-2ddfc8",
+            "transactionAmount": {
+              "amount": "1.00",
+              "currency": "EUR"
+            },
+            "valueDate": "2026-10-19"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "config": {
+    "bank": "saastopankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-19T18:59:13Z",
+    "redirect_url": "https://www.example.com/callback",
+    "extra": {
+      "subscription_key": "REDACTED:ocp-apim-subscription-key"
+    },
+    "ids": {
+      "request": [
+        "3296ab2e-774d-4097-a7fa-5a44954cf973"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "disconnect"
+    }
+  ]
+}

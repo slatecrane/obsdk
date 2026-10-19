@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/samlink-api-sandbox/.wellknown/oauth-authorization-server",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "authorization_endpoint": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/authorize",
+      "issuer": "https://sml-prod-psd2.azure-api.net",
+      "token_endpoint": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/token"
+    }
+  }
+}

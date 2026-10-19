@@ -1,0 +1,48 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/v1/payments/sepa-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Nok-Redirect-Uri": "https://www.example.com/callback?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://www.example.com/callback"
+    },
+    "body": {
+      "creditorAccount": {
+        "iban": "FI89PSEUDO38E39BBCBC"
+      },
+      "creditorName": "creditorname-36e6db",
+      "debtorAccount": {
+        "currency": "EUR",
+        "iban": "FI11PSEUDO3581B43C31"
+      },
+      "endToEndIdentification": "1232",
+      "instructedAmount": {
+        "amount": "20.00",
+        "currency": "EUR"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "_links": {
+        "scaOAuth": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/.wellknown/oauth-authorization-server",
+        "self": "/psd2/v1/payments/sepa-credit-transfers/SXhaztOjiF-2",
+        "status": "/psd2/v1/payments/sepa-credit-transfers/SXhaztOjiF-2/status"
+      },
+      "paymentId": "SXhaztOjiF-2",
+      "scaMethods": [],
+      "tppMessages": [],
+      "transactionStatus": "PDNG"
+    }
+  }
+}

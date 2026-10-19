@@ -126,7 +126,7 @@ func (c *client) createConsent(ctx context.Context, f *flow, in obsdk.StepInput)
 	}
 	f.ConsentID = r.ConsentID
 	f.StatusPath = "/v1/consents/" + url.PathEscape(r.ConsentID) + "/status"
-	if err := f.absorb(&r, c.p.PathVersion); err != nil {
+	if err := f.absorb(&r, c.p.linkVersions()...); err != nil {
 		return nil, err
 	}
 	f.Need = ""

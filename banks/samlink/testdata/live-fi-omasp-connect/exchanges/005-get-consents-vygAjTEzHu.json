@@ -1,0 +1,69 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/consents/vygAjTEzHu",
+    "headers": {
+      "Accept": "application/json",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "access": {
+        "accounts": [
+          {
+            "iban": "FI87PSEUDOAC52A673D3"
+          },
+          {
+            "iban": "FI54PSEUDO8CD674B988"
+          },
+          {
+            "maskedPan": "maskedpan-850c2c"
+          },
+          {
+            "maskedPan": "maskedpan-850c2c"
+          }
+        ],
+        "balances": [
+          {
+            "iban": "FI87PSEUDOAC52A673D3"
+          },
+          {
+            "iban": "FI54PSEUDO8CD674B988"
+          },
+          {
+            "maskedPan": "maskedpan-850c2c"
+          },
+          {
+            "maskedPan": "maskedpan-850c2c"
+          }
+        ],
+        "transactions": [
+          {
+            "iban": "FI87PSEUDOAC52A673D3"
+          },
+          {
+            "iban": "FI54PSEUDO8CD674B988"
+          },
+          {
+            "maskedPan": "maskedpan-850c2c"
+          },
+          {
+            "maskedPan": "maskedpan-850c2c"
+          }
+        ]
+      },
+      "consentStatus": "valid",
+      "frequencyPerDay": 4,
+      "lastActionDate": "2026-10-19",
+      "recurringIndicator": true,
+      "validUntil": "2027-04-17"
+    }
+  }
+}

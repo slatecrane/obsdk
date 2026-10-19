@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/samlink-api-sandbox/oauth/token",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:708114",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026grant_type=refresh_token\u0026refresh_token=REDACTED%3Arefresh_token%3A9b17b7"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:eaf763",
+      "expires_in": 3599,
+      "refresh_token": "REDACTED:refresh_token:3732e6",
+      "scope": "AIS:gaNSGQhfaD",
+      "token_type": "bearer"
+    }
+  }
+}

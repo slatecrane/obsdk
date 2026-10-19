@@ -1,0 +1,23 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Säästöpankki to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/authorize?client_id=REDACTED%3Aclient_id&code_challenge=CflAjkiQ11NACl7G6v20-0CapF6IJ1VrBEOYoaYxxeQ&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fwww.example.com%2Fcallback&response_type=code&scope=AIS%3ANwGEMlICRh&state=c3cf2e5d-1805-42b7-982c-b5442b382fe7"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "auth_failed"
+      ],
+      "message": "obsdk: authorization failed: access was not approved at the bank (REDACTED:error:0d55f7: REDACTED:error_description:9fea51)"
+    }
+  }
+]

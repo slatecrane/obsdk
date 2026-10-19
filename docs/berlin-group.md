@@ -5,7 +5,7 @@
 adapter is not a bank: users only ever see the banks built on it, under their own keys.
 
 Built and verified on 2026-10-18 against adorsys' open-source ModelBank (XS2A-Sandbox 5.14), run
-locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)), `sibs` ([sibs.md](sibs.md)).
+locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)), `sibs` ([sibs.md](sibs.md)), `saastopankki` and `omasp` ([samlink.md](samlink.md)).
 
 ## What it covers
 
@@ -13,10 +13,10 @@ locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `
 |---|---|
 | AIS consent | global (`allPsd2: allAccounts`), bank-offered (empty lists, the user picks at the bank), or dedicated to the IBANs in `ConnectRequest.Values["iban"]` (comma separated); `validUntil` clamped per profile, the granted one read back |
 | SCA | redirect, decoupled and embedded, following the steering links the bank returns (`scaRedirect`, `startAuthorisation*`, `updatePsuIdentification`, `updatePsuAuthentication`, `selectAuthenticationMethod`, `authoriseTransaction`, `scaStatus`) for consents, payments and cancellations alike. Explicit and implicit authorisation start both work. The bank's choice wins over the preference sent, including an embedded flow that turns decoupled after the method choice (Sparkassen' pushTAN 2.0) |
-| OAuth SCA | a `scaOAuth` (or `scaOAuth2`) link: RFC 8414 metadata, then an authorisation-code redirect with PKCE, scope `AIS:<consentId>` / `PIS:<paymentId>`. For consents the code is exchanged for tokens: account calls carry the bearer token, `Refresh` uses the refresh token, the token endpoint is kept in `Session.Meta`. For payments the status decides (no exchange) |
+| OAuth SCA | a `scaOAuth` (or `scaOAuth2`) link: RFC 8414 metadata, then an authorisation-code redirect with PKCE, scope `AIS:<consentId>` / `PIS:<paymentId>`. For consents the code is exchanged for tokens: account calls carry the bearer token, `Refresh` uses the refresh token, the token endpoint is kept in `Session.Meta`. For payments the status decides (no exchange). Client authentication at the token endpoint per profile (`OAuthClientAuth`: HTTP Basic, `private_key_jwt`, …); a public client with PKCE otherwise |
 | Hubs | `Profile.Institution`: a `Config.Extra` parameter (e.g. the BLZ) picks one bank of a hub; it is stored in the session, the flow state and the payment reference, so later calls reach the same bank |
 | Not yet | OAuth as a pre-step (Deutsche Bank-style), encrypted PSU authentication, signing baskets, multilevel SCA, periodic and bulk payments, card accounts |
-| Data | accounts (`withBalance`), balances, transactions (booked, pending or both per profile) as JSON or camt.052/053/054 XML (`Profile.XMLTransactions`; parsed by content); `next` links passed through as the cursor; signed amounts, `creditDebitIndicator` on unsigned ones; 1.3.8 and older field shapes |
+| Data | accounts (`withBalance`), balances, transactions (booked, pending or both per profile) as JSON or camt.052/053/054 XML (`Profile.XMLTransactions`; parsed by content); `next` links passed through as the cursor, or paging by entry reference (`EntryReferencePaging`, Samlink); an unsigned amount without indicator whose debtor is the queried account counts as a debit; signed amounts, `creditDebitIndicator` on unsigned ones; 1.3.8 and older field shapes |
 | Payments | single payments per payment product, status, cancellation (immediate 204, or approved through cancellation authorisations). JSON bodies, or pain.001 XML (`Profile.PaymentXML`: pain.001.001.09 in the German GBIC_5 profile, `NOTPROVIDED` for names and ids not given, execution date today in CET when none is asked for) with the status read from pain.002 (most specific of transaction, payment and group status; the reason as `Payment.Reason`). `PSUIDRequired` profiles need `PSU.ID` to cancel |
 | Refresh | there is no token: `Refresh` checks the consent status and asks for re-authorisation when it is not `valid` |
 | Signing | Digest + draft-cavage `Signature` + `TPP-Signature-Certificate` with `Config.Seal` (RSA), SHA-256 or SHA-512, configurable `keyId` and `algorithm` |
@@ -48,7 +48,7 @@ The profile carries everything that differs between banks: hosts, approaches, co
 limits, booking statuses, payment products and specs, whether PSU-ID is needed up front
 (`PSUIDRequired`), field-shape versions (`LegacyAddress`, `StructuredRemittanceString`, which banks mix),
 `NoWithBalance`, XML transactions, OAuth details (`OAuthNoRedirectURI`), hubs (`Institution`), signing,
-spellings some banks use (`PathVersion` such as SIBS's `v1-0-4`, `AllAccountsValue`, `ValidUntilLayout`,
+spellings some banks use (`PathVersion` such as SIBS's `v1-0-4`, `AISPathVersion` for account information on a later version such as Samlink's `v2`, `ReferenceInEndToEnd` for banks that read the creditor reference from the end-to-end id, `AllAccountsValue`, `ValidUntilLayout`,
 a `DateLayout` for a mandatory `Date` header) and extra headers. If a bank needs more than a profile can say, add a field
 or hook to the profile instead of copying the adapter. Then follow [new-integration.md](new-integration.md)
 as for any bank: own docs page, row in [banks.md](banks.md), scenarios recorded against its sandbox.

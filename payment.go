@@ -35,6 +35,7 @@ const (
 const (
 	ReferenceRF  = "RF"  // ISO 11649 creditor reference
 	ReferenceOCR = "OCR" // Swedish OCR number (Bankgiro / Plusgiro)
+	ReferenceFI  = "FI"  // Finnish creditor reference (viitenumero)
 )
 
 // PaymentRequest starts a payment. Which fields a bank needs, accepts or

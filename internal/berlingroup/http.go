@@ -56,17 +56,22 @@ type resp struct {
 // host, links that repeat the base path, or bare paths; all of them land on
 // the API root the client was configured with (which keeps base_url
 // overrides and replays working). Links that do not point into the API are
-// refused. version is the profile's path segment for "v1" (PathVersion); a
-// link using it is rewritten to the canonical "/v1/" form that flows store.
-func apiPath(link, version string) (string, error) {
+// refused. versions are the profile's path segments for "v1" (PathVersion,
+// AISPathVersion); a link using one is rewritten to the canonical "/v1/" form
+// that flows store.
+func apiPath(link string, versions ...string) (string, error) {
 	u, err := url.Parse(link)
 	if err != nil {
 		return "", fmt.Errorf("berlingroup: unreadable link %q", link)
 	}
 	p := u.EscapedPath()
-	if version != "" && version != "v1" {
+	for _, version := range versions {
+		if version == "" || version == "v1" {
+			continue
+		}
 		if i := strings.Index(p+"/", "/"+version+"/"); i >= 0 {
 			p = "/v1" + p[i+1+len(version):]
+			break
 		}
 	}
 	i := strings.Index(p, "/v1/")
@@ -88,7 +93,7 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	if !strings.HasPrefix(r.path, "/v1/") {
 		return nil, fmt.Errorf("berlingroup: refusing to call %q: not an XS2A path", r.path)
 	}
-	u, err := url.Parse(c.base + "/" + c.p.pathVersion() + strings.TrimPrefix(r.path, "/v1"))
+	u, err := url.Parse(c.base + "/" + c.p.versionFor(r.path) + strings.TrimPrefix(r.path, "/v1"))
 	if err != nil {
 		return nil, err
 	}

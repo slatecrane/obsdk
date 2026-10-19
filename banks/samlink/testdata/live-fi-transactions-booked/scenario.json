@@ -1,0 +1,27 @@
+{
+  "config": {
+    "bank": "saastopankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-19T18:58:31Z",
+    "redirect_url": "https://www.example.com/callback",
+    "extra": {
+      "subscription_key": "REDACTED:ocp-apim-subscription-key"
+    },
+    "ids": {
+      "request": [
+        "e46dc8e4-5fda-4f44-8472-b1493e7516b4"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "transactions",
+      "account": "sp-01-01",
+      "from": "2026-09-01T00:00:00Z",
+      "to": "2026-10-19T18:58:31Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

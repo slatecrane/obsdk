@@ -1,0 +1,87 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/consents/gaNSGQhfaD",
+    "headers": {
+      "Accept": "application/json",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "access": {
+        "accounts": [
+          {
+            "iban": "FI91PSEUDO68FC8EA795"
+          },
+          {
+            "iban": "FI11PSEUDO3581B43C31"
+          },
+          {
+            "maskedPan": "maskedpan-455d6e"
+          },
+          {
+            "maskedPan": "maskedpan-455d6e"
+          },
+          {
+            "maskedPan": "maskedpan-8d1977"
+          },
+          {
+            "maskedPan": "maskedpan-8d1977"
+          }
+        ],
+        "balances": [
+          {
+            "iban": "FI91PSEUDO68FC8EA795"
+          },
+          {
+            "iban": "FI11PSEUDO3581B43C31"
+          },
+          {
+            "maskedPan": "maskedpan-455d6e"
+          },
+          {
+            "maskedPan": "maskedpan-455d6e"
+          },
+          {
+            "maskedPan": "maskedpan-8d1977"
+          },
+          {
+            "maskedPan": "maskedpan-8d1977"
+          }
+        ],
+        "transactions": [
+          {
+            "iban": "FI91PSEUDO68FC8EA795"
+          },
+          {
+            "iban": "FI11PSEUDO3581B43C31"
+          },
+          {
+            "maskedPan": "maskedpan-455d6e"
+          },
+          {
+            "maskedPan": "maskedpan-455d6e"
+          },
+          {
+            "maskedPan": "maskedpan-8d1977"
+          },
+          {
+            "maskedPan": "maskedpan-8d1977"
+          }
+        ]
+      },
+      "consentStatus": "valid",
+      "frequencyPerDay": 4,
+      "lastActionDate": "2026-10-19",
+      "recurringIndicator": true,
+      "validUntil": "2027-04-17"
+    }
+  }
+}

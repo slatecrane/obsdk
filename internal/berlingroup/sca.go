@@ -152,7 +152,7 @@ func (f *flow) link(names ...string) (name, path string) {
 // absorb takes the steering part of a response. A response that carries
 // action links replaces the previous ones (they describe the next step); one
 // without links (a status read) leaves them alone.
-func (f *flow) absorb(r *scaResponse, version string) error {
+func (f *flow) absorb(r *scaResponse, versions ...string) error {
 	if f.Links == nil {
 		f.Links = map[string]string{}
 	}
@@ -178,7 +178,7 @@ func (f *flow) absorb(r *scaResponse, version string) error {
 			case n == "self" || n == "account" || n == "download" || n == "confirmation":
 				continue
 			}
-			p, err := apiPath(string(l), version)
+			p, err := apiPath(string(l), versions...)
 			if err != nil {
 				return err
 			}
@@ -395,7 +395,7 @@ func (c *client) advance(ctx context.Context, f *flow, in obsdk.StepInput) (*obs
 		if err != nil {
 			return nil, err
 		}
-		if err := f.absorb(r, c.p.PathVersion); err != nil {
+		if err := f.absorb(r, c.p.linkVersions()...); err != nil {
 			return nil, err
 		}
 	}

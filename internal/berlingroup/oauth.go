@@ -67,13 +67,22 @@ func (c *client) newVerifier() string {
 
 // external calls a URL outside the XS2A API (the OAuth metadata and token
 // endpoints), which the bank names in its responses.
-func (c *client) external(ctx context.Context, op, method, rawURL string, form url.Values) (*resp, error) {
+// When auth is set it may change the form and headers (client
+// authentication) before the request is sent.
+func (c *client) external(ctx context.Context, op, method, rawURL string, form url.Values,
+	auth func(url.Values, http.Header) error) (*resp, error) {
 	u, err := url.Parse(rawURL)
 	if err != nil || (u.Scheme != "https" && u.Scheme != "http") || u.Host == "" {
 		return nil, fmt.Errorf("berlingroup: %s: unusable %s URL %q", c.bank(), op, rawURL)
 	}
 	if u.Scheme != "https" && c.cfg.Env == obsdk.Production {
 		return nil, fmt.Errorf("berlingroup: %s: refusing a plain-HTTP %s URL in production", c.bank(), op)
+	}
+	h := http.Header{}
+	if auth != nil {
+		if err := auth(form, h); err != nil {
+			return nil, err
+		}
 	}
 	var body io.Reader = http.NoBody
 	if form != nil {
@@ -83,6 +92,7 @@ func (c *client) external(ctx context.Context, op, method, rawURL string, form u
 	if err != nil {
 		return nil, err
 	}
+	hr.Header = h
 	if form != nil {
 		hr.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	}
@@ -107,7 +117,7 @@ func (c *client) startOAuth(ctx context.Context, f *flow, metaURL string) error 
 	if c.cfg.Credentials.ClientID == "" {
 		return &obsdk.ConfigError{Bank: c.bank(), Env: c.cfg.Env, Missing: []string{"client_id"}}
 	}
-	res, err := c.external(ctx, opOAuthMeta, http.MethodGet, metaURL, nil)
+	res, err := c.external(ctx, opOAuthMeta, http.MethodGet, metaURL, nil, nil)
 	if err != nil {
 		return err
 	}
@@ -216,7 +226,11 @@ func (c *client) token(ctx context.Context, tokenURL string, form url.Values) (*
 	if tokenURL == "" {
 		return nil, fmt.Errorf("berlingroup: %s named no token endpoint in its OAuth metadata", c.bank())
 	}
-	res, err := c.external(ctx, opToken, http.MethodPost, tokenURL, form)
+	var auth func(url.Values, http.Header) error
+	if c.p.OAuthClientAuth != nil {
+		auth = func(f url.Values, h http.Header) error { return c.p.OAuthClientAuth(c.cfg, tokenURL, f, h) }
+	}
+	res, err := c.external(ctx, opToken, http.MethodPost, tokenURL, form, auth)
 	if err != nil {
 		return nil, err
 	}

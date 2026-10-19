@@ -1,0 +1,44 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/accounts/sp-01-01/transactions",
+    "query": {
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-09-01"
+      ],
+      "dateTo": [
+        "2026-10-19"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:06fb85",
+      "Consent-Id": "gaNSGQhfaD",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "account": {
+        "iban": "FI91PSEUDO68FC8EA795"
+      },
+      "relevantEntryReference": "CSFLnnFNqD-4",
+      "transactions": {
+        "_links": {
+          "account": "/v1/payments/sepa-credit-transfers/sp-01-01"
+        },
+        "booked": [],
+        "pending": []
+      }
+    }
+  }
+}

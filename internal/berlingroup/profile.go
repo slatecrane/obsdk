@@ -12,6 +12,7 @@ package berlingroup
 import (
 	"fmt"
 	"net/http"
+	"net/url"
 	"strings"
 
 	obsdk "github.com/slatecrane/obsdk"
@@ -108,6 +109,11 @@ type Profile struct {
 	// the object {reference, referenceType, referenceIssuer}.
 	StructuredRemittanceString bool
 
+	// ReferenceInEndToEnd sends the creditor reference (Transfer.Reference) as
+	// endToEndIdentification, for banks that read the reference from there
+	// (Samlink) instead of remittanceInformationStructured.
+	ReferenceInEndToEnd bool
+
 	// LegacyAddress sends creditorAddress with the field names before 1.3.8
 	// (street, city, postalCode); the default is streetName, townName,
 	// postCode. Banks mix versions, so the two are separate.
@@ -116,6 +122,13 @@ type Profile struct {
 	// NoWithBalance leaves out withBalance=true when listing accounts, for
 	// banks that refuse it.
 	NoWithBalance bool
+
+	// EntryReferencePaging pages booked transactions by entry reference
+	// (Samlink): the response names the entry reference to continue from
+	// (relevantEntryReference), which the next request sends as
+	// entryReferenceFrom without dates. A date range is always sent with both
+	// ends, and pending transactions without dates.
+	EntryReferencePaging bool
 
 	// XMLTransactions asks for transactions with Accept: application/xml, for
 	// banks that report them only as camt.052 (camt.053 and camt.054 are read
@@ -133,10 +146,21 @@ type Profile struct {
 	// redirect URI from TPP-Redirect-URI and document no such parameter.
 	OAuthNoRedirectURI bool
 
+	// OAuthClientAuth authenticates the client at the OAuth token endpoint
+	// (code exchange and refresh). It may add to the form (a private_key_jwt
+	// client assertion) or set headers (HTTP Basic with a client secret, an
+	// API key). Nil sends client_id only, as a public client with PKCE.
+	OAuthClientAuth func(cfg obsdk.Config, tokenURL string, form url.Values, h http.Header) error
+
 	// PathVersion replaces the "v1" path segment of every request, for banks
 	// that put a finer version there (SIBS: "v1-0-4"). Links the bank returns
 	// may use either form.
 	PathVersion string
+
+	// AISPathVersion replaces the "v1" segment of account information paths
+	// (consents, accounts, card accounts, funds confirmations), for banks that
+	// serve those on a later version than payments (Samlink: "v2").
+	AISPathVersion string
 
 	// AllAccountsValue is the value of allPsd2 in a global consent. Empty is
 	// the standard's "allAccounts"; some banks spell it "all-accounts".
@@ -166,6 +190,25 @@ func (p *Profile) pathVersion() string {
 	}
 	return p.PathVersion
 }
+
+// aisPrefixes are the canonical paths AISPathVersion applies to.
+var aisPrefixes = []string{"/v1/consents", "/v1/accounts", "/v1/card-accounts", "/v1/funds-confirmations"}
+
+// versionFor is the version segment a canonical "/v1/..." path is sent with.
+func (p *Profile) versionFor(path string) string {
+	if p.AISPathVersion != "" {
+		for _, pre := range aisPrefixes {
+			if path == pre || strings.HasPrefix(path, pre+"/") || strings.HasPrefix(path, pre+"?") {
+				return p.AISPathVersion
+			}
+		}
+	}
+	return p.pathVersion()
+}
+
+// linkVersions are the version segments links from the bank may use instead
+// of "v1".
+func (p *Profile) linkVersions() []string { return []string{p.PathVersion, p.AISPathVersion} }
 
 // Institution describes the parameter that picks one bank of a hub.
 type Institution struct {

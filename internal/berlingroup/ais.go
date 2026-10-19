@@ -274,7 +274,8 @@ func partyOf(name string, a *accountRefJSON) obsdk.Party {
 	return obsdk.Party{Name: name, Identifiers: a.identifiers()}
 }
 
-func toTransaction(raw json.RawMessage, status obsdk.TxStatus) (obsdk.Transaction, error) {
+// own is the queried account's IBAN, when the response names it.
+func toTransaction(raw json.RawMessage, status obsdk.TxStatus, own string) (obsdk.Transaction, error) {
 	var t txJSON
 	if err := json.Unmarshal(raw, &t); err != nil {
 		return obsdk.Transaction{}, err
@@ -293,7 +294,7 @@ func toTransaction(raw json.RawMessage, status obsdk.TxStatus) (obsdk.Transactio
 	// Amounts are signed (negative leaves the account). A debit indicator on
 	// an unsigned amount, which some banks send, makes it negative.
 	debit := strings.HasPrefix(t.Amount.Amount, "-")
-	if !debit && t.CreditDebitIndicator == "DBIT" && t.Amount.Amount != "" {
+	if !debit && t.Amount.Amount != "" && (t.CreditDebitIndicator == "DBIT" || t.CreditDebitIndicator == "" && sentFrom(t, own)) {
 		debit, tx.Amount.Amount = true, obsdk.Decimal("-"+t.Amount.Amount)
 	}
 	if debit {
@@ -320,8 +321,19 @@ func toTransaction(raw json.RawMessage, status obsdk.TxStatus) (obsdk.Transactio
 	return tx, nil
 }
 
+// sentFrom tells whether an unsigned transaction without an indicator left
+// the account: the account is its debtor and not also its creditor (Samlink
+// reports pending payments that way).
+func sentFrom(t txJSON, own string) bool {
+	if own == "" || t.DebtorAccount == nil || !strings.EqualFold(t.DebtorAccount.IBAN, own) {
+		return false
+	}
+	return t.CreditorAccount == nil || !strings.EqualFold(t.CreditorAccount.IBAN, own)
+}
+
 func parseTransactions(body []byte) (obsdk.TxPage, error) {
 	var b struct {
+		Account      accountRefJSON `json:"account"`
 		Transactions struct {
 			Booked  []json.RawMessage `json:"booked"`
 			Pending []json.RawMessage `json:"pending"`
@@ -342,7 +354,7 @@ func parseTransactions(body []byte) (obsdk.TxPage, error) {
 		status obsdk.TxStatus
 	}{{b.Transactions.Booked, obsdk.TxBooked}, {b.Transactions.Pending, obsdk.TxPending}} {
 		for _, r := range group.raws {
-			t, err := toTransaction(r, group.status)
+			t, err := toTransaction(r, group.status, b.Account.IBAN)
 			if err != nil {
 				return page, fmt.Errorf("berlingroup: unreadable transaction: %w", err)
 			}
@@ -375,10 +387,29 @@ func (c *client) bookingStatus(st []obsdk.TxStatus) (string, error) {
 	return "booked", nil
 }
 
+// relevantEntryReference reads the entry reference a booked page continues
+// from (Samlink: relevantEntryReference, spelled relevantEntryreference in its
+// documentation); empty or null when there is no more.
+func relevantEntryReference(body []byte) string {
+	var b struct {
+		A *string `json:"relevantEntryReference"`
+		B *string `json:"relevantEntryreference"`
+	}
+	if json.Unmarshal(body, &b) != nil {
+		return ""
+	}
+	for _, v := range []*string{b.A, b.B} {
+		if v != nil && *v != "" {
+			return *v
+		}
+	}
+	return ""
+}
+
 // cursorRequest turns a next link back into a request, accepting only links
 // to the queried account's transactions.
-func cursorRequest(accountPath, cursor, version string) (req, error) {
-	p, err := apiPath(cursor, version)
+func cursorRequest(accountPath, cursor string, versions ...string) (req, error) {
+	p, err := apiPath(cursor, versions...)
 	if err != nil || !strings.HasPrefix(p, accountPath+"/transactions") {
 		return req{}, fmt.Errorf("%w: cursor is not a next link of this account's transactions", obsdk.ErrInvalidRequest)
 	}
@@ -394,7 +425,7 @@ func (c *client) Transactions(ctx context.Context, s *obsdk.Session, q obsdk.TxQ
 	}
 	var r req
 	if q.Cursor != "" {
-		if r, err = cursorRequest(p, q.Cursor, c.p.PathVersion); err != nil {
+		if r, err = cursorRequest(p, q.Cursor, c.p.linkVersions()...); err != nil {
 			return nil, err
 		}
 	} else {
@@ -408,8 +439,18 @@ func (c *client) Transactions(ctx context.Context, s *obsdk.Session, q obsdk.TxQ
 		}
 		r = req{op: opTransactions, path: p + "/transactions",
 			query: url.Values{"bookingStatus": {bs}, "dateFrom": {from.Format("2006-01-02")}}}
-		if !q.To.IsZero() {
-			r.query.Set("dateTo", q.To.Format("2006-01-02"))
+		to := q.To
+		if to.IsZero() && c.p.EntryReferencePaging {
+			// Samlink reads a date range only when both ends are given.
+			to = c.now()
+		}
+		if !to.IsZero() {
+			r.query.Set("dateTo", to.Format("2006-01-02"))
+		}
+		if c.p.EntryReferencePaging && bs == "pending" {
+			// Pending transactions come in one page, without date filtering.
+			r.query.Del("dateFrom")
+			r.query.Del("dateTo")
 		}
 	}
 	if c.p.XMLTransactions {
@@ -427,6 +468,12 @@ func (c *client) Transactions(ctx context.Context, s *obsdk.Session, q obsdk.TxQ
 	}
 	if err != nil {
 		return nil, err
+	}
+	if c.p.EntryReferencePaging && page.NextCursor == "" && len(page.Transactions) > 0 &&
+		(r.query.Get("bookingStatus") == "booked" || strings.Contains(r.path, "bookingStatus=booked")) {
+		if ref := relevantEntryReference(res.body); ref != "" {
+			page.NextCursor = p + "/transactions?" + url.Values{"bookingStatus": {"booked"}, "entryReferenceFrom": {ref}}.Encode()
+		}
 	}
 	if page.NextCursor != "" && page.NextCursor == q.Cursor {
 		// A next link pointing at the page just read would loop forever.

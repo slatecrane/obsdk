@@ -16,6 +16,7 @@ var (
 	sortCodeRE = regexp.MustCompile(`^[0-9]{14}$`)
 	ocrRE      = regexp.MustCompile(`^[0-9]{2,25}$`)
 	rfRE       = regexp.MustCompile(`^RF[0-9]{2}[A-Z0-9]{1,21}$`)
+	fiRefRE    = regexp.MustCompile(`^[0-9]{4,20}$`)
 )
 
 // ValidateIdentifier checks a value against the format and check digits of
@@ -44,6 +45,25 @@ func ValidateReference(r Reference) error {
 		return checkLuhn(r.Value, ocrRE, "OCR number", "2 to 25 digits")
 	case ReferenceRF:
 		return checkMod97(r.Value, rfRE, "RF reference")
+	case ReferenceFI:
+		return checkFIReference(r.Value)
+	}
+	return nil
+}
+
+// checkFIReference checks a Finnish creditor reference: 4 to 20 digits (no
+// spaces or leading zeros), the last a check digit over the others weighted
+// 7, 3, 1 from the right.
+func checkFIReference(s string) error {
+	if !fiRefRE.MatchString(s) || s[0] == '0' {
+		return fmt.Errorf("Finnish reference must be 4 to 20 digits without spaces or leading zeros")
+	}
+	sum, w := 0, []int{7, 3, 1}
+	for i, j := len(s)-2, 0; i >= 0; i, j = i-1, j+1 {
+		sum += int(s[i]-'0') * w[j%3]
+	}
+	if int(s[len(s)-1]-'0') != (10-sum%10)%10 {
+		return fmt.Errorf("Finnish reference check digit does not match")
 	}
 	return nil
 }
