@@ -5,7 +5,7 @@
 adapter is not a bank: users only ever see the banks built on it, under their own keys.
 
 Built and verified on 2026-10-18 against adorsys' open-source ModelBank (XS2A-Sandbox 5.14), run
-locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)).
+locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)), `sibs` ([sibs.md](sibs.md)).
 
 ## What it covers
 
@@ -48,7 +48,8 @@ The profile carries everything that differs between banks: hosts, approaches, co
 limits, booking statuses, payment products and specs, whether PSU-ID is needed up front
 (`PSUIDRequired`), field-shape versions (`LegacyAddress`, `StructuredRemittanceString`, which banks mix),
 `NoWithBalance`, XML transactions, OAuth details (`OAuthNoRedirectURI`), hubs (`Institution`), signing,
-and extra headers. If a bank needs more than a profile can say, add a field
+spellings some banks use (`PathVersion` such as SIBS's `v1-0-4`, `AllAccountsValue`, `ValidUntilLayout`,
+a `DateLayout` for a mandatory `Date` header) and extra headers. If a bank needs more than a profile can say, add a field
 or hook to the profile instead of copying the adapter. Then follow [new-integration.md](new-integration.md)
 as for any bank: own docs page, row in [banks.md](banks.md), scenarios recorded against its sandbox.
 

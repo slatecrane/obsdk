@@ -227,7 +227,7 @@ func (c *client) createPayment(ctx context.Context, f *flow, in obsdk.StepInput)
 		pay, _ := c.paymentOf(f.Pay, sr.TransactionStatus, res.body)
 		return nil, &obsdk.PaymentRejectedError{Reason: "rejected", Payment: pay, Err: fmt.Errorf("%s rejected the payment on creation", c.p.Info.Name)}
 	}
-	if err := f.absorb(&sr); err != nil {
+	if err := f.absorb(&sr, c.p.PathVersion); err != nil {
 		return nil, c.wrapFlowErr(f, err)
 	}
 	f.Need = ""
@@ -378,7 +378,7 @@ func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentC
 	if r.TransactionStatus == "CANC" || len(r.Links) == 0 {
 		return c.finishCancel(ctx, f)
 	}
-	if err := f.absorb(&r); err != nil {
+	if err := f.absorb(&r, c.p.PathVersion); err != nil {
 		return nil, err
 	}
 	st, err := c.advance(ctx, f, obsdk.StepInput{})

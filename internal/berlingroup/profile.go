@@ -133,8 +133,38 @@ type Profile struct {
 	// redirect URI from TPP-Redirect-URI and document no such parameter.
 	OAuthNoRedirectURI bool
 
+	// PathVersion replaces the "v1" path segment of every request, for banks
+	// that put a finer version there (SIBS: "v1-0-4"). Links the bank returns
+	// may use either form.
+	PathVersion string
+
+	// AllAccountsValue is the value of allPsd2 in a global consent. Empty is
+	// the standard's "allAccounts"; some banks spell it "all-accounts".
+	AllAccountsValue string
+
+	// ValidUntilLayout is the time layout of the consent's validUntil. Empty
+	// is a date (2006-01-02); some banks want a date-time.
+	ValidUntilLayout string
+
+	// DateLayout sends a Date header on every request in this time layout
+	// (UTC), for banks that require one outside of request signing or want it
+	// in ISO 8601 instead of the HTTP date. A signature includes it.
+	DateLayout string
+
+	// BodyDigest sends a Digest of the body on requests that have one, also
+	// when they are not signed (SIBS's sandbox checks it, and refuses one on
+	// requests without a body).
+	BodyDigest bool
+
 	// Headers adds bank-specific headers to every request (e.g. an API key).
 	Headers func(cfg obsdk.Config, h http.Header)
+}
+
+func (p *Profile) pathVersion() string {
+	if p.PathVersion == "" {
+		return "v1"
+	}
+	return p.PathVersion
 }
 
 // Institution describes the parameter that picks one bank of a hub.

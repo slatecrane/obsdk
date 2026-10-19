@@ -220,6 +220,10 @@ From Swedbank, ING, Nordea, HSBC, Rabobank, bunq, Handelsbanken and OP. Other ba
 | `400 UK.OBIE.Header.Invalid: Mandatory header x-fapi-financial-id is missing` (Crosskey, Resurs) | one store serves several countries | send `x-fapi-financial-id: <store>/<country>` on every API call (profile `Headers`) |
 | Atruvia: `400 FORMAT_ERROR "The header 'date' is not allowed for signature specification."` | `date` in the signed headers, although Atruvia's own `Signature` example lists it | sign `digest x-request-id psu-id` (and the other present ones), not `date` |
 | Atruvia: `401 CERTIFICATE_INVALID "INDETERMINATE/NO_CERTIFICATE_CHAIN_FOUND"` | a self-signed QSealC: the sandbox checks certificates with the EU DSS, despite its guide's "no validation of the certificate path" | use a PSD2 test certificate from a trust centre (e.g. Bundesdruckerei) |
+| SIBS: `local error: tls: no renegotiation` | SIBS's gateway renegotiates TLS after the handshake; Go refuses that by default | allow it once per connection (`tls.RenegotiateOnceAsClient`): `sibs.HTTPClient` / `sibs.SandboxHTTPClient`, `OBSDK_TLS_RENEGOTIATE=1` for obdev |
+| SIBS: `400 BAD_REQUEST "Invalid Digest Header."` | sandbox: a body without a `Digest`, or a `Digest` on a GET/DELETE | `Digest` on requests with a body only (`BodyDigest`) |
+| SIBS: `404 RESOURCE_UNKNOWN "Invalid Aspsp-cde"` on every AIS call | the sandbox's Accounts stub refuses every ASPSP code (2026-10-19); payments work | nothing on our side; AIS is checked against a fake server |
+| SIBS: `401 "Not registered to plan"` | the path version isn't one the app subscribed to (the List of Banks still names `v1-0-2`/`v1-0-3`) | use `v1-0-4`, the version of the current plans |
 
 ## 7. Finish
 

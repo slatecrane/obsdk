@@ -1,0 +1,24 @@
+{
+  "config": {
+    "bank": "sibs",
+    "country": "PT",
+    "env": "sandbox",
+    "now": "2026-10-19T18:36:48Z",
+    "redirect_url": "https://www.example.com",
+    "extra": {
+      "aspsp": "BST"
+    },
+    "ids": {
+      "request": [
+        "e8db7353-b350-46b5-8b3c-9dfeb84b2d95"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

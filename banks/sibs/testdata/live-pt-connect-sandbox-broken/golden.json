@@ -1,0 +1,8 @@
+[
+  {
+    "op": "connect",
+    "error": {
+      "message": "obsdk: consent: HTTP 404 RESOURCE_UNKNOWN: Invalid Aspsp-cde (request e8db7353-b350-46b5-8b3c-9dfeb84b2d95)"
+    }
+  }
+]

@@ -129,7 +129,7 @@ var (
 	linksOTP     = []string{"startAuthorisationWithTransactionAuthorisation", "authoriseTransaction"}
 	linksStart   = []string{"startAuthorisation"}
 	linksEncrypt = []string{"startAuthorisationWithEncryptedPsuAuthentication", "updateEncryptedPsuAuthentication"}
-	actionLinks  = concat(linksPSUAuth, linksPSUID, linksMethod, linksOTP, linksStart, linksEncrypt, linksOAuth, []string{"scaRedirect"})
+	actionLinks  = concat(linksPSUAuth, linksPSUID, linksMethod, linksOTP, linksStart, linksEncrypt, linksOAuth, []string{"scaRedirect", "redirect"})
 )
 
 func concat(ls ...[]string) []string {
@@ -152,7 +152,7 @@ func (f *flow) link(names ...string) (name, path string) {
 // absorb takes the steering part of a response. A response that carries
 // action links replaces the previous ones (they describe the next step); one
 // without links (a status read) leaves them alone.
-func (f *flow) absorb(r *scaResponse) error {
+func (f *flow) absorb(r *scaResponse, version string) error {
 	if f.Links == nil {
 		f.Links = map[string]string{}
 	}
@@ -166,9 +166,11 @@ func (f *flow) absorb(r *scaResponse) error {
 				continue
 			}
 			switch {
-			case n == "scaRedirect" || isOAuthLink(n):
-				// Outside the XS2A API: kept as sent.
-				if n == "scaRedirect" {
+			case n == "scaRedirect" || n == "redirect" || isOAuthLink(n):
+				// Outside the XS2A API: kept as sent. SIBS names the redirect
+				// link "redirect".
+				if n == "scaRedirect" || n == "redirect" {
+					n = "scaRedirect"
 					f.SCARedirect = string(l)
 				}
 				f.Links[n] = string(l)
@@ -176,7 +178,7 @@ func (f *flow) absorb(r *scaResponse) error {
 			case n == "self" || n == "account" || n == "download" || n == "confirmation":
 				continue
 			}
-			p, err := apiPath(string(l))
+			p, err := apiPath(string(l), version)
 			if err != nil {
 				return err
 			}
@@ -393,7 +395,7 @@ func (c *client) advance(ctx context.Context, f *flow, in obsdk.StepInput) (*obs
 		if err != nil {
 			return nil, err
 		}
-		if err := f.absorb(r); err != nil {
+		if err := f.absorb(r, c.p.PathVersion); err != nil {
 			return nil, err
 		}
 	}

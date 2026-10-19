@@ -1,0 +1,17 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "e741d60fac1763b84c3345d367140a39",
+        "type": "sepa_instant",
+        "status": "accepted",
+        "bank_status": "ACCP",
+        "final": false,
+        "ref": "obs1.eyJpIjoic2licy1iZyIsInAiOiJpbnN0YW50LXNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiZTc0MWQ2MGZhYzE3NjNiODRjMzM0NWQzNjcxNDBhMzkiLCJ0Ijoic2VwYV9pbnN0YW50IiwiYiI6IkJTVCJ9"
+      }
+    }
+  }
+]

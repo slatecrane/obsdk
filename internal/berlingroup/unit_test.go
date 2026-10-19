@@ -26,12 +26,23 @@ func TestAPIPath(t *testing.T) {
 		"/v1/accounts/1/transactions?page=2":               "/v1/accounts/1/transactions?page=2",
 		"http://localhost:8089/v1/payments/sepa/x=_=_y":    "/v1/payments/sepa/x=_=_y",
 	} {
-		if got, err := apiPath(in); err != nil || got != want {
+		if got, err := apiPath(in, ""); err != nil || got != want {
 			t.Errorf("apiPath(%q) = %q, %v; want %q", in, got, err, want)
 		}
 	}
-	if _, err := apiPath("https://bank.example/login?x=1"); err == nil {
+	if _, err := apiPath("https://bank.example/login?x=1", ""); err == nil {
 		t.Error("a link outside the XS2A API was accepted")
+	}
+	// A bank with its own version segment (SIBS) returns links with it, or
+	// sometimes with plain v1; both become the canonical form.
+	for in, want := range map[string]string{
+		"https://site1.sibsapimarket.com/sibs/apimarket/BST/v1-0-4/consents/c1/status": "/v1/consents/c1/status",
+		"BST/v1-0-4/accounts/a1/transactions?pageId=2":                                 "/v1/accounts/a1/transactions?pageId=2",
+		"BST/v1/consents/c1": "/v1/consents/c1",
+	} {
+		if got, err := apiPath(in, "v1-0-4"); err != nil || got != want {
+			t.Errorf("apiPath(%q, v1-0-4) = %q, %v; want %q", in, got, err, want)
+		}
 	}
 }
 

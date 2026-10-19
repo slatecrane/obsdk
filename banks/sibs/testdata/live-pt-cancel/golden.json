@@ -1,0 +1,8 @@
+[
+  {
+    "op": "cancel_payment",
+    "error": {
+      "message": "berlingroup: SIBS API Market did not cancel the payment (status ACCP)"
+    }
+  }
+]

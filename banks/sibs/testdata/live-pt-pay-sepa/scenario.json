@@ -1,0 +1,52 @@
+{
+  "config": {
+    "bank": "sibs",
+    "country": "PT",
+    "env": "sandbox",
+    "now": "2026-10-19T18:36:25Z",
+    "redirect_url": "https://www.example.com",
+    "extra": {
+      "aspsp": "BST"
+    },
+    "ids": {
+      "request": [
+        "9d1d45c6-caa1-4f3e-b049-62b297980331",
+        "6bd92a10-f190-4a7f-a929-afdaff9141af"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "PT85PSEUDOEE327C3555"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-56a4d9",
+              "account": {
+                "scheme": "IBAN",
+                "value": "PT83PSEUDOE6255F1CF3"
+              }
+            },
+            "remittance": [
+              "Fatura 12"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

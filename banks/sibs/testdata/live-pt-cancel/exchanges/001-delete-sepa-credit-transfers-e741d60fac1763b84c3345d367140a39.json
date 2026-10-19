@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/sibs/apimarket-sb/BST/v1-0-4/payments/sepa-credit-transfers/e741d60fac1763b84c3345d367140a39",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "sandbox",
+      "Tpp-Nok-Redirect-Uri": "https://www.example.com?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://www.example.com",
+      "Tpp-Signature-Certificate": "sandbox",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "f3ce6dde-c5ba-4884-b6f4-138641f5b864"
+    },
+    "body": {
+      "transactionStatus": "CANC"
+    }
+  }
+}
