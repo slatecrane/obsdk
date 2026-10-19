@@ -1,0 +1,107 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "sp-01-01",
+        "stable_id": "c1eb6bc3792daa39879eb2388739cf7f",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "FI91PSEUDO68FC8EA795"
+          }
+        ],
+        "name": "name-680de8",
+        "owner_name": "ownername-2ddfc8",
+        "currency": "EUR",
+        "type": "CASH",
+        "bic": "ITELFIHH",
+        "balances": [
+          {
+            "kind": "other",
+            "bank_type": "forwardAvailable",
+            "amount": {
+              "amount": "9987.66",
+              "currency": "EUR"
+            },
+            "reference_date": "2026-10-19"
+          }
+        ],
+        "raw": {
+          "_links": {
+            "balances": "/v2/accounts/sp-01-01/transactions"
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "9987.66",
+                "currency": "EUR"
+              },
+              "balanceType": "forwardAvailable",
+              "lastChangeDateTime": "2026-10-19T18:55:47Z",
+              "referenceDate": "2026-10-19"
+            }
+          ],
+          "bic": "ITELFIHH",
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "iban": "FI91PSEUDO68FC8EA795",
+          "name": "name-680de8",
+          "ownerName": "ownername-2ddfc8",
+          "resourceId": "sp-01-01",
+          "status": "enabled"
+        }
+      },
+      {
+        "id": "sp-01-02",
+        "stable_id": "981ef449d46bc56265ad26b74b8d497c",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "FI11PSEUDO3581B43C31"
+          }
+        ],
+        "name": "name-680de8",
+        "owner_name": "ownername-2ddfc8",
+        "currency": "EUR",
+        "type": "CASH",
+        "bic": "ITELFIHH",
+        "balances": [
+          {
+            "kind": "other",
+            "bank_type": "forwardAvailable",
+            "amount": {
+              "amount": "9980.0",
+              "currency": "EUR"
+            },
+            "reference_date": "2026-10-19"
+          }
+        ],
+        "raw": {
+          "_links": {
+            "balances": "/v2/accounts/sp-01-02/transactions"
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "9980.0",
+                "currency": "EUR"
+              },
+              "balanceType": "forwardAvailable",
+              "lastChangeDateTime": "2026-10-19T18:56:21Z",
+              "referenceDate": "2026-10-19"
+            }
+          ],
+          "bic": "ITELFIHH",
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "iban": "FI11PSEUDO3581B43C31",
+          "name": "name-680de8",
+          "ownerName": "ownername-2ddfc8",
+          "resourceId": "sp-01-02",
+          "status": "enabled"
+        }
+      }
+    ]
+  }
+]

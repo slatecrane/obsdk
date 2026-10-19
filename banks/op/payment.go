@@ -32,7 +32,7 @@ const (
 const maxBundle = 20
 
 // referenceFI is the scheme of a Finnish creditor reference (viitenumero).
-const referenceFI = "FI"
+const referenceFI = obsdk.ReferenceFI
 
 // payState is a payment's part of the flow, and (as paymentRef) its Ref.
 type payState struct {

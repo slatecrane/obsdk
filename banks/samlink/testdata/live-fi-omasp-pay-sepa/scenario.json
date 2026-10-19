@@ -1,0 +1,67 @@
+{
+  "config": {
+    "bank": "omasp",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-19T18:59:10Z",
+    "redirect_url": "https://www.example.com/callback",
+    "extra": {
+      "subscription_key": "REDACTED:ocp-apim-subscription-key"
+    },
+    "ids": {
+      "pkce": [
+        "b888e8d1-3c3d-4a3d-ad75-6f0b9f35b0d9",
+        "4ec57ec6-60c0-4e97-ba77-bf7b81cf01b3"
+      ],
+      "request": [
+        "d7e79e09-1557-4c1b-b1c7-2d4588a499ba",
+        "0191d303-8de0-454b-b674-e84f08bd33ca"
+      ],
+      "state": [
+        "017852c5-50a2-48f2-8a71-bba1407abb8c"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI87PSEUDOAC52A673D3"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "7.50",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-01aef4",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI71PSEUDO1122F641F3"
+              }
+            },
+            "remittance": [
+              "obsdk omasp"
+            ],
+            "reference": {
+              "scheme": "RF",
+              "value": "RF18539007547034"
+            }
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/callback?code=REDACTED%3Acode%3A118e6c\u0026state=017852c5-50a2-48f2-8a71-bba1407abb8c"
+    }
+  ]
+}

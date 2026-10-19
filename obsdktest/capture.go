@@ -129,7 +129,9 @@ func (r *ScenarioRecorder) SetStartSession(s *obsdk.Session) error {
 	}
 	// Integrations keep other credentials in Meta (bunq's installation token).
 	for k, v := range c.Meta {
-		if lk := strings.ToLower(k); r.Red.SecretKeys[lk] || strings.Contains(lk, "token") || strings.Contains(lk, "secret") {
+		// Endpoint URLs (the berlingroup adapter's token_url) are not secrets,
+		// and replays need them.
+		if lk := strings.ToLower(k); !strings.HasSuffix(lk, "_url") && (r.Red.SecretKeys[lk] || strings.Contains(lk, "token") || strings.Contains(lk, "secret")) {
 			c.Meta[k] = r.Red.mask(lk, v)
 		}
 	}

@@ -46,6 +46,49 @@ func TestAPIPath(t *testing.T) {
 	}
 }
 
+// A bank serving account information on v2 (Samlink) returns v2 links for
+// consents and accounts and v1 links for payments; requests go back out on
+// the version their path belongs to.
+func TestAISPathVersion(t *testing.T) {
+	p := &Profile{AISPathVersion: "v2"}
+	for in, want := range map[string]string{
+		"/psd2/v2/consents/c1/status":                       "/v1/consents/c1/status",
+		"/psd2/v2/accounts/a1/transactions?x=1":             "/v1/accounts/a1/transactions?x=1",
+		"/psd2/v1/payments/sepa-credit-transfers/p1/status": "/v1/payments/sepa-credit-transfers/p1/status",
+	} {
+		if got, err := apiPath(in, p.linkVersions()...); err != nil || got != want {
+			t.Errorf("apiPath(%q) = %q, %v; want %q", in, got, err, want)
+		}
+	}
+	for path, want := range map[string]string{
+		"/v1/consents": "v2", "/v1/consents/c1/status": "v2", "/v1/accounts?withBalance=true": "v2",
+		"/v1/card-accounts/x": "v2", "/v1/funds-confirmations": "v2",
+		"/v1/payments/sepa-credit-transfers": "v1", "/v1/consentsx": "v1",
+	} {
+		if got := p.versionFor(path); got != want {
+			t.Errorf("versionFor(%q) = %q, want %q", path, got, want)
+		}
+	}
+	if got := (&Profile{PathVersion: "v1-0-4"}).versionFor("/v1/consents"); got != "v1-0-4" {
+		t.Errorf("without AISPathVersion: %q", got)
+	}
+}
+
+func TestReferenceInEndToEnd(t *testing.T) {
+	c := &client{p: &Profile{ReferenceInEndToEnd: true}}
+	r := obsdk.PaymentRequest{Transfers: []obsdk.Transfer{{Amount: obsdk.Money{Amount: "1.00", Currency: "EUR"},
+		Creditor:  obsdk.Creditor{Name: "N", Account: obsdk.Identifier{Scheme: obsdk.SchemeIBAN, Value: "FI1445760010038426"}},
+		Reference: &obsdk.Reference{Scheme: obsdk.ReferenceFI, Value: "1232"}}}}
+	b, err := c.buildBody(r)
+	if err != nil || b.EndToEndIdentification != "1232" || b.Structured != nil {
+		t.Fatalf("body %+v, %v", b, err)
+	}
+	r.Transfers[0].EndToEndID = "other"
+	if _, err := c.buildBody(r); err == nil {
+		t.Error("a reference and a different end-to-end id: want an error")
+	}
+}
+
 func TestNokURL(t *testing.T) {
 	for in, want := range map[string]string{
 		"https://app.example/cb":         "https://app.example/cb?error=access_denied",
@@ -162,13 +205,24 @@ func TestBuildBodyShapes(t *testing.T) {
 }
 
 func TestToTransactionDirection(t *testing.T) {
-	tx, err := toTransaction([]byte(`{"transactionAmount":{"currency":"EUR","amount":"5.00"},"creditDebitIndicator":"DBIT","creditorName":"Shop","debtorName":"Me"}`), obsdk.TxBooked)
+	tx, err := toTransaction([]byte(`{"transactionAmount":{"currency":"EUR","amount":"5.00"},"creditDebitIndicator":"DBIT","creditorName":"Shop","debtorName":"Me"}`), obsdk.TxBooked, "")
 	if err != nil || tx.Direction != obsdk.Debit || tx.Amount.Amount != "-5.00" || tx.Counterparty.Name != "Shop" {
 		t.Errorf("unsigned debit: %+v, %v", tx, err)
 	}
-	tx, _ = toTransaction([]byte(`{"transactionAmount":{"currency":"EUR","amount":"5.00"},"creditorName":"Me","debtorName":"Payer","remittanceInformationUnstructured":"x","remittanceInformationUnstructuredArray":["x","y"]}`), obsdk.TxPending)
+	tx, _ = toTransaction([]byte(`{"transactionAmount":{"currency":"EUR","amount":"5.00"},"creditorName":"Me","debtorName":"Payer","remittanceInformationUnstructured":"x","remittanceInformationUnstructuredArray":["x","y"]}`), obsdk.TxPending, "")
 	if tx.Direction != obsdk.Credit || tx.Counterparty.Name != "Payer" || strings.Join(tx.Remittance, "|") != "x|y" || tx.Status != obsdk.TxPending {
 		t.Errorf("credit: %+v", tx)
+	}
+	// Samlink's pending payments: unsigned, no indicator, sent from the
+	// queried account.
+	own := "FI3745760010038400"
+	tx, _ = toTransaction([]byte(`{"transactionAmount":{"currency":"EUR","amount":"12.34"},"creditorName":"Payee","creditorAccount":{"iban":"FI1445760010038426"},"debtorAccount":{"iban":"FI3745760010038400"}}`), obsdk.TxPending, own)
+	if tx.Direction != obsdk.Debit || tx.Amount.Amount != "-12.34" || tx.Counterparty.Name != "Payee" {
+		t.Errorf("unsigned outgoing: %+v", tx)
+	}
+	tx, _ = toTransaction([]byte(`{"transactionAmount":{"currency":"EUR","amount":"3.00"},"creditorAccount":{"iban":"FI3745760010038400"},"debtorAccount":{"iban":"FI3745760010038400"}}`), obsdk.TxPending, own)
+	if tx.Direction != obsdk.Credit || tx.Amount.Amount != "3.00" {
+		t.Errorf("transfer to itself: %+v", tx)
 	}
 }
 

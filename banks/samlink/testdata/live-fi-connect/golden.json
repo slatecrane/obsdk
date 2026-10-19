@@ -1,0 +1,152 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Säästöpankki to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/authorize?client_id=REDACTED%3Aclient_id&code_challenge=59FVW0Q6uHGUnOZ4blxIzv9rmkjiA1VjJK8YgOCchMs&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fwww.example.com%2Fcallback&response_type=code&scope=AIS%3AgaNSGQhfaD&state=480be984-8ec2-4864-8de0-a92c116f494a"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "saastopankki",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "saastopankki-samlink",
+        "generation": 1,
+        "updated_at": "2026-10-19T18:53:23Z",
+        "access_token": "REDACTED:access_token:02ec3c",
+        "refresh_token": "REDACTED:refresh_token:9b17b7",
+        "token_type": "bearer",
+        "scope": "AIS:gaNSGQhfaD",
+        "access_expires_at": "2026-10-19T19:53:22Z",
+        "consents": {
+          "ais": {
+            "id": "gaNSGQhfaD",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-04-17T00:00:00Z",
+            "accounts": [
+              "FI91PSEUDO68FC8EA795",
+              "FI11PSEUDO3581B43C31"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "oauth",
+          "token_url": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/token"
+        }
+      },
+      "accounts": [
+        {
+          "id": "sp-01-01",
+          "stable_id": "c1eb6bc3792daa39879eb2388739cf7f",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI91PSEUDO68FC8EA795"
+            }
+          ],
+          "name": "name-680de8",
+          "owner_name": "ownername-2ddfc8",
+          "currency": "EUR",
+          "type": "CASH",
+          "bic": "ITELFIHH",
+          "balances": [
+            {
+              "kind": "other",
+              "bank_type": "forwardAvailable",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-19"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": "/v2/accounts/sp-01-01/transactions"
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "10000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "forwardAvailable",
+                "referenceDate": "2026-10-19"
+              }
+            ],
+            "bic": "ITELFIHH",
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "iban": "FI91PSEUDO68FC8EA795",
+            "name": "name-680de8",
+            "ownerName": "ownername-2ddfc8",
+            "resourceId": "sp-01-01",
+            "status": "enabled"
+          }
+        },
+        {
+          "id": "sp-01-02",
+          "stable_id": "981ef449d46bc56265ad26b74b8d497c",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI11PSEUDO3581B43C31"
+            }
+          ],
+          "name": "name-680de8",
+          "owner_name": "ownername-2ddfc8",
+          "currency": "EUR",
+          "type": "CASH",
+          "bic": "ITELFIHH",
+          "balances": [
+            {
+              "kind": "other",
+              "bank_type": "forwardAvailable",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-19"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": "/v2/accounts/sp-01-02/transactions"
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "10000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "forwardAvailable",
+                "referenceDate": "2026-10-19"
+              }
+            ],
+            "bic": "ITELFIHH",
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "iban": "FI11PSEUDO3581B43C31",
+            "name": "name-680de8",
+            "ownerName": "ownername-2ddfc8",
+            "resourceId": "sp-01-02",
+            "status": "enabled"
+          }
+        }
+      ]
+    }
+  }
+]

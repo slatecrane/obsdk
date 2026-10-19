@@ -1,0 +1,152 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Oma Säästöpankki to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/authorize?client_id=REDACTED%3Aclient_id&code_challenge=l6EIURtJ0DH1HgHQ7z_JeHuK_mH04DqSOazF1TAVTgY&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fwww.example.com%2Fcallback&response_type=code&scope=AIS%3AvygAjTEzHu&state=4249c834-ea5d-44b0-9541-11c1d822fbe1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "omasp",
+        "country": "FI",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "omasp-samlink",
+        "generation": 1,
+        "updated_at": "2026-10-19T18:58:56Z",
+        "access_token": "REDACTED:access_token:52dda7",
+        "refresh_token": "REDACTED:refresh_token:10d542",
+        "token_type": "bearer",
+        "scope": "AIS:vygAjTEzHu",
+        "access_expires_at": "2026-10-19T19:58:55Z",
+        "consents": {
+          "ais": {
+            "id": "vygAjTEzHu",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-04-17T00:00:00Z",
+            "accounts": [
+              "FI87PSEUDOAC52A673D3",
+              "FI54PSEUDO8CD674B988"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "oauth",
+          "token_url": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/token"
+        }
+      },
+      "accounts": [
+        {
+          "id": "omasp-01-01",
+          "stable_id": "10a7d52106fc5669a45cca3494e3a91e",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI87PSEUDOAC52A673D3"
+            }
+          ],
+          "name": "name-1dd0eb",
+          "owner_name": "ownername-2ddfc2",
+          "currency": "EUR",
+          "type": "CASH",
+          "bic": "ITELFIHH",
+          "balances": [
+            {
+              "kind": "other",
+              "bank_type": "forwardAvailable",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-19"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": "/v2/accounts/omasp-01-01/transactions"
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "10000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "forwardAvailable",
+                "referenceDate": "2026-10-19"
+              }
+            ],
+            "bic": "ITELFIHH",
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "iban": "FI87PSEUDOAC52A673D3",
+            "name": "name-1dd0eb",
+            "ownerName": "ownername-2ddfc2",
+            "resourceId": "omasp-01-01",
+            "status": "enabled"
+          }
+        },
+        {
+          "id": "omasp-01-02",
+          "stable_id": "0f2d168cbd917d33aaa06730e08bca15",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "FI54PSEUDO8CD674B988"
+            }
+          ],
+          "name": "name-1dd0eb",
+          "owner_name": "ownername-2ddfc2",
+          "currency": "EUR",
+          "type": "CASH",
+          "bic": "ITELFIHH",
+          "balances": [
+            {
+              "kind": "other",
+              "bank_type": "forwardAvailable",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-19"
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": "/v2/accounts/omasp-01-02/transactions"
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "10000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "forwardAvailable",
+                "referenceDate": "2026-10-19"
+              }
+            ],
+            "bic": "ITELFIHH",
+            "cashAccountType": "CASH",
+            "currency": "EUR",
+            "iban": "FI54PSEUDO8CD674B988",
+            "name": "name-1dd0eb",
+            "ownerName": "ownername-2ddfc2",
+            "resourceId": "omasp-01-02",
+            "status": "enabled"
+          }
+        }
+      ]
+    }
+  }
+]

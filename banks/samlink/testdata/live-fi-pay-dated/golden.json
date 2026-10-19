@@ -1,0 +1,36 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Säästöpankki to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/authorize?client_id=REDACTED%3Aclient_id&code_challenge=zt8QNZtjT3Hcbeb8ed4zvCTZ2IokOrAqyjHqEOTmtwA&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fwww.example.com%2Fcallback&response_type=code&scope=PIS%3ATSJqYemEkm-3&state=ab1665ee-b432-4d7b-8196-1d56401e1626"
+      },
+      "payment": {
+        "id": "TSJqYemEkm-3",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoic2Fhc3RvcGFua2tpLXNhbWxpbmsiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJUU0pxWWVtRWttLTMiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "TSJqYemEkm-3",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoic2Fhc3RvcGFua2tpLXNhbWxpbmsiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJUU0pxWWVtRWttLTMiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  }
+]

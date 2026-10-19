@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/consents/gaNSGQhfaD/status",
+    "headers": {
+      "Accept": "application/json",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "consentStatus": "valid"
+    }
+  }
+}

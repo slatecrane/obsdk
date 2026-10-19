@@ -1,0 +1,62 @@
+{
+  "config": {
+    "bank": "saastopankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-19T18:56:38Z",
+    "redirect_url": "https://www.example.com/callback",
+    "extra": {
+      "subscription_key": "REDACTED:ocp-apim-subscription-key"
+    },
+    "ids": {
+      "pkce": [
+        "e6432082-cd0b-4193-906f-e7af0578ab96",
+        "66844a68-35cd-4276-933d-62050aaff9c8"
+      ],
+      "request": [
+        "c6fbae04-c729-47fa-a9c5-61abcb141ecd"
+      ],
+      "state": [
+        "bfaf3f34-a3be-4621-8a30-945a365c897d"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI91PSEUDO68FC8EA795"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-e72759",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI48PSEUDO47AC37BAF7"
+              }
+            },
+            "remittance": [
+              "refused"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/callback?error=REDACTED%3Aerror%3A0d55f7\u0026error_description=REDACTED%3Aerror_description%3A9fea51\u0026state=bfaf3f34-a3be-4621-8a30-945a365c897d"
+    }
+  ]
+}

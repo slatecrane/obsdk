@@ -46,7 +46,7 @@ type Redactor struct {
 // known secret values (client id, client secret, ...) to labels.
 func DefaultRedactor(literals map[string]string) *Redactor {
 	r := &Redactor{Literals: map[string]string{}, SecretKeys: set(
-		"authorization", "cookie", "set-cookie", "x-api-key", "psu-id", "psu-corporate-id", "psu-ip-address", "x-fapi-customer-ip-address",
+		"authorization", "cookie", "set-cookie", "x-api-key", "ocp-apim-subscription-key", "subscription_key", "psu-id", "psu-corporate-id", "psu-ip-address", "x-fapi-customer-ip-address",
 		"client_secret", "client_id", "client_assertion", "x-jws-signature", "app-id", "apikey", "refresh_token", "access_token", "id_token", "token",
 		"code", "access_code", "authorizationcode", "authorization_code", "auth_code", "otp", "password", "scaauthenticationdata",
 		"personalid", "personal_id", "phonenumber", "phone_number", "psu_id", "psuid", "clientid",

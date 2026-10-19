@@ -1,0 +1,70 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/accounts/sp-01-01/transactions",
+    "query": {
+      "bookingStatus": [
+        "pending"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:06fb85",
+      "Consent-Id": "gaNSGQhfaD",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "account": {
+        "iban": "FI91PSEUDO68FC8EA795"
+      },
+      "transactions": {
+        "_links": {
+          "account": "/v1/payments/sepa-credit-transfers/sp-01-01"
+        },
+        "booked": [],
+        "pending": [
+          {
+            "creditorAccount": {
+              "iban": "FI48PSEUDO47AC37BAF7"
+            },
+            "creditorName": "creditorname-e72759",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "FI91PSEUDO68FC8EA795"
+            },
+            "debtorName": "debtorname-2ddfc8",
+            "transactionAmount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "valueDate": "2026-10-19"
+          },
+          {
+            "creditorAccount": {
+              "iban": "FI48PSEUDO47AC37BAF7"
+            },
+            "creditorName": "creditorname-e72759",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "FI91PSEUDO68FC8EA795"
+            },
+            "debtorName": "debtorname-2ddfc8",
+            "transactionAmount": {
+              "amount": "1.00",
+              "currency": "EUR"
+            },
+            "valueDate": "2026-10-19"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -40,6 +40,11 @@ func TestValidateReference(t *testing.T) {
 		ok bool
 	}{
 		{Reference{ReferenceOCR, "1234567897"}, true},
+		{Reference{ReferenceFI, "1232"}, true},
+		{Reference{ReferenceFI, "1009"}, true},
+		{Reference{ReferenceFI, "1233"}, false},
+		{Reference{ReferenceFI, "0001232"}, false},
+		{Reference{ReferenceFI, "123"}, false},
 		{Reference{ReferenceOCR, "1234567890"}, false},
 		{Reference{ReferenceOCR, "12 34"}, false},
 		{Reference{ReferenceRF, "RF18539007547034"}, true},

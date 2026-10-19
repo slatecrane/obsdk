@@ -1,0 +1,43 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/v2/consents",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Nok-Redirect-Uri": "https://www.example.com/callback?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://www.example.com/callback"
+    },
+    "body": {
+      "access": {
+        "accounts": [],
+        "balances": [],
+        "transactions": []
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 4,
+      "recurringIndicator": true,
+      "validUntil": "2027-04-17"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "_links": {
+        "scaOAuth": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/.wellknown/oauth-authorization-server",
+        "self": "/psd2/v2/consents/gaNSGQhfaD",
+        "status": "/psd2/v2/consents/gaNSGQhfaD/status"
+      },
+      "consentId": "gaNSGQhfaD",
+      "consentStatus": "received",
+      "scaMethods": []
+    }
+  }
+}

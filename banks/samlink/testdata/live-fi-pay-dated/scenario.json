@@ -1,0 +1,58 @@
+{
+  "config": {
+    "bank": "saastopankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-19T18:56:22Z",
+    "redirect_url": "https://www.example.com/callback",
+    "extra": {
+      "subscription_key": "REDACTED:ocp-apim-subscription-key"
+    },
+    "ids": {
+      "pkce": [
+        "ff523b21-a77e-4736-8eb1-41e5f33f6f00",
+        "c5b9431e-86a3-4226-b1ca-237512633c2c"
+      ],
+      "request": [
+        "06906704-dc70-4b91-bd13-c2fdc5838b90",
+        "d51f7ef8-9638-4304-9d2a-2098996f3ff5"
+      ],
+      "state": [
+        "ab1665ee-b432-4d7b-8196-1d56401e1626"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "5.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-e72759",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI48PSEUDO47AC37BAF7"
+              }
+            },
+            "remittance": [
+              "dated"
+            ]
+          }
+        ],
+        "execution_date": "2026-10-26"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/callback?code=REDACTED%3Acode%3Aca44fe\u0026state=ab1665ee-b432-4d7b-8196-1d56401e1626"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v2/accounts",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b51b6a",
+      "Consent-Id": "vygAjTEzHu",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "accounts": [
+        {
+          "_links": {
+            "balances": "/v2/accounts/omasp-01-01/transactions"
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              },
+              "balanceType": "forwardAvailable",
+              "referenceDate": "2026-10-19"
+            }
+          ],
+          "bic": "ITELFIHH",
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "iban": "FI87PSEUDOAC52A673D3",
+          "name": "name-1dd0eb",
+          "ownerName": "ownername-2ddfc2",
+          "resourceId": "omasp-01-01",
+          "status": "enabled"
+        },
+        {
+          "_links": {
+            "balances": "/v2/accounts/omasp-01-02/transactions"
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              },
+              "balanceType": "forwardAvailable",
+              "referenceDate": "2026-10-19"
+            }
+          ],
+          "bic": "ITELFIHH",
+          "cashAccountType": "CASH",
+          "currency": "EUR",
+          "iban": "FI54PSEUDO8CD674B988",
+          "name": "name-1dd0eb",
+          "ownerName": "ownername-2ddfc2",
+          "resourceId": "omasp-01-02",
+          "status": "enabled"
+        }
+      ]
+    }
+  }
+}

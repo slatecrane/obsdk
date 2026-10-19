@@ -224,6 +224,9 @@ From Swedbank, ING, Nordea, HSBC, Rabobank, bunq, Handelsbanken and OP. Other ba
 | SIBS: `400 BAD_REQUEST "Invalid Digest Header."` | sandbox: a body without a `Digest`, or a `Digest` on a GET/DELETE | `Digest` on requests with a body only (`BodyDigest`) |
 | SIBS: `404 RESOURCE_UNKNOWN "Invalid Aspsp-cde"` on every AIS call | the sandbox's Accounts stub refuses every ASPSP code (2026-10-19); payments work | nothing on our side; AIS is checked against a fake server |
 | SIBS: `401 "Not registered to plan"` | the path version isn't one the app subscribed to (the List of Banks still names `v1-0-2`/`v1-0-3`) | use `v1-0-4`, the version of the current plans |
+| Samlink: `400 FORMAT_ERROR "Header parameter 'X-Request-ID' must be a valid UUID."` | an upper-case UUID (e.g. from macOS `uuidgen`) | lower-case UUIDs (`Config.NewID`'s default is) |
+| Samlink: `400 FORMAT_ERROR "'validUntil' must not be more than 180 days into the future."` | the documentation says it clamps; the sandbox refuses | clamp to 180 days (`MaxConsentDays`) |
+| Samlink: `404 "Resource not found"` from `sml-prod-psd2.azure-api.net` | the Azure API Management gateway answers 404 for an unknown method/path, also without a subscription key | check the path (`/psd2/v2/...` for AIS, `/psd2/v1/...` for payments) and the method |
 
 ## 7. Finish
 
