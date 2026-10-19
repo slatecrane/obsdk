@@ -114,7 +114,7 @@ func (c *client) external(ctx context.Context, op, method, rawURL string, form u
 // startOAuth reads the authorisation server metadata behind the scaOAuth link
 // and turns it into the redirect the user follows.
 func (c *client) startOAuth(ctx context.Context, f *flow, metaURL string) error {
-	if c.cfg.Credentials.ClientID == "" {
+	if c.oauthClientID() == "" {
 		return &obsdk.ConfigError{Bank: c.bank(), Env: c.cfg.Env, Missing: []string{"client_id"}}
 	}
 	res, err := c.external(ctx, opOAuthMeta, http.MethodGet, metaURL, nil, nil)
@@ -142,7 +142,7 @@ func (c *client) startOAuth(ctx context.Context, f *flow, metaURL string) error 
 	f.Verifier, f.OAuthState, f.TokenURL = c.newVerifier(), c.cfg.ID(idState), m.TokenEndpoint
 	q := au.Query()
 	q.Set("response_type", "code")
-	q.Set("client_id", c.cfg.Credentials.ClientID)
+	q.Set("client_id", c.oauthClientID())
 	q.Set("scope", scope)
 	q.Set("state", f.OAuthState)
 	q.Set("code_challenge", pkceChallenge(f.Verifier))
@@ -176,24 +176,48 @@ func (c *client) afterOAuth(ctx context.Context, f *flow, cb string) (*obsdk.Ste
 	if code == "" {
 		return nil, fmt.Errorf("%w: callback has no authorisation code", obsdk.ErrInvalidRequest)
 	}
-	if f.Op == flowConnect {
-		form := url.Values{"grant_type": {"authorization_code"}, "code": {code}, "client_id": {c.cfg.Credentials.ClientID},
-			"code_verifier": {f.Verifier}}
-		if !c.p.OAuthNoRedirectURI {
-			form.Set("redirect_uri", f.RedirectURL)
-		}
-		tok, err := c.token(ctx, f.TokenURL, form)
+	if f.PreStep {
+		tok, err := c.exchangeCode(ctx, f, code)
 		if err != nil {
-			var ae *obsdk.APIError
-			if asAPIError(err, &ae) && ae.Status < 500 {
-				// invalid_grant: the code expired (10 minutes at Sparkassen) or the verifier does not match.
-				return nil, fmt.Errorf("%w: code exchange rejected: %w", obsdk.ErrAuthFailed, err)
-			}
+			return nil, err
+		}
+		return c.finishPreStep(ctx, f, tok)
+	}
+	if f.Op == flowConnect {
+		tok, err := c.exchangeCode(ctx, f, code)
+		if err != nil {
 			return nil, err
 		}
 		f.token = tok
 	}
 	return c.afterRedirect(ctx, f)
+}
+
+// exchangeCode trades an authorisation code for tokens.
+func (c *client) exchangeCode(ctx context.Context, f *flow, code string) (*tokenResponse, error) {
+	form := url.Values{"grant_type": {"authorization_code"}, "code": {code}, "client_id": {c.oauthClientID()},
+		"code_verifier": {f.Verifier}}
+	if !c.p.OAuthNoRedirectURI || f.PreStep {
+		form.Set("redirect_uri", f.RedirectURL)
+	}
+	tok, err := c.token(ctx, f.TokenURL, form)
+	if err != nil {
+		var ae *obsdk.APIError
+		if asAPIError(err, &ae) && ae.Status < 500 {
+			// invalid_grant: the code expired (10 minutes at Sparkassen) or the verifier does not match.
+			return nil, fmt.Errorf("%w: code exchange rejected: %w", obsdk.ErrAuthFailed, err)
+		}
+		return nil, err
+	}
+	return tok, nil
+}
+
+// oauthClientID is the client id of the OAuth requests.
+func (c *client) oauthClientID() string {
+	if c.p.PreStep != nil {
+		return c.preStepClientID()
+	}
+	return c.cfg.Credentials.ClientID
 }
 
 // tokenResponse is an OAuth token response. Sparkassen send expires_in as a
@@ -270,7 +294,7 @@ func applyToken(s *obsdk.Session, t *tokenResponse, tokenURL string) {
 // refreshToken renews a session's access token with its refresh token.
 func (c *client) refreshToken(ctx context.Context, s *obsdk.Session) error {
 	t, err := c.token(ctx, s.Meta[metaTokenURL], url.Values{"grant_type": {"refresh_token"}, "refresh_token": {s.RefreshToken},
-		"client_id": {c.cfg.Credentials.ClientID}})
+		"client_id": {c.oauthClientID()}})
 	if err != nil {
 		var ae *obsdk.APIError
 		if asAPIError(err, &ae) && ae.Status < 500 && ae.Status != http.StatusTooManyRequests {

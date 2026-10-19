@@ -1,0 +1,76 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://hub-i.redsys.es:16443/asp-sim-sb/mockups/0182/sca.html?id=a9b8c7d6-e5f4-4a3b-8c2d-1e0f9a8b7c6d"
+      },
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 2,
+        "updated_at": "2026-10-19T09:00:00Z",
+        "access_token": "at-p",
+        "refresh_token": "rt-p",
+        "token_type": "Bearer",
+        "scope": "PIS",
+        "access_expires_at": "2026-10-19T11:00:00Z",
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      },
+      "payment": {
+        "id": "p1a2b3c4-d5e6-4f70-8192-a3b4c5d6e7f8",
+        "type": "sepa_instant",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoicmVkc3lzLWJnIiwicCI6Imluc3RhbnQtc2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJwMWEyYjNjNC1kNWU2LTRmNzAtODE5Mi1hM2I0YzVkNmU3ZjgiLCJ0Ijoic2VwYV9pbnN0YW50IiwiYiI6IkJCVkEifQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 2,
+        "updated_at": "2026-10-19T09:00:00Z",
+        "access_token": "at-p",
+        "refresh_token": "rt-p",
+        "token_type": "Bearer",
+        "scope": "PIS",
+        "access_expires_at": "2026-10-19T11:00:00Z",
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      },
+      "payment": {
+        "id": "p1a2b3c4-d5e6-4f70-8192-a3b4c5d6e7f8",
+        "type": "sepa_instant",
+        "status": "completed",
+        "bank_status": "ACSC",
+        "final": true,
+        "ref": "obs1.eyJpIjoicmVkc3lzLWJnIiwicCI6Imluc3RhbnQtc2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJwMWEyYjNjNC1kNWU2LTRmNzAtODE5Mi1hM2I0YzVkNmU3ZjgiLCJ0Ijoic2VwYV9pbnN0YW50IiwiYiI6IkJCVkEifQ"
+      }
+    }
+  }
+]

@@ -23,7 +23,15 @@ type client struct {
 	http   obsdk.HTTPDoer
 	base   string // API root; paths start with /v1. Empty until an institution is known (see at)
 	inst   string // the institution base points at
+	bearer string // access token of the OAuth pre-step (Profile.PreStep), sent on every request
 	log    *slog.Logger
+}
+
+// withBearer returns the client sending an access token on every request.
+func (c *client) withBearer(token string) *client {
+	cc := *c
+	cc.bearer = token
+	return &cc
 }
 
 func newClient(p *Profile, cfg obsdk.Config, t obsdk.Target) (obsdk.Client, error) {

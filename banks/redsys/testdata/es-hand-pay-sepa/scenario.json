@@ -1,0 +1,56 @@
+{
+  "description": "Synthetic: built from the Redsys hub's TPP technical design (v1.9.4) and its BBVA sandbox page, not recorded. Replace with a live recording once the sandbox account exists. SEPA credit transfer from BBVA: the OAuth pre-step with scope PIS, the payment created on v1.1 with the token, approved by a second redirect, scaStatus finalised, status ACCP; the steps carry the session, with which the payment status is read afterwards.",
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "aspsp": "bbva"
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "psu_ip": "203.0.113.7",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "ES2501822200160201933547"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "Lucía García",
+              "account": {
+                "scheme": "IBAN",
+                "value": "ES9121000418450200051332"
+              }
+            },
+            "remittance": [
+              "Factura 2026-117"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback?code=code-1&state=state-1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback"
+    },
+    {
+      "op": "payment_status"
+    }
+  ]
+}

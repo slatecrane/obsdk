@@ -201,11 +201,18 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 	if v := strings.TrimSpace(r.Values[fieldPSUID]); v != "" {
 		f.PSU.ID = v
 	}
+	if f.Session, err = c.reusableSession(ctx, r.Session); err != nil {
+		return nil, err
+	}
 	if f.PSU.ID == "" && (c.p.PSUID == PSUIDRequired || approach == Decoupled) {
 		f.Need = needPSUID
 		return c.pause(f, psuIDStep())
 	}
-	return c.createPayment(ctx, f, obsdk.StepInput{Values: r.Values})
+	st, err := c.create(ctx, f, obsdk.StepInput{Values: r.Values})
+	if err == nil && st.Kind == obsdk.StepDone && st.Session == nil && f.Session != nil {
+		st.Session = f.Session.Clone()
+	}
+	return st, c.wrapFlowErr(f, err)
 }
 
 func (c *client) createPayment(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk.Step, error) {
@@ -324,10 +331,14 @@ func (c *client) decodeRef(ref string) (*client, *payState, error) {
 	return cc, &payState{Type: r.Type, Product: r.Product, ID: r.ID}, nil
 }
 
-// PaymentStatus reads a payment's status; no session is needed.
+// PaymentStatus reads a payment's status; no session is needed, except with
+// the OAuth pre-step (its token).
 func (c *client) PaymentStatus(ctx context.Context, ref string, o obsdk.PaymentCallOptions) (*obsdk.Result[obsdk.Payment], error) {
 	c, p, err := c.decodeRef(ref)
 	if err != nil {
+		return nil, err
+	}
+	if c, err = c.forPayment(o.Session); err != nil {
 		return nil, err
 	}
 	pay, err := c.readStatus(ctx, p, o.PSU)
@@ -347,11 +358,17 @@ func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentC
 	if err != nil {
 		return nil, err
 	}
+	if c, err = c.forPayment(o.Session); err != nil {
+		return nil, err
+	}
 	approach, err := c.approach(o.Method)
 	if err != nil {
 		return nil, err
 	}
 	f := &flow{Op: flowCancel, Approach: approach, Pay: p, StatusPath: c.paymentPath(p) + "/status", Institution: c.inst}
+	if c.p.PreStep != nil {
+		f.Session = o.Session.Clone()
+	}
 	if o.PSU != nil {
 		f.PSU = *o.PSU
 	}

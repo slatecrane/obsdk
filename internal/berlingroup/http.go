@@ -93,7 +93,11 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	if !strings.HasPrefix(r.path, "/v1/") {
 		return nil, fmt.Errorf("berlingroup: refusing to call %q: not an XS2A path", r.path)
 	}
-	u, err := url.Parse(c.base + "/" + c.p.versionFor(r.path) + strings.TrimPrefix(r.path, "/v1"))
+	version := c.p.versionFor(r.path)
+	if c.p.CreatePathVersion != "" && isCreate(r.method, r.path) {
+		version = c.p.CreatePathVersion
+	}
+	u, err := url.Parse(c.base + "/" + version + strings.TrimPrefix(r.path, "/v1"))
 	if err != nil {
 		return nil, err
 	}
@@ -129,6 +133,9 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 		if v != "" {
 			hr.Header.Set(k, v)
 		}
+	}
+	if c.bearer != "" && hr.Header.Get("Authorization") == "" {
+		hr.Header.Set("Authorization", "Bearer "+c.bearer)
 	}
 	if c.p.DateLayout != "" {
 		hr.Header.Set("Date", c.now().UTC().Format(c.p.DateLayout))

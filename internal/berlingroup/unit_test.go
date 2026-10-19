@@ -290,3 +290,22 @@ func TestIntegrationChecksProducts(t *testing.T) {
 	Integration(Profile{ID: "x", BaseURL: func(obsdk.Env, obsdk.Target, string) string { return "https://x" },
 		Info: obsdk.Info{Bank: "x", Payments: []obsdk.PaymentSpec{{Type: obsdk.PaymentSEPA}}}})
 }
+
+func TestIsCreate(t *testing.T) {
+	for _, c := range []struct {
+		method, path string
+		want         bool
+	}{
+		{"POST", "/v1/consents", true},
+		{"POST", "/v1/payments/sepa-credit-transfers", true},
+		{"GET", "/v1/consents", false},
+		{"POST", "/v1/consents/c-1/authorisations", false},
+		{"POST", "/v1/payments/sepa-credit-transfers/p-1/authorisations", false},
+		{"GET", "/v1/payments/sepa-credit-transfers/p-1/status", false},
+		{"DELETE", "/v1/payments/sepa-credit-transfers/p-1", false},
+	} {
+		if got := isCreate(c.method, c.path); got != c.want {
+			t.Errorf("isCreate(%s %s) = %v", c.method, c.path, got)
+		}
+	}
+}

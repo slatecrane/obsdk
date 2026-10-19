@@ -1,0 +1,23 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to log in, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/authorize?client_id=REDACTED%3Aclient_id&code_challenge=RmBQ8QkLfUzCCrmWEOwDB3acgaOjz0Gu-URUa-_iS7g&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fapp.example%2Fcallback&response_type=code&scope=PIS&state=state-1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "payment_rejected"
+      ],
+      "message": "obsdk: payment rejected: payment_failed: obsdk: payment: HTTP 400 PAYMENT_FAILED: The creditor account is not valid"
+    }
+  }
+]

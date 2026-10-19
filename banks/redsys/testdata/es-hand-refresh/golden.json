@@ -1,0 +1,37 @@
+[
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "redsys",
+      "country": "ES",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "redsys-bg",
+      "generation": 3,
+      "updated_at": "2026-10-19T10:00:00Z",
+      "access_token": "at-2",
+      "refresh_token": "rt-2",
+      "token_type": "Bearer",
+      "scope": "AIS",
+      "access_expires_at": "2026-10-19T11:00:00Z",
+      "consents": {
+        "ais": {
+          "id": "c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e",
+          "kind": "ais",
+          "status": "valid",
+          "valid_until": "2027-04-17T00:00:00Z",
+          "accounts": [
+            "ES2501822200160201933547",
+            "ES4901822200110201933554"
+          ]
+        }
+      },
+      "meta": {
+        "approach": "redirect",
+        "institution": "BBVA",
+        "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+      }
+    }
+  }
+]

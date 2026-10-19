@@ -1,0 +1,234 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "ES2501822200160201933547-EUR",
+        "stable_id": "24a931baa3260fce356a307fbcbde9b2",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "ES2501822200160201933547"
+          }
+        ],
+        "name": "Cuenta Online",
+        "owner_name": "Usuario Uno",
+        "currency": "EUR",
+        "product": "Cuenta Corriente",
+        "type": "CACC",
+        "bic": "BBVAESMMXXX",
+        "balances": [
+          {
+            "kind": "closing_booked",
+            "bank_type": "closingBooked",
+            "amount": {
+              "amount": "1523.42",
+              "currency": "EUR"
+            },
+            "reference_date": "2026-10-18"
+          }
+        ],
+        "raw": {
+          "resourceId": "ES2501822200160201933547-EUR",
+          "iban": "ES2501822200160201933547",
+          "currency": "EUR",
+          "name": "Cuenta Online",
+          "product": "Cuenta Corriente",
+          "ownerName": "Usuario Uno",
+          "cashAccountType": "CACC",
+          "status": "enabled",
+          "bic": "BBVAESMMXXX",
+          "balances": [
+            {
+              "balanceType": "closingBooked",
+              "balanceAmount": {
+                "currency": "EUR",
+                "amount": "1523.42"
+              },
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "_links": {
+            "balances": {
+              "href": "/v1/accounts/ES2501822200160201933547-EUR/balances"
+            },
+            "transactions": {
+              "href": "/v1/accounts/ES2501822200160201933547-EUR/transactions"
+            }
+          }
+        }
+      },
+      {
+        "id": "ES4901822200110201933554-EUR",
+        "stable_id": "78b5e9c3c7cc493dd1e002f1a05b7ae5",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "ES4901822200110201933554"
+          }
+        ],
+        "name": "Cuenta Ahorro",
+        "owner_name": "Usuario Uno",
+        "currency": "EUR",
+        "product": "Depósito",
+        "type": "SVGS",
+        "bic": "BBVAESMMXXX",
+        "raw": {
+          "resourceId": "ES4901822200110201933554-EUR",
+          "iban": "ES4901822200110201933554",
+          "currency": "EUR",
+          "name": "Cuenta Ahorro",
+          "product": "Depósito",
+          "ownerName": "Usuario Uno",
+          "cashAccountType": "SVGS",
+          "status": "enabled",
+          "bic": "BBVAESMMXXX",
+          "_links": {
+            "balances": {
+              "href": "/v1/accounts/ES4901822200110201933554-EUR/balances"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "closing_booked",
+        "bank_type": "closingBooked",
+        "amount": {
+          "amount": "1523.42",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "other",
+        "bank_type": "expected",
+        "amount": {
+          "amount": "1498.12",
+          "currency": "EUR"
+        }
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "TX-0001",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-25.30",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-17",
+          "value_date": "2026-10-17",
+          "counterparty": {
+            "name": "Mercadona",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "ES9121000418450200051332"
+              }
+            ]
+          },
+          "remittance": [
+            "COMPRA TARJETA 4B MERCADONA"
+          ],
+          "raw": {
+            "transactionId": "TX-0001",
+            "creditorName": "Mercadona",
+            "creditorAccount": {
+              "iban": "ES9121000418450200051332"
+            },
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-25.30"
+            },
+            "bookingDate": "2026-10-17",
+            "valueDate": "2026-10-17",
+            "remittanceInformationUnstructured": "COMPRA TARJETA 4B MERCADONA"
+          }
+        },
+        {
+          "id": "TX-0002",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1850.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "value_date": "2026-09-30",
+          "counterparty": {
+            "name": "Empresa Ejemplo SL",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "ES7921000813610123456789"
+              }
+            ]
+          },
+          "remittance": [
+            "NOMINA SEPTIEMBRE"
+          ],
+          "raw": {
+            "transactionId": "TX-0002",
+            "debtorName": "Empresa Ejemplo SL",
+            "debtorAccount": {
+              "iban": "ES7921000813610123456789"
+            },
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "1850.00"
+            },
+            "bookingDate": "2026-09-30",
+            "valueDate": "2026-09-30",
+            "remittanceInformationUnstructured": "NOMINA SEPTIEMBRE"
+          }
+        }
+      ],
+      "next_cursor": "/v1/accounts/ES2501822200160201933547-EUR/transactions?dateFrom=2026-09-01&dateTo=2026-10-18&bookingStatus=booked&page=2"
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "TX-0003",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-61.75",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-05",
+          "value_date": "2026-09-05",
+          "counterparty": {
+            "name": "Iberdrola"
+          },
+          "remittance": [
+            "RECIBO LUZ"
+          ],
+          "raw": {
+            "transactionId": "TX-0003",
+            "creditorName": "Iberdrola",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-61.75"
+            },
+            "bookingDate": "2026-09-05",
+            "valueDate": "2026-09-05",
+            "remittanceInformationUnstructured": "RECIBO LUZ"
+          }
+        }
+      ]
+    }
+  }
+]

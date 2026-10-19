@@ -1,0 +1,28 @@
+{
+  "description": "Synthetic: built from the Redsys hub's TPP technical design (v1.9.4) and its BBVA sandbox page, not recorded. Replace with a live recording once the sandbox account exists. Connect to BBVA (aspsp given in lower case, sent as the hub spells it): the OAuth pre-step (authorize with scope AIS and PKCE; the code exchanged for a token), a global consent created on v1.1 with the token, the consent approved by a second redirect, then scaStatus, the consent and the accounts with balances, all with the bearer token.",
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "aspsp": "bbva"
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback?code=code-1&state=state-1",
+      "note": "back from the login (OAuth pre-step)"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback",
+      "note": "back from approving the consent"
+    }
+  ]
+}

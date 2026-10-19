@@ -1,0 +1,38 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/consents",
+    "headers": {
+      "Authorization": "Bearer at-1",
+      "Content-Type": "application/json",
+      "TPP-Redirect-Preferred": "true",
+      "TPP-Redirect-URI": "https://app.example/callback"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "ASPSP-SCA-Approach": "REDIRECT",
+      "Location": "/v1.1/consents/c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentStatus": "received",
+      "consentId": "c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e",
+      "_links": {
+        "scaRedirect": {
+          "href": "https://hub-i.redsys.es:16443/asp-sim-sb/mockups/0182/sca.html?id=a9b8c7d6-e5f4-4a3b-8c2d-1e0f9a8b7c6d"
+        },
+        "self": {
+          "href": "/v1/consents/c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e"
+        },
+        "status": {
+          "href": "/v1/consents/c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e/status"
+        },
+        "scaStatus": {
+          "href": "/v1/consents/c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e/authorisations/a9b8c7d6-e5f4-4a3b-8c2d-1e0f9a8b7c6d"
+        }
+      }
+    }
+  }
+}

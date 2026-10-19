@@ -1,0 +1,22 @@
+{
+  "description": "Synthetic: built from the Redsys hub's TPP technical design (v1.9.4) and its BBVA sandbox page, not recorded. Replace with a live recording once the sandbox account exists. The user cancels the login of the OAuth pre-step: the hub redirects back with error=access_denied, and nothing is created.",
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "aspsp": "bbva"
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback?error=access_denied&state=state-1"
+    }
+  ]
+}

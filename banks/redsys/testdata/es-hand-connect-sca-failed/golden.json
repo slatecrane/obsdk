@@ -1,0 +1,55 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to log in, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/authorize?client_id=REDACTED%3Aclient_id&code_challenge=RmBQ8QkLfUzCCrmWEOwDB3acgaOjz0Gu-URUa-_iS7g&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fapp.example%2Fcallback&response_type=code&scope=AIS&state=state-1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://hub-i.redsys.es:16443/asp-sim-sb/mockups/0182/sca.html?id=a9b8c7d6-e5f4-4a3b-8c2d-1e0f9a8b7c6d"
+      },
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 1,
+        "updated_at": "2026-10-19T10:00:00Z",
+        "access_token": "at-1",
+        "refresh_token": "rt-1",
+        "token_type": "Bearer",
+        "scope": "AIS",
+        "access_expires_at": "2026-10-19T11:00:00Z",
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "auth_failed"
+      ],
+      "message": "obsdk: authorization failed: access was not approved at the bank (scaStatus failed)"
+    }
+  }
+]

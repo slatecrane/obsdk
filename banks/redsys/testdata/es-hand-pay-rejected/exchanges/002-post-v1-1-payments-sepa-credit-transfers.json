@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/payments/sepa-credit-transfers",
+    "headers": {
+      "Authorization": "Bearer at-p"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactionStatus": "RJCT",
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "PAYMENT_FAILED",
+          "text": "The creditor account is not valid"
+        }
+      ]
+    }
+  }
+}
