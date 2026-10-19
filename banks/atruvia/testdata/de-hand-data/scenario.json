@@ -1,0 +1,39 @@
+{
+  "description": "Synthetic: built from Atruvia's XS2A documentation (OpenAPI 1.3 + errata, sandbox guide 2026-04-27), not recorded. Replace with a live recording once a PSD2 test QSealC is available. Account data under the sandbox's mocked consent CONSENTVALID: the account list (without balances: withBalance is not supported), balances, and booked transactions in two pages linked by a scrollRef next link, then Refresh.",
+  "config": {
+    "bank": "atruvia",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "bank_code": "49999960"
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "balances",
+      "account": "3dc3d5b3-7023-4848-9853-f5400a64e80f",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "3dc3d5b3-7023-4848-9853-f5400a64e80f",
+      "from": "2026-10-01",
+      "to": "2026-10-19",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "transactions",
+      "account": "3dc3d5b3-7023-4848-9853-f5400a64e80f",
+      "cursor": "/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/transactions?scrollRef=MjAyNi0xMC0wNXwx&bookingStatus=booked",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "refresh"
+    }
+  ]
+}

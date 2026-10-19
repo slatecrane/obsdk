@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/sandbox/psd2/v1/consents/c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d/authorisations/a1b2c3d4-e5f6-4789-8abc-def012345678"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "scaStatus": "finalised",
+      "_links": {
+        "scaStatus": {
+          "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/consents/c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d/authorisations/a1b2c3d4-e5f6-4789-8abc-def012345678"
+        }
+      }
+    }
+  }
+}

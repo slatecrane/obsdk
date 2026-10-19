@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/psd2/v1/consents/CONSENTVALID/status"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentStatus": "valid"
+    }
+  }
+}

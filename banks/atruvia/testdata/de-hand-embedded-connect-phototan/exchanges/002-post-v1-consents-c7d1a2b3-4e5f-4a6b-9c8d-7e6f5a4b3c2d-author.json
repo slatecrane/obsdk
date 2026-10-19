@@ -1,0 +1,48 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/psd2/v1/consents/c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d/authorisations"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "scaStatus": "psuAuthenticated",
+      "authorisationId": "a1b2c3d4-e5f6-4789-8abc-def012345678",
+      "scaMethods": [
+        {
+          "authenticationType": "PUSH_OTP",
+          "authenticationMethodId": "946",
+          "name": "SecureGo plus (Direktfreigabe)"
+        },
+        {
+          "authenticationType": "CHIP_OTP",
+          "authenticationVersion": "1.4",
+          "authenticationMethodId": "962",
+          "name": "Smart-TAN plus manuell"
+        },
+        {
+          "authenticationType": "CHIP_OTP",
+          "authenticationVersion": "1.4",
+          "authenticationMethodId": "972",
+          "name": "Smart-TAN plus optisch / USB"
+        },
+        {
+          "authenticationType": "PHOTO_OTP",
+          "authenticationMethodId": "982",
+          "name": "Smart-TAN photo"
+        }
+      ],
+      "_links": {
+        "selectAuthenticationMethod": {
+          "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/consents/c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d/authorisations/a1b2c3d4-e5f6-4789-8abc-def012345678"
+        },
+        "scaStatus": {
+          "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/consents/c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d/authorisations/a1b2c3d4-e5f6-4789-8abc-def012345678"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "description": "Synthetic: built from Atruvia's XS2A documentation (OpenAPI 1.3 + errata, sandbox guide 2026-04-27), not recorded. Replace with a live recording once a PSD2 test QSealC is available. Embedded connect of the sandbox user VRK1234567890ALL (PIN 'password', TAN 123456): the PSU-ID is asked for first (Atruvia needs it on the consent), then the PIN, a choice of the user's four methods, Smart-TAN photo picked, its image as challenge, the TAN, then the consent and the accounts.",
+  "config": {
+    "bank": "atruvia",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "bank_code": "49999960"
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "method": "embedded",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "psu_id": "VRK1234567890ALL",
+        "password": "password"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "sca_method": "982"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "otp": "123456"
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/psd2/v1/consents/c7d1a2b3-4e5f-4a6b-9c8d-7e6f5a4b3c2d/authorisations"
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "PSU_CREDENTIALS_INVALID",
+          "text": "The PSU-ID cannot be matched by the addressed ASPSP or is blocked, or a password resp. OTP was not correct."
+        }
+      ]
+    }
+  }
+}

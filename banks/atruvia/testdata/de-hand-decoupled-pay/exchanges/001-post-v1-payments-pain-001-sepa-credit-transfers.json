@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/psd2/v1/payments/pain.001-sepa-credit-transfers",
+    "headers": {
+      "Content-Type": "application/xml"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "ASPSP-SCA-Approach": "DECOUPLED",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactionStatus": "RCVD",
+      "paymentId": "p9e8d7c6-b5a4-4321-9fed-cba987654321",
+      "_links": {
+        "startAuthorisationWithPsuAuthentication": {
+          "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/payments/pain.001-sepa-credit-transfers/p9e8d7c6-b5a4-4321-9fed-cba987654321/authorisations"
+        },
+        "self": {
+          "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/payments/pain.001-sepa-credit-transfers/p9e8d7c6-b5a4-4321-9fed-cba987654321"
+        },
+        "status": {
+          "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/payments/pain.001-sepa-credit-transfers/p9e8d7c6-b5a4-4321-9fed-cba987654321/status"
+        }
+      }
+    }
+  }
+}

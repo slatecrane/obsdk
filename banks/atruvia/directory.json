@@ -1,0 +1,4010 @@
+[
+ {
+  "code": "10030400",
+  "bic": "ABKBDEB1XXX",
+  "name": "ABK Allgemeine Beamten Bank AG",
+  "url": "https://banking.abkbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "10030700",
+  "bic": "DLGHDEB1XXX",
+  "name": "Eurocity Bank AG",
+  "url": "https://onlinebanking.eurocity-ag.de/services_xs2a/bg13"
+ },
+ {
+  "code": "10090000",
+  "bic": "BEVODEBBXXX",
+  "name": "Berliner Volksbank eG Abteilung BIT",
+  "url": "https://www.berliner-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "12096597",
+  "bic": "GENODEF1S10",
+  "name": "Sparda-Bank Berlin eG",
+  "url": "https://www.sparda-b.de/services_xs2a/bg13"
+ },
+ {
+  "code": "13091054",
+  "bic": "GENODEF1HST",
+  "name": "Volksbank Vorpommern eG",
+  "url": "https://www.vbvorpommern.de/services_xs2a/bg13"
+ },
+ {
+  "code": "14061308",
+  "bic": "GENODEF1GUE",
+  "name": "VR Bank Mecklenburg eG",
+  "url": "https://www.vrbankmecklenburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "15061618",
+  "bic": "GENODEF1WRN",
+  "name": "Raiffeisenbank Mecklenburger Seenplatte eG",
+  "url": "https://www.raiba-seenplatte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "15091674",
+  "bic": "GENODEF1DM1",
+  "name": "Volksbank Demmin eG",
+  "url": "https://www.volksbank-demmin.de/services_xs2a/bg13"
+ },
+ {
+  "code": "15091704",
+  "bic": "GENODEF1PZ1",
+  "name": "VR-Bank Uckermark-Randow eG",
+  "url": "https://www.vrb-uckermark-randow.de/services_xs2a/bg13"
+ },
+ {
+  "code": "16060122",
+  "bic": "GENODEF1PER",
+  "name": "Volks- und Raiffeisenbank Prignitz eG",
+  "url": "https://www.vrbprignitz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "16061938",
+  "bic": "GENODEF1NPP",
+  "name": "Raiffeisenbank Ostprignitz - Ruppin eG",
+  "url": "https://www.rbopr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "16062008",
+  "bic": "GENODEF1LUK",
+  "name": "VR-Bank Fläming-Elsterland eG",
+  "url": "https://www.vr-internet.de/services_xs2a/bg13"
+ },
+ {
+  "code": "16062073",
+  "bic": "GENODEF1BRB",
+  "name": "Brandenburger Bank Volksbank-Raiffeisenbank eG",
+  "url": "https://www.brandenburgerbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "16091994",
+  "bic": "GENODEF1RN1",
+  "name": "Volksbank Rathenow eG",
+  "url": "https://www.vbrn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "17062428",
+  "bic": "GENODEF1BKW",
+  "name": "Raiffeisen-Volksbank Oder-Spree eG",
+  "url": "https://www.rvboderspree.de/services_xs2a/bg13"
+ },
+ {
+  "code": "17092404",
+  "bic": "GENODEF1FW1",
+  "name": "Volks- und Raiffeisenbank Fürstenwalde Seelow-Wriezen eG",
+  "url": "https://www.vrbfw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "18062678",
+  "bic": "GENODEF1FWA",
+  "name": "VR Bank Lausitz eG",
+  "url": "https://www.vrblausitz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "18092684",
+  "bic": "GENODEF1LN1",
+  "name": "Spreewaldbank eG",
+  "url": "https://www.spreewaldbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "18092744",
+  "bic": "GENODEF1SPM",
+  "name": "Volksbank Spree-Neiße eG",
+  "url": "https://www.vbspn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20030300",
+  "bic": "CHDBDEHHXXX",
+  "name": "Donner \u0026 Reuschel AG",
+  "url": "https://banking.donner-reuschel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20030400",
+  "bic": "MCRDDEHHXXX",
+  "name": "Marcard, Stein \u0026 Co Bankiers",
+  "url": "https://online-banking.marcard.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20069144",
+  "bic": "GENODEF1SST",
+  "name": "Raiffeisenbank eG, Seestermühe",
+  "url": "https://www.rbseestermuehe.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20069177",
+  "bic": "GENODEF1GRS",
+  "name": "Raiffeisenbank eG",
+  "url": "https://www.die-raiffeisenbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20069641",
+  "bic": "GENODEF1OWS",
+  "name": "Raiffeisenbank eG, Owschlag",
+  "url": "https://www.rbowschlag.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20069782",
+  "bic": "GENODEF1APE",
+  "name": "Volksbank Geest eG",
+  "url": "https://www.vbgeest.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20069800",
+  "bic": "GENODEF1HAA",
+  "name": "Spar- und Kreditbank eG, Hammah",
+  "url": "https://www.skb-hammah.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20069812",
+  "bic": "GENODEF1FRB",
+  "name": "Volksbank eG, Fredenbeck",
+  "url": "https://www.vbfoa.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20069965",
+  "bic": "GENODEF1WIM",
+  "name": "Volksbank Winsener Marsch eG",
+  "url": "https://www.vbwinsenermarsch.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20090700",
+  "bic": "EDEKDEHHXXX",
+  "name": "EDEKABANK AG Hamburg",
+  "url": "https://www.edekabank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20090900",
+  "bic": "GENODEF1P08",
+  "name": "PSD Bank Nord eG",
+  "url": "https://www.psd-nord.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20120100",
+  "bic": "WBWCDEHHXXX",
+  "name": "M.M. Warburg \u0026 CO",
+  "url": "https://www.warburg-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20130400",
+  "bic": "GREBDEH1XXX",
+  "name": "GRENKE BANK AG",
+  "url": "https://www.grenkebank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20190003",
+  "bic": "GENODEF1HH2",
+  "name": "Hamburger Volksbank eG",
+  "url": "https://www.hamburger-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20190109",
+  "bic": "GENODEF1HH4",
+  "name": "Volksbank Raiffeisenbank eG, Itzehoe",
+  "url": "https://www.vreg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20190800",
+  "bic": "GENODEF1MKB",
+  "name": "MKB Mittelstandskreditbank AG",
+  "url": "https://www.mkbag.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20230300",
+  "bic": "OSCBDEH1XXX",
+  "name": "Otto M. Schröder Bank AG",
+  "url": "https://www.schroederbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "20690500",
+  "bic": "GENODEF1S11",
+  "name": "Sparda-Bank Hamburg eG",
+  "url": "https://www.sparda-bank-hamburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21090007",
+  "bic": "GENODEF1KIL",
+  "name": "Kieler Volksbank eG",
+  "url": "https://www.kieler-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21092023",
+  "bic": "GENODEF1EFO",
+  "name": "Eckernförder Bank eG Volksbank-Raiffeisenbank",
+  "url": "https://www.eckernfoerder-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21390008",
+  "bic": "GENODEF1NSH",
+  "name": "VR Bank zwischen den Meeren eG",
+  "url": "https://www.meine-vrbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21392218",
+  "bic": "GENODEF1EUT",
+  "name": "Volksbank Eutin Raiffeisenbank eG",
+  "url": "https://www.vbeutin.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21464671",
+  "bic": "GENODEF1TOB",
+  "name": "Raiffeisenbank eG, Todenbüttel",
+  "url": "https://www.rbtodenbuettel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21520100",
+  "bic": "UNBNDE21XXX",
+  "name": "UNION-BANK AG",
+  "url": "https://www.unionbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21762550",
+  "bic": "GENODEF1HUM",
+  "name": "VR Bank Schleswig-Holstein Mitte eG",
+  "url": "https://www.vrbank-sh-mitte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21763542",
+  "bic": "GENODEF1BDS",
+  "name": "VR Bank Nord eG",
+  "url": "https://www.vrbanknord.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21791805",
+  "bic": "GENODEF1SYL",
+  "name": "Sylter Bank eG",
+  "url": "https://www.sylter-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21791906",
+  "bic": "GENODEF1WYK",
+  "name": "Vereinigte VR Bank eG, Wyk auf Föhr",
+  "url": "https://www.vereinigte-vrbk.de/services_xs2a/bg13"
+ },
+ {
+  "code": "21890022",
+  "bic": "GENODEF1DVR",
+  "name": "Dithmarscher Volks- und Raiffeisenbank eG",
+  "url": "https://www.dvrb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "22163114",
+  "bic": "GENODEF1HTE",
+  "name": "Raiffeisenbank Elbmarsch eG",
+  "url": "https://www.rbelbmarsch.de/services_xs2a/bg13"
+ },
+ {
+  "code": "22191405",
+  "bic": "GENODEF1PIN",
+  "name": "VR Bank in Holstein eG",
+  "url": "https://www.vrbank-in-holstein.de/services_xs2a/bg13"
+ },
+ {
+  "code": "23061220",
+  "bic": "GENODEF1LZN",
+  "name": "Raiffeisenbank eG, Leezen",
+  "url": "https://www.rbleezen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "23063129",
+  "bic": "GENODEF1RLB",
+  "name": "Raiffeisenbank eG, Lauenburg",
+  "url": "https://www.raibalauenburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "23090142",
+  "bic": "GENODEF1HLU",
+  "name": "Volksbank Lübeck eG",
+  "url": "https://www.volksbank-luebeck.de/services_xs2a/bg13"
+ },
+ {
+  "code": "24060300",
+  "bic": "GENODEF1NBU",
+  "name": "Volksbank Lüneburger Heide eG",
+  "url": "https://www.vblh.de/services_xs2a/bg13"
+ },
+ {
+  "code": "24162898",
+  "bic": "GENODEF1LAS",
+  "name": "Spar- und Darlehnskasse Börde Lamstedt-Hechthausen eG",
+  "url": "https://www.sdkinlamstedt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "24191015",
+  "bic": "GENODEF1SDE",
+  "name": "Volksbank Stade-Cuxhaven eG",
+  "url": "https://www.vobaeg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25069262",
+  "bic": "GENODEF1NST",
+  "name": "Raiffeisen-Volksbank Neustadt eG",
+  "url": "https://www.raiffeisen-volksbank-neustadt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25090500",
+  "bic": "GENODEF1S09",
+  "name": "Sparda-Bank Hannover eG",
+  "url": "https://www.sparda-h.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25190001",
+  "bic": "VOHADE2HXXX",
+  "name": "Hannoversche Volksbank eG",
+  "url": "https://www.hannoversche-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25193331",
+  "bic": "GENODEF1PAT",
+  "name": "Volksbank eG, Hildesheim-Lehrte-Pattensen",
+  "url": "https://www.vb-eg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25462160",
+  "bic": "GENODEF1HMP",
+  "name": "Volksbank Hameln-Stadthagen eG",
+  "url": "https://www.volksbank-hameln-stadthagen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25462680",
+  "bic": "GENODEF1COP",
+  "name": "Volksbank im Wesertal eG",
+  "url": "https://www.vb-iw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25591413",
+  "bic": "GENODEF1BCK",
+  "name": "Volksbank in Schaumburg und Nienburg eG",
+  "url": "https://www.vb-isun.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25691633",
+  "bic": "GENODEF1SUL",
+  "name": "Volksbank Niedersachsen-Mitte eG",
+  "url": "https://www.volksbank-niedersachsen-mitte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25791635",
+  "bic": "GENODEF1HMN",
+  "name": "Volksbank eG Südheide - Isenhagener Land - Altmark",
+  "url": "https://www.vbsila.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25862292",
+  "bic": "GENODEF1EUB",
+  "name": "Volksbank Uelzen-Salzwedel eG",
+  "url": "https://www.vb-ue-saw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "25863489",
+  "bic": "GENODEF1WOT",
+  "name": "VR PLUS Altmark-Wendland eG",
+  "url": "https://www.vr-plus.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26061556",
+  "bic": "GENODEF1ADE",
+  "name": "Volksbank eG, Adelebsen",
+  "url": "https://www.volksbank-adelebsen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26062433",
+  "bic": "GENODEF1DRA",
+  "name": "VR-Bank in Südniedersachsen eG",
+  "url": "https://www.vrbanksn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26261693",
+  "bic": "GENODEF1HDG",
+  "name": "Volksbank Solling eG",
+  "url": "https://www.vbsolling.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26562490",
+  "bic": "GENODEF1HTR",
+  "name": "Volksbank eG Bad Laer-Borgloh-Hilter-Melle",
+  "url": "https://www.voba-eg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26565928",
+  "bic": "GENODEF1HGM",
+  "name": "Volksbank Düte-Ems eG",
+  "url": "https://www.wir-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26567943",
+  "bic": "GENODEF1NOP",
+  "name": "VR-Bank eG Osnabrücker Nordland",
+  "url": "https://www.vrbank-osnordland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26590025",
+  "bic": "GENODEF1OSV",
+  "name": "Vereinigte Volksbank eG Bramgau Osnabrück Wittlage",
+  "url": "https://www.vbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26660060",
+  "bic": "GENODEF1LIG",
+  "name": "Emsländische Volksbank eG",
+  "url": "https://www.elvb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26661380",
+  "bic": "GENODEF1HLN",
+  "name": "Volksbank Haselünne eG",
+  "url": "https://www.vbhaseluenne.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26890019",
+  "bic": "GENODEF1VNH",
+  "name": "Volksbank Nordharz eG",
+  "url": "https://www.vbnh.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26891484",
+  "bic": "GENODEF1OHA",
+  "name": "Volksbank im Harz eG",
+  "url": "https://www.vbimharz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "26991066",
+  "bic": "GENODEF1WOB",
+  "name": "Volksbank BRAWO eG",
+  "url": "https://www.volksbank-brawo.de/services_xs2a/bg13"
+ },
+ {
+  "code": "27062290",
+  "bic": "GENODEF1BOH",
+  "name": "Volksbank Börßum-Hornburg eG",
+  "url": "https://www.vbbh.de/services_xs2a/bg13"
+ },
+ {
+  "code": "27090900",
+  "bic": "GENODEF1P02",
+  "name": "PSD Bank Braunschweig eG",
+  "url": "https://www.psd-braunschweig.de/services_xs2a/bg13"
+ },
+ {
+  "code": "27092555",
+  "bic": "GENODEF1WFV",
+  "name": "Volksbank eG, Wolfenbüttel",
+  "url": "https://www.volksbank-mit-herz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "27131300",
+  "bic": "GENODEF1RTS",
+  "name": "Bankhaus Rautenschlein AG",
+  "url": "https://www.rautenschleinbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "27893359",
+  "bic": "GENODEF1BLG",
+  "name": "Volksbank Braunlage eG",
+  "url": "https://www.vbbraunlage.de/services_xs2a/bg13"
+ },
+ {
+  "code": "27893760",
+  "bic": "GENODEF1SES",
+  "name": "Volksbank eG, Seesen",
+  "url": "https://www.myvoba.com/services_xs2a/bg13"
+ },
+ {
+  "code": "28061410",
+  "bic": "GENODEF1BRN",
+  "name": "Raiffeisenbank Wesermarsch-Süd eG",
+  "url": "https://www.raibawesermarschsued.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28061501",
+  "bic": "GENODEF1CLP",
+  "name": "VR-Bank in Südoldenburg eG",
+  "url": "https://www.vrbank-suedoldenburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28061679",
+  "bic": "GENODEF1DAM",
+  "name": "Volksbank Dammer Berge eG",
+  "url": "https://www.vobda.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28061822",
+  "bic": "GENODEF1EDE",
+  "name": "Oldenburger Volksbank eG",
+  "url": "https://www.oldenburger-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28062165",
+  "bic": "GENODEF1RSE",
+  "name": "Raiffeisenbank Rastede eG",
+  "url": "https://www.raiba-rastede.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28062249",
+  "bic": "GENODEF1HUD",
+  "name": "Vereinigte Volksbank eG Ganderkesee - Hude - Bookholzberg - Lemwerder",
+  "url": "https://www.vereinigtevolksbankeg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28062560",
+  "bic": "GENODEF1LON",
+  "name": "Volksbank eG Lohne - Dinklage - Steinfeld - Mühlen",
+  "url": "https://www.unsere-voba.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28063253",
+  "bic": "GENODEF1WRE",
+  "name": "Volksbank Westerstede eG",
+  "url": "https://www.vb-westerstede.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28063526",
+  "bic": "GENODEF1ESO",
+  "name": "Volksbank eG Emstek Essen Cappeln",
+  "url": "https://www.volksbank-emstek-essen-cappeln.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28064179",
+  "bic": "GENODEF1VEC",
+  "name": "Volksbank Vechta eG",
+  "url": "https://www.vbvechta.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28065061",
+  "bic": "GENODEF1LOG",
+  "name": "Volksbank eG, Löningen",
+  "url": "https://www.vbloeningen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28065286",
+  "bic": "GENODEF1SAN",
+  "name": "Raiffeisenbank eG Scharrel",
+  "url": "https://www.rbscharrel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28066103",
+  "bic": "GENODEF1VIS",
+  "name": "Volksbank Visbek eG",
+  "url": "https://www.vbvisbek.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28066214",
+  "bic": "GENODEF1WDH",
+  "name": "Volksbank eG Oldenburg-Land Delmenhorst",
+  "url": "https://www.volksbank-oldenburgland-delmenhorst.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28066620",
+  "bic": "GENODEF1FOY",
+  "name": "Volksbank eG, Friesoythe",
+  "url": "https://www.meine-volksbank-online.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28067257",
+  "bic": "GENODEF1LAP",
+  "name": "Volksbank Lastrup eG",
+  "url": "https://www.vblastrup.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069052",
+  "bic": "GENODEF1ORF",
+  "name": "Raiffeisenbank Strücklingen- Idafehn eG",
+  "url": "https://www.raiba-idafehn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069381",
+  "bic": "GENODEF1WLT",
+  "name": "Hümmlinger Volksbank eG",
+  "url": "https://www.huemmlinger-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069706",
+  "bic": "GENODEF1BOG",
+  "name": "Volksbank Nordhümmling eG",
+  "url": "https://www.vb-nordhuemmling.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069773",
+  "bic": "GENODEF1WWM",
+  "name": "Raiffeisenbank Wiesedermeer- Wiesede-Marcardsmoor eG",
+  "url": "https://www.raibawiesedermeer.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069878",
+  "bic": "GENODEF1KBL",
+  "name": "Raiffeisenbank Ems-Vechte eG",
+  "url": "https://www.ems-vechte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069926",
+  "bic": "GENODEF1HOO",
+  "name": "Volksbank Niedergrafschaft eG",
+  "url": "https://www.voba-niedergrafschaft.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069935",
+  "bic": "GENODEF1LRU",
+  "name": "Raiffeisenbank Lorup eG",
+  "url": "https://www.rb-lorup.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069956",
+  "bic": "GENODEF1NEV",
+  "name": "Grafschafter Volksbank eG",
+  "url": "https://www.grafschafter-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069991",
+  "bic": "GENODEF1LTH",
+  "name": "Volksbank Emstal eG",
+  "url": "https://www.vb-emstal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28069994",
+  "bic": "GENODEF1SPL",
+  "name": "Volksbank Süd-Emsland eG",
+  "url": "https://www.vbsuedemsland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28262673",
+  "bic": "GENODEF1VAR",
+  "name": "Volksbank Jade-Weser eG",
+  "url": "https://www.volksbank-jade-weser.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28290063",
+  "bic": "GENODEF1WHV",
+  "name": "Volksbank Wilhelmshaven eG",
+  "url": "https://www.vobawhv.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28361592",
+  "bic": "GENODEF1MAR",
+  "name": "Raiffeisen-Volksbank Fresena eG",
+  "url": "https://www.rvbfresena.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28562297",
+  "bic": "GENODEF1UPL",
+  "name": "Raiffeisen-Volksbank eG",
+  "url": "https://www.meine-rvb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28562716",
+  "bic": "GENODEF1WEF",
+  "name": "Raiffeisenbank Flachsmeer eG",
+  "url": "https://www.raiba-flachsmeer.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28563749",
+  "bic": "GENODEF1MML",
+  "name": "Fehntjer VR Bank eG",
+  "url": "https://www.fehntjer-vrbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "28590075",
+  "bic": "GENODEF1LER",
+  "name": "Ostfriesische Volksbank eG",
+  "url": "https://www.ostfriesische-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "29162394",
+  "bic": "GENODEF1OHZ",
+  "name": "Volksbank eG Osterholz-Scharmbeck",
+  "url": "https://www.vbohz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "29162453",
+  "bic": "GENODEF1SWW",
+  "name": "Volksbank Schwanewede eG",
+  "url": "https://www.voba-schwanewede.de/services_xs2a/bg13"
+ },
+ {
+  "code": "29165545",
+  "bic": "GENODEF1OYT",
+  "name": "Volksbank Oyten eG",
+  "url": "https://www.vboyten.de/services_xs2a/bg13"
+ },
+ {
+  "code": "29166568",
+  "bic": "GENODEF1WOP",
+  "name": "Volksbank Worpswede eG",
+  "url": "https://www.voba-worpswede.de/services_xs2a/bg13"
+ },
+ {
+  "code": "29190024",
+  "bic": "GENODEF1HB1",
+  "name": "Bremische Volksbank Weser-Wümme eG",
+  "url": "https://www.bremischevb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "29190330",
+  "bic": "GENODEF1HB2",
+  "name": "Volksbank Bremen-Nord eG",
+  "url": "https://www.vbbremennord.de/services_xs2a/bg13"
+ },
+ {
+  "code": "29262722",
+  "bic": "GENODEF1BRV",
+  "name": "Volksbank Geeste-Nord eG",
+  "url": "https://www.vbgn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "29265747",
+  "bic": "GENODEF1BEV",
+  "name": "Volksbank im Elbe-Weser-Dreieck eG",
+  "url": "https://www.volksbankeg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "30060992",
+  "bic": "GENODEF1P05",
+  "name": "PSD Bank Rhein-Ruhr eG",
+  "url": "https://www.psd-rhein-ruhr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "30530000",
+  "bic": "WERHDED1XXX",
+  "name": "Bankhaus Werhahn GmbH",
+  "url": "https://www.bankhaus-werhahn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "30530500",
+  "bic": "WEFZDED1XXX",
+  "name": "Bank11 für Privatkunden und Handel GmbH",
+  "url": "https://onlinebanking.bank11.de/services_xs2a/bg13"
+ },
+ {
+  "code": "30560548",
+  "bic": "GENODED1NLD",
+  "name": "VR Bank eG, Monheim am Rhein",
+  "url": "https://www.vrbankeg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "31060181",
+  "bic": "GENODED1GBM",
+  "name": "Gladbacher Bank AG von 1922",
+  "url": "https://www.gladbacher-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "31060517",
+  "bic": "GENODED1MRB",
+  "name": "Volksbank im Rheinland eG",
+  "url": "https://www.voba-rhld.de/services_xs2a/bg13"
+ },
+ {
+  "code": "31460290",
+  "bic": "GENODED1VSN",
+  "name": "Volksbank Viersen eG",
+  "url": "https://www.volksbankviersen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "32060362",
+  "bic": "GENODED1HTK",
+  "name": "Volksbank Düsseldorf Krefeld Neuss eG",
+  "url": "https://www.volksbank-dkn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "32061384",
+  "bic": "GENODED1GDL",
+  "name": "Volksbank an der Niers eG",
+  "url": "https://www.vb-niers.de/services_xs2a/bg13"
+ },
+ {
+  "code": "32061414",
+  "bic": "GENODED1KMP",
+  "name": "Volksbank Kempen-Grefrath eG",
+  "url": "https://www.vb-kempen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "32460422",
+  "bic": "GENODED1KLL",
+  "name": "Volksbank Kleverland eG",
+  "url": "https://www.volksbank-kleverland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "34060094",
+  "bic": "VBRSDE33XXX",
+  "name": "Volksbank im Bergischen Land eG",
+  "url": "https://www.bergische-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "35060190",
+  "bic": "GENODED1DKD",
+  "name": "Bank für Kirche und Diakonie eG - KD-Bank",
+  "url": "https://www.kd-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "35060386",
+  "bic": "GENODED1VRR",
+  "name": "Volksbank Rhein-Ruhr eG",
+  "url": "https://www.volksbank-rhein-ruhr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "35461106",
+  "bic": "GENODED1NRH",
+  "name": "Volksbank Niederrhein eG",
+  "url": "https://www.volksbank-niederrhein.de/services_xs2a/bg13"
+ },
+ {
+  "code": "35660599",
+  "bic": "GENODED1RLW",
+  "name": "Volksbank Rhein-Lippe eG",
+  "url": "https://www.volksbank-rhein-lippe.de/services_xs2a/bg13"
+ },
+ {
+  "code": "35860245",
+  "bic": "GENODED1EMR",
+  "name": "Volksbank Emmerich-Rees eG",
+  "url": "https://www.dervolksbanker.de/services_xs2a/bg13"
+ },
+ {
+  "code": "36020030",
+  "bic": "NBAGDE3EXXX",
+  "name": "NATIONAL-BANK Aktiengesellschaft",
+  "url": "https://banking.national-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "36060295",
+  "bic": "GENODED1BBE",
+  "name": "Bank im Bistum Essen eG",
+  "url": "https://www.bib-fairbanking.de/services_xs2a/bg13"
+ },
+ {
+  "code": "36060488",
+  "bic": "GENODEM1GBE",
+  "name": "GENO BANK ESSEN eG",
+  "url": "https://www.genobank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37020500",
+  "bic": "BFSWDE33XXX",
+  "name": "Bank für Sozialwirtschaft AG",
+  "url": "https://www.sozialbank-onlinebanking.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37060193",
+  "bic": "GENODED1PAX",
+  "name": "Pax-Bank für Kirche und Caritas eG",
+  "url": "https://www.pax-bkc.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37060590",
+  "bic": "GENODED1SPK",
+  "name": "Sparda-Bank West eG",
+  "url": "https://www.sparda-west.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37060993",
+  "bic": "GENODEF1P13",
+  "name": "PSD Bank West eG",
+  "url": "https://www.psd-west.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37062124",
+  "bic": "GENODED1BGL",
+  "name": "Bensberger Bank eG",
+  "url": "https://www.bensbergerbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37062365",
+  "bic": "GENODED1FHH",
+  "name": "Volksbank Rhein-Erft-Köln eG",
+  "url": "https://www.voba-rhein-erft-koeln.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37062600",
+  "bic": "GENODED1PAF",
+  "name": "VR Bank eG Bergisch Gladbach-Leverkusen",
+  "url": "https://www.vrbankgl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069125",
+  "bic": "GENODED1RKO",
+  "name": "Volksbank Berg eG",
+  "url": "https://www.volksbank-berg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069252",
+  "bic": "GENODED1ERE",
+  "name": "Volksbank Erft eG",
+  "url": "https://www.volksbank-erft.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069322",
+  "bic": "GENODED1EGY",
+  "name": "Raiffeisenbank Gymnich eG",
+  "url": "https://www.rb-gymnich.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069342",
+  "bic": "GENODED1HMB",
+  "name": "Volksbank Heimbach eG",
+  "url": "https://www.vb-heimbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069405",
+  "bic": "GENODED1KAA",
+  "name": "Raiffeisenbank Kaarst eG",
+  "url": "https://www.raiba-kaarst.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069412",
+  "bic": "GENODED1HRB",
+  "name": "Volksbank im Westen eG",
+  "url": "https://www.volksbank-im-westen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069427",
+  "bic": "GENODED1DHK",
+  "name": "Volksbank Dünnwald-Holweide eG",
+  "url": "https://www.vobadhk.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069520",
+  "bic": "GENODED1RST",
+  "name": "VR-Bank Bonn Rhein-Sieg eG",
+  "url": "https://www.vrbank-brs.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069642",
+  "bic": "GENODED1SMR",
+  "name": "Raiffeisenbank Eifel eG",
+  "url": "https://www.raiffeisenbank-eifel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069720",
+  "bic": "GENODED1SLE",
+  "name": "VR Bank EifelLand eG",
+  "url": "https://www.vrbankeifelland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "37069991",
+  "bic": "GENODED1BRL",
+  "name": "Brühler Bank eG",
+  "url": "https://www.bruehlerbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "38060186",
+  "bic": "GENODED1BRS",
+  "name": "Volksbank Köln Bonn eG",
+  "url": "https://www.volksbank-koeln-bonn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "38260082",
+  "bic": "GENODED1EVB",
+  "name": "Volksbank Euskirchen eG",
+  "url": "https://www.eu-banking.de/services_xs2a/bg13"
+ },
+ {
+  "code": "38462135",
+  "bic": "GENODED1WIL",
+  "name": "Volksbank Oberberg eG",
+  "url": "https://www.vb-oberberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "38621500",
+  "bic": "GENODED1STB",
+  "name": "Steyler Bank GmbH",
+  "url": "https://banking.steylerbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "39362254",
+  "bic": "GENODED1RSC",
+  "name": "Raiffeisen-Bank Eschweiler eG",
+  "url": "https://www.rb-eschweiler.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40060265",
+  "bic": "GENODEM1DKM",
+  "name": "DKM Darlehnskasse Münster eG",
+  "url": "https://www.dkm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40069266",
+  "bic": "GENODEM1MAS",
+  "name": "Volksbank im Hochsauerland eG",
+  "url": "https://www.vb-im-hochsauerland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40069283",
+  "bic": "GENODEM1SLN",
+  "name": "Volksbank Schlangen eG",
+  "url": "https://www.volksbank-schlangen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40069363",
+  "bic": "GENODEM1SMB",
+  "name": "Volksbank Schermbeck eG",
+  "url": "https://www.vb-schermbeck.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40069408",
+  "bic": "GENODEM1BAU",
+  "name": "Volksbank Baumberge eG",
+  "url": "https://www.volksbank-baumberge.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40069546",
+  "bic": "GENODEM1SDN",
+  "name": "Volksbank Ascheberg-Senden eG",
+  "url": "https://www.volksbank-as.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40069709",
+  "bic": "GENODEM1DLR",
+  "name": "Volksbank in der Hohen Mark eG",
+  "url": "https://www.vb-hm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40069716",
+  "bic": "GENODEM1SCN",
+  "name": "Volksbank Südkirchen-Capelle-Nordkirchen eG",
+  "url": "https://www.volksbank-nordkirchen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40164024",
+  "bic": "GENODEM1GRN",
+  "name": "Volksbank Gronau-Ahaus eG",
+  "url": "https://www.vbga.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40164352",
+  "bic": "GENODEM1CNO",
+  "name": "Volksbank Nottuln eG",
+  "url": "https://www.volksbank-nottuln.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40164618",
+  "bic": "GENODEM1OTR",
+  "name": "Volksbank Ochtrup-Laer eG",
+  "url": "https://www.vbol.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40164901",
+  "bic": "GENODEM1GE1",
+  "name": "Volksbank Gescher eG",
+  "url": "https://www.vb-gescher.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40165366",
+  "bic": "GENODEM1SEM",
+  "name": "Volksbank Selm-Bork eG",
+  "url": "https://www.vb-selm-bork.de/services_xs2a/bg13"
+ },
+ {
+  "code": "40361906",
+  "bic": "GENODEM1IBB",
+  "name": "Volksbank im Münsterland eG",
+  "url": "https://www.vb-muensterland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "41061011",
+  "bic": "GENODEM1HBH",
+  "name": "Spar- und Darlehnskasse Bockum-Hövel eG",
+  "url": "https://www.sdk-bockum-hoevel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "41062215",
+  "bic": "GENODEM1BO1",
+  "name": "Volksbank Bönen eG",
+  "url": "https://www.volksbank-boenen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "41261324",
+  "bic": "GENODEM1EOW",
+  "name": "Volksbank Enniger-Ostenfelde-Westkirchen eG",
+  "url": "https://www.vb-eow.de/services_xs2a/bg13"
+ },
+ {
+  "code": "41460116",
+  "bic": "GENODEM1SOE",
+  "name": "Volksbank Hellweg eG",
+  "url": "https://www.volksbank-hellweg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "41660124",
+  "bic": "GENODEM1LPS",
+  "name": "VR Bank Westfalen-Lippe eG",
+  "url": "https://www.vrbank-wl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "41661206",
+  "bic": "GENODEM1ANR",
+  "name": "Volksbank Anröchte eG",
+  "url": "https://www.volksbank-anroechte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "41662465",
+  "bic": "GENODEM1SGE",
+  "name": "Volksbank Störmede-Westenholz-Hörste eG",
+  "url": "https://www.vb-swh.de/services_xs2a/bg13"
+ },
+ {
+  "code": "42260001",
+  "bic": "GENODEM1GBU",
+  "name": "Volksbank Ruhr Mitte eG",
+  "url": "https://www.vb-ruhrmitte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "42461435",
+  "bic": "GENODEM1KIH",
+  "name": "Vereinte Volksbank eG",
+  "url": "https://www.vereinte-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "42661008",
+  "bic": "GENODEM1MRL",
+  "name": "Volksbank Marl-Recklinghausen eG",
+  "url": "https://www.vb-marl-recklinghausen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "42860003",
+  "bic": "GENODEM1BOH",
+  "name": "Volksbank Bocholt eG",
+  "url": "https://www.vb-bocholt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "42861387",
+  "bic": "GENODEM1BOB",
+  "name": "Volksbank Westmünsterland eG",
+  "url": "https://www.volksbank-wml.de/services_xs2a/bg13"
+ },
+ {
+  "code": "42861608",
+  "bic": "GENODEM1HEI",
+  "name": "Volksbank Heiden eG",
+  "url": "https://www.vbheiden.de/services_xs2a/bg13"
+ },
+ {
+  "code": "42861814",
+  "bic": "GENODEM1RHD",
+  "name": "Volksbank Rhede eG",
+  "url": "https://www.volksbank-rhede.de/services_xs2a/bg13"
+ },
+ {
+  "code": "42862451",
+  "bic": "GENODEM1RAE",
+  "name": "Volksbank Raesfeld und Erle eG",
+  "url": "https://www.vbraesfeldunderle.de/services_xs2a/bg13"
+ },
+ {
+  "code": "43060129",
+  "bic": "GENODEM1BOC",
+  "name": "Volksbank Bochum Witten eG",
+  "url": "https://www.vb-bochumwitten.de/services_xs2a/bg13"
+ },
+ {
+  "code": "43060967",
+  "bic": "GENODEM1GLS",
+  "name": "GLS Gemeinschaftsbank eG",
+  "url": "https://www.gls-online-filiale.de/services_xs2a/bg13"
+ },
+ {
+  "code": "44160014",
+  "bic": "GENODEM1DOR",
+  "name": "Dortmunder Volksbank eG",
+  "url": "https://www.dovoba.de/services_xs2a/bg13"
+ },
+ {
+  "code": "44761312",
+  "bic": "GENODEM1MEN",
+  "name": "Mendener Bank eG",
+  "url": "https://www.mendener-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "44761534",
+  "bic": "GENODEM1NRD",
+  "name": "Volksbank in Südwestfalen eG",
+  "url": "https://www.vbinswf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "45060009",
+  "bic": "GENODEM1HGN",
+  "name": "Märkische Bank eG",
+  "url": "https://www.maerkische-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "45061524",
+  "bic": "GENODEM1HLH",
+  "name": "Volksbank Hohenlimburg eG",
+  "url": "https://www.vb-hohenlimburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "45260475",
+  "bic": "GENODEM1BFG",
+  "name": "Spar- und Kreditbank des Bundes Freier evangelischer Gemeinden eG",
+  "url": "https://www.skbwitten.de/services_xs2a/bg13"
+ },
+ {
+  "code": "45261547",
+  "bic": "GENODEM1SPO",
+  "name": "Volksbank Sprockhövel eG",
+  "url": "https://www.vbsprockhoevel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "45861434",
+  "bic": "GENODEM1KIE",
+  "name": "Volksbank Kierspe eG",
+  "url": "https://www.volksbank-kierspe.de/services_xs2a/bg13"
+ },
+ {
+  "code": "46061724",
+  "bic": "GENODEM1FRF",
+  "name": "VR-Bank Freudenberg-Niederfischbach eG",
+  "url": "https://www.vr-bank-freudenberg-niederfischbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "46062817",
+  "bic": "GENODEM1SMA",
+  "name": "Volksbank Sauerland eG",
+  "url": "https://www.vb-sauerland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "46063405",
+  "bic": "GENODEM1BB1",
+  "name": "Volksbank Wittgenstein eG",
+  "url": "https://www.volksbank-wittgenstein.de/services_xs2a/bg13"
+ },
+ {
+  "code": "46261822",
+  "bic": "GENODEM1WDD",
+  "name": "Volksbank Olpe-Wenden-Drolshagen eG",
+  "url": "https://www.voba-owd.de/services_xs2a/bg13"
+ },
+ {
+  "code": "47260121",
+  "bic": "DGPBDE3MXXX",
+  "name": "VerbundVolksbank OWL eG",
+  "url": "https://www.verbundvolksbank-owl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "47260234",
+  "bic": "GENODEM1EWB",
+  "name": "Volksbank Elsen-Wewer-Borchen eG",
+  "url": "https://www.vb-elsen-wewer-borchen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "47264367",
+  "bic": "GENODEM1STM",
+  "name": "Vereinigte Volksbank eG, Brakel",
+  "url": "https://www.v-vb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "47691200",
+  "bic": "GENODEM1OLB",
+  "name": "Volksbank Ostlippe eG",
+  "url": "https://www.volksbank-ostlippe.de/services_xs2a/bg13"
+ },
+ {
+  "code": "47860125",
+  "bic": "GENODEM1GTL",
+  "name": "Volksbank in Ostwestfalen eG",
+  "url": "https://www.volksbankinostwestfalen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "47862447",
+  "bic": "GENODEM1RNE",
+  "name": "Volksbank Delbrück-Rietberg eG",
+  "url": "https://www.volksbank-dr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "47863373",
+  "bic": "GENODEM1VMD",
+  "name": "Volksbank Versmold eG",
+  "url": "https://www.volksbank-versmold.de/services_xs2a/bg13"
+ },
+ {
+  "code": "48062051",
+  "bic": "GENODEM1HLW",
+  "name": "Volksbank Halle/Westf. eG",
+  "url": "https://www.vb-halle.de/services_xs2a/bg13"
+ },
+ {
+  "code": "48291490",
+  "bic": "GENODEM1BSU",
+  "name": "Volksbank Bad Salzuflen eG",
+  "url": "https://www.vbbs.de/services_xs2a/bg13"
+ },
+ {
+  "code": "49092650",
+  "bic": "GENODEM1LUB",
+  "name": "Volksbank PLUS eG",
+  "url": "https://www.vbplus.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50015001",
+  "bic": "JTBPDEFFXXX",
+  "name": "J\u0026T BANKA",
+  "url": "https://www.jtdirektbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50031000",
+  "bic": "TRODDEF1XXX",
+  "name": "Triodos Bank N.V. Deutschland",
+  "url": "https://www.triodos-banking.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50060400",
+  "bic": "GENODEFFXXX",
+  "name": "DZ BANK AG Deutsche Zentral-Genossenschaftsbank",
+  "url": "https://dzbanking.com/services_xs2a/bg13"
+ },
+ {
+  "code": "50069146",
+  "bic": "GENODE51GRC",
+  "name": "Volksbank eG, Grebenhain",
+  "url": "https://www.vb-grebenhain.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50069345",
+  "bic": "GENODE51GWB",
+  "name": "Raiffeisenbank Grävenwiesbach eG",
+  "url": "https://www.rb-graevenwiesbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50069455",
+  "bic": "GENODE51HUT",
+  "name": "Hüttenberger Bank eG",
+  "url": "https://www.huettenberger-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50069477",
+  "bic": "GENODE51KIF",
+  "name": "Raiffeisenbank Kirtorf eG",
+  "url": "https://www.rb-kirtorf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50069976",
+  "bic": "GENODE51WWI",
+  "name": "Volksbank Wißmar eG",
+  "url": "https://www.volksbank-wissmar.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50090500",
+  "bic": "GENODEF1S12",
+  "name": "Sparda-Bank Hessen eG",
+  "url": "https://www.sparda-hessen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50092100",
+  "bic": "GENODE51BH2",
+  "name": "Spar- und Kreditbank Evangelisch-Freikirchlicher Gemeinden eG",
+  "url": "https://www.freikirchenbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50110700",
+  "bic": "FBGADEF1XXX",
+  "name": "Frankfurter Bankgesellschaft (Deutschland) AG",
+  "url": "https://www.onlinebanking-frankfurter-bankgesellschaft.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50120900",
+  "bic": "TVBADEFFXXX",
+  "name": "VakifBank International AG, Wien ZN Deutschland",
+  "url": "https://www.onlinebanking-vakif-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50131000",
+  "bic": "ICBVDEFFXXX",
+  "name": "VietinBank",
+  "url": "https://www.ebanking-vietinbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50190000",
+  "bic": "FFVBDEFFXXX",
+  "name": "Frankfurter Volksbank Rhein/Main eG",
+  "url": "https://www.frankfurter-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50230888",
+  "bic": "PLFGDE5AIKB",
+  "name": "Ikano Bank AB (publ) Zweigniederlassung Deutschland",
+  "url": "https://www.onlinebanking-ikanobank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50530000",
+  "bic": "GENODE51CRO",
+  "name": "Cronbank AG",
+  "url": "https://www.cronbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50592200",
+  "bic": "GENODE51DRE",
+  "name": "VR Bank Dreieich-Offenbach eG",
+  "url": "https://www.vrbanking.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50661639",
+  "bic": "GENODEF1LSR",
+  "name": "VR RegionalBank eG",
+  "url": "https://www.regionalbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50663699",
+  "bic": "GENODEF1RDB",
+  "name": "Raiffeisenbank eG, Rodenbach",
+  "url": "https://www.rbrodenbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50692100",
+  "bic": "GENODE51SEL",
+  "name": "Volksbank Seligenstadt eG",
+  "url": "https://www.voba-seligenstadt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50790000",
+  "bic": "GENODE51GEL",
+  "name": "VR Bank Bad Orb-Gelnhausen eG",
+  "url": "https://www.vbrb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50861501",
+  "bic": "GENODE51ABH",
+  "name": "Raiffeisenbank Nördliche Bergstraße eG",
+  "url": "https://www.raiba-alsbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50862903",
+  "bic": "GENODE51GIN",
+  "name": "Volksbank Mainspitze eG",
+  "url": "https://www.voba-mainspitze.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50863513",
+  "bic": "GENODE51MIC",
+  "name": "Vereinigte Volksbank Raiffeisenbank eG, Reinheim",
+  "url": "https://www.vvrb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50961206",
+  "bic": "GENODE51RBU",
+  "name": "VR Bank Ried-Überwald eG",
+  "url": "https://www.meinevrbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "50961592",
+  "bic": "GENODE51FHO",
+  "name": "Volksbank Weschnitztal eG",
+  "url": "https://www.volksbank-weschnitztal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51090000",
+  "bic": "WIBADE5WXXX",
+  "name": "Wiesbadener Volksbank eG",
+  "url": "https://www.wvb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51091500",
+  "bic": "GENODE51RGG",
+  "name": "Rheingauer Volksbank eG",
+  "url": "https://www.rheingauer-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51161606",
+  "bic": "GENODE51LDD",
+  "name": "Volksbank Langendernbach eG",
+  "url": "https://www.volksbank-langendernbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51361021",
+  "bic": "GENODE51HHE",
+  "name": "Volksbank Heuchelheim eG",
+  "url": "https://www.voba-heuchelheim.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51390000",
+  "bic": "VBMHDE5FXXX",
+  "name": "Volksbank Mittelhessen eG",
+  "url": "https://www.vb-mittelhessen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51591300",
+  "bic": "GENODE51WBO",
+  "name": "Volksbank Brandoberndorf eG",
+  "url": "https://www.vb-brandoberndorf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51762434",
+  "bic": "GENODE51BIK",
+  "name": "VR Bank Lahn-Dill eG",
+  "url": "https://www.vrbank-lahndill.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51861403",
+  "bic": "GENODE51BUT",
+  "name": "Volksbank Butzbach eG",
+  "url": "https://www.volksbank-butzbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51861616",
+  "bic": "GENODE51REW",
+  "name": "Landbank Horlofftal eG",
+  "url": "https://www.landbank-horlofftal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51861806",
+  "bic": "GENODE51OBM",
+  "name": "Volksbank Ober-Mörlen eG",
+  "url": "https://www.voba-ober-moerlen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "51961023",
+  "bic": "GENODE51ULR",
+  "name": "Volksbank Ulrichstein eG",
+  "url": "https://www.volksbank-ulrichstein.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52060208",
+  "bic": "GENODEF1KS2",
+  "name": "Kurhessische Landbank eG",
+  "url": "https://www.kurhessische-landbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52060410",
+  "bic": "GENODEF1EK1",
+  "name": "Evangelische Bank eG",
+  "url": "https://www.eb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52062601",
+  "bic": "GENODEF1HRV",
+  "name": "VR PartnerBank eG Chattengau-Schwalm-Eder",
+  "url": "https://www.vr-partnerbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52063369",
+  "bic": "GENODEF1SPB",
+  "name": "VR-Bank Spangenberg-Morschen eG",
+  "url": "https://www.vrb-spangenberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52063550",
+  "bic": "GENODEF1WOH",
+  "name": "Raiffeisenbank HessenNord eG",
+  "url": "https://www.rb-hessennord.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52064156",
+  "bic": "GENODEF1BTA",
+  "name": "Raiffeisenbank eG Baunatal",
+  "url": "https://www.rb-baunatal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52069029",
+  "bic": "GENODEF1GMD",
+  "name": "Spar- u. Kredit-Bank eG",
+  "url": "https://www.skb-gemuenden.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52090000",
+  "bic": "GENODE51KS1",
+  "name": "Volksbank Kassel Göttingen eG",
+  "url": "https://www.volksbank-kassel-goettingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52260385",
+  "bic": "GENODEF1ESW",
+  "name": "VR-Bank Mitte eG",
+  "url": "https://www.vrbankmitte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "52360059",
+  "bic": "GENODEF1KBW",
+  "name": "Waldeck-Frankenberger Bank eG",
+  "url": "https://www.waldeck-frankenberger-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "53061230",
+  "bic": "GENODEF1HUE",
+  "name": "VR-Bank NordRhön eG",
+  "url": "https://www.vr-bank-nordrhoen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "53062035",
+  "bic": "GENODEF1GLU",
+  "name": "Raiffeisenbank im Fuldaer Land eG",
+  "url": "https://www.rb-fuldaerland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "53062350",
+  "bic": "GENODEF1PBG",
+  "name": "Raiffeisenbank Biebergrund-Petersberg eG",
+  "url": "https://www.rb-biebergrund-petersberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "53093200",
+  "bic": "GENODE51ALS",
+  "name": "VR VerbundBank eG",
+  "url": "https://www.vr-verbundbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "53261342",
+  "bic": "GENODEF1RAW",
+  "name": "Raiffeisenbank Werratal-Landeck eG",
+  "url": "https://www.rb-wl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "54090000",
+  "bic": "GENODE61KL1",
+  "name": "Volksbank Kaiserslautern eG",
+  "url": "https://www.vobakl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "54091700",
+  "bic": "GENODE61LEK",
+  "name": "Volksbank Lauterecken eG",
+  "url": "https://www.vb-lauterecken.de/services_xs2a/bg13"
+ },
+ {
+  "code": "54092400",
+  "bic": "GENODE61GLM",
+  "name": "Volksbank Glan-Münchweiler eG",
+  "url": "https://www.voba-glm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "54261700",
+  "bic": "GENODE61ROA",
+  "name": "VR-Bank Südwestpfalz eG Pirmasens - Zweibrücken",
+  "url": "https://www.vrbank-suedwestpfalz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "54691200",
+  "bic": "GENODE61DUW",
+  "name": "VR Bank Mittelhaardt eG",
+  "url": "https://www.vrbank-mittelhaardt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "54790000",
+  "bic": "GENODE61SPE",
+  "name": "Vereinigte VR Bank Kur- und Rheinpfalz eG",
+  "url": "https://www.vvrbank-krp.de/services_xs2a/bg13"
+ },
+ {
+  "code": "54862500",
+  "bic": "GENODE61SUW",
+  "name": "VR Bank Südpfalz eG",
+  "url": "https://www.vrbank-suedpfalz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "54891300",
+  "bic": "GENODE61BZA",
+  "name": "VR Bank Südliche Weinstraße-Wasgau eG",
+  "url": "https://www.vrbank-sww.de/services_xs2a/bg13"
+ },
+ {
+  "code": "55060611",
+  "bic": "GENODE51MZ6",
+  "name": "Raiffeisenbank in Rheinhessen eG",
+  "url": "https://www.raiba-rhh.de/services_xs2a/bg13"
+ },
+ {
+  "code": "55061303",
+  "bic": "GENODE51BUD",
+  "name": "Budenheimer Volksbank eG",
+  "url": "https://www.budenheimervb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "55090500",
+  "bic": "GENODEF1S01",
+  "name": "Sparda-Bank Südwest eG",
+  "url": "https://www.sparda-sw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "55091200",
+  "bic": "GENODE61AZY",
+  "name": "Volksbank Alzey-Worms eG",
+  "url": "https://www.vb-alzey-worms.de/services_xs2a/bg13"
+ },
+ {
+  "code": "55190000",
+  "bic": "MVBMDE55XXX",
+  "name": "Volksbank Darmstadt Mainz eG",
+  "url": "https://www.volksbanking.de/services_xs2a/bg13"
+ },
+ {
+  "code": "55361202",
+  "bic": "GENODE51AHM",
+  "name": "VR Bank eG, Alsheim",
+  "url": "https://www.vrbank-alsheim.de/services_xs2a/bg13"
+ },
+ {
+  "code": "56061151",
+  "bic": "GENODED1KSL",
+  "name": "Raiffeisenbank Kastellaun eG",
+  "url": "https://www.raiffeisenbank-kastellaun.de/services_xs2a/bg13"
+ },
+ {
+  "code": "56061472",
+  "bic": "GENODED1KHK",
+  "name": "Vereinigte Volksbank Raiffeisenbank eG",
+  "url": "https://www.vvr-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "56062227",
+  "bic": "GENODED1RBO",
+  "name": "Volksbank Rheinböllen eG",
+  "url": "https://www.voba-rheinboellen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "56090000",
+  "bic": "GENODE51KRE",
+  "name": "Volksbank Rhein-Nahe-Hunsrück eG",
+  "url": "https://www.voba-rnh.de/services_xs2a/bg13"
+ },
+ {
+  "code": "56261735",
+  "bic": "GENODED1FIN",
+  "name": "Raiffeisenbank Nahe eG",
+  "url": "https://www.rb-nahe.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57062675",
+  "bic": "GENODE51NWA",
+  "name": "Raiffeisenbank Niederwallmenach eG",
+  "url": "https://www.raiba-ndwa.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57069144",
+  "bic": "GENODED1KAI",
+  "name": "Raiffeisenbank MEHR eG",
+  "url": "https://www.rb-mehr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57069238",
+  "bic": "GENODED1ASN",
+  "name": "Raiffeisenbank Neustadt eG",
+  "url": "https://www.raiba-neustadt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57092800",
+  "bic": "GENODE51DIE",
+  "name": "Volksbank Rhein-Lahn-Limburg eG",
+  "url": "https://www.voba-rll.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57361476",
+  "bic": "GENODED1GBS",
+  "name": "Volksbank Gebhardshain eG",
+  "url": "https://www.vbgebhardshain.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57391200",
+  "bic": "GENODE51DAA",
+  "name": "Volksbank Daaden eG",
+  "url": "https://www.volksbank-daaden.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57391500",
+  "bic": "GENODE51HAM",
+  "name": "Volksbank Hamm / Sieg eG",
+  "url": "https://www.volksbank-hamm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57391800",
+  "bic": "GENODE51WW1",
+  "name": "Westerwald Bank eG Volks- und Raiffeisenbank",
+  "url": "https://www.westerwaldbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "57761591",
+  "bic": "GENODED1BNA",
+  "name": "VR Bank RheinAhrEifel eG",
+  "url": "https://www.vr-rheinahreifel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "58561771",
+  "bic": "GENODED1MLW",
+  "name": "Raiffeisenbank Mehring-Leiwen eG",
+  "url": "https://www.rbmehring-leiwen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "58660101",
+  "bic": "GENODED1BIT",
+  "name": "Volksbank Trier Eifel eG",
+  "url": "https://www.volksbank-trier-eifel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "59092000",
+  "bic": "GENODE51SB2",
+  "name": "Vereinigte Volksbank eG Saarlouis - Losheim am See - Sulzbach/Saar",
+  "url": "https://www.meine-vvb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "59190000",
+  "bic": "SABADE5SXXX",
+  "name": "Bank 1 Saar eG",
+  "url": "https://www.bank1saar.de/services_xs2a/bg13"
+ },
+ {
+  "code": "59391200",
+  "bic": "GENODE51UBH",
+  "name": "Volksbank Überherrn eG",
+  "url": "https://www.vb-ueberherrn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "59393000",
+  "bic": "GENODE51LEB",
+  "name": "levoBank eG",
+  "url": "https://www.levo-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60030100",
+  "bic": "BHBADES1XXX",
+  "name": "Bankhaus Bauer Aktiengesellschaft",
+  "url": "https://www.onlinebanking-bankhausbauer.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60030200",
+  "bic": "ELGEDES1XXX",
+  "name": "Bankhaus Ellwanger \u0026 Geiger AG",
+  "url": "https://www.onlinebanking-ellwanger-geiger.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60030700",
+  "bic": "AKBADES1XXX",
+  "name": "Aktivbank AG",
+  "url": "https://www.onlinebanking-aktivbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60035810",
+  "bic": "IBKBDES1XXX",
+  "name": "IBM Deutschland Kreditbank GmbH",
+  "url": "https://www.onlinebanking-ibm.com/services_xs2a/bg13"
+ },
+ {
+  "code": "60060396",
+  "bic": "GENODES1UTV",
+  "name": "Volksbank am Württemberg eG",
+  "url": "https://www.voba-aw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60062775",
+  "bic": "GENODES1ECH",
+  "name": "Echterdinger Bank eG",
+  "url": "https://www.echterdinger-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069066",
+  "bic": "GENODES1RBA",
+  "name": "Raiffeisenbank Niedere Alb eG",
+  "url": "https://www.rb-niedere-alb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069075",
+  "bic": "GENODES1RVG",
+  "name": "Raiffeisenbank Bühlertal eG",
+  "url": "https://www.raiba-buehlertal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069147",
+  "bic": "GENODES1RSF",
+  "name": "Raiffeisenbank Sondelfingen eG",
+  "url": "https://www.rb-sondelfingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069206",
+  "bic": "GENODES1AID",
+  "name": "Raiffeisenbank Aidlingen eG",
+  "url": "https://www.ihrziel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069224",
+  "bic": "GENODES1GWS",
+  "name": "Genossenschaftsbank Weil im Schönbuch eG",
+  "url": "https://www.genoba-weil.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069239",
+  "bic": "GENODES1BPF",
+  "name": "Bopfinger Bank Sechta-Ries eG",
+  "url": "https://www.bopfinger-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069242",
+  "bic": "GENODES1RGR",
+  "name": "Raiffeisenbank Gruibingen eG",
+  "url": "https://www.raiffeisenbank-gruibingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069336",
+  "bic": "GENODES1RMA",
+  "name": "Raiffeisenbank Maitis eG",
+  "url": "https://www.raiffeisenbank-maitis.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069346",
+  "bic": "GENODES1REH",
+  "name": "VR-Bank Alb-Blau-Donau eG",
+  "url": "https://www.vrbankabd.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069350",
+  "bic": "GENODES1RRG",
+  "name": "Raiffeisenbank Reute-Gaisbeuren eG",
+  "url": "https://www.rb-reute-gaisbeuren.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069355",
+  "bic": "GENODES1EHN",
+  "name": "VR-Bank Ehningen-Nufringen eG",
+  "url": "https://www.vrben.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069378",
+  "bic": "GENODES1DEH",
+  "name": "Volksbank Dettenhausen eG",
+  "url": "https://www.volksbank-dettenhausen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069387",
+  "bic": "GENODES1DBE",
+  "name": "Dettinger Bank eG",
+  "url": "https://www.dettinger-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069442",
+  "bic": "GENODES1RFS",
+  "name": "Raiffeisenbank Frankenhardt-Stimpfach eG",
+  "url": "https://www.rb-frankenhardt-stimpfach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069457",
+  "bic": "GENODES1OTT",
+  "name": "Raiffeisenbank Ottenbach eG",
+  "url": "https://www.raiffeisenbank-ottenbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069462",
+  "bic": "GENODES1WBB",
+  "name": "Winterbacher Bank eG",
+  "url": "https://www.winterbacher-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069527",
+  "bic": "GENODES1RNS",
+  "name": "Volksbank Brenztal eG",
+  "url": "https://www.volksbank-brenztal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069544",
+  "bic": "GENODES1RWN",
+  "name": "Raiffeisenbank Westhausen eG",
+  "url": "https://www.raiba-westhausen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069553",
+  "bic": "GENODES1HAR",
+  "name": "Raiffeisenbank Aichhalden-Hardt- Sulgen eG",
+  "url": "https://www.raibadirekt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069595",
+  "bic": "GENODES1SBB",
+  "name": "Raiffeisenbank Schrozberg- Rot am See eG",
+  "url": "https://www.unsere-raiba.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069673",
+  "bic": "GENODES1ABR",
+  "name": "Abtsgmünder Bank -Raiffeisen- eG",
+  "url": "https://www.abtsgmuender-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069685",
+  "bic": "GENODES1RWA",
+  "name": "Raiffeisenbank Wangen eG",
+  "url": "https://www.raiffeisenbank-wangen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069714",
+  "bic": "GENODES1IBR",
+  "name": "Raiffeisenbank Hohenloher Land eG",
+  "url": "https://www.rb-hl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069905",
+  "bic": "GENODES1REM",
+  "name": "Volksbank Remseck eG",
+  "url": "https://www.volksbank-remseck.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069911",
+  "bic": "GENODES1ERL",
+  "name": "Raiffeisenbank Erlenbach eG",
+  "url": "https://www.raiffeisenbank-erlenbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069931",
+  "bic": "GENODES1BGH",
+  "name": "Raiffeisenbank Berghülen eG",
+  "url": "https://www.rb-berghuelen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069950",
+  "bic": "GENODES1TUN",
+  "name": "Raiffeisenbank Tüngental eG",
+  "url": "https://www.raiba-tuengental.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60069976",
+  "bic": "GENODES1BOE",
+  "name": "Raiffeisenbank Böllingertal eG",
+  "url": "https://www.raiba-boellingertal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60090100",
+  "bic": "VOBADESSXXX",
+  "name": "Volksbank Stuttgart eG",
+  "url": "https://www.volksbank-stuttgart.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60090300",
+  "bic": "GENODES1ZUF",
+  "name": "Volksbank Zuffenhausen eG",
+  "url": "https://www.voba-zuff.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60090700",
+  "bic": "SWBSDESSXXX",
+  "name": "Südwestbank AG",
+  "url": "https://www.banking-suedwestbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60090800",
+  "bic": "GENODEF1S02",
+  "name": "Sparda-Bank Baden-Württemberg eG",
+  "url": "https://www.banking-sparda-bw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60090900",
+  "bic": "GENODEF1P20",
+  "name": "PSD Bank RheinNeckarSaar eG",
+  "url": "https://www.psd-rheinneckarsaar.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60291120",
+  "bic": "GENODES1VBK",
+  "name": "Volksbank Backnang eG",
+  "url": "https://www.volksbank-backnang.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60390000",
+  "bic": "GENODES1BBV",
+  "name": "Vereinigte Volksbanken eG, Sindelfingen",
+  "url": "https://www.diebank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60390300",
+  "bic": "GENODES1LEO",
+  "name": "Volksbank Leonberg-Strohgäu eG",
+  "url": "https://www.vbleos.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60391310",
+  "bic": "GENODES1VBH",
+  "name": "Volksbank in der Region eG",
+  "url": "https://www.vbidr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60422000",
+  "bic": "SABUDES1XXX",
+  "name": "RSB Retail+Service Bank GmbH",
+  "url": "https://www.onlinebanking-rsb-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60491430",
+  "bic": "GENODES1VBB",
+  "name": "VR-Bank Ludwigsburg eG",
+  "url": "https://www.vrbank-lb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "60663084",
+  "bic": "GENODES1RCW",
+  "name": "Raiffeisenbank im Kreis Calw eG",
+  "url": "https://www.raibacalw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61030000",
+  "bic": "MARBDE6GXXX",
+  "name": "Bankhaus Gebr. Martin AG",
+  "url": "https://www.martinbank-online.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61060500",
+  "bic": "GENODES1VGP",
+  "name": "Volksbank Göppingen eG",
+  "url": "https://www.volksbank-goeppingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61161696",
+  "bic": "GENODES1NHB",
+  "name": "Volksbank Filder eG",
+  "url": "https://www.volksbank-filder.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61191310",
+  "bic": "GENODES1VBP",
+  "name": "Volksbank Plochingen eG",
+  "url": "https://www.volksbank-plochingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61262345",
+  "bic": "GENODES1BBF",
+  "name": "Bernhauser Bank eG",
+  "url": "https://www.bernhauser-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61290120",
+  "bic": "GENODES1NUE",
+  "name": "Volksbank Mittlerer Neckar eG",
+  "url": "https://www.v-mn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61361722",
+  "bic": "GENODES1HEU",
+  "name": "Raiffeisenbank Rosenstein eG",
+  "url": "https://www.raiffeisenbank-rosenstein.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61391410",
+  "bic": "GENODES1WEL",
+  "name": "VR Bank Schwäbischer Wald eG",
+  "url": "https://www.vrbsw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61490150",
+  "bic": "GENODES1AAV",
+  "name": "VR-Bank Ostalb eG",
+  "url": "https://www.vrbank-ostalb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "61491010",
+  "bic": "GENODES1ELL",
+  "name": "VR-Bank Ellwangen eG",
+  "url": "https://www.vrbank-ellwangen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "62020000",
+  "bic": "HOEBDE61XXX",
+  "name": "Hoerner Bank AG",
+  "url": "https://www.ebanking-hoernerbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "62061991",
+  "bic": "GENODES1VOS",
+  "name": "Volksbank Sulmtal eG",
+  "url": "https://www.volksbank-sulmtal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "62062215",
+  "bic": "GENODES1BIA",
+  "name": "Volksbank Beilstein-Ilsfeld- Abstatt eG",
+  "url": "https://www.vb-bia.de/services_xs2a/bg13"
+ },
+ {
+  "code": "62062643",
+  "bic": "GENODES1VFT",
+  "name": "Volksbank Flein-Talheim eG",
+  "url": "https://www.vb-flein-talheim.de/services_xs2a/bg13"
+ },
+ {
+  "code": "62063263",
+  "bic": "GENODES1VLS",
+  "name": "VBU Volksbank im Unterland eG",
+  "url": "https://www.vbu-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "62091600",
+  "bic": "GENODES1VMN",
+  "name": "Volksbank Möckmühl eG",
+  "url": "https://www.voba-moeckmuehl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "62091800",
+  "bic": "GENODES1VHL",
+  "name": "Volksbank Hohenlohe eG",
+  "url": "https://www.vb-hohenlohe.de/services_xs2a/bg13"
+ },
+ {
+  "code": "62290110",
+  "bic": "GENODES1SHA",
+  "name": "VR Bank Heilbronn Schwäbisch Hall eG",
+  "url": "https://www.vrbank-hsh.de/services_xs2a/bg13"
+ },
+ {
+  "code": "63090100",
+  "bic": "ULMVDE66XXX",
+  "name": "Volksbank Ulm-Biberach eG",
+  "url": "https://www.volksbank-ulm-biberach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "63091010",
+  "bic": "GENODES1EHI",
+  "name": "Donau-Iller Bank eG",
+  "url": "https://www.donau-iller-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "63091300",
+  "bic": "GENODES1LAI",
+  "name": "Volksbank Alb eG",
+  "url": "https://www.voba-alb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "63290110",
+  "bic": "GENODES1HDH",
+  "name": "Heidenheimer Volksbank eG",
+  "url": "https://www.hdh-voba.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64091200",
+  "bic": "GENODES1MTZ",
+  "name": "Volksbank Ermstal-Alb eG",
+  "url": "https://www.voba-ermstal-alb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64091300",
+  "bic": "GENODES1MUN",
+  "name": "Volksbank Münsingen eG",
+  "url": "https://www.volksbank-muensingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64161397",
+  "bic": "GENODES1AMM",
+  "name": "Volksbank Raiffeisenbank AmmerGäu eG",
+  "url": "https://www.vbrb-amg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64290120",
+  "bic": "GENODES1VRW",
+  "name": "Volksbank Rottweil eG",
+  "url": "https://www.volksbank-rottweil.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64291010",
+  "bic": "GENODES1FDS",
+  "name": "Volksbank Nordschwarzwald eG",
+  "url": "https://www.voba-nsw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64291420",
+  "bic": "GENODES1VDL",
+  "name": "Volksbank Deisslingen eG",
+  "url": "https://www.voba-deisslingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64292310",
+  "bic": "GENODES1TRO",
+  "name": "Volksbank Trossingen eG",
+  "url": "https://www.volksbank-trossingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64361359",
+  "bic": "GENODES1RDH",
+  "name": "Raiffeisenbank Donau-Heuberg eG",
+  "url": "https://www.raiba-donau-heuberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "64390130",
+  "bic": "GENODES1TUT",
+  "name": "Volksbank Schwarzwald-Donau-Neckar eG",
+  "url": "https://www.vbsdn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "65063086",
+  "bic": "GENODES1SAG",
+  "name": "Raiffeisenbank Bad Saulgau eG",
+  "url": "https://www.rb-bad-saulgau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "65091040",
+  "bic": "GENODES1LEU",
+  "name": "Volksbank Allgäu-Oberschwaben eG",
+  "url": "https://www.volksbank-allgaeu-oberschwaben.de/services_xs2a/bg13"
+ },
+ {
+  "code": "65093020",
+  "bic": "GENODES1SLG",
+  "name": "VR Bank Donau-Oberschwaben eG",
+  "url": "https://www.vrdo.de/services_xs2a/bg13"
+ },
+ {
+  "code": "65110200",
+  "bic": "IBBFDE81XXX",
+  "name": "Internationales Bankhaus Bodensee AG",
+  "url": "https://www.onlinebanking-ibb-ag.com/services_xs2a/bg13"
+ },
+ {
+  "code": "65162832",
+  "bic": "GENODES1OTE",
+  "name": "Raiffeisenbank Oberteuringen-Meckenbeuren eG",
+  "url": "https://www.rb-om.de/services_xs2a/bg13"
+ },
+ {
+  "code": "65191500",
+  "bic": "GENODES1TET",
+  "name": "Volksbank Bodensee-Oberschwaben eG",
+  "url": "https://www.vb-bo.de/services_xs2a/bg13"
+ },
+ {
+  "code": "65361989",
+  "bic": "GENODES1ONS",
+  "name": "Onstmettinger Bank eG",
+  "url": "https://www.onstmettinger-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "65362499",
+  "bic": "GENODES1GEI",
+  "name": "Raiffeisenbank Geislingen-Rosenfeld eG",
+  "url": "https://www.raiba-gr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "65390120",
+  "bic": "GENODES1EBI",
+  "name": "Volksbank Zollernalb eG",
+  "url": "https://www.volksbank-zollernalb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66061407",
+  "bic": "GENODE61RH2",
+  "name": "Spar- und Kreditbank Rheinstetten eG",
+  "url": "https://www.skb-rheinstetten.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66062366",
+  "bic": "GENODE61DET",
+  "name": "Raiffeisenbank Hardt-Bruhrain eG",
+  "url": "https://www.rb-hardt-bruhrain.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66069103",
+  "bic": "GENODE61ELZ",
+  "name": "Raiffeisenbank eG Elztal",
+  "url": "https://www.raiffeisenbank-elztal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66090800",
+  "bic": "GENODE61BBB",
+  "name": "BBBank eG",
+  "url": "https://www.bbbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66090900",
+  "bic": "GENODEF1P10",
+  "name": "PSD Bank Karlsruhe-Neustadt eG",
+  "url": "https://www.psd-karlsruhe-neustadt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66091200",
+  "bic": "GENODE61ETT",
+  "name": "Volksbank Ettlingen eG",
+  "url": "https://www.volksbank-ettlingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66190000",
+  "bic": "GENODE61KA1",
+  "name": "Volksbank pur eG",
+  "url": "https://www.volksbank-pur.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66261092",
+  "bic": "GENODE61BHT",
+  "name": "Spar- und Kreditbank Bühlertal eG",
+  "url": "https://www.skb-buehlertal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66261416",
+  "bic": "GENODE61ALR",
+  "name": "Raiffeisenbank Altschweier eG",
+  "url": "https://www.raiba-altschweier.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66291400",
+  "bic": "GENODE61BHL",
+  "name": "Volksbank Bühl eG",
+  "url": "https://www.volksbank-buehl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66490000",
+  "bic": "GENODE61OG1",
+  "name": "Volksbank eG - Die Gestalterbank",
+  "url": "https://www.gestalterbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66492700",
+  "bic": "GENODE61KZT",
+  "name": "Volksbank Mittlerer Schwarzwald eG",
+  "url": "https://www.voba-msw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66562053",
+  "bic": "GENODE61DUR",
+  "name": "Raiffeisenbank Südhardt eG",
+  "url": "https://www.raiba-suedhardt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66562300",
+  "bic": "GENODE61IFF",
+  "name": "VR-Bank in Mittelbaden eG",
+  "url": "https://www.vr-miba.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66661329",
+  "bic": "GENODE61KBR",
+  "name": "Raiffeisenbank Kieselbronn eG",
+  "url": "https://www.rb-kieselbronn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "66662155",
+  "bic": "GENODE61ERS",
+  "name": "Raiffeisenbank Ersingen eG",
+  "url": "https://www.raiffeisenbankersingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67060031",
+  "bic": "GENODE61MA3",
+  "name": "Volksbank Sandhofen eG",
+  "url": "https://www.vobasandhofen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67090000",
+  "bic": "GENODE61MA2",
+  "name": "VR Bank Rhein-Neckar eG",
+  "url": "https://www.vrbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67092300",
+  "bic": "GENODE61WNM",
+  "name": "Volksbank Kurpfalz eG",
+  "url": "https://www.volksbank-kurpfalz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67230000",
+  "bic": "MLPBDE61XXX",
+  "name": "MLP Finanzdienstleistungen",
+  "url": "https://financepilot-pe.mlp.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67262243",
+  "bic": "GENODE61WIB",
+  "name": "Raiffeisenbank Baiertal eG",
+  "url": "https://www.rbbai.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67262550",
+  "bic": "GENODE61LRO",
+  "name": "Volksbank Rot eG",
+  "url": "https://www.volksbank-rot.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67291700",
+  "bic": "GENODE61NGD",
+  "name": "Volksbank Heidelberg-Neckartal eG",
+  "url": "https://www.volksbank-hdneckartal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67292200",
+  "bic": "GENODE61WIE",
+  "name": "Volksbank Kraichgau eG",
+  "url": "https://www.vbkraichgau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67390000",
+  "bic": "GENODE61WTH",
+  "name": "Ihre Volksbank eG Neckar Odenwald Main Tauber",
+  "url": "https://www.ihre-vb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67461424",
+  "bic": "GENODE61BUC",
+  "name": "Volksbank Franken eG",
+  "url": "https://www.volksbank-franken.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67461733",
+  "bic": "GENODE61RNG",
+  "name": "Volksbank Kirnau-Krautheim eG",
+  "url": "https://www.vb-kirnau-krautheim.de/services_xs2a/bg13"
+ },
+ {
+  "code": "67462368",
+  "bic": "GENODE61LMB",
+  "name": "Volksbank Limbach eG",
+  "url": "https://www.vb-limbach.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68030000",
+  "bic": "BKMADE61XXX",
+  "name": "Bankhaus E. Mayer AG",
+  "url": "https://www.bankhaus-mayer.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68061505",
+  "bic": "GENODE61IHR",
+  "name": "Volksbank Breisgau- Markgräflerland eG",
+  "url": "https://www.volksbank-breisgau-markgraeflerland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68062105",
+  "bic": "GENODE61DEN",
+  "name": "Raiffeisenbank Denzlingen-Sexau eG",
+  "url": "https://www.rb-denzlingen-sexau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68062730",
+  "bic": "GENODE61WYH",
+  "name": "Raiffeisenbank Wyhl eG",
+  "url": "https://www.raiffeisenbank-wyhl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68063479",
+  "bic": "GENODE61VOK",
+  "name": "Raiffeisenbank Kaiserstuhl eG",
+  "url": "https://www.raiffeisenbank-kaiserstuhl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68064222",
+  "bic": "GENODE61GUN",
+  "name": "Raiffeisenbank im Breisgau eG",
+  "url": "https://www.raiffeisenbank-im-breisgau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68090000",
+  "bic": "GENODE61FR1",
+  "name": "Volksbank Freiburg eG",
+  "url": "https://www.volksbank-freiburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68092000",
+  "bic": "GENODE61EMM",
+  "name": "Volksbank Breisgau Nord eG",
+  "url": "https://www.voba-breisgau-nord.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68092300",
+  "bic": "GENODE61STF",
+  "name": "Volksbank Staufen eG",
+  "url": "https://www.volksbank-staufen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68290000",
+  "bic": "GENODE61LAH",
+  "name": "Volksbank Lahr eG",
+  "url": "https://www.volksbank-lahr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68390000",
+  "bic": "VOLODE66XXX",
+  "name": "Volksbank Dreiländereck eG",
+  "url": "https://www.vb3.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68462427",
+  "bic": "GENODE61WUT",
+  "name": "Volksbank Klettgau-Wutöschingen eG",
+  "url": "https://www.voba-kw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "68492200",
+  "bic": "GENODE61WT1",
+  "name": "Volksbank Hochrhein eG",
+  "url": "https://www.volksbank-hochrhein.de/services_xs2a/bg13"
+ },
+ {
+  "code": "69061800",
+  "bic": "GENODE61UBE",
+  "name": "Volksbank eG, Überlingen",
+  "url": "https://www.volksbank-ueberlingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "69091200",
+  "bic": "GENODE61HAG",
+  "name": "Hagnauer Volksbank eG",
+  "url": "https://www.hagnauer-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "69091600",
+  "bic": "GENODE61PFD",
+  "name": "Volksbank Pfullendorf eG",
+  "url": "https://www.volksbank-pfullendorf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70011400",
+  "bic": "BFWODE71XXX",
+  "name": "BfW - Bank für Wohnungswirtschaft AG",
+  "url": "https://www.bfw-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70011600",
+  "bic": "WEGBDE77XXX",
+  "name": "WEG Bank AG",
+  "url": "https://www.weg-banking.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70012600",
+  "bic": "SUSKDEM1XXX",
+  "name": "Südtiroler Sparkasse AG Niederlassung München",
+  "url": "https://www.onlinebanking-suedspa.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70032500",
+  "bic": "GAKDDEM1XXX",
+  "name": "St. Galler Kantonalbank Deutschland AG",
+  "url": "https://www.onlinebanking-sgkb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70090100",
+  "bic": "GENODEF1M04",
+  "name": "HAUSBANK MÜNCHEN eG Bank für Haus- und Grundbesitz",
+  "url": "https://www.hausbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70090500",
+  "bic": "GENODEF1S04",
+  "name": "Sparda-Bank München eG",
+  "url": "https://www.sparda-m.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70091500",
+  "bic": "GENODEF1DCA",
+  "name": "Volksbank Raiffeisenbank Dachau eG",
+  "url": "https://www.vr-dachau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70091600",
+  "bic": "GENODEF1DSS",
+  "name": "VR-Bank Landsberg-Ammersee eG",
+  "url": "https://www.vr-ll.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70093200",
+  "bic": "GENODEF1STH",
+  "name": "VR Bank Starnberg-Zugspitze eG",
+  "url": "https://www.vrsta-zugspitze.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70093400",
+  "bic": "GENODEF1ISV",
+  "name": "VR-Bank Ismaning Hallbergmoos Neufahrn eG",
+  "url": "https://www.vrbank-ihn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70120600",
+  "bic": "AGBMDEMMXXX",
+  "name": "Airbus Bank GmbH",
+  "url": "https://banking.airbusbank.com/services_xs2a/bg13"
+ },
+ {
+  "code": "70130800",
+  "bic": "GENODEF1M06",
+  "name": "MERKUR PRIVATBANK KGaA",
+  "url": "https://www.merkur-privatbank.finance/services_xs2a/bg13"
+ },
+ {
+  "code": "70163370",
+  "bic": "GENODEF1FFB",
+  "name": "Volksbank Raiffeisenbank Fürstenfeldbruck eG",
+  "url": "https://www.vrbank-ffb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70166486",
+  "bic": "GENODEF1OHC",
+  "name": "VR Bank München Land eG",
+  "url": "https://www.vr-bank-muenchen-land.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169132",
+  "bic": "GENODEF1HFG",
+  "name": "Raiffeisenbank Griesstätt-Halfing eG",
+  "url": "https://www.raiba-gh.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169165",
+  "bic": "GENODEF1SBC",
+  "name": "Raiffeisenbank Chiemgau-Nord-Obing eG",
+  "url": "https://www.rb-chiemgau-nord.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169186",
+  "bic": "GENODEF1ODZ",
+  "name": "Raiffeisenbank Pfaffenhofen a.d.Glonn eG",
+  "url": "https://www.onlinebanking-raiba-pfaffenhofen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169191",
+  "bic": "GENODEF1TEI",
+  "name": "Raiffeisenbank Rupertiwinkel eG",
+  "url": "https://www.raiba-rupertiwinkel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169310",
+  "bic": "GENODEF1ALX",
+  "name": "Alxing-Brucker Genossenschaftsbank eG",
+  "url": "https://www.alxinger-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169333",
+  "bic": "GENODEF1EUR",
+  "name": "Raiffeisenbank Beuerberg-Eurasburg eG",
+  "url": "https://www.rb-beuerberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169351",
+  "bic": "GENODEF1ELB",
+  "name": "Raiffeisenbank Lechrain eG",
+  "url": "https://www.rb-lechrain.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169382",
+  "bic": "GENODEF1GIL",
+  "name": "Raiffeisenbank Gilching eG",
+  "url": "https://www.raiba-gilching.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169383",
+  "bic": "GENODEF1GMU",
+  "name": "Raiffeisenbank Gmund am Tegernsee eG",
+  "url": "https://www.raiffeisenbank-gmund.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169388",
+  "bic": "GENODEF1HMA",
+  "name": "Raiffeisenbank Haag-Gars-Maitenbeth eG",
+  "url": "https://www.rbk-haag-gars.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169410",
+  "bic": "GENODEF1HZO",
+  "name": "Raiffeisenbank Holzkirchen-Otterfing eG",
+  "url": "https://www.rb-holzkirchen-otterfing.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169413",
+  "bic": "GENODEF1HUA",
+  "name": "Raiffeisenbank Singoldtal eG",
+  "url": "https://www.rb-singoldtal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169450",
+  "bic": "GENODEF1ASG",
+  "name": "Raiffeisen-Volksbank Ebersberg eG",
+  "url": "https://www.rv-ebe.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169459",
+  "bic": "GENODEF1MTW",
+  "name": "Raiffeisenbank Mittenwald eG",
+  "url": "https://www.raiba-mittenwald.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169460",
+  "bic": "GENODEF1MOO",
+  "name": "Raiffeisenbank Westkreis Fürstenfeldbruck eG",
+  "url": "https://www.westkreis.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169464",
+  "bic": "GENODEF1M07",
+  "name": "Genossenschaftsbank eG München",
+  "url": "https://www.genobamuc.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169465",
+  "bic": "GENODEF1M08",
+  "name": "Raiffeisenbank München-Nord eG",
+  "url": "https://www.banking-rb-mnord.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169466",
+  "bic": "GENODEF1M03",
+  "name": "Raiffeisenbank München-Süd eG",
+  "url": "https://www.raiba-muc-sued.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169509",
+  "bic": "GENODEF1PEI",
+  "name": "Raiffeisenbank Pfaffenwinkel eG",
+  "url": "https://www.raiba-pfaffenwinkel.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169524",
+  "bic": "GENODEF1RME",
+  "name": "Bankhaus RSA eG",
+  "url": "https://www.bankhaus-rsa.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169530",
+  "bic": "GENODEF1RWZ",
+  "name": "Raiffeisenbank Neumarkt- St. Veit - Reischach eG",
+  "url": "https://www.rb-nr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169543",
+  "bic": "GENODEF1HHS",
+  "name": "Raiffeisenbank Isar-Loisachtal eG",
+  "url": "https://www.rileg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169558",
+  "bic": "GENODEF1SGA",
+  "name": "Raiffeisenbank Steingaden eG",
+  "url": "https://www.raiba-steingaden.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169566",
+  "bic": "GENODEF1TAV",
+  "name": "VR-Bank Taufkirchen-Dorfen eG",
+  "url": "https://www.vr-bank-online.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169568",
+  "bic": "GENODEF1TAE",
+  "name": "Raiffeisenbank Taufkirchen-Oberneukirchen eG",
+  "url": "https://www.rb-tofk.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169575",
+  "bic": "GENODEF1TRH",
+  "name": "Raiffeisenbank Türkheim eG",
+  "url": "https://www.rb-tuerkheim.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169576",
+  "bic": "GENODEF1TUS",
+  "name": "Raiffeisen-Volksbank Tüssling-Unterneukirchen eG",
+  "url": "https://www.rv-banken.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169598",
+  "bic": "GENODEF1MIB",
+  "name": "Raiffeisenbank im Oberland eG",
+  "url": "https://www.oberlandbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169605",
+  "bic": "GENODEF1ISE",
+  "name": "VR-Bank Erding eG",
+  "url": "https://www.vr-bank-erding.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169614",
+  "bic": "GENODEF1FSR",
+  "name": "Freisinger Bank eG Volksbank-Raiffeisenbank",
+  "url": "https://www.fs-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70169693",
+  "bic": "GENODEF1RHT",
+  "name": "Raiffeisenbank Hallertau eG",
+  "url": "https://www.raibahallertau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70190000",
+  "bic": "GENODEF1M01",
+  "name": "Münchner Bank eG",
+  "url": "https://www.muenchner-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "70362595",
+  "bic": "GENODEF1WAK",
+  "name": "Raiffeisenbank Wallgau-Krün eG",
+  "url": "https://www.raiba-wallgau-kruen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "71062802",
+  "bic": "GENODEF1AGE",
+  "name": "Raiffeisenbank Anger eG",
+  "url": "https://www.rb-anger.de/services_xs2a/bg13"
+ },
+ {
+  "code": "71090000",
+  "bic": "GENODEF1BGL",
+  "name": "Volksbank Raiffeisenbank Oberbayern Südost eG",
+  "url": "https://www.vrbank-obb-so.de/services_xs2a/bg13"
+ },
+ {
+  "code": "71160000",
+  "bic": "GENODEF1VRR",
+  "name": "meine Volksbank Raiffeisenbank eG",
+  "url": "https://www.vb-rb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "71162355",
+  "bic": "GENODEF1OBD",
+  "name": "Raiffeisenbank Oberaudorf eG",
+  "url": "https://www.rb-oberaudorf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "71162804",
+  "bic": "GENODEF1ASU",
+  "name": "Raiffeisenbank Aschau-Samerberg eG",
+  "url": "https://www.rb-as.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72012300",
+  "bic": "BTVADE61XXX",
+  "name": "BTV Bank für Tirol und Vorarlberg AG Zweigniederlassung Deutschland",
+  "url": "https://servicebank.btv-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72030014",
+  "bic": "FUBKDE71XXX",
+  "name": "Fürst Fugger Privatbank Aktiengesellschaft",
+  "url": "https://www.onlinebanking-fuggerbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72030227",
+  "bic": "ANHODE77XXX",
+  "name": "Bankhaus Anton Hafner KG",
+  "url": "https://www.hafnerbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72062152",
+  "bic": "GENODEF1MTG",
+  "name": "VR-Bank Handels- und Gewerbebank eG",
+  "url": "https://www.vrbank-hg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069005",
+  "bic": "GENODEF1AIL",
+  "name": "Raiffeisenbank Lech-Donau eG",
+  "url": "https://www.rb-lech-donau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069036",
+  "bic": "GENODEF1BOI",
+  "name": "Raiffeisenbank Bobingen eG",
+  "url": "https://www.raiba-bobingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069043",
+  "bic": "GENODEF1GZ2",
+  "name": "VR-Bank Donau-Mindel eG",
+  "url": "https://www.vr-dm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069105",
+  "bic": "GENODEF1HTF",
+  "name": "Raiffeisenbank Hiltenfingen eG",
+  "url": "https://www.onlinebanking-raiffeisenbank-hiltenfingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069119",
+  "bic": "GENODEF1ICH",
+  "name": "Raiffeisenbank Ichenhausen eG",
+  "url": "https://www.rb-ichenhausen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069126",
+  "bic": "GENODEF1BBT",
+  "name": "Raiffeisenbank Mittelschwaben eG",
+  "url": "https://www.rb-mittelschwaben.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069155",
+  "bic": "GENODEF1MRI",
+  "name": "Raiffeisenbank Wittelsbacher Land eG",
+  "url": "https://www.rb-wila.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069179",
+  "bic": "GENODEF1BWI",
+  "name": "Raiffeisenbank Unteres Zusamtal eG",
+  "url": "https://www.rb-uz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069193",
+  "bic": "GENODEF1RLI",
+  "name": "Raiffeisenbank Rehling eG",
+  "url": "https://www.raiba-rehling.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069220",
+  "bic": "GENODEF1SMU",
+  "name": "Raiffeisenbank Schwabmünchen-Stauden eG",
+  "url": "https://www.raiba-smue-stauden.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069235",
+  "bic": "GENODEF1THS",
+  "name": "Raiffeisenbank Thannhausen eG",
+  "url": "https://www.rb-thannhausen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069274",
+  "bic": "GENODEF1ZUS",
+  "name": "Raiffeisenbank Augsburger Land West eG",
+  "url": "https://www.rb-alw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069329",
+  "bic": "GENODEF1NOE",
+  "name": "Raiffeisen-Volksbank Ries eG",
+  "url": "https://www.rvbankries.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069736",
+  "bic": "GENODEF1BLT",
+  "name": "Raiffeisenbank Schwaben Mitte eG",
+  "url": "https://www.rb-schwaben.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72069789",
+  "bic": "GENODEF1PFA",
+  "name": "Raiffeisenbank Pfaffenhausen eG",
+  "url": "https://www.rb-pfaffenhausen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72090000",
+  "bic": "GENODEF1AUB",
+  "name": "VR Bank Augsburg-Ostallgäu eG",
+  "url": "https://www.vrbank-augsburg-ostallgaeu.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72090500",
+  "bic": "GENODEF1S03",
+  "name": "Sparda-Bank Augsburg eG",
+  "url": "https://www.sparda-a.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72090900",
+  "bic": "GENODEF1P14",
+  "name": "PSD Bank München eG",
+  "url": "https://www.psd-muenchen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72160818",
+  "bic": "GENODEF1INP",
+  "name": "Volksbank Raiffeisenbank Bayern Mitte eG",
+  "url": "https://www.vr-bayernmitte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72169080",
+  "bic": "GENODEF1GSB",
+  "name": "Raiffeisenbank Aresing-Gerolsbach eG",
+  "url": "https://www.rb-arge.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72169218",
+  "bic": "GENODEF1SBN",
+  "name": "Schrobenhausener Bank eG",
+  "url": "https://www.sob-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72169246",
+  "bic": "GENODEF1WFN",
+  "name": "Raiffeisenbank Schrobenhausener Land eG",
+  "url": "https://www.rb-sobland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72169756",
+  "bic": "GENODEF1ND2",
+  "name": "VR Bank Neuburg-Rain eG",
+  "url": "https://www.vr-neuburg-rain.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72169812",
+  "bic": "GENODEF1GAH",
+  "name": "Raiffeisenbank im Donautal eG",
+  "url": "https://www.rb-idt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "72290100",
+  "bic": "GENODEF1DON",
+  "name": "Raiffeisen-Volksbank Donauwörth eG",
+  "url": "https://www.rvb-donauwoerth.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73061191",
+  "bic": "GENODEF1NU1",
+  "name": "VR-Bank Neu-Ulm eG",
+  "url": "https://www.vrnu.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73160000",
+  "bic": "GENODEF1MIR",
+  "name": "Genossenschaftsbank Unterallgäu eG",
+  "url": "https://www.genobank-unterallgaeu.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73190000",
+  "bic": "GENODEF1MM1",
+  "name": "VR-Bank Memmingen eG",
+  "url": "https://www.vr-memmingen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73331700",
+  "bic": "GABLDE71XXX",
+  "name": "Gabler-Saliter Bankgeschäft AG",
+  "url": "https://banking.gabler-saliter-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369264",
+  "bic": "GENODEF1DTA",
+  "name": "Raiffeisenbank im Allgäuer Land eG",
+  "url": "https://www.rb-allgaeuerland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369821",
+  "bic": "GENODEF1LBB",
+  "name": "VR SüdBank eG",
+  "url": "https://www.vrsuedbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369826",
+  "bic": "GENODEF1LIA",
+  "name": "Volksbank Lindenberg eG",
+  "url": "https://www.volksbank-lindenberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369851",
+  "bic": "GENODEF1AIT",
+  "name": "Raiffeisenbank Aitrang-Ruderatshofen eG",
+  "url": "https://www.raiba-aitrang-rud.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369871",
+  "bic": "GENODEF1EGB",
+  "name": "Raiffeisenbank Baisweil-Eggenthal-Friesenried eG",
+  "url": "https://www.rb-eggenthal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369918",
+  "bic": "GENODEF1OKI",
+  "name": "Raiffeisenbank Kirchweihtal eG",
+  "url": "https://www.rb-kirchweihtal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369920",
+  "bic": "GENODEF1SFO",
+  "name": "VR Bank Kempten-Oberallgäu eG",
+  "url": "https://www.vrbank-ke-oa.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369933",
+  "bic": "GENODEF1RHP",
+  "name": "Raiffeisenbank Südliches Ostallgäu eG",
+  "url": "https://www.rb-sued-oal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73369954",
+  "bic": "GENODEF1WGO",
+  "name": "Raiffeisenbank Wald-Görisried eG",
+  "url": "https://www.rb-wald.de/services_xs2a/bg13"
+ },
+ {
+  "code": "73392000",
+  "bic": "GENODEF1IMV",
+  "name": "Volksbank Immenstadt eG",
+  "url": "https://www.volksbank-immenstadt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74061101",
+  "bic": "GENODEF1RGS",
+  "name": "Raiffeisenbank Goldener Steig - Dreisessel eG",
+  "url": "https://www.rb-gsd.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74061564",
+  "bic": "GENODEF1NUI",
+  "name": "Raiffeisenbank Unteres Inntal eG",
+  "url": "https://www.rbui.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74061670",
+  "bic": "GENODEF1ORT",
+  "name": "Raiffeisenbank Ortenburg-Kirchberg v.W. eG",
+  "url": "https://www.rbok.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74061813",
+  "bic": "GENODEF1PFK",
+  "name": "VR-Bank Rottal-Inn eG",
+  "url": "https://www.vrbk.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74062490",
+  "bic": "GENODEF1VIR",
+  "name": "VR-Bank Vilshofen-Pocking eG",
+  "url": "https://www.vr-vp.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74062786",
+  "bic": "GENODEF1TIE",
+  "name": "Raiffeisenbank im Landkreis Passau-Nord eG",
+  "url": "https://www.rbpn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74064593",
+  "bic": "GENODEF1WSD",
+  "name": "Raiffeisenbank Wegscheid eG",
+  "url": "https://www.rb-wegscheid.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74069744",
+  "bic": "GENODEF1GRT",
+  "name": "Raiffeisenbank Grainet eG",
+  "url": "https://www.rb-grainet.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74090000",
+  "bic": "GENODEF1PA1",
+  "name": "VR-Bank Passau eG",
+  "url": "https://www.vr-bank-passau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74160025",
+  "bic": "GENODEF1DEG",
+  "name": "Raiffeisenbank eG Deggendorf-Plattling-Sonnenwald",
+  "url": "https://www.rb-deggendorf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74161608",
+  "bic": "GENODEF1HBW",
+  "name": "Raiffeisenbank Hengersberg-Schöllnach eG",
+  "url": "https://www.rb-hs.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74190000",
+  "bic": "GENODEF1DGV",
+  "name": "VR GenoBank DonauWald eG",
+  "url": "https://www.vr-genobank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74191000",
+  "bic": "GENODEF1LND",
+  "name": "VR-Bank Landau-Mengkofen eG",
+  "url": "https://www.vrbanklm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74260110",
+  "bic": "GENODEF1SR2",
+  "name": "Raiffeisenbank Straubing eG",
+  "url": "https://www.raiffeisenbank-straubing.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74261024",
+  "bic": "GENODEF1CHA",
+  "name": "Raiffeisenbank Chamer Land eG",
+  "url": "https://www.rb-chamer-land.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74290000",
+  "bic": "GENODEF1SR1",
+  "name": "VR-Bank Ostbayern-Mitte eG",
+  "url": "https://www.vr-obm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74361211",
+  "bic": "GENODEF1ARF",
+  "name": "Raiffeisenbank Arnstorf eG",
+  "url": "https://www.rb-arnstorf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74362663",
+  "bic": "GENODEF1ERG",
+  "name": "Raiffeisenbank Landshuter Land eG",
+  "url": "https://www.rb-lala.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74369088",
+  "bic": "GENODEF1GPF",
+  "name": "Raiffeisenbank Geiselhöring-Pfaffenberg eG",
+  "url": "https://www.rb-geiselhoering.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74369130",
+  "bic": "GENODEF1PST",
+  "name": "Raiffeisenbank Parkstetten eG",
+  "url": "https://www.rb-parkstetten.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74369146",
+  "bic": "GENODEF1RZK",
+  "name": "Raiffeisenbank Rattiszell-Konzell eG",
+  "url": "https://www.rb-rattiszell-konzell.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74369662",
+  "bic": "GENODEF1EBV",
+  "name": "Raiffeisenbank Buch-Eching eG",
+  "url": "https://www.rb-eching.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74390000",
+  "bic": "GENODEF1LH1",
+  "name": "VR-Bank Landshut eG",
+  "url": "https://www.vrla.de/services_xs2a/bg13"
+ },
+ {
+  "code": "74392300",
+  "bic": "GENODEF1VBV",
+  "name": "VR-Bank Isar-Vils eG",
+  "url": "https://www.vrbank-isar-vils.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75060150",
+  "bic": "GENODEF1R02",
+  "name": "Raiffeisenbank Regensburg-Wenzenbach eG",
+  "url": "https://www.raiffeisenbank-regensburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75061851",
+  "bic": "GENODEF1REF",
+  "name": "Raiffeisenbank Regenstauf eG",
+  "url": "https://www.onlinebanking-raiffeisenbank-regenstauf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75062026",
+  "bic": "GENODEF1DST",
+  "name": "Raiffeisenbank Oberpfalz Süd eG",
+  "url": "https://www.rb-os.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75069014",
+  "bic": "GENODEF1ABS",
+  "name": "Raiffeisenbank Kreis Kelheim eG",
+  "url": "https://www.rbkk.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75069038",
+  "bic": "GENODEF1FKS",
+  "name": "Raiffeisenbank Falkenstein-Wörth eG",
+  "url": "https://www.rbfalkenstein-woerth.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75069055",
+  "bic": "GENODEF1HGA",
+  "name": "Raiffeisenbank Alteglofsheim-Hagelstadt eG",
+  "url": "https://www.rb-ah.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75069061",
+  "bic": "GENODEF1HEM",
+  "name": "Raiffeisenbank im Oberpfälzer Jura eG",
+  "url": "https://www.rb-opf-jura.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75069078",
+  "bic": "GENODEF1SZV",
+  "name": "Raiffeisenbank Sinzing eG",
+  "url": "https://www.raiffeisenbank-sinzing.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75069081",
+  "bic": "GENODEF1KTZ",
+  "name": "Raiffeisenbank Bad Kötzting eG",
+  "url": "https://www.rb-koetzting.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75069110",
+  "bic": "GENODEF1NKN",
+  "name": "Raiffeisenbank Eschlkam-Lam- Lohberg-Neukirchen b. Hl. Blut eG",
+  "url": "https://www.rb-elln.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75069171",
+  "bic": "GENODEF1SWD",
+  "name": "VR Bank Mittlere Oberpfalz eG",
+  "url": "https://www.vr-mio.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75090000",
+  "bic": "GENODEF1R01",
+  "name": "Volksbank Raiffeisenbank Regensburg-Schwandorf eG",
+  "url": "https://www.volksbank-raiffeisenbank-regensburg-schwandorf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75090300",
+  "bic": "GENODEF1M05",
+  "name": "LIGA Bank eG",
+  "url": "https://www.ligabank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75090500",
+  "bic": "GENODEF1S05",
+  "name": "Sparda-Bank Ostbayern eG",
+  "url": "https://www.sparda-ostbayern.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75090900",
+  "bic": "GENODEF1P18",
+  "name": "VR Bank Niederbayern-Oberpfalz eG",
+  "url": "https://www.meine-bank-no.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75091400",
+  "bic": "GENODEF1BLF",
+  "name": "VR Bank Burglengenfeld eG",
+  "url": "https://www.vr-mio.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75290000",
+  "bic": "GENODEF1AMV",
+  "name": "VR Bank Amberg-Sulzbach eG",
+  "url": "https://www.vr-as.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75362039",
+  "bic": "GENODEF1FLS",
+  "name": "Raiffeisenbank Floß eG",
+  "url": "https://www.raiba-floss.de/services_xs2a/bg13"
+ },
+ {
+  "code": "75390000",
+  "bic": "GENODEF1WEV",
+  "name": "Volksbank Raiffeisenbank Nordoberpfalz eG",
+  "url": "https://www.vr-nordoberpfalz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76035000",
+  "bic": "UMWEDE7NXXX",
+  "name": "UmweltBank AG",
+  "url": "https://banking.umweltbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76061482",
+  "bic": "GENODEF1HSB",
+  "name": "Raiffeisenbank im Nürnberger Land eG",
+  "url": "https://www.rbnl.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069369",
+  "bic": "GENODEF1AUO",
+  "name": "Raiffeisenbank Auerbach-Freihung eG",
+  "url": "https://www.rb-af.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069372",
+  "bic": "GENODEF1WDS",
+  "name": "Raiffeisenbank Bad Windsheim eG",
+  "url": "https://www.raiba-bw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069378",
+  "bic": "GENODEF1BEH",
+  "name": "Raiffeisenbank Bechhofen eG",
+  "url": "https://www.rb-bechhofen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069404",
+  "bic": "GENODEF1DSB",
+  "name": "Raiffeisenbank Ühlfeld-Dachsbach eG",
+  "url": "https://www.raiba-ueda.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069410",
+  "bic": "GENODEF1DIM",
+  "name": "Raiffeisenbank Dietersheim und Umgebung eG",
+  "url": "https://www.rb-dietersheim.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069449",
+  "bic": "GENODEF1FYS",
+  "name": "Raiffeisen - meine Bank eG",
+  "url": "https://www.rmbeg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069462",
+  "bic": "GENODEF1GDG",
+  "name": "Raiffeisenbank Altmühl-Jura eG",
+  "url": "https://www.raiba-aj.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069486",
+  "bic": "GENODEF1HSC",
+  "name": "Raiffeisenbank Hirschau eG",
+  "url": "https://www.rb-hirschau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069553",
+  "bic": "GENODEF1NM1",
+  "name": "Raiffeisenbank Neumarkt i.d.OPf. eG",
+  "url": "https://www.raiba-neumarkt-opf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069559",
+  "bic": "GENODEF1NEA",
+  "name": "VR Bank Metropolregion Nürnberg eG",
+  "url": "https://www.vr-teilhaberbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069564",
+  "bic": "GENODEF1BTO",
+  "name": "Raiffeisenbank Oberferrieden-Burgthann eG",
+  "url": "https://www.raiba-burgthann.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069576",
+  "bic": "GENODEF1BPL",
+  "name": "Raiffeisenbank Plankstetten AG",
+  "url": "https://www.onlinebanking-rb-plankstetten.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069602",
+  "bic": "GENODEF1HSE",
+  "name": "Raiffeisenbank DreiFranken eG",
+  "url": "https://www.rb-dreifranken.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069611",
+  "bic": "GENODEF1SDM",
+  "name": "Raiffeisenbank Unteres Vilstal eG",
+  "url": "https://www.rbuv.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76069669",
+  "bic": "GENODEF1ZIR",
+  "name": "Raiffeisenbank Knoblauchsland-Bibertgrund eG",
+  "url": "https://www.rb-knobi.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76090400",
+  "bic": "GENODEF1N03",
+  "name": "Evenord-Bank eG-KG",
+  "url": "https://www.evenordbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76090500",
+  "bic": "GENODEF1S06",
+  "name": "Sparda-Bank Nürnberg eG",
+  "url": "https://www.sparda-n.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76090900",
+  "bic": "GENODEF1P17",
+  "name": "PSD Bank Nürnberg eG",
+  "url": "https://www.psd-nuernberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76211900",
+  "bic": "GENODEF1WHD",
+  "name": "CVW-Privatbank AG",
+  "url": "https://www.cvw-privatbank-ag.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76391000",
+  "bic": "GENODEF1FOH",
+  "name": "VR Bank Bamberg-Forchheim eG",
+  "url": "https://www.vrbank-bafo.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76560060",
+  "bic": "GENODEF1ANS",
+  "name": "VR-Bank Mittelfranken Mitte eG",
+  "url": "https://www.vr-mfr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "76591000",
+  "bic": "GENODEF1DKV",
+  "name": "VR Bank im südlichen Franken eG",
+  "url": "https://www.vr-sf.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77062014",
+  "bic": "GENODEF1BGB",
+  "name": "Raiffeisenbank Burgebrach-Stegaurach eG",
+  "url": "https://www.raiffeisenbank-bs.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77062139",
+  "bic": "GENODEF1SFF",
+  "name": "Volksbank Raiffeisenbank Obermain eG",
+  "url": "https://www.vro.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77069044",
+  "bic": "GENODEF1KC2",
+  "name": "Raiffeisenbank Küps-Mitwitz-Stockheim eG",
+  "url": "https://www.raiba-kms.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77069764",
+  "bic": "GENODEF1KEM",
+  "name": "Raiffeisenbank Oberpfalz NordWest eG",
+  "url": "https://www.rb-onw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77069782",
+  "bic": "GENODEF1SPK",
+  "name": "Raiffeisenbank am Kulm eG",
+  "url": "https://www.rb-am-kulm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77069868",
+  "bic": "GENODEF1MGA",
+  "name": "Raiffeisenbank Oberland eG",
+  "url": "https://www.raiba-oberland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77069870",
+  "bic": "GENODEF1SZF",
+  "name": "Raiffeisenbank Hochfranken West eG",
+  "url": "https://www.rb-hfw.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77069906",
+  "bic": "GENODEF1WSZ",
+  "name": "Raiffeisenbank Wüstenselbitz eG",
+  "url": "https://www.rb-wuestenselbitz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77091800",
+  "bic": "GENODEF1LIF",
+  "name": "VR-Bank Lichtenfels-Ebern eG",
+  "url": "https://www.vr-lif-ebn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77190000",
+  "bic": "GENODEF1KU1",
+  "name": "VR Bank Oberfranken Mitte eG",
+  "url": "https://www.vr-ofrm.de/services_xs2a/bg13"
+ },
+ {
+  "code": "77365792",
+  "bic": "GENODEF1HWA",
+  "name": "Raiffeisenbank Fränkische Schweiz eG",
+  "url": "https://www.rb-frs.de/services_xs2a/bg13"
+ },
+ {
+  "code": "78060896",
+  "bic": "GENODEF1HO1",
+  "name": "VR Bank Bayreuth-Hof eG",
+  "url": "https://www.vrbank-bayreuth-hof.de/services_xs2a/bg13"
+ },
+ {
+  "code": "78160069",
+  "bic": "GENODEF1MAK",
+  "name": "VR-Bank Fichtelgebirge- Frankenwald eG",
+  "url": "https://www.vr-ff.de/services_xs2a/bg13"
+ },
+ {
+  "code": "78360000",
+  "bic": "GENODEF1COS",
+  "name": "VR-Bank Coburg eG",
+  "url": "https://www.vrbank-coburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79030001",
+  "bic": "FUCEDE77XXX",
+  "name": "Fürstlich Castell'sche Bank Credit-Casse AG",
+  "url": "https://banking.castell-bank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79063122",
+  "bic": "GENODEF1HBG",
+  "name": "Raiffeisenbank Höchberg eG",
+  "url": "https://www.raiba-hoechberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79065028",
+  "bic": "GENODEF1BRK",
+  "name": "Volksbank Raiffeisenbank Bad Kissingen eG",
+  "url": "https://www.die-vrbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79069001",
+  "bic": "GENODEF1WED",
+  "name": "Raiffeisenbank Mainschleife - Steigerwald eG",
+  "url": "https://www.raiffeisenbank-mainschleife-steigerwald.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79069031",
+  "bic": "GENODEF1BHD",
+  "name": "Raiffeisenbank Bütthard-Gaukönigshofen eG",
+  "url": "https://www.raiba-buett-gauk.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79069150",
+  "bic": "GENODEF1GEM",
+  "name": "Raiffeisenbank Main-Spessart eG",
+  "url": "https://www.raiba-msp.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79069165",
+  "bic": "GENODEF1MLV",
+  "name": "VR-Bank Main-Rhön eG",
+  "url": "https://www.vr-bank-mr.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79069188",
+  "bic": "GENODEF1SLZ",
+  "name": "Raiffeisenbank im Grabfeld eG",
+  "url": "https://www.rb-grabfeld.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79069213",
+  "bic": "GENODEF1RNM",
+  "name": "Raiffeisenbank eG, Rannungen",
+  "url": "https://www.rb-mn.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79090000",
+  "bic": "GENODEF1WU1",
+  "name": "Volksbank Raiffeisenbank Würzburg eG",
+  "url": "https://www.vr-bank-wuerzburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79190000",
+  "bic": "GENODEF1KT1",
+  "name": "VR Bank Kitzingen eG",
+  "url": "https://www.vrkt.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79330111",
+  "bic": "FLESDEMMXXX",
+  "name": "Bankhaus Max Flessa KG",
+  "url": "https://www.flessabank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79362081",
+  "bic": "GENODEF1GZH",
+  "name": "VR-MainBank eG",
+  "url": "https://www.vr-mb.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79363151",
+  "bic": "GENODEF1HAS",
+  "name": "Raiffeisen-Volksbank Haßberge eG",
+  "url": "https://www.rvb-hassberge.de/services_xs2a/bg13"
+ },
+ {
+  "code": "79665540",
+  "bic": "GENODEF1EAU",
+  "name": "Raiffeisenbank Elsavatal eG",
+  "url": "https://www.raiba-elsavatal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "80063508",
+  "bic": "GENODEF1QLB",
+  "name": "Harzer Volksbank eG",
+  "url": "https://www.harzer-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "80063558",
+  "bic": "GENODEF1SGH",
+  "name": "Volksbank eG, Sangerhausen",
+  "url": "https://www.volksbank-sangerhausen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "80063598",
+  "bic": "GENODEF1WB1",
+  "name": "Volksbank Wittenberg eG",
+  "url": "https://www.volksbank-wittenberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "80063628",
+  "bic": "GENODEF1KOE",
+  "name": "Volksbank eG, Köthen-Bitterfeld",
+  "url": "https://www.vb-abi.de/services_xs2a/bg13"
+ },
+ {
+  "code": "80063648",
+  "bic": "GENODEF1NMB",
+  "name": "Volks- und Raiffeisenbank Saale-Unstrut eG",
+  "url": "https://www.vrbsaale-unstrut.de/services_xs2a/bg13"
+ },
+ {
+  "code": "80093574",
+  "bic": "GENODEF1DS1",
+  "name": "Volksbank Dessau-Anhalt eG",
+  "url": "https://www.vbdessau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "80093784",
+  "bic": "GENODEF1HAL",
+  "name": "Volksbank Halle (Saale) eG",
+  "url": "https://www.vbhalle.de/services_xs2a/bg13"
+ },
+ {
+  "code": "81063028",
+  "bic": "GENODEF1KAB",
+  "name": "Raiffeisenbank Kalbe-Bismark eG",
+  "url": "https://www.rbkalbe-bismark.de/services_xs2a/bg13"
+ },
+ {
+  "code": "81063238",
+  "bic": "GENODEF1BRG",
+  "name": "Volksbank Jerichower Land eG",
+  "url": "https://www.vb-jerichower-land.de/services_xs2a/bg13"
+ },
+ {
+  "code": "81069052",
+  "bic": "GENODEF1WZL",
+  "name": "Volksbank Börde-Bernburg eG",
+  "url": "https://www.volksbank-boerde-bernburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "81093034",
+  "bic": "GENODEF1GA1",
+  "name": "Volksbank eG, Gardelegen",
+  "url": "https://www.volksbank-gardelegen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "81093054",
+  "bic": "GENODEF1SDL",
+  "name": "Volksbank Stendal eG",
+  "url": "https://www.vbstendal.de/services_xs2a/bg13"
+ },
+ {
+  "code": "81093274",
+  "bic": "GENODEF1MD1",
+  "name": "Volksbank Magdeburg eG",
+  "url": "https://www.volksbank-magdeburg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "82064038",
+  "bic": "GENODEF1MU2",
+  "name": "VR Bank in Thüringen eG",
+  "url": "https://www.vrbank-in-thueringen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "82064088",
+  "bic": "GENODEF1ESA",
+  "name": "VR Bank Ihre Heimatbank eG",
+  "url": "https://www.vr-heimatbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "82064188",
+  "bic": "GENODEF1WE1",
+  "name": "VR Bank Weimar eG",
+  "url": "https://www.vrbank-weimar.de/services_xs2a/bg13"
+ },
+ {
+  "code": "83064488",
+  "bic": "GENODEF1HMF",
+  "name": "Raiffeisen-Volksbank Hermsdorfer Kreuz eG",
+  "url": "https://www.hermsdorfer-kreuz.de/services_xs2a/bg13"
+ },
+ {
+  "code": "83065408",
+  "bic": "GENODEF1SLR",
+  "name": "VR-Bank Altenburger Land eG",
+  "url": "https://www.vrbank-altenburgerland.de/services_xs2a/bg13"
+ },
+ {
+  "code": "83094454",
+  "bic": "GENODEF1RUJ",
+  "name": "Volksbank eG Gera · Jena · Rudolstadt",
+  "url": "https://www.volksbank-vor-ort.de/services_xs2a/bg13"
+ },
+ {
+  "code": "83094494",
+  "bic": "GENODEF1ESN",
+  "name": "Volksbank Eisenberg eG",
+  "url": "https://www.volksbankeisenberg.de/services_xs2a/bg13"
+ },
+ {
+  "code": "83094495",
+  "bic": "GENODEF1ETK",
+  "name": "EthikBank eG",
+  "url": "https://www.ethikbank-onlinebanking.de/services_xs2a/bg13"
+ },
+ {
+  "code": "84094754",
+  "bic": "GENODEF1SAL",
+  "name": "VR-Bank in Nordhessen Westthüringen eG",
+  "url": "https://www.vrb-meinebank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "84094814",
+  "bic": "GENODEF1SHL",
+  "name": "Volksbank Thüringen Mitte eG",
+  "url": "https://www.volksbank-thueringen-mitte.de/services_xs2a/bg13"
+ },
+ {
+  "code": "85060000",
+  "bic": "GENODEF1PR2",
+  "name": "Volksbank Pirna eG",
+  "url": "https://www.volksbank-pirna.de/services_xs2a/bg13"
+ },
+ {
+  "code": "85090000",
+  "bic": "GENODEF1DRS",
+  "name": "Volksbank Dresden-Bautzen eG",
+  "url": "https://www.volksbank-dresden-bautzen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "85094984",
+  "bic": "GENODEF1RIE",
+  "name": "Volksbank Riesa eG",
+  "url": "https://www.volksbank-riesa.de/services_xs2a/bg13"
+ },
+ {
+  "code": "85095004",
+  "bic": "GENODEF1MEI",
+  "name": "Volksbank Raiffeisenbank Meißen Großenhain eG",
+  "url": "https://www.vr-meissen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "85590100",
+  "bic": "GENODEF1NGS",
+  "name": "Volksbank Löbau-Zittau eG",
+  "url": "https://www.vb-loebau-zittau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "85591000",
+  "bic": "GENODEF1GR1",
+  "name": "Volksbank Raiffeisenbank Niederschlesien eG",
+  "url": "https://www.vrb-niederschlesien.de/services_xs2a/bg13"
+ },
+ {
+  "code": "86065468",
+  "bic": "GENODEF1DL1",
+  "name": "VR-Bank Mittelsachsen eG",
+  "url": "https://www.vr-bank-mittelsachsen.de/services_xs2a/bg13"
+ },
+ {
+  "code": "86065483",
+  "bic": "GENODEF1GMR",
+  "name": "Raiffeisenbank Grimma eG",
+  "url": "https://www.raiba-grimma.de/services_xs2a/bg13"
+ },
+ {
+  "code": "86095484",
+  "bic": "GENODEF1GMV",
+  "name": "Volks- und Raiffeisenbank Muldental eG",
+  "url": "https://www.vr-bank-muldental.de/services_xs2a/bg13"
+ },
+ {
+  "code": "86095604",
+  "bic": "GENODEF1LVB",
+  "name": "Leipziger Volksbank eG",
+  "url": "https://www.leipziger-volksbank.de/services_xs2a/bg13"
+ },
+ {
+  "code": "87069075",
+  "bic": "GENODEF1MBG",
+  "name": "Volksbank Mittleres Erzgebirge eG",
+  "url": "https://www.volksbank-mittleres-erzgebirge.de/services_xs2a/bg13"
+ },
+ {
+  "code": "87095824",
+  "bic": "GENODEF1PL1",
+  "name": "Volksbank Vogtland-Saale-Orla eG",
+  "url": "https://www.vb-vso.de/services_xs2a/bg13"
+ },
+ {
+  "code": "87095934",
+  "bic": "GENODEF1Z01",
+  "name": "Volksbank Zwickau eG",
+  "url": "https://www.volksbank-zwickau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "87095974",
+  "bic": "GENODEF1GC1",
+  "name": "Volksbank-Raiffeisenbank Glauchau eG",
+  "url": "https://www.vr-glauchau.de/services_xs2a/bg13"
+ },
+ {
+  "code": "87096124",
+  "bic": "GENODEF1MIW",
+  "name": "Volksbank Mittweida eG",
+  "url": "https://www.volksbank-mittweida.de/services_xs2a/bg13"
+ },
+ {
+  "code": "87096214",
+  "bic": "GENODEF1CH1",
+  "name": "Volksbank Chemnitz eG",
+  "url": "https://www.volksbank-chemnitz.de/services_xs2a/bg13"
+ }
+]

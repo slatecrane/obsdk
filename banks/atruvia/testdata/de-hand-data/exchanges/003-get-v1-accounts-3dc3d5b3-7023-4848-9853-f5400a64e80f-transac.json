@@ -1,0 +1,73 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/transactions",
+    "query": {
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-10-01"
+      ],
+      "dateTo": [
+        "2026-10-19"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "iban": "DE45499999600000005100"
+      },
+      "transactions": {
+        "booked": [
+          {
+            "transactionId": "2026101900001",
+            "endToEndId": "NOTPROVIDED",
+            "bookingDate": "2026-10-19",
+            "valueDate": "2026-10-19",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-42.50"
+            },
+            "creditorName": "Stadtwerke Musterstadt",
+            "creditorAccount": {
+              "iban": "DE89370400440532013000"
+            },
+            "remittanceInformationUnstructured": "Abschlag Strom 10/2026",
+            "mandateId": "SW-4711",
+            "creditorId": "DE98ZZZ09999999999",
+            "bankTransactionCode": "PMNT-IDDT-ESDD"
+          },
+          {
+            "transactionId": "2026101400002",
+            "bookingDate": "2026-10-14",
+            "valueDate": "2026-10-14",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "2850.00"
+            },
+            "debtorName": "Muster GmbH",
+            "debtorAccount": {
+              "iban": "DE02120300000000202051"
+            },
+            "remittanceInformationUnstructured": "Gehalt Oktober 2026",
+            "bankTransactionCode": "PMNT-RCDT-ESCT"
+          }
+        ],
+        "_links": {
+          "account": {
+            "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f"
+          },
+          "next": {
+            "href": "/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/transactions?scrollRef=MjAyNi0xMC0wNXwx&bookingStatus=booked"
+          }
+        }
+      }
+    }
+  }
+}

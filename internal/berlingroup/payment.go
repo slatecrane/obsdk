@@ -171,16 +171,21 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 	if c, err = c.forNew(); err != nil {
 		return nil, err
 	}
-	b, err := c.buildBody(r)
-	if err != nil {
-		return nil, err
-	}
-	raw, err := json.Marshal(b)
-	if err != nil {
-		return nil, err
-	}
-	f := &flow{Op: flowPayment, Approach: approach, PSU: r.PSU, Language: r.Language, PayBody: raw, Institution: c.inst,
+	f := &flow{Op: flowPayment, Approach: approach, PSU: r.PSU, Language: r.Language, Institution: c.inst,
 		Pay: &payState{Type: r.Type, Product: c.p.Products[r.Type]}}
+	if c.p.PaymentXML {
+		if f.PayXML, err = c.buildPain001(r); err != nil {
+			return nil, err
+		}
+	} else {
+		b, err := c.buildBody(r)
+		if err != nil {
+			return nil, err
+		}
+		if f.PayBody, err = json.Marshal(b); err != nil {
+			return nil, err
+		}
+	}
 	if approach == Redirect {
 		if f.RedirectURL, err = c.redirectURL(r.RedirectURL); err != nil {
 			return nil, err
@@ -199,25 +204,30 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 func (c *client) createPayment(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk.Step, error) {
 	h := psuHeaders(&f.PSU)
 	c.redirectHeaders(f, h)
-	res, err := c.do(ctx, req{op: opPayment, method: http.MethodPost, path: "/v1/payments/" + url.PathEscape(f.Pay.Product),
-		body: f.PayBody, header: h})
+	r := req{op: opPayment, method: http.MethodPost, path: "/v1/payments/" + url.PathEscape(f.Pay.Product), header: h}
+	if f.PayXML != nil {
+		r.raw, r.contentType = f.PayXML, "application/xml"
+	} else {
+		r.body = f.PayBody
+	}
+	res, err := c.do(ctx, r)
 	if err != nil {
 		return nil, err
 	}
 	if res.status != http.StatusCreated && res.status != http.StatusOK {
 		return nil, c.paymentErr(opPayment, res)
 	}
-	var r scaResponse
-	if err := json.Unmarshal(res.body, &r); err != nil || r.PaymentID == "" {
+	var sr scaResponse
+	if err := json.Unmarshal(res.body, &sr); err != nil || sr.PaymentID == "" {
 		return nil, fmt.Errorf("berlingroup: unreadable payment response (HTTP %d)", res.status)
 	}
-	f.Pay.ID, f.PayBody = r.PaymentID, nil
+	f.Pay.ID, f.PayBody, f.PayXML = sr.PaymentID, nil, nil
 	f.StatusPath = c.paymentPath(f.Pay) + "/status"
-	if r.TransactionStatus == "RJCT" {
-		pay, _ := c.paymentOf(f.Pay, r.TransactionStatus, res.body)
+	if sr.TransactionStatus == "RJCT" {
+		pay, _ := c.paymentOf(f.Pay, sr.TransactionStatus, res.body)
 		return nil, &obsdk.PaymentRejectedError{Reason: "rejected", Payment: pay, Err: fmt.Errorf("%s rejected the payment on creation", c.p.Info.Name)}
 	}
-	if err := f.absorb(&r); err != nil {
+	if err := f.absorb(&sr); err != nil {
 		return nil, c.wrapFlowErr(f, err)
 	}
 	f.Need = ""
@@ -251,7 +261,12 @@ func (c *client) finishPayment(ctx context.Context, f *flow) (*obsdk.Step, error
 // ---- status ----
 
 func (c *client) readStatus(ctx context.Context, p *payState, psu *obsdk.PSUContext) (*obsdk.Payment, error) {
-	res, err := c.do(ctx, req{op: opPayStatus, method: http.MethodGet, path: c.paymentPath(p) + "/status", header: psuHeaders(psu)})
+	r := req{op: opPayStatus, method: http.MethodGet, path: c.paymentPath(p) + "/status", header: psuHeaders(psu)}
+	if c.p.PaymentXML {
+		// pain.001 payments report their status as pain.002.
+		r.accept = "application/xml, application/json;q=0.9"
+	}
+	res, err := c.do(ctx, r)
 	if err != nil {
 		return nil, err
 	}
@@ -262,12 +277,17 @@ func (c *client) readStatus(ctx context.Context, p *payState, psu *obsdk.PSUCont
 		TransactionStatus string `json:"transactionStatus"`
 		PSUMessage        string `json:"psuMessage"`
 	}
-	if err := json.Unmarshal(res.body, &sr); err != nil || sr.TransactionStatus == "" {
+	if isXML(res) {
+		if sr.TransactionStatus, sr.PSUMessage, err = parsePain002(res.body); err != nil {
+			return nil, err
+		}
+	} else if err := json.Unmarshal(res.body, &sr); err != nil || sr.TransactionStatus == "" {
 		return nil, fmt.Errorf("berlingroup: unreadable payment status (HTTP %d)", res.status)
 	}
 	pay, err := c.paymentOf(p, sr.TransactionStatus, res.body)
 	if err == nil && pay.Status == obsdk.PaymentRejected {
-		// Some banks explain a rejection here (Sparkassen: "{No.} - {Text}").
+		// Some banks explain a rejection here (Sparkassen: "{No.} - {Text}";
+		// pain.002: the status reason).
 		pay.Reason = sr.PSUMessage
 	}
 	return pay, err
@@ -327,6 +347,9 @@ func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentC
 	f := &flow{Op: flowCancel, Approach: approach, Pay: p, StatusPath: c.paymentPath(p) + "/status", Institution: c.inst}
 	if o.PSU != nil {
 		f.PSU = *o.PSU
+	}
+	if c.p.PSUID == PSUIDRequired && f.PSU.ID == "" {
+		return nil, fmt.Errorf("%w: %s needs the user's online banking login (PSU.ID) to cancel a payment", obsdk.ErrInvalidRequest, c.p.Info.Name)
 	}
 	if approach == Redirect {
 		if f.RedirectURL, err = c.redirectURL(o.RedirectURL); err != nil {

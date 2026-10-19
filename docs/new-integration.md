@@ -218,6 +218,8 @@ From Swedbank, ING, Nordea, HSBC, Rabobank, bunq, Handelsbanken and OP. Other ba
 | `#error=invalid_request_object&error_description=Expired JWT` on the callback (Crosskey) | the signed request object's `exp` passed before the user opened the link | open the link sooner, or raise `obie.Profile.RequestObjectTTL` (FAPI allows up to 60 minutes) |
 | `401 invalid_client: Client authentication failed` right after creating an app (Crosskey) | the new client is not active yet | wait a few minutes and retry |
 | `400 UK.OBIE.Header.Invalid: Mandatory header x-fapi-financial-id is missing` (Crosskey, Resurs) | one store serves several countries | send `x-fapi-financial-id: <store>/<country>` on every API call (profile `Headers`) |
+| Atruvia: `400 FORMAT_ERROR "The header 'date' is not allowed for signature specification."` | `date` in the signed headers, although Atruvia's own `Signature` example lists it | sign `digest x-request-id psu-id` (and the other present ones), not `date` |
+| Atruvia: `401 CERTIFICATE_INVALID "INDETERMINATE/NO_CERTIFICATE_CHAIN_FOUND"` | a self-signed QSealC: the sandbox checks certificates with the EU DSS, despite its guide's "no validation of the certificate path" | use a PSD2 test certificate from a trust centre (e.g. Bundesdruckerei) |
 
 ## 7. Finish
 

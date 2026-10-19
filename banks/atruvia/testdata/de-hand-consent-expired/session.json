@@ -1,0 +1,26 @@
+{
+  "v": 1,
+  "bank": "atruvia",
+  "country": "DE",
+  "segment": "personal",
+  "env": "sandbox",
+  "integration": "atruvia-bg",
+  "generation": 1,
+  "updated_at": "2026-10-19T09:00:00Z",
+  "consents": {
+    "ais": {
+      "id": "CONSENTEXPIRED",
+      "kind": "ais",
+      "status": "valid",
+      "valid_until": "2027-01-17T00:00:00Z",
+      "accounts": [
+        "DE45499999600000005100",
+        "DE18499999600000005101"
+      ]
+    }
+  },
+  "meta": {
+    "approach": "embedded",
+    "institution": "49999960"
+  }
+}

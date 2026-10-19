@@ -1,0 +1,62 @@
+{
+  "description": "Synthetic: built from Atruvia's XS2A documentation (OpenAPI 1.3 + errata, sandbox guide 2026-04-27), not recorded. Replace with a live recording once a PSD2 test QSealC is available. SEPA credit transfer from ibanPaymentSuccessfulWithSca by VRK1234567890DECOUPLEDFIN, whose only method is SecureGo plus (Direktfreigabe): pain.001 body, the PIN, the method chosen by the bank, approval in the app polled through scaStatus (still started once), then the status as pain.002 (ACSP).",
+  "config": {
+    "bank": "atruvia",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "bank_code": "49999960"
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "decoupled",
+      "psu_ip": "203.0.113.7",
+      "psu_id": "VRK1234567890DECOUPLEDFIN",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "DE39499999600000005111"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "Erika Mustermann",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE89370400440532013000"
+              }
+            },
+            "remittance": [
+              "Rechnung 2026-117"
+            ],
+            "end_to_end_id": "obsdk-e2e-1"
+          }
+        ]
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "password": "password"
+      }
+    },
+    {
+      "op": "resume",
+      "note": "not yet approved in SecureGo plus"
+    },
+    {
+      "op": "resume",
+      "note": "approved"
+    }
+  ]
+}

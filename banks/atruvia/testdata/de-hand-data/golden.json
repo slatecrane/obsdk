@@ -1,0 +1,255 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "3dc3d5b3-7023-4848-9853-f5400a64e80f",
+        "stable_id": "3922b2f677f1349868638d18950a2e59",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "DE45499999600000005100"
+          }
+        ],
+        "name": "Girokonto",
+        "owner_name": "Max Mustermann",
+        "currency": "EUR",
+        "product": "VR-GiroKomfort",
+        "type": "CACC",
+        "bic": "GENODEF1M04",
+        "raw": {
+          "resourceId": "3dc3d5b3-7023-4848-9853-f5400a64e80f",
+          "iban": "DE45499999600000005100",
+          "currency": "EUR",
+          "name": "Girokonto",
+          "product": "VR-GiroKomfort",
+          "ownerName": "Max Mustermann",
+          "cashAccountType": "CACC",
+          "status": "enabled",
+          "bic": "GENODEF1M04",
+          "_links": {
+            "balances": {
+              "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/balances"
+            },
+            "transactions": {
+              "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/transactions"
+            }
+          }
+        }
+      },
+      {
+        "id": "3dc3d5b3-7023-4848-9853-f5400a64e811",
+        "stable_id": "b725ed730bd77fabd968e7ccb520a260",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "DE18499999600000005101"
+          }
+        ],
+        "name": "Tagesgeld",
+        "owner_name": "Max Mustermann",
+        "currency": "EUR",
+        "product": "VR-Tagesgeld",
+        "type": "SVGS",
+        "bic": "GENODEF1M04",
+        "raw": {
+          "resourceId": "3dc3d5b3-7023-4848-9853-f5400a64e811",
+          "iban": "DE18499999600000005101",
+          "currency": "EUR",
+          "name": "Tagesgeld",
+          "product": "VR-Tagesgeld",
+          "ownerName": "Max Mustermann",
+          "cashAccountType": "SVGS",
+          "status": "enabled",
+          "bic": "GENODEF1M04",
+          "_links": {
+            "balances": {
+              "href": "https://p1.xs2a-doc.atruvia.de/sandbox/psd2/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e811/balances"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "closing_booked",
+        "bank_type": "closingBooked",
+        "amount": {
+          "amount": "1523.42",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-18"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "interimAvailable",
+        "amount": {
+          "amount": "3523.42",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-19"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "2026101900001",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-42.50",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-19",
+          "value_date": "2026-10-19",
+          "counterparty": {
+            "name": "Stadtwerke Musterstadt",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE89370400440532013000"
+              }
+            ]
+          },
+          "remittance": [
+            "Abschlag Strom 10/2026"
+          ],
+          "bank_code": "PMNT-IDDT-ESDD",
+          "raw": {
+            "transactionId": "2026101900001",
+            "endToEndId": "NOTPROVIDED",
+            "bookingDate": "2026-10-19",
+            "valueDate": "2026-10-19",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-42.50"
+            },
+            "creditorName": "Stadtwerke Musterstadt",
+            "creditorAccount": {
+              "iban": "DE89370400440532013000"
+            },
+            "remittanceInformationUnstructured": "Abschlag Strom 10/2026",
+            "mandateId": "SW-4711",
+            "creditorId": "DE98ZZZ09999999999",
+            "bankTransactionCode": "PMNT-IDDT-ESDD"
+          }
+        },
+        {
+          "id": "2026101400002",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2850.00",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "value_date": "2026-10-14",
+          "counterparty": {
+            "name": "Muster GmbH",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE02120300000000202051"
+              }
+            ]
+          },
+          "remittance": [
+            "Gehalt Oktober 2026"
+          ],
+          "bank_code": "PMNT-RCDT-ESCT",
+          "raw": {
+            "transactionId": "2026101400002",
+            "bookingDate": "2026-10-14",
+            "valueDate": "2026-10-14",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "2850.00"
+            },
+            "debtorName": "Muster GmbH",
+            "debtorAccount": {
+              "iban": "DE02120300000000202051"
+            },
+            "remittanceInformationUnstructured": "Gehalt Oktober 2026",
+            "bankTransactionCode": "PMNT-RCDT-ESCT"
+          }
+        }
+      ],
+      "next_cursor": "/v1/accounts/3dc3d5b3-7023-4848-9853-f5400a64e80f/transactions?scrollRef=MjAyNi0xMC0wNXwx&bookingStatus=booked"
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "2026100500003",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-12.99",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-05",
+          "value_date": "2026-10-05",
+          "counterparty": {
+            "name": "Musik Streaming AB"
+          },
+          "remittance": [
+            "Abo Oktober",
+            "Kundennr. 123456"
+          ],
+          "raw": {
+            "transactionId": "2026100500003",
+            "bookingDate": "2026-10-05",
+            "valueDate": "2026-10-05",
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-12.99"
+            },
+            "creditorName": "Musik Streaming AB",
+            "remittanceInformationUnstructured": "Abo Oktober",
+            "remittanceInformationUnstructuredArray": [
+              "Abo Oktober",
+              "Kundennr. 123456"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "atruvia",
+      "country": "DE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "atruvia-bg",
+      "generation": 1,
+      "updated_at": "2026-10-19T09:00:00Z",
+      "consents": {
+        "ais": {
+          "id": "CONSENTVALID",
+          "kind": "ais",
+          "status": "valid",
+          "valid_until": "2027-01-17T00:00:00Z",
+          "accounts": [
+            "DE45499999600000005100",
+            "DE18499999600000005101"
+          ]
+        }
+      },
+      "meta": {
+        "approach": "embedded",
+        "institution": "49999960"
+      }
+    }
+  }
+]
