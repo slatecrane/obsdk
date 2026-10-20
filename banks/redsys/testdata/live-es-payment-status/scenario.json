@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-20T08:08:12Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "aspsp": "BBVA"
+    },
+    "ids": {
+      "request": [
+        "480e9920-c4cc-4383-8436-87640481acec"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoicmVkc3lzLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiM2FhMGQ3MmEtY2M1ZC0xMWYxLTgwZWMtYzkxOTQyMzRlMGI5IiwidCI6InNlcGEiLCJiIjoiQkJWQSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

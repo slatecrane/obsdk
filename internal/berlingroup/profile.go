@@ -153,7 +153,7 @@ type Profile struct {
 	OAuthClientAuth func(cfg obsdk.Config, tokenURL string, form url.Values, h http.Header) error
 
 	// PathVersion replaces the "v1" path segment of every request, for banks
-	// that put a finer version there (SIBS: "v1-0-4"). Links the bank returns
+	// that put a finer version there (SIBS: "v1-0-4", Redsys: "v1.1"). Links the bank returns
 	// may use either form.
 	PathVersion string
 
@@ -161,12 +161,6 @@ type Profile struct {
 	// (consents, accounts, card accounts, funds confirmations), for banks that
 	// serve those on a later version than payments (Samlink: "v2").
 	AISPathVersion string
-
-	// CreatePathVersion replaces the "v1" segment of the two requests that
-	// create a resource (POST /v1/consents, POST /v1/payments/{product}), for
-	// banks that versioned only those (Redsys: "v1.1"); every other path,
-	// and the links the bank returns, stay on "v1".
-	CreatePathVersion string
 
 	// PreStep is an OAuth2 authorisation the bank wants before any XS2A
 	// request (Redsys): the user logs in at the bank first, and every later
@@ -219,17 +213,7 @@ func (p *Profile) versionFor(path string) string {
 
 // linkVersions are the version segments links from the bank may use instead
 // of "v1".
-func (p *Profile) linkVersions() []string {
-	return []string{p.PathVersion, p.AISPathVersion, p.CreatePathVersion}
-}
-
-// isCreate reports the requests CreatePathVersion applies to.
-func isCreate(method, path string) bool {
-	if method != http.MethodPost {
-		return false
-	}
-	return path == "/v1/consents" || strings.HasPrefix(path, "/v1/payments/") && strings.Count(path, "/") == 3
-}
+func (p *Profile) linkVersions() []string { return []string{p.PathVersion, p.AISPathVersion} }
 
 // Institution describes the parameter that picks one bank of a hub.
 type Institution struct {

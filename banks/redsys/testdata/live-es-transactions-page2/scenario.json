@@ -1,0 +1,28 @@
+{
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-20T08:05:55Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "aspsp": "BBVA"
+    },
+    "ids": {
+      "request": [
+        "48d18c10-0b7d-4463-b494-681204387faf"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "transactions",
+      "account": "ES018202000000000000000000040780458",
+      "from": "2026-09-20T08:05:55Z",
+      "to": "2026-10-20T08:05:55Z",
+      "cursor": "/v1.1/accounts/ES018202000000000000000000040780458/transactions?link=eyJ6aXAiOiJERUYiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eNpki7EOgjAURf-lA5O1r02BakKcNHEVBxPj8CiVEKQ1bXHQ-O-WMHqne07u_ZDoL6cj2ZK8aFWJKCjcG6CSmw3dlFqmplvkKFEYICvy6O2Q1uzF15yh1m6yMbB9DVwJEPAfCaUCmSsWPdqAOvbOhl2L0Ry8G6t0KiiUFHg2u7NbDAcqIGucG3rb1RHjFKqZTJs9sTNXO42N8bdKLBj6t0kA5PsDAAD__w.cdelC1YYNqk577tRpjFffAKlb6KqBL_WJNKzFTYFM_U",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

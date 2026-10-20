@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/payments/sepa-credit-transfers/65ed967e-cc5d-11f1-80ec-c9194234e0b9/status"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "transactionStatus": "CANC"
+    }
+  }
+}

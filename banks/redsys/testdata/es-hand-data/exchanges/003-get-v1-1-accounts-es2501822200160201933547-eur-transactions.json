@@ -1,0 +1,72 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/accounts/ES2501822200160201933547-EUR/transactions",
+    "query": {
+      "dateFrom": [
+        "2026-09-01"
+      ],
+      "dateTo": [
+        "2026-10-18"
+      ],
+      "bookingStatus": [
+        "booked"
+      ]
+    },
+    "headers": {
+      "Authorization": "Bearer at-1",
+      "Consent-ID": "c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "iban": "ES2501822200160201933547"
+      },
+      "transactions": {
+        "booked": [
+          {
+            "transactionId": "TX-0001",
+            "creditorName": "Mercadona",
+            "creditorAccount": {
+              "iban": "ES9121000418450200051332"
+            },
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "-25.30"
+            },
+            "bookingDate": "2026-10-17",
+            "valueDate": "2026-10-17",
+            "remittanceInformationUnstructured": "COMPRA TARJETA 4B MERCADONA"
+          },
+          {
+            "transactionId": "TX-0002",
+            "debtorName": "Empresa Ejemplo SL",
+            "debtorAccount": {
+              "iban": "ES7921000813610123456789"
+            },
+            "transactionAmount": {
+              "currency": "EUR",
+              "amount": "1850.00"
+            },
+            "bookingDate": "2026-09-30",
+            "valueDate": "2026-09-30",
+            "remittanceInformationUnstructured": "NOMINA SEPTIEMBRE"
+          }
+        ],
+        "_links": {
+          "account": {
+            "href": "/v1.1/accounts/ES2501822200160201933547-EUR"
+          },
+          "next": {
+            "href": "/v1.1/accounts/ES2501822200160201933547-EUR/transactions?dateFrom=2026-09-01&dateTo=2026-10-18&bookingStatus=booked&page=2"
+          }
+        }
+      }
+    }
+  }
+}

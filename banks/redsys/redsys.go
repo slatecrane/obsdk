@@ -10,12 +10,13 @@
 // organizationIdentifier of the TPP's eIDAS certificate), and every request
 // afterwards carries the access token, next to the Consent-ID for account
 // reads. The consent or payment is then approved by a second redirect. Every
-// request is signed with the QSealC. Consents and payments are created on
-// path version "v1.1"; everything else stays on "v1".
+// request is signed with the QSealC. Every path is on version "v1.1": the
+// guide's "/v1/" for everything but creation is wrong (the sandbox answers
+// SERVICE_INVALID there, 2026-10-20).
 //
 // Built from the hub's TPP technical design (v1.9.4, September 2025) and its
-// per-bank pages on market.apis-i.redsys.es (2026-10-19); not yet run against
-// the sandbox. See docs/redsys.md.
+// per-bank pages on market.apis-i.redsys.es (2026-10-19); verified against
+// the sandbox (BBVA) on 2026-10-20. See docs/redsys.md.
 package redsys
 
 import (
@@ -33,6 +34,9 @@ const Bank = "redsys"
 
 // ParamASPSP is the Config.Extra key of the bank's code on the hub.
 const ParamASPSP = "aspsp"
+
+// verifiedOn is the date of the last obdev run against the sandbox.
+const verifiedOn = "2026-10-20"
 
 const (
 	sandboxAPI      = "https://apis-i.redsys.es:20443/psd2/xs2a/api-entrada-xs2a/services/"
@@ -171,7 +175,7 @@ var Profile = berlingroup.Profile{
 		Name:  "Redsys PSD2 hub",
 		Group: "Redsys HUB PSD2 (BBVA, CaixaBank, Banco Santander, Sabadell, Bankinter, Unicaja, Kutxabank, Ibercaja, Openbank, Caja Rural and others)",
 		Variants: []obsdk.Variant{
-			{Country: "ES", Segment: obsdk.Personal, Env: obsdk.Sandbox, Maturity: obsdk.MaturityExperimental},
+			{Country: "ES", Segment: obsdk.Personal, Env: obsdk.Sandbox, Maturity: obsdk.MaturitySandboxVerified, VerifiedOn: verifiedOn},
 			{Country: "ES", Segment: obsdk.Business, Env: obsdk.Sandbox, Maturity: obsdk.MaturityExperimental},
 			{Country: "ES", Segment: obsdk.Personal, Env: obsdk.Production, Maturity: obsdk.MaturityUnverified},
 			{Country: "ES", Segment: obsdk.Business, Env: obsdk.Production, Maturity: obsdk.MaturityUnverified},
@@ -208,8 +212,8 @@ var Profile = berlingroup.Profile{
 		obsdk.PaymentSEPA:        "sepa-credit-transfers",
 		obsdk.PaymentSEPAInstant: "instant-sepa-credit-transfers",
 	},
-	CreatePathVersion: "v1.1",
-	PreStep:           &berlingroup.PreStep{URL: oauthURL, ClientID: clientID},
+	PathVersion: "v1.1",
+	PreStep:     &berlingroup.PreStep{URL: oauthURL, ClientID: clientID},
 	// TPP-Nok-Redirect-URI may be at most 50 characters at the hub; without
 	// it a refusal comes back to the redirect URL and the status tells.
 	NoNokRedirect: true,

@@ -1,0 +1,15 @@
+[
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "closing_booked",
+        "bank_type": "closingBooked",
+        "amount": {
+          "amount": "254.79",
+          "currency": "EUR"
+        }
+      }
+    ]
+  }
+]

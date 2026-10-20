@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/consents/c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e/status",
+    "headers": {
+      "Authorization": "Bearer at-1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentStatus": "valid"
+    }
+  }
+}

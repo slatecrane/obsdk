@@ -1,0 +1,431 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to log in, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/authorize?client_id=REDACTED%3Aclient_id&code_challenge=YQCZ9DD4mmrKFPXFfq14znp_ft1A1eSL0H7Fjrxih3M&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback&response_type=code&scope=AIS&state=34f416fa-28bc-482b-a5e2-4e042f1c35d0"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://hub-i.redsys.es:16443/api-oauth-xs2a-sb/services/rest/sca/v1.1/eyJ6aXAiOiJERUYiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eNqqVipKLc4vLUpO9UxRslJKNk4ytjQzt9BNTjZN1jU0TDPUtTBITdZNtjS0NDEyNkk1SLJU0oHrCaksSAXqcswsds7PK07NK1GqBQAAAP__.__DrY5ULp8ICiix8wGi0gEKLawIxHSHWR0srtRZ8v9o"
+      },
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 1,
+        "updated_at": "2026-10-20T08:00:35Z",
+        "access_token": "REDACTED:access_token:0b6f47",
+        "refresh_token": "REDACTED:refresh_token:252b50",
+        "token_type": "Bearer",
+        "scope": "AIS",
+        "access_expires_at": "2027-10-20T08:00:27Z",
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 2,
+        "updated_at": "2026-10-20T08:00:35Z",
+        "access_token": "REDACTED:access_token:0b6f47",
+        "refresh_token": "REDACTED:refresh_token:252b50",
+        "token_type": "Bearer",
+        "scope": "AIS",
+        "access_expires_at": "2027-10-20T08:00:27Z",
+        "consents": {
+          "ais": {
+            "id": "c3b39678-cc5c-11f1-80ec-c9194234e0b9",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-04-18T00:00:00Z",
+            "accounts": [
+              "ES68PSEUDOE4923679FB",
+              "ES36PSEUDO7B56B53D9D",
+              "ES87PSEUDOC749922DD7",
+              "ES12PSEUDOB04B5FE2FC",
+              "ES25PSEUDO5EA544AA86",
+              "ES72PSEUDO6DDE3199CC",
+              "IT28PSEUDOF4306319DD"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      },
+      "accounts": [
+        {
+          "id": "ES018202000000000000000000040780458",
+          "stable_id": "2be804e0f541b37c236e048350844cb1",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "ES68PSEUDOE4923679FB"
+            }
+          ],
+          "owner_name": "ownername-00ea53",
+          "currency": "EUR",
+          "product": "CUENTA UNO",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "254.79",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v1.1/accounts/ES018202000000000000000000040780458/transactions/balances"
+              },
+              "transactions": {
+                "href": "/v1.1/accounts/ES018202000000000000000000040780458/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "254.79",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "ES68PSEUDOE4923679FB",
+            "ownerName": "ownername-00ea53",
+            "product": "CUENTA UNO",
+            "resourceId": "ES018202000000000000000000040780458"
+          }
+        },
+        {
+          "id": "ES018202000000000500000000361786695",
+          "stable_id": "2a9e9e2363a076cadcce593bb3c24c7d",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "ES36PSEUDO7B56B53D9D"
+            }
+          ],
+          "owner_name": "ownername-00ea53",
+          "currency": "EUR",
+          "product": "CUENTA ORDINARIA BBVA",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "7251.29",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v1.1/accounts/ES018202000000000500000000361786695/transactions/balances"
+              },
+              "transactions": {
+                "href": "/v1.1/accounts/ES018202000000000500000000361786695/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "7251.29",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "ES36PSEUDO7B56B53D9D",
+            "ownerName": "ownername-00ea53",
+            "product": "CUENTA ORDINARIA BBVA",
+            "resourceId": "ES018202000000000500000000361786695"
+          }
+        },
+        {
+          "id": "ES018202000000000500000000361787589",
+          "stable_id": "470a3993889210afff087eee254d3fd0",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "ES87PSEUDOC749922DD7"
+            }
+          ],
+          "name": "name-0e57aa",
+          "owner_name": "ownername-00ea53",
+          "currency": "EUR",
+          "product": "CUENTA ORDINARIA BBVA",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "857.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v1.1/accounts/ES018202000000000500000000361787589/transactions/balances"
+              },
+              "transactions": {
+                "href": "/v1.1/accounts/ES018202000000000500000000361787589/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "857.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "ES87PSEUDOC749922DD7",
+            "name": "name-0e57aa",
+            "ownerName": "ownername-00ea53",
+            "product": "CUENTA ORDINARIA BBVA",
+            "resourceId": "ES018202000000000500000000361787589"
+          }
+        },
+        {
+          "id": "ES018202000000000500000000361787594",
+          "stable_id": "904f81398962e1b7aa3b47e38a26f9ae",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "ES12PSEUDOB04B5FE2FC"
+            }
+          ],
+          "owner_name": "ownername-00ea53",
+          "currency": "EUR",
+          "product": "CUENTA ORDINARIA BBVA",
+          "balances": [
+            {
+              "kind": "opening_booked",
+              "bank_type": "openingBooked",
+              "amount": {
+                "amount": "857.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v1.1/accounts/ES018202000000000500000000361787594/transactions/balances"
+              },
+              "transactions": {
+                "href": "/v1.1/accounts/ES018202000000000500000000361787594/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "857.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "openingBooked"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "ES12PSEUDOB04B5FE2FC",
+            "ownerName": "ownername-00ea53",
+            "product": "CUENTA ORDINARIA BBVA",
+            "resourceId": "ES018202000000000500000000361787594"
+          }
+        },
+        {
+          "id": "ES018220100000000500000000283512182",
+          "stable_id": "8e1caad76ac65b5b798c5a4fa41f8920",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "ES25PSEUDO5EA544AA86"
+            }
+          ],
+          "name": "name-9cb866",
+          "owner_name": "ownername-00ea53",
+          "currency": "EUR",
+          "product": "VISTA EN DIVISA",
+          "balances": [
+            {
+              "kind": "opening_booked",
+              "bank_type": "openingBooked",
+              "amount": {
+                "amount": "254.79",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v1.1/accounts/ES018220100000000500000000283512182/transactions/balances"
+              },
+              "transactions": {
+                "href": "/v1.1/accounts/ES018220100000000500000000283512182/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "254.79",
+                  "currency": "EUR"
+                },
+                "balanceType": "openingBooked"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "ES25PSEUDO5EA544AA86",
+            "name": "name-9cb866",
+            "ownerName": "ownername-00ea53",
+            "product": "VISTA EN DIVISA",
+            "resourceId": "ES018220100000000500000000283512182"
+          }
+        },
+        {
+          "id": "IT27W0357601601015001460461",
+          "stable_id": "78a7d6f4b71868e5dcb5496920bb5651",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "ES72PSEUDO6DDE3199CC"
+            }
+          ],
+          "name": "name-1d041c",
+          "owner_name": "ownername-00ea53",
+          "currency": "EUR",
+          "product": "Cuenta",
+          "balances": [
+            {
+              "kind": "other",
+              "bank_type": "expected",
+              "amount": {
+                "amount": "99999.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v1.1/accounts/IT27W0357601601015001460461/transactions/balances"
+              },
+              "transactions": {
+                "href": "/v1.1/accounts/IT27W0357601601015001460461/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "99999.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "expected",
+                "creditLimitIncluded": true
+              }
+            ],
+            "currency": "EUR",
+            "iban": "ES72PSEUDO6DDE3199CC",
+            "name": "name-1d041c",
+            "ownerName": "ownername-00ea53",
+            "product": "Cuenta",
+            "resourceId": "IT27W0357601601015001460461"
+          }
+        },
+        {
+          "id": "IT30E0357601601010000000013",
+          "stable_id": "ab5e010d724f2d41ff90a74194908300",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "IT28PSEUDOF4306319DD"
+            }
+          ],
+          "name": "name-ec9601",
+          "owner_name": "ownername-00ea53",
+          "currency": "EUR",
+          "product": "Cuenta",
+          "balances": [
+            {
+              "kind": "other",
+              "bank_type": "expected",
+              "amount": {
+                "amount": "1000000.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/v1.1/accounts/IT30E0357601601010000000013/transactions/balances"
+              },
+              "transactions": {
+                "href": "/v1.1/accounts/IT30E0357601601010000000013/transactions"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "1000000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "expected",
+                "creditLimitIncluded": true
+              }
+            ],
+            "currency": "EUR",
+            "iban": "IT28PSEUDOF4306319DD",
+            "name": "name-ec9601",
+            "ownerName": "ownername-00ea53",
+            "product": "Cuenta",
+            "resourceId": "IT30E0357601601010000000013"
+          }
+        }
+      ]
+    }
+  }
+]

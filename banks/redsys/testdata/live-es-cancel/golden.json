@@ -1,0 +1,76 @@
+[
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to approve the cancellation, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://hub-i.redsys.es:16443/api-oauth-xs2a-sb/services/rest/sca/v1.1/eyJ6aXAiOiJERUYiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eNqqVipKLc4vLUpO9UxRslJKM7c0NUqzMNJNTjZN0TU0TDPUtTBITdZNtjS0NDEyNkk1SLJU0oHrCaksSAXqck7MS07NyUksyczPC8gsDs7MS89JVaoFAAAA__8.T8OHuvXGMZ7nXvHnr-2ImhFt3Gmm6RTa3Od632Kp2oM"
+      },
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 1,
+        "updated_at": "2026-10-20T08:07:01.163829Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PIS",
+        "access_expires_at": "2027-10-20T08:06:50.163823Z",
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      },
+      "payment": {
+        "id": "65ed967e-cc5d-11f1-80ec-c9194234e0b9",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoicmVkc3lzLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiNjVlZDk2N2UtY2M1ZC0xMWYxLTgwZWMtYzkxOTQyMzRlMGI5IiwidCI6InNlcGEiLCJiIjoiQkJWQSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 1,
+        "updated_at": "2026-10-20T08:07:01.163829Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "Bearer",
+        "scope": "PIS",
+        "access_expires_at": "2027-10-20T08:06:50.163823Z",
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      },
+      "payment": {
+        "id": "65ed967e-cc5d-11f1-80ec-c9194234e0b9",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "CANC",
+        "final": true,
+        "ref": "obs1.eyJpIjoicmVkc3lzLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiNjVlZDk2N2UtY2M1ZC0xMWYxLTgwZWMtYzkxOTQyMzRlMGI5IiwidCI6InNlcGEiLCJiIjoiQkJWQSJ9"
+      }
+    }
+  }
+]

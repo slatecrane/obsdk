@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/payments/sepa-credit-transfers/65ed967e-cc5d-11f1-80ec-c9194234e0b9/authorisations/65ed967e-cc5d-11f1-80ec-c9194234e0b9",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:f5b701",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "keyId=\"SN=1,CA=CN=obsdk,OU=HUB-PSD2,O=HUB-PSD2,L=MAD,ST=MAD,C=ES\",algorithm=\"SHA-256\",headers=\"digest x-request-id\",signature=\"Jv++mJTqagklZ3ebCtBnH3XBqP0zuY9+s4VkjDLo7Kz5sZ4XXfszzYYNYac8dcZPHpcE64J2Wxq3tQUQomLhjzaDpCYYpeprOq97XZ0zWiaYT3uww2bqDYQv4XSqKuMMGFmXTE+os0RZq9BRe83RmGhTLxVT2M4dpjinu98x7U4+X+nrTXgPxjXIKbfC8B32TbiypriU7PKspxrpBuaKAGVTnC+oAwqQKvG74zb4aFsgs7Hy1zL0eh8axz5LdDWqURV+miyQAtmLIo1uiQDFjfg790VqU/vMOoq+UYa85R/g1c55Si2X0BESbe3ZibjGUGdxLsXVFhu4AfEwza0K3Q==\"",
+      "Tpp-Signature-Certificate": "MIID2zCCAsOgAwIBAgIBATANBgkqhkiG9w0BAQsFADBfMQ4wDAYDVQQDDAVvYnNkazERMA8GA1UECwwISFVCLVBTRDIxETAPBgNVBAoMCEhVQi1QU0QyMQwwCgYDVQQHDANNQUQxDDAKBgNVBAgMA01BRDELMAkGA1UEBhMCRVMwHhcNMjYxMDIwMDc1MzM4WhcNMjcxMDIwMDc1MzM4WjCBgTEOMAwGA1UEAwwFb2JzZGsxETAPBgNVBAsMCEhVQi1QU0QyMREwDwYDVQQKDAhIVUItUFNEMjEMMAoGA1UEBwwDTUFEMQwwCgYDVQQIDANNQUQxCzAJBgNVBAYTAkVTMSAwHgYDVQRhDBdQU0RFUy1CREUtMTc5MjQ4MjgxNTMyMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMMrXL9BCZnGyG2uYBY110SuIF7HmuGOl8Q38B5bihwjn8yKrgPsnIXNOg1qQX4lVBQcc9xrNhuYpbmmqQPukkV/soeilcvOBROaSUuFw5Ze8/AiVb+Y6MVuo3sCr4byYkmDgtS9OWcjsgHVDZmtBVJ+EgivDJ6XyEV36EBDsWCT56wB6dqGMsyKBvxeaWEmTvyHgmeL+Lbt5LUj1jh+Ku5mvC/KeKEtXEknouBsRV8PFJDKFtEQV22fu7R/xsmlgoSc2utyAoTJVPs7xoDLvdB64Vyjd6QYOZw2qfCzUNMcsrCB51gJWgQQF4p/wZ7KEOTm2edbLw0xBKFHUtqUSKECAwEAAaN/MH0wcAYIKwYBBQUHAQMEZDBiBgYEAIGYJwIwWDARBgcEAIGYJwECDAZQU1BfUEkwEQYHBACBmCcBAwwGUFNQX0FJMBEGBwQAgZgnAQQMBlBTUF9JQwwYQmFuY28lMjBkZSUyMEVzcGElQzMlQjFhDANCREUwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAQEAJLY5tzaesnffgy0+UgdGOrGMfP/V6TVdJMffpSGNo7mxcYDCP3ZgbhIvgi+WAODsJSCZ6M7S3iIuaKnVJb1mazS+DUWAhFH6tiNBZXiY7RdZHO1gSThWQ1Z1i7/7OTHP/E8es29Aw3W2u06CBKD+y8MFMRQ/JuxApKxn/TTRhnETDunmoB/lBz/42aGCF+Rby6hsSkCX21SKKZUQeuFbA0mnNzzrRsXTYBaiUxA3744iJiEgrywFmfQd6NvMa+v/gKXB94rkPn0LLM4LFOoVW8hKQZh3s8hVddyHtYYwLjLJ2o0Hw2zW23ZztjDjUb65b6S1i/0C0QorDqouuvmP5w=="
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "d4812161-9e89-448c-9a0b-4afccfeeea8e"
+    },
+    "body": {
+      "scaStatus": "finalised"
+    }
+  }
+}
