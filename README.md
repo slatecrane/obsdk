@@ -27,13 +27,43 @@ c, err := obsdk.New(obsdk.Target{Bank: "swedbank", Country: "SE"}, obsdk.Config{
 
 // Authorization is a resumable sequence of steps the caller acts on.
 step, err := c.Connect(ctx, obsdk.ConnectRequest{PSU: obsdk.PSUContext{IP: ip, UserAgent: ua}})
-for step.Kind != obsdk.StepDone {
+for err == nil && step.Kind != obsdk.StepDone {
+    if step.Session != nil {
+        store.SaveSession(userID, step.Session) // banks hand it out before the flow ends
+    }
+
+    var input obsdk.StepInput
     switch step.Kind {
-    case obsdk.StepRedirect:      // send the user to step.Redirect.URL; pass the callback back
-    case obsdk.StepInputRequired: // ask for step.Fields
-    case obsdk.StepWait:          // show step.Challenge, wait step.WaitFor
+    case obsdk.StepRedirect:
+        // Send the browser to the bank and wait for it to come back to RedirectURL.
+        // In a web app this is a 302 now and a Resume later, in the callback handler.
+        browser.Open(step.Redirect.URL)
+        input.Callback = waitForCallback() // e.g. "https://app.example.com/bank/callback?code=...&state=..."
+
+    case obsdk.StepInputRequired:
+        // Render a form from step.Fields (text, secret, otp, select with Options).
+        input.Values = map[string]string{}
+        for _, f := range step.Fields {
+            input.Values[f.Key] = ui.Ask(f.Label, f.Kind, f.Options) // e.g. "personal_id" -> "199001011234"
+        }
+
+    case obsdk.StepDisplay:
+        // Show a code or QR the user confirms in the bank app, then continue.
+        ui.Show(step.Message, step.Challenge.Code, step.Challenge.ImageURL)
+        ui.WaitForClick("I've approved it in the app")
+
+    case obsdk.StepWait:
+        // Decoupled approval: nothing to type, just poll. Show the challenge if there is one.
+        if step.Challenge != nil {
+            ui.Show(step.Message, step.Challenge.Code, step.Challenge.ImageURL)
+        }
+        time.Sleep(step.WaitFor) // or schedule the next Resume with a job queue
     }
     step, err = c.Resume(ctx, step.State, input)
+}
+var fe *obsdk.FlowError
+if errors.As(err, &fe) && fe.Session != nil {
+    store.SaveSession(userID, fe.Session) // the flow failed, but the session is still usable
 }
 session := step.Session // persist this (encrypted); it is all the SDK needs later
 
