@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/sandbox/xs2a/v1.3/payments/sepa-credit-transfers/01a15a92-4ed8-7c4b-9701-60faa5a95795",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Nok-Redirect-Uri": "https://example.com/callback?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://example.com/callback",
+      "X-Api-Key": "REDACTED:x-api-key:19acc1"
+    }
+  },
+  "response": {
+    "status": 204,
+    "headers": {
+      "X-Request-Id": "1f705425-2adc-481b-bcba-f48e5eef11cf"
+    }
+  }
+}

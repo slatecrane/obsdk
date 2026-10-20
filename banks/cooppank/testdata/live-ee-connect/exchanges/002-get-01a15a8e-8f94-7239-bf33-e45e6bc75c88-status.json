@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/xs2a/v1.3/consents/01a15a8e-8f94-7239-bf33-e45e6bc75c88/status",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "X-Api-Key": "REDACTED:x-api-key:19acc1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "b8335d20-8ddb-453a-a1ca-e46c03628cfa"
+    },
+    "body": {
+      "consentStatus": "valid"
+    }
+  }
+}

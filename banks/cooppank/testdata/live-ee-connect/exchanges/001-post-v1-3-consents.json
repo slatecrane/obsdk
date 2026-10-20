@@ -1,0 +1,52 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/xs2a/v1.3/consents",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Nok-Redirect-Uri": "https://example.com/callback?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://example.com/callback",
+      "X-Api-Key": "REDACTED:x-api-key:19acc1"
+    },
+    "body": {
+      "access": {
+        "accounts": [],
+        "balances": [],
+        "transactions": []
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 4,
+      "recurringIndicator": true,
+      "validUntil": "2027-01-18"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "REDIRECT",
+      "Content-Type": "application/json;charset=UTF-8",
+      "Location": "/sandbox/xs2a/v1.3/consents/01a15a8e-8f94-7239-bf33-e45e6bc75c88",
+      "X-Request-Id": "28dc073b-1f09-412c-a1ee-0f91c926350b"
+    },
+    "body": {
+      "_links": {
+        "scaRedirect": {
+          "href": "https://openbanking.cooppank.ee/mock_sca/auth/coop/01a15a8e-8fc0-71b3-849d-7e917d59f65b"
+        },
+        "self": {
+          "href": "/sandbox/xs2a/v1.3/consents/01a15a8e-8f94-7239-bf33-e45e6bc75c88"
+        },
+        "status": {
+          "href": "/sandbox/xs2a/v1.3/consents/01a15a8e-8f94-7239-bf33-e45e6bc75c88/status"
+        }
+      },
+      "authorisationId": "01a15a8e-8fc0-71b3-849d-7e917d59f65b",
+      "consentId": "01a15a8e-8f94-7239-bf33-e45e6bc75c88",
+      "consentStatus": "received"
+    }
+  }
+}

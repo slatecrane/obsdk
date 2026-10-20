@@ -1,0 +1,48 @@
+[
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "01a15a91-46ef-7dee-9733-e73370bf5eab",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-12.34",
+            "currency": "EUR"
+          },
+          "value_date": "2026-10-20",
+          "counterparty": {
+            "name": "creditorname-81d115",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "EE36PSEUDODD6386735B"
+              }
+            ]
+          },
+          "remittance": [
+            "remittanceinformationunstructured-d2b614"
+          ],
+          "raw": {
+            "creditorAccount": {
+              "iban": "EE36PSEUDODD6386735B"
+            },
+            "creditorName": "creditorname-81d115",
+            "debtorAccount": {
+              "iban": "EE37PSEUDOA1682F797A"
+            },
+            "debtorName": "debtorname-81d115",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-d2b614",
+            "transactionAmount": {
+              "amount": "-12.34",
+              "currency": "EUR"
+            },
+            "transactionId": "01a15a91-46ef-7dee-9733-e73370bf5eab",
+            "valueDate": "2026-10-20"
+          }
+        }
+      ]
+    }
+  }
+]

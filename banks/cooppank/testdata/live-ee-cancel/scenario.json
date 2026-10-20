@@ -1,0 +1,26 @@
+{
+  "config": {
+    "bank": "cooppank",
+    "country": "EE",
+    "env": "sandbox",
+    "now": "2026-10-20T18:29:57Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "api_key": "REDACTED:api_key:19acc1"
+    },
+    "ids": {
+      "request": [
+        "1f705425-2adc-481b-bcba-f48e5eef11cf",
+        "8b3c3eed-a1ff-452b-9b69-0e68372244df"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoiY29vcHBhbmstYmctZWUiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIwMWExNWE5Mi00ZWQ4LTdjNGItOTcwMS02MGZhYTVhOTU3OTUiLCJ0Ijoic2VwYSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

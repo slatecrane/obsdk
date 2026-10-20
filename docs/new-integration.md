@@ -233,6 +233,10 @@ From Swedbank, ING, Nordea, HSBC, Rabobank, bunq, Handelsbanken and OP. Other ba
 | Redsys: `401 CERTIFICATE_MISSING "[API052]Incorrect QSEAL certificate: It is mandatory and is not present in the petition."` | an unsigned request: the hub wants a QSealC on every call, the sandbox too | sign every request (`Signing.Required`); in the sandbox with the portal's generic certificate |
 | Redsys: `401 TOKEN_INVALID "[API004]TPP sends incorrect access token or does not send it at all"` | no OAuth pre-step token: the hub wants a bearer token before any XS2A call, the consent request included | run the pre-step (`Profile.PreStep`); the token must come from the same bank code (else `TOKEN_UNKNOWN`) |
 | Redsys: `400 SERVICE_INVALID "[HUB007] Unavailable service for Asp."` on a consent status, an account or a payment status | the call went to `/v1/` as the hub's guide shows; the hub serves everything on `/v1.1/` | use `v1.1` for every path (`PathVersion`) |
+| Coop Pank: `400 FORMAT_ERROR "X-API-Key not provided in header request"` | no application key | send the portal application's key as `X-API-Key` on every call (profile `Headers`) |
+| Coop Pank: `404 PRODUCT_UNKNOWN "instant-sepa-credit-transfers is unknown payment product"` | the how-to lists SEPA Instant, the specification and the sandbox don't | `sepa-credit-transfers` only |
+| Coop Pank: `400 FORMAT_ERROR "From parameter cannot be farther than 180 days in past for recurring account information consent!"` | `dateFrom` more than 180 days back on a recurring consent | ask for at most 180 days (7 years needs a one-off consent) |
+| Coop Pank: cancel reported as failed with status `CNCL` | the bank reports cancelled payments with `CNCL`, not ISO 20022's `CANC` | map both to cancelled (`internal/bgstatus`) |
 
 ## 7. Finish
 

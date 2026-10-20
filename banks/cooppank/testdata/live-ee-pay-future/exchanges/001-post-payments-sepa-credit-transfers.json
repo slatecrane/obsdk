@@ -1,0 +1,61 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/xs2a/v1.3/payments/sepa-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Nok-Redirect-Uri": "https://example.com/callback?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://example.com/callback",
+      "X-Api-Key": "REDACTED:x-api-key:19acc1"
+    },
+    "body": {
+      "creditorAccount": {
+        "iban": "EE36PSEUDODD6386735B"
+      },
+      "creditorAddress": {
+        "country": "EE",
+        "townName": "Tallinn"
+      },
+      "creditorName": "creditorname-49ebb3",
+      "debtorAccount": {
+        "currency": "EUR",
+        "iban": "EE37PSEUDOA1682F797A"
+      },
+      "instructedAmount": {
+        "amount": "7.00",
+        "currency": "EUR"
+      },
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-adeb2b",
+      "requestedExecutionDate": "2026-10-27"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "REDIRECT",
+      "Content-Type": "application/json;charset=UTF-8",
+      "Location": "/sandbox/xs2a/v1.3/payments/sepa-credit-transfers/01a15a92-4ed8-7c4b-9701-60faa5a95795",
+      "X-Request-Id": "df9fa31f-23ef-4076-b911-a2237309c009"
+    },
+    "body": {
+      "_links": {
+        "scaRedirect": {
+          "href": "https://openbanking.cooppank.ee/mock_sca/auth/coop/01a15a92-4ef8-707d-b934-98967e908f95"
+        },
+        "self": {
+          "href": "/sandbox/xs2a/v1.3/payments/sepa-credit-transfers/01a15a92-4ed8-7c4b-9701-60faa5a95795"
+        },
+        "status": {
+          "href": "/sandbox/xs2a/v1.3/payments/sepa-credit-transfers/01a15a92-4ed8-7c4b-9701-60faa5a95795/status"
+        }
+      },
+      "authorisationId": "01a15a92-4ef8-707d-b934-98967e908f95",
+      "paymentId": "01a15a92-4ed8-7c4b-9701-60faa5a95795",
+      "transactionStatus": "RCVD"
+    }
+  }
+}

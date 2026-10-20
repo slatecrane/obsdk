@@ -1,0 +1,22 @@
+{
+  "config": {
+    "bank": "cooppank",
+    "country": "EE",
+    "env": "sandbox",
+    "now": "2026-10-20T18:30:31Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "api_key": "REDACTED:api_key:19acc1"
+    },
+    "ids": {
+      "request": [
+        "1b71b19b-1151-47ea-86b4-3af2645e0d56"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "disconnect"
+    }
+  ]
+}

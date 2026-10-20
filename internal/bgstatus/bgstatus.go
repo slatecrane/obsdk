@@ -20,7 +20,7 @@ func Payment(code string) (status obsdk.PaymentStatus, final bool) {
 		return obsdk.PaymentPartiallyAccepted, false
 	case "RJCT":
 		return obsdk.PaymentRejected, true
-	case "CANC":
+	case "CANC", "CNCL": // CNCL is not ISO 20022; Coop Pank reports cancelled payments with it
 		return obsdk.PaymentCancelled, true
 	}
 	return obsdk.PaymentReceived, false

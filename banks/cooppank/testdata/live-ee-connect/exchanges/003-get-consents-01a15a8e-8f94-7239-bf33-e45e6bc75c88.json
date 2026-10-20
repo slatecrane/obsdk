@@ -1,0 +1,43 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/xs2a/v1.3/consents/01a15a8e-8f94-7239-bf33-e45e6bc75c88",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "X-Api-Key": "REDACTED:x-api-key:19acc1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "f6a44169-e17e-4577-b0ed-3214e733745a"
+    },
+    "body": {
+      "_links": {
+        "account": {
+          "href": "/sandbox/xs2a/v1.3/accounts"
+        },
+        "self": {
+          "href": "/sandbox/xs2a/v1.3/consents/01a15a8e-8f94-7239-bf33-e45e6bc75c88"
+        },
+        "status": {
+          "href": "/sandbox/xs2a/v1.3/consents/01a15a8e-8f94-7239-bf33-e45e6bc75c88/status"
+        }
+      },
+      "access": {
+        "accounts": [],
+        "balances": [],
+        "transactions": []
+      },
+      "combinedServiceIndicator": false,
+      "consentStatus": "valid",
+      "frequencyPerDay": 4,
+      "lastActionDate": "2026-10-20",
+      "recurringIndicator": true,
+      "validUntil": "2027-01-18"
+    }
+  }
+}

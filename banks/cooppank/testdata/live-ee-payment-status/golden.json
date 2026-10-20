@@ -1,0 +1,13 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "01a15a91-46ef-7dee-9733-e73370bf5eab",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "ACSC",
+      "final": true,
+      "ref": "obs1.eyJpIjoiY29vcHBhbmstYmctZWUiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIwMWExNWE5MS00NmVmLTdkZWUtOTczMy1lNzMzNzBiZjVlYWIiLCJ0Ijoic2VwYSJ9"
+    }
+  }
+]

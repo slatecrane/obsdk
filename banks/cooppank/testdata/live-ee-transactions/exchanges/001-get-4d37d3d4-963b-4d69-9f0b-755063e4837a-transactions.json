@@ -1,0 +1,64 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/xs2a/v1.3/accounts/4d37d3d4-963b-4d69-9f0b-755063e4837a/transactions",
+    "query": {
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-10-01"
+      ],
+      "dateTo": [
+        "2026-10-20"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Consent-Id": "01a15a8e-8f94-7239-bf33-e45e6bc75c88",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "X-Api-Key": "REDACTED:x-api-key:19acc1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "60ce924f-e075-41c3-b25b-bb60483823ff"
+    },
+    "body": {
+      "account": {
+        "currency": "EUR",
+        "iban": "EE37PSEUDOA1682F797A"
+      },
+      "transactions": {
+        "_links": {
+          "account": {
+            "href": "/sandbox/xs2a/v1.3/accounts/4d37d3d4-963b-4d69-9f0b-755063e4837a"
+          }
+        },
+        "booked": [
+          {
+            "creditorAccount": {
+              "iban": "EE36PSEUDODD6386735B"
+            },
+            "creditorName": "creditorname-81d115",
+            "debtorAccount": {
+              "iban": "EE37PSEUDOA1682F797A"
+            },
+            "debtorName": "debtorname-81d115",
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-d2b614",
+            "transactionAmount": {
+              "amount": "-12.34",
+              "currency": "EUR"
+            },
+            "transactionId": "01a15a91-46ef-7dee-9733-e73370bf5eab",
+            "valueDate": "2026-10-20"
+          }
+        ],
+        "pending": []
+      }
+    }
+  }
+}

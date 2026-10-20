@@ -1,0 +1,36 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Coop Pank to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://openbanking.cooppank.ee/mock_sca/auth/coop/01a15a91-4711-7d26-aab6-8a5d44196728"
+      },
+      "payment": {
+        "id": "01a15a91-46ef-7dee-9733-e73370bf5eab",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiY29vcHBhbmstYmctZWUiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIwMWExNWE5MS00NmVmLTdkZWUtOTczMy1lNzMzNzBiZjVlYWIiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "01a15a91-46ef-7dee-9733-e73370bf5eab",
+        "type": "sepa",
+        "status": "completed",
+        "bank_status": "ACSC",
+        "final": true,
+        "ref": "obs1.eyJpIjoiY29vcHBhbmstYmctZWUiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIwMWExNWE5MS00NmVmLTdkZWUtOTczMy1lNzMzNzBiZjVlYWIiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  }
+]
