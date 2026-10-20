@@ -498,6 +498,13 @@ func (c *client) readSCAStatus(ctx context.Context, f *flow, path string) (*scaR
 func (c *client) afterRedirect(ctx context.Context, f *flow) (*obsdk.Step, error) {
 	if _, p := f.link("scaStatus"); p != "" {
 		r, err := c.readSCAStatus(ctx, f, p)
+		var ae *obsdk.APIError
+		if err != nil && f.Op == flowCancel && asAPIError(err, &ae) && (ae.Status == http.StatusNotFound || ae.Status == http.StatusForbidden) {
+			// Redsys's sandbox links a cancellation's scaStatus it doesn't
+			// know (404, then 403 HUB076 once cancelled); the payment's
+			// status settles a cancellation anyway.
+			return c.finish(ctx, f)
+		}
 		if err != nil {
 			return nil, err
 		}

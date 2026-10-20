@@ -1,0 +1,31 @@
+{
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-20T08:12:17Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "aspsp": "BBVA"
+    },
+    "ids": {
+      "request": [
+        "f213a8a4-d224-4f8d-93e4-eb0797f5c7fb",
+        "aad2b108-e094-4168-b663-bb4371c0080f"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoicmVkc3lzLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiNjVlZDk2N2UtY2M1ZC0xMWYxLTgwZWMtYzkxOTQyMzRlMGI5IiwidCI6InNlcGEiLCJiIjoiQkJWQSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback"
+    }
+  ],
+  "description": "Live, BBVA sandbox 2026-10-20: cancellation of an approved future-dated SEPA payment. DELETE answers 202 with an approval redirect; after the approval the hub's own scaStatus link answers 404, so the payment status decides. The last exchange (status CANC) was read with a signed probe right after the run, before the adapter fell back to it; the rest is the recording."
+}

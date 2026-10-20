@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/accounts",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Authorization": "Bearer at-1",
+      "Consent-ID": "c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e"
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tppMessages": [
+        {
+          "category": "ERROR",
+          "code": "CONSENT_INVALID",
+          "text": "The consent was revoked by the PSU"
+        }
+      ]
+    }
+  }
+}

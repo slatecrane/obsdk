@@ -1,0 +1,22 @@
+{
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-20T08:05:55Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "aspsp": "BBVA"
+    },
+    "ids": {
+      "request": [
+        "fd584ad4-e465-4446-9e33-cb33f2b121ac"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "refresh"
+    }
+  ]
+}

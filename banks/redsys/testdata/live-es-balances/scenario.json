@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-20T08:05:37Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "aspsp": "BBVA"
+    },
+    "ids": {
+      "request": [
+        "049cab61-8ca3-4b3a-a61b-b63b834d938b"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "balances",
+      "account": "ES018202000000000000000000040780458",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

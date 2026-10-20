@@ -131,10 +131,10 @@
             ],
             "_links": {
               "balances": {
-                "href": "/v1/accounts/ES2501822200160201933547-EUR/balances"
+                "href": "/v1.1/accounts/ES2501822200160201933547-EUR/balances"
               },
               "transactions": {
-                "href": "/v1/accounts/ES2501822200160201933547-EUR/transactions"
+                "href": "/v1.1/accounts/ES2501822200160201933547-EUR/transactions"
               }
             }
           }
@@ -166,7 +166,7 @@
             "bic": "BBVAESMMXXX",
             "_links": {
               "balances": {
-                "href": "/v1/accounts/ES4901822200110201933554-EUR/balances"
+                "href": "/v1.1/accounts/ES4901822200110201933554-EUR/balances"
               }
             }
           }

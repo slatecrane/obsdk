@@ -49,7 +49,7 @@ The profile carries everything that differs between banks: hosts, approaches, co
 limits, booking statuses, payment products and specs, whether PSU-ID is needed up front
 (`PSUIDRequired`), field-shape versions (`LegacyAddress`, `StructuredRemittanceString`, which banks mix),
 `NoWithBalance`, XML transactions, OAuth details (`OAuthNoRedirectURI`, `PreStep`), hubs (`Institution`), signing,
-spellings some banks use (`PathVersion` such as SIBS's `v1-0-4`, `AISPathVersion` for account information on a later version such as Samlink's `v2`, `CreatePathVersion` for banks that versioned only the creation of consents and payments such as Redsys's `v1.1`, `ReferenceInEndToEnd` for banks that read the creditor reference from the end-to-end id, `AllAccountsValue`, `ValidUntilLayout`,
+spellings some banks use (`PathVersion` such as SIBS's `v1-0-4` or Redsys's `v1.1`, `AISPathVersion` for account information on a later version such as Samlink's `v2`, `ReferenceInEndToEnd` for banks that read the creditor reference from the end-to-end id, `AllAccountsValue`, `ValidUntilLayout`,
 a `DateLayout` for a mandatory `Date` header) and extra headers. If a bank needs more than a profile can say, add a field
 or hook to the profile instead of copying the adapter. Then follow [new-integration.md](new-integration.md)
 as for any bank: own docs page, row in [banks.md](banks.md), scenarios recorded against its sandbox.
