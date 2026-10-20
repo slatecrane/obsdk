@@ -50,7 +50,7 @@
       "accounts": [
         {
           "id": "omasp-01-01",
-          "stable_id": "10a7d52106fc5669a45cca3494e3a91e",
+          "stable_id": "533ac4147d57688472f63d0280a32775",
           "identifiers": [
             {
               "scheme": "IBAN",
@@ -99,7 +99,7 @@
         },
         {
           "id": "omasp-01-02",
-          "stable_id": "0f2d168cbd917d33aaa06730e08bca15",
+          "stable_id": "78d8c6cdcd8cf38cc575cc3dd2520335",
           "identifiers": [
             {
               "scheme": "IBAN",

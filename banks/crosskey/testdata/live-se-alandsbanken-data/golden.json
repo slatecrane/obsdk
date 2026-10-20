@@ -4,7 +4,7 @@
     "accounts": [
       {
         "id": "3b3630d8-5513-11e9-9d38-93b4c87cbbc5",
-        "stable_id": "d150a7a99abad70e31ffe5d573aace9e",
+        "stable_id": "e74e2df36f4dce4987aeba57f79c74de",
         "identifiers": [
           {
             "scheme": "IBAN",
@@ -64,7 +64,7 @@
       },
       {
         "id": "e6a316d0-4581-11e9-9d38-9f38a9de5bfa",
-        "stable_id": "efe766f103949d4372edb246bfa13259",
+        "stable_id": "4ed75edbc5c2672132e5aa218f2b5fd6",
         "identifiers": [
           {
             "scheme": "IBAN",
@@ -95,7 +95,7 @@
       },
       {
         "id": "e6a397ea-4581-11e9-9d38-e798fd829051",
-        "stable_id": "68d8cb6260ac02c31081669d7ddac96d",
+        "stable_id": "684b0db824b0e73851f7f9c43e3ddda0",
         "identifiers": [
           {
             "scheme": "IBAN",

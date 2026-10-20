@@ -4,7 +4,7 @@
     "accounts": [
       {
         "id": "450ffbb8-9f11-4ec6-a1e1-df48aefc82ef",
-        "stable_id": "1bc73ba1dd1f27783cbe96b0f54038c1",
+        "stable_id": "cfcd3b42e63ea676762ce8b0079475ae",
         "identifiers": [
           {
             "scheme": "IBAN",
@@ -34,7 +34,7 @@
       },
       {
         "id": "181fdfd4-5838-4768-b803-91ae2192f901",
-        "stable_id": "8ba0098595268053312d94eb5f5bd95b",
+        "stable_id": "bb80c8e0917da416021fe1f068f50b95",
         "identifiers": [
           {
             "scheme": "IBAN",

@@ -41,7 +41,7 @@
       "accounts": [
         {
           "id": "FI3815903000105518-EUR",
-          "stable_id": "da6e84f05265a966bd7630094cec0775",
+          "stable_id": "bd7c5cdbbe7f4e8daf46c922930e468a",
           "identifiers": [
             {
               "scheme": "IBAN",
@@ -124,7 +124,7 @@
         },
         {
           "id": "FI5815793000105406-EUR",
-          "stable_id": "38901b559fe3b734008f77da63576d8f",
+          "stable_id": "de3d659c0a807edafe4607bc0949adce",
           "identifiers": [
             {
               "scheme": "IBAN",

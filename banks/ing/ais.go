@@ -122,12 +122,7 @@ func toAccounts(raws []json.RawMessage) ([]obsdk.Account, error) {
 		if ref.card {
 			acc.Type = "CARD"
 		}
-		// A multi-currency account's currencies share the IBAN; key them by currency too.
-		ids := acc.Identifiers
-		if ref.currency != "" {
-			ids = []obsdk.Identifier{{Scheme: "IBAN_CURRENCY", Value: a.IBAN + ":" + a.Currency}}
-		}
-		acc.StableID = obsdk.StableAccountID(ids, a.Currency)
+		acc.StableID = obsdk.StableAccountID(acc.Identifiers, a.Currency)
 		out = append(out, acc)
 	}
 	return out, nil

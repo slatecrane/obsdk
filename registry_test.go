@@ -214,10 +214,13 @@ func TestSessionRoundTripAndClone(t *testing.T) {
 }
 
 func TestStableAccountID(t *testing.T) {
-	a := StableAccountID([]Identifier{{"BBAN", "123"}, {"IBAN", "SE00"}}, "SEK")
-	b := StableAccountID([]Identifier{{"IBAN", "SE00"}}, "EUR")
+	a := StableAccountID([]Identifier{{"BBAN", "123"}, {"IBAN", "SE00 1234"}}, "SEK")
+	b := StableAccountID([]Identifier{{"IBAN", "se001234"}}, "sek")
 	if a == "" || a != b {
-		t.Errorf("IBAN-based id should ignore other identifiers and currency: %q %q", a, b)
+		t.Errorf("IBAN-based id should ignore other identifiers, spacing and case: %q %q", a, b)
+	}
+	if StableAccountID([]Identifier{{"IBAN", "SE001234"}}, "SEK") == StableAccountID([]Identifier{{"IBAN", "SE001234"}}, "EUR") {
+		t.Error("currencies sharing an IBAN need distinct ids")
 	}
 	if StableAccountID([]Identifier{{"BBAN", "123"}}, "SEK") == StableAccountID([]Identifier{{"BBAN", "123"}}, "EUR") {
 		t.Error("BBAN-based id must include currency")

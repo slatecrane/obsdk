@@ -78,7 +78,6 @@ type accountJSON struct {
 }
 
 // scheme shortens OBIE scheme names: UK.OBIE.IBAN -> IBAN, UK.OBIE.SortCodeAccountNumber -> SortCodeAccountNumber.
-// StableID is derived from this form, so it must not change.
 func scheme(s string) string {
 	if strings.HasPrefix(s, "UK.OBIE.") {
 		return strings.TrimPrefix(s, "UK.OBIE.")
@@ -118,14 +117,7 @@ func toAccount(raw json.RawMessage) (obsdk.Account, error) {
 			acc.OwnerName = id.Name
 		}
 	}
-	// Several currency accounts share one IBAN at Revolut, so the stable id
-	// always includes the currency (StableAccountID would use the IBAN alone).
-	for _, id := range a.Account {
-		if id.Identification != "" {
-			acc.StableID = obsdk.StableAccountID([]obsdk.Identifier{{Scheme: "revolut:" + scheme(id.SchemeName), Value: id.Identification}}, a.Currency)
-			break
-		}
-	}
+	acc.StableID = obsdk.StableAccountID(acc.Identifiers, a.Currency)
 	return acc, nil
 }
 

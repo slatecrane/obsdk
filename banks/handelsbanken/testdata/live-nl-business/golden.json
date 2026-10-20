@@ -62,7 +62,7 @@
       "accounts": [
         {
           "id": "ca8aaba8-4c21-760c-3851-181eaa68263a",
-          "stable_id": "90cace7be2df8bd4a2debc61f4f65714",
+          "stable_id": "43b2f731d00044065c7d3d5a0ae46307",
           "identifiers": [
             {
               "scheme": "IBAN",
@@ -90,7 +90,7 @@
         },
         {
           "id": "da60aeb7-ed40-4cdf-d9eb-2c868ee28212",
-          "stable_id": "44f6a54c021506a3becf9a2ae621721b",
+          "stable_id": "4b9ea76eb46a5821cd628a3ea2c31f94",
           "identifiers": [
             {
               "scheme": "IBAN",
@@ -124,7 +124,7 @@
     "accounts": [
       {
         "id": "ca8aaba8-4c21-760c-3851-181eaa68263a",
-        "stable_id": "90cace7be2df8bd4a2debc61f4f65714",
+        "stable_id": "43b2f731d00044065c7d3d5a0ae46307",
         "identifiers": [
           {
             "scheme": "IBAN",
@@ -152,7 +152,7 @@
       },
       {
         "id": "da60aeb7-ed40-4cdf-d9eb-2c868ee28212",
-        "stable_id": "44f6a54c021506a3becf9a2ae621721b",
+        "stable_id": "4b9ea76eb46a5821cd628a3ea2c31f94",
         "identifiers": [
           {
             "scheme": "IBAN",

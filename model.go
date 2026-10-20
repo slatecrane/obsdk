@@ -5,6 +5,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"math/big"
+	"strings"
 	"time"
 )
 
@@ -34,7 +35,7 @@ type Identifier struct {
 // account across sessions.
 type Account struct {
 	ID          string          `json:"id"`
-	StableID    string          `json:"stable_id"` // derived from IBAN (or BBAN + currency); stable across sessions
+	StableID    string          `json:"stable_id"` // derived from IBAN (or another identifier) + currency; stable across sessions
 	Identifiers []Identifier    `json:"identifiers"`
 	Name        string          `json:"name,omitempty"`
 	OwnerName   string          `json:"owner_name,omitempty"`
@@ -161,20 +162,22 @@ type TxResult struct {
 	Meta    Meta
 }
 
-// StableAccountID derives an identifier that survives re-authorization, from
-// the IBAN when present, otherwise from BBAN plus currency.
+// StableAccountID derives an identifier that survives re-authorization from
+// the account's IBAN (any other identifier when there is none) plus its
+// currency. The currency is part of the key because multi-currency accounts
+// list one entry per currency under the same IBAN.
 func StableAccountID(ids []Identifier, currency string) string {
 	var key string
 	for _, id := range ids {
-		if id.Scheme == "IBAN" && id.Value != "" {
-			key = "IBAN:" + id.Value
+		if id.Scheme == SchemeIBAN && id.Value != "" {
+			key = "IBAN:" + strings.ToUpper(strings.ReplaceAll(id.Value, " ", ""))
 			break
 		}
 	}
 	if key == "" {
 		for _, id := range ids {
 			if id.Value != "" {
-				key = id.Scheme + ":" + id.Value + ":" + currency
+				key = id.Scheme + ":" + id.Value
 				break
 			}
 		}
@@ -182,6 +185,6 @@ func StableAccountID(ids []Identifier, currency string) string {
 	if key == "" {
 		return ""
 	}
-	sum := sha256.Sum256([]byte(key))
+	sum := sha256.Sum256([]byte(key + ":" + strings.ToUpper(currency)))
 	return hex.EncodeToString(sum[:16])
 }
