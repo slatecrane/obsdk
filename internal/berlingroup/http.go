@@ -93,7 +93,7 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	if !strings.HasPrefix(r.path, "/v1/") {
 		return nil, fmt.Errorf("berlingroup: refusing to call %q: not an XS2A path", r.path)
 	}
-	u, err := url.Parse(c.base + "/" + c.p.versionFor(r.path) + strings.TrimPrefix(r.path, "/v1"))
+	u, err := url.Parse(c.base + c.p.rootFor(r.path) + "/" + c.p.versionFor(r.path) + strings.TrimPrefix(r.path, "/v1"))
 	if err != nil {
 		return nil, err
 	}
@@ -130,6 +130,9 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 			hr.Header.Set(k, v)
 		}
 	}
+	if n := c.p.PSUInitiatedHeader; n != "" {
+		hr.Header.Set(n, fmt.Sprint(psuInitiated(r.op) || hr.Header.Get("PSU-IP-Address") != ""))
+	}
 	if c.bearer != "" && hr.Header.Get("Authorization") == "" {
 		hr.Header.Set("Authorization", "Bearer "+c.bearer)
 	}
@@ -158,6 +161,11 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	c.log.Debug("berlingroup request", "bank", c.bank(), "op", r.op, "method", r.method, "url", u.Redacted(),
 		"status", res.StatusCode, "request_id", res.Header.Get("X-Request-ID"))
 	return &resp{status: res.StatusCode, header: res.Header, body: b}, nil
+}
+
+// psuInitiated reports operations that only run while the user takes part.
+func psuInitiated(op string) bool {
+	return op == opConsent || op == opAuthorise || op == opPayment || op == opCancel
 }
 
 // psuHeaders are the PSU context headers; PSU-ID is added by the caller
@@ -243,6 +251,9 @@ type errorBody struct {
 	Error     string `json:"error"`
 	ErrorDesc string `json:"error_description"`
 	Message   string `json:"message"`
+	// IBM API Connect gateways (Bankart) answer {httpCode, httpMessage, moreInformation}.
+	HTTPMessage     string `json:"httpMessage"`
+	MoreInformation string `json:"moreInformation"`
 }
 
 func parseError(b []byte) (code, text string) {
@@ -265,7 +276,7 @@ func parseError(b []byte) (code, text string) {
 	case e.Title != "":
 		return "", firstNonEmpty(e.Detail, e.Title)
 	}
-	return "", e.Message
+	return "", firstNonEmpty(e.Message, e.MoreInformation, e.HTTPMessage)
 }
 
 func firstNonEmpty(s ...string) string {

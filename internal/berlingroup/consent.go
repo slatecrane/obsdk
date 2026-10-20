@@ -229,7 +229,7 @@ func (c *client) Refresh(ctx context.Context, s *obsdk.Session) (*obsdk.Session,
 	if err != nil {
 		return nil, err
 	}
-	if c.p.PreStep != nil {
+	if c.p.sessionToken() {
 		// Every call needs the token, the consent check too: renew it first.
 		ns := s.Clone()
 		if err := c.renewToken(ctx, ns); err != nil {

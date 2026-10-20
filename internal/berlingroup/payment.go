@@ -366,7 +366,7 @@ func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentC
 		return nil, err
 	}
 	f := &flow{Op: flowCancel, Approach: approach, Pay: p, StatusPath: c.paymentPath(p) + "/status", Institution: c.inst}
-	if c.p.PreStep != nil {
+	if c.p.sessionToken() {
 		f.Session = o.Session.Clone()
 	}
 	if o.PSU != nil {

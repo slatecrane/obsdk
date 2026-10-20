@@ -1,0 +1,22 @@
+{
+  "config": {
+    "bank": "nlb",
+    "country": "SI",
+    "env": "sandbox",
+    "now": "2026-10-20T09:54:41Z",
+    "redirect_url": "https://example.com/callback",
+    "ids": {
+      "request": [
+        "aaff9ba1-da1e-43fb-8c1e-316f2b7fa87c"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "balances",
+      "account": "8735076338630656",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

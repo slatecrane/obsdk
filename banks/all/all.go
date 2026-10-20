@@ -5,6 +5,7 @@ package all
 
 import (
 	_ "github.com/slatecrane/obsdk/banks/atruvia"
+	_ "github.com/slatecrane/obsdk/banks/bankart"
 	_ "github.com/slatecrane/obsdk/banks/bunq"
 	_ "github.com/slatecrane/obsdk/banks/crosskey"
 	_ "github.com/slatecrane/obsdk/banks/handelsbanken"

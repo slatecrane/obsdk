@@ -3,6 +3,7 @@ package berlingroup
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"strings"
@@ -77,6 +78,9 @@ type flow struct {
 	// Session once the token is there (secret), sent on every request.
 	PreStep bool           `json:"pre_step,omitempty"`
 	Session *obsdk.Session `json:"session,omitempty"`
+	// PreStep.CreateOnly: the token between the login and the creating
+	// request, within one Resume (secret).
+	CreateToken string `json:"create_token,omitempty"`
 
 	// Connect.
 	Caps       []obsdk.Capability `json:"caps,omitempty"`
@@ -487,11 +491,18 @@ func (c *client) readSCAStatus(ctx context.Context, f *flow, path string) (*scaR
 		return nil, c.apiErr(opAuthorise, res)
 	}
 	var r scaResponse
-	if err := json.Unmarshal(res.body, &r); err != nil || r.SCAStatus == "" {
+	if err := json.Unmarshal(res.body, &r); err != nil {
 		return nil, fmt.Errorf("berlingroup: unreadable scaStatus response (HTTP %d)", res.status)
+	}
+	if r.SCAStatus == "" {
+		return nil, errNoSCAStatus
 	}
 	return &r, nil
 }
+
+// errNoSCAStatus is a scaStatus read that answered without one (Bankart's
+// sandbox: {}); after a redirect the resource's own status decides instead.
+var errNoSCAStatus = errors.New("berlingroup: the scaStatus response has no scaStatus")
 
 // afterRedirect checks the authorisation once the user is back: the
 // scaStatus when the bank gave a link to it, then the resource itself.
@@ -503,6 +514,9 @@ func (c *client) afterRedirect(ctx context.Context, f *flow) (*obsdk.Step, error
 			// Redsys's sandbox links a cancellation's scaStatus it doesn't
 			// know (404, then 403 HUB076 once cancelled); the payment's
 			// status settles a cancellation anyway.
+			return c.finish(ctx, f)
+		}
+		if errors.Is(err, errNoSCAStatus) {
 			return c.finish(ctx, f)
 		}
 		if err != nil {
