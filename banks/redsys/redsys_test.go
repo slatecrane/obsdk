@@ -131,19 +131,19 @@ func (h *fakeHub) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if r.Header.Get("TPP-Nok-Redirect-URI") != "" {
 		t.Error("TPP-Nok-Redirect-URI sent (the hub allows 50 characters)")
 	}
-	const cons, pay = "/api/BBVA/v1/consents/c-1", "/api/BBVA/v1/payments/sepa-credit-transfers/p-1"
+	const cons, pay = "/api/BBVA/v1.1/consents/c-1", "/api/BBVA/v1.1/payments/sepa-credit-transfers/p-1"
 	switch r.Method + " " + r.URL.Path {
 	case "POST /api/BBVA/v1.1/consents":
 		if r.Header.Get("TPP-Redirect-URI") != "https://app.example/cb" {
 			t.Errorf("TPP-Redirect-URI %q", r.Header.Get("TPP-Redirect-URI"))
 		}
 		reply(201, map[string]any{"consentStatus": "received", "consentId": "c-1", "_links": map[string]any{
-			"scaRedirect": map[string]string{"href": "https://bank.example/sca"}, "status": map[string]string{"href": "/v1/consents/c-1/status"}}})
+			"scaRedirect": map[string]string{"href": "https://bank.example/sca"}, "status": map[string]string{"href": "/v1.1/consents/c-1/status"}}})
 	case "GET " + cons + "/status":
 		reply(200, map[string]string{"consentStatus": "valid"})
 	case "GET " + cons:
 		reply(200, map[string]any{"validUntil": "2027-04-17", "consentStatus": "valid"})
-	case "GET /api/BBVA/v1/accounts":
+	case "GET /api/BBVA/v1.1/accounts":
 		if r.Header.Get("Consent-ID") != "c-1" {
 			t.Errorf("Consent-ID %q", r.Header.Get("Consent-ID"))
 		}
@@ -247,8 +247,8 @@ func TestConnectWithPreStep(t *testing.T) {
 	if ns.AccessToken != "at-2" || ns.RefreshToken != "rt-1" {
 		t.Errorf("refreshed session %+v", ns)
 	}
-	want := []string{"POST /oauth/BBVA/token", "POST /api/BBVA/v1.1/consents", "GET /api/BBVA/v1/consents/c-1/status",
-		"GET /api/BBVA/v1/consents/c-1", "GET /api/BBVA/v1/accounts", "POST /oauth/BBVA/token", "GET /api/BBVA/v1/consents/c-1/status"}
+	want := []string{"POST /oauth/BBVA/token", "POST /api/BBVA/v1.1/consents", "GET /api/BBVA/v1.1/consents/c-1/status",
+		"GET /api/BBVA/v1.1/consents/c-1", "GET /api/BBVA/v1.1/accounts", "POST /oauth/BBVA/token", "GET /api/BBVA/v1.1/consents/c-1/status"}
 	if strings.Join(h.calls, "\n") != strings.Join(want, "\n") {
 		t.Errorf("calls:\n%s\nwant:\n%s", strings.Join(h.calls, "\n"), strings.Join(want, "\n"))
 	}

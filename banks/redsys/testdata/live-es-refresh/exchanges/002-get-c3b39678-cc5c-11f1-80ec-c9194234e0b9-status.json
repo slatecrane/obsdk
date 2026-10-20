@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/consents/c3b39678-cc5c-11f1-80ec-c9194234e0b9/status",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:4f640b",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "Signature": "keyId=\"SN=1,CA=CN=obsdk,OU=HUB-PSD2,O=HUB-PSD2,L=MAD,ST=MAD,C=ES\",algorithm=\"SHA-256\",headers=\"digest x-request-id\",signature=\"HInYPXn/5CyxVmpGcnipErEoP23FkUZlFY8Zus1jXlWY8uKQUubffGKCFCbIMO/SZx52AJIMvhoulxzdD59Y1xa9GK1Z+POovhiqkXujpFzg8mF+Q18GjfhBxf1a6/2wCofw97olma2JDfZYU8q6MaaH6C519THTohuk2hghq4JmiiKkQndT81WFKJKeIkIRO8S1Q8SGHeNb5dG6tW64mHDJMN3jLtiXwlWnoTrzX+zYV9Vvstn45uTAjjne/O4BjeGrvn5oAW6XG3ZBm05N1Fdg6zil9/rmjrOw3tYmazd4bdzaegm0j3bg2rIWnDrYads1wINYdD9AKiGSSIeF2g==\"",
+      "Tpp-Signature-Certificate": "MIID2zCCAsOgAwIBAgIBATANBgkqhkiG9w0BAQsFADBfMQ4wDAYDVQQDDAVvYnNkazERMA8GA1UECwwISFVCLVBTRDIxETAPBgNVBAoMCEhVQi1QU0QyMQwwCgYDVQQHDANNQUQxDDAKBgNVBAgMA01BRDELMAkGA1UEBhMCRVMwHhcNMjYxMDIwMDc1MzM4WhcNMjcxMDIwMDc1MzM4WjCBgTEOMAwGA1UEAwwFb2JzZGsxETAPBgNVBAsMCEhVQi1QU0QyMREwDwYDVQQKDAhIVUItUFNEMjEMMAoGA1UEBwwDTUFEMQwwCgYDVQQIDANNQUQxCzAJBgNVBAYTAkVTMSAwHgYDVQRhDBdQU0RFUy1CREUtMTc5MjQ4MjgxNTMyMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMMrXL9BCZnGyG2uYBY110SuIF7HmuGOl8Q38B5bihwjn8yKrgPsnIXNOg1qQX4lVBQcc9xrNhuYpbmmqQPukkV/soeilcvOBROaSUuFw5Ze8/AiVb+Y6MVuo3sCr4byYkmDgtS9OWcjsgHVDZmtBVJ+EgivDJ6XyEV36EBDsWCT56wB6dqGMsyKBvxeaWEmTvyHgmeL+Lbt5LUj1jh+Ku5mvC/KeKEtXEknouBsRV8PFJDKFtEQV22fu7R/xsmlgoSc2utyAoTJVPs7xoDLvdB64Vyjd6QYOZw2qfCzUNMcsrCB51gJWgQQF4p/wZ7KEOTm2edbLw0xBKFHUtqUSKECAwEAAaN/MH0wcAYIKwYBBQUHAQMEZDBiBgYEAIGYJwIwWDARBgcEAIGYJwECDAZQU1BfUEkwEQYHBACBmCcBAwwGUFNQX0FJMBEGBwQAgZgnAQQMBlBTUF9JQwwYQmFuY28lMjBkZSUyMEVzcGElQzMlQjFhDANCREUwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAQEAJLY5tzaesnffgy0+UgdGOrGMfP/V6TVdJMffpSGNo7mxcYDCP3ZgbhIvgi+WAODsJSCZ6M7S3iIuaKnVJb1mazS+DUWAhFH6tiNBZXiY7RdZHO1gSThWQ1Z1i7/7OTHP/E8es29Aw3W2u06CBKD+y8MFMRQ/JuxApKxn/TTRhnETDunmoB/lBz/42aGCF+Rby6hsSkCX21SKKZUQeuFbA0mnNzzrRsXTYBaiUxA3744iJiEgrywFmfQd6NvMa+v/gKXB94rkPn0LLM4LFOoVW8hKQZh3s8hVddyHtYYwLjLJ2o0Hw2zW23ZztjDjUb65b6S1i/0C0QorDqouuvmP5w=="
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "fd584ad4-e465-4446-9e33-cb33f2b121ac"
+    },
+    "body": {
+      "consentStatus": "valid"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/accounts",
+    "query": {
+      "withBalance": [
+        "true"
+      ]
+    },
+    "headers": {
+      "Authorization": "Bearer at-1",
+      "Consent-ID": "c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accounts": [
+        {
+          "resourceId": "ES2501822200160201933547-EUR",
+          "iban": "ES2501822200160201933547",
+          "currency": "EUR",
+          "name": "Cuenta Online",
+          "product": "Cuenta Corriente",
+          "ownerName": "Usuario Uno",
+          "cashAccountType": "CACC",
+          "status": "enabled",
+          "bic": "BBVAESMMXXX",
+          "balances": [
+            {
+              "balanceType": "closingBooked",
+              "balanceAmount": {
+                "currency": "EUR",
+                "amount": "1523.42"
+              },
+              "referenceDate": "2026-10-18"
+            }
+          ],
+          "_links": {
+            "balances": {
+              "href": "/v1.1/accounts/ES2501822200160201933547-EUR/balances"
+            },
+            "transactions": {
+              "href": "/v1.1/accounts/ES2501822200160201933547-EUR/transactions"
+            }
+          }
+        },
+        {
+          "resourceId": "ES4901822200110201933554-EUR",
+          "iban": "ES4901822200110201933554",
+          "currency": "EUR",
+          "name": "Cuenta Ahorro",
+          "product": "Depósito",
+          "ownerName": "Usuario Uno",
+          "cashAccountType": "SVGS",
+          "status": "enabled",
+          "bic": "BBVAESMMXXX",
+          "_links": {
+            "balances": {
+              "href": "/v1.1/accounts/ES4901822200110201933554-EUR/balances"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

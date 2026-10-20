@@ -1,0 +1,60 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/payments/sepa-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:f5b701",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=Qioq/XBuuNAxoV8bh0uY5+bEOZI+Y97RQQQNYRweBrU=",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "keyId=\"SN=1,CA=CN=obsdk,OU=HUB-PSD2,O=HUB-PSD2,L=MAD,ST=MAD,C=ES\",algorithm=\"SHA-256\",headers=\"digest x-request-id tpp-redirect-uri\",signature=\"hJ22/DkEu2LEM9QMeLldLTWeCWO12Iowybw+Zu0xSSHqXOAvIZmrDvSerXg7TvWZSpXGb+AwHn048GU63G7skn5zCmGMfcCGQMN9umiXeu9+miHvscs1tfHMeaH3vctpW5jRdhDX5wzd7aXPl7ZIY9LOjOKutvC/7aq7YLGx2pU1AL0PM9R1DyTz6yPVKtjVIMB2jVUvV8bPWY2Qvf/wTCJ+xYh27rqBhHPdzVOWILR/B3KYain3D6GcbZBO9sEnvv+4v2uBAuoD3VtO5Snlv9JxRCIZbUBo02IfLqXDAYY1Wx5+JKZcyxmpMagdKZSrRftiUmTStG1D+G0/NrKLLQ==\"",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://example.com/callback",
+      "Tpp-Signature-Certificate": "MIID2zCCAsOgAwIBAgIBATANBgkqhkiG9w0BAQsFADBfMQ4wDAYDVQQDDAVvYnNkazERMA8GA1UECwwISFVCLVBTRDIxETAPBgNVBAoMCEhVQi1QU0QyMQwwCgYDVQQHDANNQUQxDDAKBgNVBAgMA01BRDELMAkGA1UEBhMCRVMwHhcNMjYxMDIwMDc1MzM4WhcNMjcxMDIwMDc1MzM4WjCBgTEOMAwGA1UEAwwFb2JzZGsxETAPBgNVBAsMCEhVQi1QU0QyMREwDwYDVQQKDAhIVUItUFNEMjEMMAoGA1UEBwwDTUFEMQwwCgYDVQQIDANNQUQxCzAJBgNVBAYTAkVTMSAwHgYDVQRhDBdQU0RFUy1CREUtMTc5MjQ4MjgxNTMyMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMMrXL9BCZnGyG2uYBY110SuIF7HmuGOl8Q38B5bihwjn8yKrgPsnIXNOg1qQX4lVBQcc9xrNhuYpbmmqQPukkV/soeilcvOBROaSUuFw5Ze8/AiVb+Y6MVuo3sCr4byYkmDgtS9OWcjsgHVDZmtBVJ+EgivDJ6XyEV36EBDsWCT56wB6dqGMsyKBvxeaWEmTvyHgmeL+Lbt5LUj1jh+Ku5mvC/KeKEtXEknouBsRV8PFJDKFtEQV22fu7R/xsmlgoSc2utyAoTJVPs7xoDLvdB64Vyjd6QYOZw2qfCzUNMcsrCB51gJWgQQF4p/wZ7KEOTm2edbLw0xBKFHUtqUSKECAwEAAaN/MH0wcAYIKwYBBQUHAQMEZDBiBgYEAIGYJwIwWDARBgcEAIGYJwECDAZQU1BfUEkwEQYHBACBmCcBAwwGUFNQX0FJMBEGBwQAgZgnAQQMBlBTUF9JQwwYQmFuY28lMjBkZSUyMEVzcGElQzMlQjFhDANCREUwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAQEAJLY5tzaesnffgy0+UgdGOrGMfP/V6TVdJMffpSGNo7mxcYDCP3ZgbhIvgi+WAODsJSCZ6M7S3iIuaKnVJb1mazS+DUWAhFH6tiNBZXiY7RdZHO1gSThWQ1Z1i7/7OTHP/E8es29Aw3W2u06CBKD+y8MFMRQ/JuxApKxn/TTRhnETDunmoB/lBz/42aGCF+Rby6hsSkCX21SKKZUQeuFbA0mnNzzrRsXTYBaiUxA3744iJiEgrywFmfQd6NvMa+v/gKXB94rkPn0LLM4LFOoVW8hKQZh3s8hVddyHtYYwLjLJ2o0Hw2zW23ZztjDjUb65b6S1i/0C0QorDqouuvmP5w=="
+    },
+    "body": {
+      "creditorAccount": {
+        "iban": "ES71PSEUDO184C770990"
+      },
+      "creditorName": "creditorname-bdbf67",
+      "debtorAccount": {
+        "currency": "EUR",
+        "iban": "ES87PSEUDOC749922DD7"
+      },
+      "instructedAmount": {
+        "amount": "12.34",
+        "currency": "EUR"
+      },
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-8e3f15"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "REDIRECT",
+      "Content-Type": "application/json",
+      "Location": "/v1.1/payments/sepa-credit-transfers/3aa0d72a-cc5d-11f1-80ec-c9194234e0b9",
+      "X-Request-Id": "61a954b8-5626-4b4a-b799-a9b10f4a5cb5"
+    },
+    "body": {
+      "_links": {
+        "scaRedirect": {
+          "href": "https://hub-i.redsys.es:16443/api-oauth-xs2a-sb/services/rest/sca/v1.1/eyJ6aXAiOiJERUYiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eNqqVipKLc4vLUpO9UxRslIyTkw0SDE3StRNTjZN0TU0TDPUtTBITdZNtjS0NDEyNkk1SLJU0oHrCaksSAXqCsgsDs7MS89JVaoFAAAA__8.5UAlCCpGbsHVvmlW0Fik2UNTg1a2O1SCHoUtEmdtpdY"
+        },
+        "scaStatus": {
+          "href": "/v1.1/payments/sepa-credit-transfers/3aa0d72a-cc5d-11f1-80ec-c9194234e0b9/authorisations/3aa0d72a-cc5d-11f1-80ec-c9194234e0b9"
+        },
+        "self": {
+          "href": "/v1.1/payments/sepa-credit-transfers/3aa0d72a-cc5d-11f1-80ec-c9194234e0b9"
+        },
+        "status": {
+          "href": "/v1.1/payments/sepa-credit-transfers/3aa0d72a-cc5d-11f1-80ec-c9194234e0b9/status"
+        }
+      },
+      "paymentId": "3aa0d72a-cc5d-11f1-80ec-c9194234e0b9",
+      "transactionStatus": "RCVD"
+    }
+  }
+}

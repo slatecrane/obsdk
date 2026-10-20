@@ -1,0 +1,68 @@
+{
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-20T08:06:12Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "aspsp": "BBVA"
+    },
+    "ids": {
+      "pkce": [
+        "e053519a-5014-4ede-95f4-2397bf6dc992",
+        "2596d6eb-df37-409f-857a-d6be4cb80052"
+      ],
+      "request": [
+        "61a954b8-5626-4b4a-b799-a9b10f4a5cb5",
+        "376759fc-b4f8-4591-94de-3824afe5a517",
+        "f0d12b7b-9872-4ced-8dcc-1fa33c2caa63"
+      ],
+      "state": [
+        "eb10bb13-b0e3-452a-96ca-0af17215d007"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "ES87PSEUDOC749922DD7"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-bdbf67",
+              "account": {
+                "scheme": "IBAN",
+                "value": "ES71PSEUDO184C770990"
+              }
+            },
+            "remittance": [
+              "Factura 2026-117"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback?code=REDACTED%3Acode%3Add4279\u0026state=eb10bb13-b0e3-452a-96ca-0af17215d007"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback"
+    }
+  ]
+}

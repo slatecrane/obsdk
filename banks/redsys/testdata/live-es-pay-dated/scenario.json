@@ -1,0 +1,59 @@
+{
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-20T08:08:13Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "aspsp": "BBVA"
+    },
+    "ids": {
+      "request": [
+        "77fa2a98-24b3-4ad2-859f-eb95a1a2f1bd",
+        "d4812161-9e89-448c-9a0b-4afccfeeea8e",
+        "eab55c62-d892-412d-b0b1-735536d1e858"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "ES87PSEUDOC749922DD7"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "5.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-bdbf67",
+              "account": {
+                "scheme": "IBAN",
+                "value": "ES71PSEUDO184C770990"
+              }
+            },
+            "remittance": [
+              "Alquiler noviembre"
+            ]
+          }
+        ],
+        "execution_date": "2026-11-02",
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback"
+    }
+  ]
+}

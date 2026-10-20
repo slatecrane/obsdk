@@ -1,0 +1,54 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/consents",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:12f156",
+      "Content-Type": "application/json",
+      "Digest": "SHA-256=AY5JSZQW32V9eLrZQl1I2eO8rRe5nnay4566LJenFOI=",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "keyId=\"SN=1,CA=CN=obsdk,OU=HUB-PSD2,O=HUB-PSD2,L=MAD,ST=MAD,C=ES\",algorithm=\"SHA-256\",headers=\"digest x-request-id tpp-redirect-uri\",signature=\"UYnJVv42xMe47djJOBo/tArZv0ZWKHJqevBDJzxRiuqD8pgBPrUm3gZvAiCvRagCAwlOgEKvXzdmebCuiIdd0Cw3N8AgOtxmcVzPdrv0kLBqqtY032gndy4sv/WHFVB1P9QU/WfmLTn+uznUsVgLybOQ73b44mgGwHTVSo6p2FemGDoZE+1yMbU5lQgMr6RTKzAWy0V9gbvldGWTFz7jfqT59dXirNtnaDoQonIokNttKEwJadxL6jVr22Bx7gM9ugWmXaKR6KvBJ5a7sXVWkSLjTGrtYeXeXQlko5/k1YbLmY3fayp2TSk/9DObpH+J/oQiVxZ7GhvCgJ1Bl9MK3A==\"",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://example.com/callback",
+      "Tpp-Signature-Certificate": "MIID2zCCAsOgAwIBAgIBATANBgkqhkiG9w0BAQsFADBfMQ4wDAYDVQQDDAVvYnNkazERMA8GA1UECwwISFVCLVBTRDIxETAPBgNVBAoMCEhVQi1QU0QyMQwwCgYDVQQHDANNQUQxDDAKBgNVBAgMA01BRDELMAkGA1UEBhMCRVMwHhcNMjYxMDIwMDc1MzM4WhcNMjcxMDIwMDc1MzM4WjCBgTEOMAwGA1UEAwwFb2JzZGsxETAPBgNVBAsMCEhVQi1QU0QyMREwDwYDVQQKDAhIVUItUFNEMjEMMAoGA1UEBwwDTUFEMQwwCgYDVQQIDANNQUQxCzAJBgNVBAYTAkVTMSAwHgYDVQRhDBdQU0RFUy1CREUtMTc5MjQ4MjgxNTMyMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMMrXL9BCZnGyG2uYBY110SuIF7HmuGOl8Q38B5bihwjn8yKrgPsnIXNOg1qQX4lVBQcc9xrNhuYpbmmqQPukkV/soeilcvOBROaSUuFw5Ze8/AiVb+Y6MVuo3sCr4byYkmDgtS9OWcjsgHVDZmtBVJ+EgivDJ6XyEV36EBDsWCT56wB6dqGMsyKBvxeaWEmTvyHgmeL+Lbt5LUj1jh+Ku5mvC/KeKEtXEknouBsRV8PFJDKFtEQV22fu7R/xsmlgoSc2utyAoTJVPs7xoDLvdB64Vyjd6QYOZw2qfCzUNMcsrCB51gJWgQQF4p/wZ7KEOTm2edbLw0xBKFHUtqUSKECAwEAAaN/MH0wcAYIKwYBBQUHAQMEZDBiBgYEAIGYJwIwWDARBgcEAIGYJwECDAZQU1BfUEkwEQYHBACBmCcBAwwGUFNQX0FJMBEGBwQAgZgnAQQMBlBTUF9JQwwYQmFuY28lMjBkZSUyMEVzcGElQzMlQjFhDANCREUwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAQEAJLY5tzaesnffgy0+UgdGOrGMfP/V6TVdJMffpSGNo7mxcYDCP3ZgbhIvgi+WAODsJSCZ6M7S3iIuaKnVJb1mazS+DUWAhFH6tiNBZXiY7RdZHO1gSThWQ1Z1i7/7OTHP/E8es29Aw3W2u06CBKD+y8MFMRQ/JuxApKxn/TTRhnETDunmoB/lBz/42aGCF+Rby6hsSkCX21SKKZUQeuFbA0mnNzzrRsXTYBaiUxA3744iJiEgrywFmfQd6NvMa+v/gKXB94rkPn0LLM4LFOoVW8hKQZh3s8hVddyHtYYwLjLJ2o0Hw2zW23ZztjDjUb65b6S1i/0C0QorDqouuvmP5w=="
+    },
+    "body": {
+      "access": {
+        "allPsd2": "allAccounts"
+      },
+      "combinedServiceIndicator": false,
+      "frequencyPerDay": 4,
+      "recurringIndicator": true,
+      "validUntil": "2027-04-18"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "REDIRECT",
+      "Content-Type": "application/json",
+      "Location": "/v1.1/consents/c3b39678-cc5c-11f1-80ec-c9194234e0b9",
+      "X-Request-Id": "aa574702-0cee-4023-851e-c0f32144905e"
+    },
+    "body": {
+      "_links": {
+        "scaRedirect": {
+          "href": "https://hub-i.redsys.es:16443/api-oauth-xs2a-sb/services/rest/sca/v1.1/eyJ6aXAiOiJERUYiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eNqqVipKLc4vLUpO9UxRslJKNk4ytjQzt9BNTjZN1jU0TDPUtTBITdZNtjS0NDEyNkk1SLJU0oHrCaksSAXqcswsds7PK07NK1GqBQAAAP__.__DrY5ULp8ICiix8wGi0gEKLawIxHSHWR0srtRZ8v9o"
+        },
+        "scaStatus": {
+          "href": "/v1.1/consents/c3b39678-cc5c-11f1-80ec-c9194234e0b9/authorisations/c3b39678-cc5c-11f1-80ec-c9194234e0b9"
+        },
+        "self": {
+          "href": "/v1.1/consents/c3b39678-cc5c-11f1-80ec-c9194234e0b9"
+        },
+        "status": {
+          "href": "/v1.1/consents/c3b39678-cc5c-11f1-80ec-c9194234e0b9/status"
+        }
+      },
+      "consentId": "c3b39678-cc5c-11f1-80ec-c9194234e0b9",
+      "consentStatus": "received"
+    }
+  }
+}

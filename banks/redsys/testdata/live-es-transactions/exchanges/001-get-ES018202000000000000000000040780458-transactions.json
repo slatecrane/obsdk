@@ -1,0 +1,495 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/xs2a/api-entrada-xs2a/services/BBVA/v1.1/accounts/ES018202000000000000000000040780458/transactions",
+    "query": {
+      "bookingStatus": [
+        "booked"
+      ],
+      "dateFrom": [
+        "2026-07-01"
+      ],
+      "dateTo": [
+        "2026-10-20"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:12f156",
+      "Consent-Id": "c3b39678-cc5c-11f1-80ec-c9194234e0b9",
+      "Digest": "SHA-256=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "keyId=\"SN=1,CA=CN=obsdk,OU=HUB-PSD2,O=HUB-PSD2,L=MAD,ST=MAD,C=ES\",algorithm=\"SHA-256\",headers=\"digest x-request-id\",signature=\"XIsHMyFsstwnAn7E6NnZlDik6Njweny5MMvZAHgm7JhSKio9cOBkNqv/OKEW+Hf2OAx3kz1jIgSEGfW+7fPqGDkQvJwqBH+zUK0gs2EVblBmCSnQHzhCHTuSyU7xg/c3MvI5MIR5q8Z7Y0VeIfIR5XROpPcQq1RBS72XAD2wbA7nr9B3IIR1+5CwwMdZaTNX50SKS2N2SEH1/4B8JIR7uoQ7Yk7mbsw8nJytIFXEg3eCH7aJszEiJPoVWKUztia3nl05xm/zYPqhrTwV8j0ce0pzEi8ypcIf3hWyBJoGiqUfvY0hyITIx6y7EPCPdgxpsR3Fz9EpfFe+Te93GUZYKw==\"",
+      "Tpp-Signature-Certificate": "MIID2zCCAsOgAwIBAgIBATANBgkqhkiG9w0BAQsFADBfMQ4wDAYDVQQDDAVvYnNkazERMA8GA1UECwwISFVCLVBTRDIxETAPBgNVBAoMCEhVQi1QU0QyMQwwCgYDVQQHDANNQUQxDDAKBgNVBAgMA01BRDELMAkGA1UEBhMCRVMwHhcNMjYxMDIwMDc1MzM4WhcNMjcxMDIwMDc1MzM4WjCBgTEOMAwGA1UEAwwFb2JzZGsxETAPBgNVBAsMCEhVQi1QU0QyMREwDwYDVQQKDAhIVUItUFNEMjEMMAoGA1UEBwwDTUFEMQwwCgYDVQQIDANNQUQxCzAJBgNVBAYTAkVTMSAwHgYDVQRhDBdQU0RFUy1CREUtMTc5MjQ4MjgxNTMyMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMMrXL9BCZnGyG2uYBY110SuIF7HmuGOl8Q38B5bihwjn8yKrgPsnIXNOg1qQX4lVBQcc9xrNhuYpbmmqQPukkV/soeilcvOBROaSUuFw5Ze8/AiVb+Y6MVuo3sCr4byYkmDgtS9OWcjsgHVDZmtBVJ+EgivDJ6XyEV36EBDsWCT56wB6dqGMsyKBvxeaWEmTvyHgmeL+Lbt5LUj1jh+Ku5mvC/KeKEtXEknouBsRV8PFJDKFtEQV22fu7R/xsmlgoSc2utyAoTJVPs7xoDLvdB64Vyjd6QYOZw2qfCzUNMcsrCB51gJWgQQF4p/wZ7KEOTm2edbLw0xBKFHUtqUSKECAwEAAaN/MH0wcAYIKwYBBQUHAQMEZDBiBgYEAIGYJwIwWDARBgcEAIGYJwECDAZQU1BfUEkwEQYHBACBmCcBAwwGUFNQX0FJMBEGBwQAgZgnAQQMBlBTUF9JQwwYQmFuY28lMjBkZSUyMEVzcGElQzMlQjFhDANCREUwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAQEAJLY5tzaesnffgy0+UgdGOrGMfP/V6TVdJMffpSGNo7mxcYDCP3ZgbhIvgi+WAODsJSCZ6M7S3iIuaKnVJb1mazS+DUWAhFH6tiNBZXiY7RdZHO1gSThWQ1Z1i7/7OTHP/E8es29Aw3W2u06CBKD+y8MFMRQ/JuxApKxn/TTRhnETDunmoB/lBz/42aGCF+Rby6hsSkCX21SKKZUQeuFbA0mnNzzrRsXTYBaiUxA3744iJiEgrywFmfQd6NvMa+v/gKXB94rkPn0LLM4LFOoVW8hKQZh3s8hVddyHtYYwLjLJ2o0Hw2zW23ZztjDjUb65b6S1i/0C0QorDqouuvmP5w=="
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "56d87aa2-0fb0-41e9-97c4-41cda1a4a2e0"
+    },
+    "body": {
+      "account": {
+        "iban": "ES68PSEUDOE4923679FB"
+      },
+      "transactions": {
+        "_links": {
+          "account": {
+            "href": "/v1.1/accounts/ES018202000000000000000000040780458"
+          },
+          "next": {
+            "href": "/v1.1/accounts/ES018202000000000000000000040780458/transactions?link=eyJ6aXAiOiJERUYiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eNpki7EOgjAURf-lA5O1r02BakKcNHEVBxPj8CiVEKQ1bXHQ-O-WMHqne07u_ZDoL6cj2ZK8aFWJKCjcG6CSmw3dlFqmplvkKFEYICvy6O2Q1uzF15yh1m6yMbB9DVwJEPAfCaUCmSsWPdqAOvbOhl2L0Ry8G6t0KiiUFHg2u7NbDAcqIGucG3rb1RHjFKqZTJs9sTNXO42N8bdKLBj6t0kA5PsDAAD__w.cdelC1YYNqk577tRpjFffAKlb6KqBL_WJNKzFTYFM_U"
+          }
+        },
+        "booked": [
+          {
+            "bookingDate": "2026-07-01",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES19PSEUDOFB978C2DF5"
+            },
+            "creditorName": "creditorname-211fbf",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-23849a",
+            "remittanceInformationStructured": "remittanceinformationstructured-eff4ee",
+            "transactionAmount": {
+              "amount": "343.81",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354548",
+            "ultimateCreditor": "ultimatecreditor-211fbf",
+            "ultimateDebtor": "ultimatedebtor-23849a",
+            "valueDate": "2026-06-21"
+          },
+          {
+            "bookingDate": "2026-07-01",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES25PSEUDO9BE9362DBE"
+            },
+            "creditorName": "creditorname-211fbf",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-4ca501",
+            "remittanceInformationStructured": "remittanceinformationstructured-d630ee",
+            "transactionAmount": {
+              "amount": "537.77",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354551",
+            "ultimateCreditor": "ultimatecreditor-211fbf",
+            "ultimateDebtor": "ultimatedebtor-4ca501",
+            "valueDate": "2026-06-25"
+          },
+          {
+            "bookingDate": "2026-07-08",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES95PSEUDOD910562DE1"
+            },
+            "creditorName": "creditorname-702a54",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-280c8f",
+            "remittanceInformationStructured": "remittanceinformationstructured-0eb786",
+            "transactionAmount": {
+              "amount": "607.16",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354439",
+            "ultimateCreditor": "ultimatecreditor-702a54",
+            "ultimateDebtor": "ultimatedebtor-280c8f",
+            "valueDate": "2026-07-01"
+          },
+          {
+            "bookingDate": "2026-07-09",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES81PSEUDOD8FF552DE1"
+            },
+            "creditorName": "creditorname-41af28",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-702a54",
+            "mandateId": "ES12ZZZ123459",
+            "remittanceInformationStructured": "remittanceinformationstructured-0eb786",
+            "transactionAmount": {
+              "amount": "191.15",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354192",
+            "ultimateCreditor": "ultimatecreditor-41af28",
+            "ultimateDebtor": "ultimatedebtor-702a54",
+            "valueDate": "2026-07-01"
+          },
+          {
+            "bookingDate": "2026-07-09",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES73PSEUDOC735142DD7"
+            },
+            "creditorName": "creditorname-15678a",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-280c8f",
+            "remittanceInformationStructured": "remittanceinformationstructured-1579df",
+            "transactionAmount": {
+              "amount": "395.16",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354105",
+            "ultimateCreditor": "ultimatecreditor-15678a",
+            "ultimateDebtor": "ultimatedebtor-280c8f",
+            "valueDate": "2026-07-08"
+          },
+          {
+            "bookingDate": "2026-07-15",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES02PSEUDOC743052DD7"
+            },
+            "creditorName": "creditorname-6c141c",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-702a54",
+            "remittanceInformationStructured": "remittanceinformationstructured-d630ee",
+            "transactionAmount": {
+              "amount": "897.28",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354985",
+            "ultimateCreditor": "ultimatecreditor-6c141c",
+            "ultimateDebtor": "ultimatedebtor-702a54",
+            "valueDate": "2026-07-09"
+          },
+          {
+            "bookingDate": "2026-07-19",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES06PSEUDOBE33632DD2"
+            },
+            "creditorName": "creditorname-6e3736",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-211fbf",
+            "remittanceInformationStructured": "remittanceinformationstructured-6736cd",
+            "transactionAmount": {
+              "amount": "446.89",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354798",
+            "ultimateCreditor": "ultimatecreditor-6e3736",
+            "ultimateDebtor": "ultimatedebtor-211fbf",
+            "valueDate": "2026-07-09"
+          },
+          {
+            "bookingDate": "2026-07-17",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES25PSEUDOD055BC2DDC"
+            },
+            "creditorName": "creditorname-702a54",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-23849a",
+            "mandateId": "ES12ZZZ152456",
+            "remittanceInformationStructured": "remittanceinformationstructured-6736cd",
+            "transactionAmount": {
+              "amount": "129.43",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354329",
+            "ultimateCreditor": "ultimatecreditor-702a54",
+            "ultimateDebtor": "ultimatedebtor-23849a",
+            "valueDate": "2026-07-15"
+          },
+          {
+            "bookingDate": "2026-07-27",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES94PSEUDOFB90822DF5"
+            },
+            "creditorName": "creditorname-c8dede",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-15678a",
+            "mandateId": "ES12ZZZ152456",
+            "remittanceInformationStructured": "remittanceinformationstructured-2de650",
+            "transactionAmount": {
+              "amount": "263.78",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354417",
+            "ultimateCreditor": "ultimatecreditor-c8dede",
+            "ultimateDebtor": "ultimatedebtor-15678a",
+            "valueDate": "2026-07-17"
+          },
+          {
+            "bookingDate": "2026-07-25",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES44PSEUDOBE335C2DD2"
+            },
+            "creditorName": "creditorname-702a54",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-c8dede",
+            "remittanceInformationStructured": "remittanceinformationstructured-4e3f17",
+            "transactionAmount": {
+              "amount": "913.82",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354324",
+            "ultimateCreditor": "ultimatecreditor-702a54",
+            "ultimateDebtor": "ultimatedebtor-c8dede",
+            "valueDate": "2026-07-19"
+          },
+          {
+            "bookingDate": "2026-08-01",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES78PSEUDOD0482D2DDC"
+            },
+            "creditorName": "creditorname-c8dede",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-6c141c",
+            "remittanceInformationStructured": "remittanceinformationstructured-4e3f17",
+            "transactionAmount": {
+              "amount": "962.15",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354224",
+            "ultimateCreditor": "ultimatecreditor-c8dede",
+            "ultimateDebtor": "ultimatedebtor-6c141c",
+            "valueDate": "2026-07-25"
+          },
+          {
+            "bookingDate": "2026-08-02",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES63PSEUDOBE0DD82DD2"
+            },
+            "creditorName": "creditorname-6c141c",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-c8dede",
+            "mandateId": "ES12ZZZ123459",
+            "remittanceInformationStructured": "remittanceinformationstructured-d630ee",
+            "transactionAmount": {
+              "amount": "314.92",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354203",
+            "ultimateCreditor": "ultimatecreditor-6c141c",
+            "ultimateDebtor": "ultimatedebtor-c8dede",
+            "valueDate": "2026-07-27"
+          },
+          {
+            "bookingDate": "2026-08-08",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES64PSEUDOD0413E2DDC"
+            },
+            "creditorName": "creditorname-41af28",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-4ca501",
+            "remittanceInformationStructured": "remittanceinformationstructured-abc6f3",
+            "transactionAmount": {
+              "amount": "971.18",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354194",
+            "ultimateCreditor": "ultimatecreditor-41af28",
+            "ultimateDebtor": "ultimatedebtor-4ca501",
+            "valueDate": "2026-08-01"
+          },
+          {
+            "bookingDate": "2026-08-06",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES32PSEUDOD037312DDC"
+            },
+            "creditorName": "creditorname-211fbf",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-4ca501",
+            "remittanceInformationStructured": "remittanceinformationstructured-6736cd",
+            "transactionAmount": {
+              "amount": "715.54",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354564",
+            "ultimateCreditor": "ultimatecreditor-211fbf",
+            "ultimateDebtor": "ultimatedebtor-4ca501",
+            "valueDate": "2026-08-02"
+          },
+          {
+            "bookingDate": "2026-08-15",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES18PSEUDOE967A82DEA"
+            },
+            "creditorName": "creditorname-15678a",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-c8dede",
+            "transactionAmount": {
+              "amount": "909.92",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354458",
+            "ultimateCreditor": "ultimatecreditor-15678a",
+            "ultimateDebtor": "ultimatedebtor-c8dede",
+            "valueDate": "2026-08-06"
+          },
+          {
+            "bookingDate": "2026-08-10",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES47PSEUDOD055B52DDC"
+            },
+            "creditorName": "creditorname-702a54",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-c8dede",
+            "mandateId": "ES12ZZZ123459",
+            "transactionAmount": {
+              "amount": "817.53",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354394",
+            "ultimateCreditor": "ultimatecreditor-702a54",
+            "ultimateDebtor": "ultimatedebtor-c8dede",
+            "valueDate": "2026-08-08"
+          },
+          {
+            "bookingDate": "2026-08-10",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES35PSEUDOD8F8552DE1"
+            },
+            "creditorName": "creditorname-41af28",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-15678a",
+            "remittanceInformationStructured": "remittanceinformationstructured-d630ee",
+            "transactionAmount": {
+              "amount": "234.63",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354880",
+            "ultimateCreditor": "ultimatecreditor-41af28",
+            "ultimateDebtor": "ultimatedebtor-15678a",
+            "valueDate": "2026-08-10"
+          },
+          {
+            "bookingDate": "2026-08-12",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES49PSEUDOE960A92DEA"
+            },
+            "creditorName": "creditorname-702a54",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-15678a",
+            "remittanceInformationStructured": "remittanceinformationstructured-eff4ee",
+            "transactionAmount": {
+              "amount": "264.70",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354731",
+            "ultimateCreditor": "ultimatecreditor-702a54",
+            "ultimateDebtor": "ultimatedebtor-15678a",
+            "valueDate": "2026-08-10"
+          },
+          {
+            "bookingDate": "2026-08-14",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES63PSEUDOD0482E2DDC"
+            },
+            "creditorName": "creditorname-702a54",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-41af28",
+            "mandateId": "ES12ZZZ123459",
+            "remittanceInformationStructured": "remittanceinformationstructured-abc6f3",
+            "transactionAmount": {
+              "amount": "509.11",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354681",
+            "ultimateCreditor": "ultimatecreditor-702a54",
+            "ultimateDebtor": "ultimatedebtor-41af28",
+            "valueDate": "2026-08-12"
+          },
+          {
+            "bookingDate": "2026-08-15",
+            "creditorAccount": {
+              "currency": "EUR",
+              "iban": "ES95PSEUDOD8FBDA2DE1"
+            },
+            "creditorName": "creditorname-280c8f",
+            "debtorAccount": {
+              "currency": "EUR",
+              "iban": "ES68PSEUDOE4923679FB"
+            },
+            "debtorName": "debtorname-702a54",
+            "remittanceInformationStructured": "remittanceinformationstructured-1579df",
+            "transactionAmount": {
+              "amount": "376.15",
+              "currency": "EUR"
+            },
+            "transactionId": "2100000006171445291902139841354622",
+            "ultimateCreditor": "ultimatecreditor-280c8f",
+            "ultimateDebtor": "ultimatedebtor-702a54",
+            "valueDate": "2026-08-14"
+          }
+        ]
+      }
+    }
+  }
+}

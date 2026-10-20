@@ -93,11 +93,7 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	if !strings.HasPrefix(r.path, "/v1/") {
 		return nil, fmt.Errorf("berlingroup: refusing to call %q: not an XS2A path", r.path)
 	}
-	version := c.p.versionFor(r.path)
-	if c.p.CreatePathVersion != "" && isCreate(r.method, r.path) {
-		version = c.p.CreatePathVersion
-	}
-	u, err := url.Parse(c.base + "/" + version + strings.TrimPrefix(r.path, "/v1"))
+	u, err := url.Parse(c.base + "/" + c.p.versionFor(r.path) + strings.TrimPrefix(r.path, "/v1"))
 	if err != nil {
 		return nil, err
 	}
