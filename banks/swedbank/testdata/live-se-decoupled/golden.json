@@ -357,7 +357,7 @@
       "accounts": [
         {
           "id": "AsdF01234EfgH4567",
-          "stable_id": "6ef982a1b6485cfc8862c15dc4ff1f82",
+          "stable_id": "9bc81299097e690c799d0b8c0c1607e0",
           "identifiers": [
             {
               "scheme": "IBAN",
@@ -393,7 +393,7 @@
         },
         {
           "id": "AbcD1234eFgH568",
-          "stable_id": "aa6eed66a13e0158fe2d0a58a0258ec5",
+          "stable_id": "8b83a0a788cbb9de30124d883bf42616",
           "identifiers": [
             {
               "scheme": "IBAN",
@@ -435,7 +435,7 @@
         },
         {
           "id": "Baas786DD5886RT",
-          "stable_id": "ef7df4c2c76d6206450564fcb9bcad8f",
+          "stable_id": "63ed034fd43ec2e95f25b0eedee905f9",
           "identifiers": [
             {
               "scheme": "IBAN",
@@ -471,7 +471,7 @@
         },
         {
           "id": "458A889B8889T784W",
-          "stable_id": "5ad83a8277dff72cd67dfa8561c3b65a",
+          "stable_id": "b7335e2be09e9d6f717f429868e0a5ae",
           "identifiers": [
             {
               "scheme": "IBAN",
@@ -507,7 +507,7 @@
         },
         {
           "id": "Vaal832ER5791IA",
-          "stable_id": "3d9e78181e0068c9b68fb09e1b933945",
+          "stable_id": "23665518e6a12500a114a21d2731eba5",
           "identifiers": [
             {
               "scheme": "IBAN",

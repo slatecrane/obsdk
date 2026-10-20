@@ -62,8 +62,7 @@ Built and run against the sandbox on 2026-10-20 from the portal's specifications
 ## Sandbox notes
 
 - The test data includes a multi-currency account: `EE634204278608993923` is listed twice, in EUR and SEK,
-  with different resource ids. Both get the same `StableID`, because `obsdk.StableAccountID` keys on the
-  IBAN alone.
+  with different resource ids. `StableID` includes the currency, so the two get different stable ids.
 - The account `EE634204278608972555` ("Current / Card Account") has wrong IBAN check digits; the SDK refuses
   it as a payee.
 - The sandbox writes "PSU 1" as the payee name of a transfer between its accounts, whatever was sent.

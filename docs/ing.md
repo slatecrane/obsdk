@@ -83,7 +83,7 @@ the application token. ING has no consent resource; revoking the refresh token e
 - **Account ids**: `Account.ID` is the `resourceId`, with `card~` in front of card accounts (their
   transactions live under `/card-accounts`), and `~CUR` behind Belgian multi-currency accounts. Those
   list one entry per currency under the same `resourceId` and IBAN; calls for them carry `currency`.
-  `StableID` includes the currency for these accounts.
+  `StableID` includes the currency, as for every account.
 - **Card accounts** (IT, LU, RO; listed in NL too) have a masked PAN instead of an IBAN, identifier
   scheme `MASKED_PAN`, `Type: CARD`, and their own transaction format (`cardTransactions`,
   `transactionDetails`).

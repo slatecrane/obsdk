@@ -41,7 +41,7 @@
       "accounts": [
         {
           "id": "1123456841",
-          "stable_id": "0787eb6e4864ae93dc876ff96bf387b5",
+          "stable_id": "3fc789b0bc14f1777ad3104bdd730328",
           "identifiers": [
             {
               "scheme": "SORT_CODE_ACCOUNT",
@@ -83,7 +83,7 @@
         },
         {
           "id": "123456791",
-          "stable_id": "5036fa1f6624f6f36c633506b3920910",
+          "stable_id": "dcf3f581e135f765dd927eaa1b2ede05",
           "identifiers": [
             {
               "scheme": "SORT_CODE_ACCOUNT",
@@ -131,7 +131,7 @@
         },
         {
           "id": "123456792",
-          "stable_id": "ee832b0195ae5bc06d92acd8201a4ac2",
+          "stable_id": "ee59c737fb3054170e8516e4e9e543a6",
           "identifiers": [
             {
               "scheme": "SORT_CODE_ACCOUNT",

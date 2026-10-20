@@ -4,7 +4,7 @@
     "accounts": [
       {
         "id": "sp-01-01",
-        "stable_id": "c1eb6bc3792daa39879eb2388739cf7f",
+        "stable_id": "0d233445dfc53b70ab3035fd07346403",
         "identifiers": [
           {
             "scheme": "IBAN",
@@ -54,7 +54,7 @@
       },
       {
         "id": "sp-01-02",
-        "stable_id": "981ef449d46bc56265ad26b74b8d497c",
+        "stable_id": "583fe098151ca57a94bbd27816a09a53",
         "identifiers": [
           {
             "scheme": "IBAN",

@@ -56,7 +56,7 @@ when given.
 ## Behaviors worth knowing
 
 - Several currency accounts share one IBAN and sort code. `Account.ID` (`AccountId`) is unique per
-  currency, and `StableID` includes the currency for that reason.
+  currency; `StableID` includes the currency (as for every bank).
 - Amounts are unsigned with `CreditDebitIndicator`; the SDK signs them. The counterparty is the
   creditor of a debit and the debtor of a credit, falling back to `MerchantDetails.MerchantName`.
   `SupplementaryData.StartedDate` (offline card payments) becomes `TransactionDate`.
