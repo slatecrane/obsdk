@@ -162,6 +162,17 @@ type Profile struct {
 	// serve those on a later version than payments (Samlink: "v2").
 	AISPathVersion string
 
+	// CreatePathVersion replaces the "v1" segment of the two requests that
+	// create a resource (POST /v1/consents, POST /v1/payments/{product}), for
+	// banks that versioned only those (Redsys: "v1.1"); every other path,
+	// and the links the bank returns, stay on "v1".
+	CreatePathVersion string
+
+	// PreStep is an OAuth2 authorisation the bank wants before any XS2A
+	// request (Redsys): the user logs in at the bank first, and every later
+	// request carries the access token. See PreStep.
+	PreStep *PreStep
+
 	// AllAccountsValue is the value of allPsd2 in a global consent. Empty is
 	// the standard's "allAccounts"; some banks spell it "all-accounts".
 	AllAccountsValue string
@@ -208,7 +219,17 @@ func (p *Profile) versionFor(path string) string {
 
 // linkVersions are the version segments links from the bank may use instead
 // of "v1".
-func (p *Profile) linkVersions() []string { return []string{p.PathVersion, p.AISPathVersion} }
+func (p *Profile) linkVersions() []string {
+	return []string{p.PathVersion, p.AISPathVersion, p.CreatePathVersion}
+}
+
+// isCreate reports the requests CreatePathVersion applies to.
+func isCreate(method, path string) bool {
+	if method != http.MethodPost {
+		return false
+	}
+	return path == "/v1/consents" || strings.HasPrefix(path, "/v1/payments/") && strings.Count(path, "/") == 3
+}
 
 // Institution describes the parameter that picks one bank of a hub.
 type Institution struct {
@@ -291,6 +312,9 @@ func Integration(p Profile) obsdk.Integration {
 		if a != Redirect && a != Decoupled && a != Embedded {
 			panic(fmt.Sprintf("berlingroup: profile %q: unknown approach %q", p.ID, a))
 		}
+	}
+	if p.PreStep != nil && p.PreStep.URL == nil {
+		panic(fmt.Sprintf("berlingroup: profile %q: PreStep needs a URL", p.ID))
 	}
 	for _, s := range p.Info.Payments {
 		if p.Products[s.Type] == "" {

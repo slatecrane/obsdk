@@ -1,0 +1,33 @@
+{
+  "description": "Synthetic: built from the Redsys hub's TPP technical design (v1.9.4) and its BBVA sandbox page, not recorded. Replace with a live recording once the sandbox account exists. Reads with a stored session: accounts, balances, and booked transactions over two pages (the hub's next link as cursor); every call carries the bearer token and the Consent-ID.",
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "aspsp": "bbva"
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "balances",
+      "account": "ES2501822200160201933547-EUR"
+    },
+    {
+      "op": "transactions",
+      "account": "ES2501822200160201933547-EUR",
+      "from": "2026-09-01",
+      "to": "2026-10-18"
+    },
+    {
+      "op": "transactions",
+      "account": "ES2501822200160201933547-EUR",
+      "cursor": "/v1/accounts/ES2501822200160201933547-EUR/transactions?dateFrom=2026-09-01&dateTo=2026-10-18&bookingStatus=booked&page=2"
+    }
+  ]
+}

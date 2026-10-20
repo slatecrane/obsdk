@@ -1,0 +1,23 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to log in, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/authorize?client_id=REDACTED%3Aclient_id&code_challenge=RmBQ8QkLfUzCCrmWEOwDB3acgaOjz0Gu-URUa-_iS7g&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fapp.example%2Fcallback&response_type=code&scope=AIS&state=state-1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "error": {
+      "is": [
+        "auth_failed"
+      ],
+      "message": "obsdk: authorization failed: access was not approved at the bank (access_denied)"
+    }
+  }
+]

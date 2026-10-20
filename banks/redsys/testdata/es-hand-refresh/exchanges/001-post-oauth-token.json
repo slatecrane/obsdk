@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "at-2",
+      "token_type": "Bearer",
+      "expires_in": 3600,
+      "refresh_token": "rt-2"
+    }
+  }
+}

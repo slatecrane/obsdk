@@ -1,0 +1,26 @@
+{
+  "description": "Synthetic: built from the Redsys hub's TPP technical design (v1.9.4) and its BBVA sandbox page, not recorded. Replace with a live recording once the sandbox account exists. The login succeeds but the consent is refused at the bank (sandbox user2, 'SCA KO'): the hub returns to the redirect URL without parameters, scaStatus is failed; the error carries the session with the token.",
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "aspsp": "bbva"
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback?code=code-1&state=state-1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback"
+    }
+  ]
+}

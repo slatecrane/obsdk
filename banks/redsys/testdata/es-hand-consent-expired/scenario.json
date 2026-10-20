@@ -1,0 +1,18 @@
+{
+  "description": "Synthetic: built from the Redsys hub's TPP technical design (v1.9.4) and its BBVA sandbox page, not recorded. Replace with a live recording once the sandbox account exists. An account read with a consent the user revoked: CONSENT_INVALID asks for a new connect.",
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "aspsp": "bbva"
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7"
+    }
+  ]
+}

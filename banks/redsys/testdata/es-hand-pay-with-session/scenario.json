@@ -1,0 +1,54 @@
+{
+  "description": "Synthetic: built from the Redsys hub's TPP technical design (v1.9.4) and its BBVA sandbox page, not recorded. Replace with a live recording once the sandbox account exists. SEPA instant transfer started with the session of an earlier payment (scope PIS, token still valid): no new login, the payment is created at once and approved by redirect.",
+  "config": {
+    "bank": "redsys",
+    "country": "ES",
+    "env": "sandbox",
+    "now": "2026-10-19T10:00:00Z",
+    "extra": {
+      "aspsp": "bbva"
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "psu_ip": "203.0.113.7",
+      "payment": {
+        "type": "sepa_instant",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "ES2501822200160201933547"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "Lucía García",
+              "account": {
+                "scheme": "IBAN",
+                "value": "ES9121000418450200051332"
+              },
+              "address": {
+                "town": "Madrid",
+                "country": "ES"
+              }
+            },
+            "remittance": [
+              "Factura 2026-117"
+            ]
+          }
+        ],
+        "with_session": true
+      }
+    },
+    {
+      "op": "resume",
+      "callback": "https://app.example/callback"
+    }
+  ]
+}

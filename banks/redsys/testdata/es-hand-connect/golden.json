@@ -1,0 +1,177 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to log in, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/authorize?client_id=REDACTED%3Aclient_id&code_challenge=RmBQ8QkLfUzCCrmWEOwDB3acgaOjz0Gu-URUa-_iS7g&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fapp.example%2Fcallback&response_type=code&scope=AIS&state=state-1"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "note": "back from the login (OAuth pre-step)",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Redsys PSD2 hub to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://hub-i.redsys.es:16443/asp-sim-sb/mockups/0182/sca.html?id=a9b8c7d6-e5f4-4a3b-8c2d-1e0f9a8b7c6d"
+      },
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 1,
+        "updated_at": "2026-10-19T10:00:00Z",
+        "access_token": "at-1",
+        "refresh_token": "rt-1",
+        "token_type": "Bearer",
+        "scope": "AIS",
+        "access_expires_at": "2026-10-19T11:00:00Z",
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "note": "back from approving the consent",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "redsys",
+        "country": "ES",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "redsys-bg",
+        "generation": 2,
+        "updated_at": "2026-10-19T10:00:00Z",
+        "access_token": "at-1",
+        "refresh_token": "rt-1",
+        "token_type": "Bearer",
+        "scope": "AIS",
+        "access_expires_at": "2026-10-19T11:00:00Z",
+        "consents": {
+          "ais": {
+            "id": "c0f1e2d3-a4b5-4c6d-8e7f-901a2b3c4d5e",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-04-17T00:00:00Z",
+            "accounts": [
+              "ES2501822200160201933547",
+              "ES4901822200110201933554"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect",
+          "institution": "BBVA",
+          "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+        }
+      },
+      "accounts": [
+        {
+          "id": "ES2501822200160201933547-EUR",
+          "stable_id": "24a931baa3260fce356a307fbcbde9b2",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "ES2501822200160201933547"
+            }
+          ],
+          "name": "Cuenta Online",
+          "owner_name": "Usuario Uno",
+          "currency": "EUR",
+          "product": "Cuenta Corriente",
+          "type": "CACC",
+          "bic": "BBVAESMMXXX",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "1523.42",
+                "currency": "EUR"
+              },
+              "reference_date": "2026-10-18"
+            }
+          ],
+          "raw": {
+            "resourceId": "ES2501822200160201933547-EUR",
+            "iban": "ES2501822200160201933547",
+            "currency": "EUR",
+            "name": "Cuenta Online",
+            "product": "Cuenta Corriente",
+            "ownerName": "Usuario Uno",
+            "cashAccountType": "CACC",
+            "status": "enabled",
+            "bic": "BBVAESMMXXX",
+            "balances": [
+              {
+                "balanceType": "closingBooked",
+                "balanceAmount": {
+                  "currency": "EUR",
+                  "amount": "1523.42"
+                },
+                "referenceDate": "2026-10-18"
+              }
+            ],
+            "_links": {
+              "balances": {
+                "href": "/v1/accounts/ES2501822200160201933547-EUR/balances"
+              },
+              "transactions": {
+                "href": "/v1/accounts/ES2501822200160201933547-EUR/transactions"
+              }
+            }
+          }
+        },
+        {
+          "id": "ES4901822200110201933554-EUR",
+          "stable_id": "78b5e9c3c7cc493dd1e002f1a05b7ae5",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "ES4901822200110201933554"
+            }
+          ],
+          "name": "Cuenta Ahorro",
+          "owner_name": "Usuario Uno",
+          "currency": "EUR",
+          "product": "Depósito",
+          "type": "SVGS",
+          "bic": "BBVAESMMXXX",
+          "raw": {
+            "resourceId": "ES4901822200110201933554-EUR",
+            "iban": "ES4901822200110201933554",
+            "currency": "EUR",
+            "name": "Cuenta Ahorro",
+            "product": "Depósito",
+            "ownerName": "Usuario Uno",
+            "cashAccountType": "SVGS",
+            "status": "enabled",
+            "bic": "BBVAESMMXXX",
+            "_links": {
+              "balances": {
+                "href": "/v1/accounts/ES4901822200110201933554-EUR/balances"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "v": 1,
+  "bank": "redsys",
+  "country": "ES",
+  "segment": "personal",
+  "env": "sandbox",
+  "integration": "redsys-bg",
+  "generation": 2,
+  "updated_at": "2026-10-19T09:00:00Z",
+  "access_token": "at-p",
+  "token_type": "Bearer",
+  "scope": "PIS",
+  "access_expires_at": "2026-10-19T11:00:00Z",
+  "meta": {
+    "approach": "redirect",
+    "institution": "BBVA",
+    "token_url": "https://apis-i.redsys.es:20443/psd2/xs2a/api-oauth-xs2a/services/rest/BBVA/token"
+  },
+  "refresh_token": "rt-p"
+}

@@ -73,6 +73,11 @@ type flow struct {
 	TokenURL   string         `json:"token_url,omitempty"`
 	token      *tokenResponse // the exchanged code, only within the Resume that got it
 
+	// OAuth pre-step (Profile.PreStep): PreStep while the user logs in;
+	// Session once the token is there (secret), sent on every request.
+	PreStep bool           `json:"pre_step,omitempty"`
+	Session *obsdk.Session `json:"session,omitempty"`
+
 	// Connect.
 	Caps       []obsdk.Capability `json:"caps,omitempty"`
 	IBANs      []string           `json:"ibans,omitempty"`
@@ -219,7 +224,10 @@ func (c *client) pause(f *flow, st *obsdk.Step) (*obsdk.Step, error) {
 		return nil, err
 	}
 	st.State = s
-	if f.Pay != nil && st.Payment == nil {
+	if f.Session != nil && st.Session == nil {
+		st.Session = f.Session.Clone()
+	}
+	if f.Pay != nil && f.Pay.ID != "" && st.Payment == nil {
 		if st.Payment, err = c.paymentOf(f.Pay, "", nil); err != nil {
 			return nil, err
 		}
@@ -240,20 +248,40 @@ func (c *client) Resume(ctx context.Context, state string, in obsdk.StepInput) (
 	if err != nil {
 		return nil, err
 	}
+	if f.Session != nil {
+		c = c.withBearer(f.Session.AccessToken)
+	}
 	st, err := c.resume(ctx, &f, in)
+	if err == nil && st.Kind == obsdk.StepDone && st.Session == nil && f.Session != nil {
+		st.Session = f.Session.Clone()
+	}
 	return st, c.wrapFlowErr(&f, err)
 }
 
-// wrapFlowErr attaches the payment to errors once the bank created it.
+// wrapFlowErr attaches the payment to errors once the bank created it, and
+// the session once the pre-step made one.
 func (c *client) wrapFlowErr(f *flow, err error) error {
-	if err == nil || f.Pay == nil || f.Pay.ID == "" {
+	if err == nil {
+		return nil
+	}
+	var sess *obsdk.Session
+	if f.Session != nil {
+		sess = f.Session.Clone()
+	}
+	if fe, ok := err.(*obsdk.FlowError); ok {
+		if fe.Session == nil {
+			fe.Session = sess
+		}
+		return fe
+	}
+	var pay *obsdk.Payment
+	if f.Pay != nil && f.Pay.ID != "" {
+		pay, _ = c.paymentOf(f.Pay, "", nil)
+	}
+	if pay == nil && sess == nil {
 		return err
 	}
-	if _, ok := err.(*obsdk.FlowError); ok {
-		return err
-	}
-	pay, _ := c.paymentOf(f.Pay, "", nil)
-	return &obsdk.FlowError{Payment: pay, Err: err}
+	return &obsdk.FlowError{Session: sess, Payment: pay, Err: err}
 }
 
 func (c *client) resume(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk.Step, error) {
@@ -264,10 +292,7 @@ func (c *client) resume(ctx context.Context, f *flow, in obsdk.StepInput) (*obsd
 			return c.pause(f, psuIDStep())
 		}
 		f.PSU.ID = id
-		if f.Op == flowConnect {
-			return c.createConsent(ctx, f, in)
-		}
-		return c.createPayment(ctx, f, in)
+		return c.create(ctx, f, in)
 	case needRedirect:
 		if in.Callback == "" {
 			return c.pause(f, c.redirectStep(f))

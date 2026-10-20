@@ -14,6 +14,7 @@ import (
 	_ "github.com/slatecrane/obsdk/banks/nordea"
 	_ "github.com/slatecrane/obsdk/banks/op"
 	_ "github.com/slatecrane/obsdk/banks/rabobank"
+	_ "github.com/slatecrane/obsdk/banks/redsys"
 	_ "github.com/slatecrane/obsdk/banks/revolut"
 	_ "github.com/slatecrane/obsdk/banks/samlink"
 	_ "github.com/slatecrane/obsdk/banks/sibs"

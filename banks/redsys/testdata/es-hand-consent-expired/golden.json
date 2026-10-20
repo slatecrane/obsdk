@@ -1,0 +1,11 @@
+[
+  {
+    "op": "accounts",
+    "error": {
+      "is": [
+        "reauth_required"
+      ],
+      "message": "obsdk: user must re-authorize: consent_invalid: obsdk: accounts: HTTP 401 CONSENT_INVALID: The consent was revoked by the PSU"
+    }
+  }
+]

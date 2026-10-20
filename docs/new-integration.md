@@ -227,6 +227,8 @@ From Swedbank, ING, Nordea, HSBC, Rabobank, bunq, Handelsbanken and OP. Other ba
 | Samlink: `400 FORMAT_ERROR "Header parameter 'X-Request-ID' must be a valid UUID."` | an upper-case UUID (e.g. from macOS `uuidgen`) | lower-case UUIDs (`Config.NewID`'s default is) |
 | Samlink: `400 FORMAT_ERROR "'validUntil' must not be more than 180 days into the future."` | the documentation says it clamps; the sandbox refuses | clamp to 180 days (`MaxConsentDays`) |
 | Samlink: `404 "Resource not found"` from `sml-prod-psd2.azure-api.net` | the Azure API Management gateway answers 404 for an unknown method/path, also without a subscription key | check the path (`/psd2/v2/...` for AIS, `/psd2/v1/...` for payments) and the method |
+| Redsys: `401 CERTIFICATE_MISSING "[API052]Incorrect QSEAL certificate: It is mandatory and is not present in the petition."` | an unsigned request: the hub wants a QSealC on every call, the sandbox too | sign every request (`Signing.Required`); in the sandbox with the portal's generic certificate |
+| Redsys: `401 TOKEN_INVALID "[API004]TPP sends incorrect access token or does not send it at all"` | no OAuth pre-step token: the hub wants a bearer token before any XS2A call, the consent request included | run the pre-step (`Profile.PreStep`); the token must come from the same bank code (else `TOKEN_UNKNOWN`) |
 
 ## 7. Finish
 

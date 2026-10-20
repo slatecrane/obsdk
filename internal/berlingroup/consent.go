@@ -105,7 +105,7 @@ func (c *client) Connect(ctx context.Context, r obsdk.ConnectRequest) (*obsdk.St
 		f.Need = needPSUID
 		return c.pause(f, psuIDStep())
 	}
-	return c.createConsent(ctx, f, obsdk.StepInput{Values: r.Values})
+	return c.create(ctx, f, obsdk.StepInput{Values: r.Values})
 }
 
 func (c *client) createConsent(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk.Step, error) {
@@ -165,12 +165,13 @@ func (c *client) finishConnect(ctx context.Context, f *flow) (*obsdk.Step, error
 	default: // rejected, revokedByPsu, expired, terminatedByTpp
 		return nil, authFailed("the consent is %s", status)
 	}
-	s := &obsdk.Session{
-		Bank: c.bank(), Country: c.target.Country, Segment: c.target.Segment, Env: c.cfg.Env, Integration: c.p.ID,
-		Consents: map[string]obsdk.Consent{}, Meta: map[string]string{metaApproach: f.Approach},
-	}
-	if c.inst != "" {
-		s.Meta[metaInstitution] = c.inst
+	s := c.newSession(f.Approach)
+	if f.Session != nil {
+		// The pre-step's token.
+		s = f.Session.Clone()
+		if s.Consents == nil {
+			s.Consents = map[string]obsdk.Consent{}
+		}
 	}
 	if f.token != nil {
 		applyToken(s, f.token, f.TokenURL)
@@ -219,32 +220,31 @@ func (c *client) consentValidUntil(ctx context.Context, f *flow) string {
 
 // ---- refresh and disconnect ----
 
-// Refresh has no token to renew (the consent id is the credential); it checks
-// that the consent is still valid and returns the session unchanged, or a
-// ReauthError inside a RefreshError when the user must connect again.
+// Refresh checks that the consent is still valid and renews the access token
+// when the session has one (OAuth SCA approach, OAuth pre-step); otherwise
+// the consent id is the credential and the session comes back unchanged. A
+// ReauthError inside a RefreshError means the user must connect again.
 func (c *client) Refresh(ctx context.Context, s *obsdk.Session) (*obsdk.Session, error) {
 	c, err := c.forSession(s)
 	if err != nil {
 		return nil, err
 	}
-	cons, ok := s.Consents[consentKind]
-	if !ok || cons.ID == "" {
-		return nil, &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: "no_consent", Consent: consentKind}}
-	}
-	if cons.ValidUntil != nil && !c.now().Before(cons.ValidUntil.AddDate(0, 0, 1)) {
-		return nil, &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: "consent_expired", Consent: consentKind}}
-	}
-	status, err := c.consentState(ctx, "/v1/consents/"+url.PathEscape(cons.ID)+"/status", nil)
-	if err != nil {
-		var ae *obsdk.APIError
-		temporary := !asAPIError(err, &ae) || ae.Status == http.StatusTooManyRequests || ae.Status >= 500
-		if !temporary && (ae.Code == "CONSENT_UNKNOWN" || ae.Code == "CONSENT_EXPIRED" || ae.Code == "CONSENT_INVALID") {
-			return nil, &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: strings.ToLower(ae.Code), Consent: consentKind, Err: err}}
+	if c.p.PreStep != nil {
+		// Every call needs the token, the consent check too: renew it first.
+		ns := s.Clone()
+		if err := c.renewToken(ctx, ns); err != nil {
+			return nil, err
 		}
-		return nil, &obsdk.RefreshError{Temporary: temporary, Err: err}
+		if _, ok := ns.Consents[consentKind]; !ok && ns.AccessToken != "" {
+			return ns, nil // a payment's session: the token is all there is
+		}
+		if err := c.withBearer(ns.AccessToken).checkConsent(ctx, ns); err != nil {
+			return nil, err
+		}
+		return ns, nil
 	}
-	if status != "valid" {
-		return nil, &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: "consent_" + strings.ToLower(status), Consent: consentKind}}
+	if err := c.checkConsent(ctx, s); err != nil {
+		return nil, err
 	}
 	ns := s.Clone()
 	if ns.RefreshToken != "" {
@@ -256,6 +256,30 @@ func (c *client) Refresh(ctx context.Context, s *obsdk.Session) (*obsdk.Session,
 		ns.Touch(c.now())
 	}
 	return ns, nil
+}
+
+// checkConsent returns a RefreshError unless the session's consent is valid.
+func (c *client) checkConsent(ctx context.Context, s *obsdk.Session) error {
+	cons, ok := s.Consents[consentKind]
+	if !ok || cons.ID == "" {
+		return &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: "no_consent", Consent: consentKind}}
+	}
+	if cons.ValidUntil != nil && !c.now().Before(cons.ValidUntil.AddDate(0, 0, 1)) {
+		return &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: "consent_expired", Consent: consentKind}}
+	}
+	status, err := c.consentState(ctx, "/v1/consents/"+url.PathEscape(cons.ID)+"/status", nil)
+	if err != nil {
+		var ae *obsdk.APIError
+		temporary := !asAPIError(err, &ae) || ae.Status == http.StatusTooManyRequests || ae.Status >= 500
+		if !temporary && (ae.Code == "CONSENT_UNKNOWN" || ae.Code == "CONSENT_EXPIRED" || ae.Code == "CONSENT_INVALID") {
+			return &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: strings.ToLower(ae.Code), Consent: consentKind, Err: err}}
+		}
+		return &obsdk.RefreshError{Temporary: temporary, Err: err}
+	}
+	if status != "valid" {
+		return &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: "consent_" + strings.ToLower(status), Consent: consentKind}}
+	}
+	return nil
 }
 
 // Disconnect deletes the consent at the bank.
