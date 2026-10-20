@@ -16,14 +16,28 @@ are out of scope.
 
 ```go
 import (
+    "crypto/tls"
+    "net/http"
+    "time"
+
     obsdk "github.com/slatecrane/obsdk"
     _ "github.com/slatecrane/obsdk/banks/all" // or import only the banks you need
 )
 
+// The QWAC is a TLS client certificate: load it into the http.Client the SDK uses.
+qwac, err := tls.LoadX509KeyPair("qwac.pem", "qwac.key") // cert (with chain) and private key, PEM
+qwacClient := &http.Client{
+    Timeout:   30 * time.Second,
+    Transport: &http.Transport{TLSClientConfig: &tls.Config{Certificates: []tls.Certificate{qwac}}},
+}
+
 c, err := obsdk.New(obsdk.Target{Bank: "swedbank", Country: "SE"}, obsdk.Config{
     Env: obsdk.Sandbox, // always explicit
     Credentials: obsdk.Credentials{ClientID: id, ClientSecret: secret, RedirectURL: cb},
+    HTTPClient:  qwacClient,                                     // QWAC, for mTLS
+    Seal:        &obsdk.Seal{Key: sealKey, Certificate: sealCert}, // QSealC, for banks that sign requests
 })
+// Loading the QSealC from files is shown in the end-to-end example below.
 
 // Authorization is a resumable sequence of steps the caller acts on.
 step, err := c.Connect(ctx, obsdk.ConnectRequest{PSU: obsdk.PSUContext{IP: ip, UserAgent: ua}})
@@ -104,10 +118,12 @@ import (
     _ "github.com/slatecrane/obsdk/banks/all"
 )
 
-// 1. Initialize. The QWAC goes into the HTTP client (mTLS), the QSealC into Config.Seal.
-//    Neither ever ends up in a session. The key only has to be a crypto.Signer, so an
-//    HSM/KMS-backed key works too.
-qwac, err := tls.LoadX509KeyPair("qwac.crt", "qwac.key")
+// 1. Initialize with your eIDAS certificates. Neither ever ends up in a session.
+//
+//    QWAC (mTLS): the SDK never sees it directly. Put it into the TLS config of the
+//    HTTP client you pass as Config.HTTPClient. The PEM file may hold the full chain
+//    (leaf first, then intermediates); the bank receives all of it in the handshake.
+qwac, err := tls.LoadX509KeyPair("qwac-chain.pem", "qwac.key")
 httpClient := &http.Client{
     Timeout:   30 * time.Second,
     Transport: &http.Transport{TLSClientConfig: &tls.Config{
@@ -115,8 +131,14 @@ httpClient := &http.Client{
         MinVersion:   tls.VersionTLS12,
     }},
 }
-var sealCert *x509.Certificate // parsed QSealC certificate
-var sealKey crypto.Signer      // its private key: *rsa.PrivateKey, *ecdsa.PrivateKey or a KMS signer
+
+//    QSealC (request signing): Config.Seal takes the parsed certificate and its private
+//    key. The key only has to be a crypto.Signer (*rsa.PrivateKey, *ecdsa.PrivateKey,
+//    or a signer backed by an HSM/KMS), so it never has to leave the HSM.
+qseal, err := tls.LoadX509KeyPair("qseal.pem", "qseal.key") // PEM; PKCS#8, PKCS#1 or SEC 1 key
+sealCert, err := x509.ParseCertificate(qseal.Certificate[0])
+sealKey := qseal.PrivateKey.(crypto.Signer)
+// With a KMS instead: sealKey = myKMS.Signer("projects/.../cryptoKeyVersions/1")
 
 cfg := obsdk.Config{
     Env: obsdk.Production,
@@ -125,11 +147,16 @@ cfg := obsdk.Config{
         ClientSecret: obsdk.Secret(clientSecret),
         RedirectURL:  "https://app.example.com/bank/callback",
     },
-    HTTPClient: httpClient,
-    Seal:       &obsdk.Seal{Key: sealKey, Certificate: sealCert, KeyID: kid},
+    HTTPClient: httpClient, // QWAC
+    Seal: &obsdk.Seal{      // QSealC
+        Key:         sealKey,
+        Certificate: sealCert,
+        KeyID:       kid, // optional: the key id some banks register for you (OBIE kid, JWKS)
+    },
 }
-// New checks the config against the bank's requirements (obsdk.Lookup lists them)
-// and returns an *obsdk.ConfigError naming anything missing.
+// New checks the config against the bank's requirements (obsdk.Lookup lists them;
+// "tls_client_cert" means HTTPClient, "seal" means Seal) and returns an
+// *obsdk.ConfigError naming anything missing.
 c, err := obsdk.New(obsdk.Target{Bank: "revolut", Country: "GB"}, cfg)
 
 // 2. Authorize. Connect creates the consent and returns the first step.
