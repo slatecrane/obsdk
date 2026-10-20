@@ -1,0 +1,351 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Coop Pank to approve access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://openbanking.cooppank.ee/mock_sca/auth/coop/01a15a8e-8fc0-71b3-849d-7e917d59f65b"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "cooppank",
+        "country": "EE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "cooppank-bg-ee",
+        "generation": 1,
+        "updated_at": "2026-10-20T18:24:14Z",
+        "consents": {
+          "ais": {
+            "id": "01a15a8e-8f94-7239-bf33-e45e6bc75c88",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-01-18T00:00:00Z",
+            "accounts": [
+              "EE37PSEUDOA1682F797A",
+              "EE36PSEUDODD6386735B",
+              "EE71PSEUDO09B256209A",
+              "EE71PSEUDO09B256209A",
+              "EE89PSEUDOB96CABB086"
+            ]
+          }
+        },
+        "meta": {
+          "approach": "redirect"
+        }
+      },
+      "accounts": [
+        {
+          "id": "4d37d3d4-963b-4d69-9f0b-755063e4837a",
+          "stable_id": "c565bd9a08e3decf3ab98dce8a60903c",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "EE37PSEUDOA1682F797A"
+            }
+          ],
+          "name": "name-03db6d",
+          "currency": "EUR",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "15000.00",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "expected",
+              "amount": {
+                "amount": "10000.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/xs2a/v1.3/accounts/4d37d3d4-963b-4d69-9f0b-755063e4837a/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/xs2a/v1.3/accounts/4d37d3d4-963b-4d69-9f0b-755063e4837a/transactions?dateFrom=2017-01-01\u0026bookingStatus=both"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "15000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "10000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "expected"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "EE37PSEUDOA1682F797A",
+            "name": "name-03db6d",
+            "resourceId": "4d37d3d4-963b-4d69-9f0b-755063e4837a"
+          }
+        },
+        {
+          "id": "2c9b6217-d8aa-4ae2-8b04-9d9bd29ee3ec",
+          "stable_id": "d1ccb2a610c051dbb0ed5a7b8bc63dd5",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "EE36PSEUDODD6386735B"
+            }
+          ],
+          "name": "name-03db6d",
+          "currency": "EUR",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "0.00",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "expected",
+              "amount": {
+                "amount": "0.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/xs2a/v1.3/accounts/2c9b6217-d8aa-4ae2-8b04-9d9bd29ee3ec/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/xs2a/v1.3/accounts/2c9b6217-d8aa-4ae2-8b04-9d9bd29ee3ec/transactions?dateFrom=2017-01-01\u0026bookingStatus=both"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "0.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "0.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "expected"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "EE36PSEUDODD6386735B",
+            "name": "name-03db6d",
+            "resourceId": "2c9b6217-d8aa-4ae2-8b04-9d9bd29ee3ec"
+          }
+        },
+        {
+          "id": "ddc2872e-e02f-4cf9-b1c8-5ff3c22ea7c5",
+          "stable_id": "8fe8ce11f31bc087a207fa80535c00d6",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "EE71PSEUDO09B256209A"
+            }
+          ],
+          "name": "name-03db6d",
+          "currency": "EUR",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "1000.00",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "expected",
+              "amount": {
+                "amount": "1000.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/xs2a/v1.3/accounts/ddc2872e-e02f-4cf9-b1c8-5ff3c22ea7c5/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/xs2a/v1.3/accounts/ddc2872e-e02f-4cf9-b1c8-5ff3c22ea7c5/transactions?dateFrom=2017-01-01\u0026bookingStatus=both"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "1000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "1000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "expected"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "EE71PSEUDO09B256209A",
+            "name": "name-03db6d",
+            "resourceId": "ddc2872e-e02f-4cf9-b1c8-5ff3c22ea7c5"
+          }
+        },
+        {
+          "id": "9795a7d6-1328-4914-b3ac-12813b347dc0",
+          "stable_id": "8fe8ce11f31bc087a207fa80535c00d6",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "EE71PSEUDO09B256209A"
+            }
+          ],
+          "name": "name-03db6d",
+          "currency": "SEK",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "5000.00",
+                "currency": "SEK"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "expected",
+              "amount": {
+                "amount": "5000.00",
+                "currency": "SEK"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/xs2a/v1.3/accounts/9795a7d6-1328-4914-b3ac-12813b347dc0/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/xs2a/v1.3/accounts/9795a7d6-1328-4914-b3ac-12813b347dc0/transactions?dateFrom=2017-01-01\u0026bookingStatus=both"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "5000.00",
+                  "currency": "SEK"
+                },
+                "balanceType": "closingBooked"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "5000.00",
+                  "currency": "SEK"
+                },
+                "balanceType": "expected"
+              }
+            ],
+            "currency": "SEK",
+            "iban": "EE71PSEUDO09B256209A",
+            "name": "name-03db6d",
+            "resourceId": "9795a7d6-1328-4914-b3ac-12813b347dc0"
+          }
+        },
+        {
+          "id": "40b3d86d-f042-4150-9638-4d4b6654a6cf",
+          "stable_id": "aab6da8644b0d2ff2ccdbce42f27740f",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "EE89PSEUDOB96CABB086"
+            }
+          ],
+          "name": "name-1d51ee",
+          "currency": "EUR",
+          "balances": [
+            {
+              "kind": "closing_booked",
+              "bank_type": "closingBooked",
+              "amount": {
+                "amount": "1000.00",
+                "currency": "EUR"
+              }
+            },
+            {
+              "kind": "other",
+              "bank_type": "expected",
+              "amount": {
+                "amount": "1000.00",
+                "currency": "EUR"
+              }
+            }
+          ],
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/sandbox/xs2a/v1.3/accounts/40b3d86d-f042-4150-9638-4d4b6654a6cf/balances"
+              },
+              "transactions": {
+                "href": "/sandbox/xs2a/v1.3/accounts/40b3d86d-f042-4150-9638-4d4b6654a6cf/transactions?dateFrom=2017-01-01\u0026bookingStatus=both"
+              }
+            },
+            "balances": [
+              {
+                "balanceAmount": {
+                  "amount": "1000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "closingBooked"
+              },
+              {
+                "balanceAmount": {
+                  "amount": "1000.00",
+                  "currency": "EUR"
+                },
+                "balanceType": "expected"
+              }
+            ],
+            "currency": "EUR",
+            "iban": "EE89PSEUDOB96CABB086",
+            "name": "name-1d51ee",
+            "resourceId": "40b3d86d-f042-4150-9638-4d4b6654a6cf"
+          }
+        }
+      ]
+    }
+  }
+]

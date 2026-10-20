@@ -5,7 +5,7 @@
 adapter is not a bank: users only ever see the banks built on it, under their own keys.
 
 Built and verified on 2026-10-18 against adorsys' open-source ModelBank (XS2A-Sandbox 5.14), run
-locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)), `sibs` ([sibs.md](sibs.md)), `saastopankki` and `omasp` ([samlink.md](samlink.md)), `redsys` ([redsys.md](redsys.md)), `nlb`, `otpbanka`, `sparkassesi` and four more Slovenian banks ([bankart.md](bankart.md)).
+locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)), `sibs` ([sibs.md](sibs.md)), `saastopankki` and `omasp` ([samlink.md](samlink.md)), `redsys` ([redsys.md](redsys.md)), `nlb`, `otpbanka`, `sparkassesi` and four more Slovenian banks ([bankart.md](bankart.md)), `cooppank` ([cooppank.md](cooppank.md)).
 
 ## What it covers
 

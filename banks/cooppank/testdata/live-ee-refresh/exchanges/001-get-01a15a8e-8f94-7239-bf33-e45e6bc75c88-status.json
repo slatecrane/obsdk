@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/xs2a/v1.3/consents/01a15a8e-8f94-7239-bf33-e45e6bc75c88/status",
+    "headers": {
+      "Accept": "application/json",
+      "X-Api-Key": "REDACTED:x-api-key:19acc1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "e73ba138-89f9-4817-a09a-b63e23c4df7a"
+    },
+    "body": {
+      "consentStatus": "valid"
+    }
+  }
+}

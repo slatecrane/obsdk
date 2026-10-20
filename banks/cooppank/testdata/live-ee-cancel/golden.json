@@ -1,0 +1,17 @@
+[
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "01a15a92-4ed8-7c4b-9701-60faa5a95795",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "CNCL",
+        "final": true,
+        "ref": "obs1.eyJpIjoiY29vcHBhbmstYmctZWUiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiIwMWExNWE5Mi00ZWQ4LTdjNGItOTcwMS02MGZhYTVhOTU3OTUiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  }
+]

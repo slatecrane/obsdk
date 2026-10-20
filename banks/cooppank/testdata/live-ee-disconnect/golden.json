@@ -1,0 +1,23 @@
+[
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "cooppank",
+      "country": "EE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "cooppank-bg-ee",
+      "generation": 2,
+      "updated_at": "2026-10-20T18:30:31Z",
+      "meta": {
+        "approach": "redirect"
+      }
+    },
+    "disconnect": {
+      "closed": [
+        "ais"
+      ]
+    }
+  }
+]

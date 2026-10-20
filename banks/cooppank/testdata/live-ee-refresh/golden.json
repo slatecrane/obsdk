@@ -1,0 +1,33 @@
+[
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "cooppank",
+      "country": "EE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "cooppank-bg-ee",
+      "generation": 1,
+      "updated_at": "2026-10-20T18:26:20.464729Z",
+      "consents": {
+        "ais": {
+          "id": "01a15a8e-8f94-7239-bf33-e45e6bc75c88",
+          "kind": "ais",
+          "status": "valid",
+          "valid_until": "2027-01-18T00:00:00Z",
+          "accounts": [
+            "EE37PSEUDOA1682F797A",
+            "EE36PSEUDODD6386735B",
+            "EE71PSEUDO09B256209A",
+            "EE71PSEUDO09B256209A",
+            "EE89PSEUDOB96CABB086"
+          ]
+        }
+      },
+      "meta": {
+        "approach": "redirect"
+      }
+    }
+  }
+]

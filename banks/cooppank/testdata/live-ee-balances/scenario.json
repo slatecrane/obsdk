@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "cooppank",
+    "country": "EE",
+    "env": "sandbox",
+    "now": "2026-10-20T18:26:48Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "api_key": "REDACTED:api_key:19acc1"
+    },
+    "ids": {
+      "request": [
+        "34e15cc8-01b3-4a93-aae6-443c57952eeb"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "balances",
+      "account": "4d37d3d4-963b-4d69-9f0b-755063e4837a",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

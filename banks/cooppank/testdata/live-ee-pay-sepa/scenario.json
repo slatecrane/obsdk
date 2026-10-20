@@ -1,0 +1,60 @@
+{
+  "config": {
+    "bank": "cooppank",
+    "country": "EE",
+    "env": "sandbox",
+    "now": "2026-10-20T18:27:12Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "api_key": "REDACTED:api_key:19acc1"
+    },
+    "ids": {
+      "request": [
+        "5a07341b-eba4-4940-9c01-9c9165c1beb2",
+        "05fc25a9-6e8d-4a85-bdad-6487cf066dea"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "EE37PSEUDOA1682F797A"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-49ebb3",
+              "account": {
+                "scheme": "IBAN",
+                "value": "EE36PSEUDODD6386735B"
+              },
+              "address": {
+                "town": "Tallinn",
+                "country": "EE"
+              }
+            },
+            "remittance": [
+              "obsdk test"
+            ]
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback"
+    }
+  ]
+}
