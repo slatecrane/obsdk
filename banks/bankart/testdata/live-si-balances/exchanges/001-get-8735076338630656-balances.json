@@ -1,0 +1,62 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/nlb/sandbox/v1/accounts/8735076338630656/balances",
+    "headers": {
+      "Accept": "application/json",
+      "Consent-Id": "12345",
+      "Initialized-By-Psu": "true",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "X-Ibm-Client-Id": "REDACTED:client_id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "account": {
+        "bban": "016324618487092",
+        "currency": "EUR",
+        "iban": "SI55PSEUDOCC3A96B9AD",
+        "maskedPan": null,
+        "msisdn": null,
+        "pan": null
+      },
+      "balances": [
+        {
+          "balanceAmount": {
+            "amount": "884.25",
+            "currency": "EUR"
+          },
+          "balanceType": "closingBooked",
+          "lastChangeDateTime": null,
+          "lastCommittedTransaction": null,
+          "referenceDate": null
+        },
+        {
+          "balanceAmount": {
+            "amount": "1284.25",
+            "currency": "EUR"
+          },
+          "balanceType": "authorised",
+          "lastChangeDateTime": null,
+          "lastCommittedTransaction": null,
+          "referenceDate": null
+        },
+        {
+          "balanceAmount": {
+            "amount": "884.25",
+            "currency": "EUR"
+          },
+          "balanceType": "expected",
+          "lastChangeDateTime": null,
+          "lastCommittedTransaction": null,
+          "referenceDate": null
+        }
+      ]
+    }
+  }
+}

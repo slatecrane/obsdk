@@ -191,6 +191,9 @@ From Swedbank, ING, Nordea, HSBC, Rabobank, bunq, Handelsbanken and OP. Other ba
 
 | Error | Cause | Fix |
 |---|---|---|
+| `403 {"httpMessage":"Forbidden","moreInformation":"Not registered to plan"}` (IBM API Connect: Bankart) | the app exists but is not subscribed to the API product's plan | subscribe the app to every sandbox product (AIS and PIS) on the portal |
+| `401 {"error":"unauthorized_client","error_description":"Invalid client ID or secret, or client not subscribed to this API"}` at an OAuth authorize endpoint | same: no subscription yet, or a wrong client id | subscribe first; the id is the app's client id (`X-IBM-Client-Id`) |
+| `500 {"error":"Error occurred!"}` creating a payment in Bankart's sandbox | the static stub wants its Swagger 2.0 wrapper (`{"paymentInitiationJson": …}`) and the spec's example values | nothing to fix in the SDK: production takes the standard body (see bankart.md) |
 | `Mismatch redirect URI ...` | redirect URI not registered (also checked in decoupled flows) | register it in the portal, or change `OBSDK_REDIRECT_URL` |
 | `SCOPE_INVALID: Not allowed scope` | OAuth scope not enabled on the app | enable it in the portal's OAuth settings |
 | `bic ... does not support scope` | scope doesn't belong to the environment | use the sandbox scope with sandbox BICs |

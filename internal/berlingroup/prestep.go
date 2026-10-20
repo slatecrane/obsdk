@@ -2,6 +2,7 @@ package berlingroup
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"net/url"
@@ -33,6 +34,25 @@ type PreStep struct {
 
 	// ClientID returns the OAuth client id. Nil uses Credentials.ClientID.
 	ClientID func(cfg obsdk.Config) string
+
+	// CreateOnly is for banks whose token only authorises creating the
+	// consent or payment (Bankart: it lives 5 minutes, and later calls need
+	// none). The token is sent on the creating request and the authorisation
+	// that follows at once, then dropped: it is not kept in the flow state
+	// or handed out as a session, and payments are read and cancelled
+	// without a session.
+	CreateOnly bool
+
+	// TokenAccount returns the account the user picked at the login, read
+	// from the access token (Bankart: the JWT's sub is the IBAN). A consent
+	// is then dedicated to that account, and a payment without a debtor
+	// account is made from it.
+	TokenAccount func(accessToken string) (string, error)
+
+	// AccountParam is the authorisation request's parameter that names the
+	// account up front, when the caller already knows it (Bankart: "iban"):
+	// the one IBAN of Connect's Values["iban"], or a payment's debtor.
+	AccountParam string
 }
 
 // paramOAuthURL overrides PreStep.URL (tests, proxies).
@@ -56,7 +76,15 @@ func (c *client) preStepScope(op string) string {
 // create makes the consent or payment of a flow, after the pre-step when the
 // bank wants one and the flow has no token yet.
 func (c *client) create(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk.Step, error) {
-	if c.p.PreStep != nil {
+	if ps := c.p.PreStep; ps != nil && ps.CreateOnly {
+		if f.CreateToken == "" {
+			return c.startPreStep(f)
+		}
+		// Used for this request and what follows it now, never stored.
+		tok := f.CreateToken
+		f.CreateToken = ""
+		c = c.withBearer(tok)
+	} else if ps != nil {
 		if f.Session == nil {
 			return c.startPreStep(f)
 		}
@@ -94,6 +122,11 @@ func (c *client) startPreStep(f *flow) (*obsdk.Step, error) {
 		"code_challenge":        {pkceChallenge(f.Verifier)},
 		"code_challenge_method": {"S256"},
 	}
+	if n := c.p.PreStep.AccountParam; n != "" {
+		if iban := f.account(); iban != "" {
+			q.Set(n, iban)
+		}
+	}
 	// Spaces between scopes as %20, as the hub's examples show.
 	f.SCARedirect = root + "/authorize?" + strings.ReplaceAll(q.Encode(), "+", "%20")
 	f.OAuth, f.PreStep, f.Need = true, true, needRedirect
@@ -104,6 +137,20 @@ func (c *client) startPreStep(f *flow) (*obsdk.Step, error) {
 // finishPreStep turns the exchanged code into the flow's session and goes
 // on to create the consent or payment.
 func (c *client) finishPreStep(ctx context.Context, f *flow, tok *tokenResponse) (*obsdk.Step, error) {
+	if ta := c.p.PreStep.TokenAccount; ta != nil {
+		iban, err := ta(tok.AccessToken)
+		if err != nil {
+			return nil, fmt.Errorf("berlingroup: %s: %w", c.bank(), err)
+		}
+		if err := f.useAccount(strings.ToUpper(strings.ReplaceAll(iban, " ", ""))); err != nil {
+			return nil, err
+		}
+	}
+	if c.p.PreStep.CreateOnly {
+		f.CreateToken = tok.AccessToken
+		f.PreStep, f.OAuth, f.SCARedirect, f.OAuthState, f.Verifier = false, false, "", "", ""
+		return c.create(ctx, f, obsdk.StepInput{})
+	}
 	s := c.newSession(f.Approach)
 	s.Scope = c.preStepScope(f.Op)
 	applyToken(s, tok, f.TokenURL)
@@ -111,6 +158,56 @@ func (c *client) finishPreStep(ctx context.Context, f *flow, tok *tokenResponse)
 	f.Session = s
 	f.PreStep, f.OAuth, f.SCARedirect, f.OAuthState, f.Verifier = false, false, "", "", ""
 	return c.create(ctx, f, obsdk.StepInput{})
+}
+
+// account is the account a flow already names: the one IBAN of a Connect,
+// or a payment's debtor.
+func (f *flow) account() string {
+	if f.Op == flowConnect {
+		if len(f.IBANs) == 1 {
+			return f.IBANs[0]
+		}
+		return ""
+	}
+	var b pisBody
+	if f.PayBody == nil || json.Unmarshal(f.PayBody, &b) != nil || b.DebtorAccount == nil {
+		return ""
+	}
+	return b.DebtorAccount.IBAN
+}
+
+// useAccount applies the account the user picked at the login: a consent is
+// dedicated to it, a payment is made from it. One the caller named must be it.
+func (f *flow) useAccount(iban string) error {
+	if iban == "" {
+		return nil
+	}
+	if named := f.account(); named != "" && named != iban {
+		return fmt.Errorf("%w: the user picked %s at the bank, not %s", obsdk.ErrInvalidRequest, iban, named)
+	}
+	if f.Op == flowConnect {
+		if len(f.IBANs) > 1 {
+			return fmt.Errorf("%w: the bank grants one account per consent, the one picked at the login (%s)", obsdk.ErrInvalidRequest, iban)
+		}
+		f.IBANs = []string{iban}
+		return nil
+	}
+	if f.PayBody == nil {
+		return nil
+	}
+	var b pisBody
+	if err := json.Unmarshal(f.PayBody, &b); err != nil {
+		return err
+	}
+	if b.DebtorAccount == nil {
+		b.DebtorAccount = &pisAccount{IBAN: iban, Currency: b.InstructedAmount.Currency}
+	}
+	body, err := json.Marshal(b)
+	if err != nil {
+		return err
+	}
+	f.PayBody = body
+	return nil
 }
 
 // newSession is a session for this client's bank, without consents.
@@ -129,7 +226,7 @@ func (c *client) newSession(approach string) *obsdk.Session {
 // stand in for the pre-step: same bank and institution, a scope that covers
 // payments, and a token that is valid or can be renewed.
 func (c *client) reusableSession(ctx context.Context, s *obsdk.Session) (*obsdk.Session, error) {
-	if s == nil || c.p.PreStep == nil {
+	if s == nil || !c.p.sessionToken() {
 		return nil, nil
 	}
 	if err := c.checkSession(s); err != nil {
@@ -184,7 +281,7 @@ func (c *client) renewToken(ctx context.Context, s *obsdk.Session) error {
 // forPayment is the client for reading or cancelling a payment: with the
 // pre-step, the session's token is needed.
 func (c *client) forPayment(s *obsdk.Session) (*client, error) {
-	if c.p.PreStep == nil {
+	if !c.p.sessionToken() {
 		return c, nil
 	}
 	if s == nil {

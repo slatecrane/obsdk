@@ -162,6 +162,16 @@ type Profile struct {
 	// serve those on a later version than payments (Samlink: "v2").
 	AISPathVersion string
 
+	// PaymentRoot is a path segment payment requests carry before the
+	// version, for banks that serve payments under their own root (Bankart:
+	// "pay", so .../pay/v1/payments/...).
+	PaymentRoot string
+
+	// PSUInitiatedHeader names a header sent on every request with "true"
+	// when the user takes part (flow requests, or a PSU-IP-Address is known)
+	// and "false" otherwise (Bankart: "Initialized-By-PSU").
+	PSUInitiatedHeader string
+
 	// PreStep is an OAuth2 authorisation the bank wants before any XS2A
 	// request (Redsys): the user logs in at the bank first, and every later
 	// request carries the access token. See PreStep.
@@ -187,6 +197,26 @@ type Profile struct {
 
 	// Headers adds bank-specific headers to every request (e.g. an API key).
 	Headers func(cfg obsdk.Config, h http.Header)
+}
+
+// sessionToken reports whether the pre-step's token belongs to the session:
+// sent on every call and renewed, rather than used for creating only.
+func (p *Profile) sessionToken() bool { return p.PreStep != nil && !p.PreStep.CreateOnly }
+
+// paymentPrefixes are the canonical paths PaymentRoot applies to.
+var paymentPrefixes = []string{"/v1/payments/", "/v1/bulk-payments/", "/v1/periodic-payments/"}
+
+// rootFor is the path segments a canonical "/v1/..." path is sent with
+// before its version: PaymentRoot for payments, nothing otherwise.
+func (p *Profile) rootFor(path string) string {
+	if p.PaymentRoot != "" {
+		for _, pre := range paymentPrefixes {
+			if strings.HasPrefix(path, pre) {
+				return "/" + p.PaymentRoot
+			}
+		}
+	}
+	return ""
 }
 
 func (p *Profile) pathVersion() string {

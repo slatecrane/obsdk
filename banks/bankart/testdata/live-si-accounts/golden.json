@@ -1,0 +1,108 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "SI56016324618487092",
+        "stable_id": "af998224b524e74ee698cfb031eaef21",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "SI55PSEUDOCC3A96B9AD"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "016324618487092"
+          }
+        ],
+        "name": "name-27537c",
+        "currency": "EUR",
+        "product": "Osebni racun",
+        "type": "TRAN",
+        "usage": "PRIV",
+        "bic": "KSPKSI20",
+        "balances": [
+          {
+            "kind": "closing_booked",
+            "bank_type": "closingBooked",
+            "amount": {
+              "amount": "1184.25",
+              "currency": "EUR"
+            }
+          },
+          {
+            "kind": "other",
+            "bank_type": "authorised",
+            "amount": {
+              "amount": "1384.25",
+              "currency": "EUR"
+            }
+          },
+          {
+            "kind": "other",
+            "bank_type": "expected",
+            "amount": {
+              "amount": "1184.25",
+              "currency": "EUR"
+            }
+          }
+        ],
+        "raw": {
+          "_links": {
+            "balances": {
+              "href": "/v1/accounts/SI56016324618487092/balances"
+            },
+            "transactions": {
+              "href": "/v1/accounts/SI56016324618487092/transactions"
+            }
+          },
+          "balances": [
+            {
+              "balanceAmount": {
+                "amount": "1184.25",
+                "currency": "EUR"
+              },
+              "balanceType": "closingBooked",
+              "lastChangeDateTime": null,
+              "lastCommittedTransaction": null,
+              "referenceDate": null
+            },
+            {
+              "balanceAmount": {
+                "amount": "1384.25",
+                "currency": "EUR"
+              },
+              "balanceType": "authorised",
+              "lastChangeDateTime": null,
+              "lastCommittedTransaction": null,
+              "referenceDate": null
+            },
+            {
+              "balanceAmount": {
+                "amount": "1184.25",
+                "currency": "EUR"
+              },
+              "balanceType": "expected",
+              "lastChangeDateTime": null,
+              "lastCommittedTransaction": null,
+              "referenceDate": null
+            }
+          ],
+          "bban": "016324618487092",
+          "bic": "KSPKSI20",
+          "cashAccountType": "TRAN",
+          "currency": "EUR",
+          "details": null,
+          "iban": "SI55PSEUDOCC3A96B9AD",
+          "linkedAccounts": null,
+          "msisdn": null,
+          "name": "name-27537c",
+          "product": "Osebni racun",
+          "resourceId": "SI56016324618487092",
+          "status": null,
+          "usage": "PRIV"
+        }
+      }
+    ]
+  }
+]

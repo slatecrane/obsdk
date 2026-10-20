@@ -1,0 +1,198 @@
+[
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "2030000203241535",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-11.55",
+            "currency": "EUR"
+          },
+          "booking_date": "2019-12-23",
+          "value_date": "2019-12-23",
+          "counterparty": {
+            "name": "creditorname-414746"
+          },
+          "remittance": [
+            "remittanceinformationunstructured-c5f98a"
+          ],
+          "raw": {
+            "_links": {
+              "transactionDetails": {
+                "href": "/v1/accounts/SI55PSEUDOCC3A96B9AD/transactions/2030000203241535"
+              }
+            },
+            "bankTransactionCode": null,
+            "bookingDate": "2019-12-23",
+            "checkId": null,
+            "creditorAccount": null,
+            "creditorId": null,
+            "creditorName": "creditorname-414746",
+            "currencyExchange": [],
+            "debtorAccount": null,
+            "debtorName": null,
+            "endToEndId": null,
+            "entryReference": null,
+            "mandateId": null,
+            "proprietaryBankTransactionCode": null,
+            "purposeCode": null,
+            "remittanceInformationStructured": null,
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-c5f98a",
+            "transactionAmount": {
+              "amount": "-11.55",
+              "currency": "EUR"
+            },
+            "transactionId": "2030000203241535",
+            "ultimateCreditor": null,
+            "ultimateDebtor": null,
+            "valueDate": "2019-12-23"
+          }
+        },
+        {
+          "id": "2030000203241533",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-31.55",
+            "currency": "EUR"
+          },
+          "booking_date": "2019-12-23",
+          "value_date": "2019-12-23",
+          "counterparty": {
+            "name": "creditorname-4e5493"
+          },
+          "remittance": [
+            "remittanceinformationunstructured-c5f98a"
+          ],
+          "raw": {
+            "_links": {
+              "transactionDetails": {
+                "href": "/v1/accounts/SI56016324618487092/transactions/2030000203241533"
+              }
+            },
+            "bankTransactionCode": null,
+            "bookingDate": "2019-12-23",
+            "checkId": null,
+            "creditorAccount": null,
+            "creditorId": null,
+            "creditorName": "creditorname-4e5493",
+            "currencyExchange": [],
+            "debtorAccount": null,
+            "debtorName": null,
+            "endToEndId": null,
+            "entryReference": null,
+            "mandateId": null,
+            "proprietaryBankTransactionCode": null,
+            "purposeCode": null,
+            "remittanceInformationStructured": null,
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-c5f98a",
+            "transactionAmount": {
+              "amount": "-31.55",
+              "currency": "EUR"
+            },
+            "transactionId": "2030000203241533",
+            "ultimateCreditor": null,
+            "ultimateDebtor": null,
+            "valueDate": "2019-12-23"
+          }
+        },
+        {
+          "id": "2030000202303040",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-0.39",
+            "currency": "EUR"
+          },
+          "booking_date": "2019-11-27",
+          "value_date": "2019-11-27",
+          "counterparty": {},
+          "remittance": [
+            "remittanceinformationunstructured-6d9afc"
+          ],
+          "raw": {
+            "_links": {
+              "transactionDetails": {
+                "href": "/v1/accounts/SI55PSEUDOCC3A96B9AD/transactions/2030000202303040"
+              }
+            },
+            "bankTransactionCode": null,
+            "bookingDate": "2019-11-27",
+            "checkId": null,
+            "creditorAccount": null,
+            "creditorId": null,
+            "creditorName": null,
+            "currencyExchange": [],
+            "debtorAccount": null,
+            "debtorName": null,
+            "endToEndId": null,
+            "entryReference": null,
+            "mandateId": null,
+            "proprietaryBankTransactionCode": null,
+            "purposeCode": null,
+            "remittanceInformationStructured": null,
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-6d9afc",
+            "transactionAmount": {
+              "amount": "-0.39",
+              "currency": "EUR"
+            },
+            "transactionId": "2030000202303040",
+            "ultimateCreditor": null,
+            "ultimateDebtor": null,
+            "valueDate": "2019-11-27"
+          }
+        },
+        {
+          "id": "2030000202303039",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-53.88",
+            "currency": "EUR"
+          },
+          "booking_date": "2019-11-27",
+          "value_date": "2019-11-27",
+          "counterparty": {},
+          "remittance": [
+            "remittanceinformationunstructured-df15c6"
+          ],
+          "raw": {
+            "_links": {
+              "transactionDetails": {
+                "href": "/v1/accounts/SI56016324618487092/transactions/2030000202303039"
+              }
+            },
+            "bankTransactionCode": null,
+            "bookingDate": "2019-11-27",
+            "checkId": null,
+            "creditorAccount": null,
+            "creditorId": null,
+            "creditorName": null,
+            "currencyExchange": [],
+            "debtorAccount": null,
+            "debtorName": null,
+            "endToEndId": null,
+            "entryReference": null,
+            "mandateId": null,
+            "proprietaryBankTransactionCode": null,
+            "purposeCode": null,
+            "remittanceInformationStructured": null,
+            "remittanceInformationUnstructured": "remittanceinformationunstructured-df15c6",
+            "transactionAmount": {
+              "amount": "-53.88",
+              "currency": "EUR"
+            },
+            "transactionId": "2030000202303039",
+            "ultimateCreditor": null,
+            "ultimateDebtor": null,
+            "valueDate": "2019-11-27"
+          }
+        }
+      ],
+      "next_cursor": "/v1/accounts/SI56016324618487092/transactions?bookingStatus=booked&dateFrom=2019-11-01&dateTo=null&pageSize=10&page=2"
+    }
+  }
+]

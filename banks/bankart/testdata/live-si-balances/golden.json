@@ -1,0 +1,31 @@
+[
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "closing_booked",
+        "bank_type": "closingBooked",
+        "amount": {
+          "amount": "884.25",
+          "currency": "EUR"
+        }
+      },
+      {
+        "kind": "other",
+        "bank_type": "authorised",
+        "amount": {
+          "amount": "1284.25",
+          "currency": "EUR"
+        }
+      },
+      {
+        "kind": "other",
+        "bank_type": "expected",
+        "amount": {
+          "amount": "884.25",
+          "currency": "EUR"
+        }
+      }
+    ]
+  }
+]
