@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/as/token.oauth2",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026grant_type=client_credentials\u0026scope=psd2%3Apayment%3Asepa%3Awrite"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:64f6ba",
+      "expires_in": 7199,
+      "token_type": "Bearer"
+    }
+  }
+}

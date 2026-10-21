@@ -9,6 +9,7 @@ import (
 	"io"
 	"math/big"
 	"net/url"
+	"regexp"
 	"strings"
 	"sync"
 )
@@ -52,6 +53,8 @@ func DefaultRedactor(literals map[string]string) *Redactor {
 		"personalid", "personal_id", "phonenumber", "phone_number", "psu_id", "psuid", "clientid",
 		// bunq: tokens travel in X-Bunq-Client-Authentication, API keys and OAuth tokens as "secret"
 		"x-bunq-client-authentication", "x-bunq-client-signature", "x-bunq-server-signature", "secret", "api_key", "login_code",
+		// ABN AMRO: the application's API key
+		"api-key",
 	), PIIKeys: set(
 		"ownername", "name", "creditorname", "debtorname", "ultimatecreditor", "ultimatedebtor", "creditorid", "debtorid",
 		"iban", "bban", "remittanceinformationunstructured", "remittanceinformationstructured", "remittanceinformationunstructuredarray",
@@ -64,6 +67,8 @@ func DefaultRedactor(literals map[string]string) *Redactor {
 		"display_name", "public_nick_name", "first_name", "middle_name", "last_name", "legal_name", "description",
 		"date_of_birth", "place_of_birth", "country_of_birth", "street", "house_number", "po_box", "postal_code", "city",
 		"tax_number", "document_number", "chamber_of_commerce_number", "swift_account_number", "mailbox_name", "gender",
+		// ABN AMRO account details and activities
+		"accountnumber", "accountholdername", "counterpartyaccountnumber", "counterpartyname", "descriptionlines",
 	), KeepQueryInURLs: set("state", "response_type", "scope", "bic", "redirect_uri", "language", "success")}
 	for v, label := range literals {
 		if v != "" {
@@ -258,6 +263,12 @@ func (r *Redactor) walk(key string, v any, pii bool) any {
 			return r.mask(lk, t)
 		case pii && (lk == "iban" || lk == "bban"):
 			return r.account(lk, t)
+		case pii && (lk == "accountnumber" || lk == "counterpartyaccountnumber"):
+			// ABN AMRO: an IBAN, or a domestic number for foreign counterparties.
+			if ibanLike(t) {
+				return r.account("iban", t)
+			}
+			return r.account("bban", t)
 		case pii && r.PIIKeys[lk]:
 			return pseudonym(lk, t)
 		}
@@ -270,6 +281,10 @@ func (r *Redactor) walk(key string, v any, pii bool) any {
 	}
 	return v
 }
+
+var ibanLikeRE = regexp.MustCompile(`^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$`)
+
+func ibanLike(s string) bool { return ibanLikeRE.MatchString(s) }
 
 // pointer pseudonymizes the value of an alias such as bunq's
 // {"type": "EMAIL", "value": "...", "name": "..."}, whose key ("value") is

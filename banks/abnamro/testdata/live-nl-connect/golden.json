@@ -1,0 +1,67 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to ABN AMRO to pick an account and give consent, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://auth-sandbox.abnamro.com/as/authorization.oauth2?scope=psd2:account:details:read+psd2:account:balance:read+psd2:account:transaction:read&client_id=REDACTED:client_id&response_type=code&flow=code&redirect_uri=https://localhost/auth&state=3987b4faa05744d88c48"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "abnamro",
+        "country": "NL",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "abnamro-psd2",
+        "generation": 2,
+        "updated_at": "2026-10-20T19:21:59Z",
+        "access_token": "REDACTED:access_token:3e1d7b",
+        "refresh_token": "REDACTED:refresh_token:39022a",
+        "token_type": "Bearer",
+        "scope": "psd2:account:details:read psd2:account:balance:read psd2:account:transaction:read",
+        "access_expires_at": "2026-10-20T21:21:59Z",
+        "consents": {
+          "ais": {
+            "id": "",
+            "kind": "ais",
+            "status": "fully_signed",
+            "valid_until": "2026-10-22T21:24:01Z",
+            "accounts": [
+              "NL92PSEUDO22EF4DF408"
+            ]
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "NL92PSEUDO22EF4DF408",
+          "stable_id": "8a60ef775deccf235122365934b7a54c",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "NL92PSEUDO22EF4DF408"
+            }
+          ],
+          "owner_name": "accountholdername-688851",
+          "currency": "EUR",
+          "bic": "ABNANL2A",
+          "raw": {
+            "accountHolderName": "accountholdername-688851",
+            "accountNumber": "NL92PSEUDO22EF4DF408",
+            "currency": "EUR"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "abnamro",
+      "country": "NL",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "abnamro-psd2",
+      "generation": 3,
+      "updated_at": "2026-10-20T19:25:02Z",
+      "access_token": "REDACTED:access_token:e12fd0",
+      "refresh_token": "REDACTED:refresh_token:d58b89",
+      "token_type": "Bearer",
+      "scope": "psd2:account:details:read psd2:account:balance:read psd2:account:transaction:read",
+      "access_expires_at": "2026-10-20T21:25:01Z",
+      "consents": {
+        "ais": {
+          "id": "",
+          "kind": "ais",
+          "status": "fully_signed",
+          "valid_until": "2026-10-22T21:24:06Z",
+          "accounts": [
+            "NL92PSEUDO22EF4DF408"
+          ]
+        }
+      }
+    }
+  }
+]

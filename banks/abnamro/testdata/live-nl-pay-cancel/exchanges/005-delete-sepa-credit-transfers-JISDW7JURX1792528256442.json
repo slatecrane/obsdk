@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/payment/v2/sepa-credit-transfers/JISDW7JURX1792528256442",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:b1a79e"
+    }
+  },
+  "response": {
+    "status": 204
+  }
+}

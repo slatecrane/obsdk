@@ -1,0 +1,54 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/NL92PSEUDO22EF4DF408/activities",
+    "query": {
+      "activityType": [
+        "RESERVATION"
+      ],
+      "dateFrom": [
+        "2026-09-21"
+      ],
+      "dateTo": [
+        "2026-10-20"
+      ],
+      "status": [
+        "ACTIVE"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:e242f6"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accountNumber": "NL92PSEUDO22EF4DF408",
+      "activities": {
+        "reservations": [
+          {
+            "amount": 4000.0,
+            "counterPartyName": "counterpartyname-01f954",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-6672f5",
+              "descriptionlines-b60062",
+              "descriptionlines-9ad924"
+            ],
+            "expirationDate": "",
+            "id": "2026-10-20-12:00:00.000000",
+            "lastUpdateDateTime": "2026-10-20T22:43:38.330Z",
+            "status": "ACTIVE",
+            "timestamp": "2026-10-20T22:43:38.330Z"
+          }
+        ]
+      }
+    }
+  }
+}

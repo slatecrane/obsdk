@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/payment/v2/sepa-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:08dffe",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "creditorAccount": {
+        "iban": "NL92PSEUDO22EF4DF408"
+      },
+      "creditorName": "creditorname-ea3b67",
+      "instructedAmount": {
+        "amount": 2.50,
+        "currency": "EUR"
+      },
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-adeb2b",
+      "requestedExecutionDate": "2026-11-20"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "JISDW7JURX1792528256442",
+      "paymentStatus": "RCVD"
+    }
+  }
+}

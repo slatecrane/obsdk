@@ -1,0 +1,77 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to ABN AMRO to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://auth-sandbox.abnamro.com/as/authorization.oauth2?scope=psd2:payment:xborder:write+psd2:payment:xborder:read&client_id=REDACTED:client_id&transactionId=YSIC2HAN3I1792524569143&response_type=code&flow=code&redirect_uri=https://localhost/auth&state=6194022adc94406d98fb"
+      },
+      "payment": {
+        "id": "YSIC2HAN3I1792524569143",
+        "type": "crossborder",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6ImNyb3NzLWJvcmRlci1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJZU0lDMkhBTjNJMTc5MjUyNDU2OTE0MyIsInQiOiJjcm9zc2JvcmRlciJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "abnamro",
+        "country": "NL",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "abnamro-psd2",
+        "generation": 1,
+        "updated_at": "2026-10-20T19:29:28Z",
+        "access_token": "REDACTED:access_token:dc4c41",
+        "refresh_token": "REDACTED:refresh_token:e7a99f",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-20T21:29:28Z",
+        "consents": {
+          "pis": {
+            "id": "YSIC2HAN3I1792524569143",
+            "kind": "pis",
+            "status": "valid"
+          }
+        }
+      },
+      "payment": {
+        "id": "YSIC2HAN3I1792524569143",
+        "type": "crossborder",
+        "status": "in_progress",
+        "bank_status": "PDNG",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6ImNyb3NzLWJvcmRlci1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJZU0lDMkhBTjNJMTc5MjUyNDU2OTE0MyIsInQiOiJjcm9zc2JvcmRlciJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL51PSEUDO9A8B132686"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "YSIC2HAN3I1792524569143",
+      "type": "crossborder",
+      "status": "completed",
+      "bank_status": "ACCC",
+      "final": true,
+      "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6ImNyb3NzLWJvcmRlci1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJZU0lDMkhBTjNJMTc5MjUyNDU2OTE0MyIsInQiOiJjcm9zc2JvcmRlciJ9",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "NL51PSEUDO9A8B132686"
+      }
+    }
+  }
+]

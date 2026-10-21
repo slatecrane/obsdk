@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/payment/v2/sepa-credit-transfers/OOSQTBINUX1792524314681/status",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:23be9d"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "debtorAccount": {
+        "iban": "NL51PSEUDO9A8B132686"
+      },
+      "debtorName": "debtorname-ea3b67",
+      "paymentId": "OOSQTBINUX1792524314681",
+      "paymentStatus": "ACCC",
+      "statusDetails": {
+        "withRecipient": "2026-10-20T19:27"
+      }
+    }
+  }
+}

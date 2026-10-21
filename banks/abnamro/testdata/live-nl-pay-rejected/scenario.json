@@ -1,0 +1,58 @@
+{
+  "config": {
+    "bank": "abnamro",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-20T19:31:44Z",
+    "redirect_url": "https://localhost/auth",
+    "extra": {
+      "api_key": "REDACTED:api_key:58df81"
+    },
+    "ids": {
+      "state": [
+        "d3c6d5d7-cfc5-4b6f-9460-3f9aa4a88820"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "NL64PSEUDOA350E7964B"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "3.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-ea3b67",
+              "account": {
+                "scheme": "IBAN",
+                "value": "NL92PSEUDO22EF4DF408"
+              }
+            }
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://localhost/auth?code=REDACTED%3Acode%3A8b4e5b\u0026state=d3c6d5d7cfc54b6f9460"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiR01ZMFc5TlhFRTE3OTI1MjQ3MDYyMTEiLCJ0Ijoic2VwYSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/payment/v2/cross-border-credit-transfers/YSIC2HAN3I1792524569143/status",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:c4f714"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "debtorAccount": {
+        "iban": "NL51PSEUDO9A8B132686"
+      },
+      "debtorName": "debtorname-ea3b67",
+      "paymentId": "YSIC2HAN3I1792524569143",
+      "paymentStatus": "ACCC",
+      "statusDetails": {
+        "withRecipient": "2026-10-20T19:31"
+      }
+    }
+  }
+}

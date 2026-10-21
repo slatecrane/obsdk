@@ -1,0 +1,42 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/payment/v2/cross-border-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:b02846",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "chargeBearer": "SHAR",
+      "creditorAccount": {
+        "bban": "10643233273382021",
+        "currency": "USD"
+      },
+      "creditorAddress": {
+        "country": "US",
+        "postCode": "10001",
+        "streetName": "Main Street",
+        "townName": "New York"
+      },
+      "creditorAgent": "USBKUS44",
+      "creditorName": "creditorname-ea3b67",
+      "instructedAmount": {
+        "amount": 100.51,
+        "currency": "USD"
+      },
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-f9cb2b"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "paymentId": "YSIC2HAN3I1792524569143",
+      "paymentStatus": "RCVD"
+    }
+  }
+}

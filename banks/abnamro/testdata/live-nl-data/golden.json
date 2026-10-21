@@ -1,0 +1,5143 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "NL92PSEUDO22EF4DF408",
+        "stable_id": "8a60ef775deccf235122365934b7a54c",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "NL92PSEUDO22EF4DF408"
+          }
+        ],
+        "owner_name": "accountholdername-688851",
+        "currency": "EUR",
+        "bic": "ABNANL2A",
+        "raw": {
+          "accountHolderName": "accountholdername-688851",
+          "accountNumber": "NL92PSEUDO22EF4DF408",
+          "currency": "EUR"
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_booked",
+        "bank_type": "BOOKBALANCE",
+        "amount": {
+          "amount": "16.03",
+          "currency": "EUR"
+        }
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "BOOKBALANCEINCLUDINGRESERVATION",
+        "amount": {
+          "amount": "29225.31",
+          "currency": "EUR"
+        }
+      },
+      {
+        "kind": "other",
+        "bank_type": "VALUEBALANCE",
+        "amount": {
+          "amount": "30305.31",
+          "currency": "EUR"
+        }
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "GB036000001934240AE",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "40.0",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-20",
+          "counterparty": {},
+          "remittance": [
+            "descriptionlines-31cbe2",
+            "descriptionlines-5c5e0a",
+            "descriptionlines-36d168",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "247",
+          "balance_after": {
+            "amount": "35329.28",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 40.0,
+            "balanceAfterMutation": 35329.28,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-20",
+            "counterPartyAccountNumber": "",
+            "counterPartyName": "",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-31cbe2",
+              "descriptionlines-5c5e0a",
+              "descriptionlines-36d168",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GB036000001934240AE",
+            "mutationCode": "247",
+            "status": "Executed",
+            "timestamp": "2026-10-20T22:40:39.330Z"
+          }
+        },
+        {
+          "id": "GT037006261670480AE",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "16.03",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-20",
+          "counterparty": {
+            "name": "counterpartyname-c1ef14",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL46PSEUDO3B4978A744"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-b957b3",
+            "descriptionlines-95d8be",
+            "descriptionlines-c227e1",
+            "descriptionlines-362571",
+            "descriptionlines-57b1dc",
+            "descriptionlines-084f70",
+            "descriptionlines-393ebe",
+            "descriptionlines-968640"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "35345.31",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 16.03,
+            "balanceAfterMutation": 35345.31,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-20",
+            "counterPartyAccountNumber": "NL46PSEUDO3B4978A744",
+            "counterPartyName": "counterpartyname-c1ef14",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-b957b3",
+              "descriptionlines-95d8be",
+              "descriptionlines-c227e1",
+              "descriptionlines-362571",
+              "descriptionlines-57b1dc",
+              "descriptionlines-084f70",
+              "descriptionlines-393ebe",
+              "descriptionlines-968640"
+            ],
+            "id": "GT037006261670480AE",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-10-20T22:40:38.330Z"
+          }
+        },
+        {
+          "id": "9855H1218554877S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2468.04",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-20",
+          "counterparty": {
+            "name": "counterpartyname-c1ef13",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE68PSEUDO5555064C3F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-9c5dd9",
+            "descriptionlines-edcc3d",
+            "descriptionlines-c227e2",
+            "descriptionlines-3632e5",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-392b2a",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "35289.28",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 2468.04,
+            "balanceAfterMutation": 35289.28,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-20",
+            "counterPartyAccountNumber": "DE68PSEUDO5555064C3F",
+            "counterPartyName": "counterpartyname-c1ef13",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-9c5dd9",
+              "descriptionlines-edcc3d",
+              "descriptionlines-c227e2",
+              "descriptionlines-3632e5",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-392b2a",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9855H1218554877S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-20T22:40:38.320Z"
+          }
+        },
+        {
+          "id": "9855P5427870677S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "181.5",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-20",
+          "counterparty": {
+            "name": "counterpartyname-c1ef16",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL87PSEUDO0E255D56AC"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-f5ef78",
+            "descriptionlines-292652",
+            "descriptionlines-c227d7",
+            "descriptionlines-25b60f",
+            "descriptionlines-57bf6f",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "32821.24",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 181.5,
+            "balanceAfterMutation": 32821.24,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-20",
+            "counterPartyAccountNumber": "NL87PSEUDO0E255D56AC",
+            "counterPartyName": "counterpartyname-c1ef16",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-f5ef78",
+              "descriptionlines-292652",
+              "descriptionlines-c227d7",
+              "descriptionlines-25b60f",
+              "descriptionlines-57bf6f",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9855P5427870677S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-20T22:40:38.310Z"
+          }
+        },
+        {
+          "id": "GT020008680598410AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "229.6",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-20",
+          "counterparty": {
+            "name": "counterpartyname-c1f283",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL28PSEUDOCB35CD9C21"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-6a1830",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d2",
+            "descriptionlines-3f1d19",
+            "descriptionlines-084f70",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "32639.74",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 229.6,
+            "balanceAfterMutation": 32639.74,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-20",
+            "counterPartyAccountNumber": "NL28PSEUDOCB35CD9C21",
+            "counterPartyName": "counterpartyname-c1f283",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-6a1830",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d2",
+              "descriptionlines-3f1d19",
+              "descriptionlines-084f70",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008680598410AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-20T22:40:38.260Z"
+          }
+        },
+        {
+          "id": "GT020008685772206AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "223.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-20",
+          "counterparty": {
+            "name": "counterpartyname-c1f280",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL63PSEUDOE959D8CF98"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-af5b41",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d5",
+            "descriptionlines-2d0bb2",
+            "descriptionlines-084f70",
+            "descriptionlines-dcef11",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "32410.14",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 223.85,
+            "balanceAfterMutation": 32410.14,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-20",
+            "counterPartyAccountNumber": "NL63PSEUDOE959D8CF98",
+            "counterPartyName": "counterpartyname-c1f280",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-af5b41",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d5",
+              "descriptionlines-2d0bb2",
+              "descriptionlines-084f70",
+              "descriptionlines-dcef11",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008685772206AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-20T22:40:38.250Z"
+          }
+        },
+        {
+          "id": "GT020008689874010AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2618.8",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-20",
+          "counterparty": {
+            "name": "counterpartyname-c1f281",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL89PSEUDOE215B4A809"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-1abfa9",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d4",
+            "descriptionlines-25b612",
+            "descriptionlines-57b55f",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "32186.29",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 2618.8,
+            "balanceAfterMutation": 32186.29,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-20",
+            "counterPartyAccountNumber": "NL89PSEUDOE215B4A809",
+            "counterPartyName": "counterpartyname-c1f281",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-1abfa9",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d4",
+              "descriptionlines-25b612",
+              "descriptionlines-57b55f",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008689874010AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-20T22:40:38.240Z"
+          }
+        },
+        {
+          "id": "GT020008686806830AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "420.35",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-19",
+          "counterparty": {
+            "name": "counterpartyname-c1f284",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL64PSEUDO96D95782FE"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-062c45",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d9",
+            "descriptionlines-362c60",
+            "descriptionlines-084f70",
+            "descriptionlines-4b8935",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "29567.49",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 420.35,
+            "balanceAfterMutation": 29567.49,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-19",
+            "counterPartyAccountNumber": "NL64PSEUDO96D95782FE",
+            "counterPartyName": "counterpartyname-c1f284",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-062c45",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d9",
+              "descriptionlines-362c60",
+              "descriptionlines-084f70",
+              "descriptionlines-4b8935",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008686806830AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-19T22:42:10.690Z"
+          }
+        },
+        {
+          "id": "TJ025519508640",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "724.49",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-19",
+          "counterparty": {
+            "name": "counterpartyname-c1f285",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL13PSEUDOB5B3EAC147"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-67d1f4",
+            "descriptionlines-709df6",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d8",
+            "descriptionlines-3632ec",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "427",
+          "balance_after": {
+            "amount": "29147.14",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 724.49,
+            "balanceAfterMutation": 29147.14,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-19",
+            "counterPartyAccountNumber": "NL13PSEUDOB5B3EAC147",
+            "counterPartyName": "counterpartyname-c1f285",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-67d1f4",
+              "descriptionlines-709df6",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d8",
+              "descriptionlines-3632ec",
+              "descriptionlines-07d37c"
+            ],
+            "id": "TJ025519508640",
+            "mutationCode": "427",
+            "status": "Executed",
+            "timestamp": "2026-10-19T22:42:10.680Z"
+          }
+        },
+        {
+          "id": "9854H1430134841S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "444.8",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-19",
+          "counterparty": {
+            "name": "counterpartyname-c1f282",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL75PSEUDOC04C96FD38"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-feb9fa",
+            "descriptionlines-292652",
+            "descriptionlines-c224d3",
+            "descriptionlines-084f70",
+            "descriptionlines-e1a27f",
+            "descriptionlines-db7e1b",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "28422.65",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 444.8,
+            "balanceAfterMutation": 28422.65,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-19",
+            "counterPartyAccountNumber": "NL75PSEUDOC04C96FD38",
+            "counterPartyName": "counterpartyname-c1f282",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-feb9fa",
+              "descriptionlines-292652",
+              "descriptionlines-c224d3",
+              "descriptionlines-084f70",
+              "descriptionlines-e1a27f",
+              "descriptionlines-db7e1b",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9854H1430134841S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-19T22:42:10.670Z"
+          }
+        },
+        {
+          "id": "9854I4744038454S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "183.92",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-19",
+          "counterparty": {
+            "name": "counterpartyname-c1f287",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL97PSEUDO64DACECEC6"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-77e758",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d6",
+            "descriptionlines-3f2a97",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "27977.85",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 183.92,
+            "balanceAfterMutation": 27977.85,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-19",
+            "counterPartyAccountNumber": "NL97PSEUDO64DACECEC6",
+            "counterPartyName": "counterpartyname-c1f287",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-77e758",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d6",
+              "descriptionlines-3f2a97",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9854I4744038454S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-19T22:42:10.400Z"
+          }
+        },
+        {
+          "id": "9847O0058758925S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "232.5",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-16",
+          "counterparty": {
+            "name": "counterpartyname-c1f288",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL21PSEUDOE47C4A6833"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-0ed351",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224dd",
+            "descriptionlines-3f2097",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "27793.93",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 232.5,
+            "balanceAfterMutation": 27793.93,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-16",
+            "counterPartyAccountNumber": "NL21PSEUDOE47C4A6833",
+            "counterPartyName": "counterpartyname-c1f288",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-0ed351",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224dd",
+              "descriptionlines-3f2097",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9847O0058758925S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-16T22:51:09.520Z"
+          }
+        },
+        {
+          "id": "9853N5408687272S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "179.69",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-16",
+          "counterparty": {
+            "name": "counterpartyname-c1f286",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL58PSEUDOE277EDD74B"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-77a915",
+            "descriptionlines-0969eb",
+            "descriptionlines-c224d7",
+            "descriptionlines-25b313",
+            "descriptionlines-57c2f5",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "27561.43",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 179.69,
+            "balanceAfterMutation": 27561.43,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-16",
+            "counterPartyAccountNumber": "NL58PSEUDOE277EDD74B",
+            "counterPartyName": "counterpartyname-c1f286",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-77a915",
+              "descriptionlines-0969eb",
+              "descriptionlines-c224d7",
+              "descriptionlines-25b313",
+              "descriptionlines-57c2f5",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9853N5408687272S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-16T22:51:09.510Z"
+          }
+        },
+        {
+          "id": "GT030606257398140FS",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "79.44",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-16",
+          "counterparty": {
+            "name": "counterpartyname-c1db17",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL45PSEUDOF45777ADB2"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-091300",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22ee6",
+            "descriptionlines-25b60b",
+            "descriptionlines-57b1db",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "27381.74",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 79.44,
+            "balanceAfterMutation": 27381.74,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-16",
+            "counterPartyAccountNumber": "NL45PSEUDOF45777ADB2",
+            "counterPartyName": "counterpartyname-c1db17",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-091300",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22ee6",
+              "descriptionlines-25b60b",
+              "descriptionlines-57b1db",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT030606257398140FS",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-16T22:51:09.430Z"
+          }
+        },
+        {
+          "id": "9850H1221280395S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "4901.41",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "counterparty": {
+            "name": "counterpartyname-c1db1a",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL45PSEUDO8D59E32935"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-a09571",
+            "descriptionlines-6abe40",
+            "descriptionlines-c22ee3",
+            "descriptionlines-3621e6",
+            "descriptionlines-22e1b2",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "27302.3",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 4901.41,
+            "balanceAfterMutation": 27302.3,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-15",
+            "counterPartyAccountNumber": "NL45PSEUDO8D59E32935",
+            "counterPartyName": "counterpartyname-c1db1a",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-a09571",
+              "descriptionlines-6abe40",
+              "descriptionlines-c22ee3",
+              "descriptionlines-3621e6",
+              "descriptionlines-22e1b2",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9850H1221280395S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-15T22:44:32.660Z"
+          }
+        },
+        {
+          "id": "GT020008679264510AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "157.3",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "counterparty": {
+            "name": "counterpartyname-c1db19",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL75PSEUDO20FA189BB0"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-1677ff",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22ee4",
+            "descriptionlines-25b610",
+            "descriptionlines-57c9e2",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "22400.89",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 157.3,
+            "balanceAfterMutation": 22400.89,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-15",
+            "counterPartyAccountNumber": "NL75PSEUDO20FA189BB0",
+            "counterPartyName": "counterpartyname-c1db19",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-1677ff",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22ee4",
+              "descriptionlines-25b610",
+              "descriptionlines-57c9e2",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008679264510AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-15T22:44:32.650Z"
+          }
+        },
+        {
+          "id": "GT020008679754270AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "100.19",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "counterparty": {
+            "name": "counterpartyname-c1db18",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL80PSEUDOD241B5DF7F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-5d64f1",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22ee5",
+            "descriptionlines-3f2096",
+            "descriptionlines-084f70",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "22243.59",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 100.19,
+            "balanceAfterMutation": 22243.59,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-15",
+            "counterPartyAccountNumber": "NL80PSEUDOD241B5DF7F",
+            "counterPartyName": "counterpartyname-c1db18",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-5d64f1",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22ee5",
+              "descriptionlines-3f2096",
+              "descriptionlines-084f70",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008679754270AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-15T22:44:32.640Z"
+          }
+        },
+        {
+          "id": "9849I4340990940S0AD",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-4638.06",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-15",
+          "counterparty": {
+            "name": "counterpartyname-778ba4",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL07PSEUDO448A1A4045"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-0d657d",
+            "descriptionlines-2d542d",
+            "descriptionlines-3c63f6",
+            "descriptionlines-7f1bf7",
+            "descriptionlines-362c5c",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-80d9bd",
+            "descriptionlines-2eadda"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "22143.4",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 4638.06,
+            "balanceAfterMutation": 22143.4,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-15",
+            "counterPartyAccountNumber": "NL07PSEUDO448A1A4045",
+            "counterPartyName": "counterpartyname-778ba4",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-0d657d",
+              "descriptionlines-2d542d",
+              "descriptionlines-3c63f6",
+              "descriptionlines-7f1bf7",
+              "descriptionlines-362c5c",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-80d9bd",
+              "descriptionlines-2eadda"
+            ],
+            "id": "9849I4340990940S0AD",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-10-15T22:44:32.470Z"
+          }
+        },
+        {
+          "id": "GT020008675741640AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "4079.22",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-14",
+          "counterparty": {
+            "name": "counterpartyname-c1f281",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL89PSEUDOE215B4A809"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-1abfa9",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d4",
+            "descriptionlines-362c69",
+            "descriptionlines-084f70",
+            "descriptionlines-dcfc9e",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "26781.46",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 4079.22,
+            "balanceAfterMutation": 26781.46,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-14",
+            "counterPartyAccountNumber": "NL89PSEUDOE215B4A809",
+            "counterPartyName": "counterpartyname-c1f281",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-1abfa9",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d4",
+              "descriptionlines-362c69",
+              "descriptionlines-084f70",
+              "descriptionlines-dcfc9e",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008675741640AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-14T22:42:23.780Z"
+          }
+        },
+        {
+          "id": "9848O2720254024S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "90.02",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-13",
+          "counterparty": {
+            "name": "counterpartyname-c1db14",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL33PSEUDO7BF4B0BD13"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-040699",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22ee9",
+            "descriptionlines-3628d9",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "22702.24",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 90.02,
+            "balanceAfterMutation": 22702.24,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-13",
+            "counterPartyAccountNumber": "NL33PSEUDO7BF4B0BD13",
+            "counterPartyName": "counterpartyname-c1db14",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-040699",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22ee9",
+              "descriptionlines-3628d9",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9848O2720254024S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-13T22:42:16.290Z"
+          }
+        },
+        {
+          "id": "GT020008673014620AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "348.72",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-13",
+          "counterparty": {
+            "name": "counterpartyname-c1db16",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL18PSEUDO00BE53987B"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-34bfe5",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22ee7",
+            "descriptionlines-3621ef",
+            "descriptionlines-084f70",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "22612.22",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 348.72,
+            "balanceAfterMutation": 22612.22,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-13",
+            "counterPartyAccountNumber": "NL18PSEUDO00BE53987B",
+            "counterPartyName": "counterpartyname-c1db16",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-34bfe5",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22ee7",
+              "descriptionlines-3621ef",
+              "descriptionlines-084f70",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008673014620AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-13T22:42:16.210Z"
+          }
+        },
+        {
+          "id": "9848H1513147616S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2147.87",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-13",
+          "counterparty": {
+            "name": "counterpartyname-c1db15",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL77PSEUDO9AA1458296"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-813eef",
+            "descriptionlines-97a1d7",
+            "descriptionlines-c22ee8",
+            "descriptionlines-2d0f3a",
+            "descriptionlines-084f70",
+            "descriptionlines-dd0021",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "22263.5",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 2147.87,
+            "balanceAfterMutation": 22263.5,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-13",
+            "counterPartyAccountNumber": "NL77PSEUDO9AA1458296",
+            "counterPartyName": "counterpartyname-c1db15",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-813eef",
+              "descriptionlines-97a1d7",
+              "descriptionlines-c22ee8",
+              "descriptionlines-2d0f3a",
+              "descriptionlines-084f70",
+              "descriptionlines-dd0021",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9848H1513147616S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-13T22:42:16.200Z"
+          }
+        },
+        {
+          "id": "9847L3001298064S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "6962.33",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1db0f",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL89PSEUDO5766CEF3F3"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-42d9bb",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22ede",
+            "descriptionlines-36256d",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "20115.63",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 6962.33,
+            "balanceAfterMutation": 20115.63,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL89PSEUDO5766CEF3F3",
+            "counterPartyName": "counterpartyname-c1db0f",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-42d9bb",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22ede",
+              "descriptionlines-36256d",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9847L3001298064S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-12T22:44:01.320Z"
+          }
+        },
+        {
+          "id": "GT030606234984590FS",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "149.74",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1f289",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL91PSEUDO98A12276CF"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-75f9c9",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224dc",
+            "descriptionlines-25b30f",
+            "descriptionlines-57c2f3",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "13153.3",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 149.74,
+            "balanceAfterMutation": 13153.3,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL91PSEUDO98A12276CF",
+            "counterPartyName": "counterpartyname-c1f289",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-75f9c9",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224dc",
+              "descriptionlines-25b30f",
+              "descriptionlines-57c2f3",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT030606234984590FS",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-12T22:44:01.270Z"
+          }
+        },
+        {
+          "id": "9847H1428055037S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "223.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1de1b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL34PSEUDO388AD2AB22"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-ef64d5",
+            "descriptionlines-97a1d7",
+            "descriptionlines-c22b62",
+            "descriptionlines-2d0f36",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-392134",
+            "descriptionlines-fbaacb"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "13003.56",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 223.85,
+            "balanceAfterMutation": 13003.56,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL34PSEUDO388AD2AB22",
+            "counterPartyName": "counterpartyname-c1de1b",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-ef64d5",
+              "descriptionlines-97a1d7",
+              "descriptionlines-c22b62",
+              "descriptionlines-2d0f36",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-392134",
+              "descriptionlines-fbaacb"
+            ],
+            "id": "9847H1428055037S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-12T22:44:01.260Z"
+          }
+        },
+        {
+          "id": "9847I1425714133S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "123.12",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1de1c",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL10PSEUDO80231D3D07"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-996816",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22b61",
+            "descriptionlines-3f429d",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "12779.71",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 123.12,
+            "balanceAfterMutation": 12779.71,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL10PSEUDO80231D3D07",
+            "counterPartyName": "counterpartyname-c1de1c",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-996816",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22b61",
+              "descriptionlines-3f429d",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9847I1425714133S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-12T22:44:01.250Z"
+          }
+        },
+        {
+          "id": "9847J3653789613S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "108.9",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1de1d",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL30PSEUDODE1F158C0D"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-658008",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22b60",
+            "descriptionlines-3628dc",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "12656.59",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 108.9,
+            "balanceAfterMutation": 12656.59,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL30PSEUDODE1F158C0D",
+            "counterPartyName": "counterpartyname-c1de1d",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-658008",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22b60",
+              "descriptionlines-3628dc",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9847J3653789613S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-12T22:44:01.240Z"
+          }
+        },
+        {
+          "id": "9847J5416135973S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "8144.03",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1db10",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL68PSEUDO6A9E13F426"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-92a338",
+            "descriptionlines-292652",
+            "descriptionlines-c22edd",
+            "descriptionlines-084f70",
+            "descriptionlines-e1a286",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-d19018"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "12547.69",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 8144.03,
+            "balanceAfterMutation": 12547.69,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL68PSEUDO6A9E13F426",
+            "counterPartyName": "counterpartyname-c1db10",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-92a338",
+              "descriptionlines-292652",
+              "descriptionlines-c22edd",
+              "descriptionlines-084f70",
+              "descriptionlines-e1a286",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-d19018"
+            ],
+            "id": "9847J5416135973S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-12T22:44:01.230Z"
+          }
+        },
+        {
+          "id": "GT020008669833970AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1632.29",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1de1a",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL26PSEUDO8465E4F79C"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-6b8927",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22b63",
+            "descriptionlines-25b308",
+            "descriptionlines-57bf70",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "4403.66",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 1632.29,
+            "balanceAfterMutation": 4403.66,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL26PSEUDO8465E4F79C",
+            "counterPartyName": "counterpartyname-c1de1a",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-6b8927",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22b63",
+              "descriptionlines-25b308",
+              "descriptionlines-57bf70",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008669833970AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-12T22:44:01.180Z"
+          }
+        },
+        {
+          "id": "9846J3439857065S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "38.36",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1de18",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL63PSEUDO6847B92ECA"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-ff8c48",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22b65",
+            "descriptionlines-25b611",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "2771.37",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 38.36,
+            "balanceAfterMutation": 2771.37,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL63PSEUDO6847B92ECA",
+            "counterPartyName": "counterpartyname-c1de18",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-ff8c48",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22b65",
+              "descriptionlines-25b611",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9846J3439857065S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-12T00:13:37.090Z"
+          }
+        },
+        {
+          "id": "GT020008668558150AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "292.98",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1de17",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL07PSEUDO1459CDB62F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-3034ba",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22b66",
+            "descriptionlines-25ac17",
+            "descriptionlines-57c2f4",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "2733.01",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 292.98,
+            "balanceAfterMutation": 2733.01,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL07PSEUDO1459CDB62F",
+            "counterPartyName": "counterpartyname-c1de17",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-3034ba",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22b66",
+              "descriptionlines-25ac17",
+              "descriptionlines-57c2f4",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008668558150AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-12T00:13:37.010Z"
+          }
+        },
+        {
+          "id": "TJ025466980410",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "394.34",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-12",
+          "counterparty": {
+            "name": "counterpartyname-c1f285",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL13PSEUDOB5B3EAC147"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-67d1f4",
+            "descriptionlines-709df6",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d8",
+            "descriptionlines-3621e5",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "427",
+          "balance_after": {
+            "amount": "2440.03",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 394.34,
+            "balanceAfterMutation": 2440.03,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-12",
+            "counterPartyAccountNumber": "NL13PSEUDOB5B3EAC147",
+            "counterPartyName": "counterpartyname-c1f285",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-67d1f4",
+              "descriptionlines-709df6",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d8",
+              "descriptionlines-3621e5",
+              "descriptionlines-07d37c"
+            ],
+            "id": "TJ025466980410",
+            "mutationCode": "427",
+            "status": "Executed",
+            "timestamp": "2026-10-12T00:13:37.000Z"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-2000.0",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {},
+          "remittance": [
+            "descriptionlines-1adcdf",
+            "descriptionlines-704983",
+            "descriptionlines-af63a1"
+          ],
+          "bank_code": "361",
+          "balance_after": {
+            "amount": "2045.69",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 2000.0,
+            "balanceAfterMutation": 2045.69,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-08",
+            "counterPartyAccountNumber": "",
+            "counterPartyName": "",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-1adcdf",
+              "descriptionlines-704983",
+              "descriptionlines-af63a1"
+            ],
+            "id": "",
+            "mutationCode": "361",
+            "status": "Executed",
+            "timestamp": "2026-10-08T22:46:37.990Z"
+          }
+        },
+        {
+          "id": "GT020008663972740AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "231.41",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {
+            "name": "counterpartyname-dccc15",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL61PSEUDOF4B05EC031"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-31e908",
+            "descriptionlines-95d8be",
+            "descriptionlines-a73de8",
+            "descriptionlines-25af9d",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "4045.69",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 231.41,
+            "balanceAfterMutation": 4045.69,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-08",
+            "counterPartyAccountNumber": "NL61PSEUDOF4B05EC031",
+            "counterPartyName": "counterpartyname-dccc15",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-31e908",
+              "descriptionlines-95d8be",
+              "descriptionlines-a73de8",
+              "descriptionlines-25af9d",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008663972740AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-08T22:46:37.180Z"
+          }
+        },
+        {
+          "id": "GT020008663972830AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "205.16",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {
+            "name": "counterpartyname-dccc16",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL52PSEUDO5B6EED7E38"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-6b04a3",
+            "descriptionlines-95d8be",
+            "descriptionlines-a73de7",
+            "descriptionlines-25afa0",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "3814.28",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 205.16,
+            "balanceAfterMutation": 3814.28,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-08",
+            "counterPartyAccountNumber": "NL52PSEUDO5B6EED7E38",
+            "counterPartyName": "counterpartyname-dccc16",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-6b04a3",
+              "descriptionlines-95d8be",
+              "descriptionlines-a73de7",
+              "descriptionlines-25afa0",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008663972830AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-08T22:46:37.170Z"
+          }
+        },
+        {
+          "id": "GT020008663998390AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "26.98",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {
+            "name": "counterpartyname-dccc17",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL71PSEUDO12FE325FC0"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-56d848",
+            "descriptionlines-95d8be",
+            "descriptionlines-a73de6",
+            "descriptionlines-25b30d",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "3609.12",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 26.98,
+            "balanceAfterMutation": 3609.12,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-08",
+            "counterPartyAccountNumber": "NL71PSEUDO12FE325FC0",
+            "counterPartyName": "counterpartyname-dccc17",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-56d848",
+              "descriptionlines-95d8be",
+              "descriptionlines-a73de6",
+              "descriptionlines-25b30d",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008663998390AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-08T22:46:37.160Z"
+          }
+        },
+        {
+          "id": "GT025020429900506AE",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-24.75",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {
+            "name": "counterpartyname-80bd4b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL70PSEUDO3619AB0E00"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-0d657d",
+            "descriptionlines-f470cb",
+            "descriptionlines-3c6b05",
+            "descriptionlines-7f1bf8",
+            "descriptionlines-363673",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-606468"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "3582.14",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 24.75,
+            "balanceAfterMutation": 3582.14,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-08",
+            "counterPartyAccountNumber": "NL70PSEUDO3619AB0E00",
+            "counterPartyName": "counterpartyname-80bd4b",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-0d657d",
+              "descriptionlines-f470cb",
+              "descriptionlines-3c6b05",
+              "descriptionlines-7f1bf8",
+              "descriptionlines-363673",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-606468"
+            ],
+            "id": "GT025020429900506AE",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-10-08T22:46:37.150Z"
+          }
+        },
+        {
+          "id": "9842O5321132100S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "109.44",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {
+            "name": "counterpartyname-c1de14",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL37PSEUDOB6600E2642"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-2593c2",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22b59",
+            "descriptionlines-25b30c",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "3606.89",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 109.44,
+            "balanceAfterMutation": 3606.89,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-08",
+            "counterPartyAccountNumber": "NL37PSEUDOB6600E2642",
+            "counterPartyName": "counterpartyname-c1de14",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-2593c2",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22b59",
+              "descriptionlines-25b30c",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9842O5321132100S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-08T22:46:37.140Z"
+          }
+        },
+        {
+          "id": "9843H1219772507S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "310.73",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {
+            "name": "counterpartyname-c1de15",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "BE89PSEUDO4E5F73E7AD"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-137090",
+            "descriptionlines-3b76ab",
+            "descriptionlines-c22b58",
+            "descriptionlines-3f209c",
+            "descriptionlines-57b562",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "3497.45",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 310.73,
+            "balanceAfterMutation": 3497.45,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-08",
+            "counterPartyAccountNumber": "BE89PSEUDO4E5F73E7AD",
+            "counterPartyName": "counterpartyname-c1de15",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-137090",
+              "descriptionlines-3b76ab",
+              "descriptionlines-c22b58",
+              "descriptionlines-3f209c",
+              "descriptionlines-57b562",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9843H1219772507S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-08T22:46:37.130Z"
+          }
+        },
+        {
+          "id": "9843J4245462401S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "22.87",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-08",
+          "counterparty": {
+            "name": "counterpartyname-c1de16",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL57PSEUDO9DC87B14DA"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-0b664b",
+            "descriptionlines-20f19c",
+            "descriptionlines-c22b67",
+            "descriptionlines-084f70",
+            "descriptionlines-e1a280",
+            "descriptionlines-dd0695",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "3186.72",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 22.87,
+            "balanceAfterMutation": 3186.72,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-08",
+            "counterPartyAccountNumber": "NL57PSEUDO9DC87B14DA",
+            "counterPartyName": "counterpartyname-c1de16",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-0b664b",
+              "descriptionlines-20f19c",
+              "descriptionlines-c22b67",
+              "descriptionlines-084f70",
+              "descriptionlines-e1a280",
+              "descriptionlines-dd0695",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9843J4245462401S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-08T22:46:37.120Z"
+          }
+        },
+        {
+          "id": "GT020008659665780AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "618.79",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-07",
+          "counterparty": {
+            "name": "counterpartyname-dccc13",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL38PSEUDOA7636D529E"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-65c8d9",
+            "descriptionlines-95d8be",
+            "descriptionlines-a73dea",
+            "descriptionlines-36366d",
+            "descriptionlines-084f70",
+            "descriptionlines-dcef10",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "3163.85",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 618.79,
+            "balanceAfterMutation": 3163.85,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-07",
+            "counterPartyAccountNumber": "NL38PSEUDOA7636D529E",
+            "counterPartyName": "counterpartyname-dccc13",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-65c8d9",
+              "descriptionlines-95d8be",
+              "descriptionlines-a73dea",
+              "descriptionlines-36366d",
+              "descriptionlines-084f70",
+              "descriptionlines-dcef10",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008659665780AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-07T22:43:30.910Z"
+          }
+        },
+        {
+          "id": "GT020008606406150AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "451.87",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-07",
+          "counterparty": {
+            "name": "counterpartyname-dccc14",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL51PSEUDO9CC7C87E66"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-71aa2c",
+            "descriptionlines-95d8be",
+            "descriptionlines-a73de9",
+            "descriptionlines-25ac1d",
+            "descriptionlines-57b1da",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "2545.06",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 451.87,
+            "balanceAfterMutation": 2545.06,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-07",
+            "counterPartyAccountNumber": "NL51PSEUDO9CC7C87E66",
+            "counterPartyName": "counterpartyname-dccc14",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-71aa2c",
+              "descriptionlines-95d8be",
+              "descriptionlines-a73de9",
+              "descriptionlines-25ac1d",
+              "descriptionlines-57b1da",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008606406150AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-07T22:43:30.900Z"
+          }
+        },
+        {
+          "id": "9842N3153926326S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "101.64",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-07",
+          "counterparty": {
+            "name": "counterpartyname-dccc12",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL56PSEUDOE893566A11"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-7ddb8f",
+            "descriptionlines-95d8be",
+            "descriptionlines-a73deb",
+            "descriptionlines-25b312",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "2093.19",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 101.64,
+            "balanceAfterMutation": 2093.19,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-07",
+            "counterPartyAccountNumber": "NL56PSEUDOE893566A11",
+            "counterPartyName": "counterpartyname-dccc12",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-7ddb8f",
+              "descriptionlines-95d8be",
+              "descriptionlines-a73deb",
+              "descriptionlines-25b312",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9842N3153926326S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-07T22:43:30.430Z"
+          }
+        },
+        {
+          "id": "GT020008658844580AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "557.08",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-07",
+          "counterparty": {
+            "name": "counterpartyname-c1db16",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL18PSEUDO00BE53987B"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-34bfe5",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22ee7",
+            "descriptionlines-3621f0",
+            "descriptionlines-084f70",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "1991.55",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 557.08,
+            "balanceAfterMutation": 1991.55,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-07",
+            "counterPartyAccountNumber": "NL18PSEUDO00BE53987B",
+            "counterPartyName": "counterpartyname-c1db16",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-34bfe5",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22ee7",
+              "descriptionlines-3621f0",
+              "descriptionlines-084f70",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008658844580AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-07T22:43:30.420Z"
+          }
+        },
+        {
+          "id": "9841O2625524099S0AI",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1460.0",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {
+            "name": "counterpartyname-80bd4e",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL08PSEUDO6150FD05E2"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-fa9a92",
+            "descriptionlines-b7ae2e",
+            "descriptionlines-40ba1a",
+            "descriptionlines-3621ed",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "1434.47",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 1460.0,
+            "balanceAfterMutation": 1434.47,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-06",
+            "counterPartyAccountNumber": "NL08PSEUDO6150FD05E2",
+            "counterPartyName": "counterpartyname-80bd4e",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-fa9a92",
+              "descriptionlines-b7ae2e",
+              "descriptionlines-40ba1a",
+              "descriptionlines-3621ed",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9841O2625524099S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-06T22:42:52.340Z"
+          }
+        },
+        {
+          "id": "9841O0451014519S0AI",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-5255.0",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {
+            "name": "counterpartyname-77a717",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL88PSEUDO97ED267859"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-53fb48",
+            "descriptionlines-292652",
+            "descriptionlines-49d049",
+            "descriptionlines-50776b",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "2894.47",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 5255.0,
+            "balanceAfterMutation": 2894.47,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-06",
+            "counterPartyAccountNumber": "NL88PSEUDO97ED267859",
+            "counterPartyName": "counterpartyname-77a717",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-53fb48",
+              "descriptionlines-292652",
+              "descriptionlines-49d049",
+              "descriptionlines-50776b",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9841O0451014519S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-06T22:42:52.250Z"
+          }
+        },
+        {
+          "id": "9841H1214934588S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "799.02",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {
+            "name": "counterpartyname-c1ef13",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE68PSEUDO5555064C3F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-9c5dd9",
+            "descriptionlines-edcc3d",
+            "descriptionlines-c227e2",
+            "descriptionlines-3632f1",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-392b29",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "8149.47",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 799.02,
+            "balanceAfterMutation": 8149.47,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-06",
+            "counterPartyAccountNumber": "DE68PSEUDO5555064C3F",
+            "counterPartyName": "counterpartyname-c1ef13",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-9c5dd9",
+              "descriptionlines-edcc3d",
+              "descriptionlines-c227e2",
+              "descriptionlines-3632f1",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-392b29",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9841H1214934588S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-06T22:42:52.090Z"
+          }
+        },
+        {
+          "id": "9841H1214934613S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "636.4",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {
+            "name": "counterpartyname-c1ef13",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE68PSEUDO5555064C3F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-9c5dd9",
+            "descriptionlines-edcc3d",
+            "descriptionlines-c227e2",
+            "descriptionlines-3632ef",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-392b23",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "7350.45",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 636.4,
+            "balanceAfterMutation": 7350.45,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-06",
+            "counterPartyAccountNumber": "DE68PSEUDO5555064C3F",
+            "counterPartyName": "counterpartyname-c1ef13",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-9c5dd9",
+              "descriptionlines-edcc3d",
+              "descriptionlines-c227e2",
+              "descriptionlines-3632ef",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-392b23",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9841H1214934613S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-06T22:42:52.080Z"
+          }
+        },
+        {
+          "id": "9841H1214934638S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "958.32",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {
+            "name": "counterpartyname-c1ef13",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE68PSEUDO5555064C3F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-9c5dd9",
+            "descriptionlines-edcc3d",
+            "descriptionlines-c227e2",
+            "descriptionlines-3632ee",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-392b24",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "6714.05",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 958.32,
+            "balanceAfterMutation": 6714.05,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-06",
+            "counterPartyAccountNumber": "DE68PSEUDO5555064C3F",
+            "counterPartyName": "counterpartyname-c1ef13",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-9c5dd9",
+              "descriptionlines-edcc3d",
+              "descriptionlines-c227e2",
+              "descriptionlines-3632ee",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-392b24",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9841H1214934638S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-06T22:42:52.070Z"
+          }
+        },
+        {
+          "id": "9841H1214934662S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2274.8",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {
+            "name": "counterpartyname-c1ef13",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DE68PSEUDO5555064C3F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-9c5dd9",
+            "descriptionlines-edcc3d",
+            "descriptionlines-c227e2",
+            "descriptionlines-3632e4",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-392b26",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "5755.73",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 2274.8,
+            "balanceAfterMutation": 5755.73,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-06",
+            "counterPartyAccountNumber": "DE68PSEUDO5555064C3F",
+            "counterPartyName": "counterpartyname-c1ef13",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-9c5dd9",
+              "descriptionlines-edcc3d",
+              "descriptionlines-c227e2",
+              "descriptionlines-3632e4",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-392b26",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9841H1214934662S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-06T22:42:52.060Z"
+          }
+        }
+      ],
+      "next_cursor": "activityType=BOOKED&dateFrom=2026-09-21&dateTo=2026-10-20&nextPageKey=2026-10-06T22%3A42%3A52.060000&then=RESERVATION"
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "GT037006209099006AE",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "229.9",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {
+            "name": "counterpartyname-dcc894",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL72PSEUDOFB3CAA30FE"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-14d00c",
+            "descriptionlines-95d8be",
+            "descriptionlines-a740e9",
+            "descriptionlines-25afa2",
+            "descriptionlines-57b8e1",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "3480.93",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 229.9,
+            "balanceAfterMutation": 3480.93,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-06",
+            "counterPartyAccountNumber": "NL72PSEUDOFB3CAA30FE",
+            "counterPartyName": "counterpartyname-dcc894",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-14d00c",
+              "descriptionlines-95d8be",
+              "descriptionlines-a740e9",
+              "descriptionlines-25afa2",
+              "descriptionlines-57b8e1",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT037006209099006AE",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-06T22:42:51.900Z"
+          }
+        },
+        {
+          "id": "GT020008655764900AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "2709.82",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-06",
+          "counterparty": {
+            "name": "counterpartyname-c1f281",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL89PSEUDOE215B4A809"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-1abfa9",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d4",
+            "descriptionlines-362fe6",
+            "descriptionlines-084f70",
+            "descriptionlines-dcfca5",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "3251.03",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 2709.82,
+            "balanceAfterMutation": 3251.03,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-06",
+            "counterPartyAccountNumber": "NL89PSEUDOE215B4A809",
+            "counterPartyName": "counterpartyname-c1f281",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-1abfa9",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d4",
+              "descriptionlines-362fe6",
+              "descriptionlines-084f70",
+              "descriptionlines-dcfca5",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008655764900AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-06T22:42:51.810Z"
+          }
+        },
+        {
+          "id": "GT020008650159106AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "223.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-02",
+          "counterparty": {
+            "name": "counterpartyname-dcc895",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL98PSEUDOC67292C70D"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-0b1115",
+            "descriptionlines-95d8be",
+            "descriptionlines-a740e8",
+            "descriptionlines-25afa4",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "541.21",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 223.85,
+            "balanceAfterMutation": 541.21,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-02",
+            "counterPartyAccountNumber": "NL98PSEUDOC67292C70D",
+            "counterPartyName": "counterpartyname-dcc895",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-0b1115",
+              "descriptionlines-95d8be",
+              "descriptionlines-a740e8",
+              "descriptionlines-25afa4",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008650159106AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-10-02T22:50:52.120Z"
+          }
+        },
+        {
+          "id": "GT020008651337290AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "223.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-02",
+          "counterparty": {
+            "name": "counterpartyname-dcc890",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL58PSEUDOA3A8E9D7B8"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-80a40e",
+            "descriptionlines-95d8be",
+            "descriptionlines-a740ed",
+            "descriptionlines-25ca8d",
+            "descriptionlines-57b567",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "317.36",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 223.85,
+            "balanceAfterMutation": 317.36,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-02",
+            "counterPartyAccountNumber": "NL58PSEUDOA3A8E9D7B8",
+            "counterPartyName": "counterpartyname-dcc890",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-80a40e",
+              "descriptionlines-95d8be",
+              "descriptionlines-a740ed",
+              "descriptionlines-25ca8d",
+              "descriptionlines-57b567",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008651337290AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-02T22:50:52.050Z"
+          }
+        },
+        {
+          "id": "GT037006209043390AE",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "471.9",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-02",
+          "counterparty": {
+            "name": "counterpartyname-dcc88f",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL41PSEUDO7986112704"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-4eb906",
+            "descriptionlines-95d8be",
+            "descriptionlines-a740ee",
+            "descriptionlines-362570",
+            "descriptionlines-57b1de",
+            "descriptionlines-084f70",
+            "descriptionlines-7a640e",
+            "descriptionlines-c05a77"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "93.51",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 471.9,
+            "balanceAfterMutation": 93.51,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-10-02",
+            "counterPartyAccountNumber": "NL41PSEUDO7986112704",
+            "counterPartyName": "counterpartyname-dcc88f",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-4eb906",
+              "descriptionlines-95d8be",
+              "descriptionlines-a740ee",
+              "descriptionlines-362570",
+              "descriptionlines-57b1de",
+              "descriptionlines-084f70",
+              "descriptionlines-7a640e",
+              "descriptionlines-c05a77"
+            ],
+            "id": "GT037006209043390AE",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-10-02T22:50:52.040Z"
+          }
+        },
+        {
+          "id": "9840N5415886490S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "133.46",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-02",
+          "counterparty": {
+            "name": "counterpartyname-dcc88e",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL78PSEUDO529F8E9C9D"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-3061ee",
+            "descriptionlines-97a1d7",
+            "descriptionlines-a740ef",
+            "descriptionlines-25af9f",
+            "descriptionlines-db7e1b",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "-378.39",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 133.46,
+            "balanceAfterMutation": 378.39,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-10-02",
+            "counterPartyAccountNumber": "NL78PSEUDO529F8E9C9D",
+            "counterPartyName": "counterpartyname-dcc88e",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-3061ee",
+              "descriptionlines-97a1d7",
+              "descriptionlines-a740ef",
+              "descriptionlines-25af9f",
+              "descriptionlines-db7e1b",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9840N5415886490S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-02T22:50:52.030Z"
+          }
+        },
+        {
+          "id": "9836J5023731042S0AD",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-45.45",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-01",
+          "counterparty": {
+            "name": "counterpartyname-80b63f",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL31PSEUDO939FB899C2"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-0d657d",
+            "descriptionlines-4c1939",
+            "descriptionlines-3c7c03",
+            "descriptionlines-7f1bfb",
+            "descriptionlines-3f3b97",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-f34252"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "-511.85",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 45.45,
+            "balanceAfterMutation": 511.85,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-10-01",
+            "counterPartyAccountNumber": "NL31PSEUDO939FB899C2",
+            "counterPartyName": "counterpartyname-80b63f",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-0d657d",
+              "descriptionlines-4c1939",
+              "descriptionlines-3c7c03",
+              "descriptionlines-7f1bfb",
+              "descriptionlines-3f3b97",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-f34252"
+            ],
+            "id": "9836J5023731042S0AD",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-10-01T23:35:15.290Z"
+          }
+        },
+        {
+          "id": "9836J5432225935S0AD",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-201.61",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-01",
+          "counterparty": {
+            "name": "counterpartyname-80c0c8",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL17PSEUDO19CDD6417A"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-0d657d",
+            "descriptionlines-481eeb",
+            "descriptionlines-3c7c04",
+            "descriptionlines-3b695c",
+            "descriptionlines-210a29",
+            "descriptionlines-e19efd",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-ca164f"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "-466.4",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 201.61,
+            "balanceAfterMutation": 466.4,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-10-01",
+            "counterPartyAccountNumber": "NL17PSEUDO19CDD6417A",
+            "counterPartyName": "counterpartyname-80c0c8",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-0d657d",
+              "descriptionlines-481eeb",
+              "descriptionlines-3c7c04",
+              "descriptionlines-3b695c",
+              "descriptionlines-210a29",
+              "descriptionlines-e19efd",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-ca164f"
+            ],
+            "id": "9836J5432225935S0AD",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-10-01T23:35:15.280Z"
+          }
+        },
+        {
+          "id": "9839J4219881561S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "96.75",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-01",
+          "counterparty": {
+            "name": "counterpartyname-dcc88a",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "DK53PSEUDOB51C22B266"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-b2a95f",
+            "descriptionlines-87d7b3",
+            "descriptionlines-a740e3",
+            "descriptionlines-084f70",
+            "descriptionlines-e19f04",
+            "descriptionlines-084f70",
+            "descriptionlines-db7e1b",
+            "descriptionlines-b5f5f2"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "-264.79",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 96.75,
+            "balanceAfterMutation": 264.79,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-10-01",
+            "counterPartyAccountNumber": "DK53PSEUDOB51C22B266",
+            "counterPartyName": "counterpartyname-dcc88a",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-b2a95f",
+              "descriptionlines-87d7b3",
+              "descriptionlines-a740e3",
+              "descriptionlines-084f70",
+              "descriptionlines-e19f04",
+              "descriptionlines-084f70",
+              "descriptionlines-db7e1b",
+              "descriptionlines-b5f5f2"
+            ],
+            "id": "9839J4219881561S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-01T23:35:15.270Z"
+          }
+        },
+        {
+          "id": "9839L4006845464S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "223.85",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-01",
+          "counterparty": {
+            "name": "counterpartyname-dcc891",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL56PSEUDO95FE056E0D"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-b1d1fe",
+            "descriptionlines-292652",
+            "descriptionlines-a740ec",
+            "descriptionlines-084f70",
+            "descriptionlines-e1a285",
+            "descriptionlines-084f70",
+            "descriptionlines-392133",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "-361.54",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 223.85,
+            "balanceAfterMutation": 361.54,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-10-01",
+            "counterPartyAccountNumber": "NL56PSEUDO95FE056E0D",
+            "counterPartyName": "counterpartyname-dcc891",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-b1d1fe",
+              "descriptionlines-292652",
+              "descriptionlines-a740ec",
+              "descriptionlines-084f70",
+              "descriptionlines-e1a285",
+              "descriptionlines-084f70",
+              "descriptionlines-392133",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9839L4006845464S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-10-01T23:35:15.260Z"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "302.5",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-01",
+          "counterparty": {},
+          "remittance": [
+            "descriptionlines-c01fd9",
+            "descriptionlines-cb2efa",
+            "descriptionlines-76ecfd",
+            "descriptionlines-d503a8",
+            "descriptionlines-0888b1",
+            "descriptionlines-084f70"
+          ],
+          "bank_code": "792",
+          "balance_after": {
+            "amount": "-585.39",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 302.5,
+            "balanceAfterMutation": 585.39,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-10-01",
+            "counterPartyAccountNumber": "",
+            "counterPartyName": "",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-c01fd9",
+              "descriptionlines-cb2efa",
+              "descriptionlines-76ecfd",
+              "descriptionlines-d503a8",
+              "descriptionlines-0888b1",
+              "descriptionlines-084f70"
+            ],
+            "id": "",
+            "mutationCode": "792",
+            "status": "Executed",
+            "timestamp": "2026-10-01T23:35:15.100Z"
+          }
+        },
+        {
+          "id": "9836H1226198296S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "106.24",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "counterparty": {
+            "name": "counterpartyname-dcd305",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL69PSEUDOBF912C2B76"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-e0a7fe",
+            "descriptionlines-8c1b62",
+            "descriptionlines-a74470",
+            "descriptionlines-36256f",
+            "descriptionlines-57b8ee",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "-887.89",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 106.24,
+            "balanceAfterMutation": 887.89,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-30",
+            "counterPartyAccountNumber": "NL69PSEUDOBF912C2B76",
+            "counterPartyName": "counterpartyname-dcd305",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-e0a7fe",
+              "descriptionlines-8c1b62",
+              "descriptionlines-a74470",
+              "descriptionlines-36256f",
+              "descriptionlines-57b8ee",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9836H1226198296S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-09-30T02:18:35.930Z"
+          }
+        },
+        {
+          "id": "9836J1429517964S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "61.71",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "counterparty": {
+            "name": "counterpartyname-dcd306",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL52PSEUDOE34A033676"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-2c214a",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446f",
+            "descriptionlines-25ac16",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "-994.13",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 61.71,
+            "balanceAfterMutation": 994.13,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-30",
+            "counterPartyAccountNumber": "NL52PSEUDOE34A033676",
+            "counterPartyName": "counterpartyname-dcd306",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-2c214a",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446f",
+              "descriptionlines-25ac16",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9836J1429517964S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-30T02:18:35.920Z"
+          }
+        },
+        {
+          "id": "9836J3514114027S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "140.6",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "counterparty": {
+            "name": "counterpartyname-dcd303",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL19PSEUDO6A6BCF9C4A"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-25aefa",
+            "descriptionlines-95d8be",
+            "descriptionlines-a74472",
+            "descriptionlines-25b30b",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "-1055.84",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 140.6,
+            "balanceAfterMutation": 1055.84,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-30",
+            "counterPartyAccountNumber": "NL19PSEUDO6A6BCF9C4A",
+            "counterPartyName": "counterpartyname-dcd303",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-25aefa",
+              "descriptionlines-95d8be",
+              "descriptionlines-a74472",
+              "descriptionlines-25b30b",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9836J3514114027S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-30T02:18:35.910Z"
+          }
+        },
+        {
+          "id": "GT020008641858930AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "178.96",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "counterparty": {
+            "name": "counterpartyname-dcd302",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL86PSEUDO64BF42E93F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-37bfd0",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446b",
+            "descriptionlines-25af9b",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "-1196.44",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 178.96,
+            "balanceAfterMutation": 1196.44,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-30",
+            "counterPartyAccountNumber": "NL86PSEUDO64BF42E93F",
+            "counterPartyName": "counterpartyname-dcd302",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-37bfd0",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446b",
+              "descriptionlines-25af9b",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008641858930AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-30T02:18:35.860Z"
+          }
+        },
+        {
+          "id": "GT030606174111720FS",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "1029.95",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "counterparty": {
+            "name": "counterpartyname-dcd2ff",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL41PSEUDO810A9F4FB1"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-9f7153",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446e",
+            "descriptionlines-25af9e",
+            "descriptionlines-57d072",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "-1375.4",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 1029.95,
+            "balanceAfterMutation": 1375.4,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-30",
+            "counterPartyAccountNumber": "NL41PSEUDO810A9F4FB1",
+            "counterPartyName": "counterpartyname-dcd2ff",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-9f7153",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446e",
+              "descriptionlines-25af9e",
+              "descriptionlines-57d072",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT030606174111720FS",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-09-30T02:18:35.850Z"
+          }
+        },
+        {
+          "id": "9834T4323491033S0AD",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-11.11",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "counterparty": {
+            "name": "counterpartyname-80b63b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL54PSEUDO22D72C9AFE"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-0d657d",
+            "descriptionlines-cbe9e8",
+            "descriptionlines-3c7bfe",
+            "descriptionlines-7f188b",
+            "descriptionlines-3f2098",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-30418b",
+            "descriptionlines-e334ce"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "-2405.35",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 11.11,
+            "balanceAfterMutation": 2405.35,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-30",
+            "counterPartyAccountNumber": "NL54PSEUDO22D72C9AFE",
+            "counterPartyName": "counterpartyname-80b63b",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-0d657d",
+              "descriptionlines-cbe9e8",
+              "descriptionlines-3c7bfe",
+              "descriptionlines-7f188b",
+              "descriptionlines-3f2098",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-30418b",
+              "descriptionlines-e334ce"
+            ],
+            "id": "9834T4323491033S0AD",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-09-30T02:18:35.840Z"
+          }
+        },
+        {
+          "id": "GT020008641858840AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "30.86",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "counterparty": {
+            "name": "counterpartyname-dcd301",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL48PSEUDOE8686565F5"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-331cda",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446c",
+            "descriptionlines-25af9c",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "-2394.24",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 30.86,
+            "balanceAfterMutation": 2394.24,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-30",
+            "counterPartyAccountNumber": "NL48PSEUDOE8686565F5",
+            "counterPartyName": "counterpartyname-dcd301",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-331cda",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446c",
+              "descriptionlines-25af9c",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008641858840AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-30T02:18:35.770Z"
+          }
+        },
+        {
+          "id": "GT020008641416640AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "26.98",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-30",
+          "counterparty": {
+            "name": "counterpartyname-dcd30c",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL25PSEUDO44F13B7BD0"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-b01e99",
+            "descriptionlines-95d8be",
+            "descriptionlines-a74469",
+            "descriptionlines-25b30a",
+            "descriptionlines-084f70",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "-2425.1",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 26.98,
+            "balanceAfterMutation": 2425.1,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-30",
+            "counterPartyAccountNumber": "NL25PSEUDO44F13B7BD0",
+            "counterPartyName": "counterpartyname-dcd30c",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-b01e99",
+              "descriptionlines-95d8be",
+              "descriptionlines-a74469",
+              "descriptionlines-25b30a",
+              "descriptionlines-084f70",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008641416640AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-30T02:18:35.680Z"
+          }
+        },
+        {
+          "id": "9835M4905095147S0WP",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "19.18",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-29",
+          "counterparty": {
+            "name": "counterpartyname-dcd30b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL14PSEUDO3F1D3C46B1"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-6e94aa",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446a",
+            "descriptionlines-3f3892",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "-2452.08",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 19.18,
+            "balanceAfterMutation": 2452.08,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-29",
+            "counterPartyAccountNumber": "NL14PSEUDO3F1D3C46B1",
+            "counterPartyName": "counterpartyname-dcd30b",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-6e94aa",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446a",
+              "descriptionlines-3f3892",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9835M4905095147S0WP",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-29T22:45:57.290Z"
+          }
+        },
+        {
+          "id": "9834I4417249943S0AD",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-4982.96",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-29",
+          "counterparty": {
+            "name": "counterpartyname-778ba4",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL07PSEUDO448A1A4045"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-0d657d",
+            "descriptionlines-2d542d",
+            "descriptionlines-3c7879",
+            "descriptionlines-7f1bf6",
+            "descriptionlines-362c5d",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-1efa56",
+            "descriptionlines-2545cf"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "-2471.26",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 4982.96,
+            "balanceAfterMutation": 2471.26,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-29",
+            "counterPartyAccountNumber": "NL07PSEUDO448A1A4045",
+            "counterPartyName": "counterpartyname-778ba4",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-0d657d",
+              "descriptionlines-2d542d",
+              "descriptionlines-3c7879",
+              "descriptionlines-7f1bf6",
+              "descriptionlines-362c5d",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-1efa56",
+              "descriptionlines-2545cf"
+            ],
+            "id": "9834I4417249943S0AD",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-09-29T22:45:57.250Z"
+          }
+        },
+        {
+          "id": "9835I3632849880S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "541.19",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-29",
+          "counterparty": {
+            "name": "counterpartyname-c1ec13",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL32PSEUDO7DA408803C"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-1cb95e",
+            "descriptionlines-292652",
+            "descriptionlines-c21dea",
+            "descriptionlines-362c62",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-c9db75"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "2511.7",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 541.19,
+            "balanceAfterMutation": 2511.7,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-29",
+            "counterPartyAccountNumber": "NL32PSEUDO7DA408803C",
+            "counterPartyName": "counterpartyname-c1ec13",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-1cb95e",
+              "descriptionlines-292652",
+              "descriptionlines-c21dea",
+              "descriptionlines-362c62",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-c9db75"
+            ],
+            "id": "9835I3632849880S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-09-29T22:45:57.240Z"
+          }
+        },
+        {
+          "id": "9835M4707098742S0WP",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "59.53",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-29",
+          "counterparty": {
+            "name": "counterpartyname-dcd30b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL14PSEUDO3F1D3C46B1"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-6e94aa",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446a",
+            "descriptionlines-3f3887",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "1970.51",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 59.53,
+            "balanceAfterMutation": 1970.51,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-29",
+            "counterPartyAccountNumber": "NL14PSEUDO3F1D3C46B1",
+            "counterPartyName": "counterpartyname-dcd30b",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-6e94aa",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446a",
+              "descriptionlines-3f3887",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9835M4707098742S0WP",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-29T22:45:57.230Z"
+          }
+        },
+        {
+          "id": "9835M4746284964S0WP",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "38.36",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-29",
+          "counterparty": {
+            "name": "counterpartyname-dcd30b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL14PSEUDO3F1D3C46B1"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-6e94aa",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446a",
+            "descriptionlines-3f3888",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "1910.98",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 38.36,
+            "balanceAfterMutation": 1910.98,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-29",
+            "counterPartyAccountNumber": "NL14PSEUDO3F1D3C46B1",
+            "counterPartyName": "counterpartyname-dcd30b",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-6e94aa",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446a",
+              "descriptionlines-3f3888",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9835M4746284964S0WP",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-29T22:45:57.220Z"
+          }
+        },
+        {
+          "id": "9835M4989206911S0WP",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "19.18",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-29",
+          "counterparty": {
+            "name": "counterpartyname-dcd30b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL14PSEUDO3F1D3C46B1"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-6e94aa",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446a",
+            "descriptionlines-3f3891",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "1872.62",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 19.18,
+            "balanceAfterMutation": 1872.62,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-29",
+            "counterPartyAccountNumber": "NL14PSEUDO3F1D3C46B1",
+            "counterPartyName": "counterpartyname-dcd30b",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-6e94aa",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446a",
+              "descriptionlines-3f3891",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9835M4989206911S0WP",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-29T22:45:57.210Z"
+          }
+        },
+        {
+          "id": "9835M4929807202S0WP",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "19.18",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-29",
+          "counterparty": {
+            "name": "counterpartyname-dcd30b",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL14PSEUDO3F1D3C46B1"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-6e94aa",
+            "descriptionlines-95d8be",
+            "descriptionlines-a7446a",
+            "descriptionlines-3f429b",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "1853.44",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 19.18,
+            "balanceAfterMutation": 1853.44,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-29",
+            "counterPartyAccountNumber": "NL14PSEUDO3F1D3C46B1",
+            "counterPartyName": "counterpartyname-dcd30b",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-6e94aa",
+              "descriptionlines-95d8be",
+              "descriptionlines-a7446a",
+              "descriptionlines-3f429b",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9835M4929807202S0WP",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-29T22:45:57.200Z"
+          }
+        },
+        {
+          "id": "GT020008635274980AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "710.09",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-29",
+          "counterparty": {
+            "name": "counterpartyname-dccf7e",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL49PSEUDO9CEAD56468"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-e0a4c6",
+            "descriptionlines-95d8be",
+            "descriptionlines-a747d7",
+            "descriptionlines-25b309",
+            "descriptionlines-57bbe3",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "1834.26",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 710.09,
+            "balanceAfterMutation": 1834.26,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-29",
+            "counterPartyAccountNumber": "NL49PSEUDO9CEAD56468",
+            "counterPartyName": "counterpartyname-dccf7e",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-e0a4c6",
+              "descriptionlines-95d8be",
+              "descriptionlines-a747d7",
+              "descriptionlines-25b309",
+              "descriptionlines-57bbe3",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008635274980AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-09-29T22:45:57.160Z"
+          }
+        },
+        {
+          "id": "9834H1457743146S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "944.41",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "counterparty": {
+            "name": "counterpartyname-dccf7d",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL76PSEUDOB987403A0A"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-38aa6b",
+            "descriptionlines-292652",
+            "descriptionlines-a747d8",
+            "descriptionlines-25b30e",
+            "descriptionlines-db7e1b",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "1124.17",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 944.41,
+            "balanceAfterMutation": 1124.17,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-28",
+            "counterPartyAccountNumber": "NL76PSEUDOB987403A0A",
+            "counterPartyName": "counterpartyname-dccf7d",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-38aa6b",
+              "descriptionlines-292652",
+              "descriptionlines-a747d8",
+              "descriptionlines-25b30e",
+              "descriptionlines-db7e1b",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9834H1457743146S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-09-28T22:41:36.290Z"
+          }
+        },
+        {
+          "id": "9834L5410693378S0AQ",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "36.6",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "counterparty": {
+            "name": "counterpartyname-dccf7c",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL17PSEUDO9A313F86BC"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-16ae00",
+            "descriptionlines-97a1d7",
+            "descriptionlines-a747d9",
+            "descriptionlines-2d0f38",
+            "descriptionlines-57bf6e",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "179.76",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 36.6,
+            "balanceAfterMutation": 179.76,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-28",
+            "counterPartyAccountNumber": "NL17PSEUDO9A313F86BC",
+            "counterPartyName": "counterpartyname-dccf7c",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-16ae00",
+              "descriptionlines-97a1d7",
+              "descriptionlines-a747d9",
+              "descriptionlines-2d0f38",
+              "descriptionlines-57bf6e",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9834L5410693378S0AQ",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-09-28T22:41:36.280Z"
+          }
+        },
+        {
+          "id": "9834O1212366121S0AB",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "126.38",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "counterparty": {
+            "name": "counterpartyname-dccf7f",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL55PSEUDOCA86E6E97B"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-9919a5",
+            "descriptionlines-d261dd",
+            "descriptionlines-a747d6",
+            "descriptionlines-084f70",
+            "descriptionlines-e1a284",
+            "descriptionlines-db7e1b",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "654",
+          "balance_after": {
+            "amount": "143.16",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 126.38,
+            "balanceAfterMutation": 143.16,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-28",
+            "counterPartyAccountNumber": "NL55PSEUDOCA86E6E97B",
+            "counterPartyName": "counterpartyname-dccf7f",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-9919a5",
+              "descriptionlines-d261dd",
+              "descriptionlines-a747d6",
+              "descriptionlines-084f70",
+              "descriptionlines-e1a284",
+              "descriptionlines-db7e1b",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9834O1212366121S0AB",
+            "mutationCode": "654",
+            "status": "Executed",
+            "timestamp": "2026-09-28T22:41:36.270Z"
+          }
+        },
+        {
+          "id": "GT020008624263060AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "239.88",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "counterparty": {
+            "name": "counterpartyname-c1f280",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL63PSEUDOE959D8CF98"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-af5b41",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224d5",
+            "descriptionlines-25b60c",
+            "descriptionlines-57d074",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "16.78",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 239.88,
+            "balanceAfterMutation": 16.78,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-28",
+            "counterPartyAccountNumber": "NL63PSEUDOE959D8CF98",
+            "counterPartyName": "counterpartyname-c1f280",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-af5b41",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224d5",
+              "descriptionlines-25b60c",
+              "descriptionlines-57d074",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008624263060AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-09-28T22:41:36.230Z"
+          }
+        },
+        {
+          "id": "GT020008620664020AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "311.98",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "counterparty": {
+            "name": "counterpartyname-c1db16",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL18PSEUDO00BE53987B"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-34bfe5",
+            "descriptionlines-95d8be",
+            "descriptionlines-c22ee7",
+            "descriptionlines-3621f1",
+            "descriptionlines-084f70",
+            "descriptionlines-bc24e0",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "-223.1",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 311.98,
+            "balanceAfterMutation": 223.1,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-28",
+            "counterPartyAccountNumber": "NL18PSEUDO00BE53987B",
+            "counterPartyName": "counterpartyname-c1db16",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-34bfe5",
+              "descriptionlines-95d8be",
+              "descriptionlines-c22ee7",
+              "descriptionlines-3621f1",
+              "descriptionlines-084f70",
+              "descriptionlines-bc24e0",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008620664020AO",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-28T22:41:36.220Z"
+          }
+        },
+        {
+          "id": "GT020008627965306AO",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "19.12",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "counterparty": {
+            "name": "counterpartyname-c1f289",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL91PSEUDO98A12276CF"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-75f9c9",
+            "descriptionlines-95d8be",
+            "descriptionlines-c224dc",
+            "descriptionlines-25afa1",
+            "descriptionlines-57c2f2",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "-535.08",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 19.12,
+            "balanceAfterMutation": 535.08,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-28",
+            "counterPartyAccountNumber": "NL91PSEUDO98A12276CF",
+            "counterPartyName": "counterpartyname-c1f289",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-75f9c9",
+              "descriptionlines-95d8be",
+              "descriptionlines-c224dc",
+              "descriptionlines-25afa1",
+              "descriptionlines-57c2f2",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT020008627965306AO",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-09-28T22:41:36.210Z"
+          }
+        },
+        {
+          "id": "9832K1328612124S0AD",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-129.46",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-28",
+          "counterparty": {
+            "name": "counterpartyname-80b9c1",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL65PSEUDO7E611DD32F"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-0d657d",
+            "descriptionlines-791b90",
+            "descriptionlines-33b75f",
+            "descriptionlines-7f1889",
+            "descriptionlines-3f1d1b",
+            "descriptionlines-084f70",
+            "descriptionlines-65f44e",
+            "descriptionlines-391724",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "-554.2",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 129.46,
+            "balanceAfterMutation": 554.2,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-28",
+            "counterPartyAccountNumber": "NL65PSEUDO7E611DD32F",
+            "counterPartyName": "counterpartyname-80b9c1",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-0d657d",
+              "descriptionlines-791b90",
+              "descriptionlines-33b75f",
+              "descriptionlines-7f1889",
+              "descriptionlines-3f1d1b",
+              "descriptionlines-084f70",
+              "descriptionlines-65f44e",
+              "descriptionlines-391724",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9832K1328612124S0AD",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-09-28T22:41:36.200Z"
+          }
+        },
+        {
+          "id": "GT030606165111000FS",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "151.25",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-25",
+          "counterparty": {
+            "name": "counterpartyname-dccf83",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL73PSEUDOCFF02A2981"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-aae9ae",
+            "descriptionlines-95d8be",
+            "descriptionlines-a747da",
+            "descriptionlines-25afa3",
+            "descriptionlines-22e1b3",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "-424.74",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 151.25,
+            "balanceAfterMutation": 424.74,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-25",
+            "counterPartyAccountNumber": "NL73PSEUDOCFF02A2981",
+            "counterPartyName": "counterpartyname-dccf83",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-aae9ae",
+              "descriptionlines-95d8be",
+              "descriptionlines-a747da",
+              "descriptionlines-25afa3",
+              "descriptionlines-22e1b3",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "GT030606165111000FS",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-09-25T22:41:43.950Z"
+          }
+        },
+        {
+          "id": "GT037006173935170AE",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "196.63",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-25",
+          "counterparty": {
+            "name": "counterpartyname-dcc88f",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL41PSEUDO7986112704"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-4eb906",
+            "descriptionlines-95d8be",
+            "descriptionlines-a740ee",
+            "descriptionlines-362573",
+            "descriptionlines-57b1dd",
+            "descriptionlines-084f70",
+            "descriptionlines-25bcfe",
+            "descriptionlines-c05a77"
+          ],
+          "bank_code": "656",
+          "balance_after": {
+            "amount": "-575.99",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 196.63,
+            "balanceAfterMutation": 575.99,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-25",
+            "counterPartyAccountNumber": "NL41PSEUDO7986112704",
+            "counterPartyName": "counterpartyname-dcc88f",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-4eb906",
+              "descriptionlines-95d8be",
+              "descriptionlines-a740ee",
+              "descriptionlines-362573",
+              "descriptionlines-57b1dd",
+              "descriptionlines-084f70",
+              "descriptionlines-25bcfe",
+              "descriptionlines-c05a77"
+            ],
+            "id": "GT037006173935170AE",
+            "mutationCode": "656",
+            "status": "Executed",
+            "timestamp": "2026-09-25T22:41:43.840Z"
+          }
+        },
+        {
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-53.3",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-24",
+          "counterparty": {},
+          "remittance": [
+            "descriptionlines-e8f78c",
+            "descriptionlines-a2edee",
+            "descriptionlines-487f6e",
+            "descriptionlines-9a6ffa",
+            "descriptionlines-3cfb7e"
+          ],
+          "bank_code": "526",
+          "balance_after": {
+            "amount": "-772.62",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 53.3,
+            "balanceAfterMutation": 772.62,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-24",
+            "counterPartyAccountNumber": "",
+            "counterPartyName": "",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-e8f78c",
+              "descriptionlines-a2edee",
+              "descriptionlines-487f6e",
+              "descriptionlines-9a6ffa",
+              "descriptionlines-3cfb7e"
+            ],
+            "id": "",
+            "mutationCode": "526",
+            "status": "Executed",
+            "timestamp": "2026-09-24T22:57:29.980Z"
+          }
+        },
+        {
+          "id": "GT025020237138830AE",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-1193.0",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-24",
+          "counterparty": {
+            "name": "counterpartyname-80b9be",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL16PSEUDO53E0D5AF3A"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-0d657d",
+            "descriptionlines-e7289e",
+            "descriptionlines-33bae3",
+            "descriptionlines-7f1885",
+            "descriptionlines-3628da",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-084f70",
+            "descriptionlines-6cf6e2"
+          ],
+          "bank_code": "411",
+          "balance_after": {
+            "amount": "-719.32",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 1193.0,
+            "balanceAfterMutation": 719.32,
+            "balanceCreditDebitIndicator": "DBIT",
+            "bookDate": "2026-09-24",
+            "counterPartyAccountNumber": "NL16PSEUDO53E0D5AF3A",
+            "counterPartyName": "counterpartyname-80b9be",
+            "creditDebitIndicator": "DBIT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-0d657d",
+              "descriptionlines-e7289e",
+              "descriptionlines-33bae3",
+              "descriptionlines-7f1885",
+              "descriptionlines-3628da",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-084f70",
+              "descriptionlines-6cf6e2"
+            ],
+            "id": "GT025020237138830AE",
+            "mutationCode": "411",
+            "status": "Executed",
+            "timestamp": "2026-09-24T22:57:29.070Z"
+          }
+        },
+        {
+          "id": "9830J5542785372S0AI",
+          "status": "booked",
+          "direction": "credit",
+          "amount": {
+            "amount": "26.98",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-09-24",
+          "counterparty": {
+            "name": "counterpartyname-dccf80",
+            "identifiers": [
+              {
+                "scheme": "IBAN",
+                "value": "NL29PSEUDO9E997B8E2D"
+              }
+            ]
+          },
+          "remittance": [
+            "descriptionlines-94a6bc",
+            "descriptionlines-3212bb",
+            "descriptionlines-95d8be",
+            "descriptionlines-a747dd",
+            "descriptionlines-363670",
+            "descriptionlines-084f70",
+            "descriptionlines-07d37c"
+          ],
+          "bank_code": "658",
+          "balance_after": {
+            "amount": "473.68",
+            "currency": "EUR"
+          },
+          "raw": {
+            "amount": 26.98,
+            "balanceAfterMutation": 473.68,
+            "balanceCreditDebitIndicator": "CRDT",
+            "bookDate": "2026-09-24",
+            "counterPartyAccountNumber": "NL29PSEUDO9E997B8E2D",
+            "counterPartyName": "counterpartyname-dccf80",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-94a6bc",
+              "descriptionlines-3212bb",
+              "descriptionlines-95d8be",
+              "descriptionlines-a747dd",
+              "descriptionlines-363670",
+              "descriptionlines-084f70",
+              "descriptionlines-07d37c"
+            ],
+            "id": "9830J5542785372S0AI",
+            "mutationCode": "658",
+            "status": "Executed",
+            "timestamp": "2026-09-24T22:57:29.060Z"
+          }
+        }
+      ],
+      "next_cursor": "activityType=RESERVATION&dateFrom=2026-09-21&dateTo=2026-10-20"
+    }
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "2026-10-20-12:00:00.000000",
+          "status": "pending",
+          "direction": "credit",
+          "amount": {
+            "amount": "4000.0",
+            "currency": "EUR"
+          },
+          "counterparty": {
+            "name": "counterpartyname-01f954"
+          },
+          "remittance": [
+            "descriptionlines-6672f5",
+            "descriptionlines-b60062",
+            "descriptionlines-9ad924"
+          ],
+          "raw": {
+            "amount": 4000.0,
+            "counterPartyName": "counterpartyname-01f954",
+            "creditDebitIndicator": "CRDT",
+            "currency": "EUR",
+            "descriptionLines": [
+              "descriptionlines-6672f5",
+              "descriptionlines-b60062",
+              "descriptionlines-9ad924"
+            ],
+            "expirationDate": "",
+            "id": "2026-10-20-12:00:00.000000",
+            "lastUpdateDateTime": "2026-10-20T22:43:38.330Z",
+            "status": "ACTIVE",
+            "timestamp": "2026-10-20T22:43:38.330Z"
+          }
+        }
+      ]
+    }
+  }
+]

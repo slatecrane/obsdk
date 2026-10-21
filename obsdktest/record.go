@@ -68,6 +68,12 @@ func (r *Recorder) RoundTrip(req *http.Request) (*http.Response, error) {
 		reqBody, _ = io.ReadAll(req.Body)
 		req.Body.Close()
 		req.Body = io.NopCloser(bytes.NewReader(reqBody))
+		if len(reqBody) == 0 {
+			// Keep an empty body empty: any other reader makes the transport
+			// treat its length as unknown and stream it, and ABN AMRO's edge
+			// then waits for a DELETE body that never comes.
+			req.Body = http.NoBody
+		}
 	}
 	res, err := r.next.RoundTrip(req)
 	if err != nil {

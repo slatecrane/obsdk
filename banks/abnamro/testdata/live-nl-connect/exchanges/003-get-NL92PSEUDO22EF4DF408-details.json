@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/NL92PSEUDO22EF4DF408/details",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:e242f6"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "accountHolderName": "accountholdername-688851",
+      "accountNumber": "NL92PSEUDO22EF4DF408",
+      "currency": "EUR"
+    }
+  }
+}

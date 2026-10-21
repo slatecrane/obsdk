@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/as/revoke_token.oauth2",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026token=REDACTED%3Atoken%3Ad58b89\u0026token_type_hint=refresh_token"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/html;charset=utf-8"
+    }
+  }
+}

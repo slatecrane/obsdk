@@ -1,0 +1,28 @@
+{
+  "config": {
+    "bank": "abnamro",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-20T19:21:59Z",
+    "redirect_url": "https://localhost/auth",
+    "extra": {
+      "api_key": "REDACTED:api_key:58df81"
+    },
+    "ids": {
+      "state": [
+        "3987b4fa-a057-44d8-8c48-2130749def38"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://localhost/auth?code=REDACTED%3Acode%3A68c80c\u0026state=3987b4faa05744d88c48"
+    }
+  ]
+}

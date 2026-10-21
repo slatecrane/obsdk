@@ -1,0 +1,92 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to ABN AMRO to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://auth-sandbox.abnamro.com/as/authorization.oauth2?scope=psd2:payment:sepa:write+psd2:payment:sepa:read&client_id=REDACTED:client_id&transactionId=JISDW7JURX1792528256442&response_type=code&flow=code&redirect_uri=https://localhost/auth&state=0694eb59509d43fe806c"
+      },
+      "payment": {
+        "id": "JISDW7JURX1792528256442",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiSklTRFc3SlVSWDE3OTI1MjgyNTY0NDIiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "abnamro",
+        "country": "NL",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "abnamro-psd2",
+        "generation": 1,
+        "updated_at": "2026-10-20T20:30:54Z",
+        "access_token": "REDACTED:access_token:babe13",
+        "refresh_token": "REDACTED:refresh_token:1ffb04",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-20T22:30:53Z",
+        "consents": {
+          "pis": {
+            "id": "JISDW7JURX1792528256442",
+            "kind": "pis",
+            "status": "valid"
+          }
+        }
+      },
+      "payment": {
+        "id": "JISDW7JURX1792528256442",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "PDNG",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiSklTRFc3SlVSWDE3OTI1MjgyNTY0NDIiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL29PSEUDODA1D5F8B57"
+        }
+      }
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "JISDW7JURX1792528256442",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "CANC",
+        "final": true,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiSklTRFc3SlVSWDE3OTI1MjgyNTY0NDIiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "JISDW7JURX1792528256442",
+      "type": "sepa",
+      "status": "cancelled",
+      "bank_status": "CANC",
+      "final": true,
+      "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiSklTRFc3SlVSWDE3OTI1MjgyNTY0NDIiLCJ0Ijoic2VwYSJ9",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "NL29PSEUDODA1D5F8B57"
+      }
+    }
+  }
+]

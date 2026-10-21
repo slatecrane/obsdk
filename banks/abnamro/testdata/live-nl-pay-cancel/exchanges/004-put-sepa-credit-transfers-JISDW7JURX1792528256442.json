@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/payment/v2/sepa-credit-transfers/JISDW7JURX1792528256442",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:b1a79e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "debtorAccount": {
+        "iban": "NL29PSEUDODA1D5F8B57"
+      },
+      "debtorName": "debtorname-ea3b67",
+      "paymentId": "JISDW7JURX1792528256442",
+      "paymentStatus": "PDNG"
+    }
+  }
+}
