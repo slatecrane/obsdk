@@ -1,0 +1,70 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/accounts/BE85587065494195EUR/balances",
+    "query": {
+      "brand": [
+        "fintro"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:689cac",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "ed30af71-bc99-466f-a962-f8916488f347"
+    },
+    "body": {
+      "_links": {
+        "parent-list": {
+          "href": "/psd2/v4/accounts?brand=fintro",
+          "templated": false
+        },
+        "self": {
+          "href": "/psd2/v4/accounts/BE85587065494195EUR/balances?brand=fintro",
+          "templated": false
+        },
+        "transactions": {
+          "href": "/psd2/v4/accounts/BE85587065494195EUR/transactions?brand=fintro",
+          "templated": false
+        }
+      },
+      "balances": [
+        {
+          "balanceAmount": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balanceType": "CLBD",
+          "name": "name-7008c8",
+          "referenceDate": "2026-10-21"
+        },
+        {
+          "balanceAmount": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balanceType": "OTHR",
+          "name": "name-36dab6",
+          "referenceDate": "2026-10-21"
+        },
+        {
+          "balanceAmount": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balanceType": "ITAV",
+          "name": "name-147134",
+          "referenceDate": "2026-10-21"
+        }
+      ]
+    }
+  }
+}

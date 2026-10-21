@@ -1,0 +1,31 @@
+{
+  "config": {
+    "bank": "hellobank",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:10:49Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "89b33dac-c3da-414d-84ad-38374b3c8339"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "transactions",
+      "account": "BE17343577691822EUR",
+      "from": "2026-07-01T00:00:00Z",
+      "to": "2026-10-21T18:10:49Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

@@ -53,8 +53,8 @@ type brand struct {
 
 var brands = []brand{
 	{bank: BankFortis, name: "BNP Paribas Fortis", domain: "bnpparibasfortis.be", sandbox: "bnppf", business: true, verifiedOn: "2026-10-21"},
-	{bank: BankHello, name: "Hello bank!", domain: "hellobank.be", sandbox: "hb"},
-	{bank: BankFintro, name: "Fintro", domain: "fintro.be", sandbox: "fintro", business: true},
+	{bank: BankHello, name: "Hello bank!", domain: "hellobank.be", sandbox: "hb", verifiedOn: "2026-10-21"},
+	{bank: BankFintro, name: "Fintro", domain: "fintro.be", sandbox: "fintro", business: true, verifiedOn: "2026-10-21"},
 }
 
 func init() {

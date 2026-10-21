@@ -1,0 +1,31 @@
+{
+  "config": {
+    "bank": "fintro",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:10:50Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "cbe9d73f-9c1a-4e9a-8e94-a318c77da64b"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "transactions",
+      "account": "BE85587065494195EUR",
+      "from": "2026-07-01T00:00:00Z",
+      "to": "2026-10-21T18:10:50Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

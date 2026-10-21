@@ -99,15 +99,19 @@ body). `expires` may be at most 60 seconds after `created`; we use 30. The porta
 - **Dated payments** run 20 minutes after approval regardless of the date (`X-Execution-Delay` header to
   change it); payments dated today are executed at once.
 
-## Verified against the sandbox (2026-10-21, `bnpparibasfortis`, personal)
+## Verified against the sandbox (2026-10-21, personal)
 
 Connect (a test user with a Fortis and a Hello bank! account), accounts, balances, transactions (the payment booked,
 with end-to-end id and bank code), refresh, disconnect; a SEPA payment approved and `ACSC`; a dated payment
-approved (`ACCP`) and cancelled with approval (`RJCT` CUST); status read. Scenarios in
+approved (`ACCP`) and cancelled with approval (`RJCT` CUST); status read; a `sepa_instant` payment approved
+and `ACSC` at once. `hellobank` and `fintro` (personal): connect, balances and transactions. Scenarios in
 `banks/bnpparibasfortis/testdata/live-be-*`.
 
-Not run: `sepa_instant`, the `hellobank` and `fintro` keys (same sandbox, other `brand` value), the business
+Not run: payments through the `hellobank` and `fintro` keys (same API, other `brand` value), the business
 segment (no business test users), production.
+
+A Hello bank! connect that skipped the login (the sandbox remembered it) once ended in `403 Code not
+found` on the code exchange; with the login it worked. Send the callback promptly.
 
 ## Not built
 

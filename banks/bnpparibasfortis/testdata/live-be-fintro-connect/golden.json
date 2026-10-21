@@ -1,0 +1,83 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sandbox.auth.bnpparibasfortis.com/authorize?brand=fintro&client_id=REDACTED%3Aclient_id&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback&response_type=code&scope=aisp&state=dc2c48bd-e079-4140-98cf-56cb6cd6fdac"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "fintro",
+        "country": "BE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "fintro-stet-be",
+        "generation": 1,
+        "updated_at": "2026-10-21T18:08:41Z",
+        "access_token": "REDACTED:access_token:f87e8d",
+        "refresh_token": "REDACTED:refresh_token:1f26f9",
+        "token_type": "bearer",
+        "access_expires_at": "2026-10-21T19:08:41Z",
+        "consents": {
+          "aisp": {
+            "id": "",
+            "kind": "aisp",
+            "status": "authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "BE18PSEUDO0BE23E5F4CEUR",
+          "stable_id": "27198a48bf3a71acd14b6577d8ad589e",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "BE18PSEUDO0BE23E5F4C"
+            }
+          ],
+          "name": "name-196a0e",
+          "currency": "EUR",
+          "product": "CUR - FINTRO",
+          "type": "CACC",
+          "usage": "PRIV",
+          "bic": "GEBABBEB",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/psd2/v4/accounts/BE18PSEUDO0BE23E5F4CEUR/balances",
+                "templated": false
+              },
+              "transactions": {
+                "href": "/psd2/v4/accounts/BE18PSEUDO0BE23E5F4CEUR/transactions",
+                "templated": false
+              }
+            },
+            "accountId": {
+              "iban": "BE18PSEUDO0BE23E5F4C"
+            },
+            "bicFi": "GEBABBEB",
+            "cashAccountType": "CACC",
+            "currency": "EUR",
+            "name": "name-196a0e",
+            "product": "CUR - FINTRO",
+            "psuStatus": "Holder",
+            "resourceId": "BE18PSEUDO0BE23E5F4CEUR",
+            "usage": "PRIV"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "config": {
+    "bank": "fintro",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:08:41Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "ea8f6927-595a-4e14-a5fd-762f0dc18c66"
+      ],
+      "state": [
+        "dc2c48bd-e079-4140-98cf-56cb6cd6fdac"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback?code=REDACTED%3Acode%3Ae9234c\u0026state=dc2c48bd-e079-4140-98cf-56cb6cd6fdac"
+    }
+  ]
+}
