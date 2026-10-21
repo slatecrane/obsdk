@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "bnpparibasfortis",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:03:19Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "d69c2979-6b8a-428b-b27d-146b7f9bdbea"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiYm5wcGFyaWJhc2ZvcnRpcy1zdGV0LWJlIiwiaWQiOiI4MzBlNmY4OS1mMDRkLTQxZGMtOGRlNS1lMzNhN2YwMzg0ZTgiLCJ0Ijoic2VwYSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

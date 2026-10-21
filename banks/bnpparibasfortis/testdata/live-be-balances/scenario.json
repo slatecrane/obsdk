@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "bnpparibasfortis",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T17:57:12Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "7d3081f3-b382-4281-9d5d-a8660ee1f60d"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "balances",
+      "account": "BE17343577691822EUR",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

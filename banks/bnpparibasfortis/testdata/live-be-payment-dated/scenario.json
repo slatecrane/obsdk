@@ -1,0 +1,59 @@
+{
+  "config": {
+    "bank": "bnpparibasfortis",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T17:59:04Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "9a979f81-7fad-4b21-b7de-2df0340d30ee",
+        "2b73d4e0-12fc-4027-854f-f10401e80a74",
+        "8683c52c-11d1-4977-b447-181306bd5025",
+        "5faa7219-95f9-44e5-8cb8-0c6404c35322",
+        "0d279deb-73a3-4c21-9df0-a23adfbd972d",
+        "e9310f1c-e64a-4821-8220-a2b854474267"
+      ],
+      "state": [
+        "5143f3f9-a378-4e85-855e-145de400d85f",
+        "9afcf6ac-6da6-439f-b236-3dc149438b51"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "5.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-a62825",
+              "account": {
+                "scheme": "IBAN",
+                "value": "BE11PSEUDO5CC3DB56BC"
+              }
+            },
+            "remittance": [
+              "obsdk dated"
+            ]
+          }
+        ],
+        "execution_date": "2026-10-22"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback?state=5143f3f9-a378-4e85-855e-145de400d85f"
+    }
+  ]
+}

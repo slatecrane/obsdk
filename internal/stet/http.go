@@ -43,6 +43,7 @@ type req struct {
 	bearer string
 	basic  [2]string // HTTP Basic credentials (token endpoint)
 	psu    *obsdk.PSUContext
+	pay    bool // creates or cancels a payment request: Profile.PaymentHeaders apply
 }
 
 type resp struct {
@@ -60,9 +61,19 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	if err != nil {
 		return nil, err
 	}
-	if len(r.query) > 0 {
-		q := u.Query()
+	extra := r.query
+	if r.form == nil && c.p.Query != nil {
+		extra = url.Values{}
+		for k, v := range c.p.Query(c.cfg, c.target) {
+			extra[k] = v
+		}
 		for k, v := range r.query {
+			extra[k] = v
+		}
+	}
+	if len(extra) > 0 {
+		q := u.Query()
+		for k, v := range extra {
 			q[k] = v
 		}
 		u.RawQuery = q.Encode()
@@ -97,6 +108,9 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 		if c.p.Headers != nil {
 			c.p.Headers(c.cfg, c.target, hr.Header)
 		}
+		if r.pay && c.p.PaymentHeaders != nil {
+			c.p.PaymentHeaders(c.cfg, c.target, hr.Header)
+		}
 		if p := r.psu; p != nil {
 			setIf(hr.Header, "PSU-IP-Address", p.IP)
 			setIf(hr.Header, "PSU-IP-Port", p.Port)
@@ -113,7 +127,7 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 		hr.SetBasicAuth(url.QueryEscape(r.basic[0]), url.QueryEscape(r.basic[1]))
 	}
 	if r.form == nil && c.p.Signing != nil {
-		if err := c.p.Signing.sign(hr, payload, c.cfg.Seal); err != nil {
+		if err := c.p.Signing.sign(hr, payload, c.cfg.Seal, c.cfg.Env, c.now()); err != nil {
 			return nil, err
 		}
 	}

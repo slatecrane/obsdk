@@ -154,6 +154,7 @@ type accountJSON struct {
 	Usage           string         `json:"usage"`
 	CashAccountType string         `json:"cashAccountType"`
 	Product         string         `json:"product"`
+	Currency        string         `json:"currency"` // STET 1.6: the account's currency, next to accountId
 	Balances        []balanceJSON  `json:"balances"`
 }
 
@@ -166,7 +167,8 @@ func toAccount(raw json.RawMessage) (obsdk.Account, error) {
 		ID: a.ResourceID, Identifiers: a.AccountID.identifiers(), Name: a.Name, Product: a.Product,
 		Type: a.CashAccountType, Usage: a.Usage, BIC: a.BIC, Raw: raw,
 	}
-	if a.AccountID != nil {
+	acc.Currency = a.Currency
+	if a.AccountID != nil && a.AccountID.Currency != "" {
 		acc.Currency = a.AccountID.Currency
 	}
 	for _, b := range a.Balances {
@@ -329,9 +331,26 @@ type partyJSON struct {
 	Name string `json:"name"`
 }
 
+// flexString is a string some banks send as a JSON number.
+type flexString string
+
+func (f *flexString) UnmarshalJSON(b []byte) error {
+	var s string
+	if json.Unmarshal(b, &s) == nil {
+		*f = flexString(s)
+		return nil
+	}
+	var n json.Number
+	if err := json.Unmarshal(b, &n); err != nil {
+		return err
+	}
+	*f = flexString(n)
+	return nil
+}
+
 type txJSON struct {
-	ResourceID           string     `json:"resourceId"`
-	EntryReference       string     `json:"entryReference"`
+	ResourceID           flexString `json:"resourceId"`
+	EntryReference       flexString `json:"entryReference"`
 	Amount               amountJSON `json:"transactionAmount"`
 	CreditDebitIndicator string     `json:"creditDebitIndicator"`
 	Status               string     `json:"status"`
@@ -352,7 +371,7 @@ type txJSON struct {
 		CreditorAccount *accountIDJSON `json:"creditorAccount"`
 	} `json:"relatedParties"`
 	Remittance       json.RawMessage `json:"remittanceInformation"`
-	AdditionalInfo   string          `json:"additionalTransactionInformation"`
+	AdditionalInfo   json.RawMessage `json:"additionalTransactionInformation"` // a string, or an object in STET 1.6
 	MerchantCategory string          `json:"merchantCategoryCode"`
 }
 
@@ -407,7 +426,7 @@ func toTransaction(raw json.RawMessage) (obsdk.Transaction, bool, error) {
 		return obsdk.Transaction{}, false, nil
 	}
 	tx := obsdk.Transaction{
-		ID: t.ResourceID, EntryReference: t.EntryReference, Status: status, Direction: obsdk.Credit,
+		ID: string(t.ResourceID), EntryReference: string(t.EntryReference), Status: status, Direction: obsdk.Credit,
 		Amount:      signed(t.Amount, t.CreditDebitIndicator),
 		BookingDate: datePart(t.BookingDate), ValueDate: datePart(t.ValueDate), TransactionDate: datePart(t.TransactionDate),
 		EndToEndID: t.EndToEndID, MerchantCategory: t.MerchantCategory, Raw: raw,
@@ -416,8 +435,17 @@ func toTransaction(raw json.RawMessage) (obsdk.Transaction, bool, error) {
 		tx.Direction = obsdk.Debit
 	}
 	tx.Remittance, tx.ReferenceNumber = remittance(t.Remittance)
-	if t.AdditionalInfo != "" && len(tx.Remittance) == 0 {
-		tx.Remittance = []string{t.AdditionalInfo}
+	var info string
+	var infoObj struct {
+		EndToEndReference string `json:"endToEndReference"`
+	}
+	switch {
+	case json.Unmarshal(t.AdditionalInfo, &info) == nil:
+		if info != "" && len(tx.Remittance) == 0 {
+			tx.Remittance = []string{info}
+		}
+	case json.Unmarshal(t.AdditionalInfo, &infoObj) == nil:
+		tx.EndToEndID = firstNonEmpty(tx.EndToEndID, infoObj.EndToEndReference)
 	}
 	if b := t.BankTransactionCode; b != nil {
 		if b.Domain != "" || b.Family != "" {

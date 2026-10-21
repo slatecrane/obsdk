@@ -1,0 +1,17 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "830e6f89-f04d-41dc-8de5-e33a7f0384e8",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "ACSC",
+      "final": true,
+      "ref": "obs1.eyJpIjoiYm5wcGFyaWJhc2ZvcnRpcy1zdGV0LWJlIiwiaWQiOiI4MzBlNmY4OS1mMDRkLTQxZGMtOGRlNS1lMzNhN2YwMzg0ZTgiLCJ0Ijoic2VwYSJ9",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "BE36PSEUDO2FF18C0A2A"
+      }
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "bnpparibasfortis",
+      "country": "BE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "bnpparibasfortis-stet-be",
+      "generation": 3,
+      "updated_at": "2026-10-21T18:03:59Z",
+      "token_type": "bearer"
+    },
+    "disconnect": {
+      "failed": {
+        "aisp": "bnpparibasfortis has no API to end the authorisation; the user can revoke it in online banking"
+      }
+    }
+  }
+]

@@ -232,6 +232,9 @@ func (c *client) exchangeCallback(ctx context.Context, f *flow, cb string) (*tok
 	if f.Verifier != "" {
 		form.Set("code_verifier", f.Verifier)
 	}
+	if c.p.TokenScope {
+		form.Set("scope", c.p.scopeAIS())
+	}
 	tr, r, err := c.tokenCall(ctx, opToken, form)
 	if err != nil {
 		return nil, err
@@ -294,7 +297,11 @@ func (c *client) Refresh(ctx context.Context, s *obsdk.Session) (*obsdk.Session,
 	if s.RefreshExpiresAt != nil && !c.now().Before(*s.RefreshExpiresAt) {
 		return nil, &obsdk.RefreshError{Err: &obsdk.ReauthError{Reason: "refresh_token_expired"}}
 	}
-	tr, r, err := c.tokenCall(ctx, opRefresh, url.Values{"grant_type": {"refresh_token"}, "refresh_token": {s.RefreshToken}})
+	form := url.Values{"grant_type": {"refresh_token"}, "refresh_token": {s.RefreshToken}}
+	if c.p.TokenScope {
+		form.Set("scope", c.p.scopeAIS())
+	}
+	tr, r, err := c.tokenCall(ctx, opRefresh, form)
 	if err != nil {
 		return nil, &obsdk.RefreshError{Temporary: true, Err: err}
 	}

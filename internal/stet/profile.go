@@ -86,6 +86,10 @@ type Profile struct {
 	// Scopes defaults to the specification's values.
 	Scopes Scopes
 
+	// TokenScope also sends the AIS scope when exchanging the user's code and
+	// refreshing the token (some banks' token endpoints fail without it).
+	TokenScope bool
+
 	// PKCE sends an S256 code challenge (RFC 7636) with the authorization request.
 	PKCE bool
 
@@ -118,6 +122,29 @@ type Profile struct {
 	// the token endpoint.
 	Headers func(cfg obsdk.Config, t obsdk.Target, h http.Header)
 
+	// PaymentHeaders adds headers to the requests that create or cancel a
+	// payment request only.
+	PaymentHeaders func(cfg obsdk.Config, t obsdk.Target, h http.Header)
+
+	// Query adds bank-specific query parameters to every resource request,
+	// links followed included; not to the token endpoint.
+	Query func(cfg obsdk.Config, t obsdk.Target) url.Values
+
+	// PaymentLevel puts the beneficiary and the requested execution date of
+	// a single-transfer payment at payment level, as STET allows and some
+	// banks require, instead of in the credit transfer. The execution date
+	// is then always sent: the creation time when the request has none.
+	PaymentLevel bool
+
+	// AmountString sends payment amounts as JSON strings, as some banks'
+	// schemas want, instead of the specification's numbers.
+	AmountString bool
+
+	// CancelStatus is the paymentInformationStatus that asks for a
+	// cancellation; empty is "CANC". Some banks want "RJCT" (with the
+	// reason DS02, which is always sent).
+	CancelStatus string
+
 	// RequiredParams are Config.Extra keys the client cannot work without.
 	RequiredParams []string
 
@@ -139,6 +166,8 @@ func (p *Profile) confirmation() Confirmation {
 	}
 	return p.Confirmation
 }
+
+func (p *Profile) cancelStatus() string { return firstNonEmpty(p.CancelStatus, "CANC") }
 
 func (p *Profile) scopeAIS() string { return firstNonEmpty(p.Scopes.AIS, "aisp") }
 func (p *Profile) scopePIS() string { return firstNonEmpty(p.Scopes.PIS, "pisp") }

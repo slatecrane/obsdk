@@ -52,8 +52,9 @@ type PaymentRequestBody struct {
 	PaymentTypeInformation    PaymentTypeInformation `json:"paymentTypeInformation"`
 	Debtor                    *Party                 `json:"debtor,omitempty"`
 	DebtorAccount             *AccountID             `json:"debtorAccount,omitempty"`
+	Beneficiary               *Beneficiary           `json:"beneficiary,omitempty"` // payment level: Profile.PaymentLevel
 	ChargeBearer              string                 `json:"chargeBearer,omitempty"`
-	RequestedExecutionDate    string                 `json:"requestedExecutionDate,omitempty"` // payment level (STET 1.4); empty by default
+	RequestedExecutionDate    string                 `json:"requestedExecutionDate,omitempty"` // payment level: Profile.PaymentLevel
 	CreditTransferTransaction []CreditTransfer       `json:"creditTransferTransaction"`
 	SupplementaryData         SupplementaryData      `json:"supplementaryData"`
 }
@@ -94,11 +95,11 @@ type PaymentTypeInformation struct {
 
 // CreditTransfer is one CreditTransferTransaction.
 type CreditTransfer struct {
-	PaymentID              PaymentID   `json:"paymentId"`
-	RequestedExecutionDate string      `json:"requestedExecutionDate,omitempty"`
-	InstructedAmount       Amount      `json:"instructedAmount"`
-	Beneficiary            Beneficiary `json:"beneficiary"`
-	RemittanceInformation  *Remittance `json:"remittanceInformation,omitempty"`
+	PaymentID              PaymentID    `json:"paymentId"`
+	RequestedExecutionDate string       `json:"requestedExecutionDate,omitempty"`
+	InstructedAmount       Amount       `json:"instructedAmount"`
+	Beneficiary            *Beneficiary `json:"beneficiary,omitempty"`
+	RemittanceInformation  *Remittance  `json:"remittanceInformation,omitempty"`
 }
 
 // PaymentID holds the instruction and end-to-end ids.
@@ -107,10 +108,24 @@ type PaymentID struct {
 	EndToEndID    string `json:"endToEndId,omitempty"`
 }
 
-// Amount is an AmountType; the amount is a JSON number written exactly.
+// Amount is an AmountType; the amount is a JSON number written exactly, or
+// a JSON string when Quoted (Profile.AmountString).
 type Amount struct {
 	Amount   json.Number `json:"amount"`
 	Currency string      `json:"currency"`
+	Quoted   bool        `json:"-"`
+}
+
+// MarshalJSON writes the amount as a number, or as a string when Quoted.
+func (a Amount) MarshalJSON() ([]byte, error) {
+	if a.Quoted {
+		return json.Marshal(struct {
+			Amount   string `json:"amount"`
+			Currency string `json:"currency"`
+		}{string(a.Amount), a.Currency})
+	}
+	type plain Amount
+	return json.Marshal(plain(a))
 }
 
 // Beneficiary is the creditor with its account and bank.
@@ -189,20 +204,25 @@ func accountID(id obsdk.Identifier, currency string) AccountID {
 	return AccountID{Other: &GenericID{Identification: id.Value, SchemeName: id.Scheme}, Currency: currency}
 }
 
+// dateTimeLayout is STET's ISODateTime for execution dates: a date-time
+// without fractional seconds.
+const dateTimeLayout = "2006-01-02T15:04:05-07:00"
+
 // executionDateTime turns YYYY-MM-DD into the date-time STET asks for.
 func executionDateTime(d string) string {
 	if d == "" || len(d) > 10 {
 		return d
 	}
-	return d + "T00:00:00.000+00:00"
+	return d + "T00:00:00+00:00"
 }
 
 // buildPayment builds the request body for a validated payment.
 func (c *client) buildPayment(r obsdk.PaymentRequest, successURL, failureURL string) (*PaymentRequestBody, error) {
 	newID := func(max int) string { return ShortID(c.cfg.ID(obsdk.IDRequest), max) }
+	now := c.now().UTC()
 	b := &PaymentRequestBody{
 		PaymentInformationID: newID(35),
-		CreationDateTime:     c.now().UTC().Format("2006-01-02T15:04:05.000Z07:00"),
+		CreationDateTime:     now.Format(dateTimeLayout),
 		NumberOfTransactions: len(r.Transfers),
 		InitiatingParty:      Party{Name: c.cfg.Param(ParamInitiatingParty)},
 		PaymentTypeInformation: PaymentTypeInformation{
@@ -239,8 +259,8 @@ func (c *client) buildPayment(r obsdk.PaymentRequest, successURL, failureURL str
 		ct := CreditTransfer{
 			PaymentID:              PaymentID{InstructionID: firstNonEmpty(t.InstructionID, newID(35)), EndToEndID: firstNonEmpty(t.EndToEndID, newID(35))},
 			RequestedExecutionDate: executionDateTime(r.ExecutionDate),
-			InstructedAmount:       Amount{Amount: json.Number(t.Amount.Amount), Currency: t.Amount.Currency},
-			Beneficiary: Beneficiary{
+			InstructedAmount:       Amount{Amount: json.Number(t.Amount.Amount), Currency: t.Amount.Currency, Quoted: c.p.AmountString},
+			Beneficiary: &Beneficiary{
 				Creditor:        Party{Name: t.Creditor.Name, PostalAddress: address(t.Creditor.Address)},
 				CreditorAccount: accountID(t.Creditor.Account, ""),
 			},
@@ -260,6 +280,11 @@ func (c *client) buildPayment(r obsdk.PaymentRequest, successURL, failureURL str
 			ct.RemittanceInformation = rem
 		}
 		b.CreditTransferTransaction = append(b.CreditTransferTransaction, ct)
+	}
+	if c.p.PaymentLevel && len(b.CreditTransferTransaction) == 1 {
+		ct := &b.CreditTransferTransaction[0]
+		b.Beneficiary, ct.Beneficiary = ct.Beneficiary, nil
+		b.RequestedExecutionDate, ct.RequestedExecutionDate = firstNonEmpty(ct.RequestedExecutionDate, now.Format(dateTimeLayout)), ""
 	}
 	if c.p.AdjustPayment != nil {
 		if err := c.p.AdjustPayment(r, c.target, b); err != nil {
@@ -329,7 +354,7 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 		q.Set("ui_locales", r.Language)
 	}
 	res, err := c.do(ctx, req{op: opPayment, method: http.MethodPost, path: "/payment-requests", query: q, body: body, bearer: cc,
-		psu: psuOrNil(r.PSU), header: map[string]string{"Idempotency-Key": key}})
+		psu: psuOrNil(r.PSU), header: map[string]string{"Idempotency-Key": key}, pay: true})
 	if err != nil {
 		return nil, err
 	}
@@ -454,7 +479,10 @@ func (c *client) resumePayment(ctx context.Context, f *flow, in obsdk.StepInput)
 	case err != nil:
 		return nil, &obsdk.FlowError{Payment: pay, Err: fmt.Errorf("%w: %v", obsdk.ErrInvalidRequest, err)}
 	}
-	if st := p.Get("state"); st != "" && st != f.OAuthState {
+	// A cancellation only reads the status afterwards, so its state is not
+	// checked: some banks (BNP Paribas Fortis) send the user back to the
+	// report URLs of the original payment, with that payment's state.
+	if st := p.Get("state"); st != "" && st != f.OAuthState && !f.Pay.Cancel {
 		return nil, &obsdk.FlowError{Payment: pay, Err: authFailed("callback state does not match the payment that was started")}
 	}
 	if code, desc, failed := p.Error(); failed {
@@ -579,7 +607,9 @@ func (c *client) toPayment(id string, t obsdk.PaymentType, body []byte) (*obsdk.
 	if err := json.Unmarshal(hal.PaymentRequest, &pr); err != nil {
 		return nil, fmt.Errorf("stet: unreadable payment request: %w", err)
 	}
-	pay, err := c.newPayment(&payFlow{Type: t, ID: firstNonEmpty(pr.ResourceID, id)})
+	// The id from the Location is the one the API reads the payment by;
+	// some banks put another (internal) number in resourceId.
+	pay, err := c.newPayment(&payFlow{Type: t, ID: firstNonEmpty(id, pr.ResourceID)})
 	if err != nil {
 		return nil, err
 	}
@@ -592,6 +622,11 @@ func (c *client) toPayment(id string, t obsdk.PaymentType, body []byte) (*obsdk.
 	}
 	pay.BankStatus, pay.Reason = status, reason
 	pay.Status, pay.Final = bgstatus.Payment(status)
+	if status == "RJCT" && (reason == "DS02" || reason == "CUST") {
+		// Rejected because the user ordered its cancellation (DS02, or
+		// CUST: cancellation requested by the debtor).
+		pay.Status = obsdk.PaymentCancelled
+	}
 	if a := pr.DebtorAccount; a != nil {
 		if a.IBAN != "" {
 			pay.Debtor = &obsdk.Identifier{Scheme: obsdk.SchemeIBAN, Value: a.IBAN}
@@ -654,8 +689,9 @@ func (c *client) PaymentStatus(ctx context.Context, ref string, o obsdk.PaymentC
 // ---- cancellation ----
 
 // CancelPayment asks the bank to cancel a payment that has not been executed
-// (STET: the payment request sent back with status CANC, reason DS02). The
-// bank may want the user to approve it on its page.
+// (STET: the payment request sent back with status CANC, or the profile's
+// CancelStatus, and reason DS02). The bank may want the user to approve it on
+// its page.
 func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentCallOptions) (*obsdk.Step, error) {
 	pr, err := c.decodeRef(ref)
 	if err != nil {
@@ -689,7 +725,7 @@ func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentC
 		return nil, fmt.Errorf("stet: unreadable payment request")
 	}
 	body := hal.PaymentRequest
-	body["paymentInformationStatus"] = "CANC"
+	body["paymentInformationStatus"] = c.p.cancelStatus()
 	body["statusReasonInformation"] = "DS02" // ordered by the user
 	success, failure := reportURLs(redirectURL, f.OAuthState)
 	sd, _ := body["supplementaryData"].(map[string]any)
@@ -704,7 +740,7 @@ func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentC
 	if err != nil {
 		return nil, err
 	}
-	res, err := c.do(ctx, req{op: opCancel, method: http.MethodPut, path: "/payment-requests/" + url.PathEscape(pr.ID), body: body, bearer: cc, psu: o.PSU})
+	res, err := c.do(ctx, req{op: opCancel, method: http.MethodPut, path: "/payment-requests/" + url.PathEscape(pr.ID), body: body, bearer: cc, psu: o.PSU, pay: true})
 	if err != nil {
 		return nil, err
 	}
@@ -734,7 +770,8 @@ func (c *client) CancelPayment(ctx context.Context, ref string, o obsdk.PaymentC
 	return st, err
 }
 
-// finishCancel reads the status after a cancellation; it must be CANC.
+// finishCancel reads the status after a cancellation; it must be cancelled
+// (CANC, or RJCT with reason DS02 or CUST).
 func (c *client) finishCancel(ctx context.Context, f *flow) (*obsdk.Step, error) {
 	pay, err := c.readPayment(ctx, f.Pay, psuOrNil(f.PSU))
 	if err != nil {

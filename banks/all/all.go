@@ -7,6 +7,7 @@ import (
 	_ "github.com/slatecrane/obsdk/banks/abnamro"
 	_ "github.com/slatecrane/obsdk/banks/atruvia"
 	_ "github.com/slatecrane/obsdk/banks/bankart"
+	_ "github.com/slatecrane/obsdk/banks/bnpparibasfortis"
 	_ "github.com/slatecrane/obsdk/banks/bunq"
 	_ "github.com/slatecrane/obsdk/banks/cooppank"
 	_ "github.com/slatecrane/obsdk/banks/crosskey"

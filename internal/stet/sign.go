@@ -11,6 +11,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 
 	obsdk "github.com/slatecrane/obsdk"
 )
@@ -31,6 +32,26 @@ type Signing struct {
 
 	// Algorithm is the algorithm parameter; empty is "rsa-sha256".
 	Algorithm string
+
+	// Headers is the list of signed headers, in order, when the bank wants
+	// its own instead of the specification's. Besides header names (host is
+	// the request's host) it may hold "(request-target)", "(created)" and
+	// "(expires)"; the latter two also add the created and expires
+	// parameters to the Signature header.
+	Headers []string
+
+	// Expires is how long a signature with "(expires)" is valid; default 30s.
+	Expires time.Duration
+
+	// SandboxValue is sent as the Signature header in the sandbox when no
+	// Seal is configured, for banks whose sandbox wants the header but does
+	// not check it. Required then applies to production only.
+	SandboxValue string
+}
+
+// required reports whether the environment needs a Seal.
+func (s *Signing) required(env obsdk.Env) bool {
+	return s.Required && (s.SandboxValue == "" || env != obsdk.Sandbox)
 }
 
 func (s *Signing) keyID(seal *obsdk.Seal) string {
@@ -60,9 +81,13 @@ func bodyDigest(body []byte) string {
 }
 
 // sign adds Digest and Signature to a request whose other headers are set.
-func (s *Signing) sign(hr *http.Request, body []byte, seal *obsdk.Seal) error {
+func (s *Signing) sign(hr *http.Request, body []byte, seal *obsdk.Seal, env obsdk.Env, now time.Time) error {
 	if seal == nil || seal.Key == nil {
-		if s.Required {
+		if s.SandboxValue != "" && env == obsdk.Sandbox {
+			hr.Header.Set("Signature", s.SandboxValue)
+			return nil
+		}
+		if s.required(env) {
 			return fmt.Errorf("%w: signing needs Config.Seal", obsdk.ErrInvalidConfig)
 		}
 		return nil
@@ -76,30 +101,54 @@ func (s *Signing) sign(hr *http.Request, body []byte, seal *obsdk.Seal) error {
 	if hr.URL.RawQuery != "" {
 		target += "?" + hr.URL.RawQuery
 	}
-	names := []string{"(request-target)"}
-	lines := []string{"(request-target): " + strings.ToLower(hr.Method) + " " + target}
+	requestTarget := strings.ToLower(hr.Method) + " " + target
+	var names, lines []string
 	add := func(name, value string) {
 		names = append(names, name)
 		lines = append(lines, name+": "+value)
 	}
-	if v := hr.Header.Get("Date"); v != "" {
-		add("date", v)
-	}
-	if len(body) > 0 {
-		add("content-type", hr.Header.Get("Content-Type"))
-		add("content-length", strconv.Itoa(len(body)))
-	}
-	add("digest", hr.Header.Get("Digest"))
-	add("x-request-id", hr.Header.Get("X-Request-ID"))
-	var psu []string
-	for k := range hr.Header {
-		if lk := strings.ToLower(k); strings.HasPrefix(lk, "psu-") {
-			psu = append(psu, lk)
+	created, expires := now.Unix(), now.Add(s.expires()).Unix()
+	var timeParams string
+	if len(s.Headers) > 0 {
+		for _, name := range s.Headers {
+			switch name = strings.ToLower(name); name {
+			case "(request-target)":
+				add(name, requestTarget)
+			case "(created)":
+				add(name, strconv.FormatInt(created, 10))
+				timeParams += ",created=" + strconv.FormatInt(created, 10)
+			case "(expires)":
+				add(name, strconv.FormatInt(expires, 10))
+				timeParams += ",expires=" + strconv.FormatInt(expires, 10)
+			case "host":
+				add(name, strings.ToLower(hr.URL.Host))
+			case "content-length":
+				add(name, strconv.Itoa(len(body)))
+			default:
+				add(name, hr.Header.Get(name))
+			}
 		}
-	}
-	sort.Strings(psu)
-	for _, k := range psu {
-		add(k, hr.Header.Get(k))
+	} else {
+		add("(request-target)", requestTarget)
+		if v := hr.Header.Get("Date"); v != "" {
+			add("date", v)
+		}
+		if len(body) > 0 {
+			add("content-type", hr.Header.Get("Content-Type"))
+			add("content-length", strconv.Itoa(len(body)))
+		}
+		add("digest", hr.Header.Get("Digest"))
+		add("x-request-id", hr.Header.Get("X-Request-ID"))
+		var psu []string
+		for k := range hr.Header {
+			if lk := strings.ToLower(k); strings.HasPrefix(lk, "psu-") {
+				psu = append(psu, lk)
+			}
+		}
+		sort.Strings(psu)
+		for _, k := range psu {
+			add(k, hr.Header.Get(k))
+		}
 	}
 
 	h := sha256.Sum256([]byte(strings.Join(lines, "\n")))
@@ -108,7 +157,14 @@ func (s *Signing) sign(hr *http.Request, body []byte, seal *obsdk.Seal) error {
 		return fmt.Errorf("stet: sign request: %w", err)
 	}
 	alg := firstNonEmpty(s.Algorithm, "rsa-sha256")
-	hr.Header.Set("Signature", fmt.Sprintf(`keyId="%s",algorithm="%s",headers="%s",signature="%s"`,
-		strings.ReplaceAll(s.keyID(seal), `"`, "%22"), alg, strings.Join(names, " "), base64.StdEncoding.EncodeToString(sig)))
+	hr.Header.Set("Signature", fmt.Sprintf(`keyId="%s",algorithm="%s",headers="%s"%s,signature="%s"`,
+		strings.ReplaceAll(s.keyID(seal), `"`, "%22"), alg, strings.Join(names, " "), timeParams, base64.StdEncoding.EncodeToString(sig)))
 	return nil
+}
+
+func (s *Signing) expires() time.Duration {
+	if s.Expires > 0 {
+		return s.Expires
+	}
+	return 30 * time.Second
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "bnpparibasfortis",
+      "country": "BE",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "bnpparibasfortis-stet-be",
+      "generation": 2,
+      "updated_at": "2026-10-21T18:03:58Z",
+      "access_token": "REDACTED:access_token:d2677e",
+      "refresh_token": "REDACTED:refresh_token:2c0d6f",
+      "token_type": "bearer",
+      "access_expires_at": "2026-10-21T19:03:58Z",
+      "consents": {
+        "aisp": {
+          "id": "",
+          "kind": "aisp",
+          "status": "authorised"
+        }
+      }
+    }
+  }
+]

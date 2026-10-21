@@ -59,7 +59,7 @@ func newClient(p *Profile, cfg obsdk.Config, t obsdk.Target) (obsdk.Client, erro
 		}
 	}
 	if s := p.Signing; s != nil {
-		if s.Required && (cfg.Seal == nil || cfg.Seal.Key == nil) {
+		if s.required(cfg.Env) && (cfg.Seal == nil || cfg.Seal.Key == nil) {
 			missing = append(missing, "seal (QSealC key for the request signature)")
 		} else if err := s.check(cfg.Seal); err != nil {
 			invalid = append(invalid, err.Error())

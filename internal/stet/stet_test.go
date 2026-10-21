@@ -36,6 +36,7 @@ type fakeBank struct {
 	queries  map[string]url.Values
 
 	payStatus  string // status reported after confirmation / on GET
+	payReason  string // its reason when RJCT (default AM04)
 	cancelAuth bool   // the cancellation needs the user's approval
 	consentPut bool   // PUT /consents happened
 }
@@ -127,7 +128,7 @@ func (f *fakeBank) serve(w http.ResponseWriter, r *http.Request) {
 			 "bankTransactionCode":{"domain":"PMNT","family":"ICDT","subFamily":"ESCT"},
 			 "relatedParties":{"creditor":{"name":"Electrabel"},"creditorAccount":{"iban":"BE71096123456769"},"debtor":{"name":"Me"}},
 			 "remittanceInformation":{"unstructured":["Facture 42"],"structured":[{"creditorReferenceInformation":{"reference":"RF18539007547034"}}]}},
-			{"resourceId":"t2","transactionAmount":{"amount":"1000","currency":"EUR"},"creditDebitIndicator":"CRDT","status":"PDNG","expectedBookingDate":"2026-10-21",
+			{"resourceId":2,"additionalTransactionInformation":{"endToEndReference":"e2e-2","narrative":["x"]},"transactionAmount":{"amount":"1000","currency":"EUR"},"creditDebitIndicator":"CRDT","status":"PDNG","expectedBookingDate":"2026-10-21",
 			 "relatedParties":{"debtor":{"name":"Employer"},"debtorAccount":{"iban":"BE62510007547061"}}},
 			{"resourceId":"t9","transactionAmount":{"amount":9,"currency":"EUR"},"creditDebitIndicator":"DBIT","status":"INFO"}
 		],"_links":{"next":{"href":"/v1/accounts/acc-1/transactions?page=2"}}}`)
@@ -140,8 +141,15 @@ func (f *fakeBank) serve(w http.ResponseWriter, r *http.Request) {
 	case p == "/v1/payment-requests/pr-77" && r.Method == http.MethodGet:
 		f.payment(w)
 	case p == "/v1/payment-requests/pr-77" && r.Method == http.MethodPut:
+		var put struct {
+			Status string `json:"paymentInformationStatus"`
+		}
+		_ = json.Unmarshal(b, &put)
 		f.mu.Lock()
 		f.payStatus = "CANC"
+		if put.Status == "RJCT" {
+			f.payStatus, f.payReason = "RJCT", "DS02"
+		}
 		f.mu.Unlock()
 		if f.cancelAuth {
 			fmt.Fprintf(w, `{"appliedAuthenticationApproach":"REDIRECT","_links":{"consentApproval":{"href":%q}}}`, f.srv.URL+"/approve-cancel")
@@ -156,11 +164,11 @@ func (f *fakeBank) serve(w http.ResponseWriter, r *http.Request) {
 
 func (f *fakeBank) payment(w http.ResponseWriter) {
 	f.mu.Lock()
-	st := f.payStatus
+	st, why := f.payStatus, firstNonEmpty(f.payReason, "AM04")
 	f.mu.Unlock()
 	reason := ""
 	if st == "RJCT" {
-		reason = `,"statusReasonInformation":"AM04"`
+		reason = `,"statusReasonInformation":"` + why + `"`
 	}
 	fmt.Fprintf(w, `{"paymentRequest":{"resourceId":"pr-77","paymentInformationId":"x","creationDateTime":"2026-10-20T12:00:00Z","numberOfTransactions":1,
 		"initiatingParty":{"name":"obsdk test"},"paymentTypeInformation":{"serviceLevel":"SEPA"},"debtorAccount":{"iban":"BE68539007547034"},
@@ -343,7 +351,7 @@ func TestDataCalls(t *testing.T) {
 		t1.EndToEndID != "e2e-1" || t1.EntryReference != "E1" {
 		t.Errorf("t1 %+v", t1)
 	}
-	if t2.Amount.Amount != "1000" || t2.Direction != obsdk.Credit || t2.Status != obsdk.TxPending || t2.Counterparty.Name != "Employer" ||
+	if t2.ID != "2" || t2.EndToEndID != "e2e-2" || t2.Amount.Amount != "1000" || t2.Direction != obsdk.Credit || t2.Status != obsdk.TxPending || t2.Counterparty.Name != "Employer" ||
 		t2.Counterparty.Identifiers[0].Value != "BE62510007547061" {
 		t.Errorf("t2 %+v", t2)
 	}
@@ -397,7 +405,7 @@ func TestPaymentConfirmedWithClientToken(t *testing.T) {
 	}
 	raw := f.bodies["POST /v1/payment-requests"]
 	for _, want := range []string{`"amount":12.50`, `"iban":"BE71096123456769"`, `"initiatingParty":{"name":"obsdk test"}`, `"serviceLevel":"SEPA"`,
-		`"categoryPurpose":"CASH"`, `"chargeBearer":"SLEV"`, `"requestedExecutionDate":"2026-10-22T00:00:00.000+00:00"`, `"unstructured":["Invoice 7"]`,
+		`"categoryPurpose":"CASH"`, `"chargeBearer":"SLEV"`, `"requestedExecutionDate":"2026-10-22T00:00:00+00:00"`, `"unstructured":["Invoice 7"]`,
 		`"type":{"code":"SCOR","issuer":"ISO"}`, `"acceptedAuthenticationApproach":["REDIRECT"]`, `"numberOfTransactions":1`} {
 		if !strings.Contains(string(raw), want) {
 			t.Errorf("body lacks %s: %s", want, raw)
@@ -498,7 +506,8 @@ func TestCancel(t *testing.T) {
 	if err != nil || st.Kind != obsdk.StepRedirect || st.Redirect.URL != f.srv.URL+"/approve-cancel" {
 		t.Fatalf("cancel with approval %+v %v", st, err)
 	}
-	done, err := c.Resume(context.Background(), st.State, obsdk.StepInput{Callback: "https://tpp.example/cb"})
+	// Back with the original payment's state, as some banks do.
+	done, err := c.Resume(context.Background(), st.State, obsdk.StepInput{Callback: "https://tpp.example/cb?state=of-the-payment"})
 	if err != nil || done.Payment.Status != obsdk.PaymentCancelled {
 		t.Errorf("cancel resumed %+v %v", done, err)
 	}
@@ -594,5 +603,81 @@ func TestResourceID(t *testing.T) {
 		if got := resourceID(in); got != want {
 			t.Errorf("%q: %q", in, got)
 		}
+	}
+}
+
+func TestBankOptions(t *testing.T) {
+	f := newFakeBank(t)
+	p := testProfile(f)
+	p.PaymentLevel, p.CancelStatus, p.AmountString = true, "RJCT", true
+	p.Query = func(obsdk.Config, obsdk.Target) url.Values { return url.Values{"brand": {"hb"}} }
+	p.PaymentHeaders = func(_ obsdk.Config, _ obsdk.Target, h http.Header) { h.Set("businessLineName", "RPB") }
+	c := newTestClient(t, p)
+	if _, err := c.InitiatePayment(context.Background(), obsdk.PaymentRequest{Type: obsdk.PaymentSEPA,
+		Transfers: []obsdk.Transfer{{Amount: obsdk.Money{Amount: "1", Currency: "EUR"}, Creditor: obsdk.Creditor{Name: "Bob", Account: obsdk.Identifier{Scheme: "IBAN", Value: "BE71096123456769"}}}}}); err != nil {
+		t.Fatal(err)
+	}
+	var body map[string]any
+	_ = json.Unmarshal(f.bodies["POST /v1/payment-requests"], &body)
+	ct := body["creditTransferTransaction"].([]any)[0].(map[string]any)
+	if ct["instructedAmount"].(map[string]any)["amount"] != "1" {
+		t.Errorf("amount not a string: %v", ct["instructedAmount"])
+	}
+	if body["beneficiary"] == nil || ct["beneficiary"] != nil || body["requestedExecutionDate"] != "2026-10-20T12:00:00+00:00" || ct["requestedExecutionDate"] != nil {
+		t.Errorf("payment level body %s", f.bodies["POST /v1/payment-requests"])
+	}
+	if f.queries["POST /v1/payment-requests"].Get("brand") != "hb" || f.queries["POST /token"].Get("brand") != "" {
+		t.Errorf("brand query %v / token %v", f.queries["POST /v1/payment-requests"], f.queries["POST /token"])
+	}
+	if f.headers["POST /v1/payment-requests"].Get("businessLineName") != "RPB" {
+		t.Errorf("payment header missing")
+	}
+
+	pay, _ := c.(*client).newPayment(&payFlow{Type: obsdk.PaymentSEPA, ID: "pr-77"})
+	if _, err := c.PaymentStatus(context.Background(), pay.Ref, obsdk.PaymentCallOptions{}); err != nil {
+		t.Fatal(err)
+	}
+	if f.headers["GET /v1/payment-requests/pr-77"].Get("businessLineName") != "" || f.queries["GET /v1/payment-requests/pr-77"].Get("brand") != "hb" {
+		t.Errorf("status call headers %v query %v", f.headers["GET /v1/payment-requests/pr-77"], f.queries["GET /v1/payment-requests/pr-77"])
+	}
+	st, err := c.CancelPayment(context.Background(), pay.Ref, obsdk.PaymentCallOptions{})
+	if err != nil || st.Payment.Status != obsdk.PaymentCancelled || st.Payment.BankStatus != "RJCT" {
+		t.Fatalf("cancel %+v %v", st, err)
+	}
+	if !strings.Contains(string(f.bodies["PUT /v1/payment-requests/pr-77"]), `"paymentInformationStatus":"RJCT"`) ||
+		f.headers["PUT /v1/payment-requests/pr-77"].Get("businessLineName") != "RPB" {
+		t.Errorf("cancel request %s", f.bodies["PUT /v1/payment-requests/pr-77"])
+	}
+}
+
+func TestSigningOwnHeaders(t *testing.T) {
+	f := newFakeBank(t)
+	key, err := rsa.GenerateKey(rand.Reader, 2048)
+	if err != nil {
+		t.Fatal(err)
+	}
+	p := testProfile(f)
+	p.Signing = &Signing{Headers: []string{"(request-target)", "(created)", "(expires)", "host", "x-request-id", "digest"}, Expires: time.Minute}
+	c := newTestClient(t, p, func(cfg *obsdk.Config) { cfg.Seal = &obsdk.Seal{Key: key, KeyID: "https://tpp.example/qseal.pem"} })
+	s := &obsdk.Session{Bank: "stettest", Country: "BE", Env: obsdk.Sandbox, Integration: "stet-test", AccessToken: "user-token"}
+	if _, err := c.Accounts(context.Background(), s, obsdk.CallOptions{}); err != nil {
+		t.Fatal(err)
+	}
+	h := f.headers["GET /v1/accounts"]
+	m := regexp.MustCompile(`^keyId="https://tpp.example/qseal.pem",algorithm="rsa-sha256",headers="([^"]*)",created=(\d+),expires=(\d+),signature="([^"]*)"$`).FindStringSubmatch(h.Get("Signature"))
+	if m == nil || m[2] != fmt.Sprint(frozen.Unix()) || m[3] != fmt.Sprint(frozen.Add(time.Minute).Unix()) {
+		t.Fatalf("signature %q", h.Get("Signature"))
+	}
+	host := strings.TrimPrefix(f.srv.URL, "http://")
+	target := "get /v1/accounts" // the last request: the second page
+	if q := f.queries["GET /v1/accounts"]; len(q) > 0 {
+		target += "?" + q.Encode()
+	}
+	lines := strings.Join([]string{"(request-target): " + target, "(created): " + m[2], "(expires): " + m[3], "host: " + host,
+		"x-request-id: " + h.Get("X-Request-ID"), "digest: " + bodyDigest(nil)}, "\n")
+	sig, _ := base64.StdEncoding.DecodeString(m[4])
+	sum := sha256.Sum256([]byte(lines))
+	if err := rsa.VerifyPKCS1v15(&key.PublicKey, crypto.SHA256, sum[:], sig); err != nil {
+		t.Errorf("signature does not verify: %v", err)
 	}
 }
