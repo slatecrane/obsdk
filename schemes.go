@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/big"
 	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -17,6 +18,7 @@ var (
 	ocrRE      = regexp.MustCompile(`^[0-9]{2,25}$`)
 	rfRE       = regexp.MustCompile(`^RF[0-9]{2}[A-Z0-9]{1,21}$`)
 	fiRefRE    = regexp.MustCompile(`^[0-9]{4,20}$`)
+	beRefRE    = regexp.MustCompile(`^[0-9]{12}$`)
 )
 
 // ValidateIdentifier checks a value against the format and check digits of
@@ -47,6 +49,8 @@ func ValidateReference(r Reference) error {
 		return checkMod97(r.Value, rfRE, "RF reference")
 	case ReferenceFI:
 		return checkFIReference(r.Value)
+	case ReferenceBE:
+		return checkBEReference(r.Value)
 	}
 	return nil
 }
@@ -64,6 +68,24 @@ func checkFIReference(s string) error {
 	}
 	if int(s[len(s)-1]-'0') != (10-sum%10)%10 {
 		return fmt.Errorf("Finnish reference check digit does not match")
+	}
+	return nil
+}
+
+// checkBEReference checks a Belgian structured communication (Febelfin): 12
+// digits, the last two the first ten modulo 97, or 97 where that is 0. On
+// paper it reads +++123/4567/89002+++; the bank gets the digits only.
+func checkBEReference(s string) error {
+	if !beRefRE.MatchString(s) {
+		return fmt.Errorf("Belgian structured communication must be 12 digits, without +++ and slashes")
+	}
+	n, _ := strconv.ParseInt(s[:10], 10, 64)
+	check := n % 97
+	if check == 0 {
+		check = 97
+	}
+	if fmt.Sprintf("%02d", check) != s[10:] {
+		return fmt.Errorf("Belgian structured communication check digits do not match")
 	}
 	return nil
 }

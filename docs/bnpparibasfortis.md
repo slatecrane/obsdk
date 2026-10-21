@@ -117,12 +117,11 @@ found` on the code exchange; with the login it worked. Send the callback promptl
 
 International payments (`chargeBearer`, payee address, BBAN), standing orders, file payments (pain.001,
 business only), funds confirmation (`POST /funds-confirmations`, scope `cbpi`), the `accounts` and SCA
-preselection parameters of the authorize URL, Belgian structured communications (`+++…+++`) as references,
-and the onboarding endpoint.
+preselection parameters of the authorize URL, and the onboarding endpoint.
 
 ## Payments
 
 | Type | Notes |
 |---|---|
-| `sepa` | EUR; payer account optional (picked at the bank); description or `RF` reference; `execution_date` up to a year ahead (empty: today); cancellable while not executed, with the user's approval |
-| `sepa_instant` | EUR; today only; Belgian structured references only (not built), so description only; not cancellable |
+| `sepa` | EUR; payer account optional (picked at the bank); description or a `BE` (Belgian structured communication, sent as `SCOR`/`BBA`) or `RF` (`SCOR`/`ISO`) reference; `execution_date` up to a year ahead (empty: today); cancellable while not executed, with the user's approval |
+| `sepa_instant` | EUR; today only; description or `BE` reference (Fortis takes no `RF` reference for instant payments); not cancellable |

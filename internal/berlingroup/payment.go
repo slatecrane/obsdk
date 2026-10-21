@@ -143,13 +143,25 @@ func (c *client) buildBody(r obsdk.PaymentRequest) (pisBody, error) {
 			b.Structured = ref.Value
 		} else {
 			s := structured138{Reference: ref.Value}
-			if ref.Scheme == obsdk.ReferenceRF {
-				s.ReferenceType, s.ReferenceIssuer = "SCOR", "ISO"
+			if issuer := referenceIssuer(ref.Scheme); issuer != "" {
+				s.ReferenceType, s.ReferenceIssuer = "SCOR", issuer
 			}
 			b.Structured = s
 		}
 	}
 	return b, nil
+}
+
+// referenceIssuer is the ISO 20022 issuer of a structured creditor
+// reference (type SCOR), or "" for schemes sent without a type.
+func referenceIssuer(scheme string) string {
+	switch scheme {
+	case obsdk.ReferenceRF:
+		return "ISO"
+	case obsdk.ReferenceBE:
+		return "BBA"
+	}
+	return ""
 }
 
 // ---- initiate ----

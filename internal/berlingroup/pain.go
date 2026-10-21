@@ -209,8 +209,8 @@ func (c *client) buildPain001(r obsdk.PaymentRequest) ([]byte, error) {
 			return nil, invalid(obsdk.FieldReference, c.p.Info.Name+" takes either a description or a payment reference, not both")
 		case ref != nil && ref.Value != "":
 			x.RmtInf.Strd = &painStructured{Ref: ref.Value}
-			if ref.Scheme == obsdk.ReferenceRF {
-				x.RmtInf.Strd.Tp = &painRefType{Cd: "SCOR", Issr: "ISO"}
+			if issuer := referenceIssuer(ref.Scheme); issuer != "" {
+				x.RmtInf.Strd.Tp = &painRefType{Cd: "SCOR", Issr: issuer}
 			}
 		default:
 			x.RmtInf.Ustrd = ustrd

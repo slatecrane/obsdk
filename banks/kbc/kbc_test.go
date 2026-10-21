@@ -550,6 +550,21 @@ func TestCrossBorderBody(t *testing.T) {
 	}
 }
 
+func TestBelgianReference(t *testing.T) {
+	r := payment(obsdk.PaymentSEPAInstant)
+	r.Transfers[0].Remittance, r.Transfers[0].Reference = nil, &obsdk.Reference{Scheme: obsdk.ReferenceBE, Value: "123456789002"}
+	spec, _ := obsdk.Lookup("kbc")
+	ps, _ := spec.PaymentSpec("BE", obsdk.Personal, obsdk.PaymentSEPAInstant)
+	if err := ps.Validate(r, frozen); err != nil {
+		t.Fatal(err)
+	}
+	b, _ := buildBody(r, frozen)
+	got, _ := json.Marshal(b.Structured)
+	if want := `{"reference":"123456789002","referenceType":"SCOR","referenceIssuer":"BBA"}`; string(got) != want {
+		t.Fatalf("structured %s, want %s", got, want)
+	}
+}
+
 func TestExecutionDateIsTodayInBrussels(t *testing.T) {
 	late := time.Date(2026, 10, 17, 23, 30, 0, 0, time.UTC) // already the 18th in Brussels
 	b, _ := buildBody(payment(obsdk.PaymentSEPAInstant), late)

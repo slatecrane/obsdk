@@ -681,3 +681,19 @@ func TestSigningOwnHeaders(t *testing.T) {
 		t.Errorf("signature does not verify: %v", err)
 	}
 }
+
+func TestBelgianReference(t *testing.T) {
+	c := newTestClient(t, testProfile(newFakeBank(t))).(*client)
+	b, err := c.buildPayment(obsdk.PaymentRequest{Type: obsdk.PaymentSEPA, Transfers: []obsdk.Transfer{{
+		Amount:    obsdk.Money{Amount: "1.00", Currency: "EUR"},
+		Creditor:  obsdk.Creditor{Name: "Bob", Account: obsdk.Identifier{Scheme: obsdk.SchemeIBAN, Value: "BE71096123456769"}},
+		Reference: &obsdk.Reference{Scheme: obsdk.ReferenceBE, Value: "123456789002"},
+	}}}, "https://tpp.example/ok", "https://tpp.example/ko")
+	if err != nil {
+		t.Fatal(err)
+	}
+	raw, _ := json.Marshal(b)
+	if want := `"structured":[{"creditorReferenceInformation":{"type":{"code":"SCOR","issuer":"BBA"},"reference":"123456789002"}}]`; !strings.Contains(string(raw), want) {
+		t.Errorf("body lacks %s: %s", want, raw)
+	}
+}

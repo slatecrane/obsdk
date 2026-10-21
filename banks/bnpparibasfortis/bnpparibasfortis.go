@@ -197,12 +197,15 @@ func specs() []obsdk.PaymentSpec {
 			{Path: obsdk.FieldRemittance, Use: obsdk.FieldOptional, MaxItems: 1, MaxLength: 140, Label: "Description"},
 			{Path: obsdk.FieldEndToEndID, Use: obsdk.FieldOptional, MaxLength: 35},
 		}
-		if !instant {
-			f = append(f,
-				obsdk.PaymentField{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, Schemes: []string{obsdk.ReferenceRF}, MaxLength: 35, Label: "Payment reference"},
-				obsdk.PaymentField{Path: obsdk.FieldExecutionDate, Use: obsdk.FieldOptional, Label: "Payment date", Note: "Empty means today."})
+		if instant {
+			// SEPA Instant takes the Belgian structured communication, not RF.
+			return append(f, obsdk.PaymentField{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, Schemes: []string{obsdk.ReferenceBE}, Label: "Payment reference",
+				Note: "Belgian structured communication: the 12 digits of +++123/4567/89002+++."})
 		}
-		return f
+		return append(f,
+			obsdk.PaymentField{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, Schemes: []string{obsdk.ReferenceBE, obsdk.ReferenceRF}, MaxLength: 35, Label: "Payment reference",
+				Note: "Belgian structured communication (12 digits, without +++ and slashes) or RF reference."},
+			obsdk.PaymentField{Path: obsdk.FieldExecutionDate, Use: obsdk.FieldOptional, Label: "Payment date", Note: "Empty means today."})
 	}
 	return []obsdk.PaymentSpec{
 		{

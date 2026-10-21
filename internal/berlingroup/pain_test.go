@@ -76,6 +76,19 @@ func TestBuildPain001Instant(t *testing.T) {
 	}
 }
 
+func TestBuildPain001BelgianReference(t *testing.T) {
+	r := painRequest(obsdk.PaymentSEPA)
+	r.Transfers[0].Remittance = nil
+	r.Transfers[0].Reference = &obsdk.Reference{Scheme: obsdk.ReferenceBE, Value: "123456789002"}
+	b, err := painClient().buildPain001(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if want := `<Tp><CdOrPrtry><Cd>SCOR</Cd></CdOrPrtry><Issr>BBA</Issr></Tp><Ref>123456789002</Ref>`; !strings.Contains(string(b), want) {
+		t.Errorf("pain.001 lacks %s:\n%s", want, b)
+	}
+}
+
 func TestBuildPain001NeedsDebtor(t *testing.T) {
 	r := painRequest(obsdk.PaymentSEPA)
 	r.Debtor = nil

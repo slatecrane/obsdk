@@ -102,6 +102,9 @@ status read the same way.
 - `debtorAccount` is optional; without it the user picks the account at KBC (Yolt's notes confirm a
   payment without debtor works).
 - `creditorAddress` needs `country`; free address lines are not accepted.
+- References go in `remittanceInformationStructured` with `referenceType` `SCOR`: `RF` as issuer `ISO`,
+  `BE` (Belgian structured communication, 12 digits) as issuer `BBA`. Issuer `BBA` follows Febelfin's
+  standard and is not yet checked against KBC's specification or sandbox (2026-10-21).
 - Statuses: `RCVD` after creation and while unsigned; `ACSP` once signed (sandbox: balance reduced);
   `ACSC` settled; `RJCT`; `CANC` when the user cancels on KBC's page.
 - KBC's character patterns (`^[a-zA-Z0-9/-?:().,'+-]+$`) leave out the space although its own examples

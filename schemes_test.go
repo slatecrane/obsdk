@@ -50,6 +50,13 @@ func TestValidateReference(t *testing.T) {
 		{Reference{ReferenceRF, "RF18539007547034"}, true},
 		{Reference{ReferenceRF, "RF19539007547034"}, false},
 		{Reference{ReferenceRF, "rf18539007547034"}, false},
+		{Reference{ReferenceBE, "012345678939"}, true},
+		{Reference{ReferenceBE, "123456789002"}, true},
+		{Reference{ReferenceBE, "000000009797"}, true}, // remainder 0 gives 97
+		{Reference{ReferenceBE, "000000009700"}, false},
+		{Reference{ReferenceBE, "123456789003"}, false},
+		{Reference{ReferenceBE, "+++123/4567/89002+++"}, false},
+		{Reference{ReferenceBE, "12345678900"}, false},
 	}
 	for _, tt := range tests {
 		if err := ValidateReference(tt.r); (err == nil) != tt.ok {

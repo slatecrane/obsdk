@@ -196,6 +196,11 @@ func TestBuildBodyShapes(t *testing.T) {
 			t.Errorf("1.3.8 body %s lacks %s", v138, want)
 		}
 	}
+	r.Transfers[0].Reference = &obsdk.Reference{Scheme: obsdk.ReferenceBE, Value: "123456789002"}
+	if be := enc(testClient(Profile{})); !strings.Contains(be, `"remittanceInformationStructured":{"reference":"123456789002","referenceType":"SCOR","referenceIssuer":"BBA"}`) {
+		t.Errorf("Belgian reference body %s", be)
+	}
+	r.Transfers[0].Reference = &obsdk.Reference{Scheme: obsdk.ReferenceRF, Value: "RF18539007547034"}
 	old := enc(testClient(Profile{LegacyAddress: true, StructuredRemittanceString: true}))
 	for _, want := range []string{`"street":"Main"`, `"city":"Berlin"`, `"remittanceInformationStructured":"RF18539007547034"`} {
 		if !strings.Contains(old, want) {

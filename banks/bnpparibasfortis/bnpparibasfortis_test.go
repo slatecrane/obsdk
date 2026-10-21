@@ -6,6 +6,7 @@ import (
 	"net/url"
 	"strings"
 	"testing"
+	"time"
 
 	obsdk "github.com/slatecrane/obsdk"
 	"github.com/slatecrane/obsdk/obsdktest"
@@ -80,5 +81,33 @@ func TestHelloBankHasNoBusiness(t *testing.T) {
 	if _, err := obsdk.New(obsdk.Target{Bank: BankHello, Country: "BE", Segment: obsdk.Business},
 		obsdk.Config{Env: obsdk.Sandbox, Credentials: obsdk.Credentials{ClientID: "id", ClientSecret: "secret"}}); err == nil {
 		t.Error("Hello bank! business should not resolve")
+	}
+}
+
+func TestReferenceSchemes(t *testing.T) {
+	info, _ := obsdk.Lookup(BankFortis)
+	now := time.Date(2026, 10, 21, 12, 0, 0, 0, time.UTC)
+	pay := func(typ obsdk.PaymentType, scheme, value string) obsdk.PaymentRequest {
+		return obsdk.PaymentRequest{Type: typ, Transfers: []obsdk.Transfer{{
+			Amount:    obsdk.Money{Amount: "1.00", Currency: "EUR"},
+			Creditor:  obsdk.Creditor{Name: "Jan Peeters", Account: obsdk.Identifier{Scheme: obsdk.SchemeIBAN, Value: "BE63380242772874"}},
+			Reference: &obsdk.Reference{Scheme: scheme, Value: value},
+		}}}
+	}
+	for _, tt := range []struct {
+		typ           obsdk.PaymentType
+		scheme, value string
+		ok            bool
+	}{
+		{obsdk.PaymentSEPA, obsdk.ReferenceBE, "123456789002", true},
+		{obsdk.PaymentSEPA, obsdk.ReferenceRF, "RF18539007547034", true},
+		{obsdk.PaymentSEPA, obsdk.ReferenceBE, "123456789003", false},
+		{obsdk.PaymentSEPAInstant, obsdk.ReferenceBE, "123456789002", true},
+		{obsdk.PaymentSEPAInstant, obsdk.ReferenceRF, "RF18539007547034", false}, // instant takes Belgian references only
+	} {
+		ps, _ := info.PaymentSpec("BE", obsdk.Personal, tt.typ)
+		if err := ps.Validate(pay(tt.typ, tt.scheme, tt.value), now); (err == nil) != tt.ok {
+			t.Errorf("%s %s %s: err = %v, want ok=%v", tt.typ, tt.scheme, tt.value, err, tt.ok)
+		}
 	}
 }
