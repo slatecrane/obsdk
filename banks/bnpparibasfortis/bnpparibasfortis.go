@@ -176,13 +176,47 @@ func profile(b brand) stet.Profile {
 
 // adjustPayment applies the bank's payment rules: category purposes are
 // limited to a few corporate codes (not the STET defaults), and a debtor
-// account currency, when given, must be EUR.
-func adjustPayment(_ obsdk.PaymentRequest, _ obsdk.Target, b *stet.PaymentRequestBody) error {
+// account currency, when given, must be EUR. International payments need the
+// debtor account's currency, and the payee's and the payee bank's country and
+// town, sent as townName (address lines are refused).
+func adjustPayment(r obsdk.PaymentRequest, _ obsdk.Target, b *stet.PaymentRequestBody) error {
 	b.PaymentTypeInformation.CategoryPurpose = ""
-	if a := b.DebtorAccount; a != nil && a.Currency != "" && !strings.EqualFold(a.Currency, "EUR") {
-		a.Currency = ""
+	if r.Type != obsdk.PaymentCrossBorder {
+		if a := b.DebtorAccount; a != nil && a.Currency != "" && !strings.EqualFold(a.Currency, "EUR") {
+			a.Currency = ""
+		}
+		return nil
 	}
+	if a := b.DebtorAccount; a != nil && a.Currency == "" {
+		a.Currency = "EUR"
+	}
+	t := r.Transfers[0]
+	ag := t.Creditor.Agent
+	if ag == nil || (ag.BIC == "" && ag.Name == "") {
+		return invalid(obsdk.FieldCreditorBIC, "BNP Paribas Fortis needs the payee bank's BIC or name for an international payment")
+	}
+	creditor, ok := townAddress(t.Creditor.Address)
+	if !ok {
+		return invalid(obsdk.FieldCreditorAddress, "BNP Paribas Fortis needs the payee's town and country for an international payment")
+	}
+	agent, ok := townAddress(ag.Address)
+	if !ok {
+		return invalid(obsdk.FieldCreditorBankAddress, "BNP Paribas Fortis needs the payee bank's town and country for an international payment")
+	}
+	b.Beneficiary.Creditor.PostalAddress, b.Beneficiary.CreditorAgent.PostalAddress = creditor, agent
 	return nil
+}
+
+// townAddress is the country and town, the only address parts the bank takes.
+func townAddress(a *obsdk.PostalAddress) (*stet.PostalAddress, bool) {
+	if a == nil || a.Country == "" || a.Town == "" {
+		return nil, false
+	}
+	return &stet.PostalAddress{Country: a.Country, TownName: a.Town}, true
+}
+
+func invalid(path, msg string) error {
+	return &obsdk.PaymentValidationError{Issues: []obsdk.FieldIssue{{Path: path, Index: 0, Code: obsdk.IssueInvalid, Message: msg}}}
 }
 
 func specs() []obsdk.PaymentSpec {
@@ -207,6 +241,52 @@ func specs() []obsdk.PaymentSpec {
 				Note: "Belgian structured communication (12 digits, without +++ and slashes) or RF reference."},
 			obsdk.PaymentField{Path: obsdk.FieldExecutionDate, Use: obsdk.FieldOptional, Label: "Payment date", Note: "Empty means today."})
 	}
+	// Names and towns in the bank's character set; it upper-cases and strips
+	// accents itself.
+	const text = `^[-a-zA-Z0-9?:'/()+, .áâäàåãÄÅÁÂÀÃÇçêëèéÊËÈÉïîìíÍÎÏÌôöòõóÓÖÔÒÕûùúüÚÛÙÜñÑýÝÿ]+$`
+	cross := func(seg obsdk.Segment) obsdk.PaymentSpec {
+		s := obsdk.PaymentSpec{
+			Type: obsdk.PaymentCrossBorder, Segments: []obsdk.Segment{seg}, MaxTransfers: 1,
+			AuthApproaches: []string{"redirect"}, FinalStatuses: []obsdk.PaymentStatus{obsdk.PaymentCompleted},
+			Fields: []obsdk.PaymentField{
+				{Path: obsdk.FieldAmount, Use: obsdk.FieldRequired, Pattern: `^\d{1,15}(\.\d{1,3})?$`, Label: "Amount"},
+				{Path: obsdk.FieldDebtorAccount, Use: obsdk.FieldOptional, Ask: true, Schemes: []string{obsdk.SchemeIBAN}, Label: "Pay from",
+					Note: "Leave empty to let the user pick the account at the bank."},
+				{Path: obsdk.FieldDebtorCurrency, Use: obsdk.FieldOptional, Pattern: `^[A-Z]{3}$`, Label: "Currency of the account to pay from",
+					Note: "Sent with the account to pay from; EUR when empty."},
+				{Path: obsdk.FieldCreditorAccount, Use: obsdk.FieldRequired, Schemes: []string{obsdk.SchemeIBAN, obsdk.SchemeBBAN}, MaxLength: 34, Label: "Payee account"},
+				{Path: obsdk.FieldCreditorName, Use: obsdk.FieldRequired, MaxLength: 40, Pattern: text, Label: "Payee name"},
+				{Path: obsdk.FieldCreditorAddress, Use: obsdk.FieldRequired, Label: "Payee address", Note: "Only the town and country are sent; both are required."},
+				{Path: obsdk.FieldCreditorCountry, Use: obsdk.FieldRequired, Pattern: `^[A-Z]{2}$`, Label: "Payee country"},
+				{Path: obsdk.FieldCreditorBIC, Use: obsdk.FieldOptional, Pattern: `^[A-Z]{6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3})?$`, Label: "Payee bank BIC",
+					Note: "The BIC or the bank's name is required."},
+				{Path: obsdk.FieldCreditorBankName, Use: obsdk.FieldOptional, MaxLength: 40, Pattern: text, Label: "Payee bank name",
+					Note: "The BIC or the bank's name is required."},
+				{Path: obsdk.FieldCreditorBankAddress, Use: obsdk.FieldRequired, Label: "Payee bank address", Note: "Only the town and country are sent; both are required."},
+				{Path: obsdk.FieldChargeBearer, Use: obsdk.FieldOptional, Label: "Fees", Note: "Empty: each pays their own bank.", Options: []obsdk.Option{
+					{Value: obsdk.ChargeBearerDebtor, Label: "Payer pays all fees"},
+					{Value: obsdk.ChargeBearerCreditor, Label: "Payee pays all fees"},
+					{Value: obsdk.ChargeBearerShared, Label: "Each pays their own bank"},
+				}},
+				{Path: obsdk.FieldRemittance, Use: obsdk.FieldOptional, MaxItems: 1, MaxLength: 140, Label: "Description"},
+				{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, Schemes: []string{obsdk.ReferenceBE, obsdk.ReferenceRF}, MaxLength: 35, Label: "Payment reference",
+					Note: "Belgian structured communication (12 digits, without +++ and slashes) or RF reference."},
+				{Path: obsdk.FieldEndToEndID, Use: obsdk.FieldOptional, MaxLength: 35},
+			},
+			Notes: []string{
+				"A payment in any currency, or in EUR outside SEPA.",
+				"It cannot be cancelled through the API.",
+				"The user has 60 minutes to approve the payment.",
+			},
+		}
+		if seg == obsdk.Business {
+			s.ExecutionDateMaxDays = 364
+			s.Fields = append(s.Fields, obsdk.PaymentField{Path: obsdk.FieldExecutionDate, Use: obsdk.FieldOptional, Label: "Payment date", Note: "Empty means today."})
+		} else {
+			s.Notes = append(s.Notes, "Personal customers can only pay today; the bank refuses a later date.")
+		}
+		return s
+	}
 	return []obsdk.PaymentSpec{
 		{
 			Type: obsdk.PaymentSEPA, Currencies: []string{"EUR"}, MaxTransfers: 1, ExecutionDateMaxDays: 364,
@@ -224,5 +304,7 @@ func specs() []obsdk.PaymentSpec {
 			Fields: fields(true),
 			Notes:  []string{"Instant payments are executed today and cannot be cancelled."},
 		},
+		cross(obsdk.Personal),
+		cross(obsdk.Business),
 	}
 }

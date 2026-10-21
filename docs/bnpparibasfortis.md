@@ -96,6 +96,9 @@ body). `expires` may be at most 60 seconds after `created`; we use 30. The porta
   adapter does not check the state of a cancellation callback; it reads the status.
 - **Approval links put the report URL unencoded** in `redirect_uri` (`…&redirect_uri=https://…?error=…&state=…`).
   Harmless: the browser follows the link as is.
+- **International payments only in EUR and USD.** A GBP payment was refused with `400 "Only EUR/USD currency
+  should be accepted for Single SCT Payment"`; the documentation allows any currency, so the SDK does not
+  restrict it.
 - **Dated payments** run 20 minutes after approval regardless of the date (`X-Execution-Delay` header to
   change it); payments dated today are executed at once.
 
@@ -105,7 +108,9 @@ Connect (a test user with a Fortis and a Hello bank! account), accounts, balance
 with end-to-end id and bank code), refresh, disconnect; a SEPA payment approved and `ACSC`; a dated payment
 approved (`ACCP`) and cancelled with approval (`RJCT` CUST); status read; a `sepa_instant` payment approved
 and `ACSC` at once; a SEPA and a `sepa_instant` payment with a Belgian structured communication (`BE`,
-sent as `SCOR`/`BBA`; the bank echoes it back) approved and `ACSC`. `hellobank` and `fintro` (personal): connect, balances and transactions. Scenarios in
+sent as `SCOR`/`BBA`; the bank echoes it back) approved and `ACSC`; two `crossborder` payments approved and
+`ACSC`: USD to a US account number (`BBAN`, bank by BIC, `DEBT`) and USD to a GB IBAN (bank by name only,
+`SHAR`, `BE` reference). `hellobank` and `fintro` (personal): connect, balances and transactions. Scenarios in
 `banks/bnpparibasfortis/testdata/live-be-*`.
 
 Not run: payments through the `hellobank` and `fintro` keys (same API, other `brand` value), the business
@@ -116,7 +121,7 @@ found` on the code exchange; with the login it worked. Send the callback promptl
 
 ## Not built
 
-International payments (`chargeBearer`, payee address, BBAN), standing orders, file payments (pain.001,
+Standing orders, file payments (pain.001,
 business only), funds confirmation (`POST /funds-confirmations`, scope `cbpi`), the `accounts` and SCA
 preselection parameters of the authorize URL, and the onboarding endpoint.
 
@@ -126,3 +131,8 @@ preselection parameters of the authorize URL, and the onboarding endpoint.
 |---|---|
 | `sepa` | EUR; payer account optional (picked at the bank); description or a `BE` (Belgian structured communication, sent as `SCOR`/`BBA`) or `RF` (`SCOR`/`ISO`) reference; `execution_date` up to a year ahead (empty: today); cancellable while not executed, with the user's approval |
 | `sepa_instant` | EUR; today only; description or `BE` reference (Fortis takes no `RF` reference for instant payments); not cancellable |
+| `crossborder` | any currency, or EUR outside SEPA; payee account IBAN or `BBAN` (sent as `other`/`BBAN`); the payee's town and country and the payee bank's town and country are required (sent as `townName`, the only address parts the bank takes), plus the bank's BIC or name (`Agent.Name`); `charge_bearer` `DEBT`/`CRED`/`SHAR` (empty: the bank's default, shared); the payer account's currency goes with it (EUR when empty); personal customers pay today only, business customers up to a year ahead; not cancellable |
+
+The specification's table labels `CRED` as "borne by debtor" and `DEBT` as "borne by creditor"; its own
+`ChargeBearerCode` schema and ISO 20022 say the opposite. The SDK sends the ISO meaning (`DEBT`: the payer
+pays all fees).

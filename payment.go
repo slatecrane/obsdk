@@ -114,9 +114,11 @@ type Creditor struct {
 
 // Agent identifies the payee's bank.
 type Agent struct {
-	BIC            string `json:"bic,omitempty"`
-	ClearingSystem string `json:"clearing_system,omitempty"` // e.g. "GBDSC" (UK sort code), "USABA"
-	MemberID       string `json:"member_id,omitempty"`
+	BIC            string         `json:"bic,omitempty"`
+	ClearingSystem string         `json:"clearing_system,omitempty"` // e.g. "GBDSC" (UK sort code), "USABA"
+	MemberID       string         `json:"member_id,omitempty"`
+	Name           string         `json:"name,omitempty"`    // for international payments, where the bank asks for it
+	Address        *PostalAddress `json:"address,omitempty"` // likewise
 }
 
 // PostalAddress is a postal address.
@@ -186,23 +188,25 @@ type PaymentCallOptions struct {
 // Field paths of PaymentRequest, as used in PaymentField.Path and FieldIssue.Path.
 // "transfers." paths apply to every transfer.
 const (
-	FieldDebtorAccount    = "debtor.account"
-	FieldDebtorName       = "debtor.name"
-	FieldDebtorCurrency   = "debtor.currency"
-	FieldAmount           = "transfers.amount"
-	FieldCreditorName     = "transfers.creditor.name"
-	FieldCreditorAccount  = "transfers.creditor.account"
-	FieldCreditorBIC      = "transfers.creditor.agent.bic"
-	FieldCreditorClearing = "transfers.creditor.agent.member_id"
-	FieldCreditorAddress  = "transfers.creditor.address"
-	FieldCreditorCountry  = "transfers.creditor.address.country"
-	FieldRemittance       = "transfers.remittance"
-	FieldReference        = "transfers.reference"
-	FieldEndToEndID       = "transfers.end_to_end_id"
-	FieldInstructionID    = "transfers.instruction_id"
-	FieldExecutionDate    = "execution_date"
-	FieldChargeBearer     = "charge_bearer"
-	FieldContext          = "context"
+	FieldDebtorAccount       = "debtor.account"
+	FieldDebtorName          = "debtor.name"
+	FieldDebtorCurrency      = "debtor.currency"
+	FieldAmount              = "transfers.amount"
+	FieldCreditorName        = "transfers.creditor.name"
+	FieldCreditorAccount     = "transfers.creditor.account"
+	FieldCreditorBIC         = "transfers.creditor.agent.bic"
+	FieldCreditorClearing    = "transfers.creditor.agent.member_id"
+	FieldCreditorBankName    = "transfers.creditor.agent.name"
+	FieldCreditorBankAddress = "transfers.creditor.agent.address"
+	FieldCreditorAddress     = "transfers.creditor.address"
+	FieldCreditorCountry     = "transfers.creditor.address.country"
+	FieldRemittance          = "transfers.remittance"
+	FieldReference           = "transfers.reference"
+	FieldEndToEndID          = "transfers.end_to_end_id"
+	FieldInstructionID       = "transfers.instruction_id"
+	FieldExecutionDate       = "execution_date"
+	FieldChargeBearer        = "charge_bearer"
+	FieldContext             = "context"
 )
 
 // FieldUse says whether a field must be set.
@@ -427,6 +431,12 @@ func (s PaymentSpec) Validate(r PaymentRequest, now time.Time) error {
 		}
 		v.str(FieldCreditorBIC, i, ag.BIC)
 		v.str(FieldCreditorClearing, i, ag.MemberID)
+		v.str(FieldCreditorBankName, i, ag.Name)
+		if ag.Address.empty() {
+			v.missing(FieldCreditorBankAddress, i)
+		} else {
+			v.present(FieldCreditorBankAddress, i)
+		}
 		if t.Creditor.Address.empty() {
 			v.missing(FieldCreditorAddress, i)
 			v.missing(FieldCreditorCountry, i)

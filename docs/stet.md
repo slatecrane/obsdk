@@ -23,7 +23,8 @@ adjusted where BNP Paribas Fortis's sandbox showed what real banks do.
   `/confirmation` with a client token), `authorization_code` (STET's enforced redirect: the approval link is
   an authorize URL and the code's token confirms) or `none` (the bank executes it). Report URLs are the
   redirect URL plus `state` (plus `error=payment_not_approved` on the failure URL). The payment id is the
-  last segment of `Location`. SEPA and SEPA Instant only (`initiatingParty` from Extra `initiating_party`).
+  last segment of `Location`. SEPA, SEPA Instant and cross-border (no service level, no default charge bearer; the payee bank's BIC,
+  name and address go in `creditorAgent`) (`initiatingParty` from Extra `initiating_party`).
 - **Cancellation:** the payment request sent back with `CancelStatus` (default `CANC`) and reason `DS02`;
   the bank may answer with an approval link. `RJCT` with reason `DS02` or `CUST` reads as cancelled. The
   state of a cancellation callback is not checked (some banks reuse the payment's report URLs).
@@ -42,7 +43,7 @@ adjusted where BNP Paribas Fortis's sandbox showed what real banks do.
 | `PaymentLevel` | beneficiary and `requestedExecutionDate` at payment level (always sent; now when no date) | Fortis |
 | `AmountString` | amounts as JSON strings | Fortis |
 | `CancelStatus` | status that asks for a cancellation | Fortis: `RJCT` |
-| `AdjustPayment` | last changes to the body | Fortis: no `categoryPurpose` |
+| `AdjustPayment` | last changes to the body | Fortis: no `categoryPurpose`; cross-border addresses as `townName` only |
 | `Signing.Headers`, `Signing.Expires` | the signed header list, with `(created)`/`(expires)` parameters | Fortis |
 | `Signing.SandboxValue` | a placeholder `Signature` in the sandbox when no Seal is set; `Required` then holds for production only | Fortis |
 

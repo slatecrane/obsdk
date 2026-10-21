@@ -1,0 +1,70 @@
+{
+  "config": {
+    "bank": "bnpparibasfortis",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:30:27Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "62dd199d-ea70-4668-94c6-d304a2d6c89c",
+        "93f58721-c2aa-486c-ae01-5307fe04f6db",
+        "1ec6ccd6-d4d3-4edb-9f5b-acac6c853ad5",
+        "72274c04-cb8d-4f2e-9cbc-b2bd5552428f",
+        "f8dd0834-925d-4f11-9fa3-a803e44f86cc",
+        "8758b797-cb74-46c0-8530-b70a49f8597e"
+      ],
+      "state": [
+        "5ef2c2bb-3554-4d67-a46e-8753e802ba7b",
+        "a4c63b9a-494a-4c34-a58d-c2c6af1ab374"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "crossborder",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "USD"
+            },
+            "creditor": {
+              "name": "name-dec1f3",
+              "account": {
+                "scheme": "BBAN",
+                "value": "191921148"
+              },
+              "agent": {
+                "bic": "CHASUS33",
+                "address": {
+                  "town": "New York",
+                  "country": "US"
+                }
+              },
+              "address": {
+                "town": "New York",
+                "country": "US"
+              }
+            },
+            "remittance": [
+              "Invoice 12"
+            ]
+          }
+        ],
+        "charge_bearer": "DEBT"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback?state=5ef2c2bb-3554-4d67-a46e-8753e802ba7b"
+    }
+  ]
+}

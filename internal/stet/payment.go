@@ -66,10 +66,11 @@ type Party struct {
 }
 
 // PostalAddress is the unstructured address SEPA allows: a country and at
-// most two lines.
+// most two lines. Some banks take a town instead (see Profile.AdjustPayment).
 type PostalAddress struct {
 	Country     string   `json:"country"`
 	AddressLine []string `json:"addressLine,omitempty"`
+	TownName    string   `json:"townName,omitempty"`
 }
 
 // AccountID is an AccountIdentification.
@@ -137,7 +138,9 @@ type Beneficiary struct {
 
 // Agent is a FinancialInstitutionIdentification.
 type Agent struct {
-	BICFI string `json:"bicFi"`
+	BICFI         string         `json:"bicFi,omitempty"`
+	Name          string         `json:"name,omitempty"`
+	PostalAddress *PostalAddress `json:"postalAddress,omitempty"`
 }
 
 // Remittance is RemittanceInformation.
@@ -236,8 +239,11 @@ func (c *client) buildPayment(r obsdk.PaymentRequest, successURL, failureURL str
 	case obsdk.PaymentSEPA:
 	case obsdk.PaymentSEPAInstant:
 		b.PaymentTypeInformation.LocalInstrument = "INST"
+	case obsdk.PaymentCrossBorder:
+		// No SEPA service level, and SLEV is a SEPA charge bearer.
+		b.PaymentTypeInformation.ServiceLevel, b.ChargeBearer = "", ""
 	default:
-		return nil, fmt.Errorf("%w: the STET adapter builds SEPA payments only, not %q", obsdk.ErrUnsupported, r.Type)
+		return nil, fmt.Errorf("%w: the STET adapter builds SEPA and cross-border payments only, not %q", obsdk.ErrUnsupported, r.Type)
 	}
 	switch r.Context {
 	case obsdk.PaymentContextEcommerceGoods, obsdk.PaymentContextEcommerceServices:
@@ -265,8 +271,8 @@ func (c *client) buildPayment(r obsdk.PaymentRequest, successURL, failureURL str
 				CreditorAccount: accountID(t.Creditor.Account, ""),
 			},
 		}
-		if a := t.Creditor.Agent; a != nil && a.BIC != "" {
-			ct.Beneficiary.CreditorAgent = &Agent{BICFI: a.BIC}
+		if a := t.Creditor.Agent; a != nil && (a.BIC != "" || a.Name != "" || a.Address != nil) {
+			ct.Beneficiary.CreditorAgent = &Agent{BICFI: a.BIC, Name: a.Name, PostalAddress: address(a.Address)}
 		}
 		if len(t.Remittance) > 0 || t.Reference != nil {
 			rem := &Remittance{Unstructured: t.Remittance}

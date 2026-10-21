@@ -697,3 +697,31 @@ func TestBelgianReference(t *testing.T) {
 		t.Errorf("body lacks %s: %s", want, raw)
 	}
 }
+
+func TestCrossBorderBody(t *testing.T) {
+	c := newTestClient(t, testProfile(newFakeBank(t))).(*client)
+	b, err := c.buildPayment(obsdk.PaymentRequest{Type: obsdk.PaymentCrossBorder, ChargeBearer: obsdk.ChargeBearerDebtor, Transfers: []obsdk.Transfer{{
+		Amount: obsdk.Money{Amount: "1.00", Currency: "USD"},
+		Creditor: obsdk.Creditor{Name: "John Smith", Account: obsdk.Identifier{Scheme: obsdk.SchemeBBAN, Value: "123456789"},
+			Address: &obsdk.PostalAddress{Town: "New York", Country: "US"},
+			Agent:   &obsdk.Agent{Name: "Chase", Address: &obsdk.PostalAddress{Town: "New York", Country: "US"}}},
+	}}}, "https://tpp.example/ok", "https://tpp.example/ko")
+	if err != nil {
+		t.Fatal(err)
+	}
+	raw, _ := json.Marshal(b)
+	for _, want := range []string{`"paymentTypeInformation":{"categoryPurpose":"CASH"}`, `"chargeBearer":"DEBT"`,
+		`"creditorAccount":{"other":{"identification":"123456789","schemeName":"BBAN"}}`,
+		`"creditorAgent":{"name":"Chase","postalAddress":{"country":"US","addressLine":["New York"]}}`} {
+		if !strings.Contains(string(raw), want) {
+			t.Errorf("body lacks %s: %s", want, raw)
+		}
+	}
+	b, _ = c.buildPayment(obsdk.PaymentRequest{Type: obsdk.PaymentCrossBorder, Transfers: []obsdk.Transfer{{
+		Amount:   obsdk.Money{Amount: "1.00", Currency: "USD"},
+		Creditor: obsdk.Creditor{Name: "John Smith", Account: obsdk.Identifier{Scheme: obsdk.SchemeIBAN, Value: "GB29NWBK60161331926819"}},
+	}}}, "https://tpp.example/ok", "")
+	if b.ChargeBearer != "" {
+		t.Errorf("chargeBearer %q: SLEV is SEPA only, so none is sent by default", b.ChargeBearer)
+	}
+}

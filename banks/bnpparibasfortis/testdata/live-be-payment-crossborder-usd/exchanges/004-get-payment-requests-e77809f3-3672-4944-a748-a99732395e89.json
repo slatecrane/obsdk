@@ -1,0 +1,105 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/payment-requests/e77809f3-3672-4944-a748-a99732395e89",
+    "query": {
+      "brand": [
+        "bnppf"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:3bc3e8",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "8758b797-cb74-46c0-8530-b70a49f8597e"
+    },
+    "body": {
+      "_links": {
+        "self": {
+          "href": "/psd2/v4/payment-requests/e77809f3-3672-4944-a748-a99732395e89"
+        }
+      },
+      "paymentRequest": {
+        "beneficiary": {
+          "creditor": {
+            "name": "name-dec1f3",
+            "postalAddress": {
+              "country": "US",
+              "townName": "New York"
+            }
+          },
+          "creditorAccount": {
+            "other": {
+              "identification": "identification-06d557",
+              "schemeName": "BBAN"
+            }
+          },
+          "creditorAgent": {
+            "bicFi": "CHASUS33",
+            "postalAddress": {
+              "country": "US",
+              "townName": "New York"
+            }
+          }
+        },
+        "booking": true,
+        "chargeBearer": "DEBT",
+        "creationDateTime": "2026-10-21T18:30:27+00:00",
+        "creditTransferTransaction": [
+          {
+            "executionRule": "FWNG",
+            "id": 29409,
+            "instructedAmount": {
+              "amount": "1.00",
+              "currency": "USD"
+            },
+            "paymentId": {
+              "endToEndId": "1ec6ccd6d4d34edb9f5bacac6c853ad5",
+              "instructionId": "93f58721c2aa486cae015307fe04f6db",
+              "resourceId": "29409"
+            },
+            "remittanceInformation": {
+              "unstructured": [
+                "unstructured-a2c3bc"
+              ]
+            },
+            "transactionStatus": "PDNG"
+          }
+        ],
+        "debtor": {},
+        "debtorAccount": {
+          "currency": "EUR",
+          "iban": "BE36PSEUDO2FF18C0A2A",
+          "other": {
+            "identification": "identification-860b53",
+            "schemeName": "BBAN"
+          }
+        },
+        "initiatingParty": {
+          "name": "name-f31ebb"
+        },
+        "numberOfTransactions": 1,
+        "paymentInformationId": "62dd199dea70466894c6d304a2d6c89c",
+        "paymentInformationStatus": "ACSC",
+        "paymentTypeInformation": {},
+        "requestedExecutionDate": "2026-10-21T18:30:27+00:00",
+        "resourceId": "29411",
+        "supplementaryData": {
+          "acceptedAuthenticationApproach": [
+            "REDIRECT"
+          ],
+          "successfulReportUrl": "https://example.com/callback?state=5ef2c2bb-3554-4d67-a46e-8753e802ba7b",
+          "unsuccessfulReportUrl": "https://example.com/callback?error=payment_not_approved\u0026state=5ef2c2bb-3554-4d67-a46e-8753e802ba7b"
+        }
+      }
+    }
+  }
+}
