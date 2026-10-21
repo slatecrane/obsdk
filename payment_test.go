@@ -78,6 +78,9 @@ func TestValidatePaymentIssues(t *testing.T) {
 			r.Context = PaymentContextOther
 			r.Transfers[0].Creditor.Address = &PostalAddress{Country: "EE"}
 		}, []string{FieldContext + "=unsupported", FieldCreditorAddress + "=unsupported", FieldCreditorCountry + "=unsupported"}},
+		{"payee bank unsupported", func(r *PaymentRequest) {
+			r.Transfers[0].Creditor.Agent = &Agent{Name: "NatWest", Address: &PostalAddress{Town: "London", Country: "GB"}}
+		}, []string{FieldCreditorBankAddress + "=unsupported", FieldCreditorBankName + "=unsupported"}},
 		{"currency not accepted", func(r *PaymentRequest) { r.Transfers[0].Amount.Currency = "SEK" }, []string{FieldAmount + "=currency"}},
 		{"currency malformed", func(r *PaymentRequest) { r.Transfers[0].Amount.Currency = "eur" }, []string{FieldAmount + "=currency"}},
 		{"amount zero", func(r *PaymentRequest) { r.Transfers[0].Amount.Amount = "0.00" }, []string{FieldAmount + "=amount"}},

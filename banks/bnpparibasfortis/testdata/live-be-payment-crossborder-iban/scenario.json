@@ -1,0 +1,71 @@
+{
+  "config": {
+    "bank": "bnpparibasfortis",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:30:49Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "e1fc74b3-b6eb-40b7-879f-1e93705210e6",
+        "3000887c-6b2e-4963-a00a-07deaf28b97a",
+        "38f0afb7-057a-41b1-b6d2-1e4f42d04a9d",
+        "aa88d589-1ad1-41c6-bdf5-96d4f87b69dc",
+        "44f4de81-831b-467b-9468-7a1dd6d86c1c",
+        "68062453-8f00-43cb-9165-3ceb35ec10b8"
+      ],
+      "state": [
+        "b3fd64c8-0154-428d-9f03-6fbcffef4c56",
+        "4342aed0-91d3-4b07-b09a-79d6eb974fca"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "crossborder",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "2.00",
+              "currency": "USD"
+            },
+            "creditor": {
+              "name": "name-a61ba3",
+              "account": {
+                "scheme": "IBAN",
+                "value": "GB84PSEUDODE6D5A3A04"
+              },
+              "agent": {
+                "name": "name-8c97a2",
+                "address": {
+                  "town": "London",
+                  "country": "GB"
+                }
+              },
+              "address": {
+                "town": "London",
+                "country": "GB"
+              }
+            },
+            "reference": {
+              "scheme": "BE",
+              "value": "123456789002"
+            }
+          }
+        ],
+        "charge_bearer": "SHAR"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback?state=b3fd64c8-0154-428d-9f03-6fbcffef4c56"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/payment-requests/c21ac456-1623-486c-8e01-e4e36eb31469",
+    "query": {
+      "brand": [
+        "bnppf"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:1bc449",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "68062453-8f00-43cb-9165-3ceb35ec10b8"
+    },
+    "body": {
+      "_links": {
+        "self": {
+          "href": "/psd2/v4/payment-requests/c21ac456-1623-486c-8e01-e4e36eb31469"
+        }
+      },
+      "paymentRequest": {
+        "beneficiary": {
+          "creditor": {
+            "name": "name-a61ba3",
+            "postalAddress": {
+              "country": "GB",
+              "townName": "London"
+            }
+          },
+          "creditorAccount": {
+            "iban": "GB84PSEUDODE6D5A3A04"
+          },
+          "creditorAgent": {
+            "name": "name-8c97a2",
+            "postalAddress": {
+              "country": "GB",
+              "townName": "London"
+            }
+          }
+        },
+        "booking": true,
+        "chargeBearer": "SHAR",
+        "creationDateTime": "2026-10-21T18:30:49+00:00",
+        "creditTransferTransaction": [
+          {
+            "executionRule": "FWNG",
+            "id": 29410,
+            "instructedAmount": {
+              "amount": "2.00",
+              "currency": "USD"
+            },
+            "paymentId": {
+              "endToEndId": "38f0afb7057a41b1b6d21e4f42d04a9d",
+              "instructionId": "3000887c6b2e4963a00a07deaf28b97a",
+              "resourceId": "29410"
+            },
+            "remittanceInformation": {
+              "structured": [
+                {
+                  "creditorReferenceInformation": {
+                    "reference": "reference-9680ce",
+                    "type": {
+                      "code": "SCOR",
+                      "issuer": "BBA"
+                    }
+                  }
+                }
+              ]
+            },
+            "transactionStatus": "PDNG"
+          }
+        ],
+        "debtor": {},
+        "debtorAccount": {
+          "currency": "EUR",
+          "iban": "BE36PSEUDO2FF18C0A2A",
+          "other": {
+            "identification": "identification-860b53",
+            "schemeName": "BBAN"
+          }
+        },
+        "initiatingParty": {
+          "name": "name-f31ebb"
+        },
+        "numberOfTransactions": 1,
+        "paymentInformationId": "e1fc74b3b6eb40b7879f1e93705210e6",
+        "paymentInformationStatus": "ACSC",
+        "paymentTypeInformation": {},
+        "requestedExecutionDate": "2026-10-21T18:30:49+00:00",
+        "resourceId": "29412",
+        "supplementaryData": {
+          "acceptedAuthenticationApproach": [
+            "REDIRECT"
+          ],
+          "successfulReportUrl": "https://example.com/callback?state=b3fd64c8-0154-428d-9f03-6fbcffef4c56",
+          "unsuccessfulReportUrl": "https://example.com/callback?error=payment_not_approved\u0026state=b3fd64c8-0154-428d-9f03-6fbcffef4c56"
+        }
+      }
+    }
+  }
+}

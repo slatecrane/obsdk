@@ -373,6 +373,9 @@ func paymentFlags(args []string) (obsdk.PaymentRequest, bool, error) {
 	date := fs.String("date", "", "execution date YYYY-MM-DD")
 	e2e := fs.String("e2e", "", "end-to-end id")
 	bic := fs.String("bic", "", "payee bank BIC")
+	bankName := fs.String("bank-name", "", "payee bank name")
+	bankTown := fs.String("bank-town", "", "payee bank town")
+	bankCountry := fs.String("bank-country", "", "payee bank country")
 	street := fs.String("street", "", "payee street")
 	town := fs.String("town", "", "payee town")
 	postcode := fs.String("postcode", "", "payee post code")
@@ -407,8 +410,11 @@ func paymentFlags(args []string) (obsdk.PaymentRequest, bool, error) {
 		}
 		t.Reference = &obsdk.Reference{Scheme: sc, Value: v}
 	}
-	if *bic != "" {
-		t.Creditor.Agent = &obsdk.Agent{BIC: *bic}
+	if *bic+*bankName+*bankTown+*bankCountry != "" {
+		t.Creditor.Agent = &obsdk.Agent{BIC: *bic, Name: *bankName}
+		if *bankTown+*bankCountry != "" {
+			t.Creditor.Agent.Address = &obsdk.PostalAddress{Town: *bankTown, Country: *bankCountry}
+		}
 	}
 	if *street+*town+*postcode+*country != "" {
 		t.Creditor.Address = &obsdk.PostalAddress{Street: *street, Town: *town, PostCode: *postcode, Country: *country}

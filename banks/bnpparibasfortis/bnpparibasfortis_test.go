@@ -9,6 +9,7 @@ import (
 	"time"
 
 	obsdk "github.com/slatecrane/obsdk"
+	"github.com/slatecrane/obsdk/internal/stet"
 	"github.com/slatecrane/obsdk/obsdktest"
 )
 
@@ -109,5 +110,74 @@ func TestReferenceSchemes(t *testing.T) {
 		if err := ps.Validate(pay(tt.typ, tt.scheme, tt.value), now); (err == nil) != tt.ok {
 			t.Errorf("%s %s %s: err = %v, want ok=%v", tt.typ, tt.scheme, tt.value, err, tt.ok)
 		}
+	}
+}
+
+func crossBorder() obsdk.PaymentRequest {
+	return obsdk.PaymentRequest{Type: obsdk.PaymentCrossBorder, Transfers: []obsdk.Transfer{{
+		Amount: obsdk.Money{Amount: "1.00", Currency: "USD"},
+		Creditor: obsdk.Creditor{Name: "John Smith", Account: obsdk.Identifier{Scheme: obsdk.SchemeBBAN, Value: "123456789"},
+			Address: &obsdk.PostalAddress{Street: "Main St", BuildingNumber: "1", Town: "New York", Country: "US"},
+			Agent:   &obsdk.Agent{BIC: "CHASUS33", Address: &obsdk.PostalAddress{Town: "New York", Country: "US"}}},
+	}}}
+}
+
+func TestCrossBorderSpec(t *testing.T) {
+	info, _ := obsdk.Lookup(BankFortis)
+	now := time.Date(2026, 10, 21, 12, 0, 0, 0, time.UTC)
+	personal, _ := info.PaymentSpec("BE", obsdk.Personal, obsdk.PaymentCrossBorder)
+	business, ok := info.PaymentSpec("BE", obsdk.Business, obsdk.PaymentCrossBorder)
+	if !ok {
+		t.Fatal("no business cross-border spec")
+	}
+	r := crossBorder()
+	if err := personal.Validate(r, now); err != nil {
+		t.Fatal(err)
+	}
+	r.ExecutionDate = "2026-10-28"
+	if err := personal.Validate(r, now); err == nil {
+		t.Error("personal customers can only pay international today")
+	}
+	if err := business.Validate(r, now); err != nil {
+		t.Errorf("business: %v", err)
+	}
+	r = crossBorder()
+	r.Transfers[0].Creditor.Agent.Address = nil
+	if err := personal.Validate(r, now); err == nil {
+		t.Error("the payee bank's address is required")
+	}
+}
+
+func TestAdjustCrossBorder(t *testing.T) {
+	body := func(r obsdk.PaymentRequest) *stet.PaymentRequestBody {
+		return &stet.PaymentRequestBody{
+			DebtorAccount: &stet.AccountID{IBAN: "BE68539007547034"},
+			Beneficiary: &stet.Beneficiary{Creditor: stet.Party{Name: "John Smith", PostalAddress: &stet.PostalAddress{Country: "US", AddressLine: []string{"Main St 1", "New York"}}},
+				CreditorAgent: &stet.Agent{BICFI: "CHASUS33"}},
+		}
+	}
+	r := crossBorder()
+	b := body(r)
+	if err := adjustPayment(r, obsdk.Target{}, b); err != nil {
+		t.Fatal(err)
+	}
+	if b.DebtorAccount.Currency != "EUR" {
+		t.Errorf("debtor currency %q, want EUR by default", b.DebtorAccount.Currency)
+	}
+	if a := b.Beneficiary.Creditor.PostalAddress; a.TownName != "New York" || a.Country != "US" || a.AddressLine != nil {
+		t.Errorf("creditor address %+v", a)
+	}
+	if a := b.Beneficiary.CreditorAgent.PostalAddress; a == nil || a.TownName != "New York" || a.Country != "US" {
+		t.Errorf("agent address %+v", a)
+	}
+
+	r.Transfers[0].Creditor.Address.Town = ""
+	if err := adjustPayment(r, obsdk.Target{}, body(r)); !errors.Is(err, obsdk.ErrInvalidRequest) {
+		t.Errorf("a payee without town: %v", err)
+	}
+	r = crossBorder()
+	r.Transfers[0].Creditor.Agent.BIC = ""
+	if err := adjustPayment(r, obsdk.Target{}, body(r)); !errors.Is(err, obsdk.ErrInvalidRequest) {
+		t.Errorf("a payee bank without BIC or name: %v", err)
 	}
 }
