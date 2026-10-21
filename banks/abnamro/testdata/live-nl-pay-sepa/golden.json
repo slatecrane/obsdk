@@ -1,0 +1,81 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to ABN AMRO to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://auth-sandbox.abnamro.com/as/authorization.oauth2?scope=psd2:payment:sepa:write+psd2:payment:sepa:read&client_id=REDACTED:client_id&transactionId=OOSQTBINUX1792524314681&response_type=code&flow=code&redirect_uri=https://localhost/auth&state=f410300503e64124b928"
+      },
+      "payment": {
+        "id": "OOSQTBINUX1792524314681",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiT09TUVRCSU5VWDE3OTI1MjQzMTQ2ODEiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL51PSEUDO9A8B132686"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "abnamro",
+        "country": "NL",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "abnamro-psd2",
+        "generation": 1,
+        "updated_at": "2026-10-20T19:25:14Z",
+        "access_token": "REDACTED:access_token:2f3560",
+        "refresh_token": "REDACTED:refresh_token:27df56",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-20T21:25:13Z",
+        "consents": {
+          "pis": {
+            "id": "OOSQTBINUX1792524314681",
+            "kind": "pis",
+            "status": "valid"
+          }
+        }
+      },
+      "payment": {
+        "id": "OOSQTBINUX1792524314681",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "PDNG",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiT09TUVRCSU5VWDE3OTI1MjQzMTQ2ODEiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL51PSEUDO9A8B132686"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "OOSQTBINUX1792524314681",
+      "type": "sepa",
+      "status": "completed",
+      "bank_status": "ACCC",
+      "final": true,
+      "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiT09TUVRCSU5VWDE3OTI1MjQzMTQ2ODEiLCJ0Ijoic2VwYSJ9",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "NL51PSEUDO9A8B132686"
+      }
+    }
+  }
+]

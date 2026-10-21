@@ -107,11 +107,21 @@ func (r *ScenarioRecorder) NewID(next func(string) string) func(string) string {
 
 // SetStartSession stores a redacted copy of the session the recording starts
 // from (when the first call isn't a connect). Tokens never reach the fixture.
-// It does nothing if the scenario already has calls.
+// If the scenario already has calls, it only teaches the redactor the
+// session's account numbers, so a later command's paths are pseudonymized
+// like the earlier ones.
 func (r *ScenarioRecorder) SetStartSession(s *obsdk.Session) error {
 	r.mu.Lock()
 	defer r.mu.Unlock()
-	if s == nil || len(r.Scenario.Calls) > 0 {
+	if s == nil {
+		return nil
+	}
+	if len(r.Scenario.Calls) > 0 {
+		for _, con := range s.Consents {
+			for _, a := range con.Accounts {
+				r.Red.account("iban", a)
+			}
+		}
 		return nil
 	}
 	c := s.Clone()
@@ -123,7 +133,9 @@ func (r *ScenarioRecorder) SetStartSession(s *obsdk.Session) error {
 	}
 	for k, con := range c.Consents {
 		for i, a := range con.Accounts {
-			con.Accounts[i] = pseudonym("iban", a)
+			// Through the redactor, so the same number is replaced in the
+			// recorded paths too (ABN AMRO puts the IBAN in every URL).
+			con.Accounts[i] = r.Red.account("iban", a)
 		}
 		c.Consents[k] = con
 	}
@@ -219,7 +231,9 @@ func (c *recordingClient) Accounts(ctx context.Context, s *obsdk.Session, o obsd
 }
 
 func (c *recordingClient) Balances(ctx context.Context, s *obsdk.Session, id string, o obsdk.CallOptions) (*obsdk.Result[[]obsdk.Balance], error) {
-	call := Call{Op: "balances", Account: id}
+	// Account ids that are account numbers (ABN AMRO uses the IBAN) get the
+	// same pseudonym as in the recorded paths and the start session.
+	call := Call{Op: "balances", Account: c.r.Red.Text(id)}
 	if o.PSU != nil {
 		c.r.psu(&call, *o.PSU)
 	}
@@ -228,7 +242,7 @@ func (c *recordingClient) Balances(ctx context.Context, s *obsdk.Session, id str
 }
 
 func (c *recordingClient) Transactions(ctx context.Context, s *obsdk.Session, q obsdk.TxQuery) (*obsdk.TxResult, error) {
-	call := Call{Op: "transactions", Account: q.AccountID, PageSize: q.PageSize, Cursor: q.Cursor}
+	call := Call{Op: "transactions", Account: c.r.Red.Text(q.AccountID), PageSize: q.PageSize, Cursor: q.Cursor}
 	if !q.From.IsZero() {
 		call.From = q.From.UTC().Format(time.RFC3339)
 	}

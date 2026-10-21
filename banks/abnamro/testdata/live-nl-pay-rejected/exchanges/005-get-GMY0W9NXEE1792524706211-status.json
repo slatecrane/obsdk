@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/payment/v2/sepa-credit-transfers/GMY0W9NXEE1792524706211/status",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:d1432a"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "debtorAccount": {
+        "iban": "NL64PSEUDOA350E7964B"
+      },
+      "debtorName": "debtorname-ea3b67",
+      "paymentId": "GMY0W9NXEE1792524706211",
+      "paymentStatus": "RJCT",
+      "statusDetails": {
+        "statusISORsn": "AM03"
+      }
+    }
+  }
+}

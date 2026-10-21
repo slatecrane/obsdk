@@ -1,0 +1,65 @@
+{
+  "config": {
+    "bank": "abnamro",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-20T19:29:28Z",
+    "redirect_url": "https://localhost/auth",
+    "extra": {
+      "api_key": "REDACTED:api_key:58df81"
+    },
+    "ids": {
+      "state": [
+        "6194022a-dc94-406d-98fb-24f36bfac923"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "crossborder",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "100.51",
+              "currency": "USD"
+            },
+            "creditor": {
+              "name": "name-ea3b67",
+              "account": {
+                "scheme": "BBAN",
+                "value": "10643233273382021"
+              },
+              "agent": {
+                "bic": "USBKUS44"
+              },
+              "address": {
+                "street": "street-185dd8",
+                "post_code": "10001",
+                "town": "New York",
+                "country": "US"
+              }
+            },
+            "remittance": [
+              "Invoice 2026-001"
+            ]
+          }
+        ],
+        "charge_bearer": "SHAR"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://localhost/auth?code=REDACTED%3Acode%3A3b70b5\u0026state=6194022adc94406d98fb"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6ImNyb3NzLWJvcmRlci1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJZU0lDMkhBTjNJMTc5MjUyNDU2OTE0MyIsInQiOiJjcm9zc2JvcmRlciJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

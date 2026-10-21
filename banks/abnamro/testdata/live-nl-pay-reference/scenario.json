@@ -1,0 +1,50 @@
+{
+  "config": {
+    "bank": "abnamro",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-20T19:27:23Z",
+    "redirect_url": "https://localhost/auth",
+    "extra": {
+      "api_key": "REDACTED:api_key:58df81"
+    },
+    "ids": {
+      "state": [
+        "2f8b6c34-0608-4b51-aa26-11c90fe599a2"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "2.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-ea3b67",
+              "account": {
+                "scheme": "IBAN",
+                "value": "NL92PSEUDO22EF4DF408"
+              }
+            },
+            "reference": {
+              "scheme": "CUR",
+              "value": "1234567890123456"
+            }
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://localhost/auth?code=REDACTED%3Acode%3Ab74f2d\u0026state=2f8b6c3406084b51aa26"
+    }
+  ]
+}

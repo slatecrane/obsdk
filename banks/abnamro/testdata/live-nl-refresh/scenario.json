@@ -1,0 +1,17 @@
+{
+  "config": {
+    "bank": "abnamro",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-20T19:25:02Z",
+    "redirect_url": "https://localhost/auth",
+    "extra": {
+      "api_key": "REDACTED:api_key:58df81"
+    }
+  },
+  "calls": [
+    {
+      "op": "refresh"
+    }
+  ]
+}

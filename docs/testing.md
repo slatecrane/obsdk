@@ -121,6 +121,8 @@ Several invocations append to the same scenario. Redaction:
   (so a rotated refresh token doesn't look like the old one);
 - names, IBANs and payment references become stable pseudonyms (IBANs keep their country code), and so
   do e-mail addresses and phone numbers in alias objects such as bunq's `{"type": "EMAIL", "value": …}`;
+- account numbers used as ids (ABN AMRO puts the IBAN in every path and passes it as the account id) get the same
+  pseudonym in paths, recorded call arguments and the start session, also across separate obdev invocations;
 - the PSU IP becomes `203.0.113.7`; `base_url` is dropped; the session file is never copied. A start
   session (`session.json`) keeps its shape, but its tokens and any `Meta` value whose key names a token
   or secret are masked.

@@ -1,0 +1,62 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to ABN AMRO to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://auth-sandbox.abnamro.com/as/authorization.oauth2?scope=psd2:payment:sepa:write+psd2:payment:sepa:read&client_id=REDACTED:client_id&transactionId=LJDZCZVMAZ1792524443940&response_type=code&flow=code&redirect_uri=https://localhost/auth&state=2f8b6c3406084b51aa26"
+      },
+      "payment": {
+        "id": "LJDZCZVMAZ1792524443940",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTEpEWkNaVk1BWjE3OTI1MjQ0NDM5NDAiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "abnamro",
+        "country": "NL",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "abnamro-psd2",
+        "generation": 1,
+        "updated_at": "2026-10-20T19:27:23Z",
+        "access_token": "REDACTED:access_token:e6cf73",
+        "refresh_token": "REDACTED:refresh_token:fcf8c9",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-20T21:27:22Z",
+        "consents": {
+          "pis": {
+            "id": "LJDZCZVMAZ1792524443940",
+            "kind": "pis",
+            "status": "valid"
+          }
+        }
+      },
+      "payment": {
+        "id": "LJDZCZVMAZ1792524443940",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "PDNG",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTEpEWkNaVk1BWjE3OTI1MjQ0NDM5NDAiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL51PSEUDO9A8B132686"
+        }
+      }
+    }
+  }
+]

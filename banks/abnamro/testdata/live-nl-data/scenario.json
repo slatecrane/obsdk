@@ -1,0 +1,55 @@
+{
+  "config": {
+    "bank": "abnamro",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-20T19:24:53Z",
+    "redirect_url": "https://localhost/auth",
+    "extra": {
+      "api_key": "REDACTED:api_key:58df81"
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "NL92PSEUDO22EF4DF408",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "NL92PSEUDO22EF4DF408",
+      "from": "2026-09-21T00:00:00Z",
+      "to": "2026-10-20T00:00:00Z",
+      "status": [
+        "booked",
+        "pending"
+      ],
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "NL92PSEUDO22EF4DF408",
+      "from": "2026-09-20T19:24:55Z",
+      "to": "2026-10-20T19:24:55Z",
+      "cursor": "activityType=BOOKED\u0026dateFrom=2026-09-21\u0026dateTo=2026-10-20\u0026nextPageKey=2026-10-06T22%3A42%3A52.060000\u0026then=RESERVATION",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "NL92PSEUDO22EF4DF408",
+      "from": "2026-09-20T19:24:55Z",
+      "to": "2026-10-20T19:24:55Z",
+      "cursor": "activityType=RESERVATION\u0026dateFrom=2026-09-21\u0026dateTo=2026-10-20",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

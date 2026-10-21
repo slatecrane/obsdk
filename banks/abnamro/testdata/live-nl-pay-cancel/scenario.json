@@ -1,0 +1,62 @@
+{
+  "config": {
+    "bank": "abnamro",
+    "country": "NL",
+    "env": "sandbox",
+    "now": "2026-10-20T20:30:54Z",
+    "redirect_url": "https://localhost/auth",
+    "extra": {
+      "api_key": "REDACTED:api_key:58df81"
+    },
+    "ids": {
+      "state": [
+        "0694eb59-509d-43fe-806c-650f05581e99"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "2.50",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-ea3b67",
+              "account": {
+                "scheme": "IBAN",
+                "value": "NL92PSEUDO22EF4DF408"
+              }
+            },
+            "remittance": [
+              "obsdk future"
+            ]
+          }
+        ],
+        "execution_date": "2026-11-20"
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://localhost/auth?code=REDACTED%3Acode%3A21ee6a\u0026state=0694eb59509d43fe806c"
+    },
+    {
+      "op": "cancel_payment",
+      "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiSklTRFc3SlVSWDE3OTI1MjgyNTY0NDIiLCJ0Ijoic2VwYSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiSklTRFc3SlVSWDE3OTI1MjgyNTY0NDIiLCJ0Ijoic2VwYSJ9",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

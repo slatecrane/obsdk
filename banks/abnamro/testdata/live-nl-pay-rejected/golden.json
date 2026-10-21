@@ -1,0 +1,82 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to ABN AMRO to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://auth-sandbox.abnamro.com/as/authorization.oauth2?scope=psd2:payment:sepa:write+psd2:payment:sepa:read&client_id=REDACTED:client_id&transactionId=GMY0W9NXEE1792524706211&response_type=code&flow=code&redirect_uri=https://localhost/auth&state=d3c6d5d7cfc54b6f9460"
+      },
+      "payment": {
+        "id": "GMY0W9NXEE1792524706211",
+        "type": "sepa",
+        "status": "received",
+        "bank_status": "RCVD",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiR01ZMFc5TlhFRTE3OTI1MjQ3MDYyMTEiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL64PSEUDOA350E7964B"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "abnamro",
+        "country": "NL",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "abnamro-psd2",
+        "generation": 1,
+        "updated_at": "2026-10-20T19:31:44Z",
+        "access_token": "REDACTED:access_token:720a7b",
+        "refresh_token": "REDACTED:refresh_token:500d58",
+        "token_type": "Bearer",
+        "access_expires_at": "2026-10-20T21:31:43Z",
+        "consents": {
+          "pis": {
+            "id": "GMY0W9NXEE1792524706211",
+            "kind": "pis",
+            "status": "valid"
+          }
+        }
+      },
+      "payment": {
+        "id": "GMY0W9NXEE1792524706211",
+        "type": "sepa",
+        "status": "in_progress",
+        "bank_status": "PDNG",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiR01ZMFc5TlhFRTE3OTI1MjQ3MDYyMTEiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "NL64PSEUDOA350E7964B"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "GMY0W9NXEE1792524706211",
+      "type": "sepa",
+      "status": "rejected",
+      "bank_status": "RJCT",
+      "final": true,
+      "reason": "AM03",
+      "ref": "obs1.eyJpIjoiYWJuYW1yby1wc2QyIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiR01ZMFc5TlhFRTE3OTI1MjQ3MDYyMTEiLCJ0Ijoic2VwYSJ9",
+      "debtor": {
+        "scheme": "IBAN",
+        "value": "NL64PSEUDOA350E7964B"
+      }
+    }
+  }
+]

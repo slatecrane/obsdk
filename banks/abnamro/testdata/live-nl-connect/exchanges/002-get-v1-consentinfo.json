@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/consentinfo",
+    "headers": {
+      "Accept": "application/json",
+      "Api-Key": "REDACTED:api-key:58df81",
+      "Authorization": "REDACTED:authorization:e242f6"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "consentExpiresIn": "2 days, 2 hours, 2 minutes, and 2 seconds",
+      "consentStatus": "FULLY_SIGNED",
+      "iban": "NL92PSEUDO22EF4DF408",
+      "scopes": "psd2:account:details:read psd2:account:balance:read psd2:account:transaction:read",
+      "valid": 1792531324
+    }
+  }
+}
