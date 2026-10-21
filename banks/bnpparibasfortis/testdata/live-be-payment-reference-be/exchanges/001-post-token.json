@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026client_secret=REDACTED%3Aclient_secret\u0026grant_type=client_credentials\u0026scope=pisp"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:432840",
+      "expires_in": 3600,
+      "refresh_token": "REDACTED:refresh_token:d150fd",
+      "token_type": "bearer"
+    }
+  }
+}

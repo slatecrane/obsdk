@@ -326,6 +326,11 @@ func TestBuildBody(t *testing.T) {
 	if !strings.Contains(string(js), `"amount":1.50`) || !strings.Contains(string(js), `{"issuer":"ISO","reference":"RF18539007547034"}`) {
 		t.Fatalf("body %s", js)
 	}
+	r.Transfers[0].Reference = &obsdk.Reference{Scheme: obsdk.ReferenceBE, Value: "123456789002"}
+	b, _ = buildBody(r)
+	if js, _ := json.Marshal(b); !strings.Contains(string(js), `{"issuer":"BBA","reference":"123456789002"}`) {
+		t.Fatalf("Belgian reference body %s", js)
+	}
 	r.Transfers[0].Remittance = []string{"text"}
 	if _, err := buildBody(r); err == nil {
 		t.Fatal("description and reference together must be refused")

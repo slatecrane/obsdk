@@ -104,7 +104,8 @@ body). `expires` may be at most 60 seconds after `created`; we use 30. The porta
 Connect (a test user with a Fortis and a Hello bank! account), accounts, balances, transactions (the payment booked,
 with end-to-end id and bank code), refresh, disconnect; a SEPA payment approved and `ACSC`; a dated payment
 approved (`ACCP`) and cancelled with approval (`RJCT` CUST); status read; a `sepa_instant` payment approved
-and `ACSC` at once. `hellobank` and `fintro` (personal): connect, balances and transactions. Scenarios in
+and `ACSC` at once; a SEPA and a `sepa_instant` payment with a Belgian structured communication (`BE`,
+sent as `SCOR`/`BBA`; the bank echoes it back) approved and `ACSC`. `hellobank` and `fintro` (personal): connect, balances and transactions. Scenarios in
 `banks/bnpparibasfortis/testdata/live-be-*`.
 
 Not run: payments through the `hellobank` and `fintro` keys (same API, other `brand` value), the business
@@ -117,12 +118,11 @@ found` on the code exchange; with the login it worked. Send the callback promptl
 
 International payments (`chargeBearer`, payee address, BBAN), standing orders, file payments (pain.001,
 business only), funds confirmation (`POST /funds-confirmations`, scope `cbpi`), the `accounts` and SCA
-preselection parameters of the authorize URL, Belgian structured communications (`+++…+++`) as references,
-and the onboarding endpoint.
+preselection parameters of the authorize URL, and the onboarding endpoint.
 
 ## Payments
 
 | Type | Notes |
 |---|---|
-| `sepa` | EUR; payer account optional (picked at the bank); description or `RF` reference; `execution_date` up to a year ahead (empty: today); cancellable while not executed, with the user's approval |
-| `sepa_instant` | EUR; today only; Belgian structured references only (not built), so description only; not cancellable |
+| `sepa` | EUR; payer account optional (picked at the bank); description or a `BE` (Belgian structured communication, sent as `SCOR`/`BBA`) or `RF` (`SCOR`/`ISO`) reference; `execution_date` up to a year ahead (empty: today); cancellable while not executed, with the user's approval |
+| `sepa_instant` | EUR; today only; description or `BE` reference (Fortis takes no `RF` reference for instant payments); not cancellable |

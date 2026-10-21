@@ -272,8 +272,11 @@ func (c *client) buildPayment(r obsdk.PaymentRequest, successURL, failureURL str
 			rem := &Remittance{Unstructured: t.Remittance}
 			if ref := t.Reference; ref != nil && ref.Value != "" {
 				cr := &CreditorReference{Reference: ref.Value}
-				if ref.Scheme == obsdk.ReferenceRF {
+				switch ref.Scheme {
+				case obsdk.ReferenceRF:
 					cr.Type = &CodeAndIssuer{Code: "SCOR", Issuer: "ISO"}
+				case obsdk.ReferenceBE:
+					cr.Type = &CodeAndIssuer{Code: "SCOR", Issuer: "BBA"}
 				}
 				rem.Structured = []StructuredRemittance{{CreditorReferenceInformation: cr}}
 			}

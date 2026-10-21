@@ -1,0 +1,40 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sandbox.auth.bnpparibasfortis.com/payment-requests/17fddf4e-a884-490b-a858-eac4623b3f70/consent?client_id=REDACTED:client_id&brand=bnppf&redirect_uri=https://example.com/callback?error=payment_not_approved&state=26de92d7-8ed1-47db-983c-236431410465"
+      },
+      "payment": {
+        "id": "17fddf4e-a884-490b-a858-eac4623b3f70",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoiYm5wcGFyaWJhc2ZvcnRpcy1zdGV0LWJlIiwiaWQiOiIxN2ZkZGY0ZS1hODg0LTQ5MGItYTg1OC1lYWM0NjIzYjNmNzAiLCJ0Ijoic2VwYSJ9"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "17fddf4e-a884-490b-a858-eac4623b3f70",
+        "type": "sepa",
+        "status": "completed",
+        "bank_status": "ACSC",
+        "final": true,
+        "ref": "obs1.eyJpIjoiYm5wcGFyaWJhc2ZvcnRpcy1zdGV0LWJlIiwiaWQiOiIxN2ZkZGY0ZS1hODg0LTQ5MGItYTg1OC1lYWM0NjIzYjNmNzAiLCJ0Ijoic2VwYSJ9",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "BE36PSEUDO2FF18C0A2A"
+        }
+      }
+    }
+  }
+]

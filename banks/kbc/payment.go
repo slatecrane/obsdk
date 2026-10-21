@@ -58,8 +58,8 @@ func paymentSpecs() []obsdk.PaymentSpec {
 			{Path: obsdk.FieldCreditorAccount, Use: obsdk.FieldRequired, Schemes: []string{obsdk.SchemeIBAN}, MaxLength: 34, Label: "Payee account"},
 			{Path: obsdk.FieldCreditorName, Use: obsdk.FieldRequired, MaxLength: 70, Label: "Payee name"},
 			{Path: obsdk.FieldRemittance, Use: obsdk.FieldOptional, MaxItems: 1, MaxLength: 140, Label: "Description"},
-			{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, Schemes: []string{obsdk.ReferenceRF}, MaxLength: 35, Label: "Payment reference",
-				Note: "Structured creditor reference (SCOR, issuer ISO)."},
+			{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, Schemes: []string{obsdk.ReferenceBE, obsdk.ReferenceRF}, MaxLength: 35, Label: "Payment reference",
+				Note: "Belgian structured communication (12 digits) or RF reference."},
 			{Path: obsdk.FieldEndToEndID, Use: obsdk.FieldOptional, MaxLength: 35},
 			{Path: obsdk.FieldCreditorBIC, Use: obsdk.FieldOptional, Pattern: bicPattern, Label: "Payee bank BIC"},
 			{Path: obsdk.FieldCreditorAddress, Use: obsdk.FieldOptional, Label: "Payee address", Note: "Structured, with the country; free address lines are not accepted."},
@@ -204,6 +204,9 @@ func buildBody(r obsdk.PaymentRequest, now time.Time) (pisBody, error) {
 	}
 	if ref := t.Reference; ref != nil && ref.Value != "" {
 		b.Structured = &pisStructured{Reference: ref.Value, ReferenceType: "SCOR", ReferenceIssuer: "ISO"}
+		if ref.Scheme == obsdk.ReferenceBE {
+			b.Structured.ReferenceIssuer = "BBA"
+		}
 	}
 	return b, nil
 }

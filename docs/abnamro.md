@@ -75,7 +75,7 @@ token of the consent (verified: the old access tokens answer 401 afterwards).
 
 | Type | Product | Notes |
 |---|---|---|
-| `sepa` | `/payment/v2/sepa-credit-transfers` | EUR; description or structured reference (`RF` sent as issuer `ISO`, `CUR` = Dutch betalingskenmerk, `BBA` = Belgian structured communication) |
+| `sepa` | `/payment/v2/sepa-credit-transfers` | EUR; description or structured reference (`RF` sent as issuer `ISO`, `CUR` = Dutch betalingskenmerk, `BE` = Belgian structured communication, sent as issuer `BBA`; `abnamro.ReferenceBelgian` is now an alias for `obsdk.ReferenceBE`) |
 | `crossborder` | `/payment/v2/cross-border-credit-transfers` | any currency; payee IBAN or other number, BIC required, structured address, charge bearer `DEBT`/`CRED`/`SHAR` |
 
 1. Client-credentials token (`psd2:payment:sepa:write` or `…:xborder:write`), then `POST` the payment (`RCVD`).

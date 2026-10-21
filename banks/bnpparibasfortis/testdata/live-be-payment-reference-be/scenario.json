@@ -1,0 +1,59 @@
+{
+  "config": {
+    "bank": "bnpparibasfortis",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:19:30Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "173c1cca-0c74-444b-af52-e628d62aadf3",
+        "78a782f3-09bb-4e25-84f5-dfd28ec75177",
+        "9b605e4a-8010-43b4-b097-52ab39ccc3be",
+        "3ad5fe15-7253-4c2a-919a-36817a212180",
+        "ffc41edf-8e94-45e0-a553-b00498cc9d64",
+        "67c55c7b-7832-4124-8fcd-795047bc2c83"
+      ],
+      "state": [
+        "26de92d7-8ed1-47db-983c-236431410465",
+        "9a8b2db9-88be-4e24-b4b1-6216b3e861e1"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-b3d62c",
+              "account": {
+                "scheme": "IBAN",
+                "value": "BE11PSEUDO5CC3DB56BC"
+              }
+            },
+            "reference": {
+              "scheme": "BE",
+              "value": "123456789002"
+            }
+          }
+        ]
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback?state=26de92d7-8ed1-47db-983c-236431410465"
+    }
+  ]
+}

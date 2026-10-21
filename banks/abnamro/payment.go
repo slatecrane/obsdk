@@ -34,10 +34,10 @@ const (
 	// ReferenceCurrence is the Dutch payment reference (betalingskenmerk, as
 	// on an acceptgiro), issued under Currence's scheme. ABN AMRO also accepts
 	// ISO 11649 (obsdk.ReferenceRF) and Belgian structured communications
-	// (ReferenceBelgian).
+	// (obsdk.ReferenceBE).
 	ReferenceCurrence = "CUR"
-	// ReferenceBelgian is the Belgian structured communication (+++.../.../...+++).
-	ReferenceBelgian = "BBA"
+	// Deprecated: use obsdk.ReferenceBE.
+	ReferenceBelgian = obsdk.ReferenceBE
 )
 
 // payFlow is the serialized state of a payment waiting for the user's approval.
@@ -90,7 +90,7 @@ func paymentSpecs() []obsdk.PaymentSpec {
 	sepa.Type, sepa.Currencies = obsdk.PaymentSEPA, []string{"EUR"}
 	sepa.Fields = append(common(obsdk.SchemeIBAN),
 		obsdk.PaymentField{Path: obsdk.FieldReference, Use: obsdk.FieldOptional, MaxLength: 35, Pattern: textPattern, Label: "Payment reference",
-			Schemes: []string{obsdk.ReferenceRF, ReferenceCurrence, ReferenceBelgian},
+			Schemes: []string{obsdk.ReferenceRF, ReferenceCurrence, obsdk.ReferenceBE},
 			Note:    "Either a description or a payment reference, not both. CUR is the Dutch betalingskenmerk."},
 	)
 	sepa.Notes = []string{"There is no duplicate check: a payment posted twice is registered twice."}
@@ -218,8 +218,11 @@ func buildBody(r obsdk.PaymentRequest) (pisBody, error) {
 			return b, invalid(obsdk.FieldReference, "ABN AMRO accepts a description or a payment reference, not both")
 		}
 		issuer := ref.Scheme
-		if issuer == obsdk.ReferenceRF {
+		switch issuer {
+		case obsdk.ReferenceRF:
 			issuer = "ISO"
+		case obsdk.ReferenceBE:
+			issuer = "BBA"
 		}
 		b.Structured = &pisStructured{Issuer: issuer, Reference: ref.Value}
 	}
