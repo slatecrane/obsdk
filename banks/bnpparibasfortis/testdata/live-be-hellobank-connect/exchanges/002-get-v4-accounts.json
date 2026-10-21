@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/accounts",
+    "query": {
+      "brand": [
+        "hb"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:c000f5",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "fb719f4a-9b94-41ae-9b93-6e00fc761a4b"
+    },
+    "body": {
+      "_links": {
+        "self": {
+          "href": "/psd2/v4/accounts?brand=hb\u0026pageSize=25\u0026index=1",
+          "templated": false
+        }
+      },
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "/psd2/v4/accounts/BE36PSEUDO2FF18C0A2AEUR/balances",
+              "templated": false
+            },
+            "transactions": {
+              "href": "/psd2/v4/accounts/BE36PSEUDO2FF18C0A2AEUR/transactions",
+              "templated": false
+            }
+          },
+          "accountId": {
+            "iban": "BE36PSEUDO2FF18C0A2A"
+          },
+          "bicFi": "GEBABBEB",
+          "cashAccountType": "CACC",
+          "currency": "EUR",
+          "name": "name-48643d",
+          "product": "CUR - BNPPF",
+          "psuStatus": "Holder",
+          "resourceId": "BE17343577691822EUR",
+          "usage": "PRIV"
+        }
+      ]
+    }
+  }
+}

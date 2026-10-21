@@ -1,0 +1,99 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/accounts/BE17343577691822EUR/transactions",
+    "query": {
+      "brand": [
+        "bnppf"
+      ],
+      "dateFrom": [
+        "2026-07-01"
+      ],
+      "dateTo": [
+        "2026-10-22"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:70a2ff",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "328b79d0-06b1-47e3-baeb-d23cff01fd6c"
+    },
+    "body": {
+      "_links": {
+        "balances": {
+          "href": "/psd2/v4/accounts/BE17343577691822EUR/balances?brand=bnppf",
+          "templated": false
+        },
+        "parent-list": {
+          "href": "/psd2/v4/accounts?brand=bnppf",
+          "templated": false
+        },
+        "self": {
+          "href": "/psd2/v4/accounts/BE17343577691822EUR/transactions?brand=bnppf\u0026dateFrom=2026-07-01\u0026dateTo=2026-10-22\u0026index=1\u0026pageSize=25",
+          "templated": false
+        }
+      },
+      "transactions": [
+        {
+          "additionalTransactionInformation": {
+            "endToEndReference": "381a24da7761437aa3e852e4696800726550",
+            "eodOperationReference": 6550,
+            "narrative": [
+              "1 - narrative line: D",
+              "2 - narra",
+              "3 - narrative lin",
+              "4 - narr",
+              "5 - narrative",
+              "6 - narra",
+              "7 - narrati",
+              "8 - narrative lin"
+            ],
+            "statementReference": 6550
+          },
+          "bankTransactionCode": {
+            "domain": "PMNT",
+            "family": "ICDT",
+            "subFamily": "ESCT"
+          },
+          "bookingDate": "2026-10-21",
+          "creditDebitIndicator": "DBIT",
+          "entryReference": "2026102120261021175947918000",
+          "relatedParties": {
+            "debtor": {
+              "name": "name-48643d"
+            },
+            "debtorAccount": {
+              "iban": "BE36PSEUDO2FF18C0A2A"
+            },
+            "debtorAgent": {
+              "bicFi": "GEBABBEB"
+            }
+          },
+          "remittanceInformation": {
+            "unstructured": [
+              "unstructured-d2b614"
+            ]
+          },
+          "resourceId": 6550,
+          "status": "BOOK",
+          "transactionAmount": {
+            "amount": "-12.34",
+            "currency": "EUR"
+          },
+          "transactionCategoryPurpose": "SALA",
+          "transactionDate": "2026-10-21",
+          "valueDate": "2026-10-21"
+        }
+      ]
+    }
+  }
+}

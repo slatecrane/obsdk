@@ -1,0 +1,17 @@
+{
+  "config": {
+    "bank": "bnpparibasfortis",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:03:58Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    }
+  },
+  "calls": [
+    {
+      "op": "refresh"
+    }
+  ]
+}

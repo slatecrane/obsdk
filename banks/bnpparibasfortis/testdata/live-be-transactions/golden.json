@@ -1,0 +1,78 @@
+[
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "6550",
+          "entry_reference": "2026102120261021175947918000",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-12.34",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-21",
+          "value_date": "2026-10-21",
+          "transaction_date": "2026-10-21",
+          "counterparty": {},
+          "remittance": [
+            "unstructured-d2b614"
+          ],
+          "end_to_end_id": "381a24da7761437aa3e852e4696800726550",
+          "bank_code": "PMNT-ICDT-ESCT",
+          "raw": {
+            "additionalTransactionInformation": {
+              "endToEndReference": "381a24da7761437aa3e852e4696800726550",
+              "eodOperationReference": 6550,
+              "narrative": [
+                "1 - narrative line: D",
+                "2 - narra",
+                "3 - narrative lin",
+                "4 - narr",
+                "5 - narrative",
+                "6 - narra",
+                "7 - narrati",
+                "8 - narrative lin"
+              ],
+              "statementReference": 6550
+            },
+            "bankTransactionCode": {
+              "domain": "PMNT",
+              "family": "ICDT",
+              "subFamily": "ESCT"
+            },
+            "bookingDate": "2026-10-21",
+            "creditDebitIndicator": "DBIT",
+            "entryReference": "2026102120261021175947918000",
+            "relatedParties": {
+              "debtor": {
+                "name": "name-48643d"
+              },
+              "debtorAccount": {
+                "iban": "BE36PSEUDO2FF18C0A2A"
+              },
+              "debtorAgent": {
+                "bicFi": "GEBABBEB"
+              }
+            },
+            "remittanceInformation": {
+              "unstructured": [
+                "unstructured-d2b614"
+              ]
+            },
+            "resourceId": 6550,
+            "status": "BOOK",
+            "transactionAmount": {
+              "amount": "-12.34",
+              "currency": "EUR"
+            },
+            "transactionCategoryPurpose": "SALA",
+            "transactionDate": "2026-10-21",
+            "valueDate": "2026-10-21"
+          }
+        }
+      ]
+    }
+  }
+]

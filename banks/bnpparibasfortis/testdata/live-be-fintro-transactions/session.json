@@ -1,0 +1,1 @@
+{"v":1,"bank":"fintro","country":"BE","segment":"personal","env":"sandbox","integration":"fintro-stet-be","generation":1,"updated_at":"2026-10-21T18:09:41.409483Z","access_token":"REDACTED:access_token","refresh_token":"REDACTED:refresh_token","token_type":"bearer","access_expires_at":"2026-10-21T19:09:41.409483Z","consents":{"aisp":{"id":"","kind":"aisp","status":"authorised"}}}

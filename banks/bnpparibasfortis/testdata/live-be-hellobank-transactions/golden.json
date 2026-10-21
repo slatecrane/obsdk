@@ -1,0 +1,151 @@
+[
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": [
+        {
+          "id": "6551",
+          "entry_reference": "2026102120261021180926880000",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-3.16",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-21",
+          "value_date": "2026-10-21",
+          "transaction_date": "2026-10-21",
+          "counterparty": {},
+          "remittance": [
+            "unstructured-32959f"
+          ],
+          "end_to_end_id": "0e564f79a89941f493e1eeb7ad6ebaa76551",
+          "bank_code": "PMNT-ICDT-ESCT",
+          "raw": {
+            "additionalTransactionInformation": {
+              "endToEndReference": "0e564f79a89941f493e1eeb7ad6ebaa76551",
+              "eodOperationReference": 6551,
+              "narrative": [
+                "1 - narrative line: Dumm",
+                "2 - ",
+                "3 - narrative line: Dummy conten"
+              ],
+              "statementReference": 6551,
+              "transactionResourceId": "6551"
+            },
+            "bankTransactionCode": {
+              "domain": "PMNT",
+              "family": "ICDT",
+              "subFamily": "ESCT"
+            },
+            "bookingDate": "2026-10-21",
+            "creditDebitIndicator": "DBIT",
+            "details": {
+              "href": "/psd2/v4/accounts/BE36PSEUDO2FF18C0A2AEUR/transactions/6551/details",
+              "templated": false
+            },
+            "entryReference": "2026102120261021180926880000",
+            "relatedParties": {
+              "debtor": {
+                "name": "name-48643d"
+              },
+              "debtorAccount": {
+                "iban": "BE36PSEUDO2FF18C0A2A"
+              },
+              "debtorAgent": {
+                "bicFi": "GEBABBEB"
+              }
+            },
+            "remittanceInformation": {
+              "unstructured": [
+                "unstructured-32959f"
+              ]
+            },
+            "resourceId": 6551,
+            "status": "BOOK",
+            "transactionAmount": {
+              "amount": "-3.16",
+              "currency": "EUR"
+            },
+            "transactionCategoryPurpose": "SALA",
+            "transactionDate": "2026-10-21",
+            "valueDate": "2026-10-21"
+          }
+        },
+        {
+          "id": "6550",
+          "entry_reference": "2026102120261021175947918000",
+          "status": "booked",
+          "direction": "debit",
+          "amount": {
+            "amount": "-12.34",
+            "currency": "EUR"
+          },
+          "booking_date": "2026-10-21",
+          "value_date": "2026-10-21",
+          "transaction_date": "2026-10-21",
+          "counterparty": {},
+          "remittance": [
+            "unstructured-d2b614"
+          ],
+          "end_to_end_id": "381a24da7761437aa3e852e4696800726550",
+          "bank_code": "PMNT-ICDT-ESCT",
+          "raw": {
+            "additionalTransactionInformation": {
+              "endToEndReference": "381a24da7761437aa3e852e4696800726550",
+              "eodOperationReference": 6550,
+              "narrative": [
+                "1 ",
+                "2 - narrative line: Dummy content g",
+                "3 - narrative l",
+                "4 - narrative lin",
+                "5 - narrative line: Dummy ",
+                "6 - narrative line: Dummy",
+                "7 - narrative line: Du",
+                "8 - narrative line: Dummy conten",
+                "9 - narr",
+                "10 - narrative line",
+                "11 -",
+                "12 - narrative line: Dummy cont"
+              ],
+              "statementReference": 6550
+            },
+            "bankTransactionCode": {
+              "domain": "PMNT",
+              "family": "ICDT",
+              "subFamily": "ESCT"
+            },
+            "bookingDate": "2026-10-21",
+            "creditDebitIndicator": "DBIT",
+            "entryReference": "2026102120261021175947918000",
+            "relatedParties": {
+              "debtor": {
+                "name": "name-48643d"
+              },
+              "debtorAccount": {
+                "iban": "BE36PSEUDO2FF18C0A2A"
+              },
+              "debtorAgent": {
+                "bicFi": "GEBABBEB"
+              }
+            },
+            "remittanceInformation": {
+              "unstructured": [
+                "unstructured-d2b614"
+              ]
+            },
+            "resourceId": 6550,
+            "status": "BOOK",
+            "transactionAmount": {
+              "amount": "-12.34",
+              "currency": "EUR"
+            },
+            "transactionCategoryPurpose": "SALA",
+            "transactionDate": "2026-10-21",
+            "valueDate": "2026-10-21"
+          }
+        }
+      ]
+    }
+  }
+]

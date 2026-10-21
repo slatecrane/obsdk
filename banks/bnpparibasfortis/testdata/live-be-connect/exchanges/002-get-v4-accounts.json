@@ -1,0 +1,81 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/accounts",
+    "query": {
+      "brand": [
+        "bnppf"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:70a2ff",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "961a932c-716a-4190-b9c1-2ec5d3288384"
+    },
+    "body": {
+      "_links": {
+        "self": {
+          "href": "/psd2/v4/accounts?brand=bnppf\u0026pageSize=25\u0026index=1",
+          "templated": false
+        }
+      },
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "/psd2/v4/accounts/BE36PSEUDO2FF18C0A2AEUR/balances",
+              "templated": false
+            },
+            "transactions": {
+              "href": "/psd2/v4/accounts/BE36PSEUDO2FF18C0A2AEUR/transactions",
+              "templated": false
+            }
+          },
+          "accountId": {
+            "iban": "BE36PSEUDO2FF18C0A2A"
+          },
+          "bicFi": "GEBABBEB",
+          "cashAccountType": "CACC",
+          "currency": "EUR",
+          "name": "name-48643d",
+          "product": "CUR - BNPPF",
+          "psuStatus": "Holder",
+          "resourceId": "BE17343577691822EUR",
+          "usage": "PRIV"
+        },
+        {
+          "_links": {
+            "balances": {
+              "href": "/psd2/v4/accounts/BE28223851802932EUR/balances",
+              "templated": false
+            },
+            "transactions": {
+              "href": "/psd2/v4/accounts/BE28223851802932EUR/transactions",
+              "templated": false
+            }
+          },
+          "accountId": {
+            "iban": "BE84PSEUDO84F11706A2"
+          },
+          "bicFi": "GEBABBEB",
+          "cashAccountType": "CACC",
+          "currency": "EUR",
+          "name": "name-26f237",
+          "product": "CUR - HB",
+          "psuStatus": "Holder",
+          "resourceId": "BE28223851802932EUR",
+          "usage": "PRIV"
+        }
+      ]
+    }
+  }
+}

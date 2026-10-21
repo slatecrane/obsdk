@@ -1,0 +1,58 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/accounts",
+    "query": {
+      "brand": [
+        "fintro"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:689cac",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "ea8f6927-595a-4e14-a5fd-762f0dc18c66"
+    },
+    "body": {
+      "_links": {
+        "self": {
+          "href": "/psd2/v4/accounts?brand=fintro\u0026pageSize=25\u0026index=1",
+          "templated": false
+        }
+      },
+      "accounts": [
+        {
+          "_links": {
+            "balances": {
+              "href": "/psd2/v4/accounts/BE18PSEUDO0BE23E5F4CEUR/balances",
+              "templated": false
+            },
+            "transactions": {
+              "href": "/psd2/v4/accounts/BE18PSEUDO0BE23E5F4CEUR/transactions",
+              "templated": false
+            }
+          },
+          "accountId": {
+            "iban": "BE18PSEUDO0BE23E5F4C"
+          },
+          "bicFi": "GEBABBEB",
+          "cashAccountType": "CACC",
+          "currency": "EUR",
+          "name": "name-196a0e",
+          "product": "CUR - FINTRO",
+          "psuStatus": "Holder",
+          "resourceId": "BE18PSEUDO0BE23E5F4CEUR",
+          "usage": "PRIV"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "hellobank",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:10:49Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "97f8c444-9f10-43a4-8322-c03c2015cc17"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "balances",
+      "account": "BE17343577691822EUR",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

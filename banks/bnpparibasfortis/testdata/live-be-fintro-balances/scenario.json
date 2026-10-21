@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "fintro",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:10:50Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "ed30af71-bc99-466f-a962-f8916488f347"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "balances",
+      "account": "BE85587065494195EUR",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to the bank to authorise access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sandbox.auth.bnpparibasfortis.com/authorize?brand=hb&client_id=REDACTED%3Aclient_id&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback&response_type=code&scope=aisp&state=7909d5ad-41d0-417b-8029-69c1d2768033"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "hellobank",
+        "country": "BE",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "hellobank-stet-be",
+        "generation": 1,
+        "updated_at": "2026-10-21T18:10:00Z",
+        "access_token": "REDACTED:access_token:73ca7c",
+        "refresh_token": "REDACTED:refresh_token:c34814",
+        "token_type": "bearer",
+        "access_expires_at": "2026-10-21T19:10:00Z",
+        "consents": {
+          "aisp": {
+            "id": "",
+            "kind": "aisp",
+            "status": "authorised"
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "BE17343577691822EUR",
+          "stable_id": "da69b82be8fc0a2ba40be02327e83b0b",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "BE36PSEUDO2FF18C0A2A"
+            }
+          ],
+          "name": "name-48643d",
+          "currency": "EUR",
+          "product": "CUR - BNPPF",
+          "type": "CACC",
+          "usage": "PRIV",
+          "bic": "GEBABBEB",
+          "raw": {
+            "_links": {
+              "balances": {
+                "href": "/psd2/v4/accounts/BE36PSEUDO2FF18C0A2AEUR/balances",
+                "templated": false
+              },
+              "transactions": {
+                "href": "/psd2/v4/accounts/BE36PSEUDO2FF18C0A2AEUR/transactions",
+                "templated": false
+              }
+            },
+            "accountId": {
+              "iban": "BE36PSEUDO2FF18C0A2A"
+            },
+            "bicFi": "GEBABBEB",
+            "cashAccountType": "CACC",
+            "currency": "EUR",
+            "name": "name-48643d",
+            "product": "CUR - BNPPF",
+            "psuStatus": "Holder",
+            "resourceId": "BE17343577691822EUR",
+            "usage": "PRIV"
+          }
+        }
+      ]
+    }
+  }
+]

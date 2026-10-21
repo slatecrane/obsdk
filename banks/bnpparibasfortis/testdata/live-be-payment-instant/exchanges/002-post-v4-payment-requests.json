@@ -1,0 +1,83 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/v4/payment-requests",
+    "query": {
+      "brand": [
+        "bnppf"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:4becfb",
+      "Businesslinename": "RPB",
+      "Content-Type": "application/json",
+      "Idempotency-Key": "f378e02c-5351-4a89-a7a8-851745998b0f",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    },
+    "body": {
+      "beneficiary": {
+        "creditor": {
+          "name": "name-a62825"
+        },
+        "creditorAccount": {
+          "iban": "BE11PSEUDO5CC3DB56BC"
+        }
+      },
+      "chargeBearer": "SLEV",
+      "creationDateTime": "2026-10-21T18:08:41+00:00",
+      "creditTransferTransaction": [
+        {
+          "instructedAmount": {
+            "amount": "3.16",
+            "currency": "EUR"
+          },
+          "paymentId": {
+            "endToEndId": "64b1b13fef8c4194baf7ca9ff4de72e5",
+            "instructionId": "b3c1426ad87d4762bdd32ffa1b1ded85"
+          },
+          "remittanceInformation": {
+            "unstructured": [
+              "unstructured-32959f"
+            ]
+          }
+        }
+      ],
+      "initiatingParty": {
+        "name": "name-f31ebb"
+      },
+      "numberOfTransactions": 1,
+      "paymentInformationId": "0e564f79a89941f493e1eeb7ad6ebaa7",
+      "paymentTypeInformation": {
+        "localInstrument": "INST",
+        "serviceLevel": "SEPA"
+      },
+      "requestedExecutionDate": "2026-10-21T18:08:41+00:00",
+      "supplementaryData": {
+        "acceptedAuthenticationApproach": [
+          "REDIRECT"
+        ],
+        "successfulReportUrl": "https://example.com/callback?state=642196d0-4a0a-429f-af4f-27ef36336672",
+        "unsuccessfulReportUrl": "https://example.com/callback?error=payment_not_approved\u0026state=642196d0-4a0a-429f-af4f-27ef36336672"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "Location": "/psd2/v4/payment-requests/c2020cd0-f0f2-4e33-92af-4b8e62177e26",
+      "X-Request-Id": "d42fd3ee-bd00-444f-a3f9-5711df5b9329"
+    },
+    "body": {
+      "_links": {
+        "consentApproval": {
+          "href": "https://sandbox.auth.bnpparibasfortis.com/payment-requests/c2020cd0-f0f2-4e33-92af-4b8e62177e26/consent?client_id=REDACTED:client_id\u0026brand=bnppf\u0026redirect_uri=https://example.com/callback?error=payment_not_approved\u0026state=642196d0-4a0a-429f-af4f-27ef36336672"
+        }
+      },
+      "appliedAuthenticationApproach": "REDIRECT"
+    }
+  }
+}

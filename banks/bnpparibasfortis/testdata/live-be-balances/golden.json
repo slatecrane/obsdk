@@ -1,0 +1,34 @@
+[
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "closing_booked",
+        "bank_type": "CLBD",
+        "amount": {
+          "amount": "100.00",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-21"
+      },
+      {
+        "kind": "other",
+        "bank_type": "OTHR",
+        "amount": {
+          "amount": "100.00",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-21"
+      },
+      {
+        "kind": "interim_available",
+        "bank_type": "ITAV",
+        "amount": {
+          "amount": "100.00",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-21"
+      }
+    ]
+  }
+]

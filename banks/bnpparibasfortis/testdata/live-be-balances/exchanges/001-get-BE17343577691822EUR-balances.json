@@ -1,0 +1,70 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/accounts/BE17343577691822EUR/balances",
+    "query": {
+      "brand": [
+        "bnppf"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:70a2ff",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "7d3081f3-b382-4281-9d5d-a8660ee1f60d"
+    },
+    "body": {
+      "_links": {
+        "parent-list": {
+          "href": "/psd2/v4/accounts?brand=bnppf",
+          "templated": false
+        },
+        "self": {
+          "href": "/psd2/v4/accounts/BE17343577691822EUR/balances?brand=bnppf",
+          "templated": false
+        },
+        "transactions": {
+          "href": "/psd2/v4/accounts/BE17343577691822EUR/transactions?brand=bnppf",
+          "templated": false
+        }
+      },
+      "balances": [
+        {
+          "balanceAmount": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balanceType": "CLBD",
+          "name": "name-7008c8",
+          "referenceDate": "2026-10-21"
+        },
+        {
+          "balanceAmount": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balanceType": "OTHR",
+          "name": "name-36dab6",
+          "referenceDate": "2026-10-21"
+        },
+        {
+          "balanceAmount": {
+            "amount": "100.00",
+            "currency": "EUR"
+          },
+          "balanceType": "ITAV",
+          "name": "name-147134",
+          "referenceDate": "2026-10-21"
+        }
+      ]
+    }
+  }
+}

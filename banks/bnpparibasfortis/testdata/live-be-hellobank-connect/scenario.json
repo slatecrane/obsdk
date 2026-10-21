@@ -1,0 +1,31 @@
+{
+  "config": {
+    "bank": "hellobank",
+    "country": "BE",
+    "env": "sandbox",
+    "now": "2026-10-21T18:10:00Z",
+    "redirect_url": "https://example.com/callback",
+    "extra": {
+      "initiating_party": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "fb719f4a-9b94-41ae-9b93-6e00fc761a4b"
+      ],
+      "state": [
+        "7909d5ad-41d0-417b-8029-69c1d2768033"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://example.com/callback?code=REDACTED%3Acode%3A0e8884\u0026state=7909d5ad-41d0-417b-8029-69c1d2768033"
+    }
+  ]
+}

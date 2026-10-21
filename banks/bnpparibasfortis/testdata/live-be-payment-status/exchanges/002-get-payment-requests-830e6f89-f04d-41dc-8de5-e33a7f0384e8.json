@@ -1,0 +1,93 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v4/payment-requests/830e6f89-f04d-41dc-8de5-e33a7f0384e8",
+    "query": {
+      "brand": [
+        "bnppf"
+      ]
+    },
+    "headers": {
+      "Accept": "application/hal+json, application/json",
+      "Authorization": "REDACTED:authorization:651020",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Signature": "unsigned-sandbox-request"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/hal+json; charset=utf-8",
+      "X-Request-Id": "d69c2979-6b8a-428b-b27d-146b7f9bdbea"
+    },
+    "body": {
+      "_links": {
+        "self": {
+          "href": "/psd2/v4/payment-requests/830e6f89-f04d-41dc-8de5-e33a7f0384e8"
+        }
+      },
+      "paymentRequest": {
+        "beneficiary": {
+          "creditor": {
+            "name": "name-a62825"
+          },
+          "creditorAccount": {
+            "iban": "BE11PSEUDO5CC3DB56BC"
+          }
+        },
+        "booking": true,
+        "chargeBearer": "SLEV",
+        "creationDateTime": "2026-10-21T17:59:04+00:00",
+        "creditTransferTransaction": [
+          {
+            "executionRule": "FWNG",
+            "id": 29403,
+            "instructedAmount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "paymentId": {
+              "endToEndId": "31bfe5a0353e4464b8b79ccaeec8237c",
+              "instructionId": "603eac953df04200bfb90a9b2cca934a",
+              "resourceId": "29403"
+            },
+            "remittanceInformation": {
+              "unstructured": [
+                "unstructured-d2b614"
+              ]
+            },
+            "transactionStatus": "PDNG"
+          }
+        ],
+        "debtor": {},
+        "debtorAccount": {
+          "currency": "EUR",
+          "iban": "BE36PSEUDO2FF18C0A2A",
+          "other": {
+            "identification": "identification-860b53",
+            "schemeName": "BBAN"
+          }
+        },
+        "initiatingParty": {
+          "name": "name-f31ebb"
+        },
+        "numberOfTransactions": 1,
+        "paymentInformationId": "381a24da7761437aa3e852e469680072",
+        "paymentInformationStatus": "ACSC",
+        "paymentTypeInformation": {
+          "serviceLevel": "SEPA"
+        },
+        "requestedExecutionDate": "2026-10-21T17:59:04+00:00",
+        "resourceId": "29406",
+        "supplementaryData": {
+          "acceptedAuthenticationApproach": [
+            "REDIRECT"
+          ],
+          "successfulReportUrl": "https://example.com/callback?state=f6cb60df-b9da-42af-bbc5-4bc234628ac7",
+          "unsuccessfulReportUrl": "https://example.com/callback?error=payment_not_approved\u0026state=f6cb60df-b9da-42af-bbc5-4bc234628ac7"
+        }
+      }
+    }
+  }
+}
