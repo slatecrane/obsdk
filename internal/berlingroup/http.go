@@ -136,6 +136,13 @@ func (c *client) do(ctx context.Context, r req) (*resp, error) {
 	if c.bearer != "" && hr.Header.Get("Authorization") == "" {
 		hr.Header.Set("Authorization", "Bearer "+c.bearer)
 	}
+	if o := c.p.OAuth; o != nil && o.ClientCredentials && hr.Header.Get("Authorization") == "" {
+		tok, err := c.clientToken(ctx, r.path)
+		if err != nil {
+			return nil, err
+		}
+		hr.Header.Set("Authorization", "Bearer "+tok)
+	}
 	if c.p.DateLayout != "" {
 		hr.Header.Set("Date", c.now().UTC().Format(c.p.DateLayout))
 	}

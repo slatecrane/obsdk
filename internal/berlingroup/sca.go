@@ -364,6 +364,11 @@ func (c *client) advance(ctx context.Context, f *flow, in obsdk.StepInput) (*obs
 				return nil, err
 			}
 		}
+		if c.wantsFixedOAuth(f) {
+			if err := c.startFixedOAuth(f); err != nil {
+				return nil, err
+			}
+		}
 		if f.SCARedirect != "" {
 			// Whatever was preferred, a redirect link means the bank chose it.
 			f.Need = needRedirect

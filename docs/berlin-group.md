@@ -5,7 +5,7 @@
 adapter is not a bank: users only ever see the banks built on it, under their own keys.
 
 Built and verified on 2026-10-18 against adorsys' open-source ModelBank (XS2A-Sandbox 5.14), run
-locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)), `sibs` ([sibs.md](sibs.md)), `saastopankki` and `omasp` ([samlink.md](samlink.md)), `redsys` ([redsys.md](redsys.md)), `nlb`, `otpbanka`, `sparkassesi` and four more Slovenian banks ([bankart.md](bankart.md)), `cooppank` ([cooppank.md](cooppank.md)).
+locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `atruvia` ([atruvia.md](atruvia.md)), `sibs` ([sibs.md](sibs.md)), `saastopankki` and `omasp` ([samlink.md](samlink.md)), `redsys` ([redsys.md](redsys.md)), `nlb`, `otpbanka`, `sparkassesi` and four more Slovenian banks ([bankart.md](bankart.md)), `cooppank` ([cooppank.md](cooppank.md)), `spuerkeess`, `postluxembourg`, `raiffeisenlu` and the other LUXHUB banks ([luxhub.md](luxhub.md)).
 
 ## What it covers
 
@@ -16,6 +16,7 @@ locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `
 | OAuth SCA | a `scaOAuth` (or `scaOAuth2`) link: RFC 8414 metadata, then an authorisation-code redirect with PKCE, scope `AIS:<consentId>` / `PIS:<paymentId>`. For consents the code is exchanged for tokens: account calls carry the bearer token, `Refresh` uses the refresh token, the token endpoint is kept in `Session.Meta`. For payments the status decides (no exchange). Client authentication at the token endpoint per profile (`OAuthClientAuth`: HTTP Basic, `private_key_jwt`, …); a public client with PKCE otherwise |
 | OAuth pre-step | `Profile.PreStep` (Redsys): before the consent or payment is created, an authorisation-code redirect with PKCE to the bank's OAuth endpoint (`PreStep.URL` + `/authorize`, scope `AIS` or `PIS`, client id from `PreStep.ClientID` or `Credentials.ClientID`); the code is exchanged at once and every later request carries the bearer token, the consent or payment approval (usually a second redirect) included. The token is a session from then on: it is in `Step.Session` on every later step and in `FlowError`, payment steps hand it out too, and `PaymentStatus` / `CancelPayment` need it (`PaymentCallOptions.Session`). `PaymentRequest.Session` with a `PIS` scope skips the login. `Refresh` renews the token first, then checks the consent with it |
 | Token only for creating | `PreStep.CreateOnly` (Bankart): the pre-step's token goes on the request that creates the consent or payment (and the authorisation calls in the same `Resume`), then is dropped: not in the flow state, not handed out as a session; payments are read and cancelled without a session, `Refresh` only checks the consent. `PreStep.TokenAccount` reads the account the user picked at the login from the token (the consent is dedicated to it, a payment without debtor is made from it); `PreStep.AccountParam` passes a known account to the login |
+| OAuth around every resource | `Profile.OAuth` (LUXHUB): requests that carry no user token get a client-credentials token from `OAuthServer.Token` (scope `AIS` on consent and account paths, `PISScope`/`PIS` on the others; one token request per call). A redirect flow without a `scaRedirect` or `scaOAuth` link and with no authorisation left to start sends the user to the fixed `OAuthServer.Authorize` endpoint, as in the OAuth SCA approach (scope `AIS:<consentId>` / `PIS:<paymentId>`, PKCE); `ExchangeScope` repeats the scope in the code exchange. Endpoints can be overridden with `Config.Extra` `oauth_authorize_url` / `oauth_token_url` |
 | Hubs | `Profile.Institution`: a `Config.Extra` parameter (e.g. the BLZ) picks one bank of a hub; it is stored in the session, the flow state and the payment reference, so later calls reach the same bank |
 | Not yet | decoupled after an OAuth pre-step, encrypted PSU authentication, signing baskets, multilevel SCA, periodic and bulk payments, card accounts |
 | Data | accounts (`withBalance`), balances, transactions (booked, pending or both per profile) as JSON or camt.052/053/054 XML (`Profile.XMLTransactions`; parsed by content); `next` links passed through as the cursor, or paging by entry reference (`EntryReferencePaging`, Samlink); an unsigned amount without indicator whose debtor is the queried account counts as a debit; signed amounts, `creditDebitIndicator` on unsigned ones; 1.3.8 and older field shapes |
@@ -49,7 +50,7 @@ func init() {
 The profile carries everything that differs between banks: hosts, approaches, consent model, consent
 limits, booking statuses, payment products and specs, whether PSU-ID is needed up front
 (`PSUIDRequired`), field-shape versions (`LegacyAddress`, `StructuredRemittanceString`, which banks mix),
-`NoWithBalance`, XML transactions, OAuth details (`OAuthNoRedirectURI`, `PreStep`), hubs (`Institution`), signing,
+`NoWithBalance`, XML transactions, OAuth details (`OAuthNoRedirectURI`, `PreStep`, `OAuth`), hubs (`Institution`), signing,
 spellings some banks use (`PathVersion` such as SIBS's `v1-0-4` or Redsys's `v1.1`, `AISPathVersion` for account information on a later version such as Samlink's `v2`, `PaymentRoot` for payments under their own root such as Bankart's `pay/v1`, `PSUInitiatedHeader` for a required "initiated by the user" header, `ReferenceInEndToEnd` for banks that read the creditor reference from the end-to-end id, `AllAccountsValue`, `ValidUntilLayout`,
 a `DateLayout` for a mandatory `Date` header) and extra headers. If a bank needs more than a profile can say, add a field
 or hook to the profile instead of copying the adapter. Then follow [new-integration.md](new-integration.md)
@@ -159,7 +160,7 @@ Hand-written (the sandbox can't produce them): `de-hand-transactions-pages` (nex
 structured reference object, foreign cursor refused), `de-hand-consent-expired`, `de-hand-rate-limited`,
 `de-hand-decoupled-connect`, `de-hand-decoupled-rejected`, `de-hand-redirect-refused`.
 
-Not verified anywhere: decoupled against a real server, request signing against a server that checks it
+Not verified anywhere: decoupled against a real server, `Profile.OAuth` (fake servers only; LUXHUB's sandbox is closed to us), request signing against a server that checks it
 (unit-tested only), bank-offered and dedicated consents, the OAuth SCA approach and camt parsing (fake
 bank, unit tests and Sparkassen's hand-written scenarios only), pain.001/pain.002 (unit tests and Atruvia's
 hand-written scenarios only; no XSD validation in the tests). ModelBank 5.14 has an OAuth mode

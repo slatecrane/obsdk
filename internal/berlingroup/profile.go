@@ -177,6 +177,11 @@ type Profile struct {
 	// request carries the access token. See PreStep.
 	PreStep *PreStep
 
+	// OAuth is the bank's OAuth server when its endpoints are fixed rather
+	// than named in a scaOAuth link, and when it wants a client-credentials
+	// token on the requests no user token covers (LUXHUB). See OAuthServer.
+	OAuth *OAuthServer
+
 	// AllAccountsValue is the value of allPsd2 in a global consent. Empty is
 	// the standard's "allAccounts"; some banks spell it "all-accounts".
 	AllAccountsValue string
