@@ -131,19 +131,29 @@ func (c *client) startOAuth(ctx context.Context, f *flow, metaURL string) error 
 	if err := json.Unmarshal(res.body, &m); err != nil || m.AuthorizationEndpoint == "" {
 		return fmt.Errorf("berlingroup: %s: unreadable OAuth server metadata (HTTP %d)", c.bank(), res.status)
 	}
-	au, err := url.Parse(m.AuthorizationEndpoint)
+	return c.beginOAuth(f, m.AuthorizationEndpoint, m.TokenEndpoint)
+}
+
+// oauthScope is the scope of a resource's OAuth approval.
+func (f *flow) oauthScope() string {
+	if f.Op == flowConnect {
+		return "AIS:" + f.ConsentID
+	}
+	return "PIS:" + f.Pay.ID
+}
+
+// beginOAuth builds the authorisation URL the user follows to approve the
+// flow's resource.
+func (c *client) beginOAuth(f *flow, authorizeURL, tokenURL string) error {
+	au, err := url.Parse(authorizeURL)
 	if err != nil || au.Host == "" {
-		return fmt.Errorf("berlingroup: %s: unusable authorization_endpoint %q", c.bank(), m.AuthorizationEndpoint)
+		return fmt.Errorf("berlingroup: %s: unusable authorization_endpoint %q", c.bank(), authorizeURL)
 	}
-	scope := "AIS:" + f.ConsentID
-	if f.Op != flowConnect {
-		scope = "PIS:" + f.Pay.ID
-	}
-	f.Verifier, f.OAuthState, f.TokenURL = c.newVerifier(), c.cfg.ID(idState), m.TokenEndpoint
+	f.Verifier, f.OAuthState, f.TokenURL = c.newVerifier(), c.cfg.ID(idState), tokenURL
 	q := au.Query()
 	q.Set("response_type", "code")
 	q.Set("client_id", c.oauthClientID())
-	q.Set("scope", scope)
+	q.Set("scope", f.oauthScope())
 	q.Set("state", f.OAuthState)
 	q.Set("code_challenge", pkceChallenge(f.Verifier))
 	q.Set("code_challenge_method", "S256")
@@ -199,6 +209,9 @@ func (c *client) exchangeCode(ctx context.Context, f *flow, code string) (*token
 		"code_verifier": {f.Verifier}}
 	if !c.p.OAuthNoRedirectURI || f.PreStep {
 		form.Set("redirect_uri", f.RedirectURL)
+	}
+	if o := c.p.OAuth; o != nil && o.ExchangeScope && !f.PreStep {
+		form.Set("scope", f.oauthScope())
 	}
 	tok, err := c.token(ctx, f.TokenURL, form)
 	if err != nil {
