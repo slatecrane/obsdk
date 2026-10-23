@@ -1,0 +1,32 @@
+{
+  "config": {
+    "bank": "komercnibanka",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-23T10:12:00Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "tpp_name": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "e919647c-5cb8-4d53-82df-dd6d257c6360",
+        "f5922c30-1dfc-480b-888d-b08c70394c4e"
+      ],
+      "state": [
+        "ccc21e23-17ed-4147-9909-a7ab22b7e826"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "connect",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/cb?code=REDACTED%3Acode%3A671fd1\u0026state=ccc21e23-17ed-4147-9909-a7ab22b7e826"
+    }
+  ]
+}

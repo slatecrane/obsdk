@@ -1,0 +1,13 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "ZP5SYNV2XTXJ5FAN",
+      "type": "domestic",
+      "status": "in_progress",
+      "bank_status": "ACSP",
+      "final": false,
+      "ref": "obs1.eyJpIjoia29tZXJjbmliYW5rYS1jYnMiLCJpZCI6IlpQNVNZTlYyWFRYSjVGQU4iLCJ0IjoiZG9tZXN0aWMifQ"
+    }
+  }
+]

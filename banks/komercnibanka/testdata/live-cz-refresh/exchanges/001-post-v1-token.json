@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/oauth2/v1/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026grant_type=refresh_token\u0026redirect_uri=https%3A%2F%2Fwww.example.com%2Fcb\u0026refresh_token=REDACTED%3Arefresh_token%3A205d36"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:933887",
+      "expires_in": 3600,
+      "token_type": "Bearer"
+    }
+  }
+}

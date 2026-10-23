@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/pisp/v2/my/payments/ZDVPZ4IZC19EVDVT/status",
+    "headers": {
+      "Accept": "application/json",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "false"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "instructionStatus": "ACSP"
+    }
+  }
+}

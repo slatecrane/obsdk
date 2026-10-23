@@ -1,0 +1,89 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Komerční banka to log in for the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://api-gateway.kb.cz/sandbox/oauth2-authorization-ui/v3/?client_id=REDACTED%3Aclient_id&redirect_uri=https%3A%2F%2Fwww.example.com%2Fcb&response_type=code&scope=pisp&state=85e454ab-1b8a-4710-bd0e-943ae988cc26"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Komerční banka to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://api.kb.cz/sandbox/authfe/ssologin?SAMLRequest=rVfZkptIFv2VCs0jUWYVggqXJ9hBIHaQ4GWCHST2XXz9ULbb7Z5eomdiXvPePHc5eTPzfP7nWpUvc9IPRVO%2FH%2BBP0OElqaMmLurs%2FeDY%2FCtx%2BOeXz0NQlUj7Rk1jXptJNyXD%2BLJvrIe3b5b3w9TXb00wFMNbHVTJ8DZGbxZ1Ud6QT9Bb2zdjEzXl4YUahqQf91BMUw9TlfRW0s9FlDim8n7Ix7Ed3kAwaIvXPkk%2FPcJP0QYOQR2HzQoGe2xwhsGPgKBlaWBQFsEAPsJoO7ywe0JFHYxfi%2FgJ5w8w0gQchqZssqI%2BvPBNHyVfq3o%2FpEE5JIcXiX0%2FBFhMoEECn5D4TuAFjBwTJE%2BxNCXvBISRu9OgB8NQzMmv24ZhSqR6GIN6fD8gEIK%2FwtArgtow9AYjbzD5CYNh%2F%2FCif%2B8FXdTfevxXjQu%2FOQ1vom3rr7pm2YcX9xeudofDd2bevkbvf6bkr4GDX3g4fKEju20%2FWvDKU%2FYr438Gf4b88rmK37h1TOqPoMP3CFX81%2FBVMgZxMAZ7flwd9c92TOL%2FBPnG0wdN5dCk4wdNjxCMgp3Tr%2FavaSQ%2FNu1Q634w337gsTv%2B93Q%2BDD%2FglmX5tKCfmj4DEQiCQQj7wNs9%2FnF4sZ9t8jccuTKpknr8j5B7FpdkzJv4hSqzpi%2FGvPobWEEywAjxGoXRAfzyOR7e5OQp1WnzPfV4%2BBMMCITID4x4KLJ%2F%2FK74HeS%2FrP3%2FUUs%2FBK%2Fwv44fhXwFY4o2T%2FoPIn6z4AbllHxhUCkgbTxeNx96dEZWh37slc5y4QMmNB5eucZFB7bpRDDDgIaWKl4WV58cOXPQJZcYcysR6t6Hx1UyxllABJFMorsaRQk5MRyLeLHhKczVqTRizVpprDMqDl1NvChj5YGIK7RpX%2FHAzPiZhfgQh9XFUEcB4NxhXt%2BEhb8oveWE%2Bur7jwLuzepEPWO%2Bwt1zpaelb6EaGt1tNRKoRgbh8ObLPM4zRWwMRAVDQ5BKpEjrTgPq82YKAC5IcFitk3ZXw26p7KSGOTdBet1sMhYhB5fDJ98AC6oMW6TDXINqbiBs0jW%2Bj6LvqAWLzyF2giHBqm%2FZ7R7xjgmEVBmB7OViAMpAQJb7NN7fP4O%2Fa%2FVvlr7RAf7uvOxrv56%2Bv0PgVIkwBgkOjajsgI%2BAAevxZonXvMyV1j21U8JJN7rpAlTAU8cYl%2FiKuImQhUji0ORRox%2FJfQCQY7qZSE6fzAGpXFHGPZjsDQLQ9PEkx0yVLrPfZ3fPczfJzEYNgx4aT4SKCR3Xi4%2FciUm3PZbCVTs%2FruJReIgIHoXctvSWUHqe1avyo2JsWaXGbY5Ws6uYdLo6mudkF%2FwU3llAkBf1Gl3vHCU9N%2BkM4KhaLWXR4EtkRKUReXCmHVFDXaxVWYfhSgu1tq6WGBswYdZyrhXULI640buM1bWJb%2FZJw50pArkhKC6kxtz0D2PpbK64bYUzSmccrDHVgCQIgHF%2B4MQA9TFSX0I6aoq7vcHTtEA3WMZa%2FomHpDvK0WanYxB2ewqXY5OYGytji4i3bPvEzi2F5U2bMzL8AMSl7aJzWjIMybhrHR1VLIED28uoCHfjjYibMM2Y3JZ6IjqWPqKLZqag%2BTyA8LLKjGlDCNN4Y%2BQeFbije49rznKtrIsQOTjDMLlMGr1RNwA%2BH5%2BWrZQcfRdPpmD3Yk0aREJtU0fcp%2FXKizefmCFcYyuqLCEKgkxu23Ra7lC5zLkTOpnwUUSM7oQqOp9QyslMF4l3g3GhKUIBtzKfG0Y6jieduJ3YqDEhyoWXWtQNliRcwTGSsiWVewlcnAYDSwSY8VqZ3YHgFiQI0NA7bmmwxSO5LVpsCiHTXN0L7ZP4IpJkP9DmU0BA1xHvKOfZ%2FRrcoVgTeclyTzW86qJIlvwtfkTgYzqzGU6eoLwFgOkcPgsv3fQ5nK8OlkGEjXC1rWgXVgQn9ul5kxk7C%2BY3WjJSgmtpQlzS%2FpJS5YjN18g49fD8uAJUEuuY6gJCh6VAUioPu1A2WI8WA4i46sFMjAGZsHBdgoYAbP9WzRjFECMwNNMEGtf5mI3L9XEME%2BHkV54WVPerDpvPDe%2FwZO238NrY1jFjeJUm924awKkyLZG9eGGiEeesOWeT0cWnXMrLKmkFxWTn9I7Y8KohDdqyOkeB2c3tM0W6AvE1J5rIvKcsdmeF8wRaVcGrrEHep0lOOUTSx%2Fv9TuluxD3hFQaqG%2Budec2Mj6wE3pbn5KWZeNrSqd1mQge5SXbgRZmxtvO79TnCFG8BUUTf8DZYGAKinlqKbCUp2KvfApnUtRk%2FL4HjuMgJmEbSP%2Bey7zUpELZYEIgIYmLgyeNdIGE90CRJVDoBxH6jGwQUmRuqEgQtncNZGbtzbfj02lAlJdtiMl2MFmv1%2FeItHs5tOSu%2BxzaNt0THrcbMqaMNcm8j54lXllIttrQsrpDU2lpIqGvgVd7Ogeb2gFhqF547dkQ3nOWAMiEWNLaBByRAGpzthoOuSWuQZK4Lj4RVMoO13sxrUiJolTl0ERhxdTnNFRBEoQIx67g3PzCGSzEgDowNzdlwyuNIu5fmYqN9dNfBrgrcsBPa0haXe2lm2lVaGgZHL49EWKw70ufpeo6vajMy6LggoSUVq3OR7BxZm9BpY%2F0ZlEcdlc8C%2BNQgzN0fNJpBtDJxMmawuYvgd%2FcnTm7%2Bkpe0FXkZD7mtcSTPvYQoJ%2BRBN5NynqYyFi7FaPGZSRR0NC1U5OaIdx4w2WpCeX02LnRjQeIKaWASk51NusHNxAdJ9SlpFIN09K%2FmVZYEgFBbjZYQucnU9gztJ1qLnTiGgPmipYTy9I45znlOg24M3wKoETvjKfGQlL%2FAxhPfgLGdAKXTgfl%2Bc0e9ti9ipIYsWkOzeb3gqoXOTEBWAIuruMVhGZC2xeW6AuouLG7KPlc2nwHZo1MKJ4iJqOJuMLtPfmEZtAWHe%2BDqWqsgGsRF%2Bzz7JBo9cKOISYraChlRmNlWy5OxCCYdWUt2SZ8mVj5jitRTgFw5VEYD%2BrbFulU6ufQgiMnvr09pHxhlYjVpOLGMEfRQ146qTWH4WNH3yQW5foWezyUWV1fk6RO6X92Ze91oVWZ6%2B8wl0vMShFM45ACIpaRChBDGYMVFEk1y%2F%2BzppW2qASehvbNkVrwN93LaxgVy5AbPYpFeAOlcbk%2FDg7lHDonxHJK22CNJl2xCRVju4xGsqoxjhHFzEMSWe9hicqdosCLrATMPOFdlA83KTotzOwsbsQ8xwbk8ub9bE%2BxQCqNE%2F%2BsH5PviH6iBffU3EuOH2PyuM5P4qz7bBeO4q4EXpqnaoC%2BGDwVUFXVRTdUPFfSzI1PuGsdM0v9JE%2F2pMhmSaNp%2Fy8%2FXMpmTEsR%2BEUt%2FFPnLd%2BOfVPKr%2BWdV%2FeXf&SigAlg=http%3A%2F%2Fwww.w3.org%2F2000%2F09%2Fxmldsig%23rsa-sha1&Signature=aRE44F5jj4fzyXVyjA2zsbzdmIzQiDBe6jk%2BggGvr%2FxHsR8gLAtPLokkS3Ex04ECO5vNAq1K9fCysbIz1hsPbuBtNDMpUsRgZc%2B%2FA5SUtDvh%2BV9dZKzEQUL97OmRxYJWW%2BHrjbOj9jDgizZf8ArYq3QeSBIOmGsbzjxKxClRQlQlHOBihccz4ywGajhab49%2BfcmXxHl6lap2Wq%2FnLTOa1iYxn0Cx6pe8vYdfE4r3caMdw%2FO8T%2FkMlJtRKD%2B0mVlY63xxscGvItjI%2FKqyaaLs1gRcqh2nOBvbXZq9AzMJluiKLRJVcB%2Ft%2FzCzhf3TacifoffmdTHIka3Qt0XZbvHcxw%3D%3D"
+      },
+      "session": {
+        "v": 1,
+        "bank": "komercnibanka",
+        "country": "CZ",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "komercnibanka-cbs",
+        "generation": 1,
+        "updated_at": "2026-10-23T10:12:17Z",
+        "access_token": "REDACTED:access_token:6d24db",
+        "refresh_token": "REDACTED:refresh_token:21132f",
+        "token_type": "Bearer",
+        "scope": "pisp",
+        "access_expires_at": "2026-10-23T11:12:17Z",
+        "meta": {
+          "redirect_uri": "https://www.example.com/cb"
+        }
+      },
+      "payment": {
+        "id": "ZP5SYNV2XTXJ5FAN",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoia29tZXJjbmliYW5rYS1jYnMiLCJpZCI6IlpQNVNZTlYyWFRYSjVGQU4iLCJ0IjoiZG9tZXN0aWMifQ",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "CZ13PSEUDO16F9725CB2"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "komercnibanka",
+        "country": "CZ",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "komercnibanka-cbs",
+        "generation": 1,
+        "updated_at": "2026-10-23T10:12:17Z",
+        "access_token": "REDACTED:access_token:6d24db",
+        "refresh_token": "REDACTED:refresh_token:21132f",
+        "token_type": "Bearer",
+        "scope": "pisp",
+        "access_expires_at": "2026-10-23T11:12:17Z",
+        "meta": {
+          "redirect_uri": "https://www.example.com/cb"
+        }
+      },
+      "payment": {
+        "id": "ZP5SYNV2XTXJ5FAN",
+        "type": "domestic",
+        "status": "in_progress",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoia29tZXJjbmliYW5rYS1jYnMiLCJpZCI6IlpQNVNZTlYyWFRYSjVGQU4iLCJ0IjoiZG9tZXN0aWMifQ"
+      }
+    }
+  }
+]

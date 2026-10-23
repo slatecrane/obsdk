@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/pisp/v2/my/payments/ZDVPZ4IZC19EVDVT/sign/a75d7c15a6b1c961eehaff654819jg",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:4c83c8",
+      "Content-Type": "application/json",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "true"
+    },
+    "body": {
+      "authorizationType": "USERAGENT_REDIRECT",
+      "redirectUrl": "https://www.example.com/cb"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "authorizationType": "USERAGENT_REDIRECT",
+      "href": {
+        "id": "ZDVPZ4IZC19EVDVT",
+        "url": "https://api.kb.cz/sandbox/authfe/ssologin?SAMLRequest=rVfXjttYEv2VhvaRaDOJqeH2glEMoiQGieFlwZyDmMmvX7bt8Xh2AmYX%2B3qr7qlwLurW%2BfzPpSpfpqjrs6Z%2BP8CfoMNLVAdNmNXJ%2B%2BFuCq%2Fk4Z9fPvdeVSLtGz0Oaa1HzzHqh5f9Yt2%2FfbO8H8aufmu8Puvfaq%2BK%2BrcheDNo9fyGfILe2q4ZmqApDy9030fdsIdim7ofq6gzom7Kguiun98P6TC0%2FRsIem322kXxp8L%2FFGxg79Wh3yygt8cGJxj8CAgaxhX0yszrwcIPtsMLtyeU1d7wtYifcP4AI47Avm%2FKJsnqw4vQdEH0tar3Q%2ByVfXR4kbj3g0dgIRHAmIf7cEDhcBSlXhzj2JGEqTzZffqb1%2FfZFP16q%2B%2FHSKr7wauH9wMCIfgrDL0iqAlDbzDyhiCfSJJwDy%2B3761gsvpbi%2F%2Bqb%2F43p%2F5NNM3b6%2B1qmIeXxy9U7Q6H78S8fY3e%2FczIXwN7v9Bw%2BMIEZtt%2BdOBVoM1X1v0M%2Fgz55XMVvvHLENUfQfvvEarwr%2BGraPBCb%2FD2%2FPg66NZ2iML%2FBPlG0wdLZd%2FEwwdLhQ8G3k7pV%2FvXNKIfl3aoZX%2BXbz%2FwuB3%2Fezofhh9w8zx%2FmtFPTZeACATBIHT8wNs9%2FnF4Mdc2%2BhuOfBlVUT38R8g9CzUa0iZ8ocuk6bIhrf4Glhf1MEK%2BBn5wAL98Dvs3JVqlOm6%2Bpx72f4IBgRD1gRH2WfKP3xW%2Fg%2FyXtf8%2Faul67xX%2BF%2FZRyFcwNmvTqPsg4jcHD68coy%2BZfuMYqUFHls5hsT3F02o3NnQZyDG1qNQM4TSzo9xJUP8cRrCBsugoZBuudAGreoTlPTcnLadoSlfYu9WYC%2BGE25WWaELZ9fKQuEEJkQJgCSoYMMKR%2FbHtUtWfyEqEpNQpvMdm3JIu5B82Oumh6d1M221gWyOfUhgk16hXgTut3RCEv5iQX4bT03%2BsmorAd562u8i62MQMbNAzIPSjAdWzYBrieSZgL32GIqOIAA8akTU0zoyCY1e18TUqQi73CNFtTxfIonz8blhCLij%2B9uCM6rGBviyh4tg2aohWaXZunnHMS2QAcCQQRmLKouC8UtiqmRjTzfoR8BJ%2BumSNyslHLvEdV9Te3z%2BDv2v1b46%2B0QH%2B7r3sZ7%2B%2Bvr9D4BVBSs%2Fm%2FGpUpIWxH6Vjw7N0PcElZKzrbaBzCLvaeZn1jUwmNkMWqWA94I2pvYUQOYWtECikIJNs5eHqho8Z0624ZhlRe%2BbDXbNqkbt2ehhuujpJIH0RgAt65E8OjUSOyigom3EPBfOlWBvyu0ItLgedigV7BGatqil0KbiGIKFkzk%2B2CJwltR%2FQInXTwazydU74AHaOq1WBDQXzK7BQRJdWwKYLFtdcahbdg8i0Wz5C4OJcknTt0SWdbB3nOAHj8%2B2OOXKUE5p4n7Z8m8Qj7QJgbx97c9yKQkSym%2Fgw1jNBhDRxOpPUmtfjvNAsFCEC1pH5gGy4du%2B0rZoRuXxS%2BGp6evnQuvPYxVsuKc5MSkI9bqG7rReSM62jvA3793asbpQKOe4jsPjuUR1PwomVCWVO5TljsQAfXal8XLBCD%2FP6aLfIMZOsDC7vDb6qhE9WD9JZKYleLGJv6pOj52WNEp7tcJbvQ6fPAGTQN%2BHBa%2B0WBcfxOiF0Yd3iYFk90QeQYPNTWE4ZR%2BnDxgWFBh5iJYRVOq%2BfJWKqunANRdgWG9lr%2BFTQ7NqvNp7SBVs3VuBED4M%2FluQ1N6nJTpzVtuVZQwhSbUgaLOy%2BFhkNQxDkbONYglvplbx4cp4T9j2W3UwzLvu4QJCaCcio87i8RcZcuRDtJm3rvbg7ckifLxOusu75ZCwOtKzNzE5uYgfW1QgQ7X6nUn2W1mtnksxJwYh7ccsVmG3gq5geezSUKp%2B9EKs1KcvJ51uIkkb0JEgwzUFQZjJ0I3aaYWZBpUYLh1Va6qjuvmDUDJOhk6fdQeHoiGW5yTl9nOssv6TBpX4Mqw9Powa49A0jEJyTlEKm8Y3V5C0sBt9IMIllNMNKS%2F16wU5FkhclJqbYlTRUHLrcnhdTi50O7UM%2B6glQhYcjqjT2pkZkbp68ozWFMkVqzQiI59j3dHKmlvQIPNETNg03A2ix8JpTvJKR%2Fuw3CVla7aaxvWSGV4TyR%2Bb0JPdhySIp4FNlVVwUe4jr0gGfz%2BEpAaX%2FvCbqnBT0wsqtyiCA3l4AQ5jhRwCmQjU7aiSCvYJqaIagUpYILEPtA1W1Y7kArzxeFYI2ucRNaAPP1bxk7SDWebhGdVx9Z80dzIWfTXPyGXf2iIxd%2FL2XoRUh8mwabsZsPpUsumhUlUGen6lfUpVhRshWBAR0L67kiZ8tOS50NR8veXrlY7EtZVrOeeF4wsOwFMTh3pCVda9C1o8knQbS3uIC9OYsMzBhiJ4%2BwhyH7hvGIKcMNXCdiUrr4ptmtNxQFbVmg54MDy4MJnG0x7zMijiZONremlFK5EFJAtTqNqG41pE%2BRqaAEwwXbGfipnQpZJEdMOoguX8FvqK7dEkwS8uDG006YnIOqLYEAv2hXsAjSh1RmD%2B5pjqst1os19g37KAlZXBDOvE8QrlKqSuxUgBJqnE7xusAa2FsOM19iRW8dyaClQI%2BarxjlbR3CasqvcovZRsMkBuRazjPGoh6Euxr1q2T8CrVrnODxzNODe0RvsDZtT%2FFFhiTe89DRU63oh3kG7c%2FxayvCI57IDeZEAZTgJhyW4CwZW7AuT3NAGUvvTRVCWxWK2M9euKE8EXCsdJ6C5kYLnSpLPiCoVjN38cD3kzX9EGhIbOgKjcA4g21ns4ZV8mibI8PA9WN5M6GEfnE50gtgmXbp%2BjRSBrWNlzK0B3qTuDmok8udl8GxHfHibzjy0V5RI2wLddeNVY8CGm3c0k6ZOxaefL5XGh%2BT2wcQBctG3McSatWrgyOdRJXfUBVnFT8Rn9m5nPFSVLHqmQg0kR6buJJEHKvR5LeTyIqDbJY4lpg0rsnxy0hMDhdHKEAk8zJ6WoHgKUKctKXBqgSqav3QYuksmowCB2a%2FeKtBqOTD9fEHwgkPSUVAZG24eWtzY%2BCuE%2BfTtGYAE5PwOK107GjZObEdeNeD2ELrShdfH5doCq9%2Brcne538E7ZvLBganRaETlsRbi7UAsWQR26jMdOYQUi%2BNsaRjLLYMm08LwDGad7Z0PBnTKYTbS%2BVj3RpQ7BoIp6HRVm2%2BX9cIL4f%2FsE2v5%2F%2BRiL80IrfZWIUfpVXu94b9m3%2BhW2q1uv2nWFXMFVWZ9VY%2FVAxPzuy5a5R9Cj%2BnzTNnyqLPgrGfdtdX8toikrw%2BIvY%2BaPIX74b%2F6SSX80%2Fi%2BIv%2FwY%3D\u0026SigAlg=http%3A%2F%2Fwww.w3.org%2F2000%2F09%2Fxmldsig%23rsa-sha1\u0026Signature=NZgKqpLVxRxz9qCfSGunqOQj%2BzOIDHuqTR1RskYrOt1x7WxKmT8HevZEDhxr%2FuhLkG2bHsHv5DUZ79N%2FTQJsVkdkO3jfYURiqwB4AUJknNk7lu%2FWMNAhLlfYNytoYXjRjPBRzubARRcPVA9OgOByPQCBAuRg4I%2F2BdRCC%2FIO%2Ff2Snt0e3L5AbFecqtsVGaC%2FZLoLMR1lOeJa32YiJdvKOIR4ywJmNHxm5iWs8%2BDFe%2B1vgADWeAV0Ox92Y%2BrG68pTMikgoNvL09IUImcnUH3mwOLocIWxlSsTspikJUTa10ZtWyY5CK2%2BhxB28lo1tWqaMOz3z5sIHrrcuOnDrY1UNg%3D%3D"
+      },
+      "instructionStatus": "ACTC",
+      "method": "GET",
+      "signInfo": {
+        "signId": "a75d7c15a6b1c961eehaff654819jg",
+        "state": "OPEN"
+      }
+    }
+  }
+}

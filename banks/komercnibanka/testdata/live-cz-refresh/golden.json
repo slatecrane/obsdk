@@ -1,0 +1,36 @@
+[
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "komercnibanka",
+      "country": "CZ",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "komercnibanka-cbs",
+      "generation": 4,
+      "updated_at": "2026-10-23T10:12:13Z",
+      "access_token": "REDACTED:access_token:933887",
+      "refresh_token": "REDACTED:refresh_token",
+      "token_type": "Bearer",
+      "scope": "aisp",
+      "access_expires_at": "2026-10-23T11:12:13Z",
+      "consents": {
+        "ais": {
+          "id": "",
+          "kind": "ais",
+          "status": "valid",
+          "valid_until": "2027-04-21T10:12:01Z",
+          "accounts": [
+            "CZ92PSEUDOA40436E316",
+            "CZ83PSEUDO2D92D565D3",
+            "CZ13PSEUDO16F9725CB2"
+          ]
+        }
+      },
+      "meta": {
+        "redirect_uri": "https://www.example.com/cb"
+      }
+    }
+  }
+]

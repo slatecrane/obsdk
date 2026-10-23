@@ -1,0 +1,103 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/pisp/v2/my/payments",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:4c83c8",
+      "Content-Type": "application/json",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "true"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 12.50
+        }
+      },
+      "creditor": {
+        "name": "name-8f7a04"
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "currency": "CZK",
+        "identification": {
+          "iban": "CZ13PSEUDO16F9725CB2"
+        }
+      },
+      "paymentIdentification": {
+        "instructionIdentification": "64031766C1514B70B7320DA076401DE1"
+      },
+      "remittanceInformation": {
+        "structured": {
+          "creditorReferenceInformation": {
+            "reference": [
+              "reference-584b9c"
+            ]
+          }
+        },
+        "unstructured": "unstructured-d2b614"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "instructionStatus": "ACTC",
+      "paymentRequest": {
+        "amount": {
+          "instructedAmount": {
+            "currency": "CZK",
+            "value": 12.50
+          }
+        },
+        "creditorAccount": {
+          "identification": {
+            "iban": "CZ27PSEUDOE5A9F4FE1D"
+          }
+        },
+        "debtorAccount": {
+          "currency": "CZK",
+          "identification": {
+            "iban": "CZ13PSEUDO16F9725CB2"
+          }
+        },
+        "paymentIdentification": {
+          "instructionIdentification": "64031766C1514B70B7320DA076401DE1",
+          "transactionIdentification": "ZP5SYNV2XTXJ5FAN"
+        },
+        "paymentTypeInformation": {
+          "instructionPriority": "NORM",
+          "serviceLevel": {
+            "code": "DMCT"
+          }
+        },
+        "remittanceInformation": {
+          "structured": {
+            "creditorReferenceInformation": {
+              "reference": [
+                "reference-584b9c",
+                "reference-97a0ae",
+                "reference-43446d"
+              ]
+            }
+          },
+          "unstructured": "unstructured-d2b614"
+        },
+        "requestedExecutionDate": "2026-10-23"
+      },
+      "signInfo": {
+        "signId": "a4d83ae172dj86i125e2hf4ff9j8049",
+        "state": "OPEN"
+      }
+    }
+  }
+}
