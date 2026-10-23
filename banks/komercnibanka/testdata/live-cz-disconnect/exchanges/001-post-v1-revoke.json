@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/oauth2/v1/revoke",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026token=REDACTED%3Atoken%3A205d36"
+  },
+  "response": {
+    "status": 204
+  }
+}

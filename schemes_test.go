@@ -57,6 +57,11 @@ func TestValidateReference(t *testing.T) {
 		{Reference{ReferenceBE, "123456789003"}, false},
 		{Reference{ReferenceBE, "+++123/4567/89002+++"}, false},
 		{Reference{ReferenceBE, "12345678900"}, false},
+		{Reference{ReferenceCZ, "1234567890"}, true},
+		{Reference{ReferenceCZ, "0012"}, true},
+		{Reference{ReferenceCZ, "12345678901"}, false},
+		{Reference{ReferenceCZ, "VS:123"}, false},
+		{Reference{ReferenceCZ, ""}, false},
 	}
 	for _, tt := range tests {
 		if err := ValidateReference(tt.r); (err == nil) != tt.ok {

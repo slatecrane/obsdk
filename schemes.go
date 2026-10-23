@@ -19,6 +19,7 @@ var (
 	rfRE       = regexp.MustCompile(`^RF[0-9]{2}[A-Z0-9]{1,21}$`)
 	fiRefRE    = regexp.MustCompile(`^[0-9]{4,20}$`)
 	beRefRE    = regexp.MustCompile(`^[0-9]{12}$`)
+	czRefRE    = regexp.MustCompile(`^[0-9]{1,10}$`)
 )
 
 // ValidateIdentifier checks a value against the format and check digits of
@@ -51,6 +52,11 @@ func ValidateReference(r Reference) error {
 		return checkFIReference(r.Value)
 	case ReferenceBE:
 		return checkBEReference(r.Value)
+	case ReferenceCZ:
+		// The variable symbol has no check digit.
+		if !czRefRE.MatchString(r.Value) {
+			return fmt.Errorf("Czech variable symbol must be 1 to 10 digits")
+		}
 	}
 	return nil
 }

@@ -37,6 +37,7 @@ const (
 	ReferenceOCR = "OCR" // Swedish OCR number (Bankgiro / Plusgiro)
 	ReferenceFI  = "FI"  // Finnish creditor reference (viitenumero)
 	ReferenceBE  = "BE"  // Belgian structured communication (OGM-VCS), the 12 digits without +++ and slashes
+	ReferenceCZ  = "CZ"  // Czech variable symbol (variabilní symbol), 1 to 10 digits
 )
 
 // PaymentRequest starts a payment. Which fields a bank needs, accepts or

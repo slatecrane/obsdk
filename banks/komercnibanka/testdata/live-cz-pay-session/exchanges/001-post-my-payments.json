@@ -1,0 +1,89 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/pisp/v2/my/payments",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:4c83c8",
+      "Content-Type": "application/json",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "true"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 1.00
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "currency": "CZK",
+        "identification": {
+          "iban": "CZ13PSEUDO16F9725CB2"
+        }
+      },
+      "paymentIdentification": {
+        "instructionIdentification": "E72A54CEF1684D3B93D4A881D749F728"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "instructionStatus": "ACTC",
+      "paymentRequest": {
+        "amount": {
+          "instructedAmount": {
+            "currency": "CZK",
+            "value": 1.00
+          }
+        },
+        "creditorAccount": {
+          "identification": {
+            "iban": "CZ27PSEUDOE5A9F4FE1D"
+          }
+        },
+        "debtorAccount": {
+          "currency": "CZK",
+          "identification": {
+            "iban": "CZ13PSEUDO16F9725CB2"
+          }
+        },
+        "paymentIdentification": {
+          "instructionIdentification": "E72A54CEF1684D3B93D4A881D749F728",
+          "transactionIdentification": "ZDVPZ4IZC19EVDVT"
+        },
+        "paymentTypeInformation": {
+          "instructionPriority": "NORM",
+          "serviceLevel": {
+            "code": "DMCT"
+          }
+        },
+        "remittanceInformation": {
+          "structured": {
+            "creditorReferenceInformation": {
+              "reference": [
+                "reference-43446d",
+                "reference-74e980",
+                "reference-97a0ae"
+              ]
+            }
+          }
+        },
+        "requestedExecutionDate": "2026-10-23"
+      },
+      "signInfo": {
+        "signId": "a75d7c15a6b1c961eehaff654819jg",
+        "state": "OPEN"
+      }
+    }
+  }
+}

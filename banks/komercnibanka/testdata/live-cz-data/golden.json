@@ -1,0 +1,283 @@
+[
+  {
+    "op": "accounts",
+    "accounts": [
+      {
+        "id": "Y0ZZMlZTM2xmV2krNG1Cbnh0YlBjUWFtc0VFZ3pXbmlRakc0cGhRSThwSmV6eFJjcXJpMVdnZHBNZm92ZUkzTVRKOU9BbHp3RVJNZG1halpNdU1HeWc9PQ",
+        "stable_id": "84056e27e755283d423121dd32f2e103",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "CZ92PSEUDOA40436E316"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "900930427430237"
+          }
+        ],
+        "name": "Sporeni na duchod",
+        "owner_name": "KB",
+        "currency": "CZK",
+        "product": "Sporici ucet/Saving account",
+        "bic": "KOMBCZPPXXX",
+        "raw": {
+          "currency": "CZK",
+          "id": "Y0ZZMlZTM2xmV2krNG1Cbnh0YlBjUWFtc0VFZ3pXbmlRakc0cGhRSThwSmV6eFJjcXJpMVdnZHBNZm92ZUkzTVRKOU9BbHp3RVJNZG1halpNdU1HeWc9PQ",
+          "identification": {
+            "iban": "CZ92PSEUDOA40436E316",
+            "other": "900930427430237"
+          },
+          "nameI18N": "Sporeni na duchod",
+          "ownersNames": [
+            "KB"
+          ],
+          "productI18N": "Sporici ucet/Saving account",
+          "relationship": {
+            "isOwner": true
+          },
+          "servicer": {
+            "bankCode": "0100",
+            "bic": "KOMBCZPPXXX",
+            "countryCode": "CZ"
+          },
+          "suitableScope": {
+            "AISP": "",
+            "CISP": null,
+            "PISP": ""
+          }
+        }
+      },
+      {
+        "id": "S213cDJpN2JnTGxtTVVZRmR1QWxCMXdZckhmRXRKaUZ3YWpneUE0UjF3WkJwNDhTWE96ZWFPL2laUWNjbHBjUXZqNUlDR21QYmtmUUw3QTNPMnl4Nmc9PQ",
+        "stable_id": "1bdc06e1fe5dcac1ef11e714beebbe23",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "CZ83PSEUDO2D92D565D3"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "106895578"
+          }
+        ],
+        "name": "Multimenovy bezak",
+        "owner_name": "KB",
+        "currency": "USD",
+        "product": "Multimenovy ucet NDB/Multicurrency account NDB",
+        "bic": "KOMBCZPPXXX",
+        "raw": {
+          "currency": "USD",
+          "id": "S213cDJpN2JnTGxtTVVZRmR1QWxCMXdZckhmRXRKaUZ3YWpneUE0UjF3WkJwNDhTWE96ZWFPL2laUWNjbHBjUXZqNUlDR21QYmtmUUw3QTNPMnl4Nmc9PQ",
+          "identification": {
+            "iban": "CZ83PSEUDO2D92D565D3",
+            "other": "106895578"
+          },
+          "nameI18N": "Multimenovy bezak",
+          "ownersNames": [
+            "KB"
+          ],
+          "productI18N": "Multimenovy ucet NDB/Multicurrency account NDB",
+          "relationship": {
+            "isOwner": true
+          },
+          "servicer": {
+            "bankCode": "0100",
+            "bic": "KOMBCZPPXXX",
+            "countryCode": "CZ"
+          },
+          "suitableScope": {
+            "AISP": "",
+            "CISP": "",
+            "PISP": ""
+          }
+        }
+      },
+      {
+        "id": "dmFtb3BGTlBuVnYvTDdlUnRsNVRyUDdvVlZCVTRrT3JrQ2dJWUJQUnl3ckwxOHhzbGIxV3I3YnJlZ0JLWlJvMnFkbFhmVXdPOWtLd3ZrZEc2SE5LZXc9PQ",
+        "stable_id": "a8f41a754fa99e17f3692ac0d821a73f",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "CZ83PSEUDO2D92D565D3"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "106895578"
+          }
+        ],
+        "name": "Multimenovy bezak",
+        "owner_name": "KB",
+        "currency": "EUR",
+        "product": "Multimenovy ucet NDB/Multicurrency account NDB",
+        "bic": "KOMBCZPPXXX",
+        "raw": {
+          "currency": "EUR",
+          "id": "dmFtb3BGTlBuVnYvTDdlUnRsNVRyUDdvVlZCVTRrT3JrQ2dJWUJQUnl3ckwxOHhzbGIxV3I3YnJlZ0JLWlJvMnFkbFhmVXdPOWtLd3ZrZEc2SE5LZXc9PQ",
+          "identification": {
+            "iban": "CZ83PSEUDO2D92D565D3",
+            "other": "106895578"
+          },
+          "nameI18N": "Multimenovy bezak",
+          "ownersNames": [
+            "KB"
+          ],
+          "productI18N": "Multimenovy ucet NDB/Multicurrency account NDB",
+          "relationship": {
+            "isOwner": true
+          },
+          "servicer": {
+            "bankCode": "0100",
+            "bic": "KOMBCZPPXXX",
+            "countryCode": "CZ"
+          },
+          "suitableScope": {
+            "AISP": "",
+            "CISP": "",
+            "PISP": ""
+          }
+        }
+      },
+      {
+        "id": "R1NLektOMHhUVWkveWJtOXhWUkF0UFZuNTU4R2dGQUlZNXJnVVpSU1dwVzN6L3dqQ2FpYTJQR2RGdzZGYmVDbTkvSHRyU0RCY0RTaCt0TityaFl0NUE9PQ",
+        "stable_id": "ca01929a43e67a8286047f6e4d393e99",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "CZ83PSEUDO2D92D565D3"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "106895578"
+          }
+        ],
+        "name": "Multimenovy bezak",
+        "owner_name": "KB",
+        "currency": "CZK",
+        "product": "Multimenovy ucet NDB/Multicurrency account NDB",
+        "bic": "KOMBCZPPXXX",
+        "raw": {
+          "currency": "CZK",
+          "id": "R1NLektOMHhUVWkveWJtOXhWUkF0UFZuNTU4R2dGQUlZNXJnVVpSU1dwVzN6L3dqQ2FpYTJQR2RGdzZGYmVDbTkvSHRyU0RCY0RTaCt0TityaFl0NUE9PQ",
+          "identification": {
+            "iban": "CZ83PSEUDO2D92D565D3",
+            "other": "106895578"
+          },
+          "nameI18N": "Multimenovy bezak",
+          "ownersNames": [
+            "KB"
+          ],
+          "productI18N": "Multimenovy ucet NDB/Multicurrency account NDB",
+          "relationship": {
+            "isOwner": true
+          },
+          "servicer": {
+            "bankCode": "0100",
+            "bic": "KOMBCZPPXXX",
+            "countryCode": "CZ"
+          },
+          "suitableScope": {
+            "AISP": "",
+            "CISP": "",
+            "PISP": ""
+          }
+        }
+      },
+      {
+        "id": "RnpxV0libDI5c0d0VTE2Q3BTV0xOTWF0aHBXVEM1NEVGQXRGK2lZazhXZm5nUkRuR3gyK3FhcXpYQ0hUQnEvUWg5K3djWUwwV3pJZWdSZ3EzRjFqRHc9PQ",
+        "stable_id": "a49f7b98f21492de0f3c25587d16c015",
+        "identifiers": [
+          {
+            "scheme": "IBAN",
+            "value": "CZ13PSEUDO16F9725CB2"
+          },
+          {
+            "scheme": "BBAN",
+            "value": "900930427310227"
+          }
+        ],
+        "owner_name": "KB",
+        "currency": "CZK",
+        "product": "Bezny ucet NDB/Current account",
+        "bic": "KOMBCZPPXXX",
+        "raw": {
+          "currency": "CZK",
+          "id": "RnpxV0libDI5c0d0VTE2Q3BTV0xOTWF0aHBXVEM1NEVGQXRGK2lZazhXZm5nUkRuR3gyK3FhcXpYQ0hUQnEvUWg5K3djWUwwV3pJZWdSZ3EzRjFqRHc9PQ",
+          "identification": {
+            "iban": "CZ13PSEUDO16F9725CB2",
+            "other": "900930427310227"
+          },
+          "nameI18N": null,
+          "ownersNames": [
+            "KB"
+          ],
+          "productI18N": "Bezny ucet NDB/Current account",
+          "relationship": {
+            "isOwner": true
+          },
+          "servicer": {
+            "bankCode": "0100",
+            "bic": "KOMBCZPPXXX",
+            "countryCode": "CZ"
+          },
+          "suitableScope": {
+            "AISP": "",
+            "CISP": "",
+            "PISP": ""
+          }
+        }
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "CLAV",
+        "amount": {
+          "amount": "443.95",
+          "currency": "CZK"
+        },
+        "reference_date": "2026-10-23"
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "PRCD",
+        "amount": {
+          "amount": "443.95",
+          "currency": "CZK"
+        },
+        "reference_date": "2026-10-23"
+      }
+    ]
+  },
+  {
+    "op": "balances",
+    "balances": [
+      {
+        "kind": "interim_available",
+        "bank_type": "CLAV",
+        "amount": {
+          "amount": "150.45",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-23"
+      },
+      {
+        "kind": "interim_booked",
+        "bank_type": "PRCD",
+        "amount": {
+          "amount": "150.45",
+          "currency": "EUR"
+        },
+        "reference_date": "2026-10-23"
+      }
+    ]
+  },
+  {
+    "op": "transactions",
+    "transactions": {
+      "transactions": []
+    }
+  }
+]

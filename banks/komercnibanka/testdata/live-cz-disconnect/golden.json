@@ -1,0 +1,25 @@
+[
+  {
+    "op": "disconnect",
+    "session": {
+      "v": 1,
+      "bank": "komercnibanka",
+      "country": "CZ",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "komercnibanka-cbs",
+      "generation": 5,
+      "updated_at": "2026-10-23T10:12:15Z",
+      "token_type": "Bearer",
+      "scope": "aisp",
+      "meta": {
+        "redirect_uri": "https://www.example.com/cb"
+      }
+    },
+    "disconnect": {
+      "closed": [
+        "ais"
+      ]
+    }
+  }
+]

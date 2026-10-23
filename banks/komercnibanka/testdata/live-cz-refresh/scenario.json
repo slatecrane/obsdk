@@ -1,0 +1,22 @@
+{
+  "config": {
+    "bank": "komercnibanka",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-23T10:12:13Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "tpp_name": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "a9c91daf-6d0d-43e2-b816-632363155539"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "refresh"
+    }
+  ]
+}

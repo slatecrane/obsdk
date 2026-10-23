@@ -1,0 +1,66 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/aisp/v2/my/accounts/Qy9KSS8wTUJQU2luU24ySkRFNEZWZjFNZWtVbFY4aXRrcEZaZllyNVZ6Z1JFVHdEYTcvWWVyTHlJdjJHU3NoUEdIWWRSZmMzamIvbXdhOWxOVnpGTVE9PQ/balance",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:1b552d",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "true"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "balances": [
+        {
+          "amount": {
+            "currency": "EUR",
+            "value": 150.45
+          },
+          "creditDebitIndicator": "CRDT",
+          "creditLine": {
+            "amount": {
+              "currency": "CZK",
+              "value": 0.0
+            },
+            "included": false
+          },
+          "date": {
+            "dateTime": "2026-10-23T12:12:09.47+02:00"
+          },
+          "type": {
+            "codeOrProprietary": {
+              "code": "CLAV"
+            }
+          }
+        },
+        {
+          "amount": {
+            "currency": "EUR",
+            "value": 150.45
+          },
+          "creditDebitIndicator": "CRDT",
+          "creditLine": {
+            "amount": {
+              "currency": "CZK",
+              "value": 0.0
+            },
+            "included": false
+          },
+          "date": {
+            "dateTime": "2026-10-23T12:12:09.47+02:00"
+          },
+          "type": {
+            "codeOrProprietary": {
+              "code": "PRCD"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

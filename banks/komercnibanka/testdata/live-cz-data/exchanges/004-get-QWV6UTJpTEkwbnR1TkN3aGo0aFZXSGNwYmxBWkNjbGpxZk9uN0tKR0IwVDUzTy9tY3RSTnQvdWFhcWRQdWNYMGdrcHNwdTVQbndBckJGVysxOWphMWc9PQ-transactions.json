@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/aisp/v2/my/accounts/QWV6UTJpTEkwbnR1TkN3aGo0aFZXSGNwYmxBWkNjbGpxZk9uN0tKR0IwVDUzTy9tY3RSTnQvdWFhcWRQdWNYMGdrcHNwdTVQbndBckJGVysxOWphMWc9PQ/transactions",
+    "query": {
+      "fromDate": [
+        "2026-07-01"
+      ],
+      "toDate": [
+        "2026-10-23"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:1b552d",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "true"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "nextPage": null,
+      "pageCount": 0,
+      "pageNumber": 0,
+      "pageSize": 100,
+      "totalCount": 0,
+      "transactions": []
+    }
+  }
+}

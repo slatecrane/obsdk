@@ -15,6 +15,7 @@ import (
 	_ "github.com/slatecrane/obsdk/banks/hsbc"
 	_ "github.com/slatecrane/obsdk/banks/ing"
 	_ "github.com/slatecrane/obsdk/banks/kbc"
+	_ "github.com/slatecrane/obsdk/banks/komercnibanka"
 	_ "github.com/slatecrane/obsdk/banks/luxhub"
 	_ "github.com/slatecrane/obsdk/banks/nordea"
 	_ "github.com/slatecrane/obsdk/banks/op"
