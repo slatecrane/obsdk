@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/csas/sandbox/v1/sandbox-idp/revokeext",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "token=REDACTED%3Atoken%3Af3f24c"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "at0HpXHmS8WwoOY0ndiEUgAAAIs"
+    },
+    "body": 200
+  }
+}

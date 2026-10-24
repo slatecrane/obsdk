@@ -1,0 +1,138 @@
+[
+  {
+    "op": "connect",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Česká spořitelna to log in and grant access, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://webapi.developers.erstegroup.com/api/csas/sandbox/v1/sandbox-idp/auth?access_type=offline&client_id=REDACTED%3Aclient_id&redirect_uri=https%3A%2F%2Fwww.example.com%2Fcb&response_type=code&scope=AISP&state=5e02045a-ebd3-4198-b593-dfea6d35249d"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "ceskasporitelna",
+        "country": "CZ",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "ceskasporitelna-cbs",
+        "generation": 3,
+        "updated_at": "2026-10-24T19:30:59Z",
+        "access_token": "REDACTED:access_token:ae15a2",
+        "refresh_token": "REDACTED:refresh_token:f3f24c",
+        "token_type": "bearer",
+        "scope": "AISP",
+        "access_expires_at": "2026-10-24T19:35:59Z",
+        "refresh_expires_at": "2027-04-22T19:30:59Z",
+        "consents": {
+          "ais": {
+            "id": "",
+            "kind": "ais",
+            "status": "valid",
+            "valid_until": "2027-04-22T19:30:59Z",
+            "accounts": [
+              "CZ79PSEUDO552303C62D",
+              "CZ40PSEUDO80AFB89AE5"
+            ]
+          }
+        }
+      },
+      "accounts": [
+        {
+          "id": "AA195E7DB499B4D9F48D46C208625FF53F2245F7",
+          "stable_id": "9f0e1d1fe17845564a37d3ac1edfc752",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "CZ79PSEUDO552303C62D"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "0259459101/0800"
+            }
+          ],
+          "name": "Jiří Spokojený",
+          "owner_name": "Jiří Spokojený",
+          "currency": "CZK",
+          "product": "Osobní účet ČS II",
+          "bic": "GIBACZPX",
+          "raw": {
+            "currency": "CZK",
+            "id": "AA195E7DB499B4D9F48D46C208625FF53F2245F7",
+            "identification": {
+              "iban": "CZ79PSEUDO552303C62D",
+              "other": "0259459101/0800"
+            },
+            "nameI18N": "Jiří Spokojený",
+            "ownersNames": [
+              "Jiří Spokojený"
+            ],
+            "productI18N": "Osobní účet ČS II",
+            "relationship": {
+              "isOwner": true
+            },
+            "servicer": {
+              "bankCode": "0800",
+              "bic": "GIBACZPX",
+              "countryCode": "CZ"
+            },
+            "suitableScope": {
+              "AISP": "",
+              "PISP": ""
+            }
+          }
+        },
+        {
+          "id": "DEBCD8673D9A3F3EF3EFE4B799053FD49D2FF59F",
+          "stable_id": "79589f455cf4ebcfe838f22b43ba149f",
+          "identifiers": [
+            {
+              "scheme": "IBAN",
+              "value": "CZ40PSEUDO80AFB89AE5"
+            },
+            {
+              "scheme": "BBAN",
+              "value": "0782553098/0800"
+            }
+          ],
+          "name": "Jiří SPokojený - CM",
+          "owner_name": "Jiří Spokojený",
+          "currency": "CZK",
+          "product": "Cizoměnový účet",
+          "bic": "GIBACZPX",
+          "raw": {
+            "currency": "CZK",
+            "id": "DEBCD8673D9A3F3EF3EFE4B799053FD49D2FF59F",
+            "identification": {
+              "iban": "CZ40PSEUDO80AFB89AE5",
+              "other": "0782553098/0800"
+            },
+            "nameI18N": "Jiří SPokojený - CM",
+            "ownersNames": [
+              "Jiří Spokojený"
+            ],
+            "productI18N": "Cizoměnový účet",
+            "relationship": {
+              "isOwner": false
+            },
+            "servicer": {
+              "bankCode": "0800",
+              "bic": "GIBACZPX",
+              "countryCode": "CZ"
+            },
+            "suitableScope": {
+              "AISP": ""
+            }
+          }
+        }
+      ]
+    }
+  }
+]

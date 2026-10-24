@@ -5,8 +5,9 @@ Société Générale group) implements the Czech Banking Association's open bank
 Standard", COBS): OAuth2 login with scope `aisp` or `pisp`, then account information and payment initiation, with
 KB's deviations from the standard listed in its manuals. Nothing is signed; every call is mutual TLS.
 
-This is the SDK's first ČBS bank. Other Czech banks (Česká spořitelna, ČSOB, Moneta, …) publish ČBS APIs too, each
-with its own deviations; if one is added, the shared parts can move into an adapter like `internal/berlingroup`.
+The ČBS data model (accounts, balances, transactions, paging, payment status codes, error bodies) lives in
+[internal/cbs](../internal/cbs/cbs.go), shared with [Česká spořitelna](ceskasporitelna.md); login, headers, payment
+bodies and signing stay here. Moneta follows ČOBS v7 too, but its sandbox needs a licence; ČSOB has no public portal.
 
 Sources (read 2026-10-23): KB's developer portal [developers.kb.cz](https://developers.kb.cz) (an SPA; each service's
 OpenAPI file and guide links are served base64-encoded at `https://developers.kb.cz/api/apis/<code>`, e.g.

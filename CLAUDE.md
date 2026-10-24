@@ -59,6 +59,9 @@ defined in [obsdktest/live.go](obsdktest/live.go).
   request object, AIS, payment consent/submit/status/cancel), configured by an `obie.Profile`. Used by
   `banks/crosskey` (one profile per store); `revolut` and `hsbc` still have their own copies. See
   [docs/crosskey.md](docs/crosskey.md).
+- **Czech ČBS model:** [internal/cbs](internal/cbs/cbs.go) reads the Czech Banking Association standard's accounts,
+  balances, transactions, paging, payment status codes and errors. `banks/komercnibanka` and `banks/ceskasporitelna`
+  use it and keep their own login, headers, payment bodies and signing (they differ too much for a profile).
 - **Bank package layout:** `<bank>.go` (registration, `Info`, client construction), `flow.go`, `ais.go`,
   `payment.go`, `http.go` (request helper + error mapping), tests, `testdata/` scenarios,
   `sandbox.env.example`. Swedbank also splits out `consent.go`, `sca.go`, `token.go`, `statement.go`.

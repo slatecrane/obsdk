@@ -1,0 +1,116 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/csas/sandbox/v4/payment-initiation/my/payments",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:858ff3",
+      "Content-Type": "application/json",
+      "User-Involved": "true",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "EUR",
+          "value": 3.20
+        }
+      },
+      "chargeBearer": "SHA",
+      "creditor": {
+        "name": "name-f47bf2",
+        "postalAddress": {
+          "country": "DE"
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "DE59PSEUDO1360B051B8"
+        }
+      },
+      "debtorAccount": {
+        "identification": {
+          "iban": "CZ79PSEUDO552303C62D"
+        }
+      },
+      "paymentIdentification": {
+        "instructionIdentification": "9ED58617501D44BFAB681C36C5CF00C5"
+      },
+      "paymentTypeInformation": {
+        "instructionPriority": "NORM"
+      },
+      "remittanceInformation": {
+        "unstructured": "unstructured-57f37b"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "72dda32a-4891-449f-b1a8-1ca469e33c51"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "EUR",
+          "value": 1
+        }
+      },
+      "chargeBearer": "SHA",
+      "creditor": {
+        "name": "name-c7ae18",
+        "postalAddress": {
+          "buildingNumber": "20",
+          "country": "SK",
+          "postCode": "1030",
+          "streetName": "Reisnerstraße",
+          "townName": "Wiena"
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "SK71PSEUDOA99FC44B61"
+        }
+      },
+      "creditorAgent": {
+        "financialInstitutionIdentification": {
+          "bic": "CEKOSKBXXXX",
+          "name": "name-304c04",
+          "postalAddress": {
+            "country": "SK",
+            "postCode": "811 02",
+            "streetName": "ZIZKOVA 11",
+            "townName": "BRATISLAVA"
+          }
+        }
+      },
+      "debtorAccount": {
+        "identification": {
+          "iban": "CZ48PSEUDO2C7E848FA9"
+        }
+      },
+      "instructionStatus": "ACTC",
+      "paymentIdentification": {
+        "endToEndIdentification": "123456789",
+        "instructionIdentification": "TPP1234567890",
+        "transactionIdentification": "TPPBY2NCA2YU8"
+      },
+      "paymentTypeInformation": {
+        "instructionPriority": "HIGH",
+        "serviceLevel": {
+          "code": "SEPA"
+        }
+      },
+      "remittanceInformation": {
+        "unstructured": "unstructured-303c28"
+      },
+      "requestedExecutionDate": "2022-01-05",
+      "signInfo": {
+        "hash": "42565e88b64373c6e531eb495bcd0a80605b45b2a63d75ad554beb294c0b921f",
+        "signId": "11301000694670",
+        "state": "OPEN"
+      }
+    }
+  }
+}

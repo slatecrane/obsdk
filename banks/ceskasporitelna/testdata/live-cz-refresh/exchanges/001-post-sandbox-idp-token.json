@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/csas/sandbox/v1/sandbox-idp/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026client_secret=REDACTED%3Aclient_secret\u0026grant_type=refresh_token\u0026refresh_token=REDACTED%3Arefresh_token%3Af3f24c"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "at0Hpbn1c-2s1noRvxeO3wAAANg"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:ba83f3",
+      "expires_in": 300,
+      "scope": "AISP",
+      "token_type": "bearer"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "config": {
+    "bank": "ceskasporitelna",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-24T19:32:22Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:627540"
+    },
+    "ids": {
+      "request": [
+        "eb4c2800-e020-4119-ad88-0d5879e431a9"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoiY2Vza2FzcG9yaXRlbG5hLWNicyIsImlkIjoiVFBQNURXUEROMkpFVyIsInMiOiIxOTEyMDE2NjQ5MTE4MzYiLCJ0IjoiZG9tZXN0aWMifQ",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

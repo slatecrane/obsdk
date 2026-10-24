@@ -1,0 +1,63 @@
+{
+  "config": {
+    "bank": "ceskasporitelna",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-24T19:33:02Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:627540"
+    },
+    "ids": {
+      "request": [
+        "9ed58617-501d-44bf-ab68-1c36c5cf00c5",
+        "72dda32a-4891-449f-b1a8-1ca469e33c51",
+        "db04b310-8003-4ab9-b5a5-e09f432a4f69",
+        "8f958cdb-dd36-47e6-88d4-5c8f6bf43b0a",
+        "42be0c0b-2667-4261-9a75-7b6c43fa6ddf"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "CZ79PSEUDO552303C62D"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "3.20",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-f47bf2",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE59PSEUDO1360B051B8"
+              },
+              "address": {
+                "country": "DE"
+              }
+            },
+            "remittance": [
+              "obsdk sepa test"
+            ]
+          }
+        ],
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/cb"
+    }
+  ]
+}

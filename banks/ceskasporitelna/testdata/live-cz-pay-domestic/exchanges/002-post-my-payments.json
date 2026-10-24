@@ -1,0 +1,101 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/csas/sandbox/v4/payment-initiation/my/payments",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:858ff3",
+      "Content-Type": "application/json",
+      "User-Involved": "true",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 12.50
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "identification": {
+          "iban": "CZ79PSEUDO552303C62D"
+        }
+      },
+      "paymentIdentification": {
+        "instructionIdentification": "1BD18810490843F2827F420D4C6431DB"
+      },
+      "paymentTypeInformation": {
+        "instructionPriority": "NORM"
+      },
+      "remittanceInformation": {
+        "structured": {
+          "creditorReferenceInformation": {
+            "reference": [
+              "reference-e6e411"
+            ]
+          }
+        },
+        "unstructured": "unstructured-d2b614"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "1b7edc45-bce3-49ca-9e96-52cb75f8954c"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 1
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ20PSEUDO065460907B"
+        }
+      },
+      "debtorAccount": {
+        "identification": {
+          "iban": "CZ04PSEUDOB4D0A586D9"
+        }
+      },
+      "instructionStatus": "ACTC",
+      "paymentIdentification": {
+        "instructionIdentification": "b7fe5e93-942a-4a82-87f0-7c509581ba1",
+        "transactionIdentification": "TPP5DWPDN2JEW"
+      },
+      "paymentTypeInformation": {
+        "instructionPriority": "NORM",
+        "serviceLevel": {
+          "code": "DOMESTIC"
+        }
+      },
+      "remittanceInformation": {
+        "structured": {
+          "creditorReferenceInformation": {
+            "reference": [
+              "reference-0b6864",
+              "reference-cfd2e6",
+              "reference-a41d80"
+            ]
+          }
+        },
+        "unstructured": "unstructured-d808c2"
+      },
+      "requestedExecutionDate": "2019-12-01",
+      "signInfo": {
+        "hash": "a4a2d9efc69395a21d765ceccdc0e79530e779c2a84216080e99f373f356d559",
+        "signId": "191201664911836",
+        "state": "OPEN"
+      }
+    }
+  }
+}
