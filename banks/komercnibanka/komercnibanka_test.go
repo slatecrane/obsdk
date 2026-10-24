@@ -2,7 +2,6 @@ package komercnibanka
 
 import (
 	"context"
-	"encoding/json"
 	"errors"
 	"io"
 	"net/http"
@@ -115,42 +114,6 @@ func TestConnectCallbackErrors(t *testing.T) {
 	}
 }
 
-func TestAmount(t *testing.T) {
-	for _, tc := range []struct {
-		n, ind, want string
-		dir          obsdk.Direction
-	}{
-		{"443.95", "CRDT", "443.95", obsdk.Credit},
-		{"0.59", "DBIT", "-0.59", obsdk.Debit},
-		{"250", "DBIT", "-250", obsdk.Debit},
-		{"-2.5", "", "-2.5", obsdk.Debit},
-		{"1E+2", "CRDT", "100.00", obsdk.Credit},
-	} {
-		got, dir := amount(json.Number(tc.n), tc.ind)
-		if string(got) != tc.want || dir != tc.dir {
-			t.Errorf("amount(%s, %s) = %s %s, want %s %s", tc.n, tc.ind, got, dir, tc.want, tc.dir)
-		}
-	}
-}
-
-func TestPageNext(t *testing.T) {
-	n := func(i int) *int { return &i }
-	for _, tc := range []struct {
-		p    page
-		want int
-		ok   bool
-	}{
-		{page{PageNumber: 0, PageCount: 1, NextPage: n(0)}, 0, false}, // KB's last page of the account list
-		{page{PageNumber: 0, PageCount: 0}, 0, false},
-		{page{PageNumber: 5, PageCount: 7, NextPage: n(6)}, 6, true},
-	} {
-		got, ok := tc.p.next()
-		if got != tc.want || ok != tc.ok {
-			t.Errorf("%+v: got %d %t", tc.p, got, ok)
-		}
-	}
-}
-
 func TestErrorMapping(t *testing.T) {
 	c := newTestClient(t, nil)
 	r := func(status int, body string) *resp {
@@ -187,22 +150,6 @@ const domesticTx = `{"entryReference":"357-12032019 1602 602033 935171","amount"
 "relatedAgents":{"creditorAgent":{"financialInstitutionIdentification":{"bic":"CEKOCZPPXXX"}}},
 "remittanceInformation":{"unstructured":"Poznámka pro příjemce","structured":{"creditorReferenceInformation":{"reference":["VS:3451859072","KS:0","SS:0"]}}},
 "additionalTransactionInformation":"Platba na vrub vašeho účtu"}}}`
-
-func TestToTransaction(t *testing.T) {
-	tx, err := toTransaction(json.RawMessage(domesticTx))
-	if err != nil {
-		t.Fatal(err)
-	}
-	if tx.Amount.Amount != "-1.23" || tx.Direction != obsdk.Debit || tx.Status != obsdk.TxBooked || tx.BookingDate != "2019-03-12" ||
-		tx.BankCode != "10000101008" || tx.BankCodeText != "Platba na vrub vašeho účtu" || tx.ReferenceNumber != "3451859072" ||
-		tx.ID != "357-12032019 1602 602033 935171" || len(tx.Remittance) != 1 ||
-		len(tx.Counterparty.Identifiers) != 1 || tx.Counterparty.Identifiers[0].Value != "CZ3203000000000001111132" {
-		t.Fatalf("got %+v", tx)
-	}
-	if variableSymbol([]string{"VS:0", "KS:0"}) != "" {
-		t.Fatal("a zero VS is no VS")
-	}
-}
 
 func TestTransactionsFilterAndCursor(t *testing.T) {
 	pending := strings.Replace(domesticTx, `"BOOK"`, `"PDNG"`, 1)

@@ -1,0 +1,47 @@
+{
+  "config": {
+    "bank": "ceskasporitelna",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-24T19:31:02Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:627540"
+    },
+    "ids": {
+      "request": [
+        "c466a9a4-da75-4a67-9a91-5c58c106a2a3",
+        "0a5d5acb-7cf2-4ff2-8d9d-40520dd1a611",
+        "966c98c9-aaea-4755-b2c5-cf1b79acd6dd",
+        "303b0ad4-fb4c-4811-94ac-09ec2beb636b"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "accounts",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "AA195E7DB499B4D9F48D46C208625FF53F2245F7",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "balances",
+      "account": "DEBCD8673D9A3F3EF3EFE4B799053FD49D2FF59F",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "transactions",
+      "account": "AA195E7DB499B4D9F48D46C208625FF53F2245F7",
+      "from": "2017-01-01T00:00:00Z",
+      "to": "2026-10-24T00:00:00Z",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}

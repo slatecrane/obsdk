@@ -1,0 +1,14 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "TPP5DWPDN2JEW",
+      "type": "domestic",
+      "status": "received",
+      "bank_status": "ACTC",
+      "final": false,
+      "reason": "INSUFFICIENT_FUNDS",
+      "ref": "obs1.eyJpIjoiY2Vza2FzcG9yaXRlbG5hLWNicyIsImlkIjoiVFBQNURXUEROMkpFVyIsInMiOiIxOTEyMDE2NjQ5MTE4MzYiLCJ0IjoiZG9tZXN0aWMifQ"
+    }
+  }
+]

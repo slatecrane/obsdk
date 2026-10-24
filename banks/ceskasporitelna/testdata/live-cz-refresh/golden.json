@@ -1,0 +1,33 @@
+[
+  {
+    "op": "refresh",
+    "session": {
+      "v": 1,
+      "bank": "ceskasporitelna",
+      "country": "CZ",
+      "segment": "personal",
+      "env": "sandbox",
+      "integration": "ceskasporitelna-cbs",
+      "generation": 4,
+      "updated_at": "2026-10-24T19:31:49Z",
+      "access_token": "REDACTED:access_token:ba83f3",
+      "refresh_token": "REDACTED:refresh_token",
+      "token_type": "bearer",
+      "scope": "AISP",
+      "access_expires_at": "2026-10-24T19:36:49Z",
+      "refresh_expires_at": "2027-04-22T19:31:01Z",
+      "consents": {
+        "ais": {
+          "id": "",
+          "kind": "ais",
+          "status": "valid",
+          "valid_until": "2027-04-22T19:31:01Z",
+          "accounts": [
+            "CZ79PSEUDO552303C62D",
+            "CZ40PSEUDO80AFB89AE5"
+          ]
+        }
+      }
+    }
+  }
+]

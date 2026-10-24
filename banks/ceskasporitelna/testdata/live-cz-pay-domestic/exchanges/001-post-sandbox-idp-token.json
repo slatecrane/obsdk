@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/csas/sandbox/v1/sandbox-idp/token",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body_text": "client_id=REDACTED%3Aclient_id\u0026client_secret=REDACTED%3Aclient_secret\u0026code=REDACTED%3Acode%3A170df7\u0026grant_type=authorization_code\u0026redirect_uri=https%3A%2F%2Fwww.example.com%2Fcb"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "at0HsCkedBXFFPS1HTpxTQAAAQ8"
+    },
+    "body": {
+      "access_token": "REDACTED:access_token:31db52",
+      "expires_in": 300,
+      "refresh_token": "REDACTED:refresh_token:8d4b4e",
+      "scope": "PISP",
+      "token_type": "bearer"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Česká spořitelna to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://webapi.developers.erstegroup.com/api/csas/sandbox/v1/sandbox-idp/sign"
+      },
+      "session": {
+        "v": 1,
+        "bank": "ceskasporitelna",
+        "country": "CZ",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "ceskasporitelna-cbs",
+        "generation": 1,
+        "updated_at": "2026-10-24T19:32:00.580203Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "bearer",
+        "scope": "PISP",
+        "access_expires_at": "2026-10-24T19:37:00.580203Z",
+        "refresh_expires_at": "2027-04-22T19:32:00Z"
+      },
+      "payment": {
+        "id": "TPP5DWPDN2JEW",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoiY2Vza2FzcG9yaXRlbG5hLWNicyIsImlkIjoiVFBQNURXUEROMkpFVyIsInMiOiIxOTEyMDE2NjQ5MTE4MzYiLCJ0IjoiZG9tZXN0aWMifQ",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "CZ04PSEUDOB4D0A586D9"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "ceskasporitelna",
+        "country": "CZ",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "ceskasporitelna-cbs",
+        "generation": 1,
+        "updated_at": "2026-10-24T19:32:00.580203Z",
+        "access_token": "REDACTED:access_token",
+        "refresh_token": "REDACTED:refresh_token",
+        "token_type": "bearer",
+        "scope": "PISP",
+        "access_expires_at": "2026-10-24T19:37:00.580203Z",
+        "refresh_expires_at": "2027-04-22T19:32:00Z"
+      },
+      "payment": {
+        "id": "TPP5DWPDN2JEW",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "reason": "INSUFFICIENT_FUNDS",
+        "ref": "obs1.eyJpIjoiY2Vza2FzcG9yaXRlbG5hLWNicyIsImlkIjoiVFBQNURXUEROMkpFVyIsInMiOiIxOTEyMDE2NjQ5MTE4MzYiLCJ0IjoiZG9tZXN0aWMifQ"
+      }
+    }
+  }
+]

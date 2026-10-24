@@ -9,6 +9,7 @@ import (
 	_ "github.com/slatecrane/obsdk/banks/bankart"
 	_ "github.com/slatecrane/obsdk/banks/bnpparibasfortis"
 	_ "github.com/slatecrane/obsdk/banks/bunq"
+	_ "github.com/slatecrane/obsdk/banks/ceskasporitelna"
 	_ "github.com/slatecrane/obsdk/banks/cooppank"
 	_ "github.com/slatecrane/obsdk/banks/crosskey"
 	_ "github.com/slatecrane/obsdk/banks/handelsbanken"

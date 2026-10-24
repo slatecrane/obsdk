@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/csas/sandbox/v4/payment-initiation/my/payments/191201664911836/status",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:858ff3",
+      "User-Involved": "false",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "8e98f737-4a3b-4f98-b01f-50ab630db77f"
+    },
+    "body": {
+      "instructionStatus": "ACTC",
+      "statusChangeInfo": "INSUFFICIENT_FUNDS"
+    }
+  }
+}

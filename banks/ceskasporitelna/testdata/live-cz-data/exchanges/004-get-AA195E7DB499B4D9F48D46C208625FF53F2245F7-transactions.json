@@ -1,0 +1,607 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/csas/sandbox/v4/account-information/my/accounts/AA195E7DB499B4D9F48D46C208625FF53F2245F7/transactions",
+    "query": {
+      "fromDate": [
+        "2017-01-01"
+      ],
+      "toDate": [
+        "2026-10-24"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:f986eb",
+      "User-Involved": "true",
+      "User-Ip-Address": "203.0.113.7",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "303b0ad4-fb4c-4811-94ac-09ec2beb636b"
+    },
+    "body": {
+      "pageCount": 1,
+      "pageNumber": 0,
+      "pageSize": 10,
+      "transactions": [
+        {
+          "amount": {
+            "currency": "CZK",
+            "value": 10000
+          },
+          "bankTransactionCode": {
+            "proprietary": {
+              "code": 1.0000101E10,
+              "issuer": "Czech Banking Association"
+            }
+          },
+          "bookingDate": {
+            "date": "2017-01-31"
+          },
+          "creditDebitIndicator": "DBIT",
+          "entryDetails": {
+            "transactionDetails": {
+              "additionalRemittanceInformation": "na motorku",
+              "additionalTransactionInformation": "Domácí platba - S24/IB",
+              "amountDetails": {
+                "counterValueAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 10000
+                  },
+                  "currencyExchange": {
+                    "sourceCurrency": "CZK",
+                    "targetCurrency": "CZK"
+                  }
+                },
+                "instructedAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 10000
+                  }
+                }
+              },
+              "references": {
+                "accountServicerReference": "0622510833568"
+              },
+              "relatedAgents": {
+                "creditorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                },
+                "debtorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                }
+              },
+              "relatedParties": {
+                "creditorAccount": {
+                  "identification": {
+                    "iban": "CZ50PSEUDO2AE80847C4",
+                    "other": {
+                      "identification": "identification-60bd21"
+                    }
+                  }
+                },
+                "debtor": {
+                  "name": "name-d37fea"
+                },
+                "debtorAccount": {
+                  "identification": {
+                    "iban": "CZ79PSEUDO552303C62D",
+                    "other": {
+                      "identification": "identification-6fc9b9"
+                    }
+                  }
+                }
+              },
+              "remittanceInformation": {
+                "structured": {
+                  "creditorReferenceInformation": {
+                    "reference": [
+                      "reference-09b260",
+                      "reference-557420",
+                      "reference-629ff3"
+                    ]
+                  }
+                },
+                "unstructured": "unstructured-b17f31"
+              }
+            }
+          },
+          "entryReference": "RB-4567813",
+          "status": "BOOK",
+          "valueDate": {
+            "date": "2017-01-31"
+          }
+        },
+        {
+          "amount": {
+            "currency": "CZK",
+            "value": 105.25
+          },
+          "bankTransactionCode": {
+            "proprietary": {
+              "code": 3.0000201E10,
+              "issuer": "Czech Banking Association"
+            }
+          },
+          "bookingDate": {
+            "date": "2016-09-05"
+          },
+          "creditDebitIndicator": "DBIT",
+          "entryDetails": {
+            "transactionDetails": {
+              "additionalTransactionInformation": "PLATBA KARTOU",
+              "amountDetails": {
+                "counterValueAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 105.25
+                  },
+                  "currencyExchange": {
+                    "exchangeRate": 35.525,
+                    "sourceCurrency": "GBP",
+                    "targetCurrency": "CZK"
+                  }
+                },
+                "instructedAmount": {
+                  "amount": {
+                    "currency": "GBP",
+                    "value": 10
+                  }
+                }
+              },
+              "references": {
+                "accountServicerReference": "0622510844568",
+                "chequeNumber": "451161XXXXXX2638"
+              },
+              "relatedAgents": {
+                "debtorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                }
+              },
+              "relatedParties": {
+                "debtorAccount": {
+                  "identification": {
+                    "iban": "CZ79PSEUDO552303C62D"
+                  }
+                }
+              }
+            }
+          },
+          "entryReference": "RB-45678113",
+          "status": "BOOK",
+          "valueDate": {
+            "date": "2016-09-05"
+          }
+        },
+        {
+          "amount": {
+            "currency": "CZK",
+            "value": 13015.46
+          },
+          "bankTransactionCode": {
+            "proprietary": {
+              "code": 1.0000202E10,
+              "issuer": "Czech Banking Association"
+            }
+          },
+          "bookingDate": {
+            "date": "2017-01-31"
+          },
+          "creditDebitIndicator": "CRDT",
+          "entryDetails": {
+            "transactionDetails": {
+              "additionalTransactionInformation": "Příchozí úhrada",
+              "amountDetails": {
+                "counterValueAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 13015.46
+                  },
+                  "currencyExchange": {
+                    "sourceCurrency": "CZK",
+                    "targetCurrency": "CZK"
+                  }
+                },
+                "instructedAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 13015.46
+                  }
+                }
+              },
+              "relatedAgents": {
+                "creditorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                },
+                "debtorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                }
+              },
+              "relatedParties": {
+                "creditorAccount": {
+                  "identification": {
+                    "iban": "CZ79PSEUDO552303C62D",
+                    "other": {
+                      "identification": "identification-6fc9b9"
+                    }
+                  }
+                },
+                "debtor": {
+                  "name": "name-d37fea"
+                },
+                "debtorAccount": {
+                  "identification": {
+                    "iban": "CZ50PSEUDO2AE80847C4",
+                    "other": {
+                      "identification": "identification-60bd21"
+                    }
+                  }
+                }
+              },
+              "remittanceInformation": {
+                "structured": {
+                  "creditorReferenceInformation": {
+                    "reference": [
+                      "reference-09b260",
+                      "reference-557420",
+                      "reference-629ff3"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "entryReference": "FC-4567513951",
+          "status": "BOOK",
+          "valueDate": {
+            "date": "2017-01-31"
+          }
+        },
+        {
+          "amount": {
+            "currency": "CZK",
+            "value": 2
+          },
+          "bankTransactionCode": {
+            "proprietary": {
+              "code": 4.0000101E10,
+              "issuer": "Czech Banking Association"
+            }
+          },
+          "bookingDate": {
+            "date": "2016-09-05"
+          },
+          "creditDebitIndicator": "DBIT",
+          "entryDetails": {
+            "transactionDetails": {
+              "additionalTransactionDescription": "Cena za účetní položku",
+              "additionalTransactionInformation": "POPLATEK ZA ODCHOZÍ TRANSAKCI",
+              "amountDetails": {
+                "counterValueAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 2
+                  }
+                },
+                "instructedAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 2
+                  }
+                }
+              },
+              "relatedAgents": {
+                "debtorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                }
+              },
+              "relatedParties": {
+                "debtorAccount": {
+                  "identification": {
+                    "iban": "CZ79PSEUDO552303C62D"
+                  }
+                }
+              },
+              "remittanceInformation": {
+                "structured": {
+                  "creditorReferenceInformation": {
+                    "reference": [
+                      "reference-2fe779",
+                      "reference-1fc601"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "entryReference": "CDR-13457893331",
+          "status": "BOOK",
+          "valueDate": {
+            "date": "2016-09-05"
+          }
+        },
+        {
+          "amount": {
+            "currency": "CZK",
+            "value": 122.22
+          },
+          "bankTransactionCode": {
+            "proprietary": {
+              "code": 9.0000201E10,
+              "issuer": "Czech Banking Association"
+            }
+          },
+          "bookingDate": {
+            "date": "2016-09-05"
+          },
+          "creditDebitIndicator": "CRDT",
+          "entryDetails": {
+            "transactionDetails": {
+              "additionalTransactionInformation": "Příchozí úhrada",
+              "amountDetails": {
+                "counterValueAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 122.22
+                  },
+                  "currencyExchange": {
+                    "sourceCurrency": "CZK",
+                    "targetCurrency": "CZK"
+                  }
+                },
+                "instructedAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 122.22
+                  }
+                }
+              },
+              "relatedAgents": {
+                "creditorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                },
+                "debtorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                }
+              },
+              "relatedParties": {
+                "creditor": {
+                  "name": "name-d37fea"
+                },
+                "creditorAccount": {
+                  "identification": {
+                    "iban": "CZ79PSEUDO552303C62D",
+                    "other": {
+                      "identification": "identification-6fc9b9"
+                    }
+                  }
+                },
+                "debtor": {
+                  "name": "name-7b0e7b"
+                },
+                "debtorAccount": {
+                  "identification": {
+                    "iban": "CZ50PSEUDO2AE80847C4",
+                    "other": {
+                      "identification": "identification-60bd21"
+                    }
+                  }
+                }
+              },
+              "remittanceInformation": {
+                "structured": {
+                  "creditorReferenceInformation": {}
+                }
+              }
+            }
+          },
+          "entryReference": "2000003232323232",
+          "status": "BOOK",
+          "valueDate": {
+            "date": "2016-09-05"
+          }
+        },
+        {
+          "amount": {
+            "currency": "CZK",
+            "value": 2328262
+          },
+          "bankTransactionCode": {
+            "proprietary": {
+              "code": 1.0000403E10,
+              "issuer": "Czech Banking Association"
+            }
+          },
+          "bookingDate": {
+            "date": "2017-01-31"
+          },
+          "creditDebitIndicator": "CRDT",
+          "entryDetails": {
+            "transactionDetails": {
+              "additionalTransactionDescription": "SEPA převod\nSHA",
+              "additionalTransactionInformation": "SEPA převod",
+              "amountDetails": {
+                "counterValueAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 2328262
+                  },
+                  "currencyExchange": {
+                    "exchangeRate": 27.01,
+                    "sourceCurrency": "EUR",
+                    "targetCurrency": "CZK"
+                  }
+                },
+                "instructedAmount": {
+                  "amount": {
+                    "currency": "EUR",
+                    "value": 86200
+                  }
+                }
+              },
+              "charges": {
+                "bearer": "SHA"
+              },
+              "relatedAgents": {
+                "creditorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                },
+                "debtorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                }
+              },
+              "relatedParties": {
+                "creditor": {
+                  "name": "name-d37fea"
+                },
+                "creditorAccount": {
+                  "identification": {
+                    "iban": "CZ79PSEUDO552303C62D",
+                    "other": {
+                      "identification": "identification-6fc9b9"
+                    }
+                  }
+                },
+                "debtor": {
+                  "name": "name-73efb6"
+                },
+                "debtorAccount": {
+                  "identification": {
+                    "iban": "CZ83PSEUDO7DDBA6AD1B"
+                  }
+                }
+              },
+              "remittanceInformation": {
+                "structured": {
+                  "creditorReferenceInformation": {
+                    "reference": [
+                      "reference-3e8379"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "entryReference": "FP-4156489123",
+          "status": "BOOK",
+          "valueDate": {
+            "date": "2017-01-31"
+          }
+        },
+        {
+          "amount": {
+            "currency": "CZK",
+            "value": 105
+          },
+          "bankTransactionCode": {
+            "proprietary": {
+              "code": 2.0000103E10,
+              "issuer": "Czech Banking Association"
+            }
+          },
+          "bookingDate": {
+            "date": "2016-09-05"
+          },
+          "creditDebitIndicator": "CRDT",
+          "entryDetails": {
+            "transactionDetails": {
+              "additionalRemittanceInformation": "Zpráva pro mě",
+              "additionalTransactionInformation": "Příchozí úhrada",
+              "amountDetails": {
+                "counterValueAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 105
+                  },
+                  "currencyExchange": {
+                    "sourceCurrency": "CZK",
+                    "targetCurrency": "CZK"
+                  }
+                },
+                "instructedAmount": {
+                  "amount": {
+                    "currency": "CZK",
+                    "value": 105
+                  }
+                }
+              },
+              "relatedAgents": {
+                "creditorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "GIBACZPX"
+                  }
+                },
+                "debtorAgent": {
+                  "financialInstitutionIdentification": {
+                    "bic": "AIRACZPP"
+                  }
+                }
+              },
+              "relatedParties": {
+                "creditor": {
+                  "name": "name-d37fea"
+                },
+                "creditorAccount": {
+                  "identification": {
+                    "iban": "CZ79PSEUDO552303C62D",
+                    "other": {
+                      "identification": "identification-6fc9b9"
+                    }
+                  }
+                },
+                "debtor": {
+                  "name": "name-7b0e7b"
+                },
+                "debtorAccount": {
+                  "identification": {
+                    "iban": "CZ50PSEUDO2AE80847C4",
+                    "other": {
+                      "identification": "identification-60bd21"
+                    }
+                  }
+                }
+              },
+              "remittanceInformation": {
+                "structured": {
+                  "creditorReferenceInformation": {}
+                },
+                "unstructured": "unstructured-39f6bd"
+              }
+            }
+          },
+          "entryReference": "2000001010101022",
+          "status": "BOOK",
+          "valueDate": {
+            "date": "2016-09-05"
+          }
+        }
+      ]
+    }
+  }
+}

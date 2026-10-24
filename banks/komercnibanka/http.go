@@ -13,6 +13,7 @@ import (
 	"time"
 
 	obsdk "github.com/slatecrane/obsdk"
+	"github.com/slatecrane/obsdk/internal/cbs"
 )
 
 const maxBody = 16 << 20
@@ -179,50 +180,6 @@ func (c *client) applyToken(s *obsdk.Session, tr *tokenResponse) {
 
 // ---- errors ----
 
-// errorBody covers KB's errors. The API answers {"errors": [...]}, each with
-// "error" or "code" (both are used, sometimes for the same kind of
-// problem), "scope" (the offending field) and "message"; the OAuth endpoints
-// may also answer the RFC 6749 form.
-type errorBody struct {
-	Errors []struct {
-		Error   string `json:"error"`
-		Code    string `json:"code"`
-		Scope   string `json:"scope"`
-		Message string `json:"message"`
-	} `json:"errors"`
-	Error     string `json:"error"`
-	ErrorDesc string `json:"error_description"`
-}
-
-func parseError(b []byte) (code, text string) {
-	var e errorBody
-	if json.Unmarshal(b, &e) != nil {
-		return "", strings.TrimSpace(string(b[:min(len(b), 200)]))
-	}
-	switch {
-	case len(e.Errors) > 0:
-		first := e.Errors[0]
-		code = first.Code
-		if code == "" {
-			code = first.Error
-		}
-		var parts []string
-		for _, x := range e.Errors {
-			p := x.Message
-			if x.Scope != "" {
-				p = strings.TrimSpace(x.Scope + ": " + p + " " + x.Error)
-			}
-			if p != "" {
-				parts = append(parts, p)
-			}
-		}
-		return code, strings.Join(parts, "; ")
-	case e.Error != "":
-		return e.Error, e.ErrorDesc
-	}
-	return "", ""
-}
-
 // codeNARR is KB's "narrative" code for refusals it explains in text; on the
 // account resources it means access is denied ("Unauthorized access to
 // account", "User is not in active state", ...).
@@ -232,7 +189,7 @@ const codeNARR = "NARR"
 // status, the bank's code and the operation that was running.
 func (c *client) apiErr(op string, r *resp) error {
 	e := &obsdk.APIError{Op: op, Status: r.status, Body: r.body, RequestID: responseID(r.header)}
-	e.Code, e.Text = parseError(r.body)
+	e.Code, e.Text = cbs.ParseError(r.body)
 	ais := op == opAccounts || op == opBalances || op == opTransactions
 	switch {
 	case r.status == http.StatusTooManyRequests:

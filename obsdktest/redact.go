@@ -55,6 +55,8 @@ func DefaultRedactor(literals map[string]string) *Redactor {
 		"x-bunq-client-authentication", "x-bunq-client-signature", "x-bunq-server-signature", "secret", "api_key", "login_code",
 		// ABN AMRO: the application's API key
 		"api-key",
+		// Česká spořitelna: the portal application's API key
+		"web-api-key",
 	), PIIKeys: set(
 		"ownername", "name", "creditorname", "debtorname", "ultimatecreditor", "ultimatedebtor", "creditorid", "debtorid",
 		"iban", "bban", "remittanceinformationunstructured", "remittanceinformationstructured", "remittanceinformationunstructuredarray",

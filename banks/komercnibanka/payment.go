@@ -10,8 +10,8 @@ import (
 	"strings"
 
 	obsdk "github.com/slatecrane/obsdk"
-	"github.com/slatecrane/obsdk/internal/bgstatus"
 	"github.com/slatecrane/obsdk/internal/callback"
+	"github.com/slatecrane/obsdk/internal/cbs"
 	"github.com/slatecrane/obsdk/internal/flowstate"
 )
 
@@ -430,19 +430,6 @@ func (c *client) finishSign(ctx context.Context, f *flow, in obsdk.StepInput) (*
 
 // ---- status and cancel ----
 
-// paymentStatus maps KB's ISO 20022 codes. ACTC is a payment KB checked and
-// stored that waits for the user's signature, so it counts as received.
-// RJCR (refused at the signature) is not ISO 20022.
-func paymentStatus(code string) (obsdk.PaymentStatus, bool) {
-	switch code {
-	case "ACTC":
-		return obsdk.PaymentReceived, false
-	case "RJCR":
-		return obsdk.PaymentRejected, true
-	}
-	return bgstatus.Payment(code)
-}
-
 func (c *client) toPayment(t obsdk.PaymentType, id, status string, raw []byte) (*obsdk.Payment, error) {
 	ref, err := flowstate.Encode(paymentRef{Integration: integrationID, ID: id, Type: t})
 	if err != nil {
@@ -451,7 +438,7 @@ func (c *client) toPayment(t obsdk.PaymentType, id, status string, raw []byte) (
 	pay := &obsdk.Payment{ID: id, Type: t, Status: obsdk.PaymentReceived, Ref: ref, Raw: raw}
 	if status != "" {
 		pay.BankStatus = status
-		pay.Status, pay.Final = paymentStatus(status)
+		pay.Status, pay.Final = cbs.PaymentStatus(status)
 	}
 	return pay, nil
 }

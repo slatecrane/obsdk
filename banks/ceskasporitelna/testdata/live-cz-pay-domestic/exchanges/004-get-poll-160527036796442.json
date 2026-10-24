@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/csas/sandbox/v4/payment-initiation/my/payments/sign/poll/160527036796442",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:858ff3",
+      "User-Involved": "true",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "6e804b20-1c4e-4963-a385-cb6ca74e1d36"
+    },
+    "body": {
+      "pollInterval": 5000,
+      "state": "DONE"
+    }
+  }
+}

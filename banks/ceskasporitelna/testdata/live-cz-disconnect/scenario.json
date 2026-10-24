@@ -1,0 +1,17 @@
+{
+  "config": {
+    "bank": "ceskasporitelna",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-24T19:31:49Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:627540"
+    }
+  },
+  "calls": [
+    {
+      "op": "disconnect"
+    }
+  ]
+}

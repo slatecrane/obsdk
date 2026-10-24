@@ -1,0 +1,75 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/csas/sandbox/v4/account-information/my/accounts",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:f986eb",
+      "User-Involved": "true",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "15d293c6-3def-438a-a25f-8dfce6dbd742"
+    },
+    "body": {
+      "accounts": [
+        {
+          "currency": "CZK",
+          "id": "AA195E7DB499B4D9F48D46C208625FF53F2245F7",
+          "identification": {
+            "iban": "CZ79PSEUDO552303C62D",
+            "other": "0259459101/0800"
+          },
+          "nameI18N": "Jiří Spokojený",
+          "ownersNames": [
+            "Jiří Spokojený"
+          ],
+          "productI18N": "Osobní účet ČS II",
+          "relationship": {
+            "isOwner": true
+          },
+          "servicer": {
+            "bankCode": "0800",
+            "bic": "GIBACZPX",
+            "countryCode": "CZ"
+          },
+          "suitableScope": {
+            "AISP": "",
+            "PISP": ""
+          }
+        },
+        {
+          "currency": "CZK",
+          "id": "DEBCD8673D9A3F3EF3EFE4B799053FD49D2FF59F",
+          "identification": {
+            "iban": "CZ40PSEUDO80AFB89AE5",
+            "other": "0782553098/0800"
+          },
+          "nameI18N": "Jiří SPokojený - CM",
+          "ownersNames": [
+            "Jiří Spokojený"
+          ],
+          "productI18N": "Cizoměnový účet",
+          "relationship": {
+            "isOwner": false
+          },
+          "servicer": {
+            "bankCode": "0800",
+            "bic": "GIBACZPX",
+            "countryCode": "CZ"
+          },
+          "suitableScope": {
+            "AISP": ""
+          }
+        }
+      ],
+      "pageCount": 1,
+      "pageNumber": 0,
+      "pageSize": 10
+    }
+  }
+}

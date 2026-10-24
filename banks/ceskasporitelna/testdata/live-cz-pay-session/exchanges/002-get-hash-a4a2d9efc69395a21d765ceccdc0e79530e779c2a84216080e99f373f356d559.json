@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/csas/sandbox/v4/payment-initiation/my/payments/federate/sign/191201664911836/hash/a4a2d9efc69395a21d765ceccdc0e79530e779c2a84216080e99f373f356d559",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:858ff3",
+      "Callback-Uri": "https://www.example.com/cb",
+      "User-Involved": "true",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "32ea3ed0-ca9f-42c2-bd4b-0c3585fd6ce6"
+    },
+    "body": {
+      "poll": {
+        "id": "160527036796442",
+        "interval": 5000,
+        "url": "https://webapi.developers.erstegroup.com/api/csas/sandbox/v4/payment-initiation/my/payments/sign/poll/160527036796442"
+      },
+      "signInfo": {
+        "signId": "151112531008554",
+        "state": "OPEN"
+      },
+      "signingUrl": "https://webapi.developers.erstegroup.com/api/csas/sandbox/v1/sandbox-idp/sign",
+      "validTo": "2017-12-30T17:56:11Z"
+    }
+  }
+}
