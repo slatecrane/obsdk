@@ -60,11 +60,12 @@ func init() {
 	var variants []obsdk.Variant
 	for _, seg := range []obsdk.Segment{obsdk.Personal, obsdk.Business} {
 		// Connect, accounts, balances, transactions, refresh, disconnect,
-		// domestic and SEPA payments signed, status (scenarios live-cz-*).
+		// domestic and SEPA payments signed, status (scenarios live-cz-*,
+		// 2026-10-24); domestic standing orders signed (2026-10-25).
 		// The sandbox's data and payment answers are static, and its one
 		// test client stands for both segments.
 		variants = append(variants,
-			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Sandbox, Maturity: obsdk.MaturitySandboxVerified, VerifiedOn: "2026-10-24"},
+			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Sandbox, Maturity: obsdk.MaturitySandboxVerified, VerifiedOn: "2026-10-25"},
 			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Production, Maturity: obsdk.MaturityUnverified},
 		)
 	}
@@ -99,6 +100,7 @@ func init() {
 				"Access lasts 180 days from the login (the refresh token's lifetime); access tokens last 5 minutes and are renewed with the refresh token.",
 				"Payments need their own login (scope PISP) before ČS's signing page: two redirects.",
 				"Payment status needs the payment login's session (PaymentCallOptions.Session).",
+				"Domestic standing orders (PaymentRequest.Schedule; Info.StandingOrderSpec): monthly to yearly, no status or cancellation through the API.",
 			},
 		},
 		Factory: newClient,

@@ -1,0 +1,116 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/csas/sandbox/v4/payment-initiation/my/standingorders",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b30b0c",
+      "Content-Type": "application/json",
+      "User-Involved": "true",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 1.00
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "identification": {
+          "iban": "CZ79PSEUDO552303C62D"
+        }
+      },
+      "remittanceInformation": {
+        "structured": {
+          "creditorReferenceInformation": {
+            "reference": [
+              "reference-e6e411"
+            ]
+          }
+        },
+        "unstructured": "unstructured-9749ff"
+      },
+      "requestedExecutionDate": "2026-11-05",
+      "standingOrder": {
+        "execution": {
+          "interval": "MONTHLY",
+          "mode": "UNTIL_DATE",
+          "modeDue": "DUE_DAY_OF_MONTH"
+        },
+        "validity": {
+          "lastExecutionDate": "2027-10-05"
+        }
+      },
+      "standingOrderIdentification": {
+        "instructionIdentification": "A6FEDF0F9AE648F38CDEB9A536348AA5"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "51d0b8eb-1358-42fa-9076-065d06612b99"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 1.0
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ64PSEUDO55AA2DA5B5"
+        }
+      },
+      "debtorAccount": {
+        "identification": {
+          "iban": "CZ04PSEUDOB4D0A586D9"
+        }
+      },
+      "instructionStatus": "ACTC",
+      "paymentTypeInformation": {
+        "instructionPriority": "NORM"
+      },
+      "remittanceInformation": {
+        "structured": {
+          "creditorReferenceInformation": {
+            "reference": [
+              "reference-a00781",
+              "reference-434474",
+              "reference-437925"
+            ]
+          }
+        },
+        "unstructured": "unstructured-743972"
+      },
+      "requestedExecutionDate": "2019-10-10",
+      "signInfo": {
+        "hash": "2d33a71458912313861ac0357aa70ffd83e4146e4d3c10bc6a271e0ae1ef9610",
+        "signId": "191010190908927",
+        "state": "OPEN"
+      },
+      "standingOrder": {
+        "execution": {
+          "interval": "MONTHLY",
+          "mode": "UNTIL_DATE",
+          "modeDue": "DUE_DAY_OF_MONTH"
+        },
+        "validity": {
+          "lastExecutionDate": "2020-10-10"
+        }
+      },
+      "standingOrderIdentification": {
+        "instructionIdentification": "TPP1234567890",
+        "transactionIdentification": "TPP5DR4397RFZ"
+      }
+    }
+  }
+}

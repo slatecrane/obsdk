@@ -294,5 +294,5 @@ redacted on the way to disk. Details in [docs/testing.md](docs/testing.md).
 
 ## Not yet
 
-Bulk payments and standing orders (the payment model has room for both), more banks, shared request-signing helpers (Revolut, HSBC and
+Bulk payments (the payment model has room for them), standing orders beyond Česká spořitelna, more banks, shared request-signing helpers (Revolut, HSBC and
 ING each sign in their own package), optional automatic refresh, dynamic client registration.

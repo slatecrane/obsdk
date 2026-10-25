@@ -65,8 +65,76 @@ type PaymentRequest struct {
 	ChargeBearer  string // ChargeBearer* values
 	Context       string // PaymentContext* values
 
+	// Schedule makes the request a standing order: the bank repeats the
+	// transfer on the schedule instead of paying once. Banks that offer it
+	// have a PaymentSpec with Schedule set (Info.StandingOrderSpec).
+	Schedule *Schedule
+
 	// IdempotencyKey is sent where the bank supports one. Empty generates one.
 	IdempotencyKey string
+}
+
+// Frequency is how often a standing order is executed.
+type Frequency string
+
+const (
+	FrequencyDaily          Frequency = "daily"
+	FrequencyWeekly         Frequency = "weekly"
+	FrequencyEveryTwoWeeks  Frequency = "every_two_weeks"
+	FrequencyMonthly        Frequency = "monthly"
+	FrequencyEveryTwoMonths Frequency = "every_two_months"
+	FrequencyQuarterly      Frequency = "quarterly"
+	FrequencySemiannual     Frequency = "semiannual"
+	FrequencyAnnual         Frequency = "annual"
+)
+
+var frequencies = []Frequency{FrequencyDaily, FrequencyWeekly, FrequencyEveryTwoWeeks, FrequencyMonthly,
+	FrequencyEveryTwoMonths, FrequencyQuarterly, FrequencySemiannual, FrequencyAnnual}
+
+// Monthly reports whether f counts in months (monthly or longer), so the
+// execution day is a day of the month.
+func (f Frequency) Monthly() bool {
+	switch f {
+	case FrequencyMonthly, FrequencyEveryTwoMonths, FrequencyQuarterly, FrequencySemiannual, FrequencyAnnual:
+		return true
+	}
+	return false
+}
+
+// Schedule is when a standing order runs. The first execution is on
+// StartDate, which also sets the day of the week or month for the later ones.
+// Without EndDate or Count it runs until it is cancelled.
+type Schedule struct {
+	Frequency Frequency `json:"frequency"`
+	StartDate string    `json:"start_date"`         // YYYY-MM-DD, the first execution
+	EndDate   string    `json:"end_date,omitempty"` // YYYY-MM-DD, no execution after this day
+	Count     int       `json:"count,omitempty"`    // number of executions; not together with EndDate
+
+	// EndOfMonth executes on the last day of each month instead of
+	// StartDate's day (monthly or longer frequencies).
+	EndOfMonth bool `json:"end_of_month,omitempty"`
+
+	// NonBusinessDay moves an execution that falls on a non-business day:
+	// ScheduleFollowing or SchedulePreceding. Empty leaves it to the bank.
+	NonBusinessDay string `json:"non_business_day,omitempty"`
+}
+
+// Schedule.NonBusinessDay values.
+const (
+	ScheduleFollowing = "following" // the next business day
+	SchedulePreceding = "preceding" // the business day before
+)
+
+// ScheduleSpec marks a PaymentSpec as the standing-order variant of its
+// payment type. The schedule's options are listed in PaymentSpec.Fields
+// (FieldSchedule* paths, with the frequencies as Options).
+type ScheduleSpec struct {
+	// StartDateMinDays is the earliest first execution, in days from
+	// today (1: not today). Banks may count business days; see Notes.
+	StartDateMinDays int `json:"start_date_min_days,omitempty"`
+	// MaxDayOfMonth limits StartDate's day for monthly or longer
+	// frequencies, unless EndOfMonth is set (e.g. 28). 0: no limit.
+	MaxDayOfMonth int `json:"max_day_of_month,omitempty"`
 }
 
 // Charge bearer values (PaymentRequest.ChargeBearer).
@@ -170,8 +238,9 @@ type Payment struct {
 	// opaque and serializable and holds no tokens; store it with the payment.
 	Ref string `json:"ref"`
 
-	Debtor *Identifier     `json:"debtor,omitempty"` // the account the user paid from, when the bank reports it
-	Raw    json.RawMessage `json:"raw,omitempty"`
+	Debtor   *Identifier     `json:"debtor,omitempty"`   // the account the user paid from, when the bank reports it
+	Schedule *Schedule       `json:"schedule,omitempty"` // set for a standing order
+	Raw      json.RawMessage `json:"raw,omitempty"`
 }
 
 // PaymentCallOptions are inputs to PaymentStatus and CancelPayment.
@@ -208,6 +277,14 @@ const (
 	FieldExecutionDate       = "execution_date"
 	FieldChargeBearer        = "charge_bearer"
 	FieldContext             = "context"
+
+	// Standing orders (PaymentRequest.Schedule).
+	FieldScheduleFrequency      = "schedule.frequency"
+	FieldScheduleStartDate      = "schedule.start_date"
+	FieldScheduleEndDate        = "schedule.end_date"
+	FieldScheduleCount          = "schedule.count"
+	FieldScheduleEndOfMonth     = "schedule.end_of_month"
+	FieldScheduleNonBusinessDay = "schedule.non_business_day"
 )
 
 // FieldUse says whether a field must be set.
@@ -283,6 +360,10 @@ type PaymentSpec struct {
 	// StatusNeedsSession: PaymentStatus and CancelPayment need the user's session.
 	StatusNeedsSession bool `json:"status_needs_session,omitempty"`
 
+	// Schedule is set on the standing-order spec of a payment type; such
+	// specs take only requests with a Schedule (Info.StandingOrderSpec).
+	Schedule *ScheduleSpec `json:"schedule,omitempty"`
+
 	Fields []PaymentField `json:"fields"`
 	Notes  []string       `json:"notes,omitempty"`
 }
@@ -310,11 +391,26 @@ func (s PaymentSpec) appliesTo(c Country, seg Segment) bool {
 }
 
 // PaymentSpec returns the spec of a payment type for a country and segment
-// (empty segment matches any).
+// (empty segment matches any), for one-off payments.
 func (i Info) PaymentSpec(c Country, s Segment, t PaymentType) (PaymentSpec, bool) {
+	return i.spec(c, s, t, false)
+}
+
+// StandingOrderSpec returns the spec of standing orders of a payment type.
+func (i Info) StandingOrderSpec(c Country, s Segment, t PaymentType) (PaymentSpec, bool) {
+	return i.spec(c, s, t, true)
+}
+
+// SpecFor returns the spec a request is validated against: the
+// standing-order spec when it has a Schedule.
+func (i Info) SpecFor(c Country, s Segment, r PaymentRequest) (PaymentSpec, bool) {
+	return i.spec(c, s, r.Type, r.Schedule != nil)
+}
+
+func (i Info) spec(c Country, s Segment, t PaymentType, standing bool) (PaymentSpec, bool) {
 	c = Country(strings.ToUpper(string(c)))
 	for _, p := range i.Payments {
-		if p.Type == t && p.appliesTo(c, s) {
+		if p.Type == t && (p.Schedule != nil) == standing && p.appliesTo(c, s) {
 			return p, true
 		}
 	}
@@ -322,11 +418,16 @@ func (i Info) PaymentSpec(c Country, s Segment, t PaymentType) (PaymentSpec, boo
 }
 
 // PaymentTypes lists the payment types offered for a country and segment.
-func (i Info) PaymentTypes(c Country, s Segment) []PaymentType {
+func (i Info) PaymentTypes(c Country, s Segment) []PaymentType { return i.types(c, s, false) }
+
+// StandingOrderTypes lists the payment types that can be standing orders.
+func (i Info) StandingOrderTypes(c Country, s Segment) []PaymentType { return i.types(c, s, true) }
+
+func (i Info) types(c Country, s Segment, standing bool) []PaymentType {
 	c = Country(strings.ToUpper(string(c)))
 	var out []PaymentType
 	for _, p := range i.Payments {
-		if p.appliesTo(c, s) {
+		if (p.Schedule != nil) == standing && p.appliesTo(c, s) {
 			out = append(out, p.Type)
 		}
 	}
@@ -415,8 +516,9 @@ func (s PaymentSpec) Validate(r PaymentRequest, now time.Time) error {
 	v.str(FieldChargeBearer, -1, r.ChargeBearer)
 	v.str(FieldContext, -1, r.Context)
 	if r.ExecutionDate != "" {
-		v.date(r.ExecutionDate, now)
+		v.date(FieldExecutionDate, r.ExecutionDate, now, 0, s.ExecutionDateMaxDays)
 	}
+	v.schedule(r.Schedule, now)
 
 	for i, t := range r.Transfers {
 		v.amount(i, t.Amount)
@@ -631,22 +733,96 @@ func (v *validator) amount(idx int, m Money) {
 	}
 }
 
-func (v *validator) date(s string, now time.Time) {
+// date checks a date field: at least minDays and, when max > 0, at most
+// max days from today.
+func (v *validator) date(path, s string, now time.Time, minDays, max int) (time.Time, bool) {
 	d, err := time.Parse("2006-01-02", s)
 	if err != nil {
-		v.add(FieldIssue{Path: FieldExecutionDate, Index: -1, Code: IssueDate, Message: "must be YYYY-MM-DD"})
-		return
+		v.add(FieldIssue{Path: path, Index: -1, Code: IssueDate, Message: "must be YYYY-MM-DD"})
+		return d, false
 	}
 	// Banks judge "today" in their own time zone; only reject dates that are
-	// in the past everywhere and leave the exact cut-off to the bank.
+	// too early everywhere and leave the exact cut-off to the bank.
 	today := now.UTC().Add(-14 * time.Hour).Truncate(24 * time.Hour)
-	if d.Before(today) {
-		v.add(FieldIssue{Path: FieldExecutionDate, Index: -1, Code: IssueDate, Message: "is in the past"})
+	switch {
+	case d.Before(today):
+		v.add(FieldIssue{Path: path, Index: -1, Code: IssueDate, Message: "is in the past"})
+		return d, false
+	case minDays > 0 && d.Before(today.AddDate(0, 0, minDays)):
+		v.add(FieldIssue{Path: path, Index: -1, Code: IssueDate, Message: fmt.Sprintf("must be at least %d day(s) ahead", minDays)})
+		return d, false
+	}
+	if max > 0 && d.After(now.UTC().Truncate(24*time.Hour).AddDate(0, 0, max)) {
+		v.add(FieldIssue{Path: path, Index: -1, Code: IssueDate, Message: fmt.Sprintf("is more than %d days ahead", max)})
+		return d, false
+	}
+	return d, true
+}
+
+// schedule checks a standing order's schedule against the spec's
+// ScheduleSpec and schedule fields.
+func (v *validator) schedule(s *Schedule, now time.Time) {
+	ss := v.spec.Schedule
+	switch {
+	case s == nil && ss != nil:
+		v.add(FieldIssue{Path: "schedule", Index: -1, Code: IssueRequired, Message: "this spec is for standing orders"})
+		return
+	case s == nil:
+		return
+	case ss == nil:
+		v.add(FieldIssue{Path: "schedule", Index: -1, Code: IssueUnsupported, Message: "standing orders are not offered for this payment type"})
 		return
 	}
-	if max := v.spec.ExecutionDateMaxDays; max > 0 && d.After(now.UTC().Truncate(24*time.Hour).AddDate(0, 0, max)) {
-		v.add(FieldIssue{Path: FieldExecutionDate, Index: -1, Code: IssueDate, Message: fmt.Sprintf("is more than %d days ahead", max)})
+	if s.Frequency != "" && !contains(freqStrings(), string(s.Frequency)) {
+		v.add(FieldIssue{Path: FieldScheduleFrequency, Index: -1, Code: IssueOption, Message: fmt.Sprintf("%q is not a frequency", s.Frequency)})
+	} else {
+		v.str(FieldScheduleFrequency, -1, string(s.Frequency))
 	}
+	if s.StartDate == "" {
+		v.add(FieldIssue{Path: FieldScheduleStartDate, Index: -1, Code: IssueRequired, Message: "is required"})
+		return
+	}
+	start, ok := v.date(FieldScheduleStartDate, s.StartDate, now, ss.StartDateMinDays, 0)
+	if ok && ss.MaxDayOfMonth > 0 && s.Frequency.Monthly() && !s.EndOfMonth && start.Day() > ss.MaxDayOfMonth {
+		v.add(FieldIssue{Path: FieldScheduleStartDate, Index: -1, Code: IssueDate,
+			Message: fmt.Sprintf("its day must be at most %d (or use end_of_month)", ss.MaxDayOfMonth)})
+	}
+	v.str(FieldScheduleEndDate, -1, s.EndDate)
+	if s.EndDate != "" {
+		if end, err := time.Parse("2006-01-02", s.EndDate); err != nil {
+			v.add(FieldIssue{Path: FieldScheduleEndDate, Index: -1, Code: IssueDate, Message: "must be YYYY-MM-DD"})
+		} else if ok && end.Before(start) {
+			v.add(FieldIssue{Path: FieldScheduleEndDate, Index: -1, Code: IssueDate, Message: "is before the start date"})
+		}
+	}
+	switch {
+	case s.Count < 0:
+		v.add(FieldIssue{Path: FieldScheduleCount, Index: -1, Code: IssueInvalid, Message: "must be positive"})
+	case s.Count > 0 && s.EndDate != "":
+		v.add(FieldIssue{Path: FieldScheduleCount, Index: -1, Code: IssueInvalid, Message: "set either an end date or a count"})
+	case s.Count > 0:
+		v.present(FieldScheduleCount, -1)
+	default:
+		v.missing(FieldScheduleCount, -1)
+	}
+	if s.EndOfMonth {
+		if _, ok := v.present(FieldScheduleEndOfMonth, -1); ok && !s.Frequency.Monthly() {
+			v.add(FieldIssue{Path: FieldScheduleEndOfMonth, Index: -1, Code: IssueInvalid, Message: "needs a monthly or longer frequency"})
+		}
+	}
+	if d := s.NonBusinessDay; d != "" && d != ScheduleFollowing && d != SchedulePreceding {
+		v.add(FieldIssue{Path: FieldScheduleNonBusinessDay, Index: -1, Code: IssueOption, Message: fmt.Sprintf("%q is not %q or %q", d, ScheduleFollowing, SchedulePreceding)})
+	} else {
+		v.str(FieldScheduleNonBusinessDay, -1, d)
+	}
+}
+
+func freqStrings() []string {
+	out := make([]string, len(frequencies))
+	for i, f := range frequencies {
+		out[i] = string(f)
+	}
+	return out
 }
 
 // ErrPaymentRejected: the bank refused the payment (limits, funds, recipient

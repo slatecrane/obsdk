@@ -271,7 +271,7 @@ func (c *recordingClient) Disconnect(ctx context.Context, s *obsdk.Session) (*ob
 
 func (c *recordingClient) InitiatePayment(ctx context.Context, req obsdk.PaymentRequest) (*obsdk.Step, error) {
 	pc := &PaymentCall{Type: req.Type, Debtor: req.Debtor, Transfers: req.Transfers, ExecutionDate: req.ExecutionDate,
-		ChargeBearer: req.ChargeBearer, Context: req.Context, IdempotencyKey: req.IdempotencyKey, WithSession: req.Session != nil}
+		ChargeBearer: req.ChargeBearer, Context: req.Context, Schedule: req.Schedule, IdempotencyKey: req.IdempotencyKey, WithSession: req.Session != nil}
 	// Names go through the body redactor; account numbers get the same
 	// pseudonyms as in the recorded bodies.
 	if b, err := json.Marshal(pc); err == nil {

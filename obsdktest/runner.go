@@ -178,7 +178,7 @@ func (r *Runner) Do(ctx context.Context, c Call) Outcome {
 		p := c.Payment
 		req := obsdk.PaymentRequest{Type: p.Type, Method: c.Method, Language: c.Language, RedirectURL: c.RedirectURL,
 			Values: c.Values, Debtor: p.Debtor, Transfers: p.Transfers, ExecutionDate: p.ExecutionDate,
-			ChargeBearer: p.ChargeBearer, Context: p.Context, IdempotencyKey: p.IdempotencyKey}
+			ChargeBearer: p.ChargeBearer, Context: p.Context, Schedule: p.Schedule, IdempotencyKey: p.IdempotencyKey}
 		if opts.PSU != nil {
 			req.PSU = psu
 		}

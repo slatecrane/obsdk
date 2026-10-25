@@ -155,3 +155,87 @@ func TestInfoPaymentSpec(t *testing.T) {
 		t.Errorf("types = %v", got)
 	}
 }
+
+func standingSpec() PaymentSpec {
+	s := sepaSpec()
+	s.Fields = s.Fields[:6] // without execution_date and charge_bearer
+	s.Schedule = &ScheduleSpec{StartDateMinDays: 1, MaxDayOfMonth: 28}
+	s.Fields = append(s.Fields,
+		PaymentField{Path: FieldScheduleFrequency, Use: FieldRequired, Options: []Option{{Value: string(FrequencyMonthly)}, {Value: string(FrequencyQuarterly)}}},
+		PaymentField{Path: FieldScheduleStartDate, Use: FieldRequired},
+		PaymentField{Path: FieldScheduleEndDate, Use: FieldOptional},
+		PaymentField{Path: FieldScheduleEndOfMonth, Use: FieldOptional},
+	)
+	return s
+}
+
+func goodStanding() PaymentRequest {
+	r := goodSEPA()
+	r.Schedule = &Schedule{Frequency: FrequencyMonthly, StartDate: "2026-10-20", EndDate: "2027-10-20"}
+	return r
+}
+
+func TestValidateStandingOrder(t *testing.T) {
+	if err := standingSpec().Validate(goodStanding(), payNow); err != nil {
+		t.Fatal(err)
+	}
+	tests := []struct {
+		name string
+		mod  func(*Schedule)
+		want []string
+	}{
+		{"no frequency", func(s *Schedule) { s.Frequency = "" }, []string{FieldScheduleFrequency + "=required"}},
+		{"unknown frequency", func(s *Schedule) { s.Frequency = "fortnightly" }, []string{FieldScheduleFrequency + "=option"}},
+		{"frequency not offered", func(s *Schedule) { s.Frequency = FrequencyWeekly }, []string{FieldScheduleFrequency + "=option"}},
+		{"no start", func(s *Schedule) { s.StartDate = "" }, []string{FieldScheduleStartDate + "=required"}},
+		{"start today", func(s *Schedule) { s.StartDate = "2026-10-13" }, []string{FieldScheduleStartDate + "=date"}},
+		{"day 29", func(s *Schedule) { s.StartDate = "2026-10-29" }, []string{FieldScheduleStartDate + "=date"}},
+		{"day 31 at month end", func(s *Schedule) { s.StartDate, s.EndOfMonth = "2026-10-31", true }, nil},
+		{"end before start", func(s *Schedule) { s.EndDate = "2026-10-19" }, []string{FieldScheduleEndDate + "=date"}},
+		{"count unsupported", func(s *Schedule) { s.EndDate, s.Count = "", 12 }, []string{FieldScheduleCount + "=unsupported"}},
+		{"count and end", func(s *Schedule) { s.Count = 12 }, []string{FieldScheduleCount + "=invalid"}},
+		{"rule unsupported", func(s *Schedule) { s.NonBusinessDay = ScheduleFollowing }, []string{FieldScheduleNonBusinessDay + "=unsupported"}},
+		{"rule unknown", func(s *Schedule) { s.NonBusinessDay = "next" }, []string{FieldScheduleNonBusinessDay + "=option"}},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			r := goodStanding()
+			tt.mod(r.Schedule)
+			got := issues(standingSpec().Validate(r, payNow))
+			if strings.Join(got, ",") != strings.Join(tt.want, ",") {
+				t.Errorf("issues = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestValidateScheduleNeedsStandingSpec(t *testing.T) {
+	if got := issues(sepaSpec().Validate(goodStanding(), payNow)); strings.Join(got, ",") != "schedule=unsupported" {
+		t.Errorf("one-off spec: issues = %v", got)
+	}
+	if got := issues(standingSpec().Validate(goodSEPA(), payNow)); strings.Join(got, ",") != "schedule=required" {
+		t.Errorf("standing spec: issues = %v", got)
+	}
+}
+
+func TestInfoStandingOrderSpec(t *testing.T) {
+	i := Info{Payments: []PaymentSpec{sepaSpec(), standingSpec(), {Type: PaymentDomestic}}}
+	if s, ok := i.PaymentSpec("EE", "", PaymentSEPA); !ok || s.Schedule != nil {
+		t.Error("PaymentSpec must return the one-off spec")
+	}
+	if s, ok := i.StandingOrderSpec("EE", "", PaymentSEPA); !ok || s.Schedule == nil {
+		t.Error("StandingOrderSpec must return the standing-order spec")
+	}
+	if s, ok := i.SpecFor("EE", "", goodStanding()); !ok || s.Schedule == nil {
+		t.Error("SpecFor must pick the standing-order spec for a scheduled request")
+	}
+	if _, ok := i.StandingOrderSpec("EE", "", PaymentDomestic); ok {
+		t.Error("no domestic standing orders")
+	}
+	if got := i.PaymentTypes("EE", ""); len(got) != 2 {
+		t.Errorf("types = %v", got)
+	}
+	if got := i.StandingOrderTypes("EE", ""); len(got) != 1 || got[0] != PaymentSEPA {
+		t.Errorf("standing order types = %v", got)
+	}
+}

@@ -1,0 +1,95 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Česká spořitelna to log in for the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://webapi.developers.erstegroup.com/api/csas/sandbox/v1/sandbox-idp/auth?access_type=offline&client_id=REDACTED%3Aclient_id&redirect_uri=https%3A%2F%2Fwww.example.com%2Fcb&response_type=code&scope=PISP&state=9050c4f8-25e4-4bee-9175-ff4da12c4d80"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Česká spořitelna to sign the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://webapi.developers.erstegroup.com/api/csas/sandbox/v1/sandbox-idp/sign"
+      },
+      "session": {
+        "v": 1,
+        "bank": "ceskasporitelna",
+        "country": "CZ",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "ceskasporitelna-cbs",
+        "generation": 1,
+        "updated_at": "2026-10-25T12:53:39Z",
+        "access_token": "REDACTED:access_token:b61c7f",
+        "refresh_token": "REDACTED:refresh_token:4d2f63",
+        "token_type": "bearer",
+        "scope": "PISP",
+        "access_expires_at": "2026-10-25T12:58:39Z",
+        "refresh_expires_at": "2027-04-23T12:53:39Z"
+      },
+      "payment": {
+        "id": "191010190908927",
+        "type": "domestic",
+        "status": "received",
+        "bank_status": "ACTC",
+        "final": false,
+        "ref": "obs1.eyJpIjoiY2Vza2FzcG9yaXRlbG5hLWNicyIsImlkIjoiIiwicyI6IjE5MTAxMDE5MDkwODkyNyIsInQiOiJkb21lc3RpYyIsInNvIjp0cnVlfQ",
+        "debtor": {
+          "scheme": "IBAN",
+          "value": "CZ04PSEUDOB4D0A586D9"
+        },
+        "schedule": {
+          "frequency": "annual",
+          "start_date": "2026-11-30",
+          "end_of_month": true
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "session": {
+        "v": 1,
+        "bank": "ceskasporitelna",
+        "country": "CZ",
+        "segment": "personal",
+        "env": "sandbox",
+        "integration": "ceskasporitelna-cbs",
+        "generation": 1,
+        "updated_at": "2026-10-25T12:53:39Z",
+        "access_token": "REDACTED:access_token:b61c7f",
+        "refresh_token": "REDACTED:refresh_token:4d2f63",
+        "token_type": "bearer",
+        "scope": "PISP",
+        "access_expires_at": "2026-10-25T12:58:39Z",
+        "refresh_expires_at": "2027-04-23T12:53:39Z"
+      },
+      "payment": {
+        "id": "191010190908927",
+        "type": "domestic",
+        "status": "accepted",
+        "bank_status": "DONE",
+        "final": true,
+        "ref": "obs1.eyJpIjoiY2Vza2FzcG9yaXRlbG5hLWNicyIsImlkIjoiIiwicyI6IjE5MTAxMDE5MDkwODkyNyIsInQiOiJkb21lc3RpYyIsInNvIjp0cnVlfQ",
+        "schedule": {
+          "frequency": "annual",
+          "start_date": "2026-11-30",
+          "end_of_month": true
+        }
+      }
+    }
+  }
+]

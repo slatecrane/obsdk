@@ -87,6 +87,34 @@ an optional execution date. Single payments only.
 No cancellation endpoint exists (`CancelPayment` → `ErrUnsupported`); an unsigned payment expires after 30 days, and a
 dated one can only be signed until its date.
 
+### Standing orders
+
+`domestic` only (CZK), as `PaymentRequest.Schedule` (spec: `Info.StandingOrderSpec("CZ", seg, "domestic")`). Same
+login, signing and poll as a payment, at `/my/standingorders`:
+
+1. `POST /my/standingorders` with `standingOrderIdentification.instructionIdentification` (as for payments),
+   `standingOrder.execution {mode, modeDue, interval}`, `validity.lastExecutionDate`, `amount`,
+   `requestedExecutionDate`, both accounts and the remittance (message, `VS:` symbol). The response has `signInfo` and
+   `ACTC`, but no `transactionIdentification`: the SDK uses the `signId` as the payment's id.
+2. `GET /my/standingorders/federate/sign/{signId}/hash/{hash}` → signing URL and poll; then
+   `GET /my/standingorders/sign/poll/{pollId}`.
+3. `DONE` ends the flow with `accepted` and `Final`. There is no status resource for standing orders and no
+   cancellation (`PaymentStatus` and `CancelPayment` → `ErrUnsupported`); the user changes or ends them in George.
+
+Mapping of `Schedule`:
+
+| `Schedule` | ČS |
+|---|---|
+| `Frequency` `monthly`, `quarterly`, `semiannual`, `annual` | `interval` `MONTHLY`, `QUARTERLY`, `HALFYEARLY`, `YEARLY` (creation offers no daily, weekly or two-monthly; listings do) |
+| `StartDate` | `requestedExecutionDate`: the first execution, not today; its day (1 to 28) is the day of every execution (`modeDue: DUE_DAY_OF_MONTH`) |
+| `EndOfMonth` | `modeDue: DUE_LAST_DAY_OF_MONTH`, George accounts only; ČS then wants the start date on a month's last day (the SDK checks) |
+| `EndDate` | `mode: UNTIL_DATE` + `validity.lastExecutionDate`; without it `UNTIL_CANCELLATION` |
+| `Count`, `NonBusinessDay` | not offered (`AFTER_MAX_ITERATION_EXCEEDED` and `MAX_AMOUNT_EXCEEDED` appear in listings only) |
+
+Not used: `alias` (the order's name in George, 140 characters), `IRREGULAR` with `exceptions.stoppages` (monthly
+with a June/July or July/August break, George only), constant and specific symbols (`KS:`, `SS:`). Business 24 wants
+business days for both dates; with co-signing, George accounts need the right "payment - group A".
+
 ### Request signing (production; from the QSeal tutorial, not verified)
 
 Payment calls carry `Date`, `Digest: SHA-256=<base64>`, `TPP-Signature-Certificate` (the QSealC, base64 DER) and
@@ -95,7 +123,7 @@ digest web-api-key",signature="<base64>"`, the signing string being `name: value
 checks the Digest of ČS's worked example. ČS's example writes the issuer's quotes unescaped inside the quoted
 `keyId`; the SDK does the same. `Config.Seal.KeyID` overrides the keyId.
 
-## Sandbox (verified 2026-10-24)
+## Sandbox (verified 2026-10-24; standing orders 2026-10-25)
 
 Everything is scriptable; nothing needs the user after the portal account:
 
@@ -109,11 +137,16 @@ Everything is scriptable; nothing needs the user after the portal account:
 - **Payments are static stubs**: `POST /my/payments` answers a fixed example whatever is sent (a domestic one, or a
   SEPA one for a SEPA body), the signing URL is `{idp}/sign` (a static page whose button goes to
   `http://localhost`), the poll always says `DONE`, and the status is always `ACTC` with `INSUFFICIENT_FUNDS`.
+- **Standing orders too**: `POST /my/standingorders` answers the spec's example (monthly, 2019 dates, signId
+  `191010190908927`) whatever is sent. Its signing response's `poll.url` points at `/my/payments/sign/poll/{id}`;
+  the SDK polls the standing-order resource (`/my/standingorders/sign/poll/{id}`) as ČS's spec says, which answers
+  `DONE` as well.
 - **Revoke is a stub**: `200`, and the refresh token still works afterwards.
 
 Recorded scenarios (`banks/ceskasporitelna/testdata/live-cz-*`): connect, data (accounts, both balances,
 transactions), refresh, disconnect, a domestic payment with login, a domestic and a SEPA payment reusing the payment
-login, payment status.
+login, payment status; standing orders (monthly with an end date and a variable symbol; yearly on the month's last
+day until cancelled).
 
 Not verified: anything with real data or real outcomes (the stubs), the production IDP and hosts, request signing,
 `PROCESSING` polls, the business segment (the sandbox has one client).
@@ -122,7 +155,8 @@ Not verified: anything with real data or real outcomes (the stubs), the producti
 
 - Instant payments (`instructionPriority: INST`, domestic and SEPA; not for Business 24 accounts): needs a domestic
   instant payment type in the root package, or `sepa_instant`.
-- International (`SWIFT`) payments, batch payments (`/my/batchpayments`), standing orders (`/my/standingorders`,
-  AIS and PIS).
+- International (`SWIFT`) payments, batch payments (`/my/batchpayments`).
+- Reading the user's standing orders (`GET /my/standingorders` in AIS and PIS, paged; detail by
+  `transactionIdentification`): needs a root interface for listing them.
 - Other Erste banks on the same portal (Slovenská sporiteľňa, Erste Bank Hungary, BCR, Erste&Steiermärkische) use
   their own APIs; not researched.

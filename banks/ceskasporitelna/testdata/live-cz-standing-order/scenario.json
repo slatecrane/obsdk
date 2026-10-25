@@ -1,0 +1,73 @@
+{
+  "config": {
+    "bank": "ceskasporitelna",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-25T12:53:36Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "api_key": "REDACTED:api_key:627540"
+    },
+    "ids": {
+      "request": [
+        "a6fedf0f-9ae6-48f3-8cde-b9a536348aa5",
+        "51d0b8eb-1358-42fa-9076-065d06612b99",
+        "d832ac0f-08e4-4a35-b123-1401d2c7cad3",
+        "e5986fce-1810-4a0c-adac-c42594eb3584"
+      ],
+      "state": [
+        "8acfdd42-d3a9-4e02-8ad7-828bf1e29c99"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "domestic",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "CZ79PSEUDO552303C62D"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "1.00",
+              "currency": "CZK"
+            },
+            "creditor": {
+              "account": {
+                "scheme": "IBAN",
+                "value": "CZ27PSEUDOE5A9F4FE1D"
+              }
+            },
+            "remittance": [
+              "obsdk standing"
+            ],
+            "reference": {
+              "scheme": "CZ",
+              "value": "1234"
+            }
+          }
+        ],
+        "schedule": {
+          "frequency": "monthly",
+          "start_date": "2026-11-05",
+          "end_date": "2027-10-05"
+        }
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/cb?code=REDACTED%3Acode%3A983e2d\u0026state=8acfdd42-d3a9-4e02-8ad7-828bf1e29c99"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/cb"
+    }
+  ]
+}
