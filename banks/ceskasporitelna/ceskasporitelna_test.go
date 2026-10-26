@@ -204,6 +204,117 @@ func TestBuildBody(t *testing.T) {
 	}
 }
 
+func standingRequest() obsdk.PaymentRequest {
+	r := payRequest()
+	r.Schedule = &obsdk.Schedule{Frequency: obsdk.FrequencyMonthly, StartDate: "2026-11-05", EndDate: "2027-10-05"}
+	return r
+}
+
+func TestBuildStandingBody(t *testing.T) {
+	c := newTestClient(t, nil)
+	spec, ok := c.Info().StandingOrderSpec("CZ", "", obsdk.PaymentDomestic)
+	if !ok {
+		t.Fatal("no standing-order spec")
+	}
+	r := standingRequest()
+	if err := spec.Validate(r, frozen); err != nil {
+		t.Fatal(err)
+	}
+	b, err := c.buildStandingBody(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := `{"standingOrderIdentification":{"instructionIdentification":"3987B4FAA05744D8"},` +
+		`"standingOrder":{"execution":{"mode":"UNTIL_DATE","modeDue":"DUE_DAY_OF_MONTH","interval":"MONTHLY"},"validity":{"lastExecutionDate":"2027-10-05"}},` +
+		`"amount":{"instructedAmount":{"value":12.50,"currency":"CZK"}},"requestedExecutionDate":"2026-11-05",` +
+		`"debtorAccount":{"identification":{"iban":"` + testIBAN + `"}},"creditorAccount":{"identification":{"iban":"` + payeeIBAN + `"}},` +
+		`"remittanceInformation":{"structured":{"creditorReferenceInformation":{"reference":["VS:1234567890"]}},"unstructured":"obsdk test"}}`
+	if string(b) != want {
+		t.Fatalf("got  %s\nwant %s", b, want)
+	}
+
+	r.Schedule = &obsdk.Schedule{Frequency: obsdk.FrequencyAnnual, StartDate: "2026-11-30", EndOfMonth: true}
+	if err := spec.Validate(r, frozen); err != nil {
+		t.Fatal(err)
+	}
+	if b, err = c.buildStandingBody(r); err != nil || !strings.Contains(string(b),
+		`"execution":{"mode":"UNTIL_CANCELLATION","modeDue":"DUE_LAST_DAY_OF_MONTH","interval":"YEARLY"}}`) {
+		t.Fatalf("until cancelled, month end: %s %v", b, err)
+	}
+	r.Schedule.StartDate = "2026-11-28"
+	if _, err := c.buildStandingBody(r); !errors.Is(err, obsdk.ErrInvalidRequest) {
+		t.Fatalf("month end on the 28th: %v", err)
+	}
+
+	for name, mod := range map[string]func(*obsdk.Schedule){
+		"weekly":       func(s *obsdk.Schedule) { s.Frequency = obsdk.FrequencyWeekly },
+		"today":        func(s *obsdk.Schedule) { s.StartDate = "2026-10-23" },
+		"day 30":       func(s *obsdk.Schedule) { s.StartDate = "2026-11-30" },
+		"count":        func(s *obsdk.Schedule) { s.EndDate, s.Count = "", 12 },
+		"business day": func(s *obsdk.Schedule) { s.NonBusinessDay = obsdk.ScheduleFollowing },
+	} {
+		r := standingRequest()
+		mod(r.Schedule)
+		if err := spec.Validate(r, frozen); !errors.Is(err, obsdk.ErrInvalidRequest) {
+			t.Errorf("%s: got %v", name, err)
+		}
+	}
+	r = standingRequest()
+	r.ExecutionDate = "2026-11-05"
+	if err := spec.Validate(r, frozen); !errors.Is(err, obsdk.ErrInvalidRequest) {
+		t.Errorf("execution date on a standing order: got %v", err)
+	}
+}
+
+// TestStandingOrderFlow creates and signs a standing order on a saved
+// payment login: its own resources, no status call after the poll.
+func TestStandingOrderFlow(t *testing.T) {
+	f := &fake{h: func(w http.ResponseWriter, r *http.Request) {
+		switch {
+		case r.Method == http.MethodPost && r.URL.Path == "/payment-initiation/my/standingorders":
+			_, _ = io.WriteString(w, `{"standingOrderIdentification":{"instructionIdentification":"3987B4FAA05744D8"},
+"debtorAccount":{"identification":{"iban":"`+testIBAN+`"}},"signInfo":{"signId":"S2","hash":"h2","state":"OPEN"},"instructionStatus":"ACTC"}`)
+		case r.URL.Path == "/payment-initiation/my/standingorders/federate/sign/S2/hash/h2":
+			_, _ = io.WriteString(w, `{"signingUrl":"https://sign.example/so","poll":{"id":"P2","interval":3000}}`)
+		case r.URL.Path == "/payment-initiation/my/standingorders/sign/poll/P2":
+			_, _ = io.WriteString(w, `{"state":"DONE","pollInterval":3000}`)
+		default:
+			http.Error(w, "unexpected "+r.Method+" "+r.URL.Path, http.StatusTeapot)
+		}
+	}}
+	c := newTestClient(t, f.server(t))
+	ctx := context.Background()
+	r := standingRequest()
+	r.Session = pisSession()
+	step, err := c.InitiatePayment(ctx, r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if step.Redirect == nil || step.Redirect.URL != "https://sign.example/so" || step.Payment.ID != "S2" || step.Payment.Status != obsdk.PaymentReceived {
+		t.Fatalf("sign step: %+v", step)
+	}
+	if !strings.Contains(f.bodies[0], `"interval":"MONTHLY"`) {
+		t.Fatalf("body: %s", f.bodies[0])
+	}
+	step, err = c.Resume(ctx, step.State, obsdk.StepInput{Callback: "https://www.example.com/cb"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	p := step.Payment
+	if step.Kind != obsdk.StepDone || p.Status != obsdk.PaymentAccepted || !p.Final || p.Schedule == nil || p.Schedule.Frequency != obsdk.FrequencyMonthly {
+		t.Fatalf("done: %+v", p)
+	}
+	if len(f.reqs) != 3 {
+		t.Fatalf("%d requests, want 3 (no status call)", len(f.reqs))
+	}
+	if _, err := c.PaymentStatus(ctx, p.Ref, obsdk.PaymentCallOptions{Session: step.Session}); !errors.Is(err, obsdk.ErrUnsupported) {
+		t.Fatalf("status: %v", err)
+	}
+	if _, err := c.CancelPayment(ctx, p.Ref, obsdk.PaymentCallOptions{}); !errors.Is(err, obsdk.ErrUnsupported) {
+		t.Fatalf("cancel: %v", err)
+	}
+}
+
 // TestPaymentFlow drives login, creation, signing, a poll that is still
 // processing, and the status against a fake ČS.
 func TestPaymentFlow(t *testing.T) {

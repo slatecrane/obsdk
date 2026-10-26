@@ -63,7 +63,8 @@ commands:
   refresh
   disconnect
   auth-methods
-  payment-spec [TYPE]              show the payment types offered here, or one type's field rules
+  payment-spec [-standing] [TYPE]  show the payment types offered here, or one type's field rules
+                                   (-standing: standing orders)
   pay -type T -amount A -currency C -to ACCOUNT -name NAME [flags]
                                    initiate a payment and drive its approval (see obdev pay -h)
   payment-status REF               read a payment's status (REF from pay's output)
@@ -290,12 +291,23 @@ func dispatch(ctx context.Context, l *obsdktest.Live, c obsdk.Client, s *obsdk.S
 		return printJSON(map[string]any{"closed": r.Closed, "failed": r.Failed})
 	case "payment-spec":
 		info := c.Info()
+		standing := len(args) > 1 && args[1] == "-standing"
+		if standing {
+			args = args[1:]
+		}
 		if len(args) < 2 {
+			if standing {
+				return printJSON(info.StandingOrderTypes(l.Target.Country, l.Target.Segment))
+			}
 			return printJSON(info.PaymentTypes(l.Target.Country, l.Target.Segment))
 		}
-		spec, ok := info.PaymentSpec(l.Target.Country, l.Target.Segment, obsdk.PaymentType(args[1]))
+		lookup, what := info.PaymentSpec, "payments"
+		if standing {
+			lookup, what = info.StandingOrderSpec, "standing orders"
+		}
+		spec, ok := lookup(l.Target.Country, l.Target.Segment, obsdk.PaymentType(args[1]))
 		if !ok {
-			return fmt.Errorf("%w: no %s payments here", obsdk.ErrUnsupported, args[1])
+			return fmt.Errorf("%w: no %s %s here", obsdk.ErrUnsupported, args[1], what)
 		}
 		return printJSON(spec)
 	case "pay":
@@ -384,6 +396,12 @@ func paymentFlags(args []string) (obsdk.PaymentRequest, bool, error) {
 	pctx := fs.String("context", "", "payment context, e.g. party_to_party")
 	method := fs.String("method", "", "approval method: redirect or decoupled")
 	withSession := fs.Bool("session", false, "reuse the saved session's login")
+	every := fs.String("every", "", "make it a standing order: daily, weekly, every_two_weeks, monthly, every_two_months, quarterly, semiannual, annual")
+	start := fs.String("start", "", "standing order: first execution YYYY-MM-DD")
+	end := fs.String("end", "", "standing order: last execution YYYY-MM-DD")
+	count := fs.Int("count", 0, "standing order: number of executions")
+	monthEnd := fs.Bool("month-end", false, "standing order: on the last day of the month")
+	nonBusiness := fs.String("non-business-day", "", "standing order: following or preceding")
 	_ = fs.Parse(args)
 	if *typ == "" || *amount == "" || *currency == "" || *to == "" {
 		fs.Usage()
@@ -421,6 +439,10 @@ func paymentFlags(args []string) (obsdk.PaymentRequest, bool, error) {
 	}
 	r := obsdk.PaymentRequest{Type: obsdk.PaymentType(*typ), Method: *method, Transfers: []obsdk.Transfer{t},
 		ExecutionDate: *date, ChargeBearer: *charge, Context: *pctx}
+	if *every != "" {
+		r.Schedule = &obsdk.Schedule{Frequency: obsdk.Frequency(*every), StartDate: *start, EndDate: *end, Count: *count,
+			EndOfMonth: *monthEnd, NonBusinessDay: *nonBusiness}
+	}
 	if *from != "" {
 		id := ident(*from, "")
 		r.Debtor = &obsdk.PaymentDebtor{Account: &id}

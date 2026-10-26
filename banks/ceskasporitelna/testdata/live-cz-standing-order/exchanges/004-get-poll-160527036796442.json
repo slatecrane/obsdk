@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/csas/sandbox/v4/payment-initiation/my/standingorders/sign/poll/160527036796442",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b30b0c",
+      "User-Involved": "true",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "e5986fce-1810-4a0c-adac-c42594eb3584"
+    },
+    "body": {
+      "pollInterval": 5000,
+      "state": "DONE"
+    }
+  }
+}

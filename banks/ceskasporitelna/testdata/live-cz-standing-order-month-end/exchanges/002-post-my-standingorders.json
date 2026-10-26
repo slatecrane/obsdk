@@ -1,0 +1,106 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/csas/sandbox/v4/payment-initiation/my/standingorders",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:5f72b2",
+      "Content-Type": "application/json",
+      "User-Involved": "true",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 250.00
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "identification": {
+          "iban": "CZ79PSEUDO552303C62D"
+        }
+      },
+      "remittanceInformation": {
+        "unstructured": "unstructured-b7a41f"
+      },
+      "requestedExecutionDate": "2026-11-30",
+      "standingOrder": {
+        "execution": {
+          "interval": "YEARLY",
+          "mode": "UNTIL_CANCELLATION",
+          "modeDue": "DUE_LAST_DAY_OF_MONTH"
+        }
+      },
+      "standingOrderIdentification": {
+        "instructionIdentification": "B15E5DBF23D44C2EB68E9C808B7CCF9C"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "6afbb1e6-8fd7-4020-8281-557936fab491"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 1.0
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ64PSEUDO55AA2DA5B5"
+        }
+      },
+      "debtorAccount": {
+        "identification": {
+          "iban": "CZ04PSEUDOB4D0A586D9"
+        }
+      },
+      "instructionStatus": "ACTC",
+      "paymentTypeInformation": {
+        "instructionPriority": "NORM"
+      },
+      "remittanceInformation": {
+        "structured": {
+          "creditorReferenceInformation": {
+            "reference": [
+              "reference-a00781",
+              "reference-434474",
+              "reference-437925"
+            ]
+          }
+        },
+        "unstructured": "unstructured-743972"
+      },
+      "requestedExecutionDate": "2019-10-10",
+      "signInfo": {
+        "hash": "2d33a71458912313861ac0357aa70ffd83e4146e4d3c10bc6a271e0ae1ef9610",
+        "signId": "191010190908927",
+        "state": "OPEN"
+      },
+      "standingOrder": {
+        "execution": {
+          "interval": "MONTHLY",
+          "mode": "UNTIL_DATE",
+          "modeDue": "DUE_DAY_OF_MONTH"
+        },
+        "validity": {
+          "lastExecutionDate": "2020-10-10"
+        }
+      },
+      "standingOrderIdentification": {
+        "instructionIdentification": "TPP1234567890",
+        "transactionIdentification": "TPP5DR4397RFZ"
+      }
+    }
+  }
+}

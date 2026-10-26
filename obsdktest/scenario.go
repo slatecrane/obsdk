@@ -101,6 +101,7 @@ type PaymentCall struct {
 	ExecutionDate  string               `json:"execution_date,omitempty"`
 	ChargeBearer   string               `json:"charge_bearer,omitempty"`
 	Context        string               `json:"context,omitempty"`
+	Schedule       *obsdk.Schedule      `json:"schedule,omitempty"`
 	IdempotencyKey string               `json:"idempotency_key,omitempty"`
 	WithSession    bool                 `json:"with_session,omitempty"` // pass the run's session as PaymentRequest.Session
 }

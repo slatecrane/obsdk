@@ -22,6 +22,10 @@ import (
 // poll tells whether the payment was signed. Status calls need the payment
 // login's token. ČS's API has no cancellation.
 //
+// Standing orders (domestic only) go the same way through /my/standingorders,
+// which has its own signing and poll resources but no status: the poll's
+// DONE is the last word on them.
+//
 // A session from an earlier payment login (scope PISP, token still valid or
 // refreshable) can be passed as PaymentRequest.Session to skip the login.
 
@@ -29,7 +33,8 @@ const (
 	// paymentKind names a payment login in DisconnectResult.
 	paymentKind = "pis"
 
-	pisBase = pisRoot + "/my/payments"
+	pisBase      = pisRoot + "/my/payments"
+	standingBase = pisRoot + "/my/standingorders"
 
 	// defaultPollInterval applies when ČS's signing response gives none.
 	defaultPollInterval = 5 * time.Second
@@ -50,6 +55,16 @@ type payState struct {
 	// Session is the payment login, handed back on every step so it can be
 	// used for status calls and the next payment.
 	Session *obsdk.Session `json:"session,omitempty"`
+	// Schedule is set for a standing order.
+	Schedule *obsdk.Schedule `json:"schedule,omitempty"`
+}
+
+// base is the resource the payment is created, signed and polled at.
+func (p *payState) base() string {
+	if p.Schedule != nil {
+		return standingBase
+	}
+	return pisBase
 }
 
 // paymentRef is what Payment.Ref holds. It carries no tokens: status calls
@@ -59,6 +74,7 @@ type paymentRef struct {
 	ID          string            `json:"id"`
 	SignID      string            `json:"s"`
 	Type        obsdk.PaymentType `json:"t"`
+	Standing    bool              `json:"so,omitempty"`
 }
 
 // ---- specs ----
@@ -110,14 +126,46 @@ func paymentSpecs() []obsdk.PaymentSpec {
 		obsdk.PaymentField{Path: obsdk.FieldRemittance, Use: obsdk.FieldOptional, MaxItems: 1, MaxLength: 140, Label: "Message for the payee"},
 	)
 	sepa.Notes = append(append([]string{}, base.Notes...), "SEPA payments are sent with shared charges (SHA), the only option ČS allows within the EEA.")
-	return []obsdk.PaymentSpec{domestic, sepa}
+
+	// Standing orders: domestic only, monthly or longer, on a day 1 to 28
+	// or the month's last day, starting tomorrow at the earliest.
+	standing := base
+	standing.Type, standing.Currencies, standing.StatusNeedsSession = obsdk.PaymentDomestic, []string{"CZK"}, false
+	standing.FinalStatuses = []obsdk.PaymentStatus{obsdk.PaymentAccepted}
+	standing.Schedule = &obsdk.ScheduleSpec{StartDateMinDays: 1, MaxDayOfMonth: 28}
+	standing.Fields = nil
+	for _, f := range domestic.Fields {
+		if f.Path != obsdk.FieldExecutionDate { // the schedule's start date replaces it
+			standing.Fields = append(standing.Fields, f)
+		}
+	}
+	standing.Fields = append(standing.Fields,
+		obsdk.PaymentField{Path: obsdk.FieldScheduleFrequency, Use: obsdk.FieldRequired, Label: "Frequency", Options: []obsdk.Option{
+			{Value: string(obsdk.FrequencyMonthly), Label: "Monthly"}, {Value: string(obsdk.FrequencyQuarterly), Label: "Quarterly"},
+			{Value: string(obsdk.FrequencySemiannual), Label: "Every six months"}, {Value: string(obsdk.FrequencyAnnual), Label: "Yearly"}}},
+		obsdk.PaymentField{Path: obsdk.FieldScheduleStartDate, Use: obsdk.FieldRequired, Label: "First payment",
+			Note: "Not today. Its day of the month (1 to 28) is the day of every payment; with end_of_month it must be a month's last day. Business 24 accounts: a business day."},
+		obsdk.PaymentField{Path: obsdk.FieldScheduleEndDate, Use: obsdk.FieldOptional, Label: "Last payment",
+			Note: "Empty: until the user cancels it. Business 24 accounts: a business day."},
+		obsdk.PaymentField{Path: obsdk.FieldScheduleEndOfMonth, Use: obsdk.FieldOptional, Label: "On the last day of the month",
+			Note: "George accounts only."},
+	)
+	standing.Notes = []string{
+		"Two redirects, as for payments: the user logs in to ČS (scope PISP), then signs the standing order. Pass the session of an earlier payment login as PaymentRequest.Session to skip the first.",
+		"The SDK reports a signed standing order as accepted. ČS's API has no status for it and cannot cancel it; the user changes or ends it in George.",
+		"With co-signing, only George clients with the right \"payment - group A\" may create standing orders.",
+	}
+	return []obsdk.PaymentSpec{domestic, sepa, standing}
 }
 
-func (c *client) paymentSpec(t obsdk.PaymentType) (obsdk.PaymentSpec, error) {
-	if s, ok := c.Info().PaymentSpec(c.target.Country, c.target.Segment, t); ok {
+func (c *client) paymentSpec(r obsdk.PaymentRequest) (obsdk.PaymentSpec, error) {
+	if s, ok := c.Info().SpecFor(c.target.Country, c.target.Segment, r); ok {
 		return s, nil
 	}
-	return obsdk.PaymentSpec{}, fmt.Errorf("%w: Česká spořitelna offers no %q payments", obsdk.ErrUnsupported, t)
+	if r.Schedule != nil {
+		return obsdk.PaymentSpec{}, fmt.Errorf("%w: Česká spořitelna offers no %q standing orders", obsdk.ErrUnsupported, r.Type)
+	}
+	return obsdk.PaymentSpec{}, fmt.Errorf("%w: Česká spořitelna offers no %q payments", obsdk.ErrUnsupported, r.Type)
 }
 
 // ---- request body ----
@@ -241,6 +289,86 @@ func (c *client) buildBody(r obsdk.PaymentRequest) ([]byte, error) {
 	return json.Marshal(b)
 }
 
+// standingBody is ČS's standing order (StandingOrderFullPayloadRequest).
+type standingBody struct {
+	StandingOrderIdentification struct {
+		InstructionIdentification string `json:"instructionIdentification"`
+	} `json:"standingOrderIdentification"`
+	StandingOrder struct {
+		Execution struct {
+			Mode     string `json:"mode"`
+			ModeDue  string `json:"modeDue"`
+			Interval string `json:"interval"`
+		} `json:"execution"`
+		Validity *struct {
+			LastExecutionDate string `json:"lastExecutionDate"`
+		} `json:"validity,omitempty"`
+	} `json:"standingOrder"`
+	Amount struct {
+		InstructedAmount pisAmount `json:"instructedAmount"`
+	} `json:"amount"`
+	RequestedExecutionDate string         `json:"requestedExecutionDate"`
+	DebtorAccount          pisAccount     `json:"debtorAccount"`
+	CreditorAccount        pisAccount     `json:"creditorAccount"`
+	RemittanceInformation  *pisRemittance `json:"remittanceInformation,omitempty"`
+}
+
+var standingIntervals = map[obsdk.Frequency]string{
+	obsdk.FrequencyMonthly: "MONTHLY", obsdk.FrequencyQuarterly: "QUARTERLY",
+	obsdk.FrequencySemiannual: "HALFYEARLY", obsdk.FrequencyAnnual: "YEARLY",
+}
+
+// buildStandingBody turns a validated standing-order request into ČS's
+// body. The start date is the first execution and sets the day of the
+// later ones; DUE_LAST_DAY_OF_MONTH wants it on a month's last day.
+func (c *client) buildStandingBody(r obsdk.PaymentRequest) ([]byte, error) {
+	sc, t := r.Schedule, r.Transfers[0]
+	interval, ok := standingIntervals[sc.Frequency]
+	if !ok { // the spec's options keep this from happening
+		return nil, invalid(obsdk.FieldScheduleFrequency, "Česká spořitelna takes monthly, quarterly, semiannual or annual standing orders")
+	}
+	var b standingBody
+	id, err := c.instructionID(r)
+	if err != nil {
+		return nil, err
+	}
+	b.StandingOrderIdentification.InstructionIdentification = id
+	b.StandingOrder.Execution.Mode, b.StandingOrder.Execution.ModeDue, b.StandingOrder.Execution.Interval = "UNTIL_CANCELLATION", "DUE_DAY_OF_MONTH", interval
+	if sc.EndOfMonth {
+		start, _ := time.Parse("2006-01-02", sc.StartDate)
+		if start.AddDate(0, 0, 1).Day() != 1 {
+			return nil, invalid(obsdk.FieldScheduleStartDate, "with end_of_month, Česká spořitelna wants the start date on the last day of a month")
+		}
+		b.StandingOrder.Execution.ModeDue = "DUE_LAST_DAY_OF_MONTH"
+	}
+	if sc.EndDate != "" {
+		b.StandingOrder.Execution.Mode = "UNTIL_DATE"
+		b.StandingOrder.Validity = &struct {
+			LastExecutionDate string `json:"lastExecutionDate"`
+		}{sc.EndDate}
+	}
+	b.Amount.InstructedAmount = pisAmount{Value: json.Number(t.Amount.Amount), Currency: t.Amount.Currency}
+	b.RequestedExecutionDate = sc.StartDate
+	b.DebtorAccount.Identification.IBAN = r.Debtor.Account.Value
+	b.CreditorAccount.Identification.IBAN = t.Creditor.Account.Value
+	rem := &pisRemittance{}
+	if len(t.Remittance) > 0 {
+		rem.Unstructured = t.Remittance[0]
+	}
+	if ref := t.Reference; ref != nil && ref.Value != "" {
+		rem.Structured = &struct {
+			CreditorReferenceInformation struct {
+				Reference []string `json:"reference"`
+			} `json:"creditorReferenceInformation"`
+		}{}
+		rem.Structured.CreditorReferenceInformation.Reference = []string{"VS:" + ref.Value}
+	}
+	if rem.Unstructured != "" || rem.Structured != nil {
+		b.RemittanceInformation = rem
+	}
+	return json.Marshal(b)
+}
+
 // ---- initiate ----
 
 type pisResponse struct {
@@ -264,7 +392,7 @@ type pisResponse struct {
 // login (scope PISP), or straight to the signing page when r.Session holds a
 // usable payment login.
 func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*obsdk.Step, error) {
-	spec, err := c.paymentSpec(r.Type)
+	spec, err := c.paymentSpec(r)
 	if err != nil {
 		return nil, err
 	}
@@ -278,11 +406,15 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 	if err != nil {
 		return nil, err
 	}
-	body, err := c.buildBody(r)
+	build := c.buildBody
+	if r.Schedule != nil {
+		build = c.buildStandingBody
+	}
+	body, err := build(r)
 	if err != nil {
 		return nil, err
 	}
-	f := &flow{RedirectURL: redirectURL, Pay: &payState{Type: r.Type, Body: body}}
+	f := &flow{RedirectURL: redirectURL, Pay: &payState{Type: r.Type, Body: body, Schedule: r.Schedule}}
 	if s, err := c.paymentSession(ctx, r.Session); err != nil {
 		return nil, err
 	} else if s != nil {
@@ -341,7 +473,7 @@ func (c *client) createAndSign(ctx context.Context, f *flow, s *obsdk.Session) (
 		return nil, &obsdk.FlowError{Session: s.Clone(), Payment: pay, Err: err}
 	}
 	user := &obsdk.PSUContext{}
-	res, err := c.do(ctx, req{op: opPayment, method: http.MethodPost, path: pisBase, body: f.Pay.Body, bearer: s.AccessToken, pis: true, psu: user})
+	res, err := c.do(ctx, req{op: opPayment, method: http.MethodPost, path: f.Pay.base(), body: f.Pay.Body, bearer: s.AccessToken, pis: true, psu: user})
 	if err != nil {
 		return fail(nil, err)
 	}
@@ -364,7 +496,7 @@ func (c *client) createAndSign(ctx context.Context, f *flow, s *obsdk.Session) (
 		return fail(pay, &obsdk.PaymentRejectedError{Reason: pay.Reason, Payment: pay})
 	}
 
-	path := pisBase + "/federate/sign/" + url.PathEscape(pr.SignInfo.SignID) + "/hash/" + url.PathEscape(pr.SignInfo.Hash)
+	path := f.Pay.base() + "/federate/sign/" + url.PathEscape(pr.SignInfo.SignID) + "/hash/" + url.PathEscape(pr.SignInfo.Hash)
 	sres, err := c.do(ctx, req{op: opPaySign, method: http.MethodGet, path: path, bearer: s.AccessToken, pis: true, psu: user,
 		header: http.Header{"Callback-Uri": {f.RedirectURL}}})
 	if err != nil {
@@ -419,7 +551,7 @@ func (c *client) finishSign(ctx context.Context, f *flow, in obsdk.StepInput) (*
 		}
 		f.Pay.Returned = true
 	}
-	res, err := c.do(ctx, req{op: opPayPoll, method: http.MethodGet, path: pisBase + "/sign/poll/" + url.PathEscape(f.Pay.PollID),
+	res, err := c.do(ctx, req{op: opPayPoll, method: http.MethodGet, path: f.Pay.base() + "/sign/poll/" + url.PathEscape(f.Pay.PollID),
 		bearer: s.AccessToken, pis: true, psu: &obsdk.PSUContext{}})
 	if err != nil {
 		return fail(pay, err)
@@ -447,6 +579,11 @@ func (c *client) finishSign(ctx context.Context, f *flow, in obsdk.StepInput) (*
 	default: // REJECTED, EXPIRED, ORDER_PROCESSING_FAILED
 		return fail(pay, authFailed("payment was not signed (%s)", pb.State))
 	}
+	if f.Pay.Schedule != nil {
+		// No status resource for standing orders: signed is set up.
+		pay.Status, pay.Final, pay.BankStatus, pay.Raw = obsdk.PaymentAccepted, true, pb.State, res.body
+		return &obsdk.Step{Kind: obsdk.StepDone, Session: s, Payment: pay, Raw: res.body}, nil
+	}
 	got, raw, err := c.status(ctx, f.Pay, s)
 	if err != nil {
 		return fail(pay, err)
@@ -460,7 +597,7 @@ func (c *client) finishSign(ctx context.Context, f *flow, in obsdk.StepInput) (*
 // ---- status ----
 
 func (c *client) toPayment(p *payState, status, reason string, raw []byte) (*obsdk.Payment, error) {
-	ref, err := flowstate.Encode(paymentRef{Integration: integrationID, ID: p.ID, SignID: p.SignID, Type: p.Type})
+	ref, err := flowstate.Encode(paymentRef{Integration: integrationID, ID: p.ID, SignID: p.SignID, Type: p.Type, Standing: p.Schedule != nil})
 	if err != nil {
 		return nil, err
 	}
@@ -468,7 +605,7 @@ func (c *client) toPayment(p *payState, status, reason string, raw []byte) (*obs
 	if id == "" {
 		id = p.SignID
 	}
-	pay := &obsdk.Payment{ID: id, Type: p.Type, Status: obsdk.PaymentReceived, Ref: ref, Raw: raw, Reason: reason}
+	pay := &obsdk.Payment{ID: id, Type: p.Type, Status: obsdk.PaymentReceived, Ref: ref, Raw: raw, Reason: reason, Schedule: p.Schedule}
 	if status != "" {
 		pay.BankStatus = status
 		pay.Status, pay.Final = cbs.PaymentStatus(status)
@@ -513,6 +650,9 @@ func (c *client) PaymentStatus(ctx context.Context, ref string, o obsdk.PaymentC
 	r, err := decodeRef(ref)
 	if err != nil {
 		return nil, err
+	}
+	if r.Standing {
+		return nil, fmt.Errorf("%w: Česká spořitelna's API has no status for standing orders", obsdk.ErrUnsupported)
 	}
 	s := o.Session
 	if s == nil {
