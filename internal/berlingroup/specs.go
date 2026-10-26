@@ -84,3 +84,64 @@ func CreditTransferSpec(t obsdk.PaymentType, o SpecOptions) obsdk.PaymentSpec {
 		Fields: fields, Notes: o.Notes,
 	}
 }
+
+// PeriodicOptions tunes PeriodicSpec to a bank.
+type PeriodicOptions struct {
+	// Frequencies offered; default all eight of the standard.
+	Frequencies []obsdk.Frequency
+	// EndOfMonth: dayOfExecution "31" (the month's last day) is accepted.
+	EndOfMonth bool
+	// ExecutionRule: executionRule (following / preceding) is accepted.
+	ExecutionRule bool
+	// StartDateMinDays is the earliest first execution, in days from today.
+	StartDateMinDays int
+	Notes            []string
+}
+
+var frequencyLabels = map[obsdk.Frequency]string{
+	obsdk.FrequencyDaily: "Daily", obsdk.FrequencyWeekly: "Weekly", obsdk.FrequencyEveryTwoWeeks: "Every two weeks",
+	obsdk.FrequencyMonthly: "Monthly", obsdk.FrequencyEveryTwoMonths: "Every two months", obsdk.FrequencyQuarterly: "Quarterly",
+	obsdk.FrequencySemiannual: "Every six months", obsdk.FrequencyAnnual: "Yearly",
+}
+
+// PeriodicSpec is the standing-order spec (periodic-payments) of a single
+// payment spec: the same transfer fields without the execution date, plus
+// the schedule. The standard has no execution count, so Count is not
+// offered. The payment is cancellable when the single payment is.
+func PeriodicSpec(single obsdk.PaymentSpec, o PeriodicOptions) obsdk.PaymentSpec {
+	s := single
+	s.ExecutionDateMaxDays = 0
+	s.FinalStatuses = []obsdk.PaymentStatus{obsdk.PaymentAccepted}
+	s.Schedule = &obsdk.ScheduleSpec{StartDateMinDays: o.StartDateMinDays}
+	s.Fields = nil
+	for _, f := range single.Fields {
+		if f.Path != obsdk.FieldExecutionDate {
+			s.Fields = append(s.Fields, f)
+		}
+	}
+	freqs := o.Frequencies
+	if len(freqs) == 0 {
+		freqs = []obsdk.Frequency{obsdk.FrequencyDaily, obsdk.FrequencyWeekly, obsdk.FrequencyEveryTwoWeeks, obsdk.FrequencyMonthly,
+			obsdk.FrequencyEveryTwoMonths, obsdk.FrequencyQuarterly, obsdk.FrequencySemiannual, obsdk.FrequencyAnnual}
+	}
+	opts := make([]obsdk.Option, len(freqs))
+	for i, f := range freqs {
+		opts[i] = obsdk.Option{Value: string(f), Label: frequencyLabels[f]}
+	}
+	s.Fields = append(s.Fields,
+		obsdk.PaymentField{Path: obsdk.FieldScheduleFrequency, Use: obsdk.FieldRequired, Label: "Frequency", Options: opts},
+		obsdk.PaymentField{Path: obsdk.FieldScheduleStartDate, Use: obsdk.FieldRequired, Label: "First payment",
+			Note: "Sets the day of the later payments."},
+		obsdk.PaymentField{Path: obsdk.FieldScheduleEndDate, Use: obsdk.FieldOptional, Label: "Last payment",
+			Note: "Empty: until it is cancelled."},
+	)
+	if o.EndOfMonth {
+		s.Fields = append(s.Fields, obsdk.PaymentField{Path: obsdk.FieldScheduleEndOfMonth, Use: obsdk.FieldOptional, Label: "On the last day of the month"})
+	}
+	if o.ExecutionRule {
+		s.Fields = append(s.Fields, obsdk.PaymentField{Path: obsdk.FieldScheduleNonBusinessDay, Use: obsdk.FieldOptional, Label: "On a non-business day",
+			Options: []obsdk.Option{{Value: obsdk.ScheduleFollowing, Label: "Next business day"}, {Value: obsdk.SchedulePreceding, Label: "Business day before"}}})
+	}
+	s.Notes = append(append([]string{}, single.Notes...), o.Notes...)
+	return s
+}

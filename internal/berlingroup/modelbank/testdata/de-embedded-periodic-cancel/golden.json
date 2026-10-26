@@ -1,0 +1,177 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the adorsys ModelBank online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ",
+        "schedule": {
+          "frequency": "monthly",
+          "start_date": "2026-11-05",
+          "end_date": "2027-10-05",
+          "non_business_day": "following"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "mocked PSU message",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (name-92dccb)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "SCA method EMAIL: tan is Yo6ABh . sent email to DE_36686519_embeddedSca.1@mail.de."
+      },
+      "payment": {
+        "id": "MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ",
+        "schedule": {
+          "frequency": "monthly",
+          "start_date": "2026-11-05",
+          "end_date": "2027-10-05",
+          "non_business_day": "following"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "accepted",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ",
+        "schedule": {
+          "frequency": "monthly",
+          "start_date": "2026-11-05",
+          "end_date": "2027-10-05",
+          "non_business_day": "following"
+        }
+      }
+    }
+  },
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+      "type": "sepa",
+      "status": "accepted",
+      "bank_status": "ACSP",
+      "final": false,
+      "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ"
+    }
+  },
+  {
+    "op": "cancel_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the adorsys ModelBank online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the confirmation code (TAN).",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (name-92dccb)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "SCA method EMAIL: tan is Bup8TA . sent email to DE_36686519_embeddedSca.1@mail.de."
+      },
+      "payment": {
+        "id": "MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ"
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "cancelled",
+        "bank_status": "CANC",
+        "final": true,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ"
+      }
+    }
+  }
+]

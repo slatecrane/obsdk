@@ -1,0 +1,35 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+    "headers": {
+      "Accept": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    }
+  },
+  "response": {
+    "status": 202,
+    "headers": {
+      "Content-Type": "application/json",
+      "X-Request-Id": "7cdf0a36-2737-4aaf-a0ad-79c9e8d4fb5c"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/cancellation-authorisations/e1d07646-b50b-4d8f-a68f-0e90e9d25520"
+        },
+        "self": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q"
+        },
+        "status": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/status"
+        },
+        "updatePsuAuthentication": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/cancellation-authorisations/e1d07646-b50b-4d8f-a68f-0e90e9d25520"
+        }
+      },
+      "transactionStatus": "ACSP"
+    }
+  }
+}

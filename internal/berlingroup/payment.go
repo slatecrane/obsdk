@@ -6,7 +6,9 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"strconv"
 	"strings"
+	"time"
 
 	obsdk "github.com/slatecrane/obsdk"
 	"github.com/slatecrane/obsdk/internal/bgstatus"
@@ -15,13 +17,32 @@ import (
 
 // Single payments: POST /v1/payments/{product}, approved through the same
 // authorisation flow as consents, read with .../status and cancelled with
-// DELETE (which the bank may want approved too).
+// DELETE (which the bank may want approved too). Standing orders are
+// periodic payments: the same body plus the schedule, on
+// /v1/periodic-payments/{product}, with the same approval, status and DELETE.
+
+// Payment services (the path segment after /v1/).
+const (
+	servicePayments = "payments"
+	servicePeriodic = "periodic-payments"
+)
 
 // payState identifies a payment inside a flow.
 type payState struct {
 	Type    obsdk.PaymentType `json:"type"`
 	Product string            `json:"product"`
 	ID      string            `json:"id,omitempty"`
+	// Periodic marks a standing order (service periodic-payments);
+	// Schedule is its schedule, when known (not on reads from a Ref).
+	Periodic bool            `json:"periodic,omitempty"`
+	Schedule *obsdk.Schedule `json:"schedule,omitempty"`
+}
+
+func (p *payState) service() string {
+	if p.Periodic {
+		return servicePeriodic
+	}
+	return servicePayments
 }
 
 // paymentRef is what Payment.Ref holds: enough to read or cancel the payment.
@@ -31,6 +52,7 @@ type paymentRef struct {
 	ID          string            `json:"id"`
 	Type        obsdk.PaymentType `json:"t"`
 	Institution string            `json:"b,omitempty"`
+	Periodic    bool              `json:"so,omitempty"`
 }
 
 // ---- request body ----
@@ -64,6 +86,37 @@ type pisBody struct {
 	Unstructured           string      `json:"remittanceInformationUnstructured,omitempty"`
 	Structured             any         `json:"remittanceInformationStructured,omitempty"`
 	RequestedExecutionDate string      `json:"requestedExecutionDate,omitempty"`
+
+	// Periodic payments.
+	StartDate      string `json:"startDate,omitempty"`
+	EndDate        string `json:"endDate,omitempty"`
+	ExecutionRule  string `json:"executionRule,omitempty"`
+	Frequency      string `json:"frequency,omitempty"`
+	DayOfExecution string `json:"dayOfExecution,omitempty"`
+}
+
+// frequencyCodes are the standard's frequency codes (EventFrequency7Code).
+var frequencyCodes = map[obsdk.Frequency]string{
+	obsdk.FrequencyDaily: "Daily", obsdk.FrequencyWeekly: "Weekly", obsdk.FrequencyEveryTwoWeeks: "EveryTwoWeeks",
+	obsdk.FrequencyMonthly: "Monthly", obsdk.FrequencyEveryTwoMonths: "EveryTwoMonths", obsdk.FrequencyQuarterly: "Quarterly",
+	obsdk.FrequencySemiannual: "SemiAnnual", obsdk.FrequencyAnnual: "Annual",
+}
+
+// schedule adds a standing order's schedule to the body. For monthly or
+// longer frequencies dayOfExecution repeats the start date's day, or is
+// "31" (the standard's ultimo) for the month's last day: the standard
+// makes it optional, but some banks (the ModelBank) require it.
+func (b *pisBody) schedule(sc *obsdk.Schedule) {
+	b.StartDate, b.EndDate, b.ExecutionRule = sc.StartDate, sc.EndDate, sc.NonBusinessDay
+	b.Frequency = frequencyCodes[sc.Frequency]
+	if sc.Frequency.Monthly() {
+		if start, err := time.Parse("2006-01-02", sc.StartDate); err == nil {
+			b.DayOfExecution = strconv.Itoa(start.Day())
+		}
+	}
+	if sc.EndOfMonth {
+		b.DayOfExecution = "31"
+	}
 }
 
 type address138 struct {
@@ -103,6 +156,9 @@ func (c *client) buildBody(r obsdk.PaymentRequest) (pisBody, error) {
 		CreditorName:           t.Creditor.Name,
 		ChargeBearer:           r.ChargeBearer,
 		RequestedExecutionDate: r.ExecutionDate,
+	}
+	if r.Schedule != nil {
+		b.schedule(r.Schedule)
 	}
 	if d := r.Debtor; d != nil {
 		if d.Account != nil && d.Account.Value != "" {
@@ -166,17 +222,20 @@ func referenceIssuer(scheme string) string {
 
 // ---- initiate ----
 
-func (c *client) paymentSpec(t obsdk.PaymentType) (obsdk.PaymentSpec, error) {
-	if s, ok := c.p.Info.PaymentSpec(c.target.Country, c.target.Segment, t); ok {
+func (c *client) paymentSpec(r obsdk.PaymentRequest) (obsdk.PaymentSpec, error) {
+	if s, ok := c.p.Info.SpecFor(c.target.Country, c.target.Segment, r); ok {
 		return s, nil
 	}
-	return obsdk.PaymentSpec{}, fmt.Errorf("%w: %s offers no %q payments", obsdk.ErrUnsupported, c.p.Info.Name, t)
+	if r.Schedule != nil {
+		return obsdk.PaymentSpec{}, fmt.Errorf("%w: %s offers no %q standing orders", obsdk.ErrUnsupported, c.p.Info.Name, r.Type)
+	}
+	return obsdk.PaymentSpec{}, fmt.Errorf("%w: %s offers no %q payments", obsdk.ErrUnsupported, c.p.Info.Name, r.Type)
 }
 
 // InitiatePayment validates the request, creates the payment and starts its
 // authorisation.
 func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*obsdk.Step, error) {
-	spec, err := c.paymentSpec(r.Type)
+	spec, err := c.paymentSpec(r)
 	if err != nil {
 		return nil, err
 	}
@@ -191,7 +250,7 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 		return nil, err
 	}
 	f := &flow{Op: flowPayment, Approach: approach, PSU: r.PSU, Language: r.Language, Institution: c.inst,
-		Pay: &payState{Type: r.Type, Product: c.p.Products[r.Type]}}
+		Pay: &payState{Type: r.Type, Product: c.p.Products[r.Type], Periodic: r.Schedule != nil, Schedule: r.Schedule}}
 	if c.p.PaymentXML {
 		if f.PayXML, err = c.buildPain001(r); err != nil {
 			return nil, err
@@ -230,7 +289,7 @@ func (c *client) InitiatePayment(ctx context.Context, r obsdk.PaymentRequest) (*
 func (c *client) createPayment(ctx context.Context, f *flow, in obsdk.StepInput) (*obsdk.Step, error) {
 	h := psuHeaders(&f.PSU)
 	c.redirectHeaders(f, h)
-	r := req{op: opPayment, method: http.MethodPost, path: "/v1/payments/" + url.PathEscape(f.Pay.Product), header: h}
+	r := req{op: opPayment, method: http.MethodPost, path: "/v1/" + f.Pay.service() + "/" + url.PathEscape(f.Pay.Product), header: h}
 	if f.PayXML != nil {
 		r.raw, r.contentType = f.PayXML, "application/xml"
 	} else {
@@ -262,7 +321,7 @@ func (c *client) createPayment(ctx context.Context, f *flow, in obsdk.StepInput)
 }
 
 func (c *client) paymentPath(p *payState) string {
-	return "/v1/payments/" + url.PathEscape(p.Product) + "/" + url.PathEscape(p.ID)
+	return "/v1/" + p.service() + "/" + url.PathEscape(p.Product) + "/" + url.PathEscape(p.ID)
 }
 
 // finishPayment reads the status once the authorisation is over.
@@ -320,12 +379,17 @@ func (c *client) readStatus(ctx context.Context, p *payState, psu *obsdk.PSUCont
 }
 
 func (c *client) paymentOf(p *payState, code string, raw []byte) (*obsdk.Payment, error) {
-	ref, err := flowstate.Encode(paymentRef{Integration: c.p.ID, Product: p.Product, ID: p.ID, Type: p.Type, Institution: c.inst})
+	ref, err := flowstate.Encode(paymentRef{Integration: c.p.ID, Product: p.Product, ID: p.ID, Type: p.Type, Institution: c.inst, Periodic: p.Periodic})
 	if err != nil {
 		return nil, err
 	}
 	st, final := bgstatus.Payment(code)
-	return &obsdk.Payment{ID: p.ID, Type: p.Type, Status: st, BankStatus: code, Final: final, Ref: ref, Raw: raw}, nil
+	if p.Periodic && (st == obsdk.PaymentInProgress || st == obsdk.PaymentCompleted) {
+		// A standing order is not settled once: executing or settled means
+		// it is set up.
+		st = obsdk.PaymentAccepted
+	}
+	return &obsdk.Payment{ID: p.ID, Type: p.Type, Status: st, BankStatus: code, Final: final, Ref: ref, Raw: raw, Schedule: p.Schedule}, nil
 }
 
 // decodeRef reads a payment reference and returns the client for the
@@ -340,7 +404,7 @@ func (c *client) decodeRef(ref string) (*client, *payState, error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	return cc, &payState{Type: r.Type, Product: r.Product, ID: r.ID}, nil
+	return cc, &payState{Type: r.Type, Product: r.Product, ID: r.ID, Periodic: r.Periodic}, nil
 }
 
 // PaymentStatus reads a payment's status; no session is needed, except with

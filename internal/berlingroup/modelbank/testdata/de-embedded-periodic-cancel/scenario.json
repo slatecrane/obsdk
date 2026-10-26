@@ -1,0 +1,100 @@
+{
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-26T19:12:45Z",
+    "redirect_url": "https://app.example/callback",
+    "ids": {
+      "request": [
+        "7fb6944c-c8bd-4474-b671-6bd42fbcc18d",
+        "af53828e-efb0-4462-8c18-854deec1ec80",
+        "dcc7873b-eb43-4fd3-a6da-f1457cbd5511",
+        "4786ded8-8a64-41b7-ac08-1688fabc3251",
+        "a6bec6d7-1ff4-4d02-8595-372f4563fb78",
+        "7cdf0a36-2737-4aaf-a0ad-79c9e8d4fb5c",
+        "7ed606e9-2244-4cd0-8157-0cf28597f0d8",
+        "070d8ec3-24e4-443c-9b56-964df159d546",
+        "115b3b81-90b8-4ab9-a407-747a50a4ddf7"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "embedded",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "DE95PSEUDO0B0702EBA1"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "25.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-0c264c",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE22PSEUDOA4578B542C"
+              }
+            },
+            "remittance": [
+              "obsdk standing"
+            ],
+            "end_to_end_id": "obsdk-e2e-3"
+          }
+        ],
+        "schedule": {
+          "frequency": "monthly",
+          "start_date": "2026-11-05",
+          "end_date": "2027-10-05",
+          "non_business_day": "following"
+        }
+      },
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "password": "REDACTED:password:c2c0d8",
+        "psu_id": "REDACTED:psu_id:ccc218"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "otp": "REDACTED:otp:af4456"
+      }
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "cancel_payment",
+      "method": "embedded",
+      "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiTUF0OXJhdHVCSXp5TGNXRUdUYWw0eFlHUDF0aFZFS2NJT0Q5NnU4ZWwwWldaT0Z1T3o1MENKamNiMXVtMWRlemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ",
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "password": "REDACTED:password:c2c0d8",
+        "psu_id": "REDACTED:psu_id:ccc218"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "otp": "REDACTED:otp:ded18f"
+      }
+    }
+  ]
+}

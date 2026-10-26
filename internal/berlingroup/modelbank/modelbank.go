@@ -17,6 +17,9 @@ const Bank = "modelbank"
 // DefaultBaseURL is the XS2A interface of a local ModelBank.
 const DefaultBaseURL = "http://localhost:8089"
 
+var sepa = berlingroup.CreditTransferSpec(obsdk.PaymentSEPA, berlingroup.SpecOptions{ExecutionDate: true, Cancellable: true, Address: true,
+	EndToEndRequired: true, NoReference: true, Approaches: []string{berlingroup.Redirect, berlingroup.Embedded, berlingroup.Decoupled}})
+
 // Profile describes the ModelBank as configured by bank_profile_ledgers.yml
 // in adorsys' XS2A-Sandbox 5.14.
 var Profile = berlingroup.Profile{
@@ -35,19 +38,24 @@ var Profile = berlingroup.Profile{
 			{Name: "base_url", Note: "the XS2A interface, default " + DefaultBaseURL},
 		},
 		Payments: []obsdk.PaymentSpec{
-			berlingroup.CreditTransferSpec(obsdk.PaymentSEPA, berlingroup.SpecOptions{ExecutionDate: true, Cancellable: true, Address: true, EndToEndRequired: true, NoReference: true,
-				Approaches: []string{berlingroup.Redirect, berlingroup.Embedded, berlingroup.Decoupled}}),
+			sepa,
 			berlingroup.CreditTransferSpec(obsdk.PaymentSEPAInstant, berlingroup.SpecOptions{Address: true, EndToEndRequired: true, NoReference: true,
 				Approaches: []string{berlingroup.Redirect, berlingroup.Embedded, berlingroup.Decoupled}}),
 			berlingroup.CreditTransferSpec(obsdk.PaymentCrossBorder, berlingroup.SpecOptions{ExecutionDate: true, Cancellable: true, Address: true, EndToEndRequired: true, NoReference: true,
 				ChargeBearer: true, Currencies: []string{"EUR", "USD", "GBP", "CHF"},
 				Approaches: []string{berlingroup.Redirect, berlingroup.Embedded, berlingroup.Decoupled}}),
+			// Its ledger needs dayOfExecution, which the adapter sends for
+			// monthly or longer frequencies only, and fails on "31" (the
+			// month's last day) in shorter months.
+			berlingroup.PeriodicSpec(sepa, berlingroup.PeriodicOptions{ExecutionRule: true, Frequencies: []obsdk.Frequency{
+				obsdk.FrequencyMonthly, obsdk.FrequencyEveryTwoMonths, obsdk.FrequencyQuarterly, obsdk.FrequencySemiannual, obsdk.FrequencyAnnual}}),
 		},
 		Docs: []string{"https://github.com/adorsys/XS2A-Sandbox/tree/5.14"},
 		Notes: []string{
 			"Development target for the Berlin Group adapter, not a bank.",
 			"A payment without an end-to-end id fails at the password step with PSU_CREDENTIALS_INVALID, so the spec requires one.",
 			"A structured reference is accepted on creation but makes the authorisation fail with FORMAT_ERROR, so the spec leaves it out.",
+			"Periodic payments: monthly or longer only (dayOfExecution is required), and no month-end option (dayOfExecution 31 fails in shorter months with PSU_CREDENTIALS_INVALID).",
 		},
 	},
 	BaseURL:    func(obsdk.Env, obsdk.Target, string) string { return DefaultBaseURL },

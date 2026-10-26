@@ -18,9 +18,9 @@ locally in Docker. Banks on it: `sparkassen` ([sparkassen.md](sparkassen.md)), `
 | Token only for creating | `PreStep.CreateOnly` (Bankart): the pre-step's token goes on the request that creates the consent or payment (and the authorisation calls in the same `Resume`), then is dropped: not in the flow state, not handed out as a session; payments are read and cancelled without a session, `Refresh` only checks the consent. `PreStep.TokenAccount` reads the account the user picked at the login from the token (the consent is dedicated to it, a payment without debtor is made from it); `PreStep.AccountParam` passes a known account to the login |
 | OAuth around every resource | `Profile.OAuth` (LUXHUB): requests that carry no user token get a client-credentials token from `OAuthServer.Token` (scope `AIS` on consent and account paths, `PISScope`/`PIS` on the others; one token request per call). A redirect flow without a `scaRedirect` or `scaOAuth` link and with no authorisation left to start sends the user to the fixed `OAuthServer.Authorize` endpoint, as in the OAuth SCA approach (scope `AIS:<consentId>` / `PIS:<paymentId>`, PKCE); `ExchangeScope` repeats the scope in the code exchange. Endpoints can be overridden with `Config.Extra` `oauth_authorize_url` / `oauth_token_url` |
 | Hubs | `Profile.Institution`: a `Config.Extra` parameter (e.g. the BLZ) picks one bank of a hub; it is stored in the session, the flow state and the payment reference, so later calls reach the same bank |
-| Not yet | decoupled after an OAuth pre-step, encrypted PSU authentication, signing baskets, multilevel SCA, periodic and bulk payments, card accounts |
+| Not yet | decoupled after an OAuth pre-step, encrypted PSU authentication, signing baskets, multilevel SCA, bulk payments, periodic payments as pain.001 (multipart), card accounts |
 | Data | accounts (`withBalance`), balances, transactions (booked, pending or both per profile) as JSON or camt.052/053/054 XML (`Profile.XMLTransactions`; parsed by content); `next` links passed through as the cursor, or paging by entry reference (`EntryReferencePaging`, Samlink); an unsigned amount without indicator whose debtor is the queried account counts as a debit; signed amounts, `creditDebitIndicator` on unsigned ones; 1.3.8 and older field shapes |
-| Payments | single payments per payment product, status, cancellation (immediate 204, or approved through cancellation authorisations). JSON bodies, or pain.001 XML (`Profile.PaymentXML`: pain.001.001.09 in the German GBIC_5 profile, `NOTPROVIDED` for names and ids not given, execution date today in CET when none is asked for) with the status read from pain.002 (most specific of transaction, payment and group status; the reason as `Payment.Reason`). `PSUIDRequired` profiles need `PSU.ID` to cancel |
+| Payments | single payments per payment product, status, cancellation (immediate 204, or approved through cancellation authorisations). JSON bodies, or pain.001 XML (`Profile.PaymentXML`: pain.001.001.09 in the German GBIC_5 profile, `NOTPROVIDED` for names and ids not given, execution date today in CET when none is asked for) with the status read from pain.002 (most specific of transaction, payment and group status; the reason as `Payment.Reason`). `PSUIDRequired` profiles need `PSU.ID` to cancel. Standing orders as periodic payments (`PeriodicSpec`): see below |
 | Refresh | without a token, `Refresh` checks the consent status and asks for re-authorisation when it is not `valid`; with one (OAuth SCA, pre-step) it also renews the access token |
 | Signing | Digest + draft-cavage `Signature` + `TPP-Signature-Certificate` with `Config.Seal` (RSA), SHA-256 or SHA-512, configurable `keyId` and `algorithm` |
 | Errors | `CONSENT_EXPIRED` / `CONSENT_INVALID` / `CONSENT_UNKNOWN` → re-authorise; `ACCESS_EXCEEDED` and 429 → rate limited with `Retry-After`; `TOKEN_EXPIRED` → access expired; wrong login, TAN or method during authorisation → `ErrAuthFailed`; `PAYMENT_FAILED` or `RJCT` → payment rejected |
@@ -127,6 +127,28 @@ go run ./cmd/obdev cancel-payment REF -method embedded
 After a redirect approval the sandbox sends the user to the bare redirect URL; paste that URL as the
 callback.
 
+## Standing orders (periodic payments)
+
+A profile offers standing orders by adding `berlingroup.PeriodicSpec(singleSpec, berlingroup.PeriodicOptions{...})`
+to `Info.Payments`, next to the single-payment spec of the same type. `PeriodicSpec` drops `execution_date` and adds
+the schedule fields; the options say which frequencies, whether `end_of_month` (`dayOfExecution` 31) and
+`non_business_day` (`executionRule`) are accepted, and the earliest start. The product is the single payment's
+(`Profile.Products`).
+
+- `POST /v1/periodic-payments/{product}` with the JSON single-payment body plus `startDate`, `endDate`, `frequency`
+  (`Daily`, `Weekly`, `EveryTwoWeeks`, `Monthly`, `EveryTwoMonths`, `Quarterly`, `SemiAnnual`, `Annual`),
+  `executionRule` (`following`/`preceding`) and `dayOfExecution`: the start date's day for monthly or longer
+  frequencies (optional in the standard, required by the ModelBank), `31` (ultimo) for `EndOfMonth`, nothing for
+  daily and weekly ones.
+- Approval, status and cancellation are the single payment's, on `/v1/periodic-payments/...`; the `Payment.Ref`
+  remembers the service. Statuses that mean executing or settled (`ACSP`, `ACSC`, ...) become `accepted`: the order
+  is set up. `DELETE` ends the standing order.
+- Not supported: the standard has no execution count (`Count`), `monthsOfExecution` (1.3.8+), and periodic pain.001
+  (a multipart body with `xml_sct` and `json_standingorderType`): `Integration` refuses a standing-order spec on a
+  `PaymentXML` profile.
+
+Only the ModelBank offers standing orders so far; each bank profile needs its own options and a sandbox run.
+
 ## ModelBank quirks
 
 Each one is handled in the ModelBank profile, not in the adapter:
@@ -139,6 +161,10 @@ Each one is handled in the ModelBank profile, not in the adapter:
   ModelBank spec has no reference field.
 - `bookingStatus=both` and `pending` are refused (`PARAMETER_NOT_SUPPORTED`), and transactions are not
   paginated. The two-page case is a hand-written scenario.
+- Periodic payments: `dayOfExecution` is required (`FORMAT_ERROR` without it, also for daily and weekly ones,
+  where the standard gives it no meaning), and `31` with a start in a shorter month crashes its ledger
+  (`Invalid date 'NOVEMBER 31'`, seen as `PSU_CREDENTIALS_INVALID` at the password step). The ModelBank spec offers
+  monthly or longer frequencies and no month end.
 - Responses always carry a mocked `scaMethods` entry and a WARNING `tppMessage`; the adapter ignores
   warnings.
 
@@ -155,6 +181,8 @@ Recorded in `internal/berlingroup/modelbank/testdata`:
 | `de-embedded-pay-instant` | SEPA Instant payment, completed (ACCC) |
 | `de-redirect-connect` | redirect connect approved on the online banking page |
 | `de-pay-validation` | a request the spec refuses before any call |
+| `de-embedded-periodic-cancel` | 2026-10-26: monthly standing order with an end date and `executionRule` (ACSP → accepted), status, cancellation with its own embedded authorisation (CANC) |
+| `de-embedded-periodic-quarterly` | 2026-10-26: quarterly standing order from the 31st, until cancelled |
 
 Hand-written (the sandbox can't produce them): `de-hand-transactions-pages` (next link, unsigned debit,
 structured reference object, foreign cursor refused), `de-hand-consent-expired`, `de-hand-rate-limited`,

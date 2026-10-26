@@ -1,0 +1,87 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Enter the adorsys ModelBank online banking login.",
+      "fields": [
+        {
+          "key": "psu_id",
+          "label": "Online banking login",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "key": "password",
+          "label": "Password / PIN",
+          "kind": "secret",
+          "required": true
+        }
+      ],
+      "payment": {
+        "id": "f7p7BETWSuH5zHbOnn57D4S1_WVXJ2o3Lsy7HIsWVCVaYB6BuRwMgrArKUlt86EzcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiZjdwN0JFVFdTdUg1ekhiT25uNTdENFMxX1dWWEoybzNMc3k3SElzV1ZDVmFZQjZCdVJ3TWdyQXJLVWx0ODZFemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ",
+        "schedule": {
+          "frequency": "quarterly",
+          "start_date": "2026-12-31"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "input",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "mocked PSU message",
+      "fields": [
+        {
+          "key": "otp",
+          "label": "Confirmation code (name-92dccb)",
+          "kind": "otp",
+          "required": true,
+          "pattern": "^[0-9]{1,6}$"
+        }
+      ],
+      "challenge": {
+        "text": "SCA method EMAIL: tan is lbNjuN . sent email to DE_36686519_embeddedSca.1@mail.de."
+      },
+      "payment": {
+        "id": "f7p7BETWSuH5zHbOnn57D4S1_WVXJ2o3Lsy7HIsWVCVaYB6BuRwMgrArKUlt86EzcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiZjdwN0JFVFdTdUg1ekhiT25uNTdENFMxX1dWWEoybzNMc3k3SElzV1ZDVmFZQjZCdVJ3TWdyQXJLVWx0ODZFemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ",
+        "schedule": {
+          "frequency": "quarterly",
+          "start_date": "2026-12-31"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "f7p7BETWSuH5zHbOnn57D4S1_WVXJ2o3Lsy7HIsWVCVaYB6BuRwMgrArKUlt86EzcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+        "type": "sepa",
+        "status": "accepted",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoibW9kZWxiYW5rLWJnIiwicCI6InNlcGEtY3JlZGl0LXRyYW5zZmVycyIsImlkIjoiZjdwN0JFVFdTdUg1ekhiT25uNTdENFMxX1dWWEoybzNMc3k3SElzV1ZDVmFZQjZCdVJ3TWdyQXJLVWx0ODZFemNnZnRKYkVUa3p2TnZ1NW1aUXFXY0E9PV89X3BzR0x2UXB0OVEiLCJ0Ijoic2VwYSIsInNvIjp0cnVlfQ",
+        "schedule": {
+          "frequency": "quarterly",
+          "start_date": "2026-12-31"
+        }
+      }
+    }
+  }
+]
