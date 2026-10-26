@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/pisp/v1/standingorders/94960a6f7f8f4db899fdeb3e8d4d6799/status",
+    "headers": {
+      "Accept": "application/json",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "false"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "instructionStatus": "ACSP"
+    }
+  }
+}

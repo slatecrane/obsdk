@@ -62,10 +62,11 @@ func init() {
 	for _, seg := range []obsdk.Segment{obsdk.Personal, obsdk.Business} {
 		// Connect, accounts, balances, transactions (empty in the stub),
 		// refresh, disconnect, domestic payments signed, status (scenarios
-		// live-cz-*). SEPA can't be signed in the sandbox. The stub has the
+		// live-cz-*, 2026-10-23); domestic standing orders signed and read
+		// (2026-10-26). SEPA can't be signed in the sandbox. The stub has the
 		// same test accounts for any client name, so both segments count.
 		variants = append(variants,
-			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Sandbox, Maturity: obsdk.MaturitySandboxVerified, VerifiedOn: "2026-10-23"},
+			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Sandbox, Maturity: obsdk.MaturitySandboxVerified, VerifiedOn: "2026-10-26"},
 			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Production, Maturity: obsdk.MaturityUnverified},
 		)
 	}
@@ -102,6 +103,7 @@ func init() {
 				"Account ids are encrypted and change on every account listing; older ids keep working. Match accounts across calls with StableID.",
 				"A multi-currency account is listed once per currency, with the same IBAN.",
 				"Payments need their own login (scope pisp) before KB's signing page: two redirects. Signed payments are irrevocable.",
+				"Domestic standing orders (PaymentRequest.Schedule; Info.StandingOrderSpec): daily to yearly, end date or count; status readable, no cancellation through the API.",
 			},
 		},
 		Factory: newClient,

@@ -1,0 +1,99 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/pisp/v1/standingorders",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:4359e9",
+      "Content-Type": "application/json",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "true"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 300.00
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "currency": "CZK",
+        "identification": {
+          "iban": "CZ13PSEUDO16F9725CB2"
+        }
+      },
+      "remittanceInformation": {
+        "unstructured": "unstructured-13c56e"
+      },
+      "requestedExecutionDate": "2026-12-31",
+      "standingOrder": {
+        "execution": {
+          "interval": "QUARTERLY",
+          "mode": "UNTIL_CANCELLATION",
+          "modeDue": "DUE_DAY_OF_MONTH"
+        }
+      },
+      "standingOrderIdentification": {
+        "instructionIdentification": "1F37DF5842BB40E492BA443BCC3DEC2E"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 300.0
+        }
+      },
+      "creditorAccount": {
+        "currency": "CZK",
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "currency": "CZK",
+        "identification": {
+          "iban": "CZ13PSEUDO16F9725CB2"
+        }
+      },
+      "instructionStatus": "ACTC",
+      "paymentTypeInformation": {
+        "serviceLevel": {
+          "code": "DMCT"
+        }
+      },
+      "remittanceInformation": {
+        "unstructured": "unstructured-13c56e"
+      },
+      "requestedExecutionDate": "2026-12-31",
+      "signInfo": {
+        "signId": "a3a9725j61g7e3a3gii4i626087ee1",
+        "state": "OPEN"
+      },
+      "standingOrder": {
+        "alias": "obsdk quarterly",
+        "execution": {
+          "interval": "QUARTERLY",
+          "mode": "UNTIL_CANCELLATION",
+          "modeDue": "DUE_DAY_OF_MONTH"
+        },
+        "openDate": "2026-10-26"
+      },
+      "standingOrderIdentification": {
+        "instructionIdentification": "1F37DF5842BB40E492BA443BCC3DEC2E",
+        "transactionIdentification": "db3a2a501f3945b297bd046bc39493e0"
+      }
+    }
+  }
+}

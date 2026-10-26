@@ -1,0 +1,62 @@
+{
+  "config": {
+    "bank": "komercnibanka",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-26T19:00:26Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "tpp_name": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "1f37df58-42bb-40e4-92ba-443bcc3dec2e",
+        "345ec655-5730-42cc-941d-bca1fbde20cc",
+        "7c388440-703a-464e-8650-3fe26ab0e8d0",
+        "def4b037-76f9-41fa-a839-05fe1b45ebd5"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "domestic",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "CZ13PSEUDO16F9725CB2"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "300.00",
+              "currency": "CZK"
+            },
+            "creditor": {
+              "account": {
+                "scheme": "IBAN",
+                "value": "CZ27PSEUDOE5A9F4FE1D"
+              }
+            },
+            "remittance": [
+              "obsdk quarterly"
+            ]
+          }
+        ],
+        "schedule": {
+          "frequency": "quarterly",
+          "start_date": "2026-12-31"
+        },
+        "with_session": true
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/cb"
+    }
+  ]
+}
