@@ -1,0 +1,48 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/f1131ffe-02fc-4bb1-91ef-7f9cfb514d4e",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Id": "REDACTED:psu-id:ccc218",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    },
+    "body": {
+      "scaAuthenticationData": "REDACTED:scaauthenticationdata:af4456"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Aspsp-Sca-Approach": "EMBEDDED",
+      "Content-Type": "application/json",
+      "X-Request-Id": "dcc7873b-eb43-4fd3-a6da-f1457cbd5511"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/f1131ffe-02fc-4bb1-91ef-7f9cfb514d4e"
+        }
+      },
+      "currencyConversionFees": {
+        "amount": "300",
+        "currency": "EUR"
+      },
+      "estimatedInterbankSettlementAmount": {
+        "amount": "250",
+        "currency": "EUR"
+      },
+      "estimatedTotalAmount": {
+        "amount": "900",
+        "currency": "EUR"
+      },
+      "scaStatus": "finalised",
+      "transactionFees": {
+        "amount": "500",
+        "currency": "EUR"
+      }
+    }
+  }
+}

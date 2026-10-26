@@ -339,6 +339,10 @@ func Integration(p Profile) obsdk.Integration {
 		if p.Products[s.Type] == "" {
 			panic(fmt.Sprintf("berlingroup: profile %q has a %s payment spec but no payment product for it", p.ID, s.Type))
 		}
+		if p.PaymentXML && s.Schedule != nil {
+			// Periodic pain.001 is a multipart body (xml_sct + json_standingorderType).
+			panic(fmt.Sprintf("berlingroup: profile %q sends pain.001 bodies, which the adapter cannot send as periodic payments", p.ID))
+		}
 		if p.PaymentXML && !strings.HasPrefix(p.Products[s.Type], "pain.001-") {
 			panic(fmt.Sprintf("berlingroup: profile %q sends pain.001 bodies, but its %s product %q is not a pain.001 product", p.ID, s.Type, p.Products[s.Type]))
 		}

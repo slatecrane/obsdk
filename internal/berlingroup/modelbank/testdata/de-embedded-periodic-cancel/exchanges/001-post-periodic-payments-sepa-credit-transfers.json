@@ -1,0 +1,76 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/v1/periodic-payments/sepa-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Tpp-Redirect-Preferred": "false"
+    },
+    "body": {
+      "creditorAccount": {
+        "iban": "DE22PSEUDOA4578B542C"
+      },
+      "creditorName": "creditorname-0c264c",
+      "dayOfExecution": "5",
+      "debtorAccount": {
+        "currency": "EUR",
+        "iban": "DE95PSEUDO0B0702EBA1"
+      },
+      "endDate": "2027-10-05",
+      "endToEndIdentification": "obsdk-e2e-3",
+      "executionRule": "following",
+      "frequency": "Monthly",
+      "instructedAmount": {
+        "amount": "25.00",
+        "currency": "EUR"
+      },
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-9749ff",
+      "startDate": "2026-11-05"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Aspsp-Sca-Approach": "EMBEDDED",
+      "Content-Type": "application/json",
+      "Location": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+      "X-Request-Id": "7fb6944c-c8bd-4474-b671-6bd42fbcc18d"
+    },
+    "body": {
+      "_links": {
+        "scaStatus": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/f1131ffe-02fc-4bb1-91ef-7f9cfb514d4e"
+        },
+        "self": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q"
+        },
+        "status": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/status"
+        },
+        "updatePsuAuthentication": {
+          "href": "http://localhost:8089/v1/periodic-payments/sepa-credit-transfers/MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q/authorisations/f1131ffe-02fc-4bb1-91ef-7f9cfb514d4e"
+        }
+      },
+      "paymentId": "MAt9ratuBIzyLcWEGTal4xYGP1thVEKcIOD96u8el0ZWZOFuOz50CJjcb1um1dezcgftJbETkzvNvu5mZQqWcA==_=_psGLvQpt9Q",
+      "psuMessage": "mocked PSU message",
+      "scaMethods": [
+        {
+          "authenticationMethodId": "Mocked Authentication id",
+          "authenticationType": "Mocked Authentication type",
+          "authenticationVersion": "Mocked Authentication version",
+          "name": "name-3b6fc7"
+        }
+      ],
+      "tppMessages": [
+        {
+          "category": "WARNING",
+          "code": "WARNING",
+          "text": "Mocked tpp message from the bank"
+        }
+      ],
+      "transactionStatus": "RCVD"
+    }
+  }
+}

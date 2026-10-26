@@ -295,3 +295,81 @@ func TestIntegrationChecksProducts(t *testing.T) {
 	Integration(Profile{ID: "x", BaseURL: func(obsdk.Env, obsdk.Target, string) string { return "https://x" },
 		Info: obsdk.Info{Bank: "x", Payments: []obsdk.PaymentSpec{{Type: obsdk.PaymentSEPA}}}})
 }
+
+func TestPeriodicBody(t *testing.T) {
+	r := obsdk.PaymentRequest{Type: obsdk.PaymentSEPA, Transfers: []obsdk.Transfer{{
+		Amount:   obsdk.Money{Amount: "25.00", Currency: "EUR"},
+		Creditor: obsdk.Creditor{Name: "A", Account: obsdk.Identifier{Scheme: obsdk.SchemeIBAN, Value: "DE89370400440532013000"}},
+	}}}
+	c := testClient(Profile{})
+	for _, tc := range []struct {
+		sc   obsdk.Schedule
+		want string
+	}{
+		{obsdk.Schedule{Frequency: obsdk.FrequencyMonthly, StartDate: "2026-11-05", EndDate: "2027-10-05", NonBusinessDay: obsdk.ScheduleFollowing},
+			`"startDate":"2026-11-05","endDate":"2027-10-05","executionRule":"following","frequency":"Monthly","dayOfExecution":"5"`},
+		{obsdk.Schedule{Frequency: obsdk.FrequencySemiannual, StartDate: "2026-11-30", EndOfMonth: true},
+			`"startDate":"2026-11-30","frequency":"SemiAnnual","dayOfExecution":"31"`},
+		{obsdk.Schedule{Frequency: obsdk.FrequencyEveryTwoWeeks, StartDate: "2026-11-06"},
+			`"startDate":"2026-11-06","frequency":"EveryTwoWeeks"}`},
+	} {
+		sc := tc.sc
+		r.Schedule = &sc
+		b, err := c.buildBody(r)
+		if err != nil {
+			t.Fatal(err)
+		}
+		out, _ := json.Marshal(b)
+		if !strings.Contains(string(out), tc.want) {
+			t.Errorf("%+v: body %s lacks %s", sc, out, tc.want)
+		}
+	}
+
+	p := &payState{Type: obsdk.PaymentSEPA, Product: "sepa-credit-transfers", ID: "P1", Periodic: true}
+	if got := c.paymentPath(p); got != "/v1/periodic-payments/sepa-credit-transfers/P1" {
+		t.Errorf("path %s", got)
+	}
+	c.p.ID = "test-bg"
+	pay, err := c.paymentOf(p, "ACSP", nil)
+	if err != nil || pay.Status != obsdk.PaymentAccepted {
+		t.Fatalf("ACSP on a standing order: %+v %v", pay, err)
+	}
+	_, back, err := c.decodeRef(pay.Ref)
+	if err != nil || !back.Periodic || c.paymentPath(back) != c.paymentPath(p) {
+		t.Fatalf("ref round trip: %+v %v", back, err)
+	}
+}
+
+func TestPeriodicSpec(t *testing.T) {
+	single := CreditTransferSpec(obsdk.PaymentSEPA, SpecOptions{ExecutionDate: true, Cancellable: true})
+	s := PeriodicSpec(single, PeriodicOptions{EndOfMonth: true, Frequencies: []obsdk.Frequency{obsdk.FrequencyMonthly}})
+	if s.Schedule == nil || !s.Cancellable || len(s.FinalStatuses) != 1 || s.FinalStatuses[0] != obsdk.PaymentAccepted {
+		t.Fatalf("spec %+v", s)
+	}
+	if _, ok := s.Field(obsdk.FieldExecutionDate); ok {
+		t.Error("execution_date must go")
+	}
+	if f, ok := s.Field(obsdk.FieldScheduleFrequency); !ok || len(f.Options) != 1 {
+		t.Errorf("frequency field %+v", f)
+	}
+	for path, want := range map[string]bool{obsdk.FieldScheduleEndOfMonth: true, obsdk.FieldScheduleNonBusinessDay: false, obsdk.FieldScheduleCount: false} {
+		if _, ok := s.Field(path); ok != want {
+			t.Errorf("%s offered = %v", path, ok)
+		}
+	}
+	if _, ok := single.Field(obsdk.FieldExecutionDate); !ok {
+		t.Error("PeriodicSpec changed the single spec's fields")
+	}
+}
+
+func TestIntegrationRefusesPeriodicPain001(t *testing.T) {
+	defer func() {
+		if recover() == nil {
+			t.Error("a pain.001 profile with a standing-order spec was accepted")
+		}
+	}()
+	single := obsdk.PaymentSpec{Type: obsdk.PaymentSEPA}
+	Integration(Profile{ID: "x", BaseURL: func(obsdk.Env, obsdk.Target, string) string { return "https://x" }, PaymentXML: true,
+		Products: map[obsdk.PaymentType]string{obsdk.PaymentSEPA: "pain.001-sepa-credit-transfers"},
+		Info:     obsdk.Info{Bank: "x", Payments: []obsdk.PaymentSpec{single, PeriodicSpec(single, PeriodicOptions{})}}})
+}

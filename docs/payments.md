@@ -89,7 +89,8 @@ req.Schedule = &obsdk.Schedule{
 - `StepDone` carries the `Payment` with its `Schedule`. Status and cancellation depend on the bank (see its spec).
 - The model fits Berlin Group `periodic-payments` (`startDate`, `endDate`, `frequency`, `dayOfExecution` 31 for
   the month's end, `executionRule`) and UK OBIE standing orders (`Count` as `NumberOfPayments`). Česká spořitelna
-  and Komerční banka implement it so far.
+  and Komerční banka implement it, and the Berlin Group adapter has periodic payments (`berlingroup.PeriodicSpec`;
+  only the local ModelBank offers them so far).
 
 Try it: `obdev payment-spec -standing domestic`, `obdev pay ... -every monthly -start 2026-11-05 -end 2027-10-05`.
 
@@ -137,8 +138,9 @@ Details: [swedbank.md](swedbank.md#payments), [handelsbanken.md](handelsbanken.m
 Bulk payments fit the model but are not implemented, and standing orders exist only at Česká spořitelna and Komerční banka so far:
 
 - **Bulk:** more transfers in a request. Handelsbanken's Swedish signing basket and OP's authorisation bundles take them.
-- **Standing orders:** `Schedule` on the request (above). Not yet in the Berlin Group adapter, OBIE or the other banks;
-  reading the user's existing standing orders has no interface yet.
+- **Standing orders:** `Schedule` on the request (above). The Berlin Group adapter supports them (periodic payments),
+  but no Berlin Group bank profile offers them yet; not in OBIE or the other banks. Reading the user's existing
+  standing orders has no interface yet.
 
 Swedbank has `bulk-payments`, `periodic-payments` and `signing-baskets`. Revolut has file payments and
 standing orders. ING has periodic and bulk payments. Nordea has recurring payments, a 2SCA API and separate business payment APIs. HSBC has standing orders, international payments and VRP. Rabobank has periodic and bulk (pain.001) payments. bunq has multi-entry and scheduled draft payments. KBC has periodic and bulk (pain.001) payments. The Sparkassen have periodic, bulk (also instant) and pain.001 payments, and Target2 and cross-border single payments. Atruvia has periodic payments (pain.001 + JSON multipart), bulk SEPA payments and cross-border single payments (pain.001.001.09_AXZ_GBIC5). BNP Paribas Fortis has standing orders (Belgian payees only, fixed or variable amount) and pain.001 files (business). Multi-signer business payments surface as `partially_accepted`.

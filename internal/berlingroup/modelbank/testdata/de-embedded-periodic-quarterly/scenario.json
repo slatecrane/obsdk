@@ -1,0 +1,66 @@
+{
+  "config": {
+    "bank": "modelbank",
+    "country": "DE",
+    "env": "sandbox",
+    "now": "2026-10-26T19:12:48Z",
+    "redirect_url": "https://app.example/callback",
+    "ids": {
+      "request": [
+        "279c4d42-40fe-49b0-885b-47bd19006e50",
+        "4da8a299-eced-4af2-bfc1-d82b57a23d3b",
+        "69914cf2-a094-4269-842b-8ce5d17a7428",
+        "6742690e-80ba-40cd-9054-ade43ea49370"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "method": "embedded",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "DE95PSEUDO0B0702EBA1"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "4.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-0c264c",
+              "account": {
+                "scheme": "IBAN",
+                "value": "DE22PSEUDOA4578B542C"
+              }
+            },
+            "end_to_end_id": "obsdk-e2e-9"
+          }
+        ],
+        "schedule": {
+          "frequency": "quarterly",
+          "start_date": "2026-12-31"
+        }
+      },
+      "psu_ip": "203.0.113.7"
+    },
+    {
+      "op": "resume",
+      "values": {
+        "password": "REDACTED:password:c2c0d8",
+        "psu_id": "REDACTED:psu_id:ccc218"
+      }
+    },
+    {
+      "op": "resume",
+      "values": {
+        "otp": "REDACTED:otp:b6f960"
+      }
+    }
+  ]
+}
