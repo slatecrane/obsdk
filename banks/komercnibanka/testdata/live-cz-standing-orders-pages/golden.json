@@ -1,0 +1,263 @@
+[
+  {
+    "op": "standing_orders",
+    "standing_orders": {
+      "standing_orders": [
+        {
+          "id": "5dff73c141aa4fd88adba6ebfe0b019f",
+          "debtor": {
+            "scheme": "IBAN",
+            "value": "CZ13PSEUDO16F9725CB2"
+          },
+          "account_id": "d3Vqb0t4dzVTZDA4T0h1SzZJVE9oMFJLUm8rTTkwSmZVWTVZaDFPb0ZyT3VzRnNiWUhqMFdXYlAxY1g5UGhpcjhyT29JVWJGZ2R5NytPaXhYZ0FiTXc9PQ",
+          "creditor": {
+            "account": {
+              "scheme": "IBAN",
+              "value": "CZ26PSEUDOAE4F6A36F5"
+            }
+          },
+          "amount": {
+            "amount": "6000.0",
+            "currency": "CZK"
+          },
+          "schedule": {
+            "frequency": "monthly",
+            "start_date": "2026-11-25",
+            "end_date": "2027-06-25"
+          },
+          "interval": "MONTHLY",
+          "remittance": [
+            "unstructured-3e5b06"
+          ],
+          "raw": {
+            "amount": {
+              "instructedAmount": {
+                "currency": "CZK",
+                "value": 6000.0
+              }
+            },
+            "creditorAccount": {
+              "currency": null,
+              "identification": {
+                "iban": "CZ26PSEUDOAE4F6A36F5",
+                "other": null
+              }
+            },
+            "debtorAccount": {
+              "currency": "CZK",
+              "id": "d3Vqb0t4dzVTZDA4T0h1SzZJVE9oMFJLUm8rTTkwSmZVWTVZaDFPb0ZyT3VzRnNiWUhqMFdXYlAxY1g5UGhpcjhyT29JVWJGZ2R5NytPaXhYZ0FiTXc9PQ",
+              "identification": {
+                "iban": "CZ13PSEUDO16F9725CB2"
+              },
+              "name": null
+            },
+            "remittanceInformation": {
+              "additionalRemittanceInformation": null,
+              "structured": {
+                "creditorReferenceInformation": {
+                  "reference": [
+                    "reference-0b6864"
+                  ]
+                }
+              },
+              "unstructured": "unstructured-3e5b06"
+            },
+            "requestedExecutionDate": "2026-11-25",
+            "standingOrder": {
+              "alias": null,
+              "exceptions": null,
+              "execution": {
+                "interval": "MONTHLY",
+                "mode": "UNTIL_DATE",
+                "modeDue": "DUE_DAY_OF_MONTH"
+              },
+              "lastDate": "2026-10-25",
+              "openDate": "2026-05-21",
+              "validity": {
+                "lastExecutionDate": "2027-06-25",
+                "maxIterations": null
+              }
+            },
+            "standingOrderIdentification": {
+              "endToEndIdentification": null,
+              "instructionIdentification": "NOTPROVIDED",
+              "transactionIdentification": "5dff73c141aa4fd88adba6ebfe0b019f"
+            }
+          }
+        },
+        {
+          "id": "86d9e45990da45549d55bfb0b48f72da",
+          "debtor": {
+            "scheme": "IBAN",
+            "value": "CZ13PSEUDO16F9725CB2"
+          },
+          "account_id": "d3Vqb0t4dzVTZDA4T0h1SzZJVE9oMFJLUm8rTTkwSmZVWTVZaDFPb0ZyT3VzRnNiWUhqMFdXYlAxY1g5UGhpcjhyT29JVWJGZ2R5NytPaXhYZ0FiTXc9PQ",
+          "creditor": {
+            "account": {
+              "scheme": "IBAN",
+              "value": "CZ76PSEUDO97AD958E43"
+            }
+          },
+          "amount": {
+            "amount": "670.34",
+            "currency": "CZK"
+          },
+          "schedule": {
+            "frequency": "daily",
+            "start_date": "2026-10-27",
+            "end_date": "2027-05-26"
+          },
+          "interval": "DAILY",
+          "remittance": [
+            "unstructured-f7f780"
+          ],
+          "raw": {
+            "amount": {
+              "instructedAmount": {
+                "currency": "CZK",
+                "value": 670.34
+              }
+            },
+            "creditorAccount": {
+              "currency": null,
+              "identification": {
+                "iban": "CZ76PSEUDO97AD958E43",
+                "other": null
+              }
+            },
+            "debtorAccount": {
+              "currency": "CZK",
+              "id": "d3Vqb0t4dzVTZDA4T0h1SzZJVE9oMFJLUm8rTTkwSmZVWTVZaDFPb0ZyT3VzRnNiWUhqMFdXYlAxY1g5UGhpcjhyT29JVWJGZ2R5NytPaXhYZ0FiTXc9PQ",
+              "identification": {
+                "iban": "CZ13PSEUDO16F9725CB2"
+              },
+              "name": null
+            },
+            "remittanceInformation": {
+              "additionalRemittanceInformation": null,
+              "structured": {
+                "creditorReferenceInformation": {
+                  "reference": [
+                    "reference-0b6864"
+                  ]
+                }
+              },
+              "unstructured": "unstructured-f7f780"
+            },
+            "requestedExecutionDate": "2026-10-27",
+            "standingOrder": {
+              "alias": null,
+              "exceptions": null,
+              "execution": {
+                "interval": "DAILY",
+                "mode": "UNTIL_DATE",
+                "modeDue": "DUE_DAY_OF_MONTH"
+              },
+              "lastDate": "2026-10-26",
+              "openDate": "2026-08-24",
+              "validity": {
+                "lastExecutionDate": "2027-05-26",
+                "maxIterations": null
+              }
+            },
+            "standingOrderIdentification": {
+              "endToEndIdentification": null,
+              "instructionIdentification": "NOTPROVIDED",
+              "transactionIdentification": "86d9e45990da45549d55bfb0b48f72da"
+            }
+          }
+        }
+      ],
+      "next_cursor": "page=1&size=2"
+    }
+  },
+  {
+    "op": "standing_orders",
+    "standing_orders": {
+      "standing_orders": [
+        {
+          "id": "86d9e45990da45549d55bfb0b48f72ds",
+          "debtor": {
+            "scheme": "IBAN",
+            "value": "CZ13PSEUDO16F9725CB2"
+          },
+          "account_id": "eEdvcGVNYjFvbXp2Mm5Mdm93SUxXcTNwTnptV2FVVW1SRnZIZzJmU0tqM09NMGV3MTEwc2pzZ1J1TjJvNkdncXpNY0NJTWhvM3IzVFJMcVhCVS91MGc9PQ",
+          "creditor": {
+            "account": {
+              "scheme": "IBAN",
+              "value": "CZ81PSEUDO97AD948E43"
+            }
+          },
+          "amount": {
+            "amount": "1531.59",
+            "currency": "CZK"
+          },
+          "schedule": {
+            "frequency": "monthly",
+            "start_date": "2026-11-25",
+            "end_date": "2027-10-25"
+          },
+          "interval": "MONTHLY",
+          "remittance": [
+            "unstructured-eab9bf"
+          ],
+          "raw": {
+            "amount": {
+              "instructedAmount": {
+                "currency": "CZK",
+                "value": 1531.59
+              }
+            },
+            "creditorAccount": {
+              "currency": null,
+              "identification": {
+                "iban": "CZ81PSEUDO97AD948E43",
+                "other": null
+              }
+            },
+            "debtorAccount": {
+              "currency": "CZK",
+              "id": "eEdvcGVNYjFvbXp2Mm5Mdm93SUxXcTNwTnptV2FVVW1SRnZIZzJmU0tqM09NMGV3MTEwc2pzZ1J1TjJvNkdncXpNY0NJTWhvM3IzVFJMcVhCVS91MGc9PQ",
+              "identification": {
+                "iban": "CZ13PSEUDO16F9725CB2"
+              },
+              "name": null
+            },
+            "remittanceInformation": {
+              "additionalRemittanceInformation": null,
+              "structured": {
+                "creditorReferenceInformation": {
+                  "reference": [
+                    "reference-0b6864"
+                  ]
+                }
+              },
+              "unstructured": "unstructured-eab9bf"
+            },
+            "requestedExecutionDate": "2026-11-25",
+            "standingOrder": {
+              "alias": null,
+              "exceptions": null,
+              "execution": {
+                "interval": "MONTHLY",
+                "mode": "UNTIL_DATE",
+                "modeDue": "DUE_DAY_OF_MONTH"
+              },
+              "lastDate": "2026-10-25",
+              "openDate": "2026-05-21",
+              "validity": {
+                "lastExecutionDate": "2027-10-25",
+                "maxIterations": null
+              }
+            },
+            "standingOrderIdentification": {
+              "endToEndIdentification": null,
+              "instructionIdentification": "NOTPROVIDED",
+              "transactionIdentification": "86d9e45990da45549d55bfb0b48f72ds"
+            }
+          }
+        }
+      ]
+    }
+  }
+]

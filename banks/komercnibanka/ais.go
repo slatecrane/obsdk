@@ -152,3 +152,29 @@ func (c *client) Transactions(ctx context.Context, s *obsdk.Session, q obsdk.TxQ
 	}
 	return &obsdk.TxResult{TxPage: pg}, nil
 }
+
+// ---- standing orders ----
+
+// StandingOrders lists the standing orders on the user's accounts (AIS
+// GET /my/standingorders, all accounts in one paged list). The cursor is the
+// next request's query, as for transactions.
+func (c *client) StandingOrders(ctx context.Context, s *obsdk.Session, q obsdk.StandingOrderQuery) (*obsdk.Result[obsdk.StandingOrderPage], error) {
+	if err := c.checkSession(s); err != nil {
+		return nil, err
+	}
+	query, err := cbs.StandingOrderQuery(q, "Komerční banka")
+	if err != nil {
+		return nil, err
+	}
+	res, err := c.aisCall(ctx, s, req{op: opStanding, path: "/aisp/v2/my/standingorders", query: query, user: q.Options.PSU != nil})
+	if err != nil {
+		return nil, err
+	}
+	pg, err := cbs.StandingOrderPage(res.body, query)
+	if err != nil {
+		return nil, fmt.Errorf("komercnibanka: unreadable standing orders: %w", err)
+	}
+	return &obsdk.Result[obsdk.StandingOrderPage]{Data: pg, Raw: res.body}, nil
+}
+
+var _ obsdk.StandingOrderLister = (*client)(nil)
