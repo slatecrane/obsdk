@@ -53,7 +53,7 @@ type ScenarioConfig struct {
 }
 
 // Call is one step of a scenario. Op is one of: connect, resume, accounts,
-// balances, transactions, refresh, disconnect, auth_methods.
+// balances, transactions, standing_orders, refresh, disconnect, auth_methods.
 //
 // resume uses the state of the previous step automatically.
 type Call struct {

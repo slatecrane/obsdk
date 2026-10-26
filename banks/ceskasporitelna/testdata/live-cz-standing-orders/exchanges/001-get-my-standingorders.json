@@ -1,0 +1,293 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/csas/sandbox/v4/account-information/my/standingorders",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:b46762",
+      "User-Involved": "true",
+      "User-Ip-Address": "203.0.113.7",
+      "Web-Api-Key": "REDACTED:web-api-key:627540"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8",
+      "X-Request-Id": "fd8310f3-cac8-4270-b2ea-33edc740bef7"
+    },
+    "body": {
+      "pageCount": 1,
+      "pageNumber": 0,
+      "pageSize": 5,
+      "standingOrders": [
+        {
+          "amount": {
+            "instructedAmount": {
+              "currency": "CZK",
+              "value": 1.17
+            }
+          },
+          "creditorAccount": {
+            "identification": {
+              "iban": "CZ22PSEUDO46F4E62A5B",
+              "other": {
+                "identification": "identification-ef0492"
+              }
+            }
+          },
+          "debtorAccount": {
+            "identification": {
+              "iban": "CZ04PSEUDOB4D0A586D9",
+              "other": {
+                "identification": "identification-b6141a"
+              }
+            }
+          },
+          "paymentTypeInformation": {
+            "instructionPriority": "NORM",
+            "serviceLevel": {
+              "code": "DOMESTIC"
+            }
+          },
+          "remittanceInformation": {
+            "structured": {
+              "creditorReferenceInformation": {
+                "reference": [
+                  "reference-09b260",
+                  "reference-befdf0",
+                  "reference-b66f66"
+                ]
+              }
+            },
+            "unstructured": "unstructured-d81f95"
+          },
+          "requestedExecutionDate": "2019-10-20",
+          "standingOrder": {
+            "alias": "20190820_standing001",
+            "exceptions": {
+              "breaks": [
+                {
+                  "validFromDate": "2020-02-20",
+                  "validToDate": "2020-03-20"
+                }
+              ]
+            },
+            "execution": {
+              "interval": "MONTHLY",
+              "intervalDue": 20,
+              "mode": "UNTIL_DATE",
+              "modeDue": "DUE_DAY_OF_MONTH"
+            },
+            "validity": {
+              "lastExecutionDate": "2020-09-30"
+            }
+          },
+          "standingOrderIdentification": {
+            "transactionIdentification": "5"
+          }
+        },
+        {
+          "amount": {
+            "instructedAmount": {
+              "currency": "CZK",
+              "value": 1.17
+            }
+          },
+          "creditorAccount": {
+            "identification": {
+              "iban": "CZ22PSEUDO46F4E62A5B",
+              "other": {
+                "identification": "identification-ef0492"
+              }
+            }
+          },
+          "debtorAccount": {
+            "identification": {
+              "iban": "CZ04PSEUDOB4D0A586D9",
+              "other": {
+                "identification": "identification-b6141a"
+              }
+            }
+          },
+          "paymentTypeInformation": {
+            "instructionPriority": "NORM",
+            "serviceLevel": {
+              "code": "DOMESTIC"
+            }
+          },
+          "remittanceInformation": {
+            "structured": {
+              "creditorReferenceInformation": {
+                "reference": [
+                  "reference-09b260",
+                  "reference-befdf0",
+                  "reference-b66f66"
+                ]
+              }
+            },
+            "unstructured": "unstructured-d81f95"
+          },
+          "requestedExecutionDate": "2019-10-20",
+          "standingOrder": {
+            "alias": "20190820_standing001",
+            "exceptions": {
+              "breaks": [
+                {
+                  "validFromDate": "2020-02-20",
+                  "validToDate": "2020-03-20"
+                }
+              ]
+            },
+            "execution": {
+              "interval": "MONTHLY",
+              "intervalDue": 20,
+              "mode": "UNTIL_DATE",
+              "modeDue": "DUE_DAY_OF_MONTH"
+            },
+            "validity": {
+              "lastExecutionDate": "2020-09-30"
+            }
+          },
+          "standingOrderIdentification": {
+            "transactionIdentification": "6"
+          }
+        },
+        {
+          "amount": {
+            "instructedAmount": {
+              "currency": "CZK",
+              "value": 1.23
+            }
+          },
+          "creditorAccount": {
+            "identification": {
+              "iban": "CZ22PSEUDO46F4E62A5B",
+              "other": {
+                "identification": "identification-ef0492"
+              }
+            }
+          },
+          "debtorAccount": {
+            "identification": {
+              "iban": "CZ04PSEUDOB4D0A586D9",
+              "other": {
+                "identification": "identification-b6141a"
+              }
+            }
+          },
+          "paymentTypeInformation": {
+            "instructionPriority": "NORM",
+            "serviceLevel": {
+              "code": "DOMESTIC"
+            }
+          },
+          "requestedExecutionDate": "2020-01-01",
+          "standingOrder": {
+            "alias": "test001",
+            "execution": {
+              "interval": "QUARTERLY",
+              "mode": "UNTIL_DATE"
+            },
+            "validity": {
+              "lastExecutionDate": "2020-09-30"
+            }
+          },
+          "standingOrderIdentification": {
+            "transactionIdentification": "7"
+          }
+        },
+        {
+          "amount": {
+            "instructedAmount": {
+              "currency": "CZK",
+              "value": 1.23
+            }
+          },
+          "creditorAccount": {
+            "identification": {
+              "iban": "CZ22PSEUDO46F4E62A5B",
+              "other": {
+                "identification": "identification-ef0492"
+              }
+            }
+          },
+          "debtorAccount": {
+            "identification": {
+              "iban": "CZ04PSEUDOB4D0A586D9",
+              "other": {
+                "identification": "identification-b6141a"
+              }
+            }
+          },
+          "paymentTypeInformation": {
+            "instructionPriority": "NORM",
+            "serviceLevel": {
+              "code": "DOMESTIC"
+            }
+          },
+          "requestedExecutionDate": "2020-01-01",
+          "standingOrder": {
+            "alias": "test - UNTIL_DATE - DUE_DAY_OF_MONTH - DAILY",
+            "execution": {
+              "interval": "DAILY",
+              "mode": "UNTIL_DATE"
+            },
+            "validity": {
+              "lastExecutionDate": "2020-09-30"
+            }
+          },
+          "standingOrderIdentification": {
+            "transactionIdentification": "8"
+          }
+        },
+        {
+          "amount": {
+            "instructedAmount": {
+              "currency": "CZK",
+              "value": 1.23
+            }
+          },
+          "creditorAccount": {
+            "identification": {
+              "iban": "CZ22PSEUDO46F4E62A5B",
+              "other": {
+                "identification": "identification-ef0492"
+              }
+            }
+          },
+          "debtorAccount": {
+            "identification": {
+              "iban": "CZ04PSEUDOB4D0A586D9",
+              "other": {
+                "identification": "identification-b6141a"
+              }
+            }
+          },
+          "paymentTypeInformation": {
+            "instructionPriority": "NORM",
+            "serviceLevel": {
+              "code": "DOMESTIC"
+            }
+          },
+          "requestedExecutionDate": "2020-01-01",
+          "standingOrder": {
+            "alias": "test - UNTIL_DATE - DUE_DAY_OF_MONTH - MONTHLY",
+            "execution": {
+              "interval": "MONTHLY",
+              "intervalDue": 1,
+              "mode": "UNTIL_DATE",
+              "modeDue": "DUE_DAY_OF_MONTH"
+            },
+            "validity": {
+              "lastExecutionDate": "2020-09-30"
+            }
+          },
+          "standingOrderIdentification": {
+            "transactionIdentification": "9"
+          }
+        }
+      ]
+    }
+  }
+}

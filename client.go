@@ -94,6 +94,13 @@ type AuthMethod struct {
 	Approach string // "redirect" or "decoupled"
 }
 
+// StandingOrderLister is implemented by integrations that can read the
+// standing orders on the user's accounts (Info lists CapStandingOrders).
+// It takes the session of Connect.
+type StandingOrderLister interface {
+	StandingOrders(ctx context.Context, s *Session, q StandingOrderQuery) (*Result[StandingOrderPage], error)
+}
+
 // AuthMethodLister is implemented by integrations that can report, at
 // runtime, the login methods currently offered (static ones are in Info).
 type AuthMethodLister interface {

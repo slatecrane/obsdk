@@ -64,6 +64,13 @@ returns no new refresh token. Disconnect posts the refresh token to `{idp}/revok
   (entries that do not move the balance); both are reported as booked, the bank's status stays in `Raw`. The
   cursor is the next request's query. `bankTransactionCode.proprietary.code` is sent as a float in exponent form
   (`1.0000101E10`); `internal/cbs` writes it as an integer (`10000101000`).
+- Standing orders (`StandingOrderLister`, capability `aisp.standing_orders`): `GET /my/standingorders?page&size`,
+  all accounts in one list, with the Connect session. Mapped by `internal/cbs`: `alias` → `Name`, `interval` →
+  `Schedule.Frequency` (the code also in `Interval`; `IRREGULAR` has no frequency), `requestedExecutionDate` →
+  `Schedule.StartDate`, `UNTIL_DATE` + `lastExecutionDate` → `EndDate`, `AFTER_MAX_ITERATION_EXCEEDED` +
+  `maxIterations` → `Count`, `DUE_LAST_DAY_OF_MONTH` → `EndOfMonth`, `VS:` → the `CZ` reference. Breaks, stoppages
+  and `maxAmount` stay in `Raw`. The response leaves `nextPage` out and gives only `pageCount`, so the next page
+  comes from `pageNumber + 1 < pageCount`; the cursor is the next request's query.
 
 ## Payments
 
@@ -141,12 +148,14 @@ Everything is scriptable; nothing needs the user after the portal account:
   `191010190908927`) whatever is sent. Its signing response's `poll.url` points at `/my/payments/sign/poll/{id}`;
   the SDK polls the standing-order resource (`/my/standingorders/sign/poll/{id}`) as ČS's spec says, which answers
   `DONE` as well.
+- **Standing order list** (2026-10-26): five orders of the test client (monthly, quarterly, daily, 2019/2020 dates,
+  one with a break period); `size` is honoured.
 - **Revoke is a stub**: `200`, and the refresh token still works afterwards.
 
 Recorded scenarios (`banks/ceskasporitelna/testdata/live-cz-*`): connect, data (accounts, both balances,
 transactions), refresh, disconnect, a domestic payment with login, a domestic and a SEPA payment reusing the payment
 login, payment status; standing orders (monthly with an end date and a variable symbol; yearly on the month's last
-day until cancelled).
+day until cancelled); the standing order list (one page of five; and pages of two through the cursor).
 
 Not verified: anything with real data or real outcomes (the stubs), the production IDP and hosts, request signing,
 `PROCESSING` polls, the business segment (the sandbox has one client).
@@ -156,7 +165,7 @@ Not verified: anything with real data or real outcomes (the stubs), the producti
 - Instant payments (`instructionPriority: INST`, domestic and SEPA; not for Business 24 accounts): needs a domestic
   instant payment type in the root package, or `sepa_instant`.
 - International (`SWIFT`) payments, batch payments (`/my/batchpayments`).
-- Reading the user's standing orders (`GET /my/standingorders` in AIS and PIS, paged; detail by
-  `transactionIdentification`): needs a root interface for listing them.
+- The standing order detail (`GET /my/standingorders/{id}`) and PIS's own list are not used; the AIS list has
+  everything.
 - Other Erste banks on the same portal (Slovenská sporiteľňa, Erste Bank Hungary, BCR, Erste&Steiermärkische) use
   their own APIs; not researched.

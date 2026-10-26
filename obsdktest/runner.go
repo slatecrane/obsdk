@@ -26,6 +26,8 @@ type Outcome struct {
 	Payment      *obsdk.Payment     `json:"payment,omitempty"`
 	Disconnect   *DisconnectOutcome `json:"disconnect,omitempty"`
 	AuthMethods  []obsdk.AuthMethod `json:"auth_methods,omitempty"`
+
+	StandingOrders *obsdk.StandingOrderPage `json:"standing_orders,omitempty"`
 }
 
 // DisconnectOutcome mirrors obsdk.DisconnectResult.
@@ -214,6 +216,17 @@ func (r *Runner) Do(ctx context.Context, c Call) Outcome {
 		}
 		r.takeStep(step)
 		out.Step = maskStep(step)
+	case "standing_orders":
+		l, ok := r.Client.(obsdk.StandingOrderLister)
+		if !ok {
+			return fail(fmt.Errorf("%w: client does not list standing orders", obsdk.ErrUnsupported))
+		}
+		res, err := l.StandingOrders(ctx, r.Session, obsdk.StandingOrderQuery{PageSize: c.PageSize, Cursor: c.Cursor, Options: opts})
+		if err != nil {
+			return fail(err)
+		}
+		r.adopt(res.Session)
+		out.StandingOrders, out.Session = &res.Data, res.Session
 	case "auth_methods":
 		l, ok := r.Client.(obsdk.AuthMethodLister)
 		if !ok {

@@ -60,6 +60,7 @@ commands:
   accounts
   balances ACCOUNT_ID
   transactions ACCOUNT_ID [-from D] [-to D] [-status booked,pending] [-size N] [-cursor C]
+  standing-orders [-size N] [-cursor C]   the standing orders on the user's accounts
   refresh
   disconnect
   auth-methods
@@ -356,6 +357,24 @@ func dispatch(ctx context.Context, l *obsdktest.Live, c obsdk.Client, s *obsdk.S
 			return err
 		}
 		return printJSON(done.Payment)
+	case "standing-orders":
+		if err := needSession(); err != nil {
+			return err
+		}
+		lister, ok := c.(obsdk.StandingOrderLister)
+		if !ok {
+			return fmt.Errorf("%w: this integration does not read standing orders", obsdk.ErrUnsupported)
+		}
+		fs := flag.NewFlagSet("standing-orders", flag.ExitOnError)
+		size := fs.Int("size", 0, "page size; 0 lets the integration choose")
+		cursor := fs.String("cursor", "", "next_cursor from the previous page")
+		_ = fs.Parse(args[1:])
+		res, err := lister.StandingOrders(ctx, s, obsdk.StandingOrderQuery{PageSize: *size, Cursor: *cursor, Options: opts})
+		if err != nil {
+			return err
+		}
+		keep(res.Session)
+		return printJSON(res.Data)
 	case "auth-methods":
 		lister, ok := c.(obsdk.AuthMethodLister)
 		if !ok {

@@ -40,9 +40,11 @@ func Amount(n json.Number, indicator string) (obsdk.Decimal, obsdk.Direction) {
 	return obsdk.Decimal(s), obsdk.Credit
 }
 
-// Page is the pagination envelope of the account and transaction lists.
-// Pages count from 0. nextPage may be 0 (not absent) on the last page, so a
-// next page exists only when it moves forward.
+// Page is the pagination envelope of the account, transaction and standing
+// order lists. Pages count from 0. nextPage may be 0 (not absent) on the
+// last page, so a next page exists only when it moves forward. ČS's
+// standing order list leaves nextPage out and gives only pageCount; then
+// the bank's page count says whether there is a next page.
 type Page struct {
 	PageNumber int  `json:"pageNumber"`
 	PageCount  int  `json:"pageCount"`
@@ -51,7 +53,13 @@ type Page struct {
 
 // Next returns the next page number, if there is one.
 func (p Page) Next() (int, bool) {
-	if p.NextPage == nil || *p.NextPage <= p.PageNumber {
+	if p.NextPage == nil {
+		if p.PageNumber+1 < p.PageCount {
+			return p.PageNumber + 1, true
+		}
+		return 0, false
+	}
+	if *p.NextPage <= p.PageNumber {
 		return 0, false
 	}
 	return *p.NextPage, true
@@ -369,6 +377,173 @@ func TxPage(body []byte, query url.Values, status []obsdk.TxStatus) (obsdk.TxPag
 		pg.NextCursor = nq.Encode()
 	}
 	return pg, nil
+}
+
+// ---- standing orders ----
+
+// StandingOrderList is one page of GET /my/standingorders.
+type StandingOrderList struct {
+	Page
+	StandingOrders []json.RawMessage `json:"standingOrders"`
+}
+
+// standingAccountJSON is an account in a standing order. Banks differ on
+// identification.other: an object at ČS, a string at KB.
+type standingAccountJSON struct {
+	ID             string `json:"id"`
+	Identification struct {
+		IBAN  string          `json:"iban"`
+		Other json.RawMessage `json:"other"`
+	} `json:"identification"`
+}
+
+func (a *standingAccountJSON) identifier() *obsdk.Identifier {
+	if a.Identification.IBAN != "" {
+		return &obsdk.Identifier{Scheme: obsdk.SchemeIBAN, Value: a.Identification.IBAN}
+	}
+	var s string
+	if json.Unmarshal(a.Identification.Other, &s) != nil {
+		var o struct {
+			Identification string `json:"identification"`
+		}
+		_ = json.Unmarshal(a.Identification.Other, &o)
+		s = o.Identification
+	}
+	if s == "" {
+		return nil
+	}
+	return &obsdk.Identifier{Scheme: obsdk.SchemeBBAN, Value: s}
+}
+
+type standingOrderJSON struct {
+	StandingOrderIdentification struct {
+		TransactionIdentification string `json:"transactionIdentification"`
+	} `json:"standingOrderIdentification"`
+	Amount struct {
+		InstructedAmount struct {
+			Value    json.Number `json:"value"`
+			Currency string      `json:"currency"`
+		} `json:"instructedAmount"`
+	} `json:"amount"`
+	RequestedExecutionDate string `json:"requestedExecutionDate"`
+	StandingOrder          struct {
+		Alias     string `json:"alias"`
+		Execution struct {
+			Mode     string `json:"mode"`
+			ModeDue  string `json:"modeDue"`
+			Interval string `json:"interval"`
+		} `json:"execution"`
+		Validity struct {
+			LastExecutionDate string          `json:"lastExecutionDate"`
+			MaxIterations     json.RawMessage `json:"maxIterations"` // a string at ČS, a number at KB
+		} `json:"validity"`
+	} `json:"standingOrder"`
+	DebtorAccount         standingAccountJSON `json:"debtorAccount"`
+	CreditorAccount       standingAccountJSON `json:"creditorAccount"`
+	RemittanceInformation struct {
+		Unstructured string `json:"unstructured"`
+		Structured   struct {
+			CreditorReferenceInformation struct {
+				Reference []string `json:"reference"`
+			} `json:"creditorReferenceInformation"`
+		} `json:"structured"`
+	} `json:"remittanceInformation"`
+}
+
+// standingFrequencies maps the standard's intervals; IRREGULAR (monthly
+// with breaks) has no equivalent.
+var standingFrequencies = map[string]obsdk.Frequency{
+	"DAILY": obsdk.FrequencyDaily, "WEEKLY": obsdk.FrequencyWeekly, "BI_WEEKLY": obsdk.FrequencyEveryTwoWeeks,
+	"MONTHLY": obsdk.FrequencyMonthly, "BI_MONTHLY": obsdk.FrequencyEveryTwoMonths, "QUARTERLY": obsdk.FrequencyQuarterly,
+	"HALFYEARLY": obsdk.FrequencySemiannual, "YEARLY": obsdk.FrequencyAnnual,
+}
+
+// ToStandingOrder reads one entry of the standing order list.
+func ToStandingOrder(raw json.RawMessage) (obsdk.StandingOrder, error) {
+	var j standingOrderJSON
+	if err := json.Unmarshal(raw, &j); err != nil {
+		return obsdk.StandingOrder{}, err
+	}
+	o := obsdk.StandingOrder{
+		ID:        j.StandingOrderIdentification.TransactionIdentification,
+		Name:      j.StandingOrder.Alias,
+		Debtor:    j.DebtorAccount.identifier(),
+		AccountID: j.DebtorAccount.ID,
+		Amount:    obsdk.Money{Amount: obsdk.Decimal(j.Amount.InstructedAmount.Value.String()), Currency: j.Amount.InstructedAmount.Currency},
+		Interval:  j.StandingOrder.Execution.Interval,
+		Raw:       raw,
+	}
+	if id := j.CreditorAccount.identifier(); id != nil {
+		o.Creditor.Account = *id
+	}
+	ex, v := j.StandingOrder.Execution, j.StandingOrder.Validity
+	o.Schedule = obsdk.Schedule{Frequency: standingFrequencies[ex.Interval], StartDate: DateOnly(j.RequestedExecutionDate)}
+	switch ex.Mode {
+	case "UNTIL_DATE":
+		o.Schedule.EndDate = DateOnly(v.LastExecutionDate)
+	case "AFTER_MAX_ITERATION_EXCEEDED":
+		if n, err := strconv.Atoi(strings.Trim(string(v.MaxIterations), `" `)); err == nil {
+			o.Schedule.Count = n
+		}
+	}
+	switch ex.ModeDue {
+	case "DUE_LAST_DAY_OF_MONTH":
+		o.Schedule.EndOfMonth = true
+	case "DUE_OR_NEXT_DAY_OF_MONTH":
+		o.Schedule.NonBusinessDay = obsdk.ScheduleFollowing
+	case "DUE_OR_BEFORE_DAY_OF_MONTH":
+		o.Schedule.NonBusinessDay = obsdk.SchedulePreceding
+	}
+	if u := j.RemittanceInformation.Unstructured; u != "" {
+		o.Remittance = []string{u}
+	}
+	if vs := VariableSymbol(j.RemittanceInformation.Structured.CreditorReferenceInformation.Reference); vs != "" {
+		o.Reference = &obsdk.Reference{Scheme: obsdk.ReferenceCZ, Value: vs}
+	}
+	return o, nil
+}
+
+// StandingOrderPage reads a page of the standing order list and sets the
+// cursor of the next page from the request's query.
+func StandingOrderPage(body []byte, query url.Values) (obsdk.StandingOrderPage, error) {
+	var b StandingOrderList
+	if err := json.Unmarshal(body, &b); err != nil {
+		return obsdk.StandingOrderPage{}, err
+	}
+	pg := obsdk.StandingOrderPage{StandingOrders: []obsdk.StandingOrder{}}
+	for _, r := range b.StandingOrders {
+		o, err := ToStandingOrder(r)
+		if err != nil {
+			return obsdk.StandingOrderPage{}, err
+		}
+		pg.StandingOrders = append(pg.StandingOrders, o)
+	}
+	if n, ok := b.Next(); ok {
+		nq := url.Values{}
+		for k, v := range query {
+			nq[k] = v
+		}
+		nq.Set("page", strconv.Itoa(n))
+		pg.NextCursor = nq.Encode()
+	}
+	return pg, nil
+}
+
+// StandingOrderQuery is the query of a standing order list request: the
+// cursor (a previous query with the next page) or the page size.
+func StandingOrderQuery(q obsdk.StandingOrderQuery, bank string) (url.Values, error) {
+	if q.Cursor != "" {
+		query, err := url.ParseQuery(q.Cursor)
+		if err != nil || query.Get("page") == "" {
+			return nil, fmt.Errorf("%w: cursor is not a %s standing orders cursor", obsdk.ErrInvalidRequest, bank)
+		}
+		return query, nil
+	}
+	query := url.Values{}
+	if q.PageSize > 0 {
+		query.Set("size", strconv.Itoa(q.PageSize))
+	}
+	return query, nil
 }
 
 // ---- payments ----
