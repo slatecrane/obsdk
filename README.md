@@ -83,6 +83,11 @@ session := step.Session // persist this (encrypted); it is all the SDK needs lat
 
 accounts, err := c.Accounts(ctx, session, obsdk.CallOptions{})
 txs, err := c.Transactions(ctx, session, obsdk.TxQuery{AccountID: accounts.Data[0].ID, From: from})
+
+// Optional extras are interfaces; Info().Capabilities says which a bank has.
+if l, ok := c.(obsdk.StandingOrderLister); ok {
+    orders, err := l.StandingOrders(ctx, session, obsdk.StandingOrderQuery{}) // paged like transactions
+}
 ```
 
 Payments use the same steps. Each bank describes the fields it needs per payment type, so forms can

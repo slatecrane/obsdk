@@ -2,6 +2,7 @@ package cbs
 
 import (
 	"encoding/json"
+	"errors"
 	"net/url"
 	"strings"
 	"testing"
@@ -171,6 +172,82 @@ func TestParseError(t *testing.T) {
 		code, text := ParseError([]byte(tc.body))
 		if code != tc.code || text != tc.text {
 			t.Errorf("%s: got %q %q", tc.body, code, text)
+		}
+	}
+}
+
+func TestToStandingOrder(t *testing.T) {
+	// ČS's list example: other as an object, maxIterations as a string.
+	cs := `{"standingOrder":{"alias":"Rent","execution":{"mode":"UNTIL_DATE","modeDue":"DUE_DAY_OF_MONTH","interval":"MONTHLY","intervalDue":20},
+"validity":{"lastExecutionDate":"2020-11-05T00:00:00.000Z"}},"standingOrderIdentification":{"transactionIdentification":"5408ee"},
+"amount":{"instructedAmount":{"value":10050.15,"currency":"CZK"}},"requestedExecutionDate":"2020-04-20T00:00:00.000Z",
+"debtorAccount":{"identification":{"iban":"CZ0827000000002108589434","other":{"identification":"000000-2108589434/0800"}},"currency":"CZK"},
+"creditorAccount":{"identification":{"other":{"identification":"19-2000145399/0800"}}},
+"remittanceInformation":{"structured":{"creditorReferenceInformation":{"reference":["VS:501","KS:9","SS:1005"]}},"unstructured":"Rent"}}`
+	o, err := ToStandingOrder(json.RawMessage(cs))
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := obsdk.Schedule{Frequency: obsdk.FrequencyMonthly, StartDate: "2020-04-20", EndDate: "2020-11-05"}
+	if o.ID != "5408ee" || o.Name != "Rent" || o.Amount.Amount != "10050.15" || o.Amount.Currency != "CZK" || o.Schedule != want ||
+		o.Interval != "MONTHLY" || o.Debtor == nil || o.Debtor.Value != "CZ0827000000002108589434" ||
+		o.Creditor.Account != (obsdk.Identifier{Scheme: obsdk.SchemeBBAN, Value: "19-2000145399/0800"}) ||
+		o.Reference == nil || o.Reference.Value != "501" || len(o.Remittance) != 1 {
+		t.Fatalf("ČS: %+v", o)
+	}
+
+	// KB's shape: other as a string, maxIterations as a number, the account id.
+	kb := `{"standingOrderIdentification":{"transactionIdentification":"SO1"},"amount":{"instructedAmount":{"value":250,"currency":"CZK"}},
+"requestedExecutionDate":"2026-11-30","standingOrder":{"execution":{"mode":"AFTER_MAX_ITERATION_EXCEEDED","modeDue":"DUE_OR_NEXT_DAY_OF_MONTH","interval":"BI_WEEKLY"},
+"validity":{"maxIterations":6}},"debtorAccount":{"id":"ACC1","identification":{"iban":"CZ6508000000192000145399"}},
+"creditorAccount":{"identification":{"other":"123-456/0100"}}}`
+	if o, err = ToStandingOrder(json.RawMessage(kb)); err != nil {
+		t.Fatal(err)
+	}
+	want = obsdk.Schedule{Frequency: obsdk.FrequencyEveryTwoWeeks, StartDate: "2026-11-30", Count: 6, NonBusinessDay: obsdk.ScheduleFollowing}
+	if o.Schedule != want || o.AccountID != "ACC1" || o.Creditor.Account.Value != "123-456/0100" || o.Reference != nil {
+		t.Fatalf("KB: %+v", o)
+	}
+
+	// IRREGULAR has no Frequency; the bank's code stays in Interval.
+	if o, _ = ToStandingOrder(json.RawMessage(`{"standingOrder":{"execution":{"mode":"UNTIL_CANCELLATION","modeDue":"DUE_LAST_DAY_OF_MONTH","interval":"IRREGULAR"}}}`)); o.Schedule.Frequency != "" || o.Interval != "IRREGULAR" || !o.Schedule.EndOfMonth {
+		t.Fatalf("irregular: %+v", o)
+	}
+}
+
+func TestStandingOrderPageCursor(t *testing.T) {
+	body := []byte(`{"pageNumber":0,"pageCount":2,"nextPage":1,"standingOrders":[{"standingOrderIdentification":{"transactionIdentification":"A"}}]}`)
+	q, _ := StandingOrderQuery(obsdk.StandingOrderQuery{PageSize: 5}, "X")
+	pg, err := StandingOrderPage(body, q)
+	if err != nil || len(pg.StandingOrders) != 1 || pg.NextCursor != "page=1&size=5" {
+		t.Fatalf("%+v %v", pg, err)
+	}
+	if q, err = StandingOrderQuery(obsdk.StandingOrderQuery{Cursor: pg.NextCursor}, "X"); err != nil || q.Get("page") != "1" {
+		t.Fatalf("cursor: %v %v", q, err)
+	}
+	if _, err := StandingOrderQuery(obsdk.StandingOrderQuery{Cursor: "garbage"}, "X"); !errors.Is(err, obsdk.ErrInvalidRequest) {
+		t.Fatalf("bad cursor: %v", err)
+	}
+	last, _ := StandingOrderPage([]byte(`{"pageNumber":1,"pageCount":2,"nextPage":0,"standingOrders":[]}`), q)
+	if last.NextCursor != "" {
+		t.Fatalf("last page cursor %q", last.NextCursor)
+	}
+}
+
+func TestPageNextWithoutNextPage(t *testing.T) {
+	one := 1
+	for _, tc := range []struct {
+		p    Page
+		want int
+		ok   bool
+	}{
+		{Page{PageNumber: 0, PageCount: 5}, 1, true},                      // ČS's standing orders: no nextPage
+		{Page{PageNumber: 4, PageCount: 5}, 0, false},                     // last page
+		{Page{PageNumber: 0, NextPage: &one}, 1, true},                    // nextPage wins
+		{Page{PageNumber: 1, PageCount: 3, NextPage: new(int)}, 0, false}, // nextPage 0 on the last page
+	} {
+		if n, ok := tc.p.Next(); n != tc.want || ok != tc.ok {
+			t.Errorf("%+v: got %d %v", tc.p, n, ok)
 		}
 	}
 }

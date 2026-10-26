@@ -327,6 +327,20 @@ func (c *recordingClient) CancelPayment(ctx context.Context, ref string, o obsdk
 	return c.Client.CancelPayment(ctx, ref, o)
 }
 
+// StandingOrders keeps the optional StandingOrderLister capability visible through the wrapper.
+func (c *recordingClient) StandingOrders(ctx context.Context, s *obsdk.Session, q obsdk.StandingOrderQuery) (*obsdk.Result[obsdk.StandingOrderPage], error) {
+	l, ok := c.Client.(obsdk.StandingOrderLister)
+	if !ok {
+		return nil, obsdk.ErrUnsupported
+	}
+	call := Call{Op: "standing_orders", PageSize: q.PageSize, Cursor: q.Cursor}
+	if q.Options.PSU != nil {
+		c.r.psu(&call, *q.Options.PSU)
+	}
+	c.r.add(call)
+	return l.StandingOrders(ctx, s, q)
+}
+
 // AuthMethods keeps the optional AuthMethodLister capability visible through the wrapper.
 func (c *recordingClient) AuthMethods(ctx context.Context) ([]obsdk.AuthMethod, error) {
 	l, ok := c.Client.(obsdk.AuthMethodLister)

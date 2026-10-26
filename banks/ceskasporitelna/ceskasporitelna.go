@@ -61,11 +61,12 @@ func init() {
 	for _, seg := range []obsdk.Segment{obsdk.Personal, obsdk.Business} {
 		// Connect, accounts, balances, transactions, refresh, disconnect,
 		// domestic and SEPA payments signed, status (scenarios live-cz-*,
-		// 2026-10-24); domestic standing orders signed (2026-10-25).
+		// 2026-10-24); domestic standing orders signed (2026-10-25) and listed
+		// (2026-10-26).
 		// The sandbox's data and payment answers are static, and its one
 		// test client stands for both segments.
 		variants = append(variants,
-			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Sandbox, Maturity: obsdk.MaturitySandboxVerified, VerifiedOn: "2026-10-25"},
+			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Sandbox, Maturity: obsdk.MaturitySandboxVerified, VerifiedOn: "2026-10-26"},
 			obsdk.Variant{Country: "CZ", Segment: seg, Env: obsdk.Production, Maturity: obsdk.MaturityUnverified},
 		)
 	}
@@ -78,7 +79,7 @@ func init() {
 			Spec:     "cbs",
 			Variants: variants,
 			Capabilities: []obsdk.Capability{
-				obsdk.CapAccounts, obsdk.CapBalances, obsdk.CapTransactions, obsdk.CapPayments,
+				obsdk.CapAccounts, obsdk.CapBalances, obsdk.CapTransactions, obsdk.CapStandingOrders, obsdk.CapPayments,
 			},
 			Payments: paymentSpecs(),
 			Auth:     obsdk.AuthInfo{Approaches: []string{"redirect"}},
@@ -101,6 +102,7 @@ func init() {
 				"Payments need their own login (scope PISP) before ČS's signing page: two redirects.",
 				"Payment status needs the payment login's session (PaymentCallOptions.Session).",
 				"Domestic standing orders (PaymentRequest.Schedule; Info.StandingOrderSpec): monthly to yearly, no status or cancellation through the API.",
+				"Existing standing orders are read with StandingOrderLister (the Connect session).",
 			},
 		},
 		Factory: newClient,

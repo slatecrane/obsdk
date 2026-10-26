@@ -130,6 +130,41 @@ type TxPage struct {
 	Raw          json.RawMessage `json:"raw,omitempty"`         // raw bank response(s)
 }
 
+// StandingOrder is a standing order on one of the user's accounts, as read
+// by StandingOrderLister. Fields the bank does not send stay empty.
+type StandingOrder struct {
+	ID        string      `json:"id"`
+	Name      string      `json:"name,omitempty"`       // the user's name for it, where the bank keeps one
+	Debtor    *Identifier `json:"debtor,omitempty"`     // the account it pays from
+	AccountID string      `json:"account_id,omitempty"` // that account's Account.ID, when the bank says
+	Creditor  Creditor    `json:"creditor"`
+	Amount    Money       `json:"amount"`
+
+	// Schedule is what the bank reports: StartDate is its requested
+	// execution date (the first or the next one, depending on the bank).
+	// Frequency stays empty when the bank's interval has no equivalent;
+	// Interval keeps the bank's own code.
+	Schedule Schedule `json:"schedule"`
+	Interval string   `json:"interval,omitempty"`
+
+	Remittance []string        `json:"remittance,omitempty"`
+	Reference  *Reference      `json:"reference,omitempty"`
+	Raw        json.RawMessage `json:"raw,omitempty"`
+}
+
+// StandingOrderQuery asks for a page of standing orders.
+type StandingOrderQuery struct {
+	PageSize int    // 0 lets the integration choose
+	Cursor   string // from StandingOrderPage.NextCursor
+	Options  CallOptions
+}
+
+// StandingOrderPage is one page of standing orders.
+type StandingOrderPage struct {
+	StandingOrders []StandingOrder `json:"standing_orders"`
+	NextCursor     string          `json:"next_cursor,omitempty"` // empty when there are no more pages
+}
+
 // Meta is response metadata worth surfacing.
 type Meta struct {
 	RequestID string

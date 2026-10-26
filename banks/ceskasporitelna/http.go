@@ -32,6 +32,7 @@ const (
 	opAccounts     = "accounts"
 	opBalances     = "balances"
 	opTransactions = "transactions"
+	opStanding     = "standing_orders"
 	opPayment      = "payment"
 	opPaySign      = "payment_sign"
 	opPayPoll      = "payment_poll"

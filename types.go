@@ -37,6 +37,7 @@ const (
 	CapBalances            Capability = "aisp.balances"
 	CapTransactions        Capability = "aisp.transactions"
 	CapTransactionsHistory Capability = "aisp.transactions_history" // beyond the bank's default window (e.g. 90 days)
+	CapStandingOrders      Capability = "aisp.standing_orders"      // reading them (StandingOrderLister)
 	CapPayments            Capability = "pisp.payments"
 )
 
