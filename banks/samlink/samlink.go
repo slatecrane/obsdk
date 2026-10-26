@@ -50,8 +50,9 @@ const (
 	ParamAPIKey = "api_key"
 )
 
-// verifiedOn is the date of the last obdev run against the sandbox.
-const verifiedOn = "2026-10-19"
+// verifiedOn is the date of the last obdev run against the sandbox
+// (standing orders: Säästöpankki, 2026-10-26).
+const verifiedOn = "2026-10-26"
 
 // sandboxRoot is the sandbox gateway; both banks share it, and the test user
 // picked at login decides the bank.
@@ -158,7 +159,12 @@ func specs() []obsdk.PaymentSpec {
 		kept = append(kept, f)
 	}
 	s.Fields = kept
-	return []obsdk.PaymentSpec{s}
+	periodic := berlingroup.PeriodicSpec(s, berlingroup.PeriodicOptions{EndOfMonth: true, ExecutionRule: true, StartDateMinDays: 1,
+		Frequencies: []obsdk.Frequency{obsdk.FrequencyWeekly, obsdk.FrequencyEveryTwoWeeks, obsdk.FrequencyMonthly, obsdk.FrequencyEveryTwoMonths,
+			obsdk.FrequencyQuarterly, obsdk.FrequencySemiannual, obsdk.FrequencyAnnual}, // "must not be 'Daily'"
+		Notes: []string{"DELETE ends a standing order (unlike a single payment). The sandbox answers it with 200 but keeps reporting ACSP, so the cancellation is unverified."}})
+	periodic.Cancellable = true
+	return []obsdk.PaymentSpec{s, periodic}
 }
 
 func profile(b bank) berlingroup.Profile {

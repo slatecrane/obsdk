@@ -1,0 +1,69 @@
+{
+  "config": {
+    "bank": "saastopankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-26T19:29:39Z",
+    "redirect_url": "https://www.example.com/callback",
+    "extra": {
+      "subscription_key": "REDACTED:subscription_key:3163a7"
+    },
+    "ids": {
+      "pkce": [
+        "9d39035b-fc9e-49f8-aa41-552d4d0f5fa4",
+        "8c69242e-c26d-4ed0-b557-40123edd87fb"
+      ],
+      "request": [
+        "23edbe0b-0311-43ff-92d6-428785ef964a",
+        "bd17454e-bbb4-473c-bd77-69d6ff08ba48"
+      ],
+      "state": [
+        "b70ac3a3-3fb4-4fe4-b02c-eed570b218a3"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI91PSEUDO68FC8EA795"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "50.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-e72759",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI48PSEUDO47AC37BAF7"
+              }
+            },
+            "remittance": [
+              "obsdk rent"
+            ]
+          }
+        ],
+        "schedule": {
+          "frequency": "quarterly",
+          "start_date": "2026-11-30",
+          "end_of_month": true,
+          "non_business_day": "preceding"
+        }
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/callback?code=REDACTED%3Acode%3Aca9a3a\u0026state=b70ac3a3-3fb4-4fe4-b02c-eed570b218a3"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "config": {
+    "bank": "saastopankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-26T19:29:42Z",
+    "redirect_url": "https://www.example.com/callback",
+    "extra": {
+      "subscription_key": "REDACTED:subscription_key:3163a7"
+    },
+    "ids": {
+      "pkce": [
+        "e4d0fe21-d7ba-4339-8728-9c88a45db9eb",
+        "d1edab36-cd80-4ef8-8376-80d2b56b2ab9"
+      ],
+      "request": [
+        "0fa29882-628b-4c8c-84ba-f62d5861ca67"
+      ],
+      "state": [
+        "41dc9079-55c6-4188-8ec5-e801028d3b45"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI91PSEUDO68FC8EA795"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "5.00",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-e72759",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI48PSEUDO47AC37BAF7"
+              }
+            },
+            "remittance": [
+              "obsdk weekly"
+            ]
+          }
+        ],
+        "schedule": {
+          "frequency": "weekly",
+          "start_date": "2026-11-06"
+        }
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/callback?error=REDACTED%3Aerror%3A0d55f7\u0026error_description=REDACTED%3Aerror_description%3A9fea51\u0026state=41dc9079-55c6-4188-8ec5-e801028d3b45"
+    }
+  ]
+}

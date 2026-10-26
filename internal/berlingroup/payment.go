@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-	"strconv"
 	"strings"
 	"time"
 
@@ -106,12 +105,19 @@ var frequencyCodes = map[obsdk.Frequency]string{
 // longer frequencies dayOfExecution repeats the start date's day, or is
 // "31" (the standard's ultimo) for the month's last day: the standard
 // makes it optional, but some banks (the ModelBank) require it.
-func (b *pisBody) schedule(sc *obsdk.Schedule) {
+// executionRule "preceding" is spelt as the standard's enum spells it.
+func (b *pisBody) schedule(sc *obsdk.Schedule, unpadded bool) {
 	b.StartDate, b.EndDate, b.ExecutionRule = sc.StartDate, sc.EndDate, sc.NonBusinessDay
+	if sc.NonBusinessDay == obsdk.SchedulePreceding {
+		b.ExecutionRule = "preceeding" // sic: the standard's OpenAPI enum is "following", "preceeding"
+	}
 	b.Frequency = frequencyCodes[sc.Frequency]
 	if sc.Frequency.Monthly() {
 		if start, err := time.Parse("2006-01-02", sc.StartDate); err == nil {
-			b.DayOfExecution = strconv.Itoa(start.Day())
+			b.DayOfExecution = fmt.Sprintf("%02d", start.Day()) // the standard's enum is "01" to "31"
+			if unpadded {
+				b.DayOfExecution = fmt.Sprint(start.Day())
+			}
 		}
 	}
 	if sc.EndOfMonth {
@@ -158,7 +164,7 @@ func (c *client) buildBody(r obsdk.PaymentRequest) (pisBody, error) {
 		RequestedExecutionDate: r.ExecutionDate,
 	}
 	if r.Schedule != nil {
-		b.schedule(r.Schedule)
+		b.schedule(r.Schedule, c.p.DayOfExecutionUnpadded)
 	}
 	if d := r.Debtor; d != nil {
 		if d.Account != nil && d.Account.Value != "" {

@@ -137,9 +137,11 @@ the schedule fields; the options say which frequencies, whether `end_of_month` (
 
 - `POST /v1/periodic-payments/{product}` with the JSON single-payment body plus `startDate`, `endDate`, `frequency`
   (`Daily`, `Weekly`, `EveryTwoWeeks`, `Monthly`, `EveryTwoMonths`, `Quarterly`, `SemiAnnual`, `Annual`),
-  `executionRule` (`following`/`preceding`) and `dayOfExecution`: the start date's day for monthly or longer
-  frequencies (optional in the standard, required by the ModelBank), `31` (ultimo) for `EndOfMonth`, nothing for
-  daily and weekly ones.
+  `executionRule` and `dayOfExecution`: the start date's day for monthly or longer frequencies (optional in the
+  standard, required by the ModelBank), `31` (ultimo) for `EndOfMonth`, nothing for daily and weekly ones.
+- Spelling follows the standard's OpenAPI enums, which Samlink enforces: `executionRule` is `following` or
+  `preceeding` (sic), and `dayOfExecution` is `"01"` to `"31"`. `Profile.DayOfExecutionUnpadded` sends `"5"` for
+  banks on the older enum (the ModelBank refuses `"05"` as null).
 - Approval, status and cancellation are the single payment's, on `/v1/periodic-payments/...`; the `Payment.Ref`
   remembers the service. Statuses that mean executing or settled (`ACSP`, `ACSC`, ...) become `accepted`: the order
   is set up. `DELETE` ends the standing order.
@@ -147,7 +149,8 @@ the schedule fields; the options say which frequencies, whether `end_of_month` (
   (a multipart body with `xml_sct` and `json_standingorderType`): `Integration` refuses a standing-order spec on a
   `PaymentXML` profile.
 
-Only the ModelBank offers standing orders so far; each bank profile needs its own options and a sandbox run.
+Offered by the ModelBank and Samlink (Säästöpankki, Oma Säästöpankki) so far; each bank profile needs its own options
+and a sandbox run.
 
 ## ModelBank quirks
 
@@ -161,7 +164,7 @@ Each one is handled in the ModelBank profile, not in the adapter:
   ModelBank spec has no reference field.
 - `bookingStatus=both` and `pending` are refused (`PARAMETER_NOT_SUPPORTED`), and transactions are not
   paginated. The two-page case is a hand-written scenario.
-- Periodic payments: `dayOfExecution` is required (`FORMAT_ERROR` without it, also for daily and weekly ones,
+- Periodic payments: `dayOfExecution` is required, without a leading zero (`DayOfExecutionUnpadded`), (`FORMAT_ERROR` without it, also for daily and weekly ones,
   where the standard gives it no meaning), and `31` with a start in a shorter month crashes its ledger
   (`Invalid date 'NOVEMBER 31'`, seen as `PSU_CREDENTIALS_INVALID` at the password step). The ModelBank spec offers
   monthly or longer frequencies and no month end.

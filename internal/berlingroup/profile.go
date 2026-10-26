@@ -109,6 +109,11 @@ type Profile struct {
 	// the object {reference, referenceType, referenceIssuer}.
 	StructuredRemittanceString bool
 
+	// DayOfExecutionUnpadded sends a periodic payment's dayOfExecution
+	// without a leading zero ("5"), as in older versions of the standard;
+	// the default is the current enum "01" to "31".
+	DayOfExecutionUnpadded bool
+
 	// ReferenceInEndToEnd sends the creditor reference (Transfer.Reference) as
 	// endToEndIdentification, for banks that read the reference from there
 	// (Samlink) instead of remittanceInformationStructured.

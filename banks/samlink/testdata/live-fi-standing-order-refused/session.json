@@ -1,0 +1,1 @@
+{"v":1,"bank":"saastopankki","country":"FI","segment":"personal","env":"sandbox","integration":"saastopankki-samlink","generation":3,"updated_at":"2026-10-19T18:59:13.485406Z","token_type":"bearer","scope":"AIS:gaNSGQhfaD","meta":{"approach":"oauth","token_url":"https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/token"}}

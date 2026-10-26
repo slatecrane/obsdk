@@ -1,0 +1,77 @@
+{
+  "config": {
+    "bank": "saastopankki",
+    "country": "FI",
+    "env": "sandbox",
+    "now": "2026-10-26T19:29:35Z",
+    "redirect_url": "https://www.example.com/callback",
+    "extra": {
+      "subscription_key": "REDACTED:subscription_key:3163a7"
+    },
+    "ids": {
+      "pkce": [
+        "19709f83-8245-46c7-8aa8-ddadd10838a6",
+        "bd16b15b-e2f1-4492-b3e7-647f4bfa632d"
+      ],
+      "request": [
+        "6b0d0e8f-d57a-4509-955a-a286f6c32214",
+        "2beb0bc0-32c4-45d2-bb24-ac6a8593ca59",
+        "0ed3c275-f1e1-4561-b23d-6dd30df5c777"
+      ],
+      "state": [
+        "f0ecfc4e-bf29-4091-8f24-0551560eb658"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "sepa",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "FI91PSEUDO68FC8EA795"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "12.34",
+              "currency": "EUR"
+            },
+            "creditor": {
+              "name": "name-e72759",
+              "account": {
+                "scheme": "IBAN",
+                "value": "FI48PSEUDO47AC37BAF7"
+              }
+            },
+            "reference": {
+              "scheme": "FI",
+              "value": "1232"
+            }
+          }
+        ],
+        "schedule": {
+          "frequency": "monthly",
+          "start_date": "2026-11-05",
+          "end_date": "2027-10-05",
+          "non_business_day": "following"
+        }
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/callback?code=REDACTED%3Acode%3Abf3c4b\u0026state=f0ecfc4e-bf29-4091-8f24-0551560eb658"
+    },
+    {
+      "op": "payment_status",
+      "ref": "obs1.eyJpIjoic2Fhc3RvcGFua2tpLXNhbWxpbmsiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJBdXhrZnF1RVNYLTEyIiwidCI6InNlcGEiLCJzbyI6dHJ1ZX0",
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    }
+  ]
+}
