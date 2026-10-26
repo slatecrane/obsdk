@@ -121,10 +121,46 @@ its manual says forward dates are refused (except for KB+ accounts). Signed paym
 answers `400 NARR "Payment has already been authorized"` otherwise.)
 
 Not implemented: instant domestic payments (`instructionPriority: INST`; the sandbox answers `400 OFFD "Offline
-Debtor Agent"`), foreign payments (ZPL; they need the payee's full address), standing orders
-(`/my/standingorders`, both AIS and PIS), batch payments, the balance check (`POST /my/payments/balanceCheck`,
+Debtor Agent"`), foreign payments (ZPL; they need the payee's full address), reading the user's standing orders
+(AIS `/my/standingorders`; no root interface yet), batch payments, the balance check (`POST /my/payments/balanceCheck`,
 CISP), the newer one-SCA payment API (`/pispsca/v2`, RAR authorisation, sandbox only so far), and KB's Slovak
 branch (KBSK), which has its own API and manuals.
+
+### Standing orders
+
+`domestic` only (CZK), as `PaymentRequest.Schedule` (spec: `Info.StandingOrderSpec("CZ", seg, "domestic")`). They live
+on **PIS v1** (`/pisp/v1/standingorders`; v2 has none), with the same payment login and signing page as payments:
+
+1. `POST /standingorders` with `standingOrderIdentification.instructionIdentification`, `amount`,
+   `standingOrder.execution {mode, modeDue, interval}`, `validity.lastExecutionDate`, `requestedExecutionDate` (the
+   first payment), `debtorAccount` (IBAN + currency), `creditorAccount`, and the remittance (message, `VS:` symbol).
+   The answer is flat (not wrapped in `paymentRequest` as for payments): `standingOrderIdentification.transactionIdentification`,
+   `signInfo`, `instructionStatus` `ACTC` or `ACWC` (accepted with a change; `statusChangeInfo` becomes `Payment.Reason`).
+   KB uses the message as the order's `alias`.
+2. `POST /standingorders/{id}/sign/{signId}` with `USERAGENT_REDIRECT` → KB's signing page, as for payments.
+3. After the return, `GET /standingorders/{id}/status` (certificate only): `ACSP` → `accepted` (KB says it may still
+   turn into `RJCT`, so not final), `ACSC` → `accepted` and final, `RJCT`/`RJCR` → `rejected`; `ACTC`/`ACWC` → not
+   signed (`ErrAuthFailed`). `PaymentStatus` reads the same resource.
+
+Mapping of `Schedule`:
+
+| `Schedule` | KB |
+|---|---|
+| `Frequency` `daily`, `weekly`, `every_two_weeks`, `monthly`, `every_two_months`, `quarterly`, `semiannual`, `annual` | `interval` `DAILY`, `WEEKLY`, `BI_WEEKLY`, `MONTHLY`, `BI_MONTHLY`, `QUARTERLY`, `HALFYEARLY`, `YEARLY` (`BI_WEEKLY` is in the manual, not in the OpenAPI enum; the sandbox takes it) |
+| `StartDate` | `requestedExecutionDate`; D+2 business days per the manual; its day is the day of every payment (`modeDue: DUE_DAY_OF_MONTH`, also for days 29 to 31) |
+| `EndDate` | `mode: UNTIL_DATE` + `validity.lastExecutionDate`; without it (and `Count`) `UNTIL_CANCELLATION` |
+| `Count` | sent as `UNTIL_DATE` with the last payment's date, worked out by the SDK (see below) |
+| `EndOfMonth`, `NonBusinessDay` | not offered: KB refuses `DUE_LAST_DAY_OF_MONTH`, `DUE_OR_NEXT_DAY_OF_MONTH` and `DUE_OR_BEFORE_DAY_OF_MONTH` (`400 FIELD_INVALID standingOrder.execution.modeDue`) |
+
+**Count workaround.** KB accepts `AFTER_MAX_ITERATION_EXCEEDED` with `validity.maxIterations` (the manual's field;
+the OpenAPI enum misspells the mode `FTER_…` and has no `maxIterations`), but turns it into `UNTIL_DATE` one interval
+too late: 12 monthly payments from 2026-11-05 came back ending on 2027-11-05 (13 payments). The SDK therefore sends
+`UNTIL_DATE` with start + (count − 1) intervals, on the start's day or the month's last day when that month is shorter.
+
+Not used: `intervalDue`, `exceptions` (stoppages, breaks), `IRREGULAR` and `MAX_AMOUNT_EXCEEDED` (unsupported per the
+manual), and `PUT` (change). **Cancellation:** the manual lists `DELETE` as unsupported, so `CancelPayment` returns
+`ErrUnsupported`. The sandbox does answer it: an unsigned order is deleted (`204`, status then `RJCT`), a signed one
+returns a new `signInfo` (`OPEN`), so deleting it would take the user's signature. Revisit if KB documents it.
 
 ## Sandbox
 
@@ -134,6 +170,10 @@ A stub. `sandbox_verified` on 2026-10-23 with obdev (scenarios `banks/komercniba
   balances (CZK and the EUR sub-account), transactions (empty), refresh, disconnect.
 - A domestic payment with a message and a variable symbol: payment login, created (`ACTC`), signed, `ACSP`;
   a second one reusing the payment login (no login redirect); status read with the certificate only.
+- 2026-10-26, standing orders: monthly with an end date, a message and a variable symbol (`ACSP`); every two weeks
+  with a count (KB echoed the SDK's last date); quarterly from the 31st on a saved payment login; status read.
+  The sandbox validates (unknown interval → `FIELD_INVALID`, past start → `400 NARR "Expired Execution date"`) but
+  takes a start tomorrow (the manual says D+2).
 
 What the sandbox does and doesn't do:
 

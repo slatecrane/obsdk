@@ -1,0 +1,13 @@
+[
+  {
+    "op": "payment_status",
+    "payment": {
+      "id": "7dfde5e483eb42af8d62f6fc963264a7",
+      "type": "domestic",
+      "status": "accepted",
+      "bank_status": "ACSP",
+      "final": false,
+      "ref": "obs1.eyJpIjoia29tZXJjbmliYW5rYS1jYnMiLCJpZCI6IjdkZmRlNWU0ODNlYjQyYWY4ZDYyZjZmYzk2MzI2NGE3IiwidCI6ImRvbWVzdGljIiwic28iOnRydWV9"
+    }
+  }
+]

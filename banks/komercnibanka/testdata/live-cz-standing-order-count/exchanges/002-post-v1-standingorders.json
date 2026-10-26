@@ -1,0 +1,105 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/sandbox/pisp/v1/standingorders",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:4359e9",
+      "Content-Type": "application/json",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "true"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 2.50
+        }
+      },
+      "creditorAccount": {
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "currency": "CZK",
+        "identification": {
+          "iban": "CZ13PSEUDO16F9725CB2"
+        }
+      },
+      "remittanceInformation": {
+        "unstructured": "unstructured-32b81b"
+      },
+      "requestedExecutionDate": "2026-11-06",
+      "standingOrder": {
+        "execution": {
+          "interval": "BI_WEEKLY",
+          "mode": "UNTIL_DATE",
+          "modeDue": "DUE_DAY_OF_MONTH"
+        },
+        "validity": {
+          "lastExecutionDate": "2027-01-15"
+        }
+      },
+      "standingOrderIdentification": {
+        "instructionIdentification": "46CB37FAB7C64D33A6B22AF6A4F92CCC"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "amount": {
+        "instructedAmount": {
+          "currency": "CZK",
+          "value": 2.5
+        }
+      },
+      "creditorAccount": {
+        "currency": "CZK",
+        "identification": {
+          "iban": "CZ27PSEUDOE5A9F4FE1D"
+        }
+      },
+      "debtorAccount": {
+        "currency": "CZK",
+        "identification": {
+          "iban": "CZ13PSEUDO16F9725CB2"
+        }
+      },
+      "instructionStatus": "ACTC",
+      "paymentTypeInformation": {
+        "serviceLevel": {
+          "code": "DMCT"
+        }
+      },
+      "remittanceInformation": {
+        "unstructured": "unstructured-32b81b"
+      },
+      "requestedExecutionDate": "2026-11-06",
+      "signInfo": {
+        "signId": "a3hi0aga01e92dda56e29bj6gi16fih",
+        "state": "OPEN"
+      },
+      "standingOrder": {
+        "alias": "obsdk count",
+        "execution": {
+          "interval": "BI_WEEKLY",
+          "mode": "UNTIL_DATE",
+          "modeDue": "DUE_DAY_OF_MONTH"
+        },
+        "openDate": "2026-10-26",
+        "validity": {
+          "lastExecutionDate": "2027-01-15"
+        }
+      },
+      "standingOrderIdentification": {
+        "instructionIdentification": "46CB37FAB7C64D33A6B22AF6A4F92CCC",
+        "transactionIdentification": "94960a6f7f8f4db899fdeb3e8d4d6799"
+      }
+    }
+  }
+}

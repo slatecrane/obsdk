@@ -336,3 +336,151 @@ func TestCancelUnsupported(t *testing.T) {
 		t.Fatalf("got %v", err)
 	}
 }
+
+func standingRequest() obsdk.PaymentRequest {
+	r := payRequest()
+	r.Transfers[0].Creditor.Name = "" // KB's standing order has no payee name
+	r.Schedule = &obsdk.Schedule{Frequency: obsdk.FrequencyMonthly, StartDate: "2026-11-05", EndDate: "2027-10-05"}
+	return r
+}
+
+func TestBuildStandingBody(t *testing.T) {
+	c := newTestClient(t, nil)
+	spec, ok := c.Info().StandingOrderSpec("CZ", "", obsdk.PaymentDomestic)
+	if !ok {
+		t.Fatal("no standing-order spec")
+	}
+	r := standingRequest()
+	if err := spec.Validate(r, frozen); err != nil {
+		t.Fatal(err)
+	}
+	b, err := c.buildStandingBody(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := `{"standingOrderIdentification":{"instructionIdentification":"3987B4FAA05744D8"},"amount":{"instructedAmount":{"value":12.50,"currency":"CZK"}},` +
+		`"standingOrder":{"execution":{"mode":"UNTIL_DATE","modeDue":"DUE_DAY_OF_MONTH","interval":"MONTHLY"},"validity":{"lastExecutionDate":"2027-10-05"}},` +
+		`"requestedExecutionDate":"2026-11-05","debtorAccount":{"identification":{"iban":"` + testIBAN + `"},"currency":"CZK"},` +
+		`"creditorAccount":{"identification":{"iban":"` + payeeIBAN + `"}},` +
+		`"remittanceInformation":{"unstructured":"obsdk test","structured":{"creditorReferenceInformation":{"reference":["VS:1234567890"]}}}}`
+	if string(b) != want {
+		t.Fatalf("got  %s\nwant %s", b, want)
+	}
+
+	for _, tc := range []struct {
+		mod  func(*obsdk.Schedule)
+		want string
+	}{
+		{func(s *obsdk.Schedule) { s.EndDate, s.Count = "", 12 },
+			`"execution":{"mode":"UNTIL_DATE","modeDue":"DUE_DAY_OF_MONTH","interval":"MONTHLY"},"validity":{"lastExecutionDate":"2027-10-05"}`},
+		{func(s *obsdk.Schedule) { s.EndDate, s.Count, s.Frequency = "", 3, obsdk.FrequencyEveryTwoWeeks },
+			`"interval":"BI_WEEKLY"},"validity":{"lastExecutionDate":"2026-12-03"}`},
+		{func(s *obsdk.Schedule) {
+			s.EndDate, s.StartDate, s.Frequency = "", "2026-12-31", obsdk.FrequencyEveryTwoMonths
+		},
+			`"execution":{"mode":"UNTIL_CANCELLATION","modeDue":"DUE_DAY_OF_MONTH","interval":"BI_MONTHLY"}}`},
+	} {
+		r := standingRequest()
+		tc.mod(r.Schedule)
+		if err := spec.Validate(r, frozen); err != nil {
+			t.Fatalf("%+v: %v", r.Schedule, err)
+		}
+		if b, err := c.buildStandingBody(r); err != nil || !strings.Contains(string(b), tc.want) {
+			t.Errorf("%+v: %s %v", r.Schedule, b, err)
+		}
+	}
+
+	for name, mod := range map[string]func(*obsdk.PaymentRequest){
+		"tomorrow":       func(r *obsdk.PaymentRequest) { r.Schedule.StartDate = "2026-10-23" },
+		"payee name":     func(r *obsdk.PaymentRequest) { r.Transfers[0].Creditor.Name = "Test Payee" },
+		"month end":      func(r *obsdk.PaymentRequest) { r.Schedule.EndOfMonth = true },
+		"business day":   func(r *obsdk.PaymentRequest) { r.Schedule.NonBusinessDay = obsdk.ScheduleFollowing },
+		"execution date": func(r *obsdk.PaymentRequest) { r.ExecutionDate = "2026-11-05" },
+	} {
+		r := standingRequest()
+		mod(&r)
+		if err := spec.Validate(r, frozen); !errors.Is(err, obsdk.ErrInvalidRequest) {
+			t.Errorf("%s: got %v", name, err)
+		}
+	}
+}
+
+func TestLastExecution(t *testing.T) {
+	for _, tc := range []struct {
+		sc   obsdk.Schedule
+		want string
+	}{
+		{obsdk.Schedule{Frequency: obsdk.FrequencyMonthly, StartDate: "2026-11-05", Count: 1}, "2026-11-05"},
+		{obsdk.Schedule{Frequency: obsdk.FrequencyMonthly, StartDate: "2027-01-31", Count: 2}, "2027-02-28"},
+		{obsdk.Schedule{Frequency: obsdk.FrequencyQuarterly, StartDate: "2026-11-30", Count: 2}, "2027-02-28"},
+		{obsdk.Schedule{Frequency: obsdk.FrequencyAnnual, StartDate: "2026-11-15", Count: 3}, "2028-11-15"},
+		{obsdk.Schedule{Frequency: obsdk.FrequencyEveryTwoMonths, StartDate: "2026-12-31", Count: 2}, "2027-02-28"},
+		{obsdk.Schedule{Frequency: obsdk.FrequencyDaily, StartDate: "2026-12-30", Count: 3}, "2027-01-01"},
+		{obsdk.Schedule{Frequency: obsdk.FrequencyWeekly, StartDate: "2026-11-05", Count: 4}, "2026-11-26"},
+	} {
+		if got := lastExecution(&tc.sc); got != tc.want {
+			t.Errorf("%+v: got %s, want %s", tc.sc, got, tc.want)
+		}
+	}
+}
+
+// TestStandingOrderFlow creates, signs and reads a standing order on a saved
+// payment login, all on PIS v1.
+func TestStandingOrderFlow(t *testing.T) {
+	status := "ACSP"
+	f := &fake{h: func(w http.ResponseWriter, r *http.Request) {
+		switch {
+		case r.Method == http.MethodPost && r.URL.Path == "/pisp/v1/standingorders":
+			_, _ = io.WriteString(w, `{"standingOrderIdentification":{"instructionIdentification":"X","transactionIdentification":"SO1"},`+
+				`"debtorAccount":{"identification":{"iban":"`+testIBAN+`"}},"signInfo":{"state":"OPEN","signId":"S9"},"instructionStatus":"ACWC","statusChangeInfo":"DATE_CHANGED"}`)
+		case r.URL.Path == "/pisp/v1/standingorders/SO1/sign/S9":
+			_, _ = io.WriteString(w, `{"authorizationType":"USERAGENT_REDIRECT","href":{"url":"https://sign.example/so"},"method":"GET"}`)
+		case r.URL.Path == "/pisp/v1/standingorders/SO1/status":
+			_, _ = io.WriteString(w, `{"instructionStatus":"`+status+`"}`)
+		default:
+			w.WriteHeader(404)
+		}
+	}}
+	c := newTestClient(t, f.server(t))
+	ctx := context.Background()
+	s := aisSession()
+	s.Scope = scopePIS
+	r := standingRequest()
+	r.Session = s
+	st, err := c.InitiatePayment(ctx, r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	p := st.Payment
+	if st.Redirect.URL != "https://sign.example/so" || p.ID != "SO1" || p.Status != obsdk.PaymentReceived || p.Reason != "DATE_CHANGED" ||
+		p.Debtor == nil || p.Schedule == nil {
+		t.Fatalf("sign step: %+v", p)
+	}
+	if !strings.Contains(f.bodies[0], `"interval":"MONTHLY"`) {
+		t.Fatalf("body: %s", f.bodies[0])
+	}
+	signState := st.State
+	done, err := c.Resume(ctx, signState, obsdk.StepInput{Callback: "https://www.example.com/cb"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if p := done.Payment; done.Kind != obsdk.StepDone || p.Status != obsdk.PaymentAccepted || p.Final || p.BankStatus != "ACSP" || p.Schedule == nil {
+		t.Fatalf("done: %+v", p)
+	}
+
+	res, err := c.PaymentStatus(ctx, done.Payment.Ref, obsdk.PaymentCallOptions{})
+	if err != nil || res.Data.Status != obsdk.PaymentAccepted || res.Data.Schedule != nil {
+		t.Fatalf("status: %+v %v", res, err)
+	}
+	if got := f.reqs[len(f.reqs)-1].URL.Path; got != "/pisp/v1/standingorders/SO1/status" {
+		t.Fatalf("status read at %s", got)
+	}
+	if _, err := c.CancelPayment(ctx, done.Payment.Ref, obsdk.PaymentCallOptions{}); !errors.Is(err, obsdk.ErrUnsupported) {
+		t.Fatalf("cancel: %v", err)
+	}
+
+	status = "ACWC" // not signed yet
+	if _, err := c.Resume(ctx, signState, obsdk.StepInput{Callback: "https://www.example.com/cb"}); !errors.Is(err, obsdk.ErrAuthFailed) {
+		t.Fatalf("unsigned: %v", err)
+	}
+}

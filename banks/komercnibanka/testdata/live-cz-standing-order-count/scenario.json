@@ -1,0 +1,70 @@
+{
+  "config": {
+    "bank": "komercnibanka",
+    "country": "CZ",
+    "env": "sandbox",
+    "now": "2026-10-26T19:00:22Z",
+    "redirect_url": "https://www.example.com/cb",
+    "extra": {
+      "tpp_name": "obsdk"
+    },
+    "ids": {
+      "request": [
+        "46cb37fa-b7c6-4d33-a6b2-2af6a4f92ccc",
+        "1e722ab0-65a7-4683-afb5-7892b1eb5f78",
+        "470c5dae-0407-498b-af13-15d85b937321",
+        "d7508837-625f-4a16-94d2-82dc44defae0",
+        "d7f9bddb-c171-42d3-a334-0b437bdaa4d1"
+      ],
+      "state": [
+        "cfddc320-3735-46e9-a26e-54b726abdb76"
+      ]
+    }
+  },
+  "calls": [
+    {
+      "op": "initiate_payment",
+      "payment": {
+        "type": "domestic",
+        "debtor": {
+          "account": {
+            "scheme": "IBAN",
+            "value": "CZ13PSEUDO16F9725CB2"
+          }
+        },
+        "transfers": [
+          {
+            "amount": {
+              "amount": "2.50",
+              "currency": "CZK"
+            },
+            "creditor": {
+              "account": {
+                "scheme": "IBAN",
+                "value": "CZ27PSEUDOE5A9F4FE1D"
+              }
+            },
+            "remittance": [
+              "obsdk count"
+            ]
+          }
+        ],
+        "schedule": {
+          "frequency": "every_two_weeks",
+          "start_date": "2026-11-06",
+          "count": 6
+        }
+      },
+      "psu_ip": "203.0.113.7",
+      "psu_user_agent": "obdev/0.1"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/cb?code=REDACTED%3Acode%3Adcf7cc\u0026state=cfddc320-3735-46e9-a26e-54b726abdb76"
+    },
+    {
+      "op": "resume",
+      "callback": "https://www.example.com/cb"
+    }
+  ]
+}
