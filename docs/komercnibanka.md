@@ -80,6 +80,10 @@ filled with the IBANs found at Connect. Access tokens last an hour.
   the id, the counterparty is the creditor of a debit and the debtor of a credit, the variable symbol
   (`VS:…` among the structured references, unless 0) is `ReferenceNumber`, `bankTransactionCode.proprietary.code`
   (a ČBS number) is `BankCode`, `additionalTransactionInformation` is `BankCodeText`.
+- Standing orders (`StandingOrderLister`, capability `aisp.standing_orders`): `GET /my/standingorders?page&size`
+  (AIS v2), all accounts in one list, with the Connect session. Mapped by `internal/cbs`, as at Česká spořitelna;
+  `debtorAccount.id` becomes `AccountID`. `requestedExecutionDate` is the next execution (`Schedule.StartDate`).
+  KB leaves `nextPage` out and sends `maxIterations: null`; the next page comes from `pageNumber + 1 < pageCount`.
 
 **Refresh** sends `grant_type=refresh_token` (plus `redirect_uri`, which the sandbox insists on: `400 "Required
 query parameter 'redirect_uri' is missing."`). KB issues no new refresh token; the old one stays valid.
@@ -121,8 +125,8 @@ its manual says forward dates are refused (except for KB+ accounts). Signed paym
 answers `400 NARR "Payment has already been authorized"` otherwise.)
 
 Not implemented: instant domestic payments (`instructionPriority: INST`; the sandbox answers `400 OFFD "Offline
-Debtor Agent"`), foreign payments (ZPL; they need the payee's full address), reading the user's standing orders
-(AIS `/my/standingorders`; no root interface yet), batch payments, the balance check (`POST /my/payments/balanceCheck`,
+Debtor Agent"`), foreign payments (ZPL; they need the payee's full address), the standing order detail
+(`GET /my/standingorders/{id}`; the list has everything), batch payments, the balance check (`POST /my/payments/balanceCheck`,
 CISP), the newer one-SCA payment API (`/pispsca/v2`, RAR authorisation, sandbox only so far), and KB's Slovak
 branch (KBSK), which has its own API and manuals.
 
@@ -174,6 +178,8 @@ A stub. `sandbox_verified` on 2026-10-23 with obdev (scenarios `banks/komercniba
   with a count (KB echoed the SDK's last date); quarterly from the 31st on a saved payment login; status read.
   The sandbox validates (unknown interval → `FIELD_INVALID`, past start → `400 NARR "Expired Execution date"`) but
   takes a start tomorrow (the manual says D+2).
+- 2026-10-26, reading standing orders: three orders (monthly and daily, end dates, a variable symbol), and the
+  same in pages of two through the cursor.
 
 What the sandbox does and doesn't do:
 

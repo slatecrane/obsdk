@@ -140,7 +140,7 @@ Bulk payments fit the model but are not implemented, and standing orders exist o
 - **Bulk:** more transfers in a request. Handelsbanken's Swedish signing basket and OP's authorisation bundles take them.
 - **Standing orders:** `Schedule` on the request (above). The Berlin Group adapter supports them (periodic payments),
   offered by Samlink so far; not in OBIE or the other banks. Reading the user's existing
-  standing orders: `obsdk.StandingOrderLister` (Česká spořitelna so far).
+  standing orders: `obsdk.StandingOrderLister` (Česká spořitelna and Komerční banka so far).
 
 Swedbank has `bulk-payments`, `periodic-payments` and `signing-baskets`. Revolut has file payments and
 standing orders. ING has periodic and bulk payments. Nordea has recurring payments, a 2SCA API and separate business payment APIs. HSBC has standing orders, international payments and VRP. Rabobank has periodic and bulk (pain.001) payments. bunq has multi-entry and scheduled draft payments. KBC has periodic and bulk (pain.001) payments. The Sparkassen have periodic, bulk (also instant) and pain.001 payments, and Target2 and cross-border single payments. Atruvia has periodic payments (pain.001 + JSON multipart), bulk SEPA payments and cross-border single payments (pain.001.001.09_AXZ_GBIC5). BNP Paribas Fortis has standing orders (Belgian payees only, fixed or variable amount) and pain.001 files (business). Multi-signer business payments surface as `partially_accepted`.

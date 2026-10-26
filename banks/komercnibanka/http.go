@@ -26,6 +26,7 @@ const (
 	opAccounts     = "accounts"
 	opBalances     = "balances"
 	opTransactions = "transactions"
+	opStanding     = "standing_orders"
 	opPayment      = "payment"
 	opPaySign      = "payment_sign"
 	opPayStatus    = "payment_status"
@@ -190,7 +191,7 @@ const codeNARR = "NARR"
 func (c *client) apiErr(op string, r *resp) error {
 	e := &obsdk.APIError{Op: op, Status: r.status, Body: r.body, RequestID: responseID(r.header)}
 	e.Code, e.Text = cbs.ParseError(r.body)
-	ais := op == opAccounts || op == opBalances || op == opTransactions
+	ais := op == opAccounts || op == opBalances || op == opTransactions || op == opStanding
 	switch {
 	case r.status == http.StatusTooManyRequests:
 		return &obsdk.RateLimitedError{RetryAfter: retryAfter(r.header), Err: e.Classify(obsdk.ErrRateLimited)}

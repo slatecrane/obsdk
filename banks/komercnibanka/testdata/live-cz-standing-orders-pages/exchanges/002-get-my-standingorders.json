@@ -1,0 +1,88 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/sandbox/aisp/v2/my/standingorders",
+    "query": {
+      "page": [
+        "1"
+      ],
+      "size": [
+        "2"
+      ]
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "REDACTED:authorization:cbd0b7",
+      "Tpp-Name": "obsdk",
+      "User-Involved": "true"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "pageCount": 2,
+      "pageNumber": 1,
+      "pageSize": 2,
+      "standingOrders": [
+        {
+          "amount": {
+            "instructedAmount": {
+              "currency": "CZK",
+              "value": 1531.59
+            }
+          },
+          "creditorAccount": {
+            "currency": null,
+            "identification": {
+              "iban": "CZ81PSEUDO97AD948E43",
+              "other": null
+            }
+          },
+          "debtorAccount": {
+            "currency": "CZK",
+            "id": "eEdvcGVNYjFvbXp2Mm5Mdm93SUxXcTNwTnptV2FVVW1SRnZIZzJmU0tqM09NMGV3MTEwc2pzZ1J1TjJvNkdncXpNY0NJTWhvM3IzVFJMcVhCVS91MGc9PQ",
+            "identification": {
+              "iban": "CZ13PSEUDO16F9725CB2"
+            },
+            "name": null
+          },
+          "remittanceInformation": {
+            "additionalRemittanceInformation": null,
+            "structured": {
+              "creditorReferenceInformation": {
+                "reference": [
+                  "reference-0b6864"
+                ]
+              }
+            },
+            "unstructured": "unstructured-eab9bf"
+          },
+          "requestedExecutionDate": "2026-11-25",
+          "standingOrder": {
+            "alias": null,
+            "exceptions": null,
+            "execution": {
+              "interval": "MONTHLY",
+              "mode": "UNTIL_DATE",
+              "modeDue": "DUE_DAY_OF_MONTH"
+            },
+            "lastDate": "2026-10-25",
+            "openDate": "2026-05-21",
+            "validity": {
+              "lastExecutionDate": "2027-10-25",
+              "maxIterations": null
+            }
+          },
+          "standingOrderIdentification": {
+            "endToEndIdentification": null,
+            "instructionIdentification": "NOTPROVIDED",
+            "transactionIdentification": "86d9e45990da45549d55bfb0b48f72ds"
+          }
+        }
+      ]
+    }
+  }
+}
