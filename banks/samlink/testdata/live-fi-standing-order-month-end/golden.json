@@ -1,0 +1,48 @@
+[
+  {
+    "op": "initiate_payment",
+    "step": {
+      "kind": "redirect",
+      "state": "<state>",
+      "needs_user": true,
+      "message": "Send the user to Säästöpankki to approve the payment, then pass the callback URL to Resume.",
+      "redirect": {
+        "url": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/oauth/authorize?client_id=REDACTED%3Aclient_id&code_challenge=JIplc4EtRdZy6kNiTVqCEg2fF8rA-LhRIG9FRUVW4x8&code_challenge_method=S256&redirect_uri=https%3A%2F%2Fwww.example.com%2Fcallback&response_type=code&scope=PIS%3AiznwrDaiek-13&state=b70ac3a3-3fb4-4fe4-b02c-eed570b218a3"
+      },
+      "payment": {
+        "id": "iznwrDaiek-13",
+        "type": "sepa",
+        "status": "received",
+        "final": false,
+        "ref": "obs1.eyJpIjoic2Fhc3RvcGFua2tpLXNhbWxpbmsiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJpem53ckRhaWVrLTEzIiwidCI6InNlcGEiLCJzbyI6dHJ1ZX0",
+        "schedule": {
+          "frequency": "quarterly",
+          "start_date": "2026-11-30",
+          "end_of_month": true,
+          "non_business_day": "preceding"
+        }
+      }
+    }
+  },
+  {
+    "op": "resume",
+    "step": {
+      "kind": "done",
+      "needs_user": false,
+      "payment": {
+        "id": "iznwrDaiek-13",
+        "type": "sepa",
+        "status": "accepted",
+        "bank_status": "ACSP",
+        "final": false,
+        "ref": "obs1.eyJpIjoic2Fhc3RvcGFua2tpLXNhbWxpbmsiLCJwIjoic2VwYS1jcmVkaXQtdHJhbnNmZXJzIiwiaWQiOiJpem53ckRhaWVrLTEzIiwidCI6InNlcGEiLCJzbyI6dHJ1ZX0",
+        "schedule": {
+          "frequency": "quarterly",
+          "start_date": "2026-11-30",
+          "end_of_month": true,
+          "non_business_day": "preceding"
+        }
+      }
+    }
+  }
+]

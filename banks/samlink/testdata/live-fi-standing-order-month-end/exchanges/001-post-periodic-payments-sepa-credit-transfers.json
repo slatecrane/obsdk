@@ -1,0 +1,52 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/psd2/v1/periodic-payments/sepa-credit-transfers",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key:3163a7",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1",
+      "Tpp-Nok-Redirect-Uri": "https://www.example.com/callback?error=access_denied",
+      "Tpp-Redirect-Preferred": "true",
+      "Tpp-Redirect-Uri": "https://www.example.com/callback"
+    },
+    "body": {
+      "creditorAccount": {
+        "iban": "FI48PSEUDO47AC37BAF7"
+      },
+      "creditorName": "creditorname-e72759",
+      "dayOfExecution": "31",
+      "debtorAccount": {
+        "currency": "EUR",
+        "iban": "FI91PSEUDO68FC8EA795"
+      },
+      "executionRule": "preceeding",
+      "frequency": "Quarterly",
+      "instructedAmount": {
+        "amount": "50.00",
+        "currency": "EUR"
+      },
+      "remittanceInformationUnstructured": "remittanceinformationunstructured-917d7a",
+      "startDate": "2026-11-30"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "_links": {
+        "scaOAuth": "https://sml-prod-psd2.azure-api.net/samlink-api-sandbox/.wellknown/oauth-authorization-server",
+        "self": "/psd2/v1/periodic-payments/sepa-credit-transfers/iznwrDaiek-13",
+        "status": "/psd2/v1/periodic-payments/sepa-credit-transfers/iznwrDaiek-13/status"
+      },
+      "paymentId": "iznwrDaiek-13",
+      "scaMethods": [],
+      "tppMessages": [],
+      "transactionStatus": "RCVD"
+    }
+  }
+}

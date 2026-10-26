@@ -69,7 +69,10 @@ var Profile = berlingroup.Profile{
 	// Addresses use the 1.3.8 names, but a structured reference is only
 	// accepted as a string, and then fails the authorisation (see Notes).
 	StructuredRemittanceString: true,
-	Signing:                    &berlingroup.Signing{},
+	// Its periodic payments take dayOfExecution "1" to "31" ("05" is refused
+	// as null).
+	DayOfExecutionUnpadded: true,
+	Signing:                &berlingroup.Signing{},
 }
 
 func init() { berlingroup.Register(Profile) }

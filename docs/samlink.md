@@ -88,17 +88,27 @@ Handled by profile knobs of the adapter:
 - 4 unattended account reads per consent and day; reads with `PSU-IP-Address` (the user present) are not
   counted, nor are follow-up pages with `entryReferenceFrom`.
 - Transactions older than 90 days only in the first 5 minutes after approval (then up to 12 months back).
-- Single payments cannot be cancelled (`DELETE` works only for periodic payments, which the SDK does not
-  create).
+- Single payments cannot be cancelled (`DELETE` works only for periodic payments).
 - Card accounts (`/v2/card-accounts`) exist (the sandbox users have two cards each) but the adapter does
   not read them yet.
-- Cross-border payments (`/v1/payments/cross-border-credit-transfers`) and periodic payments are not
-  offered yet.
+- Cross-border payments (`/v1/payments/cross-border-credit-transfers`) are not offered yet.
 
 ## Payments
 
 `sepa` (EUR), optionally dated. Statuses: `RCVD` → `ACFC` (funds checked, being processed; SEPA Instant
 in flight) → `ACSC` (done). `PDNG` is pending, `ACSP` is how a dated payment waits, `RJCT` rejected.
+
+**Standing orders** (`PaymentRequest.Schedule`, spec `Info.StandingOrderSpec("FI", seg, "sepa")`): periodic payments
+through the adapter (`/v1/periodic-payments/sepa-credit-transfers`), approved like a payment; `ACSP` → `accepted`.
+
+- Frequencies weekly to yearly; `Daily` is refused (`FORMAT_ERROR "Value of 'frequency' must not be 'Daily'"`).
+- `EndDate`, `EndOfMonth` (`dayOfExecution` 31) and `NonBusinessDay` (`following` / `preceeding`) are accepted.
+  Samlink enforces the standard's enums: `dayOfExecution` must be `"01"` to `"31"` (`"5"` is refused) and the
+  previous-business-day rule is spelt `preceeding`.
+- `DELETE` ends a standing order: the sandbox answers `200 {"scaMethods": []}` (no links; Samlink has no
+  cancellation-authorisation resource), but its status stays `ACSP`, so a cancellation is not confirmed there and
+  `CancelPayment` reports it as not cancelled.
+- The payment's details (`GET …/{id}`) do not echo the schedule.
 
 ## Sandbox
 
@@ -130,6 +140,12 @@ go run ./cmd/obdev pay -type sepa -amount 12.34 -currency EUR -from FI3745760010
   dated, and refused at the bank (`access_denied` → `ErrAuthFailed`); payment status `ACFC` → `ACSC`.
 - Oma Säästöpankki: connect and a SEPA payment with an RF reference.
 - A refused consent ends in `ErrAuthFailed`.
+
+### Verified on 2026-10-26 (standing orders)
+
+Säästöpankki: a monthly standing order with an end date, a Finnish reference and `following` (`ACSP`), status read;
+quarterly on the month's last day with `preceeding`; a weekly one refused at the bank (`ErrAuthFailed`). Every-two-weeks
+and annual orders were also accepted (not recorded). Scenarios `live-fi-standing-order*`.
 
 ### What the sandbox does not show
 

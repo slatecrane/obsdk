@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/psd2/v1/periodic-payments/sepa-credit-transfers/AuxkfquESX-12/status",
+    "headers": {
+      "Accept": "application/json",
+      "Ocp-Apim-Subscription-Key": "REDACTED:ocp-apim-subscription-key:3163a7",
+      "Psu-Ip-Address": "REDACTED:psu-ip-address:cf70e0",
+      "Psu-User-Agent": "obdev/0.1"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": {
+      "transactionStatus": "ACSP"
+    }
+  }
+}

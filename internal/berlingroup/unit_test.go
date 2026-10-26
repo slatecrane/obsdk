@@ -307,9 +307,11 @@ func TestPeriodicBody(t *testing.T) {
 		want string
 	}{
 		{obsdk.Schedule{Frequency: obsdk.FrequencyMonthly, StartDate: "2026-11-05", EndDate: "2027-10-05", NonBusinessDay: obsdk.ScheduleFollowing},
-			`"startDate":"2026-11-05","endDate":"2027-10-05","executionRule":"following","frequency":"Monthly","dayOfExecution":"5"`},
+			`"startDate":"2026-11-05","endDate":"2027-10-05","executionRule":"following","frequency":"Monthly","dayOfExecution":"05"`},
 		{obsdk.Schedule{Frequency: obsdk.FrequencySemiannual, StartDate: "2026-11-30", EndOfMonth: true},
 			`"startDate":"2026-11-30","frequency":"SemiAnnual","dayOfExecution":"31"`},
+		{obsdk.Schedule{Frequency: obsdk.FrequencyAnnual, StartDate: "2026-11-07", NonBusinessDay: obsdk.SchedulePreceding},
+			`"executionRule":"preceeding","frequency":"Annual","dayOfExecution":"07"`},
 		{obsdk.Schedule{Frequency: obsdk.FrequencyEveryTwoWeeks, StartDate: "2026-11-06"},
 			`"startDate":"2026-11-06","frequency":"EveryTwoWeeks"}`},
 	} {
@@ -323,6 +325,11 @@ func TestPeriodicBody(t *testing.T) {
 		if !strings.Contains(string(out), tc.want) {
 			t.Errorf("%+v: body %s lacks %s", sc, out, tc.want)
 		}
+	}
+
+	r.Schedule = &obsdk.Schedule{Frequency: obsdk.FrequencyMonthly, StartDate: "2026-11-05"}
+	if b, _ := testClient(Profile{DayOfExecutionUnpadded: true}).buildBody(r); b.DayOfExecution != "5" {
+		t.Errorf("unpadded day: %q", b.DayOfExecution)
 	}
 
 	p := &payState{Type: obsdk.PaymentSEPA, Product: "sepa-credit-transfers", ID: "P1", Periodic: true}
